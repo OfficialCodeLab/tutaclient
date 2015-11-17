@@ -17,6 +17,10 @@ tuta.forms.frmTrip = function() {
   tuta.forms.frmTrip.onPreShow = function(form) {
     var self = this;
     this.control("btnBack").onClick = function (button) {tuta.forms.frmMap.show();};
+    this.control("segTrips").onRowClick = function (button) {
+      loadTripHistory(""); 
+      tuta.forms.frmSelectedTrip.show();
+    };
   };
   
   tuta.forms.frmTrip.onPostShow = function(form) {
