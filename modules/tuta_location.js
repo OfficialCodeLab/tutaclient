@@ -31,18 +31,7 @@ tuta.location.currentPosition = function(callback) {
   
 	kony.location.getCurrentPosition(
     	function success(position) {
-          //callback(position);
-          
-          var nologinrequired = true;
-          if(kony.store.getItem("user") != null) {
-            model.user = JSON.parse(kony.store.getItem("user"));
-            nologinrequired = true;
-          }
-          //frmsplash action initapp ->frm map show
-          
-          model.user.location = { lat: position.coords.latitude , long: position.coords.longitude, time: position.timestamp };
-		  
-          tuta.location.geoCode(position.coords.latitude,position.coords.longitude,callback);
+          callback(position);
         },
       
       	function error(errorMsg) {

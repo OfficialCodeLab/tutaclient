@@ -29,66 +29,107 @@ tuta.forms.frmCreateAcc = function() {
       else
       {
         var input = { id : userEmail};      
+        
+        //TODO: email regex
 
         application.service("userService").invokeOperation(
           "userExists", {}, input, function(success) {
-            //tuta.util.alert("SUCCESS", success);
-            if(success.value === null || success.value === [])
-            {
-              tuta.util.alert("CONTINUE", "");
+            var userExists = tuta.userExists(success);
+            if(userExists === true){
+              tuta.util.alert("Error", "USER EXISTS ALREADY");               
             }
             else
             {
-              tuta.util.alert("USER EXISTS", "");                
-            }
+              //COMPARE PASSWORDS AND DO REGEX MATCH
+              if(self.control("txtPass").text === self.control("txtPass2").text){
+                var passRegex = self.control("txtPass").text.match(/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])[a-zA-Z0-9]{8,}$/);
+                if(passRegex !== null){
+                  //tuta.util.alert("PASSWORDS correct", ""); 
+                  var names = self.control("txtName").text.split(" ");
+
+                  if(names.length >= 2){
+                    var firstname = names[0];
+                    var surname = names[1];
+                    for (var i = 2; i < names.length; i++){
+                      surname += " " + names[i];
+                    }
+
+                    if(self.control("txtContact").text !== "" && self.control("txtContact").text !== null){
+
+                      tuta.location.currentPosition(function(success){
+                                                
+                        //BEGIN INSERT USER
+                        var user = {
+                          
+                          _id : self.control("txtEmail").text,
+                          password: self.control("txtPass").text,
+                          userType: "private",
+                          location: {
+                            lat : JSON.stringify(success.coords.latitude),
+                            long : JSON.stringify(success.coords.longitude)
+                          }                          
+                        }; 
+
+                        input = { data : JSON.stringify(user) };
+
+                        //tuta.util.alert("TEST", input);
+                        
+                        application.service("manageService").invokeOperation(
+                          "userAdd", {}, input, function(success) {
+                            //BEGIN INSERT USER INFO
+                            var userInfo = {
+                              _id: self.control("txtEmail").text,
+                              firstName: firstname,
+                              lastName: surname,
+                              mobileNumber: self.control("txtContact").text,
+                              addresses: [],
+                              avatarDocId: "null"
+                            };
+
+                            input = { data : JSON.stringify(userInfo) }; 
+
+                            application.service("manageService").invokeOperation(
+                              "userInfoAdd", {}, input, function(success) {
+                                tuta.util.alert("USER CREATED", "User has been created, now log in");
+                              },
+                              function(error) {
+                                tuta.util.alert("ERROR", error);
+                              }
+                            );
+                          },
+                          function(error) {
+                            tuta.util.alert("ERROR", error);
+                          }
+                        );
+
+                      }, function (error){
+                        tuta.util.alert("ERROR", "");
+                      }
+                                                   );
+                    }
+                    else{
+                      tuta.util.alert("Enter contact number", "Please enter your contact number");
+                    }
+                  }
+                  else{
+                    tuta.util.alert("Enter full name", "Please enter both your first name and surname");
+                  }
+                }
+                else
+                {
+                  tuta.util.alert("PASSWORD TOO EASY", "Password must have 8 characters and should contain at least one digit, one lower case and one upper case");
+                }
+              }
+              else{
+                tuta.util.alert("PASSWORDS DONT MATCH", "");                
+              }
+            }            
           },
           function(error) {
             tuta.util.alert("ERROR", error);              
           }
         );
-
       }
-      
-      
-      	var user = {
-          _id : self.control("txtEmail").text,
-          password: self.control("txtPass").text,
-          userType: "private",
-          location: {
-          	lat : "1231231",
-            long : "234234234"
-        	}
-        };
-      
-      //COMPARE PASSWORDS
-      
-      //GET LOCATION
-      
-      //SPLIT NAME
-      
-       var userInfo = [
-                {
-                    _id: self.control("txtEmail").txt,
-                    firstName: self.control("txtName").txt,
-                    lastName: self.control("txtName").txt,
-                    mobileNumber: self.control("txtContact").txt,
-                    addresses: [],
-                    avatarDocId: "null",
-                    lastModified: 1442393002779
-                }
-            ];
-      
-      	input = { data : JSON.stringify(user) }; 
-      
-      /*
-      	application.service("manageService").invokeOperation(
-        	"userAdd", {}, input, function(success) {
-              
-            },
-          	function(error) {
-              
-            }
-        );*/	
     };
   };
   
