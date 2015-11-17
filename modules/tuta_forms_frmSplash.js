@@ -40,8 +40,8 @@ tuta.forms.frmSplash = function() {
         application.service("userService").invokeOperation(
             "login", {}, inputs,
             function(result) {
-                // tuta.util.alert("LOGIN SUCCESS", result.value);
-                self.moveLoginButtons.toggle();
+                //tuta.util.alert("LOGIN SUCCESS", result.value);
+                //self.moveLoginButtons.toggle();
                 tuta.forms.frmMap.show();
                 //tuta.forms.frm003CheckBox.show();
             },
