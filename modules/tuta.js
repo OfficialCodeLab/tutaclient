@@ -1117,13 +1117,21 @@ tuta.initCallback = function(error) {
 tuta.init = function() {
   	// initialize form controllers
   	new tuta.forms.frmSplash();
+
     new tuta.forms.frmAbout();
     new tuta.forms.frmConfirm();
+    new tuta.forms.frmCreateAcc();
+    new tuta.forms.frmHelp();
+    new tuta.forms.frmLegal();
     new tuta.forms.frmMap();
+    new tuta.forms.frmPayments();
+    new tuta.forms.frmPromo();
+    new tuta.forms.frmSelectedTrip();
+    new tuta.forms.frmTrip();
     // new ssa.forms.frmExample();
 
   
   	// initialize application
  	application = new tuta.application(tuta.initCallback);
-  	new tuta.forms.frmCreateAcc();
+  	
 };
