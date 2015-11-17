@@ -57,43 +57,53 @@ tuta.forms.frmConfirm = function() {
         //End of Change Pickup Button
 
         this.control("btnDayDown").onClick = function(button) {
-            tuta.forms.frmMap.show();
+            cyclicDecrement(days);
         };
         this.control("btnDayUp").onClick = function(button) {
-            tuta.forms.frmMap.show();
+            cyclicIncrement(days);
         };
         this.control("btnHailTaxi").onClick = function(button) {
-            tuta.forms.frmMap.show();
+            hailTaxi();
         };
         this.control("btnHrsMinus").onClick = function(button) {
-            tuta.forms.frmMap.show();
+            tuta.forms.frmConfirm.txtTimeHrs.text = minusOne(tuta.forms.frmConfirm.txtTimeHrs.text, false); 
+            fixHours();
         };
         this.control("btnHrsPlus").onClick = function(button) {
-            tuta.forms.frmMap.show();
+            tuta.forms.frmConfirm.txtTimeHrs.text = addOne(tuta.forms.frmConfirm.txtTimeHrs.text); 
+            fixHours();
         };
         this.control("btnMinsMinus").onClick = function(button) {
-            tuta.forms.frmMap.show();
+            frmConfirm.txtTimeMins.text = minusOne(frmConfirm.txtTimeMins.text, true); 
+            fixMins(); 
+            fixMins2();
         };
         this.control("btnMinsPlus").onClick = function(button) {
-            tuta.forms.frmMap.show();
+            frmConfirm.txtTimeMins.text = addOne(frmConfirm.txtTimeMins.text); 
+            fixMins(); 
+            fixMins2();
         };
         this.control("btnMonthDown").onClick = function(button) {
-            tuta.forms.frmMap.show();
+            onMonthChange(0);
         };
         this.control("btnMonthUp").onClick = function(button) {
-            tuta.forms.frmMap.show();
+            onMonthChange(1);
         };
+        /*
         this.control("btnPickUp").onClick = function(button) {
             tuta.forms.frmMap.show();
         };
+        This button doesn't seem to do anything!
+        */
         this.control("btnSetTime").onClick = function(button) {
-            tuta.forms.frmMap.show();
+            frmConfirm.scrollToBeginning();
+            kony.timer.schedule("showDateTime", function(){frmConfirm["flexDateTime"]["isVisible"] = true;}, 0.3, false);
         };
         this.control("btnYearDown").onClick = function(button) {
-            tuta.forms.frmMap.show();
+            onYearChange(0);
         };
         this.control("btnYearUp").onClick = function(button) {
-            tuta.forms.frmMap.show();
+            onYearChange(1);
         };
     };//End of Pre-Show
 
