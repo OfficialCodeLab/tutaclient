@@ -1121,7 +1121,9 @@ tuta.init = function() {
     new tuta.forms.frmConfirm();
     new tuta.forms.frmMap();
     // new ssa.forms.frmExample();
+
   
   	// initialize application
  	application = new tuta.application(tuta.initCallback);
+  	new tuta.forms.frmCreateAcc();
 };
