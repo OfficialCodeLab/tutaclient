@@ -43,7 +43,6 @@ tuta.forms.frmSplash = function() {
                 // tuta.util.alert("LOGIN SUCCESS", result.value);
                 self.moveLoginButtons.toggle();
                 tuta.forms.frmMap.show();
-                //tuta.forms.frm003CheckBox.show();
             },
             function(error) {
                 // the service returns 403 (Not Authorised) if credentials are wrong

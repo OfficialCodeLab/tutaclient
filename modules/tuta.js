@@ -26,6 +26,13 @@ var application = null;
 function initApp() {
   //ssa.util.alert("INIT");
   tuta.init();
+  
+  new tuta.forms.frmPayments();
+  new tuta.forms.frmMap();
+  new tuta.forms.frmTrip();
+  new tuta.forms.frmHelp();
+  new tuta.forms.frmPromo();
+  
 }
 
 var lastPersonClicked = 0;
