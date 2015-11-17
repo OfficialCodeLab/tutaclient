@@ -16,6 +16,8 @@ tuta.forms.frmHelp = function() {
   
   tuta.forms.frmHelp.onPreShow = function(form) {
     var self = this;
+    
+    
    // PUT BUTTONS HERE
   };
   
