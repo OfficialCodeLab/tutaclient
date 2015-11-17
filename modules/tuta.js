@@ -161,7 +161,6 @@ function initOld() {
   }
   
   setUpSwipes();
-  frmMap.segAddressList.onRowClick = onLocationSelected;
   
   //SET UP CHEESEBURGER MENU
   
@@ -197,6 +196,21 @@ function initOld() {
   //frmMap.textDest.onBeginEditing = function () {frmMap.flexOptions.setVisibility(false);};
   //frmMap.textDest.onEndEditing = function () {frmMap.flexOptions.setVisibility(true);};
 
+  
+ // frmMap.flexCheepest.onTouchEnd = selectOption;
+  //frmMap.flexQuickest.onTouchEnd = selectOption;
+  //frmMap.flexPremium.onTouchEnd = selectOption;
+  
+  frmConfirm.sliderBook.onSlide = sliderMove;
+  
+  //SET UP DAYS
+  setUpDays("Apr");
+  frmConfirm.lblDay.text = days.values[0];
+
+  frmMap.btnDrop.onClick = selectPickUpLocation;
+  frmMap.btnCancelHail.onClick = cancelHail;  
+  frmMap.btnCancelHailNow.onClick = function () {frmMap.flexOverlay1.setVisibility(false); cancelHail();};
+  frmMap.btnReturnToTrip.onClick = function () {frmMap.flexOverlay1.setVisibility(false);};
   frmMap.btnSubmitRating.onClick = function(){
     frmMap.flexOverlay2.setVisibility(false);
     //#ifdef iphone
@@ -208,69 +222,12 @@ function initOld() {
     //ifdef android
     cancelHail();
   };
- // frmMap.flexCheepest.onTouchEnd = selectOption;
-  //frmMap.flexQuickest.onTouchEnd = selectOption;
-  //frmMap.flexPremium.onTouchEnd = selectOption;
-  
-  frmConfirm.sliderBook.onSlide = sliderMove;
-  frmMap.btnDrop.onClick = selectPickUpLocation;
-  
-  //SET UP DAYS
-  setUpDays("Apr");
-  frmConfirm.lblDay.text = days.values[0];
-
-  frmMap.btnCancelHail.onClick = cancelHail;
-  
-  frmMap.btnCancelHailNow.onClick = function () {frmMap.flexOverlay1.setVisibility(false); cancelHail();};
-  frmMap.btnReturnToTrip.onClick = function () {frmMap.flexOverlay1.setVisibility(false);};
-
-  frmConfirm.btnCancelRequest.onClick = function(widget) { 
-    destination = null; 
-    frmMap.show(); 
-    updateMap();
-    frmMap.flexNoOfPeople.setVisibility(true);
-  };
-  frmConfirm.btnHailTaxi.onClick = hailTaxi;
-  
-  //frmMap.flexDestinations.onTouchStart = toggleDestinations;
-  
   frmMap.btnCancelHailDriving.onTouchStart = cancelHailPrompt;
-  
-  frmSelectedTrip.btnHelp.onClick = function (){frmHelp.show();};
-  
-  frmHelp.btnCancel.onClick = function (){frmMap.show();};
-  frmHelp.btnSubmit.onClick = function (){
-    frmMap.show();
-    kony.timer.schedule("popRequestSent", function() {  
-         popRequestSent.show();
-      }, 0.5, false);
-    
-  };
+  frmMap.segAddressList.onRowClick = onLocationSelected;
   
   frmMap.txtDest.setFocus(false);
   
   frmMap.mapMain.onPinClick = function(map,location) {selectPickUpLocation();};
-    /*selectedPin = location;
-    if(hailState) return;
-    if(location.name == "Pickup Location") {
-      selectPickUpLocation();
-      openDestinations(); 
-    } else {
-      frmMap.txtDestination.setFocus(true);
-    }*/
-  
-
-  var selectedPin = null;
-  /*frmMap.mapMain.onSelection = function(map,location) {
-    if(hailState) return;
-    if(location.name == "Pickup Location") {
-      selectPickUpLocation();
-      openDestinations(); 
-    } else {
-      frmMap.txtDest.setFocus(true);
-    }
-  };*/
-
   frmMap.mapMain.onClick = function(map, location) {
     frmMap.flexAddressList.setVisibility(false);
     frmMap.flexAddressShadow.setVisibility(false);
@@ -299,6 +256,49 @@ function initOld() {
       selectDest(frmMap);      
     }
   };
+
+
+  frmConfirm.btnCancelRequest.onClick = function(widget) { 
+    destination = null; 
+    frmMap.show(); 
+    updateMap();
+    frmMap.flexNoOfPeople.setVisibility(true);
+  };
+  frmConfirm.btnHailTaxi.onClick = hailTaxi;
+  
+  //frmMap.flexDestinations.onTouchStart = toggleDestinations;
+  
+  
+  frmSelectedTrip.btnHelp.onClick = function (){frmHelp.show();};
+  
+  frmHelp.btnCancel.onClick = function (){frmMap.show();};
+  frmHelp.btnSubmit.onClick = function (){
+    frmMap.show();
+    kony.timer.schedule("popRequestSent", function() {  
+         popRequestSent.show();
+      }, 0.5, false);
+    
+  };
+    /*selectedPin = location;
+    if(hailState) return;
+    if(location.name == "Pickup Location") {
+      selectPickUpLocation();
+      openDestinations(); 
+    } else {
+      frmMap.txtDestination.setFocus(true);
+    }*/
+  
+
+  var selectedPin = null;
+  /*frmMap.mapMain.onSelection = function(map,location) {
+    if(hailState) return;
+    if(location.name == "Pickup Location") {
+      selectPickUpLocation();
+      openDestinations(); 
+    } else {
+      frmMap.txtDest.setFocus(true);
+    }
+  };*/
 
   //animateLogo(frmSplash.imgTaxi);
 
@@ -417,13 +417,12 @@ function minusOne(txt, mins){
   return Math.round(newVal) + "";
 }
 
-
-// function changeAmPm(){
-//   if (frmConfirm.lblAmPm.text == "AM")
-//     frmConfirm.lblAmPm.text = "PM";
-//   else
-//     frmConfirm.lblAmPm.text = "AM";
-// }
+function changeAmPm(){
+  if (frmConfirm.lblAmPm.text == "AM")
+    frmConfirm.lblAmPm.text = "PM";
+  else
+    frmConfirm.lblAmPm.text = "AM";
+}
 
 function setNewTime(){
   var newTime = frmConfirm.txtTimeHrs.text + ":" + frmConfirm.txtTimeMins.text + " " + frmConfirm.lblAmPm.text;
@@ -609,8 +608,8 @@ function showLater(){
   }
 }
 
+var setupTblSwipe = {fingers: 1};
 function setUpSwipes(){
-  var setupTblSwipe = {fingers: 1}
   
   //frmConfirm["calTime"]["isVisible"] = false;
   //frmConfirm.lblTime.setVisibility(false);
@@ -716,7 +715,7 @@ function resetSearchBar() {
 }
 
 function updateMap() {
-  frmMap.mapMain.zoomLevel = 15;
+  frmMap.mapMain.zoomLevel = 10;
   //frmMap.mapMain.locationData
  // setZoomLevelFromBounds();
   var pickupicon = "";
@@ -762,6 +761,7 @@ var taxiRoute = null;
 function onLocationSelected() {
   // Search mode 0 means we have a destination
   if(searchMode == 0) {
+    
     destination = getSelectedAddress();
     deselectAllOptions();
     frmConfirm.lblDestination.text = shortenText (destination.formatted_address.replace(/`+/g,""), GLOBAL_CONCAT_LENGTH);
@@ -775,7 +775,7 @@ function onLocationSelected() {
     });
     frmMap.flexAddressList.setVisibility(false);
     frmMap.flexAddressShadow.setVisibility(false);
-    frmConfirm.show();
+    tuta.forms.frmConfirm.show();
     
     //REPLACE 30 WITH DISTANCE TO TRAVEL
     frmConfirm.lblCost = "R" + Math.round(taxiRate(30));
@@ -1108,6 +1108,25 @@ function animateMenu(){
   }
 }
 
+tuta.menuToggle = function (time, bool){
+  if(bool === true){
+    frmMap.imgChsO.setVisibility(false);
+    frmMap.flexDarken.setVisibility(false);
+    kony.timer.schedule("chsC", function(){
+      frmMap.imgChsC.setVisibility(true);
+      frmMap["btnChs"]["height"] = "55dp";
+    }, time, false);      
+  }
+  else{
+    frmMap.imgChsC.setVisibility(false);
+    frmMap.flexDarken.setVisibility(true);
+    kony.timer.schedule("chsO", function(){
+      frmMap.imgChsO.setVisibility(true);
+      frmMap["btnChs"]["height"] = "100%";
+    }, time, false);  
+  }         
+}
+
 tuta.userExists = function (response){
   try{
     if(response.value[0] !== [])
@@ -1129,23 +1148,34 @@ tuta.initCallback = function(error) {
 // Should be called in the App init lifecycle event
 // In Visualizer this should be call in the init event of the startup form
 tuta.init = function() {
-  	// initialize form controllers
-  	new tuta.forms.frmSplash();
+  // initialize form controllers
+  new tuta.forms.frmSplash();
+  new tuta.forms.frmAbout();
+  new tuta.forms.frmConfirm();
+  new tuta.forms.frmCreateAcc();
+  new tuta.forms.frmHelp();
+  new tuta.forms.frmLegal();
+  new tuta.forms.frmMap();
+  new tuta.forms.frmPayments();
+  new tuta.forms.frmPromo();
+  new tuta.forms.frmSelectedTrip();
+  new tuta.forms.frmTrip();
 
-    new tuta.forms.frmAbout();
-    new tuta.forms.frmConfirm();
-    new tuta.forms.frmCreateAcc();
-    new tuta.forms.frmHelp();
-    new tuta.forms.frmLegal();
-    new tuta.forms.frmMap();
-    new tuta.forms.frmPayments();
-    new tuta.forms.frmPromo();
-    new tuta.forms.frmSelectedTrip();
-    new tuta.forms.frmTrip();
-    // new ssa.forms.frmExample();
+  // initialize application
+  application = new tuta.application(tuta.initCallback);
 
-  
-  	// initialize application
- 	application = new tuta.application(tuta.initCallback);
+  tuta.location.currentPosition(function(response) {
+    tuta.location.geoCode(response.coords.latitude, response.coords.longitude, function(success, error){
+      pickupPoint = success.results[0]; 
+      //Random position for taxi
+      var randomPos = tuta.location.randomPoints(1, pickupPoint.geometry.location.lat, pickupPoint.geometry.location.lng, 1000);
+      tuta.location.geoCode(randomPos[0].lat, randomPos[0].lon, function(s, e){
+        taxiPosition = s.results[0];      
+      });
+    });
+
+  }, function(error) {
+    tuta.util.alert("Error", error);
+  });
   	
 };
