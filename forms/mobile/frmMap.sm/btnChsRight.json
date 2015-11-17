@@ -45,8 +45,8 @@
     "height": "100%",
     "id": "btnChsRight",
     "info": null,
-    "isVisible": false,
-    "isvisible": false,
+    "isVisible": true,
+    "isvisible": true,
     "kuid": "b83a669bd6074b678c7f3df7f0ce1d79",
     "margin": [
         6,

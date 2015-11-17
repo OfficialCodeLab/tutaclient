@@ -16,6 +16,8 @@ tuta.forms.frmPayments = function() {
   
   tuta.forms.frmPayments.onPreShow = function(form) {
     var self = this;
+    
+    this.control("btnBack").onClick = function (button) {tuta.forms.frmMap.show();};
    // PUT BUTTONS HERE
   };
   
