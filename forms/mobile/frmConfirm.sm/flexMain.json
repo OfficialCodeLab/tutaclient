@@ -1,0 +1,107 @@
+{
+    "DNDConfig": null,
+    "__parentReadjusting__": false,
+    "_height_": {
+        "type": "string",
+        "value": "545dp"
+    },
+    "_left_": {
+        "type": "string",
+        "value": "0dp"
+    },
+    "_margin_": [
+        0,
+        0,
+        0,
+        0
+    ],
+    "_padding_": [
+        0,
+        0,
+        0,
+        0
+    ],
+    "_skin_": "sa46bf51a158449caaf67dd1558f41df",
+    "_top_": {
+        "type": "string",
+        "value": "0dp"
+    },
+    "_width_": {
+        "type": "string",
+        "value": "100%"
+    },
+    "allboxes": [],
+    "allowHorizontalBounce": false,
+    "allowVerticalBounce": true,
+    "allowhorizontalbounce": false,
+    "allowverticalbounce": true,
+    "bounces": false,
+    "canUpdateUI": true,
+    "channel": "mobile",
+    "children": [
+        "flexHeader",
+        "flexDetails",
+        "flexDetails2",
+        "flexConfirm"
+    ],
+    "clipBounds": true,
+    "clipbounds": true,
+    "containerWeight": 100,
+    "containerweight": 100,
+    "decelerat": false,
+    "decelerating": false,
+    "dragg": false,
+    "dragging": false,
+    "enableScrolling": true,
+    "enabled": false,
+    "enablescrolling": true,
+    "height": "545dp",
+    "horizontalScrollIndicator": true,
+    "horizontalscrollindicator": true,
+    "id": "flexMain",
+    "info": null,
+    "isVisible": true,
+    "isvisible": true,
+    "kuid": "6112d66a6f6e4994977c3b859b3eda31",
+    "layoutType": 4,
+    "layouttype": 4,
+    "left": "0dp",
+    "margin": [
+        0,
+        0,
+        0,
+        0
+    ],
+    "name": "kony.ui.FlexScrollContainer",
+    "orientation": 6,
+    "padding": [
+        0,
+        0,
+        0,
+        0
+    ],
+    "pagingEnabled": false,
+    "pagingenabled": false,
+    "parent": "flexBg",
+    "percent": true,
+    "pf": "frmConfirm",
+    "render": true,
+    "scrollDirection": 2,
+    "scrolldirection": 2,
+    "skin": "sa46bf51a158449caaf67dd1558f41df",
+    "snapGridSize": 10,
+    "snapToGrid": true,
+    "snapgridsize": 10,
+    "snaptogrid": true,
+    "top": "0dp",
+    "track": false,
+    "tracking": false,
+    "verticalScrollIndicator": true,
+    "verticalscrollindicator": true,
+    "wType": "FlexScrollContainer",
+    "widgetAlignment": 1,
+    "widgetalignment": 1,
+    "width": "100%",
+    "zIndex": 5,
+    "zindex": 5
+}

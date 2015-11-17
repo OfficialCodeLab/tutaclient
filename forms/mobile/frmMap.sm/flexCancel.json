@@ -1,0 +1,88 @@
+{
+    "DNDConfig": null,
+    "__parentReadjusting__": false,
+    "_bottom_": {
+        "type": "string",
+        "value": "105dp"
+    },
+    "_height_": {
+        "type": "string",
+        "value": "70dp"
+    },
+    "_left_": {
+        "type": "string",
+        "value": "-100dp"
+    },
+    "_margin_": [
+        0,
+        0,
+        0,
+        0
+    ],
+    "_padding_": [
+        0,
+        0,
+        0,
+        0
+    ],
+    "_render_": true,
+    "_skin_": "s1ebf81fd91f4981a6e0c41c96cf44e0",
+    "_width_": {
+        "type": "string",
+        "value": "80dp"
+    },
+    "allboxes": [],
+    "autogrowMode": 0,
+    "autogrowmode": 0,
+    "bottom": "105dp",
+    "canUpdateUI": true,
+    "channel": "mobile",
+    "children": [
+        "imgCancel"
+    ],
+    "clipBounds": true,
+    "clipbounds": true,
+    "containerWeight": 100,
+    "containerweight": 100,
+    "enableScrolling": true,
+    "enabled": false,
+    "enablescrolling": true,
+    "height": "70dp",
+    "id": "flexCancel",
+    "info": null,
+    "isVisible": true,
+    "isvisible": true,
+    "kuid": "092c696b54dd4c25b0af6f732836a3e4",
+    "layoutType": 2,
+    "layouttype": 2,
+    "left": "-100dp",
+    "margin": [
+        0,
+        0,
+        0,
+        0
+    ],
+    "name": "kony.ui.FlexContainer",
+    "orientation": 6,
+    "padding": [
+        0,
+        0,
+        0,
+        0
+    ],
+    "parent": "flexAll",
+    "percent": true,
+    "pf": "frmMap",
+    "render": true,
+    "skin": "s1ebf81fd91f4981a6e0c41c96cf44e0",
+    "snapGridSize": 10,
+    "snapToGrid": true,
+    "snapgridsize": 10,
+    "snaptogrid": true,
+    "wType": "FlexContainer",
+    "widgetAlignment": 1,
+    "widgetalignment": 1,
+    "width": "80dp",
+    "zIndex": 5,
+    "zindex": 5
+}

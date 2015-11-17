@@ -1,0 +1,109 @@
+{
+    "DNDConfig": null,
+    "__parentReadjusting__": false,
+    "_bottom_": {
+        "type": "string",
+        "value": "50%"
+    },
+    "_height_": {
+        "type": "string",
+        "value": "450dp"
+    },
+    "_left_": {
+        "type": "string",
+        "value": "7dp"
+    },
+    "_margin_": [
+        0,
+        0,
+        0,
+        0
+    ],
+    "_padding_": [
+        0,
+        0,
+        0,
+        0
+    ],
+    "_render_": true,
+    "_skin_": "sdda918e2af540af91443287a3057eaf",
+    "_width_": {
+        "type": "string",
+        "value": "80%"
+    },
+    "allboxes": [],
+    "autogrowMode": 0,
+    "autogrowmode": 0,
+    "bottom": "50%",
+    "canUpdateUI": true,
+    "centerX": "50%",
+    "centerY": "50%",
+    "centerx": {
+        "type": "string",
+        "value": "50%"
+    },
+    "centery": {
+        "type": "string",
+        "value": "50%"
+    },
+    "channel": "mobile",
+    "children": [
+        "lblSepOuter2",
+        "CopylblSepOuter0b38b3d94ad0a44",
+        "CopylblSepOuter014cbea8165604f",
+        "Label0bd1367613a774b",
+        "Label0a95bc9d55c7a4e",
+        "Label09bef4fa2a6224a",
+        "CopyLabel016857687d26143",
+        "Label098c9d668927e41",
+        "Map00ba46f04ad234e",
+        "btnSubmitRating",
+        "Label0b4fe3dfe8f8845",
+        "flexStarRating"
+    ],
+    "clipBounds": true,
+    "clipbounds": true,
+    "containerWeight": 100,
+    "containerweight": 100,
+    "enableScrolling": true,
+    "enabled": false,
+    "enablescrolling": true,
+    "height": "450dp",
+    "id": "CopyflexCancelHail04775c97c967944",
+    "info": null,
+    "isVisible": true,
+    "isvisible": true,
+    "kuid": "f316a4f2005648638f7a52b8e47111bb",
+    "layoutType": 2,
+    "layouttype": 2,
+    "left": "7dp",
+    "margin": [
+        0,
+        0,
+        0,
+        0
+    ],
+    "name": "kony.ui.FlexContainer",
+    "orientation": 6,
+    "padding": [
+        0,
+        0,
+        0,
+        0
+    ],
+    "parent": "flexOverlay2",
+    "percent": true,
+    "pf": "frmMap",
+    "render": true,
+    "skin": "sdda918e2af540af91443287a3057eaf",
+    "snapGridSize": 10,
+    "snapToGrid": true,
+    "snapgridsize": 10,
+    "snaptogrid": true,
+    "wType": "FlexContainer",
+    "widgetAlignment": 1,
+    "widgetalignment": 1,
+    "width": "80%",
+    "zIndex": 900,
+    "zindex": 900
+}

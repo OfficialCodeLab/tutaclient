@@ -1,0 +1,101 @@
+{
+    "DNDConfig": null,
+    "__parentReadjusting__": false,
+    "_height_": {
+        "type": "string",
+        "value": "100%"
+    },
+    "_left_": {
+        "type": "string",
+        "value": "0dp"
+    },
+    "_margin_": [
+        1,
+        1,
+        1,
+        1
+    ],
+    "_padding_": [
+        5,
+        0,
+        5,
+        0
+    ],
+    "_skin_": "sdd938a14411463f83a2e2b716f980b6",
+    "_text_": "Address goes here",
+    "_top_": {
+        "type": "string",
+        "value": "0dp"
+    },
+    "_width_": {
+        "type": "string",
+        "value": "100%"
+    },
+    "_wrapping_": 2,
+    "canUpdateUI": true,
+    "channel": "mobile",
+    "containerId": true,
+    "containerWeight": 100,
+    "containerweight": 100,
+    "contentAlignment": 4,
+    "contentalignment": 4,
+    "enabled": false,
+    "height": {
+        "type": "string",
+        "value": "100%"
+    },
+    "id": "lblAddress",
+    "info": null,
+    "ipad": {
+        "psp": {
+            "wrapping": 2
+        }
+    },
+    "iphone": {
+        "@class": "com.kony.gen.viz.model.component.property.label.IPhoneLabelProperty",
+        "psp": {
+            "wrapping": 2
+        }
+    },
+    "isSegmentChild": false,
+    "isVisible": true,
+    "isvisible": true,
+    "kuid": "93fcdbb0c0d04c41b3366ecadbf78d90",
+    "left": {
+        "type": "string",
+        "value": "0dp"
+    },
+    "margin": [
+        1,
+        1,
+        1,
+        1
+    ],
+    "name": "kony.ui.Label",
+    "padding": [
+        5,
+        0,
+        5,
+        0
+    ],
+    "paddingInPixel": false,
+    "paddinginpixel": false,
+    "parent": "FlexContainer0913061f1cd4b4b",
+    "pf": "tmpAddress",
+    "render": true,
+    "skin": "sdd938a14411463f83a2e2b716f980b6",
+    "text": "Address goes here",
+    "toolTip": "",
+    "tooltip": "",
+    "top": {
+        "type": "string",
+        "value": "0dp"
+    },
+    "wType": "Label",
+    "widgetAlignment": 5,
+    "width": {
+        "type": "string",
+        "value": "100%"
+    },
+    "wrapping": 2
+}

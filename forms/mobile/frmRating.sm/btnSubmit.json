@@ -1,0 +1,81 @@
+{
+    "DNDConfig": null,
+    "__parentReadjusting__": false,
+    "_bottom_": {
+        "type": "string",
+        "value": "30dp"
+    },
+    "_height_": {
+        "type": "string",
+        "value": "12%"
+    },
+    "_left_": {
+        "type": "string",
+        "value": "47dp"
+    },
+    "_margin_": [
+        6,
+        6,
+        6,
+        6
+    ],
+    "_padding_": [
+        0,
+        0,
+        0,
+        0
+    ],
+    "_skin_": "s540fa04d81f451e8855c7189f4bef5b",
+    "_text_": "Submit",
+    "_width_": {
+        "type": "string",
+        "value": "85%"
+    },
+    "bottom": "30dp",
+    "canUpdateUI": true,
+    "centerX": "50%",
+    "centerx": {
+        "type": "string",
+        "value": "50%"
+    },
+    "channel": "mobile",
+    "containerWeight": 100,
+    "containerweight": 100,
+    "contentAlignment": 5,
+    "contentalignment": 5,
+    "displayText": true,
+    "displaytext": true,
+    "enabled": false,
+    "focusSkin": "s54038ceb3284868b70c8db63f416f90",
+    "focusskin": "s54038ceb3284868b70c8db63f416f90",
+    "height": "12%",
+    "id": "btnSubmit",
+    "info": null,
+    "isVisible": true,
+    "isvisible": true,
+    "kuid": "45501368980b4b5ba69e0622dd31d159",
+    "left": "47dp",
+    "margin": [
+        6,
+        6,
+        6,
+        6
+    ],
+    "name": "kony.ui.Button",
+    "padding": [
+        0,
+        0,
+        0,
+        0
+    ],
+    "parent": "FlexContainer03d11d945e7de4a",
+    "pf": "frmRating",
+    "render": true,
+    "skin": "s540fa04d81f451e8855c7189f4bef5b",
+    "text": "Submit",
+    "wType": "Button",
+    "widgetAlignment": 5,
+    "width": "85%",
+    "zIndex": 2,
+    "zindex": 2
+}

@@ -1,0 +1,95 @@
+{
+    "DNDConfig": null,
+    "__parentReadjusting__": false,
+    "_height_": {
+        "type": "ref",
+        "value": "preferred"
+    },
+    "_left_": {
+        "type": "string",
+        "value": "103dp"
+    },
+    "_margin_": [
+        1,
+        1,
+        1,
+        1
+    ],
+    "_padding_": [
+        0,
+        0,
+        0,
+        0
+    ],
+    "_skin_": "s4a4b0c7153845e4a42573444cd7c122",
+    "_text_": "Trip Cost.",
+    "_top_": {
+        "type": "string",
+        "value": "108dp"
+    },
+    "_width_": {
+        "type": "string",
+        "value": "100%"
+    },
+    "_wrapping_": 2,
+    "canUpdateUI": true,
+    "centerX": "50%",
+    "centerx": {
+        "type": "string",
+        "value": "50%"
+    },
+    "channel": "mobile",
+    "containerWeight": 100,
+    "containerweight": 100,
+    "contentAlignment": 5,
+    "contentalignment": 5,
+    "enabled": false,
+    "height": {
+        "type": "ref",
+        "value": "preferred"
+    },
+    "id": "CopyLabel016857687d26143",
+    "info": null,
+    "ipad": {
+        "psp": {
+            "wrapping": 2
+        }
+    },
+    "iphone": {
+        "@class": "com.kony.gen.viz.model.component.property.label.IPhoneLabelProperty",
+        "psp": {
+            "wrapping": 2
+        }
+    },
+    "isVisible": true,
+    "isvisible": true,
+    "kuid": "750ebdd779724cf8b7f10be67b9d1b02",
+    "left": "103dp",
+    "margin": [
+        1,
+        1,
+        1,
+        1
+    ],
+    "name": "kony.ui.Label",
+    "padding": [
+        0,
+        0,
+        0,
+        0
+    ],
+    "parent": "CopyflexCancelHail04775c97c967944",
+    "pf": "frmMap",
+    "render": true,
+    "skin": "s4a4b0c7153845e4a42573444cd7c122",
+    "text": "Trip Cost.",
+    "toolTip": "",
+    "tooltip": "",
+    "top": "108dp",
+    "wType": "Label",
+    "widgetAlignment": 5,
+    "width": "100%",
+    "wrapping": 2,
+    "zIndex": 900,
+    "zindex": 900
+}

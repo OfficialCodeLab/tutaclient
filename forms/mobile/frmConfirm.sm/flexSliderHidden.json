@@ -1,0 +1,94 @@
+{
+    "DNDConfig": null,
+    "__parentReadjusting__": false,
+    "_height_": {
+        "type": "string",
+        "value": "70dp"
+    },
+    "_left_": {
+        "type": "string",
+        "value": "70dp"
+    },
+    "_margin_": [
+        0,
+        0,
+        0,
+        0
+    ],
+    "_padding_": [
+        0,
+        0,
+        0,
+        0
+    ],
+    "_render_": true,
+    "_skin_": "s9b2ce2774e144da99f795c3ff096827",
+    "_top_": {
+        "type": "string",
+        "value": "65dp"
+    },
+    "_width_": {
+        "type": "string",
+        "value": "280dp"
+    },
+    "allboxes": [],
+    "autogrowMode": 0,
+    "autogrowmode": 0,
+    "canUpdateUI": true,
+    "centerX": "50%",
+    "centerx": {
+        "type": "string",
+        "value": "50%"
+    },
+    "channel": "mobile",
+    "children": [
+        "sliderBook",
+        "lblOverlay"
+    ],
+    "clipBounds": true,
+    "clipbounds": true,
+    "containerWeight": 100,
+    "containerweight": 100,
+    "enableScrolling": true,
+    "enabled": false,
+    "enablescrolling": true,
+    "height": "70dp",
+    "id": "flexSliderHidden",
+    "info": null,
+    "isVisible": false,
+    "isvisible": false,
+    "kuid": "3c17198ef8f44226b371ce324ff69ae7",
+    "layoutType": 2,
+    "layouttype": 2,
+    "left": "70dp",
+    "margin": [
+        0,
+        0,
+        0,
+        0
+    ],
+    "name": "kony.ui.FlexContainer",
+    "orientation": 6,
+    "padding": [
+        0,
+        0,
+        0,
+        0
+    ],
+    "parent": "flexConfirm",
+    "percent": true,
+    "pf": "frmConfirm",
+    "render": true,
+    "skin": "s9b2ce2774e144da99f795c3ff096827",
+    "snapGridSize": 10,
+    "snapToGrid": true,
+    "snapgridsize": 10,
+    "snaptogrid": true,
+    "top": "65dp",
+    "wType": "FlexContainer",
+    "widgetAlignment": 1,
+    "widgetalignment": 1,
+    "width": "280dp",
+    "zIndex": 5,
+    "zindex": 5
+}

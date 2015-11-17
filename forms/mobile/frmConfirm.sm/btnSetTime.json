@@ -1,0 +1,103 @@
+{
+    "@class": "com.kony.gen.viz.model.component.KVizButton",
+    "DNDConfig": null,
+    "__parentReadjusting__": false,
+    "_height_": {
+        "type": "string",
+        "value": "30dp"
+    },
+    "_left_": {
+        "type": "string",
+        "value": "80dp"
+    },
+    "_margin_": [
+        6,
+        6,
+        6,
+        6
+    ],
+    "_padding_": [
+        0,
+        0,
+        0,
+        0
+    ],
+    "_render_": true,
+    "_skin_": "s40f48a4648e49eaae036a6490abea85",
+    "_text_": "",
+    "_top_": {
+        "type": "string",
+        "value": "140dp"
+    },
+    "_width_": {
+        "type": "string",
+        "value": "65%"
+    },
+    "android": {
+        "render": true
+    },
+    "canUpdateUI": true,
+    "centerX": "50%",
+    "centerx": {
+        "type": "string",
+        "value": "50%"
+    },
+    "containerWeight": 100,
+    "containerweight": 100,
+    "contentAlignment": 5,
+    "contentalignment": 5,
+    "displayText": true,
+    "displaytext": true,
+    "enabled": false,
+    "focusSkin": "sf07a62797f248409d6b58a44cce25ca",
+    "focusskin": "sf07a62797f248409d6b58a44cce25ca",
+    "height": "30dp",
+    "id": "btnSetTime",
+    "info": null,
+    "iphone": {
+        "render": true
+    },
+    "isVisible": true,
+    "isvisible": true,
+    "kuid": "ba5b0450c3e143ac9313b2d92164ed3a",
+    "left": "80dp",
+    "margin": [
+        6,
+        6,
+        6,
+        6
+    ],
+    "name": "kony.ui.Button",
+    "padding": [
+        0,
+        0,
+        0,
+        0
+    ],
+    "parent": "flexDetails2",
+    "pf": "frmConfirm",
+    "render": true,
+    "skin": "s40f48a4648e49eaae036a6490abea85",
+    "spaan": {
+        "render": true
+    },
+    "spabb": {
+        "render": true
+    },
+    "spaip": {
+        "render": true
+    },
+    "spawinphone8": {
+        "render": true
+    },
+    "text": "",
+    "top": "140dp",
+    "wType": "Button",
+    "widgetAlignment": 5,
+    "width": "65%",
+    "winphone8": {
+        "render": true
+    },
+    "zIndex": 5,
+    "zindex": 5
+}

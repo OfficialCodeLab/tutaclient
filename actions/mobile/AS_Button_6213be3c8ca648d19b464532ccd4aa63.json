@@ -1,0 +1,21 @@
+{
+	"AS_Button_6213be3c8ca648d19b464532ccd4aa63": {
+		"id": "AS_Button_6213be3c8ca648d19b464532ccd4aa63",
+		"type": "ACTION_SEQUENCE",
+		"params": [
+			{
+				"datatype": "collection",
+				"name": "eventobject"
+			}
+		],
+		"actions": [
+			{
+				"id": "ADD_SNIPPET__12a1d117b34842afaf83bd6d7f8e48e3",
+				"type": "ADD_SNIPPET",
+				"codeSnippet": "frmCreateAcc.show();",
+				"parentId": null,
+				"callbackType": null
+			}
+		]
+	}
+}

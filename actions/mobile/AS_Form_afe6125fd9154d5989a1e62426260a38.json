@@ -1,0 +1,15 @@
+{
+	"AS_Form_afe6125fd9154d5989a1e62426260a38": {
+		"id": "AS_Form_afe6125fd9154d5989a1e62426260a38",
+		"type": "ACTION_SEQUENCE",
+		"actions": [
+			{
+				"id": "ADD_SNIPPET__7e08d06f726a41bfbf62b68095ec0a55",
+				"type": "ADD_SNIPPET",
+				"codeSnippet": "if(hailState == 0) updateMap();\n",
+				"parentId": null,
+				"callbackType": null
+			}
+		]
+	}
+}

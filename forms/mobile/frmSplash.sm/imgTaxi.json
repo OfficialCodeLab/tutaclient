@@ -1,0 +1,96 @@
+{
+    "DNDConfig": null,
+    "__parentReadjusting__": false,
+    "_base64_": null,
+    "_height_": {
+        "type": "string",
+        "value": "200dp"
+    },
+    "_left_": {
+        "type": "string",
+        "value": "152dp"
+    },
+    "_margin_": [
+        0,
+        0,
+        0,
+        0
+    ],
+    "_padding_": [
+        0,
+        0,
+        0,
+        0
+    ],
+    "_skin_": "s4ea8d4d07574957b839f06194980e52",
+    "_src_": "tutalogo.png",
+    "_top_": {
+        "type": "string",
+        "value": "275dp"
+    },
+    "_width_": {
+        "type": "string",
+        "value": "200dp"
+    },
+    "base64": null,
+    "canUpdateUI": true,
+    "centerX": "50%",
+    "centerY": "50%",
+    "centerx": {
+        "type": "string",
+        "value": "50%"
+    },
+    "centery": {
+        "type": "string",
+        "value": "50%"
+    },
+    "channel": "mobile",
+    "containerWeight": 100,
+    "containerweight": 100,
+    "context": {
+        "channel": "mobile",
+        "formID": "frmSplash",
+        "ispercent": true,
+        "platform": "iphone",
+        "templateType": "forms",
+        "topLevelBox": null
+    },
+    "enabled": false,
+    "height": "200dp",
+    "id": "imgTaxi",
+    "imageScaleMode": 1,
+    "imagescalemode": 1,
+    "info": null,
+    "invokedProperty": "src",
+    "isVisible": true,
+    "ispercent": true,
+    "isvisible": true,
+    "kuid": "06dc2e2a8fc448e29066d6ce9ada779d",
+    "left": "152dp",
+    "margin": [
+        0,
+        0,
+        0,
+        0
+    ],
+    "name": "kony.ui.Image2",
+    "padding": [
+        0,
+        0,
+        0,
+        0
+    ],
+    "parent": "flexSplash",
+    "pf": "frmSplash",
+    "render": true,
+    "skin": "s4ea8d4d07574957b839f06194980e52",
+    "src": "tutalogo.png",
+    "srcType": 1,
+    "top": "275dp",
+    "wType": "Image",
+    "widgetAlignment": 5,
+    "widgetalignment": 5,
+    "width": "200dp",
+    "zIndex": 3,
+    "zindex": 3
+}

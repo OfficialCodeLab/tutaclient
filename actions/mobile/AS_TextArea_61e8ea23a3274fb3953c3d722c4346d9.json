@@ -1,0 +1,15 @@
+{
+	"AS_TextArea_61e8ea23a3274fb3953c3d722c4346d9": {
+		"id": "AS_TextArea_61e8ea23a3274fb3953c3d722c4346d9",
+		"type": "ACTION_SEQUENCE",
+		"actions": [
+			{
+				"id": "ADD_SNIPPET__ff3eb0c29f264fd39d24795162333393",
+				"type": "ADD_SNIPPET",
+				"codeSnippet": "frmHelp.imgEdit.isVisible = false;\nfrmHelp.lblHelp.isVisible = false;",
+				"parentId": null,
+				"callbackType": null
+			}
+		]
+	}
+}

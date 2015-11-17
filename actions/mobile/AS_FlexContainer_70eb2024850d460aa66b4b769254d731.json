@@ -1,0 +1,15 @@
+{
+	"AS_FlexContainer_70eb2024850d460aa66b4b769254d731": {
+		"id": "AS_FlexContainer_70eb2024850d460aa66b4b769254d731",
+		"type": "ACTION_SEQUENCE",
+		"actions": [
+			{
+				"id": "ADD_SNIPPET__f26ff07c3d5e4331a5dff30f5cd56707",
+				"type": "ADD_SNIPPET",
+				"codeSnippet": "hailTaxi();",
+				"parentId": null,
+				"callbackType": null
+			}
+		]
+	}
+}

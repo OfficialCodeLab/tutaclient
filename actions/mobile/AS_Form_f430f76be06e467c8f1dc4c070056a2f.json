@@ -1,0 +1,102 @@
+{
+	"AS_Form_f430f76be06e467c8f1dc4c070056a2f": {
+		"id": "AS_Form_f430f76be06e467c8f1dc4c070056a2f",
+		"type": "ACTION_SEQUENCE",
+		"actions": [
+			{
+				"id": "MOVE_ACTION____5528027cc8564a4789542df5fc6c818f",
+				"type": "MOVE_ACTION",
+				"itemType": "FORM",
+				"itemId": "frmMap",
+				"widgetId": "__missing_id__",
+				"itemKUID": "6eb20c3c6a784926866ec0c5966382a5",
+				"widgetKUID": "3199f79303f849b8844064c924b0f4fd",
+				"animationObject": {
+					"centerX": "80%",
+					"anchorPoint": {},
+					"stepConfig": {
+						"timingFunction": "kony.anim.EASIN_IN_OUT"
+					}
+				},
+				"config": {
+					"delay": "0",
+					"iterationCount": 1,
+					"fillMode": "kony.anim.FILL_MODE_FORWARDS",
+					"duration": "250"
+				},
+				"start": "Immediately",
+				"parentAnimation": "MOVE_ACTION____4c166b2b81234ed2ba939659c6ebd0f6",
+				"animationId": "MOVE_ACTION____5528027cc8564a4789542df5fc6c818f",
+				"displayAnimationId": "MOVE_ACTION____5528027cc8564a4789542df5fc6c818f",
+				"forkedPlatform": "all",
+				"parentId": null,
+				"callbackType": null
+			},
+			{
+				"id": "MOVE_ACTION____4c166b2b81234ed2ba939659c6ebd0f6",
+				"type": "MOVE_ACTION",
+				"itemType": "FORM",
+				"itemId": "frmMap",
+				"widgetId": "__missing_id__",
+				"itemKUID": "6eb20c3c6a784926866ec0c5966382a5",
+				"widgetKUID": "c8f2002fe0cd462da0e2609b8303c97c",
+				"animationObject": {
+					"centerX": "50%",
+					"anchorPoint": {},
+					"stepConfig": {
+						"timingFunction": "kony.anim.EASIN_IN_OUT"
+					}
+				},
+				"config": {
+					"delay": "0",
+					"iterationCount": 1,
+					"fillMode": "kony.anim.FILL_MODE_FORWARDS",
+					"duration": "250"
+				},
+				"start": "Immediately",
+				"parentAnimation": "MOVE_ACTION____5528027cc8564a4789542df5fc6c818f",
+				"animationId": "MOVE_ACTION____4c166b2b81234ed2ba939659c6ebd0f6",
+				"displayAnimationId": "MOVE_ACTION____4c166b2b81234ed2ba939659c6ebd0f6",
+				"forkedPlatform": "all",
+				"parentId": null,
+				"callbackType": null
+			},
+			{
+				"id": "MOVE_ACTION____a1ff04964bd44f9db6456cc5ad088ed5",
+				"type": "MOVE_ACTION",
+				"itemType": "FORM",
+				"itemId": "frmMap",
+				"widgetId": "__missing_id__",
+				"itemKUID": "6eb20c3c6a784926866ec0c5966382a5",
+				"widgetKUID": "b395d89c28094f5fb657d28702fbdbaf",
+				"animationObject": {
+					"centerX": "20%",
+					"anchorPoint": {},
+					"stepConfig": {
+						"timingFunction": "kony.anim.EASE"
+					}
+				},
+				"config": {
+					"delay": "0",
+					"iterationCount": 1,
+					"fillMode": "kony.anim.FILL_MODE_FORWARDS",
+					"duration": "250"
+				},
+				"start": "Immediately",
+				"parentAnimation": "MOVE_ACTION____5528027cc8564a4789542df5fc6c818f",
+				"animationId": "MOVE_ACTION____a1ff04964bd44f9db6456cc5ad088ed5",
+				"displayAnimationId": "MOVE_ACTION____a1ff04964bd44f9db6456cc5ad088ed5",
+				"forkedPlatform": "all",
+				"parentId": null,
+				"callbackType": null
+			},
+			{
+				"id": "ADD_SNIPPET__a0da0df7c5fe4a9db9d166b79394473d",
+				"type": "ADD_SNIPPET",
+				"codeSnippet": "if(hailState == 1) {\n  renderDirections(frmMap.mapMain,finalroute,\"0x0000FFFF\",\"pickuppin.png\",\"droppin.png\");\n  showProgress();\n}",
+				"parentId": null,
+				"callbackType": null
+			}
+		]
+	}
+}

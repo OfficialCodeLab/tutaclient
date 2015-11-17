@@ -1,0 +1,86 @@
+{
+    "DNDConfig": null,
+    "__parentReadjusting__": false,
+    "_base64_": null,
+    "_bottom_": {
+        "type": "string",
+        "value": "412dp"
+    },
+    "_height_": {
+        "type": "string",
+        "value": "150dp"
+    },
+    "_margin_": [
+        0,
+        0,
+        0,
+        0
+    ],
+    "_padding_": [
+        0,
+        0,
+        0,
+        0
+    ],
+    "_skin_": "s4ea8d4d07574957b839f06194980e52",
+    "_src_": "ratingstars.png",
+    "_width_": {
+        "type": "string",
+        "value": "80%"
+    },
+    "base64": null,
+    "bottom": "412dp",
+    "canUpdateUI": true,
+    "centerX": "51.56%",
+    "centerx": {
+        "type": "string",
+        "value": "51.56%"
+    },
+    "channel": "mobile",
+    "containerWeight": 100,
+    "containerweight": 100,
+    "context": {
+        "channel": "mobile",
+        "formID": "frmRating",
+        "ispercent": true,
+        "platform": "android",
+        "templateType": "forms",
+        "topLevelBox": null
+    },
+    "enabled": false,
+    "height": "150dp",
+    "id": "imgStars",
+    "imageScaleMode": 1,
+    "imagescalemode": 1,
+    "info": null,
+    "invokedProperty": "src",
+    "isVisible": false,
+    "ispercent": true,
+    "isvisible": false,
+    "kuid": "4a82c4bbc3d34e9f9aa7b29f67b244f4",
+    "margin": [
+        0,
+        0,
+        0,
+        0
+    ],
+    "name": "kony.ui.Image2",
+    "padding": [
+        0,
+        0,
+        0,
+        0
+    ],
+    "parent": "flexMain",
+    "pf": "frmRating",
+    "render": true,
+    "skin": "s4ea8d4d07574957b839f06194980e52",
+    "src": "ratingstars.png",
+    "srcType": 1,
+    "wType": "Image",
+    "widgetAlignment": 5,
+    "widgetalignment": 5,
+    "width": "80%",
+    "zIndex": 2,
+    "zindex": 2
+}

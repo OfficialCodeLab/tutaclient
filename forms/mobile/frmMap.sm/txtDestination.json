@@ -1,0 +1,126 @@
+{
+    "DNDConfig": null,
+    "__parentReadjusting__": false,
+    "_height_": {
+        "type": "string",
+        "value": "40dp"
+    },
+    "_left_": {
+        "type": "string",
+        "value": "0dp"
+    },
+    "_margin_": [
+        0,
+        0,
+        0,
+        0
+    ],
+    "_padding_": [
+        5,
+        0,
+        0,
+        0
+    ],
+    "_placeholder_": "Destination",
+    "_render_": true,
+    "_skin_": "s9814c25af754e7f8005f3f261be22aa",
+    "_text_": "",
+    "_top_": {
+        "type": "string",
+        "value": "50dp"
+    },
+    "_width_": {
+        "type": "string",
+        "value": "100%"
+    },
+    "android": {
+        "@class": "com.kony.gen.viz.model.component.property.textbox2.AndroidTextBox2Property",
+        "render": true
+    },
+    "autoCapitalize": "none",
+    "autoComplete": false,
+    "autoCorrect": false,
+    "autoFilter": false,
+    "autocapitalize": "none",
+    "autocomplete": false,
+    "autocorrect": false,
+    "autofilter": false,
+    "canUpdateUI": true,
+    "channel": "mobile",
+    "containerHeight": "",
+    "containerHeightMode": 1,
+    "containerWeight": 100,
+    "containerheight": "",
+    "containerheightmode": 1,
+    "containerweight": 100,
+    "contentAlignment": 4,
+    "contentalignment": 4,
+    "enabled": false,
+    "height": "40dp",
+    "id": "txtDestination",
+    "info": null,
+    "iphone": {
+        "@class": "com.kony.gen.viz.model.component.property.textbox2.IPhoneTextBox2Property",
+        "render": true
+    },
+    "isVisible": false,
+    "isvisible": false,
+    "keyboardtype": "A",
+    "kuid": "7353038e8d1f48df95fad5ca31f9d381",
+    "left": "0dp",
+    "margin": [
+        0,
+        0,
+        0,
+        0
+    ],
+    "mode": "A",
+    "name": "kony.ui.TextBox2",
+    "padding": [
+        5,
+        0,
+        0,
+        0
+    ],
+    "paddingInPixel": false,
+    "paddinginpixel": false,
+    "parent": "flexMain",
+    "pf": "frmMap",
+    "placeholder": "Destination",
+    "render": true,
+    "secureTextEntry": false,
+    "securetextentry": false,
+    "skin": "s9814c25af754e7f8005f3f261be22aa",
+    "spaan": {
+        "@class": "com.kony.gen.viz.model.component.property.textbox2.SPAAndroidTextBox2Property",
+        "render": true
+    },
+    "spabb": {
+        "@class": "com.kony.gen.viz.model.component.property.textbox2.SPABBTextBox2Property",
+        "render": true
+    },
+    "spaip": {
+        "@class": "com.kony.gen.viz.model.component.property.textbox2.SPAIPhoneTextBox2Property",
+        "render": true
+    },
+    "spawinphone8": {
+        "@class": "com.kony.gen.viz.model.component.property.textbox2.SPAWinPhone8TextBox2Property",
+        "render": true
+    },
+    "text": "",
+    "textInputMode": "A",
+    "textinputmode": "A",
+    "toolTip": "",
+    "top": "50dp",
+    "viewType": "search",
+    "viewtype": "search",
+    "wType": "TextField",
+    "widgetAlignment": 5,
+    "width": "100%",
+    "winphone8": {
+        "@class": "com.kony.gen.viz.model.component.property.textbox2.WinPhone8TextBox2Property",
+        "render": true
+    },
+    "zIndex": 100,
+    "zindex": 100
+}

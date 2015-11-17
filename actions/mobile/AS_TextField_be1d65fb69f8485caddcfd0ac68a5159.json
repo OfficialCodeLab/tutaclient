@@ -1,0 +1,15 @@
+{
+	"AS_TextField_be1d65fb69f8485caddcfd0ac68a5159": {
+		"id": "AS_TextField_be1d65fb69f8485caddcfd0ac68a5159",
+		"type": "ACTION_SEQUENCE",
+		"actions": [
+			{
+				"id": "ADD_SNIPPET__dfb37b0234c54a33b4ad5cd4bb72ac86",
+				"type": "ADD_SNIPPET",
+				"codeSnippet": "frmMap.flexNoOfPeople.isVisible = true;",
+				"parentId": null,
+				"callbackType": null
+			}
+		]
+	}
+}

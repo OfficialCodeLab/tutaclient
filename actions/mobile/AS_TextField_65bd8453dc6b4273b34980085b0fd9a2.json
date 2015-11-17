@@ -1,0 +1,15 @@
+{
+	"AS_TextField_65bd8453dc6b4273b34980085b0fd9a2": {
+		"id": "AS_TextField_65bd8453dc6b4273b34980085b0fd9a2",
+		"type": "ACTION_SEQUENCE",
+		"actions": [
+			{
+				"id": "ADD_SNIPPET__04211a3e9d6548b5b9bd987d127c7d84",
+				"type": "ADD_SNIPPET",
+				"codeSnippet": "selectDestination(frmSearch);",
+				"parentId": null,
+				"callbackType": null
+			}
+		]
+	}
+}

@@ -1,0 +1,15 @@
+{
+	"AS_Button_d8b4f774850a4f73a88dcd98dc92bf65": {
+		"id": "AS_Button_d8b4f774850a4f73a88dcd98dc92bf65",
+		"type": "ACTION_SEQUENCE",
+		"actions": [
+			{
+				"id": "ADD_SNIPPET__b193200fcb294113bd735e674a540459",
+				"type": "ADD_SNIPPET",
+				"codeSnippet": "//frmSearch.show();\nif(geocodeRecieved === true)\n  frmMap.show();",
+				"parentId": null,
+				"callbackType": null
+			}
+		]
+	}
+}

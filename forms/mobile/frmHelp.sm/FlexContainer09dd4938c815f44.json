@@ -1,0 +1,93 @@
+{
+    "DNDConfig": null,
+    "__parentReadjusting__": false,
+    "_height_": {
+        "type": "string",
+        "value": "140dp"
+    },
+    "_left_": {
+        "type": "string",
+        "value": "38dp"
+    },
+    "_margin_": [
+        0,
+        0,
+        0,
+        0
+    ],
+    "_padding_": [
+        0,
+        0,
+        0,
+        0
+    ],
+    "_skin_": "s9b2ce2774e144da99f795c3ff096827",
+    "_top_": {
+        "type": "string",
+        "value": "210dp"
+    },
+    "_width_": {
+        "type": "string",
+        "value": "80%"
+    },
+    "allboxes": [],
+    "autogrowMode": 0,
+    "autogrowmode": 0,
+    "canUpdateUI": true,
+    "centerX": "50%",
+    "centerx": {
+        "type": "string",
+        "value": "50%"
+    },
+    "children": [
+        "imgEdit",
+        "txtHelp",
+        "lblHelp"
+    ],
+    "clipBounds": true,
+    "clipbounds": true,
+    "containerWeight": 100,
+    "containerweight": 100,
+    "enableScrolling": true,
+    "enabled": false,
+    "enablescrolling": true,
+    "height": "140dp",
+    "id": "FlexContainer09dd4938c815f44",
+    "info": null,
+    "isVisible": true,
+    "isvisible": true,
+    "kuid": "41206faf45c64ba095624ed3bd6b2592",
+    "layoutType": 2,
+    "layouttype": 2,
+    "left": "38dp",
+    "margin": [
+        0,
+        0,
+        0,
+        0
+    ],
+    "name": "kony.ui.FlexContainer",
+    "orientation": 6,
+    "padding": [
+        0,
+        0,
+        0,
+        0
+    ],
+    "parent": "FlexScrollContainer071030639d13842",
+    "percent": true,
+    "pf": "frmHelp",
+    "render": true,
+    "skin": "s9b2ce2774e144da99f795c3ff096827",
+    "snapGridSize": 10,
+    "snapToGrid": true,
+    "snapgridsize": 10,
+    "snaptogrid": true,
+    "top": "210dp",
+    "wType": "FlexContainer",
+    "widgetAlignment": 1,
+    "widgetalignment": 1,
+    "width": "80%",
+    "zIndex": 1,
+    "zindex": 1
+}

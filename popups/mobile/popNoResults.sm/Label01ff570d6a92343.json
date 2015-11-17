@@ -1,0 +1,69 @@
+{
+    "@class": "com.kony.gen.viz.model.component.KVizLabel",
+    "DNDConfig": null,
+    "_margin_": [
+        1,
+        1,
+        1,
+        1
+    ],
+    "_padding_": [
+        0,
+        0,
+        0,
+        0
+    ],
+    "_skin_": "sb16a35e9dfc4a8eb2935aff74f6a336",
+    "_text_": "Address not found",
+    "_wrapping_": 2,
+    "canUpdateUI": true,
+    "containerWeight": 100,
+    "containerweight": 100,
+    "contentAlignment": 5,
+    "contentalignment": 5,
+    "enabled": false,
+    "id": "Label01ff570d6a92343",
+    "info": null,
+    "ipad": {
+        "psp": {
+            "wrapping": 2
+        }
+    },
+    "iphone": {
+        "psp": {
+            "wrapping": 2
+        }
+    },
+    "isVisible": true,
+    "isvisible": true,
+    "kuid": "b7d8ae7309a84f3ebd1dcacf07fa632f",
+    "margin": [
+        1,
+        1,
+        1,
+        1
+    ],
+    "name": "kony.ui.Label",
+    "paddInPixel": [
+        0,
+        0,
+        0,
+        0
+    ],
+    "padding": [
+        0,
+        0,
+        0,
+        0
+    ],
+    "parent": "VBox0133f327694fe4e",
+    "pf": "popNoResults",
+    "render": true,
+    "skin": "sb16a35e9dfc4a8eb2935aff74f6a336",
+    "text": "Address not found",
+    "toolTip": "",
+    "tooltip": "",
+    "wType": "Label",
+    "widgetAlignment": 5,
+    "wrapping": 2
+}

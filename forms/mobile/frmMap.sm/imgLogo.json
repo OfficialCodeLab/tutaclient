@@ -1,0 +1,94 @@
+{
+    "DNDConfig": null,
+    "__parentReadjusting__": false,
+    "_base64_": null,
+    "_height_": {
+        "type": "string",
+        "value": "35dp"
+    },
+    "_left_": {
+        "type": "string",
+        "value": "0dp"
+    },
+    "_margin_": [
+        0,
+        0,
+        0,
+        0
+    ],
+    "_padding_": [
+        0,
+        0,
+        0,
+        0
+    ],
+    "_skin_": "s4ea8d4d07574957b839f06194980e52",
+    "_src_": "tutalogosm.png",
+    "_top_": {
+        "type": "string",
+        "value": "369dp"
+    },
+    "_width_": {
+        "type": "string",
+        "value": "40dp"
+    },
+    "base64": null,
+    "canUpdateUI": true,
+    "centerX": "50%",
+    "centerY": "50%",
+    "centerx": {
+        "type": "string",
+        "value": "50%"
+    },
+    "centery": {
+        "type": "string",
+        "value": "50%"
+    },
+    "channel": "mobile",
+    "containerWeight": 100,
+    "containerweight": 100,
+    "context": {
+        "channel": "mobile",
+        "formID": "frmMap",
+        "ispercent": true,
+        "platform": "android",
+        "templateType": "forms",
+        "topLevelBox": null
+    },
+    "enabled": false,
+    "height": "35dp",
+    "id": "imgLogo",
+    "imageScaleMode": 1,
+    "imagescalemode": 1,
+    "info": null,
+    "invokedProperty": "src",
+    "isVisible": true,
+    "ispercent": true,
+    "isvisible": true,
+    "kuid": "6e858687b9fa4ef9a6b2999e52c8a9d7",
+    "left": "0dp",
+    "margin": [
+        0,
+        0,
+        0,
+        0
+    ],
+    "name": "kony.ui.Image2",
+    "padding": [
+        0,
+        0,
+        0,
+        0
+    ],
+    "parent": "flexHeader",
+    "pf": "frmMap",
+    "render": true,
+    "skin": "s4ea8d4d07574957b839f06194980e52",
+    "src": "tutalogosm.png",
+    "srcType": 1,
+    "top": "369dp",
+    "wType": "Image",
+    "widgetAlignment": 5,
+    "widgetalignment": 5,
+    "width": "40dp"
+}

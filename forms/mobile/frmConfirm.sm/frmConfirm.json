@@ -1,0 +1,228 @@
+{
+    "DNDConfig": null,
+    "_margin_": [
+        0,
+        0,
+        0,
+        0
+    ],
+    "_padding_": [
+        0,
+        0,
+        0,
+        0
+    ],
+    "_skin_": "s1938375ce72486f894e571cf35fe3d8",
+    "_title_": null,
+    "addWidgetsdone": false,
+    "allboxes": [],
+    "android": {
+        "@class": "com.kony.gen.viz.model.container.property.scrollflexform.AndroidScrollFlexFormProperty",
+        "needAppMenu": false,
+        "psp": {
+            "windowSoftInputMode": 2
+        }
+    },
+    "bounces": false,
+    "bouncesZoom": false,
+    "bounceszoom": false,
+    "canUpdateUI": true,
+    "channel": "mobile",
+    "children": [
+        "flexDateTime",
+        "flexBg"
+    ],
+    "containerWeight": 100,
+    "containerweight": 100,
+    "contentOffsetX": 0,
+    "contentOffsetY": 0,
+    "contentSizeHeight": 0,
+    "contentSizeWidth": 0,
+    "currentLocale": null,
+    "desktopweb": {
+        "needAppMenu": false
+    },
+    "device": "iPhone6PlusZoomed",
+    "displayOrientation": 1,
+    "displayorientation": 1,
+    "enableScrolling": true,
+    "enabled": false,
+    "enabledForIdleTimeout": false,
+    "enabledforidletimeout": false,
+    "enablescrolling": true,
+    "id": "frmConfirm",
+    "info": null,
+    "initdone": false,
+    "inputAccessoryViewType": 4,
+    "inputaccessoryviewtype": 4,
+    "invokedProperty": "footers",
+    "ipad": {
+        "psp": {
+            "inputAccessoryViewType": 4
+        }
+    },
+    "iphone": {
+        "@class": "com.kony.gen.viz.model.container.property.scrollflexform.IPhoneScrollFlexFormProperty",
+        "needAppMenu": false,
+        "psp": {
+            "bouncesZoom": false,
+            "inputAccessoryViewType": 4,
+            "titleBarConfig": {
+                "buttonClosureLeftSideView": "",
+                "buttonClosureRightSideView": "",
+                "buttonText": "Edit",
+                "leftButtonText": "Back",
+                "leftTitle": "Back",
+                "prevFormTitle": false,
+                "renderTitleText": true,
+                "rightTitle": "Edit",
+                "titleBarLeftSideView": "button",
+                "titleBarRightSideView": "button",
+                "titleClosureLeftSideView": "",
+                "titleClosureRightSideView": "",
+                "visible": false
+            }
+        },
+        "titleBar": false
+    },
+    "isVisible": true,
+    "isvisible": true,
+    "kuid": "2955918f0d594eafbfb045b7a8b080e8",
+    "layoutType": 2,
+    "layouttype": 2,
+    "margin": [
+        0,
+        0,
+        0,
+        0
+    ],
+    "name": "kony.ui.Form2",
+    "needAppMenu": true,
+    "needappmenu": true,
+    "orientation": 1,
+    "padding": [
+        0,
+        0,
+        0,
+        0
+    ],
+    "paddingInPixel": false,
+    "paddinginpixel": false,
+    "percent": true,
+    "platform": "iphone",
+    "postShow": "AS_Form_d4ed43dda9df430c9139bd12d99975d2",
+    "postshow": "AS_Form_d4ed43dda9df430c9139bd12d99975d2",
+    "prevDevice": "iPhone3",
+    "prevPlatform": "spaip",
+    "render": true,
+    "retainScrollPosition": false,
+    "retainscrollposition": false,
+    "shellCSS": "iOS_iPhone6PlusZoomed",
+    "skin": "s1938375ce72486f894e571cf35fe3d8",
+    "snapGridSize": 10,
+    "snapToGrid": true,
+    "snapgridsize": 10,
+    "snaptogrid": true,
+    "spaan": {
+        "@class": "com.kony.gen.viz.model.container.property.scrollflexform.SPAAndroidScrollFlexFormProperty",
+        "needAppMenu": false
+    },
+    "spabb": {
+        "@class": "com.kony.gen.viz.model.container.property.scrollflexform.SPABBScrollFlexFormProperty",
+        "needAppMenu": false
+    },
+    "spaip": {
+        "@class": "com.kony.gen.viz.model.container.property.scrollflexform.SPAIPhoneScrollFlexFormProperty",
+        "needAppMenu": false
+    },
+    "spawinphone8": {
+        "@class": "com.kony.gen.viz.model.container.property.scrollflexform.SPAWinPhone8ScrollFlexFormProperty",
+        "needAppMenu": false
+    },
+    "title": null,
+    "titleBar": true,
+    "titleBarModel": {
+        "DNDConfig": null,
+        "_margin_": [
+            0,
+            0,
+            0,
+            0
+        ],
+        "_padding_": [
+            0,
+            0,
+            0,
+            0
+        ],
+        "_skin_": "s24ff015bbae4b4f9f512411222c0409",
+        "_text_": "",
+        "_visible_": false,
+        "buttonClosureLeftSideView": "",
+        "buttonClosureRightSideView": "",
+        "buttonText": "Edit",
+        "buttonclosureleftsideview": "",
+        "buttonclosurerightsideview": "",
+        "buttontext": "Edit",
+        "canUpdateUI": true,
+        "containerWeight": 0,
+        "containerweight": 0,
+        "enabled": false,
+        "id": "frmConfirm_titleBar",
+        "ide_buttonClosureLeftSideView": "",
+        "ide_buttonClosureRightSideView": "",
+        "ide_titleClosureLeftSideView": "",
+        "ide_titleClosureRightSideView": "",
+        "info": null,
+        "isVisible": true,
+        "isvisible": true,
+        "leftButtonText": "Back",
+        "leftTitle": "Back",
+        "leftbuttontext": "Back",
+        "lefttitle": "Back",
+        "margin": [
+            0,
+            0,
+            0,
+            0
+        ],
+        "name": "kony.ui.TitleBar",
+        "osPlatform": "",
+        "osVersion": "iOS7",
+        "padding": [
+            0,
+            0,
+            0,
+            0
+        ],
+        "prevFormTitle": false,
+        "prevformtitle": false,
+        "render": true,
+        "renderTitleText": true,
+        "rendertitletext": true,
+        "rightTitle": "Edit",
+        "righttitle": "Edit",
+        "skin": "s24ff015bbae4b4f9f512411222c0409",
+        "text": "",
+        "titleBarLeftSideView": "button",
+        "titleBarRightSideView": "button",
+        "titleClosureLeftSideView": "",
+        "titleClosureRightSideView": "",
+        "titlebarleftsideview": "button",
+        "titlebarrightsideview": "button",
+        "titleclosureleftsideview": "",
+        "titleclosurerightsideview": "",
+        "visible": false,
+        "wType": "TitleBar",
+        "widgetAlignment": 5
+    },
+    "titleBarSkin": "s24ff015bbae4b4f9f512411222c0409",
+    "titlebar": true,
+    "type": 3,
+    "wType": "Form",
+    "widgetAlignment": 5,
+    "winphone8": {
+        "@class": "com.kony.gen.viz.model.container.property.scrollflexform.WinPhone8ScrollFlexFormProperty",
+        "needAppMenu": false
+    }
+}

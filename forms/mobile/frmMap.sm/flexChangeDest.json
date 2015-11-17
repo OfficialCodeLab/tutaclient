@@ -1,0 +1,102 @@
+{
+    "DNDConfig": null,
+    "__parentReadjusting__": false,
+    "_height_": {
+        "type": "string",
+        "value": "70dp"
+    },
+    "_left_": {
+        "type": "string",
+        "value": "73dp"
+    },
+    "_margin_": [
+        0,
+        0,
+        0,
+        0
+    ],
+    "_padding_": [
+        0,
+        0,
+        0,
+        0
+    ],
+    "_skin_": "s9b2ce2774e144da99f795c3ff096827",
+    "_top_": {
+        "type": "string",
+        "value": "299dp"
+    },
+    "_width_": {
+        "type": "string",
+        "value": "240dp"
+    },
+    "allboxes": [],
+    "autogrowMode": 0,
+    "autogrowmode": 0,
+    "canUpdateUI": true,
+    "centerX": "50%",
+    "centerY": "50%",
+    "centerx": {
+        "type": "string",
+        "value": "50%"
+    },
+    "centery": {
+        "type": "string",
+        "value": "50%"
+    },
+    "children": [
+        "FlexContainer0c79ff7fb14b843",
+        "FlexContainer0c0b2958d7e054a",
+        "FlexContainer07ebb1525e3fe42",
+        "FlexContainer0060e8460df8d4d",
+        "Label045a3236ad45d43",
+        "CopyLabel0edc5168d91094c",
+        "btnDrop"
+    ],
+    "clipBounds": true,
+    "clipbounds": true,
+    "containerWeight": 100,
+    "containerweight": 100,
+    "enableScrolling": true,
+    "enabled": false,
+    "enablescrolling": true,
+    "height": "70dp",
+    "id": "flexChangeDest",
+    "info": null,
+    "isVisible": true,
+    "isvisible": true,
+    "kuid": "373d1b4ec8d641029a72150319420318",
+    "layoutType": 2,
+    "layouttype": 2,
+    "left": "73dp",
+    "margin": [
+        0,
+        0,
+        0,
+        0
+    ],
+    "name": "kony.ui.FlexContainer",
+    "orientation": 6,
+    "padding": [
+        0,
+        0,
+        0,
+        0
+    ],
+    "parent": "flexAll",
+    "percent": true,
+    "pf": "frmMap",
+    "render": true,
+    "skin": "s9b2ce2774e144da99f795c3ff096827",
+    "snapGridSize": 10,
+    "snapToGrid": true,
+    "snapgridsize": 10,
+    "snaptogrid": true,
+    "top": "299dp",
+    "wType": "FlexContainer",
+    "widgetAlignment": 1,
+    "widgetalignment": 1,
+    "width": "240dp",
+    "zIndex": 900,
+    "zindex": 900
+}

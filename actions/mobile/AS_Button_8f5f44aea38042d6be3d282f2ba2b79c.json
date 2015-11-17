@@ -1,0 +1,21 @@
+{
+	"AS_Button_8f5f44aea38042d6be3d282f2ba2b79c": {
+		"id": "AS_Button_8f5f44aea38042d6be3d282f2ba2b79c",
+		"type": "ACTION_SEQUENCE",
+		"params": [
+			{
+				"datatype": "collection",
+				"name": "eventobject"
+			}
+		],
+		"actions": [
+			{
+				"id": "ADD_SNIPPET__9de50d3c8a5a4c3cac9c45b7006e0a86",
+				"type": "ADD_SNIPPET",
+				"codeSnippet": "frmMap.show();",
+				"parentId": null,
+				"callbackType": null
+			}
+		]
+	}
+}

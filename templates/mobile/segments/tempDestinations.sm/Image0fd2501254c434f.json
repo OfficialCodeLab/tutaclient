@@ -1,0 +1,97 @@
+{
+    "DNDConfig": null,
+    "__parentReadjusting__": false,
+    "_base64_": null,
+    "_height_": {
+        "type": "string",
+        "value": "96dp"
+    },
+    "_left_": {
+        "type": "string",
+        "value": "18dp"
+    },
+    "_margin_": [
+        0,
+        0,
+        0,
+        0
+    ],
+    "_padding_": [
+        0,
+        0,
+        0,
+        0
+    ],
+    "_skin_": "s4ea8d4d07574957b839f06194980e52",
+    "_src_": "pin.png",
+    "_top_": {
+        "type": "string",
+        "value": "7dp"
+    },
+    "_width_": {
+        "type": "string",
+        "value": "88dp"
+    },
+    "base64": null,
+    "canUpdateUI": true,
+    "channel": "mobile",
+    "containerId": true,
+    "containerWeight": 100,
+    "containerweight": 100,
+    "context": {
+        "channel": "mobile",
+        "platform": "iphone",
+        "templateType": "segments",
+        "topLevelBox": null
+    },
+    "enabled": false,
+    "height": {
+        "type": "string",
+        "value": "96dp"
+    },
+    "id": "Image0fd2501254c434f",
+    "imageScaleMode": 1,
+    "imagescalemode": 1,
+    "info": null,
+    "invokedProperty": "src",
+    "isSegmentChild": false,
+    "isVisible": true,
+    "isvisible": true,
+    "kuid": "f8e3516f3eba4945adbc891d57ed8210",
+    "left": {
+        "type": "string",
+        "value": "18dp"
+    },
+    "margin": [
+        0,
+        0,
+        0,
+        0
+    ],
+    "name": "kony.ui.Image2",
+    "padding": [
+        0,
+        0,
+        0,
+        0
+    ],
+    "parent": "FlexContainer0f09b6d2ad35646",
+    "pf": "tempDestinations",
+    "render": true,
+    "skin": "s4ea8d4d07574957b839f06194980e52",
+    "src": "pin.png",
+    "srcType": 1,
+    "top": {
+        "type": "string",
+        "value": "7dp"
+    },
+    "wType": "Image",
+    "widgetAlignment": 5,
+    "widgetalignment": 5,
+    "width": {
+        "type": "string",
+        "value": "88dp"
+    },
+    "zIndex": 1,
+    "zindex": 1
+}

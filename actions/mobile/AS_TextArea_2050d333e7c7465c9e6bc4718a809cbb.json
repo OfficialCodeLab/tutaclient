@@ -1,0 +1,14 @@
+{
+	"AS_TextArea_2050d333e7c7465c9e6bc4718a809cbb": {
+		"id": "AS_TextArea_2050d333e7c7465c9e6bc4718a809cbb",
+		"type": "ACTION_SEQUENCE",
+		"actions": [
+			{
+				"id": "ADD_SNIPPET_onEndEditing_47b46f2ab56b4289a20878a31ba471d0",
+				"type": "ADD_SNIPPET",
+				"codeSnippet": "frmHelp.imgEdit.isVisible = true;\n\nif(frmHelp.txtHelp.text === \"\")\n\tfrmHelp.lblHelp.isVisible = true;",
+				"callbackType": null
+			}
+		]
+	}
+}

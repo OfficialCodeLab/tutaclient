@@ -1,0 +1,16 @@
+{
+    "background_color": "ffffff00",
+    "bg_type": "one",
+    "border_color": "282828ff",
+    "border_style": "plain",
+    "border_type": 0,
+    "border_width": 1,
+    "font_color": "ffffffff",
+    "font_name": "Helvetica",
+    "font_size": 225,
+    "font_style": "normal",
+    "font_weight": "normal",
+    "isDefaultSkin": false,
+    "kuid": "sed96d472f1a49008c49d2360d291311",
+    "wType": "TextField"
+}

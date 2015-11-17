@@ -1,0 +1,15 @@
+{
+	"AS_FlexContainer_a0a248d83ed8457985e926dff492ba10": {
+		"id": "AS_FlexContainer_a0a248d83ed8457985e926dff492ba10",
+		"type": "ACTION_SEQUENCE",
+		"actions": [
+			{
+				"id": "ADD_SNIPPET__8e8496c57e234e18b7f055720f9466c0",
+				"type": "ADD_SNIPPET",
+				"codeSnippet": "onSearchComplete();",
+				"parentId": null,
+				"callbackType": null
+			}
+		]
+	}
+}

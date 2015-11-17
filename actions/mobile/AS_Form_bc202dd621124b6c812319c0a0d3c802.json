@@ -1,0 +1,38 @@
+{
+	"AS_Form_bc202dd621124b6c812319c0a0d3c802": {
+		"id": "AS_Form_bc202dd621124b6c812319c0a0d3c802",
+		"type": "ACTION_SEQUENCE",
+		"actions": [
+			{
+				"id": "SCALE_ACTION____c3d31ad6edd345bb8aeef03d386447fc",
+				"type": "SCALE_ACTION",
+				"itemType": "FORM",
+				"itemId": "frmSplash",
+				"widgetId": "__missing_id__",
+				"itemKUID": "2900f01502014865afbca4438414bc59",
+				"widgetKUID": "cba72b49d8ce4dc5ae1bd845c34a800f",
+				"animationObject": {
+					"anchorPoint": {},
+					"stepConfig": {
+						"timingFunction": "kony.anim.EASIN_IN_OUT"
+					},
+					"width": "150dp",
+					"height": "150dp"
+				},
+				"config": {
+					"delay": "0",
+					"iterationCount": 0,
+					"fillMode": "kony.anim.FILL_MODE_FORWARDS",
+					"duration": "250",
+					"direction": "kony.anim.DIRECTION_ALTERNATE"
+				},
+				"start": "Immediately",
+				"animationId": "SCALE_ACTION____c3d31ad6edd345bb8aeef03d386447fc",
+				"displayAnimationId": "SCALE_ACTION____c3d31ad6edd345bb8aeef03d386447fc",
+				"forkedPlatform": "all",
+				"parentId": null,
+				"callbackType": null
+			}
+		]
+	}
+}

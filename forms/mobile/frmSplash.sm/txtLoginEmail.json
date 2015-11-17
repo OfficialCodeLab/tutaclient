@@ -1,0 +1,117 @@
+{
+    "DNDConfig": null,
+    "__parentReadjusting__": false,
+    "_bottom_": {
+        "type": "string",
+        "value": "200dp"
+    },
+    "_height_": {
+        "type": "string",
+        "value": "45dp"
+    },
+    "_margin_": [
+        0,
+        0,
+        0,
+        0
+    ],
+    "_padding_": [
+        5,
+        0,
+        0,
+        0
+    ],
+    "_placeholder_": "Email",
+    "_skin_": "s62aaba755b84e769df0729a9cb5e8bd",
+    "_text_": "",
+    "_width_": {
+        "type": "string",
+        "value": "80%"
+    },
+    "android": {
+        "psp": {
+            "keyboardActionLabel": 4
+        }
+    },
+    "autoCapitalize": "none",
+    "autoComplete": false,
+    "autoCorrect": false,
+    "autoFilter": false,
+    "autocapitalize": "none",
+    "autocomplete": false,
+    "autocorrect": false,
+    "autofilter": false,
+    "bottom": "200dp",
+    "canUpdateUI": true,
+    "centerX": "50%",
+    "centerx": {
+        "type": "string",
+        "value": "50%"
+    },
+    "channel": "mobile",
+    "containerHeight": "",
+    "containerHeightMode": 1,
+    "containerWeight": 100,
+    "containerheight": "",
+    "containerheightmode": 1,
+    "containerweight": 100,
+    "contentAlignment": 4,
+    "contentalignment": 4,
+    "disabledSkins": {},
+    "enabled": false,
+    "focusSkin": "s62aaba755b84e769df0729a9cb5e8bd",
+    "focusskin": "s62aaba755b84e769df0729a9cb5e8bd",
+    "height": "45dp",
+    "id": "txtLoginEmail",
+    "info": null,
+    "iphone": {
+        "@class": "com.kony.gen.viz.model.component.property.textbox2.IPhoneTextBox2Property",
+        "psp": {
+            "keyboardActionLabel": 4
+        }
+    },
+    "isVisible": true,
+    "isvisible": true,
+    "keyBoardStyle": "emailpad",
+    "keyboardActionLabel": 4,
+    "keyboardactionlabel": 4,
+    "keyboardstyle": "emailpad",
+    "keyboardtype": "A",
+    "kuid": "417b3f0059eb48be893ebbeb22e0b54b",
+    "margin": [
+        0,
+        0,
+        0,
+        0
+    ],
+    "mode": "A",
+    "name": "kony.ui.TextBox2",
+    "padding": [
+        5,
+        0,
+        0,
+        0
+    ],
+    "paddingInPixel": false,
+    "paddinginpixel": false,
+    "parent": "flexLogin",
+    "pf": "frmSplash",
+    "placeholder": "Email",
+    "placeholderSkin": "s62aaba755b84e769df0729a9cb5e8bd",
+    "placeholderskin": "s62aaba755b84e769df0729a9cb5e8bd",
+    "render": true,
+    "secureTextEntry": false,
+    "securetextentry": false,
+    "skin": "s62aaba755b84e769df0729a9cb5e8bd",
+    "text": "",
+    "textInputMode": "A",
+    "textinputmode": "A",
+    "toolTip": "",
+    "viewType": "default",
+    "viewtype": "default",
+    "wType": "TextField",
+    "widgetAlignment": 5,
+    "width": "80%",
+    "zIndex": 3,
+    "zindex": 3
+}

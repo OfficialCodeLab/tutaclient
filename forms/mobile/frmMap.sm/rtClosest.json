@@ -1,0 +1,84 @@
+{
+    "@class": "com.kony.gen.viz.model.component.KVizRichText",
+    "DNDConfig": null,
+    "__parentReadjusting__": false,
+    "_height_": {
+        "type": "string",
+        "value": "80%"
+    },
+    "_left_": {
+        "type": "string",
+        "value": "12dp"
+    },
+    "_margin_": [
+        0,
+        0,
+        0,
+        0
+    ],
+    "_padding_": [
+        0,
+        0,
+        0,
+        0
+    ],
+    "_skin_": "s9b5367575654c5c95afe6f62b0dabc8",
+    "_text_": "5<br>min",
+    "_top_": {
+        "type": "string",
+        "value": "9dp"
+    },
+    "_width_": {
+        "type": "string",
+        "value": "80%"
+    },
+    "_wrapping_": 2,
+    "canUpdateUI": true,
+    "centerX": "55%",
+    "centerY": "50%",
+    "centerx": {
+        "type": "string",
+        "value": "55%"
+    },
+    "centery": {
+        "type": "string",
+        "value": "50%"
+    },
+    "containerWeight": 100,
+    "containerweight": 100,
+    "contentAlignment": 5,
+    "contentalignment": 5,
+    "enabled": false,
+    "height": "80%",
+    "id": "rtClosest",
+    "info": null,
+    "isVisible": true,
+    "isvisible": true,
+    "kuid": "dded37337fb443b083a4fd1b6168f795",
+    "left": "12dp",
+    "margin": [
+        0,
+        0,
+        0,
+        0
+    ],
+    "name": "kony.ui.RichText",
+    "padding": [
+        0,
+        0,
+        0,
+        0
+    ],
+    "parent": "FlexContainer07ebb1525e3fe42",
+    "pf": "frmMap",
+    "render": true,
+    "skin": "s9b5367575654c5c95afe6f62b0dabc8",
+    "text": "5<br>min",
+    "toolTip": "",
+    "top": "9dp",
+    "wType": "RichText",
+    "widgetAlignment": 5,
+    "widgetalignment": 5,
+    "width": "80%",
+    "wrapping": 2
+}

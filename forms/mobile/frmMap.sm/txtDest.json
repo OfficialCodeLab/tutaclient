@@ -1,0 +1,111 @@
+{
+    "DNDConfig": null,
+    "__parentReadjusting__": false,
+    "_height_": {
+        "type": "string",
+        "value": "35dp"
+    },
+    "_left_": {
+        "type": "string",
+        "value": "150dp"
+    },
+    "_margin_": [
+        0,
+        0,
+        0,
+        0
+    ],
+    "_padding_": [
+        0,
+        0,
+        0,
+        0
+    ],
+    "_placeholder_": "Click to Set a Destination",
+    "_skin_": "s61aed0c198a4dd68565641b916078e2",
+    "_text_": "",
+    "_top_": {
+        "type": "string",
+        "value": "25dp"
+    },
+    "_width_": {
+        "type": "string",
+        "value": "200dp"
+    },
+    "android": {},
+    "autoCapitalize": "none",
+    "autoComplete": false,
+    "autoCorrect": false,
+    "autoFilter": false,
+    "autocapitalize": "none",
+    "autocomplete": false,
+    "autocorrect": false,
+    "autofilter": false,
+    "canUpdateUI": true,
+    "centerX": "50%",
+    "centerx": {
+        "type": "string",
+        "value": "50%"
+    },
+    "channel": "mobile",
+    "containerHeight": "",
+    "containerHeightMode": 1,
+    "containerWeight": 100,
+    "containerheight": "",
+    "containerheightmode": 1,
+    "containerweight": 100,
+    "contentAlignment": 5,
+    "contentalignment": 5,
+    "enabled": false,
+    "focusSkin": "s61aed0c198a4dd68565641b916078e2",
+    "focusskin": "s61aed0c198a4dd68565641b916078e2",
+    "height": "35dp",
+    "id": "txtDest",
+    "info": null,
+    "iphone": {
+        "@class": "com.kony.gen.viz.model.component.property.textbox2.IPhoneTextBox2Property"
+    },
+    "isVisible": true,
+    "isvisible": true,
+    "keyboardtype": "A",
+    "kuid": "9bb8e98e86504f85a6e9e861808cfd0b",
+    "left": "150dp",
+    "margin": [
+        0,
+        0,
+        0,
+        0
+    ],
+    "mode": "A",
+    "name": "kony.ui.TextBox2",
+    "padding": [
+        0,
+        0,
+        0,
+        0
+    ],
+    "paddingInPixel": false,
+    "paddinginpixel": false,
+    "parent": "flexAddress",
+    "pf": "frmMap",
+    "placeholder": "Click to Set a Destination",
+    "placeholderSkin": "s61aed0c198a4dd68565641b916078e2",
+    "placeholderskin": "s61aed0c198a4dd68565641b916078e2",
+    "render": true,
+    "secureTextEntry": false,
+    "securetextentry": false,
+    "skin": "s61aed0c198a4dd68565641b916078e2",
+    "spa": {},
+    "text": "",
+    "textInputMode": "A",
+    "textinputmode": "A",
+    "toolTip": "",
+    "top": "25dp",
+    "viewType": "default",
+    "viewtype": "default",
+    "wType": "TextField",
+    "widgetAlignment": 5,
+    "width": "200dp",
+    "zIndex": 200,
+    "zindex": 200
+}

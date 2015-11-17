@@ -1,0 +1,191 @@
+{
+    "DNDConfig": null,
+    "__parentReadjusting__": false,
+    "_data_": [
+        {
+            "lblAddress": {
+                "@class": "com.viz.ide.model.segment.SimpleTextSegmentData",
+                "text": "Address goes here"
+            }
+        },
+        {
+            "lblAddress": {
+                "@class": "com.viz.ide.model.segment.SimpleTextSegmentData",
+                "text": "Address goes here"
+            }
+        },
+        {
+            "lblAddress": {
+                "@class": "com.viz.ide.model.segment.SimpleTextSegmentData",
+                "text": "Address goes here"
+            }
+        }
+    ],
+    "_height_": {
+        "type": "string",
+        "value": "100%"
+    },
+    "_indicator_": "none",
+    "_left_": {
+        "type": "string",
+        "value": "0dp"
+    },
+    "_margin_": [
+        0,
+        0,
+        0,
+        0
+    ],
+    "_orientation_": 2,
+    "_padding_": [
+        0,
+        0,
+        0,
+        0
+    ],
+    "_rowTemplateId": "tmpAddress",
+    "_top_": {
+        "type": "string",
+        "value": "0dp"
+    },
+    "_width_": {
+        "type": "string",
+        "value": "100%"
+    },
+    "autogrowMode": 0,
+    "autogrowmode": 0,
+    "canUpdateUI": true,
+    "channel": "mobile",
+    "containerWeight": 100,
+    "containerweight": 100,
+    "context": {
+        "channel": "mobile",
+        "formID": "AdvancedWidgetsSegements",
+        "templateType": "segments",
+        "topLevelBox": false
+    },
+    "counter": "02",
+    "data": [
+        {
+            "lblAddress": {
+                "@class": "com.viz.ide.model.segment.SimpleTextSegmentData",
+                "text": "Address goes here"
+            }
+        },
+        {
+            "lblAddress": {
+                "@class": "com.viz.ide.model.segment.SimpleTextSegmentData",
+                "text": "Address goes here"
+            }
+        },
+        {
+            "lblAddress": {
+                "@class": "com.viz.ide.model.segment.SimpleTextSegmentData",
+                "text": "Address goes here"
+            }
+        }
+    ],
+    "enabled": false,
+    "focusedindex": null,
+    "focuseditem": null,
+    "groupCells": false,
+    "groupcells": false,
+    "hasSections": false,
+    "height": "100%",
+    "id": "segAddressList",
+    "indicator": "none",
+    "info": null,
+    "ipad": {
+        "psp": {
+            "indicator": "rowselect"
+        }
+    },
+    "iphone": {
+        "@class": "com.kony.gen.viz.model.container.property.segment2.IPhoneSegment2Property",
+        "psp": {
+            "indicator": "rowselect"
+        }
+    },
+    "isVisible": true,
+    "isvisible": true,
+    "kuid": "4bf1a846e1b34380b16f1cb7eafa2578",
+    "left": "0dp",
+    "margin": [
+        0,
+        0,
+        0,
+        0
+    ],
+    "name": "kony.ui.SegmentedUI2",
+    "needPageIndicator": true,
+    "needpageindicator": true,
+    "orientation": 2,
+    "padding": [
+        0,
+        0,
+        0,
+        0
+    ],
+    "pageOffDotImage": "pageOffDot.png",
+    "pageOnDotImage": "pageOnDot.png",
+    "pageoffdotimage": "pageOffDot.png",
+    "pageondotimage": "pageOnDot.png",
+    "paginationconfig": {
+        "position": "bottom"
+    },
+    "parent": "flexAddressList",
+    "pf": "frmMap",
+    "render": true,
+    "retainSelection": false,
+    "retainselection": false,
+    "rowFocusSkin": "sc57369e6c524f6496c4f12ef441a38f",
+    "rowSkin": "s50f64fdfd8442afbe42dbe19b6dd332",
+    "rowTemplateId": "c9613f46dc824acd8dce9c20d40f8891",
+    "rowcounter": 2,
+    "rowfocusskin": "sc57369e6c524f6496c4f12ef441a38f",
+    "rowskin": "s50f64fdfd8442afbe42dbe19b6dd332",
+    "rowtemplate": "FlexContainer0913061f1cd4b4b",
+    "screenLevelWidget": false,
+    "screenlevelwidget": false,
+    "scrollingEvents": false,
+    "scrollingevents": false,
+    "seccounter": 0,
+    "sectionHeaderSkin": "sbc6aaf22fe14c04a0dda0a790a772f6",
+    "sectionheaderskin": "sbc6aaf22fe14c04a0dda0a790a772f6",
+    "selectedIndex": null,
+    "selectedIndices": null,
+    "selectedItems": null,
+    "selectedRows": null,
+    "selectedState": false,
+    "selectedindex": null,
+    "selectedindices": null,
+    "selecteditems": null,
+    "selectedsectionindex": 0,
+    "selectionBehavior": "default",
+    "selectionbehavior": "default",
+    "separatorColor": "64646400",
+    "separatorRequired": true,
+    "separatorThickness": 1,
+    "separatorcolor": "64646400",
+    "separatorrequired": true,
+    "separatorthickness": 1,
+    "showScrollbars": false,
+    "showscrollbars": false,
+    "top": "0dp",
+    "viewType": "tableview",
+    "viewtype": "tableview",
+    "wType": "Segment",
+    "widgetAlignment": 5,
+    "widgetDataMap": {
+        "FlexContainer0913061f1cd4b4b": "FlexContainer0913061f1cd4b4b",
+        "lblAddress": "lblAddress"
+    },
+    "widgetSkin": "s80df7b7d2b8486eb967ceb14db0a6d1",
+    "widgetalignment": 5,
+    "widgetdatamap": {
+        "FlexContainer0913061f1cd4b4b": "FlexContainer0913061f1cd4b4b",
+        "lblAddress": "lblAddress"
+    },
+    "widgetskin": "s80df7b7d2b8486eb967ceb14db0a6d1",
+    "width": "100%"
+}

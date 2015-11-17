@@ -1,0 +1,93 @@
+{
+    "DNDConfig": null,
+    "__parentReadjusting__": false,
+    "_bottom_": {
+        "type": "string",
+        "value": "22%"
+    },
+    "_height_": {
+        "type": "ref",
+        "value": "preferred"
+    },
+    "_margin_": [
+        1,
+        1,
+        1,
+        1
+    ],
+    "_padding_": [
+        0,
+        0,
+        0,
+        0
+    ],
+    "_skin_": "s43764eb48154149a391e1119af9701c",
+    "_text_": "Please rate your experience with this driver.",
+    "_width_": {
+        "type": "ref",
+        "value": "preferred"
+    },
+    "_wrapping_": 2,
+    "bottom": "22%",
+    "canUpdateUI": true,
+    "centerX": "50%",
+    "centerx": {
+        "type": "string",
+        "value": "50%"
+    },
+    "channel": "mobile",
+    "containerWeight": 100,
+    "containerweight": 100,
+    "contentAlignment": 4,
+    "contentalignment": 4,
+    "enabled": false,
+    "height": {
+        "type": "ref",
+        "value": "preferred"
+    },
+    "id": "lblPlsRate",
+    "info": null,
+    "ipad": {
+        "psp": {
+            "wrapping": 2
+        }
+    },
+    "iphone": {
+        "@class": "com.kony.gen.viz.model.component.property.label.IPhoneLabelProperty",
+        "psp": {
+            "wrapping": 2
+        }
+    },
+    "isVisible": true,
+    "isvisible": true,
+    "kuid": "cd7c3b83123a4e8fb8442a766a7e1bf1",
+    "margin": [
+        1,
+        1,
+        1,
+        1
+    ],
+    "name": "kony.ui.Label",
+    "padding": [
+        0,
+        0,
+        0,
+        0
+    ],
+    "parent": "FlexContainer03d11d945e7de4a",
+    "pf": "frmRating",
+    "render": true,
+    "skin": "s43764eb48154149a391e1119af9701c",
+    "text": "Please rate your experience with this driver.",
+    "toolTip": "",
+    "tooltip": "",
+    "wType": "Label",
+    "widgetAlignment": 5,
+    "width": {
+        "type": "ref",
+        "value": "preferred"
+    },
+    "wrapping": 2,
+    "zIndex": 2,
+    "zindex": 2
+}

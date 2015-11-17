@@ -1,0 +1,22 @@
+{
+	"AS_Button_6976d62762f549b784c739daf6d6eee6": {
+		"id": "AS_Button_6976d62762f549b784c739daf6d6eee6",
+		"type": "ACTION_SEQUENCE",
+		"params": [
+			{
+				"datatype": "collection",
+				"name": "eventobject"
+			}
+		],
+		"actions": [
+			{
+				"id": "DISMISS_POPUP___ac8c61c19b8f47eca9f1c5b100aee8c6",
+				"type": "DISMISS_POPUP",
+				"popupId": "popRequestSent",
+				"popupKUID": "d59565f04de94ee6880704d5312b1a16",
+				"parentId": null,
+				"callbackType": null
+			}
+		]
+	}
+}

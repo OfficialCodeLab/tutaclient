@@ -1,0 +1,79 @@
+{
+    "@class": "com.kony.gen.viz.model.component.KVizButton",
+    "DNDConfig": null,
+    "__parentReadjusting__": false,
+    "_height_": {
+        "type": "string",
+        "value": "50dp"
+    },
+    "_margin_": [
+        6,
+        6,
+        6,
+        6
+    ],
+    "_padding_": [
+        0,
+        0,
+        0,
+        0
+    ],
+    "_right_": {
+        "type": "string",
+        "value": "10dp"
+    },
+    "_skin_": "sea2036af0714fee8097c6b79389eadb",
+    "_text_": "Legal",
+    "_top_": {
+        "type": "string",
+        "value": "12dp"
+    },
+    "_width_": {
+        "type": "string",
+        "value": "80dp"
+    },
+    "canUpdateUI": true,
+    "centerY": "50%",
+    "centery": {
+        "type": "string",
+        "value": "50%"
+    },
+    "containerWeight": 100,
+    "containerweight": 100,
+    "contentAlignment": 5,
+    "contentalignment": 5,
+    "displayText": true,
+    "displaytext": true,
+    "enabled": false,
+    "focusSkin": "s5f2a8c84968466cb6298b1a86d12115",
+    "focusskin": "s5f2a8c84968466cb6298b1a86d12115",
+    "height": "50dp",
+    "id": "btnLegal",
+    "info": null,
+    "isVisible": true,
+    "isvisible": true,
+    "kuid": "96b4d8b37e1d4142a12dfe0d66015da0",
+    "margin": [
+        6,
+        6,
+        6,
+        6
+    ],
+    "name": "kony.ui.Button",
+    "padding": [
+        0,
+        0,
+        0,
+        0
+    ],
+    "parent": "flexBottonMenu",
+    "pf": "frmMap",
+    "render": true,
+    "right": "10dp",
+    "skin": "sea2036af0714fee8097c6b79389eadb",
+    "text": "Legal",
+    "top": "12dp",
+    "wType": "Button",
+    "widgetAlignment": 5,
+    "width": "80dp"
+}

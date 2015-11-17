@@ -1,0 +1,109 @@
+{
+    "DNDConfig": null,
+    "__parentReadjusting__": false,
+    "_bottom_": {
+        "type": "string",
+        "value": "150dp"
+    },
+    "_height_": {
+        "type": "string",
+        "value": "45dp"
+    },
+    "_margin_": [
+        0,
+        0,
+        0,
+        0
+    ],
+    "_padding_": [
+        5,
+        0,
+        0,
+        0
+    ],
+    "_placeholder_": "Password",
+    "_skin_": "s62aaba755b84e769df0729a9cb5e8bd",
+    "_text_": "",
+    "_width_": {
+        "type": "string",
+        "value": "80%"
+    },
+    "android": {
+        "psp": {
+            "keyboardActionLabel": 1
+        }
+    },
+    "autoCapitalize": "none",
+    "autoComplete": false,
+    "autoCorrect": false,
+    "autoFilter": false,
+    "autocapitalize": "none",
+    "autocomplete": false,
+    "autocorrect": false,
+    "autofilter": false,
+    "bottom": "150dp",
+    "canUpdateUI": true,
+    "centerX": "50%",
+    "centerx": {
+        "type": "string",
+        "value": "50%"
+    },
+    "channel": "mobile",
+    "containerHeight": "",
+    "containerHeightMode": 1,
+    "containerWeight": 100,
+    "containerheight": "",
+    "containerheightmode": 1,
+    "containerweight": 100,
+    "contentAlignment": 4,
+    "contentalignment": 4,
+    "enabled": false,
+    "focusSkin": "s62aaba755b84e769df0729a9cb5e8bd",
+    "focusskin": "s62aaba755b84e769df0729a9cb5e8bd",
+    "height": "45dp",
+    "id": "txtLoginPass",
+    "info": null,
+    "iphone": {
+        "@class": "com.kony.gen.viz.model.component.property.textbox2.IPhoneTextBox2Property"
+    },
+    "isVisible": true,
+    "isvisible": true,
+    "keyboardtype": "A",
+    "kuid": "4dfd3eff16344d78b303fc298f6d5eac",
+    "margin": [
+        0,
+        0,
+        0,
+        0
+    ],
+    "mode": "A",
+    "name": "kony.ui.TextBox2",
+    "padding": [
+        5,
+        0,
+        0,
+        0
+    ],
+    "paddingInPixel": false,
+    "paddinginpixel": false,
+    "parent": "flexLogin",
+    "pf": "frmSplash",
+    "placeholder": "Password",
+    "placeholderSkin": "s62aaba755b84e769df0729a9cb5e8bd",
+    "placeholderskin": "s62aaba755b84e769df0729a9cb5e8bd",
+    "render": true,
+    "secureTextEntry": true,
+    "securetextentry": true,
+    "skin": "s62aaba755b84e769df0729a9cb5e8bd",
+    "text": "",
+    "textInputMode": "A",
+    "textinputmode": "A",
+    "toolTip": "",
+    "viewType": "default",
+    "viewtype": "default",
+    "wType": "TextField",
+    "widgetAlignment": 5,
+    "width": "80%",
+    "zIndex": 3,
+    "zindex": 3
+}

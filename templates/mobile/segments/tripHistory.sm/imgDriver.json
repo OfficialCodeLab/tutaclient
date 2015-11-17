@@ -1,0 +1,85 @@
+{
+    "@class": "com.kony.gen.viz.model.component.KVizImage2",
+    "DNDConfig": null,
+    "__parentReadjusting__": false,
+    "_base64_": null,
+    "_height_": {
+        "type": "string",
+        "value": "100dp"
+    },
+    "_left_": {
+        "type": "string",
+        "value": "-6dp"
+    },
+    "_margin_": [
+        0,
+        0,
+        0,
+        0
+    ],
+    "_padding_": [
+        0,
+        0,
+        0,
+        0
+    ],
+    "_skin_": "s4ea8d4d07574957b839f06194980e52",
+    "_src_": "driver1.png",
+    "_top_": {
+        "type": "string",
+        "value": "66dp"
+    },
+    "_width_": {
+        "type": "string",
+        "value": "100dp"
+    },
+    "base64": null,
+    "canUpdateUI": true,
+    "containerId": true,
+    "containerWeight": 100,
+    "containerweight": 100,
+    "context": {
+        "channel": "mobile",
+        "platform": "iphone",
+        "templateType": "segments",
+        "topLevelBox": null
+    },
+    "enabled": false,
+    "height": "100dp",
+    "id": "imgDriver",
+    "imageScaleMode": 1,
+    "imagescalemode": 1,
+    "info": null,
+    "invokedProperty": "src",
+    "isSegmentChild": false,
+    "isVisible": true,
+    "isvisible": true,
+    "kuid": "b1d6af9cee464cf199647a682df88e7b",
+    "left": "-6dp",
+    "margin": [
+        0,
+        0,
+        0,
+        0
+    ],
+    "name": "kony.ui.Image2",
+    "padding": [
+        0,
+        0,
+        0,
+        0
+    ],
+    "parent": "FlexContainer0a6a9b5d626b940",
+    "pf": "tripHistory",
+    "render": true,
+    "skin": "s4ea8d4d07574957b839f06194980e52",
+    "src": "driver1.png",
+    "srcType": 1,
+    "top": "66dp",
+    "wType": "Image",
+    "widgetAlignment": 5,
+    "widgetalignment": 5,
+    "width": "100dp",
+    "zIndex": 1,
+    "zindex": 1
+}

@@ -1,0 +1,92 @@
+{
+    "DNDConfig": null,
+    "__parentReadjusting__": false,
+    "_height_": {
+        "type": "string",
+        "value": "25dp"
+    },
+    "_left_": {
+        "type": "string",
+        "value": "137dp"
+    },
+    "_margin_": [
+        1,
+        1,
+        1,
+        1
+    ],
+    "_padding_": [
+        0,
+        0,
+        0,
+        0
+    ],
+    "_skin_": "s5090f4a56e44364b9ac7b50105dda2a",
+    "_text_": "CHANGE PICKUP LOCATION",
+    "_top_": {
+        "type": "string",
+        "value": "5dp"
+    },
+    "_width_": {
+        "type": "string",
+        "value": "80%"
+    },
+    "_wrapping_": 2,
+    "canUpdateUI": true,
+    "centerX": "50%",
+    "centerx": {
+        "type": "string",
+        "value": "50%"
+    },
+    "channel": "mobile",
+    "containerWeight": 100,
+    "containerweight": 100,
+    "contentAlignment": 5,
+    "contentalignment": 5,
+    "enabled": false,
+    "height": "25dp",
+    "id": "CopylblDest0803698c44e8e46",
+    "info": null,
+    "ipad": {
+        "psp": {
+            "wrapping": 2
+        }
+    },
+    "iphone": {
+        "@class": "com.kony.gen.viz.model.component.property.label.IPhoneLabelProperty",
+        "psp": {
+            "wrapping": 2
+        }
+    },
+    "isVisible": true,
+    "isvisible": true,
+    "kuid": "323c525116b6445799b4ad1af7108b7a",
+    "left": "137dp",
+    "margin": [
+        1,
+        1,
+        1,
+        1
+    ],
+    "name": "kony.ui.Label",
+    "padding": [
+        0,
+        0,
+        0,
+        0
+    ],
+    "parent": "flexPickup",
+    "pf": "frmMap",
+    "render": true,
+    "skin": "s5090f4a56e44364b9ac7b50105dda2a",
+    "text": "CHANGE PICKUP LOCATION",
+    "toolTip": "",
+    "tooltip": "",
+    "top": "5dp",
+    "wType": "Label",
+    "widgetAlignment": 5,
+    "width": "80%",
+    "wrapping": 2,
+    "zIndex": 200,
+    "zindex": 200
+}

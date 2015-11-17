@@ -1,0 +1,14 @@
+{
+	"AS_TextField_d0cdb5e168364bca81fbf684588142ed": {
+		"id": "AS_TextField_d0cdb5e168364bca81fbf684588142ed",
+		"type": "ACTION_SEQUENCE",
+		"actions": [
+			{
+				"id": "ADD_SNIPPET_onDone_dd54d56c83ae4edf90509e5578ed1cc1",
+				"type": "ADD_SNIPPET",
+				"codeSnippet": "selectDestination();",
+				"callbackType": null
+			}
+		]
+	}
+}

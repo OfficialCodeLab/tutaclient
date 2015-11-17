@@ -1,0 +1,101 @@
+{
+    "DNDConfig": null,
+    "__parentReadjusting__": false,
+    "_height_": {
+        "type": "ref",
+        "value": "preferred"
+    },
+    "_left_": {
+        "type": "string",
+        "value": "100dp"
+    },
+    "_margin_": [
+        1,
+        1,
+        1,
+        1
+    ],
+    "_padding_": [
+        0,
+        0,
+        0,
+        0
+    ],
+    "_skin_": "s2bdc905d6c04e1a8b93b429f364953a",
+    "_text_": "8 Frere Street",
+    "_top_": {
+        "type": "string",
+        "value": "50%"
+    },
+    "_width_": {
+        "type": "string",
+        "value": "60%"
+    },
+    "_wrapping_": 2,
+    "canUpdateUI": true,
+    "channel": "mobile",
+    "containerId": true,
+    "containerWeight": 100,
+    "containerweight": 100,
+    "contentAlignment": 4,
+    "contentalignment": 4,
+    "enabled": false,
+    "height": {
+        "type": "ref",
+        "value": "preferred"
+    },
+    "id": "lblAddress",
+    "info": null,
+    "ipad": {
+        "psp": {
+            "wrapping": 2
+        }
+    },
+    "iphone": {
+        "@class": "com.kony.gen.viz.model.component.property.label.IPhoneLabelProperty",
+        "psp": {
+            "wrapping": 2
+        }
+    },
+    "isSegmentChild": false,
+    "isVisible": true,
+    "isvisible": true,
+    "kuid": "757d84a7db70473fb3f67976c1fcd9aa",
+    "left": {
+        "type": "string",
+        "value": "100dp"
+    },
+    "margin": [
+        1,
+        1,
+        1,
+        1
+    ],
+    "name": "kony.ui.Label",
+    "padding": [
+        0,
+        0,
+        0,
+        0
+    ],
+    "parent": "FlexContainer0f09b6d2ad35646",
+    "pf": "tempDestinations",
+    "render": true,
+    "skin": "s2bdc905d6c04e1a8b93b429f364953a",
+    "text": "8 Frere Street",
+    "toolTip": "",
+    "tooltip": "",
+    "top": {
+        "type": "string",
+        "value": "50%"
+    },
+    "wType": "Label",
+    "widgetAlignment": 5,
+    "width": {
+        "type": "string",
+        "value": "60%"
+    },
+    "wrapping": 2,
+    "zIndex": 1,
+    "zindex": 1
+}

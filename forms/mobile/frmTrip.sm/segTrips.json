@@ -1,0 +1,344 @@
+{
+    "@class": "com.kony.gen.viz.model.container.KVizSegment2",
+    "DNDConfig": null,
+    "__parentReadjusting__": false,
+    "_data_": [
+        {
+            "imgDriver": {
+                "@class": "com.viz.ide.model.segment.ImageSegmentData",
+                "src": "driver1.png"
+            },
+            "imgMap": {
+                "@class": "com.viz.ide.model.segment.ImageSegmentData",
+                "src": "map.png"
+            },
+            "lblCar": {
+                "@class": "com.viz.ide.model.segment.SimpleTextSegmentData",
+                "text": "White Nissan Almera"
+            },
+            "lblCost": {
+                "@class": "com.viz.ide.model.segment.SimpleTextSegmentData",
+                "text": "R224.45"
+            },
+            "lblDateTime": {
+                "@class": "com.viz.ide.model.segment.SimpleTextSegmentData",
+                "text": "20/10/2015, 1:52pm"
+            }
+        },
+        {
+            "imgDriver": {
+                "@class": "com.viz.ide.model.segment.ImageSegmentData",
+                "src": "driver1.png"
+            },
+            "imgMap": {
+                "@class": "com.viz.ide.model.segment.ImageSegmentData",
+                "src": "map.png"
+            },
+            "lblCar": {
+                "@class": "com.viz.ide.model.segment.SimpleTextSegmentData",
+                "text": "White Nissan Almera"
+            },
+            "lblCost": {
+                "@class": "com.viz.ide.model.segment.SimpleTextSegmentData",
+                "text": "R224.45"
+            },
+            "lblDateTime": {
+                "@class": "com.viz.ide.model.segment.SimpleTextSegmentData",
+                "text": "20/10/2015, 1:52pm"
+            }
+        },
+        {
+            "imgDriver": {
+                "@class": "com.viz.ide.model.segment.ImageSegmentData",
+                "src": "driver1.png"
+            },
+            "imgMap": {
+                "@class": "com.viz.ide.model.segment.ImageSegmentData",
+                "src": "map.png"
+            },
+            "lblCar": {
+                "@class": "com.viz.ide.model.segment.SimpleTextSegmentData",
+                "text": "White Nissan Almera"
+            },
+            "lblCost": {
+                "@class": "com.viz.ide.model.segment.SimpleTextSegmentData",
+                "text": "R224.45"
+            },
+            "lblDateTime": {
+                "@class": "com.viz.ide.model.segment.SimpleTextSegmentData",
+                "text": "20/10/2015, 1:52pm"
+            }
+        },
+        {
+            "imgDriver": {
+                "@class": "com.viz.ide.model.segment.ImageSegmentData",
+                "src": "driver1.png"
+            },
+            "imgMap": {
+                "@class": "com.viz.ide.model.segment.ImageSegmentData",
+                "src": "map.png"
+            },
+            "lblCar": {
+                "@class": "com.viz.ide.model.segment.SimpleTextSegmentData",
+                "text": "White Nissan Almera"
+            },
+            "lblCost": {
+                "@class": "com.viz.ide.model.segment.SimpleTextSegmentData",
+                "text": "R224.45"
+            },
+            "lblDateTime": {
+                "@class": "com.viz.ide.model.segment.SimpleTextSegmentData",
+                "text": "20/10/2015, 1:52pm"
+            }
+        }
+    ],
+    "_height_": {
+        "type": "string",
+        "value": "78%"
+    },
+    "_indicator_": "none",
+    "_left_": {
+        "type": "string",
+        "value": "0dp"
+    },
+    "_margin_": [
+        0,
+        0,
+        0,
+        0
+    ],
+    "_orientation_": 2,
+    "_padding_": [
+        0,
+        0,
+        0,
+        0
+    ],
+    "_rowTemplateId": "tripHistory",
+    "_top_": {
+        "type": "string",
+        "value": "22%"
+    },
+    "_width_": {
+        "type": "string",
+        "value": "95%"
+    },
+    "autogrowMode": 0,
+    "autogrowmode": 0,
+    "canUpdateUI": true,
+    "centerX": "50%",
+    "centerx": {
+        "type": "string",
+        "value": "50%"
+    },
+    "containerWeight": 100,
+    "containerweight": 100,
+    "counter": "03",
+    "data": [
+        {
+            "imgDriver": {
+                "@class": "com.viz.ide.model.segment.ImageSegmentData",
+                "src": "driver1.png"
+            },
+            "imgMap": {
+                "@class": "com.viz.ide.model.segment.ImageSegmentData",
+                "src": "map.png"
+            },
+            "lblCar": {
+                "@class": "com.viz.ide.model.segment.SimpleTextSegmentData",
+                "text": "White Nissan Almera"
+            },
+            "lblCost": {
+                "@class": "com.viz.ide.model.segment.SimpleTextSegmentData",
+                "text": "R224.45"
+            },
+            "lblDateTime": {
+                "@class": "com.viz.ide.model.segment.SimpleTextSegmentData",
+                "text": "20/10/2015, 1:52pm"
+            }
+        },
+        {
+            "imgDriver": {
+                "@class": "com.viz.ide.model.segment.ImageSegmentData",
+                "src": "driver1.png"
+            },
+            "imgMap": {
+                "@class": "com.viz.ide.model.segment.ImageSegmentData",
+                "src": "map.png"
+            },
+            "lblCar": {
+                "@class": "com.viz.ide.model.segment.SimpleTextSegmentData",
+                "text": "White Nissan Almera"
+            },
+            "lblCost": {
+                "@class": "com.viz.ide.model.segment.SimpleTextSegmentData",
+                "text": "R224.45"
+            },
+            "lblDateTime": {
+                "@class": "com.viz.ide.model.segment.SimpleTextSegmentData",
+                "text": "20/10/2015, 1:52pm"
+            }
+        },
+        {
+            "imgDriver": {
+                "@class": "com.viz.ide.model.segment.ImageSegmentData",
+                "src": "driver1.png"
+            },
+            "imgMap": {
+                "@class": "com.viz.ide.model.segment.ImageSegmentData",
+                "src": "map.png"
+            },
+            "lblCar": {
+                "@class": "com.viz.ide.model.segment.SimpleTextSegmentData",
+                "text": "White Nissan Almera"
+            },
+            "lblCost": {
+                "@class": "com.viz.ide.model.segment.SimpleTextSegmentData",
+                "text": "R224.45"
+            },
+            "lblDateTime": {
+                "@class": "com.viz.ide.model.segment.SimpleTextSegmentData",
+                "text": "20/10/2015, 1:52pm"
+            }
+        },
+        {
+            "imgDriver": {
+                "@class": "com.viz.ide.model.segment.ImageSegmentData",
+                "src": "driver1.png"
+            },
+            "imgMap": {
+                "@class": "com.viz.ide.model.segment.ImageSegmentData",
+                "src": "map.png"
+            },
+            "lblCar": {
+                "@class": "com.viz.ide.model.segment.SimpleTextSegmentData",
+                "text": "White Nissan Almera"
+            },
+            "lblCost": {
+                "@class": "com.viz.ide.model.segment.SimpleTextSegmentData",
+                "text": "R224.45"
+            },
+            "lblDateTime": {
+                "@class": "com.viz.ide.model.segment.SimpleTextSegmentData",
+                "text": "20/10/2015, 1:52pm"
+            }
+        }
+    ],
+    "enabled": false,
+    "focusedindex": null,
+    "focuseditem": null,
+    "groupCells": false,
+    "groupcells": false,
+    "hasSections": false,
+    "height": "78%",
+    "id": "segTrips",
+    "indicator": "none",
+    "info": null,
+    "ipad": {
+        "psp": {
+            "indicator": "rowselect"
+        }
+    },
+    "iphone": {
+        "psp": {
+            "indicator": "rowselect"
+        }
+    },
+    "isVisible": true,
+    "isvisible": true,
+    "kuid": "139b28560d5b4c069d7d5e73cc4c48d7",
+    "left": "0dp",
+    "margin": [
+        0,
+        0,
+        0,
+        0
+    ],
+    "masterdata": {},
+    "name": "kony.ui.SegmentedUI2",
+    "needPageIndicator": true,
+    "needpageindicator": true,
+    "orientation": 2,
+    "padding": [
+        0,
+        0,
+        0,
+        0
+    ],
+    "pageOffDotImage": "pageOffDot.png",
+    "pageOnDotImage": "pageOnDot.png",
+    "pageoffdotimage": "pageOffDot.png",
+    "pageondotimage": "pageOnDot.png",
+    "paginationconfig": {
+        "position": "bottom"
+    },
+    "parent": "flexMain",
+    "pf": "frmTrip",
+    "render": true,
+    "retainSelection": false,
+    "retainselection": false,
+    "rowFocusSkin": "s506dc047ce84c3780120da5b562ff2b",
+    "rowSkin": "s812be05f8154964add19aee22016b19",
+    "rowTemplateId": "b7600456072344e99a9266a50b8caead",
+    "rowcounter": 3,
+    "rowfocusskin": "s506dc047ce84c3780120da5b562ff2b",
+    "rowskin": "s812be05f8154964add19aee22016b19",
+    "rowtemplate": "FlexContainer0a6a9b5d626b940",
+    "screenLevelWidget": false,
+    "screenlevelwidget": false,
+    "seccounter": 0,
+    "sectionHeaderSkin": "sbc6aaf22fe14c04a0dda0a790a772f6",
+    "sectionheaderskin": "sbc6aaf22fe14c04a0dda0a790a772f6",
+    "selectedIndex": null,
+    "selectedIndices": null,
+    "selectedItems": null,
+    "selectedRows": null,
+    "selectedState": false,
+    "selectedindex": null,
+    "selectedindices": null,
+    "selecteditems": null,
+    "selectedsectionindex": 0,
+    "selectionBehavior": "singleselect",
+    "selectionBehaviorConfig": {},
+    "selectionbehavior": "singleselect",
+    "selectionbehaviorconfig": {},
+    "separatorColor": "64646400",
+    "separatorRequired": true,
+    "separatorThickness": 0,
+    "separatorcolor": "64646400",
+    "separatorrequired": true,
+    "separatorthickness": 0,
+    "showScrollbars": false,
+    "showscrollbars": false,
+    "top": "22%",
+    "viewType": "tableview",
+    "viewtype": "tableview",
+    "wType": "Segment",
+    "widgetAlignment": 5,
+    "widgetDataMap": {
+        "FlexContainer09c74663ff39b4a": "FlexContainer09c74663ff39b4a",
+        "FlexContainer0a6a9b5d626b940": "FlexContainer0a6a9b5d626b940",
+        "flexImg": "flexImg",
+        "imgDriver": "imgDriver",
+        "imgMap": "imgMap",
+        "lblCar": "lblCar",
+        "lblCost": "lblCost",
+        "lblDateTime": "lblDateTime"
+    },
+    "widgetSkin": "sc2fcee516bc4ac28d151be20d61a6bd",
+    "widgetalignment": 5,
+    "widgetdatamap": {
+        "FlexContainer09c74663ff39b4a": "FlexContainer09c74663ff39b4a",
+        "FlexContainer0a6a9b5d626b940": "FlexContainer0a6a9b5d626b940",
+        "flexImg": "flexImg",
+        "imgDriver": "imgDriver",
+        "imgMap": "imgMap",
+        "lblCar": "lblCar",
+        "lblCost": "lblCost",
+        "lblDateTime": "lblDateTime"
+    },
+    "widgetskin": "sc2fcee516bc4ac28d151be20d61a6bd",
+    "width": "95%",
+    "zIndex": 1,
+    "zindex": 1
+}

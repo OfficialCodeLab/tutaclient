@@ -1,0 +1,55 @@
+{
+    "@class": "com.kony.gen.viz.model.component.KVizRichText",
+    "DNDConfig": null,
+    "_margin_": [
+        0,
+        3,
+        0,
+        0
+    ],
+    "_padding_": [
+        0,
+        0,
+        0,
+        0
+    ],
+    "_skin_": "sf7079b4b72a45d992e0d5a72b80b612",
+    "_text_": "Thank you for your query.<br>We will get back to you shortly!\n",
+    "_wrapping_": 2,
+    "canUpdateUI": true,
+    "containerWeight": 100,
+    "containerweight": 100,
+    "contentAlignment": 5,
+    "contentalignment": 5,
+    "enabled": false,
+    "id": "RichText076480dfea54448",
+    "info": null,
+    "isVisible": true,
+    "isvisible": true,
+    "kuid": "e05e0f12b3f6437c999c75a65149ed91",
+    "margin": [
+        0,
+        3,
+        0,
+        0
+    ],
+    "marginInPixel": false,
+    "margininpixel": false,
+    "name": "kony.ui.RichText",
+    "padding": [
+        0,
+        0,
+        0,
+        0
+    ],
+    "parent": "VBox0efecf012ab1846",
+    "pf": "popRequestSent",
+    "render": true,
+    "skin": "sf7079b4b72a45d992e0d5a72b80b612",
+    "text": "Thank you for your query.<br>We will get back to you shortly!\n",
+    "toolTip": "",
+    "wType": "RichText",
+    "widgetAlignment": 5,
+    "widgetalignment": 5,
+    "wrapping": 2
+}

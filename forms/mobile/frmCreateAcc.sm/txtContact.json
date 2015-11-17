@@ -1,0 +1,109 @@
+{
+    "DNDConfig": null,
+    "__parentReadjusting__": false,
+    "_height_": {
+        "type": "string",
+        "value": "50dp"
+    },
+    "_left_": {
+        "type": "string",
+        "value": "75dp"
+    },
+    "_margin_": [
+        0,
+        0,
+        0,
+        0
+    ],
+    "_padding_": [
+        0,
+        0,
+        0,
+        0
+    ],
+    "_placeholder_": "Contact Number",
+    "_skin_": "s58e380e3bb7489a80e6cd369fe00bce",
+    "_text_": "",
+    "_top_": {
+        "type": "string",
+        "value": "193dp"
+    },
+    "_width_": {
+        "type": "string",
+        "value": "280dp"
+    },
+    "autoCapitalize": "none",
+    "autoComplete": false,
+    "autoCorrect": false,
+    "autoFilter": false,
+    "autocapitalize": "none",
+    "autocomplete": false,
+    "autocorrect": false,
+    "autofilter": false,
+    "canUpdateUI": true,
+    "centerX": "50%",
+    "centerx": {
+        "type": "string",
+        "value": "50%"
+    },
+    "channel": "mobile",
+    "containerHeight": "",
+    "containerHeightMode": 1,
+    "containerWeight": 100,
+    "containerheight": "",
+    "containerheightmode": 1,
+    "containerweight": 100,
+    "contentAlignment": 5,
+    "contentalignment": 5,
+    "enabled": false,
+    "focusSkin": "s58e380e3bb7489a80e6cd369fe00bce",
+    "focusskin": "s58e380e3bb7489a80e6cd369fe00bce",
+    "height": "50dp",
+    "id": "txtContact",
+    "info": null,
+    "iphone": {
+        "@class": "com.kony.gen.viz.model.component.property.textbox2.IPhoneTextBox2Property"
+    },
+    "isVisible": true,
+    "isvisible": true,
+    "keyBoardStyle": "A",
+    "keyboardstyle": "A",
+    "keyboardtype": "A",
+    "kuid": "bf1fdb48373f44bb8a624a320478ee13",
+    "left": "75dp",
+    "margin": [
+        0,
+        0,
+        0,
+        0
+    ],
+    "mode": "A",
+    "name": "kony.ui.TextBox2",
+    "padding": [
+        0,
+        0,
+        0,
+        0
+    ],
+    "parent": "flexMain",
+    "pf": "frmCreateAcc",
+    "placeholder": "Contact Number",
+    "placeholderSkin": "s58e380e3bb7489a80e6cd369fe00bce",
+    "placeholderskin": "s58e380e3bb7489a80e6cd369fe00bce",
+    "render": true,
+    "secureTextEntry": false,
+    "securetextentry": false,
+    "skin": "s58e380e3bb7489a80e6cd369fe00bce",
+    "text": "",
+    "textInputMode": "N",
+    "textinputmode": "N",
+    "toolTip": "",
+    "top": "193dp",
+    "viewType": "default",
+    "viewtype": "default",
+    "wType": "TextField",
+    "widgetAlignment": 5,
+    "width": "280dp",
+    "zIndex": 1,
+    "zindex": 1
+}

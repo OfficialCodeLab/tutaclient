@@ -1,0 +1,81 @@
+{
+    "@class": "com.kony.gen.viz.model.component.KVizRichText",
+    "DNDConfig": null,
+    "__parentReadjusting__": false,
+    "_height_": {
+        "type": "string",
+        "value": "90%"
+    },
+    "_left_": {
+        "type": "string",
+        "value": "0dp"
+    },
+    "_margin_": [
+        0,
+        0,
+        0,
+        0
+    ],
+    "_padding_": [
+        0,
+        0,
+        0,
+        0
+    ],
+    "_skin_": "se83ca575ca14fb598579c963ceb566f",
+    "_text_": "<strong>Who are we:</strong><br><br>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse mattis mollis est. Aenean condimentum, orci nec mattis porta, velit velit tristique risus, at porta mauris arcu in orci. Etiam laoreet dolor nulla, quis sodales lorem vehicula ut. Pellentesque in arcu mauris. Fusce volutpat et enim vitae pellentesque.<br><br>\n<strong>Mission:</strong><br><br>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse mattis mollis est. Aenean condimentum, orci nec mattis porta, velit velit tristique risus, at porta mauris arcu in orci. Etiam laoreet dolor nulla, quis sodales lorem vehicula ut. Pellentesque in arcu mauris. Fusce volutpat et enim vitae pellentesque.<br><br><strong>Disclaimers:</strong><br><br>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse mattis mollis est. Aenean condimentum, orci nec mattis porta, velit velit tristique risus, at porta mauris arcu in orci. Etiam laoreet dolor nulla, quis sodales lorem vehicula ut. Pellentesque in arcu mauris. Fusce volutpat et enim vitae pellentesque.",
+    "_top_": {
+        "type": "string",
+        "value": "100dp"
+    },
+    "_width_": {
+        "type": "string",
+        "value": "90%"
+    },
+    "_wrapping_": 2,
+    "canUpdateUI": true,
+    "centerX": "50%",
+    "centerx": {
+        "type": "string",
+        "value": "50%"
+    },
+    "containerWeight": 100,
+    "containerweight": 100,
+    "contentAlignment": 1,
+    "contentalignment": 1,
+    "enabled": false,
+    "height": "90%",
+    "id": "rtAbout",
+    "info": null,
+    "isVisible": true,
+    "isvisible": true,
+    "kuid": "9a5a1f7313164ee99870a75392789381",
+    "left": "0dp",
+    "margin": [
+        0,
+        0,
+        0,
+        0
+    ],
+    "name": "kony.ui.RichText",
+    "padding": [
+        0,
+        0,
+        0,
+        0
+    ],
+    "parent": "flexScrMain",
+    "pf": "frmAbout",
+    "render": true,
+    "skin": "se83ca575ca14fb598579c963ceb566f",
+    "text": "<strong>Who are we:</strong><br><br>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse mattis mollis est. Aenean condimentum, orci nec mattis porta, velit velit tristique risus, at porta mauris arcu in orci. Etiam laoreet dolor nulla, quis sodales lorem vehicula ut. Pellentesque in arcu mauris. Fusce volutpat et enim vitae pellentesque.<br><br>\n<strong>Mission:</strong><br><br>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse mattis mollis est. Aenean condimentum, orci nec mattis porta, velit velit tristique risus, at porta mauris arcu in orci. Etiam laoreet dolor nulla, quis sodales lorem vehicula ut. Pellentesque in arcu mauris. Fusce volutpat et enim vitae pellentesque.<br><br><strong>Disclaimers:</strong><br><br>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse mattis mollis est. Aenean condimentum, orci nec mattis porta, velit velit tristique risus, at porta mauris arcu in orci. Etiam laoreet dolor nulla, quis sodales lorem vehicula ut. Pellentesque in arcu mauris. Fusce volutpat et enim vitae pellentesque.",
+    "toolTip": "",
+    "top": "100dp",
+    "wType": "RichText",
+    "widgetAlignment": 5,
+    "widgetalignment": 5,
+    "width": "90%",
+    "wrapping": 2,
+    "zIndex": 1,
+    "zindex": 1
+}

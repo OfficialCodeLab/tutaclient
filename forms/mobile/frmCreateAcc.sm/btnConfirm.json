@@ -1,0 +1,81 @@
+{
+    "DNDConfig": null,
+    "__parentReadjusting__": false,
+    "_height_": {
+        "type": "string",
+        "value": "50dp"
+    },
+    "_left_": {
+        "type": "string",
+        "value": "58dp"
+    },
+    "_margin_": [
+        6,
+        6,
+        6,
+        6
+    ],
+    "_padding_": [
+        0,
+        0,
+        0,
+        0
+    ],
+    "_skin_": "sa23fe82fe814c97857ca8bd55521218",
+    "_text_": "Confirm",
+    "_top_": {
+        "type": "string",
+        "value": "420dp"
+    },
+    "_width_": {
+        "type": "string",
+        "value": "90%"
+    },
+    "canUpdateUI": true,
+    "centerX": "50%",
+    "centerx": {
+        "type": "string",
+        "value": "50%"
+    },
+    "channel": "mobile",
+    "containerWeight": 100,
+    "containerweight": 100,
+    "contentAlignment": 5,
+    "contentalignment": 5,
+    "displayText": true,
+    "displaytext": true,
+    "enabled": false,
+    "focusSkin": "s2ecc7c2d9c045b0a0f4474e623d9682",
+    "focusskin": "s2ecc7c2d9c045b0a0f4474e623d9682",
+    "height": "50dp",
+    "id": "btnConfirm",
+    "info": null,
+    "isVisible": true,
+    "isvisible": true,
+    "kuid": "485eb9a8721446a0bc7ea68a76c4c1e0",
+    "left": "58dp",
+    "margin": [
+        6,
+        6,
+        6,
+        6
+    ],
+    "name": "kony.ui.Button",
+    "padding": [
+        0,
+        0,
+        0,
+        0
+    ],
+    "parent": "flexMain",
+    "pf": "frmCreateAcc",
+    "render": true,
+    "skin": "sa23fe82fe814c97857ca8bd55521218",
+    "text": "Confirm",
+    "top": "420dp",
+    "wType": "Button",
+    "widgetAlignment": 5,
+    "width": "90%",
+    "zIndex": 1,
+    "zindex": 1
+}

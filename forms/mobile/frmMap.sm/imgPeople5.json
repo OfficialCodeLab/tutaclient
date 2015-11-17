@@ -1,0 +1,93 @@
+{
+    "DNDConfig": null,
+    "__parentReadjusting__": false,
+    "_base64_": null,
+    "_height_": {
+        "type": "string",
+        "value": "55%"
+    },
+    "_left_": {
+        "type": "string",
+        "value": "0dp"
+    },
+    "_margin_": [
+        0,
+        0,
+        0,
+        0
+    ],
+    "_padding_": [
+        0,
+        0,
+        0,
+        0
+    ],
+    "_skin_": "s4ea8d4d07574957b839f06194980e52",
+    "_src_": "person.png",
+    "_top_": {
+        "type": "string",
+        "value": "10dp"
+    },
+    "_width_": {
+        "type": "string",
+        "value": "6%"
+    },
+    "base64": null,
+    "canUpdateUI": true,
+    "centerX": "71%",
+    "centerY": "40%",
+    "centerx": {
+        "type": "string",
+        "value": "71%"
+    },
+    "centery": {
+        "type": "string",
+        "value": "40%"
+    },
+    "channel": "mobile",
+    "containerWeight": 100,
+    "containerweight": 100,
+    "context": {
+        "channel": "mobile",
+        "formID": "frmMap",
+        "ispercent": true,
+        "platform": "android",
+        "templateType": "forms",
+        "topLevelBox": null
+    },
+    "enabled": false,
+    "height": "55%",
+    "id": "imgPeople5",
+    "imageScaleMode": 0,
+    "imagescalemode": 0,
+    "info": null,
+    "invokedProperty": "src",
+    "isVisible": true,
+    "isvisible": true,
+    "kuid": "3e93dcc32c6b4212874d5cc726039080",
+    "left": "0dp",
+    "margin": [
+        0,
+        0,
+        0,
+        0
+    ],
+    "name": "kony.ui.Image2",
+    "padding": [
+        0,
+        0,
+        0,
+        0
+    ],
+    "parent": "flexNoOfPeople",
+    "pf": "frmMap",
+    "render": true,
+    "skin": "s4ea8d4d07574957b839f06194980e52",
+    "src": "person.png",
+    "srcType": 1,
+    "top": "10dp",
+    "wType": "Image",
+    "widgetAlignment": 5,
+    "widgetalignment": 5,
+    "width": "6%"
+}

@@ -1,0 +1,79 @@
+{
+    "@class": "com.kony.gen.viz.model.component.KVizRichText",
+    "DNDConfig": null,
+    "__parentReadjusting__": false,
+    "_height_": {
+        "type": "ref",
+        "value": "preferred"
+    },
+    "_left_": {
+        "type": "string",
+        "value": "0dp"
+    },
+    "_margin_": [
+        0,
+        0,
+        0,
+        0
+    ],
+    "_padding_": [
+        5,
+        5,
+        5,
+        5
+    ],
+    "_skin_": "s18d33b360ed43a1a591da491b82532e",
+    "_text_": "Lorem Ipsum",
+    "_top_": {
+        "type": "string",
+        "value": "0dp"
+    },
+    "_width_": {
+        "type": "string",
+        "value": "100%"
+    },
+    "_wrapping_": 2,
+    "canUpdateUI": true,
+    "containerWeight": 100,
+    "containerweight": 100,
+    "contentAlignment": 4,
+    "contentalignment": 4,
+    "enabled": false,
+    "height": {
+        "type": "ref",
+        "value": "preferred"
+    },
+    "id": "rtPay",
+    "info": null,
+    "isVisible": true,
+    "isvisible": true,
+    "kuid": "4b4fa63b092a4b1ca77cc0f61418bb44",
+    "left": "0dp",
+    "margin": [
+        0,
+        0,
+        0,
+        0
+    ],
+    "name": "kony.ui.RichText",
+    "padding": [
+        5,
+        5,
+        5,
+        5
+    ],
+    "paddingInPixel": false,
+    "paddinginpixel": false,
+    "parent": "flexPayments",
+    "pf": "frmPayments",
+    "render": true,
+    "skin": "s18d33b360ed43a1a591da491b82532e",
+    "text": "Lorem Ipsum",
+    "toolTip": "",
+    "top": "0dp",
+    "wType": "RichText",
+    "widgetAlignment": 5,
+    "widgetalignment": 5,
+    "width": "100%",
+    "wrapping": 2
+}

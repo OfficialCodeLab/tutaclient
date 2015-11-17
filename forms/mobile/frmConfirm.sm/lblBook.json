@@ -1,0 +1,92 @@
+{
+    "DNDConfig": null,
+    "__parentReadjusting__": false,
+    "_height_": {
+        "type": "string",
+        "value": "65dp"
+    },
+    "_left_": {
+        "type": "string",
+        "value": "150dp"
+    },
+    "_margin_": [
+        1,
+        1,
+        1,
+        1
+    ],
+    "_padding_": [
+        0,
+        0,
+        0,
+        0
+    ],
+    "_skin_": "sc5c7cb7c4144b30b3f19a52dcd17bbd",
+    "_text_": "When would you like to book your Cab?",
+    "_top_": {
+        "type": "string",
+        "value": "0dp"
+    },
+    "_width_": {
+        "type": "string",
+        "value": "75%"
+    },
+    "_wrapping_": 2,
+    "canUpdateUI": true,
+    "centerX": "50%",
+    "centerx": {
+        "type": "string",
+        "value": "50%"
+    },
+    "channel": "mobile",
+    "containerWeight": 100,
+    "containerweight": 100,
+    "contentAlignment": 5,
+    "contentalignment": 5,
+    "enabled": false,
+    "height": "65dp",
+    "id": "lblBook",
+    "info": null,
+    "ipad": {
+        "psp": {
+            "wrapping": 2
+        }
+    },
+    "iphone": {
+        "@class": "com.kony.gen.viz.model.component.property.label.IPhoneLabelProperty",
+        "psp": {
+            "wrapping": 2
+        }
+    },
+    "isVisible": true,
+    "isvisible": true,
+    "kuid": "94dcb029efae4f65954ac63a44f0e98f",
+    "left": "150dp",
+    "margin": [
+        1,
+        1,
+        1,
+        1
+    ],
+    "name": "kony.ui.Label",
+    "padding": [
+        0,
+        0,
+        0,
+        0
+    ],
+    "parent": "flexConfirm",
+    "pf": "frmConfirm",
+    "render": true,
+    "skin": "sc5c7cb7c4144b30b3f19a52dcd17bbd",
+    "text": "When would you like to book your Cab?",
+    "toolTip": "",
+    "tooltip": "",
+    "top": "0dp",
+    "wType": "Label",
+    "widgetAlignment": 5,
+    "width": "75%",
+    "wrapping": 2,
+    "zIndex": 5,
+    "zindex": 5
+}

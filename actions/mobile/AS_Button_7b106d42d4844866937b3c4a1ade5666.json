@@ -1,0 +1,21 @@
+{
+	"AS_Button_7b106d42d4844866937b3c4a1ade5666": {
+		"id": "AS_Button_7b106d42d4844866937b3c4a1ade5666",
+		"type": "ACTION_SEQUENCE",
+		"params": [
+			{
+				"datatype": "collection",
+				"name": "eventobject"
+			}
+		],
+		"actions": [
+			{
+				"id": "ADD_SNIPPET__2203e319348a490ca54f593a34eede53",
+				"type": "ADD_SNIPPET",
+				"codeSnippet": "var test = map.getCenter();\n\n//ssa.mobile.alert(\"TEST\", JSON.stringify(test));",
+				"parentId": null,
+				"callbackType": null
+			}
+		]
+	}
+}

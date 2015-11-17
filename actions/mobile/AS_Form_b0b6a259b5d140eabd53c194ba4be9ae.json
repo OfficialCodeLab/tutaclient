@@ -1,0 +1,15 @@
+{
+	"AS_Form_b0b6a259b5d140eabd53c194ba4be9ae": {
+		"id": "AS_Form_b0b6a259b5d140eabd53c194ba4be9ae",
+		"type": "ACTION_SEQUENCE",
+		"actions": [
+			{
+				"id": "ADD_SNIPPET__df9132ae36844e2b956bb01ec510d6d9",
+				"type": "ADD_SNIPPET",
+				"codeSnippet": "initApp();",
+				"parentId": null,
+				"callbackType": null
+			}
+		]
+	}
+}

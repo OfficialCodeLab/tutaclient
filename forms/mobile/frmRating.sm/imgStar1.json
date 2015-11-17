@@ -1,0 +1,96 @@
+{
+    "DNDConfig": null,
+    "__parentReadjusting__": false,
+    "_base64_": null,
+    "_height_": {
+        "type": "string",
+        "value": "100%"
+    },
+    "_left_": {
+        "type": "string",
+        "value": "35dp"
+    },
+    "_margin_": [
+        0,
+        0,
+        0,
+        0
+    ],
+    "_padding_": [
+        0,
+        0,
+        0,
+        0
+    ],
+    "_skin_": "s4ea8d4d07574957b839f06194980e52",
+    "_src_": "starselected.png",
+    "_top_": {
+        "type": "string",
+        "value": "28dp"
+    },
+    "_width_": {
+        "type": "string",
+        "value": "20%"
+    },
+    "base64": null,
+    "canUpdateUI": true,
+    "centerX": "15%",
+    "centerY": "50%",
+    "centerx": {
+        "type": "string",
+        "value": "15%"
+    },
+    "centery": {
+        "type": "string",
+        "value": "50%"
+    },
+    "channel": "mobile",
+    "containerWeight": 100,
+    "containerweight": 100,
+    "context": {
+        "channel": "mobile",
+        "formID": "frmRating",
+        "ispercent": true,
+        "platform": "android",
+        "templateType": "forms",
+        "topLevelBox": null
+    },
+    "enabled": false,
+    "height": "100%",
+    "id": "imgStar1",
+    "imageScaleMode": 1,
+    "imageWhenFailed": "option1.png",
+    "imagescalemode": 1,
+    "imagewhenfailed": "option1.png",
+    "info": null,
+    "invokedProperty": "src",
+    "isVisible": true,
+    "ispercent": true,
+    "isvisible": true,
+    "kuid": "64845d5a41bd466e8afe3f3f56106718",
+    "left": "35dp",
+    "margin": [
+        0,
+        0,
+        0,
+        0
+    ],
+    "name": "kony.ui.Image2",
+    "padding": [
+        0,
+        0,
+        0,
+        0
+    ],
+    "parent": "flexStarRating",
+    "pf": "frmRating",
+    "render": true,
+    "skin": "s4ea8d4d07574957b839f06194980e52",
+    "src": "starselected.png",
+    "srcType": 1,
+    "top": "28dp",
+    "wType": "Image",
+    "widgetAlignment": 5,
+    "widgetalignment": 5,
+    "width": "20%"
+}

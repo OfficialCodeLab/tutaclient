@@ -1,0 +1,36 @@
+{
+	"AS_Slider_7db05d10b57841008d5fe5ec6873bff7": {
+		"id": "AS_Slider_7db05d10b57841008d5fe5ec6873bff7",
+		"type": "ACTION_SEQUENCE",
+		"params": [
+			{
+				"datatype": "collection",
+				"name": "eventobject"
+			},
+			{
+				"datatype": "string",
+				"name": "x"
+			},
+			{
+				"datatype": "string",
+				"name": "y"
+			}
+		],
+		"actions": [
+			{
+				"id": "ADD_SNIPPET__3804b270a4444d11989c6ce6bf5bc51d",
+				"type": "ADD_SNIPPET",
+				"codeSnippet": null,
+				"parentId": null,
+				"callbackType": null
+			},
+			{
+				"id": "ADD_SNIPPET__7dee4e9627ef41ff863084a02f9c4209",
+				"type": "ADD_SNIPPET",
+				"codeSnippet": "snapToSides();",
+				"parentId": null,
+				"callbackType": null
+			}
+		]
+	}
+}

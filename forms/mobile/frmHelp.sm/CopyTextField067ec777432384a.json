@@ -1,0 +1,105 @@
+{
+    "@class": "com.kony.gen.viz.model.component.KVizTextBox2",
+    "DNDConfig": null,
+    "__parentReadjusting__": false,
+    "_height_": {
+        "type": "string",
+        "value": "50dp"
+    },
+    "_left_": {
+        "type": "string",
+        "value": "56dp"
+    },
+    "_margin_": [
+        0,
+        0,
+        0,
+        0
+    ],
+    "_padding_": [
+        0,
+        0,
+        0,
+        0
+    ],
+    "_placeholder_": "Your Company Name",
+    "_skin_": "s58e380e3bb7489a80e6cd369fe00bce",
+    "_text_": "",
+    "_top_": {
+        "type": "string",
+        "value": "100dp"
+    },
+    "_width_": {
+        "type": "string",
+        "value": "260dp"
+    },
+    "autoCapitalize": "none",
+    "autoComplete": false,
+    "autoCorrect": false,
+    "autoFilter": false,
+    "autocapitalize": "none",
+    "autocomplete": false,
+    "autocorrect": false,
+    "autofilter": false,
+    "canUpdateUI": true,
+    "centerX": "50%",
+    "centerx": {
+        "type": "string",
+        "value": "50%"
+    },
+    "containerHeight": "",
+    "containerHeightMode": 1,
+    "containerWeight": 100,
+    "containerheight": "",
+    "containerheightmode": 1,
+    "containerweight": 100,
+    "contentAlignment": 5,
+    "contentalignment": 5,
+    "enabled": false,
+    "focusSkin": "s58e380e3bb7489a80e6cd369fe00bce",
+    "focusskin": "s58e380e3bb7489a80e6cd369fe00bce",
+    "height": "50dp",
+    "id": "CopyTextField067ec777432384a",
+    "info": null,
+    "iphone": {},
+    "isVisible": true,
+    "isvisible": true,
+    "keyboardtype": "A",
+    "kuid": "85554e198bdb41b59c0c35c4942ad8b6",
+    "left": "56dp",
+    "margin": [
+        0,
+        0,
+        0,
+        0
+    ],
+    "mode": "A",
+    "name": "kony.ui.TextBox2",
+    "padding": [
+        0,
+        0,
+        0,
+        0
+    ],
+    "parent": "FlexScrollContainer071030639d13842",
+    "pf": "frmHelp",
+    "placeholder": "Your Company Name",
+    "placeholderSkin": "s58e380e3bb7489a80e6cd369fe00bce",
+    "placeholderskin": "s58e380e3bb7489a80e6cd369fe00bce",
+    "render": true,
+    "secureTextEntry": false,
+    "securetextentry": false,
+    "skin": "s58e380e3bb7489a80e6cd369fe00bce",
+    "text": "",
+    "textInputMode": "A",
+    "textinputmode": "A",
+    "toolTip": "",
+    "top": "100dp",
+    "viewType": "default",
+    "viewtype": "default",
+    "wType": "TextField",
+    "widgetAlignment": 5,
+    "width": "260dp",
+    "zIndex": 1,
+    "zindex": 1
+}

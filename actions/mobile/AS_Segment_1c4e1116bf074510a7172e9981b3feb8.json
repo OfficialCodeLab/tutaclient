@@ -1,0 +1,15 @@
+{
+	"AS_Segment_1c4e1116bf074510a7172e9981b3feb8": {
+		"id": "AS_Segment_1c4e1116bf074510a7172e9981b3feb8",
+		"type": "ACTION_SEQUENCE",
+		"actions": [
+			{
+				"id": "ADD_SNIPPET__32f25d6cf2c54f078116628b1a3bbcfc",
+				"type": "ADD_SNIPPET",
+				"codeSnippet": "onSearchComplete(2);",
+				"parentId": null,
+				"callbackType": null
+			}
+		]
+	}
+}

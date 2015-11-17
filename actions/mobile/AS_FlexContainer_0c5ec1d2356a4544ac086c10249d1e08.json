@@ -1,0 +1,15 @@
+{
+	"AS_FlexContainer_0c5ec1d2356a4544ac086c10249d1e08": {
+		"id": "AS_FlexContainer_0c5ec1d2356a4544ac086c10249d1e08",
+		"type": "ACTION_SEQUENCE",
+		"actions": [
+			{
+				"id": "ADD_SNIPPET__6fc2046ec70345b6bb912dcfabc911bd",
+				"type": "ADD_SNIPPET",
+				"codeSnippet": "frmSearch.show();",
+				"parentId": null,
+				"callbackType": null
+			}
+		]
+	}
+}

@@ -1,0 +1,15 @@
+{
+	"AS_Segment_75bb0100d3c544fab0fd3d7cc75063e7": {
+		"id": "AS_Segment_75bb0100d3c544fab0fd3d7cc75063e7",
+		"type": "ACTION_SEQUENCE",
+		"actions": [
+			{
+				"id": "ADD_SNIPPET__d26e04e19b7b432ea943438e0460d2de",
+				"type": "ADD_SNIPPET",
+				"codeSnippet": "onDestinationSelected();",
+				"parentId": null,
+				"callbackType": null
+			}
+		]
+	}
+}

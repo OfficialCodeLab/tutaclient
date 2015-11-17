@@ -1,0 +1,14 @@
+{
+	"AS_TextArea_3776e06390554a648ba4fdc85a090d09": {
+		"id": "AS_TextArea_3776e06390554a648ba4fdc85a090d09",
+		"type": "ACTION_SEQUENCE",
+		"actions": [
+			{
+				"id": "ADD_SNIPPET_onBeginEditing_f962b91d86df4171b031ab4e64a5e916",
+				"type": "ADD_SNIPPET",
+				"codeSnippet": "frmHelp.imgEdit.isVisible = false;\nfrmHelp.lblHelp.isVisible = false;",
+				"callbackType": null
+			}
+		]
+	}
+}

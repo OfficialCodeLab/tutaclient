@@ -1,0 +1,16 @@
+{
+    "background_color": "00000000",
+    "bg_type": "one",
+    "border_color": "000000ff",
+    "border_style": "plain",
+    "border_type": 0,
+    "border_width": 0,
+    "font_color": "ffffffff",
+    "font_name": "Helvetica",
+    "font_size": 150,
+    "font_style": "normal",
+    "font_weight": "normal",
+    "isDefaultSkin": false,
+    "kuid": "sbf05d66acfa4c2a90900cf8baa49df0",
+    "wType": "Calendar"
+}

@@ -1,0 +1,77 @@
+{
+    "@class": "com.kony.gen.viz.model.component.KVizButton",
+    "DNDConfig": null,
+    "__parentReadjusting__": false,
+    "_height_": {
+        "type": "string",
+        "value": "50dp"
+    },
+    "_margin_": [
+        6,
+        6,
+        6,
+        6
+    ],
+    "_padding_": [
+        0,
+        0,
+        0,
+        0
+    ],
+    "_right_": {
+        "type": "string",
+        "value": "10dp"
+    },
+    "_skin_": "s9f34a3dc1b24978851eb6fa2e0cda33",
+    "_text_": "",
+    "_top_": {
+        "type": "string",
+        "value": "5dp"
+    },
+    "_width_": {
+        "type": "string",
+        "value": "130dp"
+    },
+    "canUpdateUI": true,
+    "containerWeight": 100,
+    "containerweight": 100,
+    "contentAlignment": 5,
+    "contentalignment": 5,
+    "disabledSkins": {},
+    "displayText": true,
+    "displaytext": true,
+    "enabled": false,
+    "focusSkin": "s2e9a11c33ac4a62a609cc7674221881",
+    "focusskin": "s2e9a11c33ac4a62a609cc7674221881",
+    "height": "50dp",
+    "id": "btnSignOut",
+    "info": null,
+    "isVisible": true,
+    "isvisible": true,
+    "kuid": "e6c8756bc3454a3ca7ecc4fce763d46a",
+    "margin": [
+        6,
+        6,
+        6,
+        6
+    ],
+    "name": "kony.ui.Button",
+    "padding": [
+        0,
+        0,
+        0,
+        0
+    ],
+    "parent": "flexMenu",
+    "pf": "frmMap",
+    "render": true,
+    "right": "10dp",
+    "skin": "s9f34a3dc1b24978851eb6fa2e0cda33",
+    "text": "",
+    "top": "5dp",
+    "wType": "Button",
+    "widgetAlignment": 5,
+    "width": "130dp",
+    "zIndex": 50,
+    "zindex": 50
+}

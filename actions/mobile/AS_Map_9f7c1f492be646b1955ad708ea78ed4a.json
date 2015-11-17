@@ -1,0 +1,14 @@
+{
+	"AS_Map_9f7c1f492be646b1955ad708ea78ed4a": {
+		"id": "AS_Map_9f7c1f492be646b1955ad708ea78ed4a",
+		"type": "ACTION_SEQUENCE",
+		"actions": [
+			{
+				"id": "ADD_SNIPPET_onPinClick_227e84dc52324717a635ae0b87209d8a",
+				"type": "ADD_SNIPPET",
+				"codeSnippet": "//selectPickUpLocation();",
+				"callbackType": null
+			}
+		]
+	}
+}

@@ -1,0 +1,81 @@
+{
+    "@class": "com.kony.gen.viz.model.component.KVizButton",
+    "DNDConfig": null,
+    "__parentReadjusting__": false,
+    "_height_": {
+        "type": "string",
+        "value": "40dp"
+    },
+    "_left_": {
+        "type": "string",
+        "value": "97dp"
+    },
+    "_margin_": [
+        6,
+        6,
+        6,
+        6
+    ],
+    "_padding_": [
+        0,
+        0,
+        0,
+        0
+    ],
+    "_skin_": "s8246ec3a3794f63b1bb6e0afbf4bd58",
+    "_text_": "",
+    "_top_": {
+        "type": "string",
+        "value": "155dp"
+    },
+    "_width_": {
+        "type": "string",
+        "value": "55dp"
+    },
+    "canUpdateUI": true,
+    "centerX": "20%",
+    "centerx": {
+        "type": "string",
+        "value": "20%"
+    },
+    "containerWeight": 100,
+    "containerweight": 100,
+    "contentAlignment": 5,
+    "contentalignment": 5,
+    "displayText": true,
+    "displaytext": true,
+    "enabled": false,
+    "focusSkin": "sea2fc009dd9469595631851c3339d71",
+    "focusskin": "sea2fc009dd9469595631851c3339d71",
+    "height": "40dp",
+    "id": "btnDayDown",
+    "info": null,
+    "isVisible": true,
+    "isvisible": true,
+    "kuid": "df9d1d780f2a4596ad175e5a697f49e2",
+    "left": "97dp",
+    "margin": [
+        6,
+        6,
+        6,
+        6
+    ],
+    "name": "kony.ui.Button",
+    "padding": [
+        0,
+        0,
+        0,
+        0
+    ],
+    "parent": "flexSetTime",
+    "pf": "frmConfirm",
+    "render": true,
+    "skin": "s8246ec3a3794f63b1bb6e0afbf4bd58",
+    "text": "",
+    "top": "155dp",
+    "wType": "Button",
+    "widgetAlignment": 5,
+    "width": "55dp",
+    "zIndex": 9,
+    "zindex": 9
+}

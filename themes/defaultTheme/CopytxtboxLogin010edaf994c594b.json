@@ -1,0 +1,77 @@
+{
+    "android": {
+        "font_name": "Helvetica",
+        "wType": "TextField"
+    },
+    "background_color": "ffffff72",
+    "bg_type": "one",
+    "border_color": "36a595ff",
+    "border_radius": 4,
+    "border_style": "custom",
+    "border_type": 0,
+    "border_width": 2,
+    "desktopweb": {
+        "font_name": "Helvetica",
+        "wType": "TextField"
+    },
+    "font_color": "ffffffff",
+    "font_name": "",
+    "font_size": 120,
+    "font_style": "normal",
+    "font_weight": "normal",
+    "ipad": {
+        "font_name": "Helvetica",
+        "wType": "TextField"
+    },
+    "iphone": {
+        "font_name": "Helvetica",
+        "wType": "TextField"
+    },
+    "isDefaultSkin": false,
+    "kiosk": {
+        "font_name": "GenericMonospace",
+        "wType": "TextField"
+    },
+    "kuid": "sad8f9329e0f422c86e8fd8402ac65a5",
+    "spaan": {
+        "font_name": "Helvetica",
+        "wType": "TextField"
+    },
+    "spaandroidtablet": {
+        "font_name": "Helvetica",
+        "wType": "TextField"
+    },
+    "spabb": {
+        "font_name": "Helvetica",
+        "wType": "TextField"
+    },
+    "spaip": {
+        "font_name": "Helvetica",
+        "wType": "TextField"
+    },
+    "spaipad": {
+        "font_name": "Helvetica",
+        "wType": "TextField"
+    },
+    "spawindowstablet": {
+        "font_name": "Helvetica",
+        "wType": "TextField"
+    },
+    "spawinphone8": {
+        "font_name": "Helvetica",
+        "wType": "TextField"
+    },
+    "tabrcandroid": {
+        "font_name": "Helvetica",
+        "wType": "TextField"
+    },
+    "wType": "TextField",
+    "windows8": {
+        "font_name": "GenericMonospace",
+        "wType": "TextField"
+    },
+    "winphone8": {
+        "font_name": "GenericMonospace",
+        "wType": "TextField"
+    }
+}

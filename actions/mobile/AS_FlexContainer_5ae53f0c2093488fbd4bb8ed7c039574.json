@@ -1,0 +1,28 @@
+{
+	"AS_FlexContainer_5ae53f0c2093488fbd4bb8ed7c039574": {
+		"id": "AS_FlexContainer_5ae53f0c2093488fbd4bb8ed7c039574",
+		"type": "ACTION_SEQUENCE",
+		"actions": [
+			{
+				"id": "SET_FORM_WIDGET_PROPERTY____9ae7e67cae9b4684ba2431386e3ed747",
+				"type": "SET_WIDGET_PROPERTY",
+				"itemType": "FORM",
+				"itemId": "frmMap",
+				"widgetId": "flexProgress",
+				"propertyName": "isVisible",
+				"propertyValue": "false",
+				"itemKUID": "6eb20c3c6a784926866ec0c5966382a5",
+				"widgetKUID": "78dba4ca66174cd18a7372440abc3a8f",
+				"isSkinProperty": false,
+				"forkedPlatform": "all",
+				"callbackType": null
+			},
+			{
+				"id": "ADD_SNIPPET_onTouchEnd_7b3c072b289b4a7685c1809a612c0aaa",
+				"type": "ADD_SNIPPET",
+				"codeSnippet": "stopLogoAnimation(frmMap.imgCircle);",
+				"callbackType": null
+			}
+		]
+	}
+}

@@ -1,0 +1,88 @@
+{
+    "@class": "com.kony.gen.viz.model.container.KVizForm",
+    "DNDConfig": null,
+    "_margin_": [
+        0,
+        0,
+        0,
+        0
+    ],
+    "_padding_": [
+        0,
+        0,
+        0,
+        0
+    ],
+    "_skin_": "s0beb51454944ec895b7dbcc6f473bfa",
+    "_title_": null,
+    "addWidgetsdone": false,
+    "allboxes": [],
+    "canUpdateUI": true,
+    "children": [
+        "HBox088b17ebe8cfd4e"
+    ],
+    "containerWeight": 80,
+    "containerweight": 80,
+    "contentOffsetX": 0,
+    "contentOffsetY": 0,
+    "contentSizeHeight": 0,
+    "contentSizeWidth": 0,
+    "currentLocale": null,
+    "desktopweb": {
+        "psp": {
+            "titleBarConfig": {
+                "closeIcon": "close.png",
+                "maxIcon": "max.png",
+                "minIcon": "min.png"
+            }
+        }
+    },
+    "device": "iPhone6",
+    "displayOrientation": 3,
+    "displayorientation": 3,
+    "enabled": false,
+    "enabledForIdleTimeout": false,
+    "enabledforidletimeout": false,
+    "id": "popRequestSent",
+    "info": null,
+    "initdone": false,
+    "inputAccessoryViewType": 4,
+    "inputaccessoryviewtype": 4,
+    "isModal": false,
+    "isVisible": true,
+    "ismodal": false,
+    "isvisible": true,
+    "kuid": "d59565f04de94ee6880704d5312b1a16",
+    "margin": [
+        0,
+        0,
+        0,
+        0
+    ],
+    "name": "kony.ui.Popup",
+    "orientation": 1,
+    "padding": [
+        0,
+        0,
+        0,
+        0
+    ],
+    "paddingInPixel": false,
+    "paddinginpixel": false,
+    "percent": true,
+    "platform": "iphone",
+    "prevDevice": "iPhone6",
+    "prevPlatform": "iphone",
+    "render": true,
+    "retainScrollPosition": false,
+    "retainscrollposition": false,
+    "shellCSS": "iOS_iPhone6",
+    "skin": "s0beb51454944ec895b7dbcc6f473bfa",
+    "title": null,
+    "titleBar": true,
+    "titlebar": true,
+    "transparencyBehindThePopup": 100,
+    "transparencybehindthepopup": 100,
+    "wType": "Popup",
+    "widgetAlignment": 5
+}

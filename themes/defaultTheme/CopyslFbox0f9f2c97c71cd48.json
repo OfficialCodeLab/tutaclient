@@ -1,0 +1,99 @@
+{
+  "android": {
+    "background_color": {
+      "angle": 315,
+      "colors": [
+        "e8e8e8ff",
+        "e8e8e8ff",
+        "ffffff00",
+        "ffffff00"
+      ],
+      "cs": [
+        0,
+        50,
+        50,
+        100
+      ],
+      "gradientType": "custom",
+      "gt": "linear"
+    },
+    "background_style": "linear",
+    "bg_type": "ms_gradient",
+    "isForked": true
+  },
+  "background_color": "00000000",
+  "bg_type": "one",
+  "border_color": "000000ff",
+  "border_style": "plain",
+  "border_type": 0,
+  "border_width": 0,
+  "ipad": {
+    "background_color": {
+      "angle": 315,
+      "colors": [
+        "e8e8e8ff",
+        "e8e8e8ff",
+        "ffffff00",
+        "ffffff00"
+      ],
+      "cs": [
+        0,
+        50,
+        50,
+        100
+      ],
+      "gradientType": "custom",
+      "gt": "linear"
+    },
+    "background_style": "linear",
+    "bg_type": "ms_gradient",
+    "isForked": true
+  },
+  "iphone": {
+    "background_color": {
+      "angle": 315,
+      "colors": [
+        "e8e8e8ff",
+        "e8e8e8ff",
+        "ffffff00",
+        "ffffff00"
+      ],
+      "cs": [
+        0,
+        50,
+        50,
+        100
+      ],
+      "gradientType": "custom",
+      "gt": "linear"
+    },
+    "background_style": "linear",
+    "bg_type": "ms_gradient",
+    "isForked": true
+  },
+  "isDefaultSkin": false,
+  "kuid": "sf856f6c63a947bb9ab8f41f3f8ed7d7",
+  "tabrcandroid": {
+    "background_color": {
+      "angle": 315,
+      "colors": [
+        "e8e8e8ff",
+        "e8e8e8ff",
+        "ffffff00",
+        "ffffff00"
+      ],
+      "cs": [
+        0,
+        50,
+        50,
+        100
+      ],
+      "gradientType": "custom",
+      "gt": "linear"
+    },
+    "background_style": "linear",
+    "bg_type": "ms_gradient",
+    "isForked": true
+  },
+  "wType": "FlexContainer"
+}

@@ -1,0 +1,94 @@
+{
+    "DNDConfig": null,
+    "_margin_": [
+        0,
+        0,
+        0,
+        0
+    ],
+    "_padding_": [
+        0,
+        0,
+        0,
+        0
+    ],
+    "_skin_": "s1938375ce72486f894e571cf35fe3d8",
+    "_title_": null,
+    "addWidgetsdone": false,
+    "allboxes": [],
+    "canUpdateUI": true,
+    "centerX": "",
+    "centerY": "",
+    "channel": "mobile",
+    "children": [
+        "FlexContainer0f09b6d2ad35646"
+    ],
+    "containerId": true,
+    "containerWeight": 100,
+    "containerweight": 100,
+    "contentOffsetX": 0,
+    "contentOffsetY": 0,
+    "contentSizeHeight": 0,
+    "contentSizeWidth": 0,
+    "currentLocale": null,
+    "device": "iPhone6",
+    "displayOrientation": 3,
+    "displayorientation": 3,
+    "enabled": false,
+    "enabledForIdleTimeout": false,
+    "enabledforidletimeout": false,
+    "id": "tempDestinations",
+    "inTransitionConfig": {
+        "formTransition": "None"
+    },
+    "info": null,
+    "initdone": false,
+    "inputAccessoryViewType": 4,
+    "inputaccessoryviewtype": 4,
+    "intransitionconfig": {
+        "formTransition": "None"
+    },
+    "isVisible": true,
+    "isvisible": true,
+    "kuid": "64380d381f96498295632ab2d8f37dba",
+    "margin": [
+        0,
+        0,
+        0,
+        0
+    ],
+    "name": "kony.ui.Form2",
+    "needAppMenu": true,
+    "needappmenu": true,
+    "orientation": 1,
+    "outTransitionConfig": {
+        "formTransition": "None"
+    },
+    "outtransitionconfig": {
+        "formTransition": "None"
+    },
+    "padding": [
+        0,
+        0,
+        0,
+        0
+    ],
+    "paddingInPixel": false,
+    "paddinginpixel": false,
+    "percent": true,
+    "platform": "iphone",
+    "prevDevice": "iPhone6",
+    "prevPlatform": "iphone",
+    "render": true,
+    "retainScrollPosition": false,
+    "retainscrollposition": false,
+    "shellCSS": "iOS_iPhone6",
+    "skin": "s1938375ce72486f894e571cf35fe3d8",
+    "title": null,
+    "titleBar": true,
+    "titleBarSkin": "s24ff015bbae4b4f9f512411222c0409",
+    "titlebar": true,
+    "type": 3,
+    "wType": "Form",
+    "widgetAlignment": 5
+}

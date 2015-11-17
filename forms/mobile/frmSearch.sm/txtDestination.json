@@ -1,0 +1,111 @@
+{
+    "DNDConfig": null,
+    "__parentReadjusting__": false,
+    "_height_": {
+        "type": "string",
+        "value": "40dp"
+    },
+    "_left_": {
+        "type": "string",
+        "value": "0dp"
+    },
+    "_margin_": [
+        0,
+        0,
+        0,
+        0
+    ],
+    "_padding_": [
+        5,
+        0,
+        0,
+        0
+    ],
+    "_placeholder_": "Enter Address",
+    "_skin_": "s9814c25af754e7f8005f3f261be22aa",
+    "_text_": "",
+    "_top_": {
+        "type": "string",
+        "value": "0%"
+    },
+    "_width_": {
+        "type": "string",
+        "value": "100%"
+    },
+    "autoCapitalize": "none",
+    "autoComplete": false,
+    "autoCorrect": false,
+    "autoFilter": false,
+    "autocapitalize": "none",
+    "autocomplete": false,
+    "autocorrect": false,
+    "autofilter": false,
+    "canUpdateUI": true,
+    "channel": "mobile",
+    "containerHeight": "",
+    "containerHeightMode": 1,
+    "containerWeight": 100,
+    "containerheight": "",
+    "containerheightmode": 1,
+    "containerweight": 100,
+    "contentAlignment": 4,
+    "contentalignment": 4,
+    "enabled": false,
+    "height": {
+        "type": "string",
+        "value": "40dp"
+    },
+    "id": "txtDestination",
+    "info": null,
+    "isVisible": true,
+    "isvisible": true,
+    "keyboardtype": "A",
+    "kuid": "9025e1a02f084ff9a76dce3d98fe6826",
+    "left": {
+        "type": "string",
+        "value": "0dp"
+    },
+    "margin": [
+        0,
+        0,
+        0,
+        0
+    ],
+    "mode": "A",
+    "name": "kony.ui.TextBox2",
+    "onDone": "AS_TextField_cce8783245c841e6b51a364bb0fe053c",
+    "ondone": "AS_TextField_cce8783245c841e6b51a364bb0fe053c",
+    "padding": [
+        5,
+        0,
+        0,
+        0
+    ],
+    "paddingInPixel": false,
+    "paddinginpixel": false,
+    "parent": "FlexScrollContainer05238033c17b041",
+    "pf": "frmSearch",
+    "placeholder": "Enter Address",
+    "render": true,
+    "secureTextEntry": false,
+    "securetextentry": false,
+    "skin": "s9814c25af754e7f8005f3f261be22aa",
+    "text": "",
+    "textInputMode": "A",
+    "textinputmode": "A",
+    "toolTip": "",
+    "top": {
+        "type": "string",
+        "value": "0%"
+    },
+    "viewType": "default",
+    "viewtype": "default",
+    "wType": "TextField",
+    "widgetAlignment": 5,
+    "width": {
+        "type": "string",
+        "value": "100%"
+    },
+    "zIndex": 2,
+    "zindex": 2
+}

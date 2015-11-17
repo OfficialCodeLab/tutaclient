@@ -1,0 +1,66 @@
+{
+	"AS_Button_ea6244a337ee4e62bf8276a21b656825": {
+		"id": "AS_Button_ea6244a337ee4e62bf8276a21b656825",
+		"type": "ACTION_SEQUENCE",
+		"actions": [
+			{
+				"id": "MOVE_ACTION____2612586a38dc4c1f8cd56be5eeafdc3f",
+				"type": "MOVE_ACTION",
+				"itemType": "FORM",
+				"itemId": "frmSplash",
+				"widgetId": "__missing_id__",
+				"itemKUID": "2900f01502014865afbca4438414bc59",
+				"widgetKUID": "f5d195b75d82469a9dde78ccb875f921",
+				"animationObject": {
+					"left": "-100%",
+					"anchorPoint": {},
+					"stepConfig": {
+						"timingFunction": "kony.anim.EASIN_IN_OUT"
+					}
+				},
+				"config": {
+					"delay": "0",
+					"iterationCount": 1,
+					"fillMode": "kony.anim.FILL_MODE_FORWARDS",
+					"duration": "500"
+				},
+				"start": "Immediately",
+				"parentAnimation": "MOVE_ACTION____fe7b4cd8793e42dfbcecd44dcbbe6e07",
+				"animationId": "MOVE_ACTION____2612586a38dc4c1f8cd56be5eeafdc3f",
+				"displayAnimationId": "MOVE_ACTION____2612586a38dc4c1f8cd56be5eeafdc3f",
+				"forkedPlatform": "all",
+				"parentId": null,
+				"callbackType": null
+			},
+			{
+				"id": "MOVE_ACTION____2fa6f35f2c21484cb5fe69c2ac0a0fed",
+				"type": "MOVE_ACTION",
+				"itemType": "FORM",
+				"itemId": "frmSplash",
+				"widgetId": "__missing_id__",
+				"itemKUID": "2900f01502014865afbca4438414bc59",
+				"widgetKUID": "a2d12ade2a03452eba9c6f58b942df8d",
+				"animationObject": {
+					"left": "0px",
+					"anchorPoint": {},
+					"stepConfig": {
+						"timingFunction": "kony.anim.EASIN_IN_OUT"
+					}
+				},
+				"config": {
+					"delay": "0",
+					"iterationCount": 1,
+					"fillMode": "kony.anim.FILL_MODE_FORWARDS",
+					"duration": "500"
+				},
+				"start": "Immediately",
+				"parentAnimation": "MOVE_ACTION____fe7b4cd8793e42dfbcecd44dcbbe6e07",
+				"animationId": "MOVE_ACTION____2fa6f35f2c21484cb5fe69c2ac0a0fed",
+				"displayAnimationId": "MOVE_ACTION____2fa6f35f2c21484cb5fe69c2ac0a0fed",
+				"forkedPlatform": "all",
+				"parentId": null,
+				"callbackType": null
+			}
+		]
+	}
+}

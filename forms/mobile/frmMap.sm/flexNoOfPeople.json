@@ -1,0 +1,100 @@
+{
+    "DNDConfig": null,
+    "__parentReadjusting__": false,
+    "_bottom_": {
+        "type": "number",
+        "value": "0"
+    },
+    "_height_": {
+        "type": "string",
+        "value": "100dp"
+    },
+    "_left_": {
+        "type": "string",
+        "value": "0dp"
+    },
+    "_margin_": [
+        0,
+        0,
+        0,
+        0
+    ],
+    "_padding_": [
+        0,
+        0,
+        0,
+        0
+    ],
+    "_render_": true,
+    "_skin_": "s5102cbf36274d7aa620f5bb00fc730d",
+    "_width_": {
+        "type": "string",
+        "value": "100%"
+    },
+    "allboxes": [],
+    "autogrowMode": 0,
+    "autogrowmode": 0,
+    "bottom": 0,
+    "canUpdateUI": true,
+    "channel": "mobile",
+    "children": [
+        "imgPeople1",
+        "imgPeople2",
+        "imgPeople3",
+        "imgPeople4",
+        "imgPeople5",
+        "imgPeople6",
+        "lblHowMany",
+        "btnPerson1",
+        "btnPerson2",
+        "btnPerson3",
+        "btnPerson4",
+        "btnPerson5",
+        "btnPerson6"
+    ],
+    "clipBounds": true,
+    "clipbounds": true,
+    "containerWeight": 100,
+    "containerweight": 100,
+    "enableScrolling": true,
+    "enabled": false,
+    "enablescrolling": true,
+    "height": "100dp",
+    "id": "flexNoOfPeople",
+    "info": null,
+    "isVisible": true,
+    "isvisible": true,
+    "kuid": "be4cda5d88004110bffbe7437a25f426",
+    "layoutType": 2,
+    "layouttype": 2,
+    "left": "0dp",
+    "margin": [
+        0,
+        0,
+        0,
+        0
+    ],
+    "name": "kony.ui.FlexContainer",
+    "orientation": 6,
+    "padding": [
+        0,
+        0,
+        0,
+        0
+    ],
+    "parent": "flexOptions",
+    "percent": true,
+    "pf": "frmMap",
+    "render": true,
+    "skin": "s5102cbf36274d7aa620f5bb00fc730d",
+    "snapGridSize": 10,
+    "snapToGrid": true,
+    "snapgridsize": 10,
+    "snaptogrid": true,
+    "wType": "FlexContainer",
+    "widgetAlignment": 1,
+    "widgetalignment": 1,
+    "width": "100%",
+    "zIndex": 2,
+    "zindex": 2
+}

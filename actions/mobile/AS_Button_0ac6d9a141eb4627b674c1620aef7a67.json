@@ -1,0 +1,29 @@
+{
+	"AS_Button_0ac6d9a141eb4627b674c1620aef7a67": {
+		"id": "AS_Button_0ac6d9a141eb4627b674c1620aef7a67",
+		"type": "ACTION_SEQUENCE",
+		"params": [
+			{
+				"datatype": "collection",
+				"name": "eventobject"
+			}
+		],
+		"actions": [
+			{
+				"id": "SET_FORM_WIDGET_PROPERTY_Untitled___312203207b9b4d76b74aacdf8afa1601",
+				"type": "SET_WIDGET_PROPERTY",
+				"itemType": "FORM",
+				"itemId": "frmConfirm",
+				"widgetId": "flexDateTime",
+				"propertyName": "isVisible",
+				"propertyValue": "true",
+				"itemKUID": "2955918f0d594eafbfb045b7a8b080e8",
+				"widgetKUID": "4afde099c5f8498bb1ac9fe544aea156",
+				"isSkinProperty": false,
+				"forkedPlatform": "all",
+				"parentId": null,
+				"callbackType": null
+			}
+		]
+	}
+}

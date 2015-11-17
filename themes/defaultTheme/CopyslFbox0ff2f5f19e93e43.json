@@ -1,0 +1,12 @@
+{
+  "background_image": "driver.png",
+  "bg_type": "image",
+  "border_color": "00000000",
+  "border_radius": 50,
+  "border_style": "custom",
+  "border_type": 0,
+  "border_width": 3,
+  "isDefaultSkin": false,
+  "kuid": "sbc211f7a72d49699aa782bb37adbbac",
+  "wType": "FlexContainer"
+}

@@ -1,0 +1,91 @@
+{
+    "@class": "com.kony.gen.viz.model.component.KVizImage2",
+    "DNDConfig": null,
+    "__parentReadjusting__": false,
+    "_base64_": null,
+    "_height_": {
+        "type": "string",
+        "value": "25dp"
+    },
+    "_left_": {
+        "type": "string",
+        "value": "97dp"
+    },
+    "_margin_": [
+        0,
+        0,
+        0,
+        0
+    ],
+    "_padding_": [
+        0,
+        0,
+        0,
+        0
+    ],
+    "_skin_": "s4ea8d4d07574957b839f06194980e52",
+    "_src_": "timearrowdown.png",
+    "_top_": {
+        "type": "string",
+        "value": "325dp"
+    },
+    "_width_": {
+        "type": "string",
+        "value": "25dp"
+    },
+    "base64": null,
+    "canUpdateUI": true,
+    "centerX": "30%",
+    "centerx": {
+        "type": "string",
+        "value": "30%"
+    },
+    "containerWeight": 100,
+    "containerweight": 100,
+    "context": {
+        "channel": "mobile",
+        "formID": "frmConfirm",
+        "ispercent": true,
+        "platform": "iphone",
+        "templateType": "forms",
+        "topLevelBox": null
+    },
+    "enabled": false,
+    "height": "25dp",
+    "id": "CopyImage09957ffbbe2dd44",
+    "imageScaleMode": 1,
+    "imagescalemode": 1,
+    "info": null,
+    "invokedProperty": "src",
+    "isVisible": true,
+    "ispercent": true,
+    "isvisible": true,
+    "kuid": "07de34e6ec3c484b91e8ee405c16240f",
+    "left": "97dp",
+    "margin": [
+        0,
+        0,
+        0,
+        0
+    ],
+    "name": "kony.ui.Image2",
+    "padding": [
+        0,
+        0,
+        0,
+        0
+    ],
+    "parent": "flexSetTime",
+    "pf": "frmConfirm",
+    "render": true,
+    "skin": "s4ea8d4d07574957b839f06194980e52",
+    "src": "timearrowdown.png",
+    "srcType": 1,
+    "top": "325dp",
+    "wType": "Image",
+    "widgetAlignment": 5,
+    "widgetalignment": 5,
+    "width": "25dp",
+    "zIndex": 1,
+    "zindex": 1
+}

@@ -1,0 +1,55 @@
+{
+    "@class": "com.kony.gen.viz.model.component.KVizButton",
+    "DNDConfig": null,
+    "_margin_": [
+        6,
+        6,
+        6,
+        6
+    ],
+    "_padding_": [
+        4,
+        4,
+        4,
+        4
+    ],
+    "_skin_": "s461e8be9ce549e584a029b3f9470d1c",
+    "_text_": "Close",
+    "canUpdateUI": true,
+    "containerWeight": 100,
+    "containerweight": 100,
+    "contentAlignment": 5,
+    "contentalignment": 5,
+    "displayText": true,
+    "displaytext": true,
+    "enabled": false,
+    "focusSkin": "seae9897bb7749a1a7b93820b2636a29",
+    "focusskin": "seae9897bb7749a1a7b93820b2636a29",
+    "id": "Button0c8bc1ccfbcdd4a",
+    "info": null,
+    "isVisible": true,
+    "isvisible": true,
+    "kuid": "4ad1d962c2114645a6602d2d76df74f6",
+    "margin": [
+        6,
+        6,
+        6,
+        6
+    ],
+    "name": "kony.ui.Button",
+    "onClick": "AS_Button_6976d62762f549b784c739daf6d6eee6",
+    "onclick": "AS_Button_6976d62762f549b784c739daf6d6eee6",
+    "padding": [
+        4,
+        4,
+        4,
+        4
+    ],
+    "parent": "VBox0efecf012ab1846",
+    "pf": "popRequestSent",
+    "render": true,
+    "skin": "s461e8be9ce549e584a029b3f9470d1c",
+    "text": "Close",
+    "wType": "Button",
+    "widgetAlignment": 5
+}

@@ -1,0 +1,22 @@
+{
+	"AS_TextArea_6bc5926718be4d7a91157a03220e5651": {
+		"id": "AS_TextArea_6bc5926718be4d7a91157a03220e5651",
+		"type": "ACTION_SEQUENCE",
+		"actions": [
+			{
+				"id": "SET_FORM_WIDGET_PROPERTY_Untitled___45a833498c0948a28858d4df3d6ac596",
+				"type": "SET_WIDGET_PROPERTY",
+				"itemType": "FORM",
+				"itemId": "frmHelp",
+				"propertyName": "isVisible",
+				"propertyValue": "true",
+				"itemKUID": "15e6a60e43bb4c34bd5fe433146f07a4",
+				"widgetKUID": "85c5ac834e774e648fd348915f1df050",
+				"isSkinProperty": false,
+				"forkedPlatform": "all",
+				"parentId": null,
+				"callbackType": null
+			}
+		]
+	}
+}

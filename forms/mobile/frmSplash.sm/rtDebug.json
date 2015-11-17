@@ -1,0 +1,74 @@
+{
+    "DNDConfig": null,
+    "__parentReadjusting__": false,
+    "_height_": {
+        "type": "string",
+        "value": "100dp"
+    },
+    "_left_": {
+        "type": "string",
+        "value": "0dp"
+    },
+    "_margin_": [
+        0,
+        0,
+        0,
+        0
+    ],
+    "_padding_": [
+        0,
+        0,
+        0,
+        0
+    ],
+    "_skin_": "sccbb13524ee4e6584d45e1becaccb1a",
+    "_text_": "Please Wait...",
+    "_top_": {
+        "type": "string",
+        "value": "0dp"
+    },
+    "_width_": {
+        "type": "string",
+        "value": "100%"
+    },
+    "_wrapping_": 2,
+    "canUpdateUI": true,
+    "channel": "mobile",
+    "containerWeight": 100,
+    "containerweight": 100,
+    "contentAlignment": 5,
+    "contentalignment": 5,
+    "enabled": false,
+    "height": "100dp",
+    "id": "rtDebug",
+    "info": null,
+    "isVisible": true,
+    "isvisible": true,
+    "kuid": "3631624fc8d94fbdaf79b8489eb5618e",
+    "left": "0dp",
+    "margin": [
+        0,
+        0,
+        0,
+        0
+    ],
+    "name": "kony.ui.RichText",
+    "padding": [
+        0,
+        0,
+        0,
+        0
+    ],
+    "parent": "flexDebug",
+    "pf": "frmSplash",
+    "render": true,
+    "skin": "sccbb13524ee4e6584d45e1becaccb1a",
+    "text": "Please Wait...",
+    "toolTip": "",
+    "top": "0dp",
+    "wType": "RichText",
+    "widgetAlignment": 5,
+    "widgetalignment": 5,
+    "width": "100%",
+    "wrapping": 2
+}

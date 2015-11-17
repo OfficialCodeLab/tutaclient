@@ -1,0 +1,30 @@
+{
+	"AS_FlexContainer_e4b1ac5955ae4f2d8191eb905ef0c8ef": {
+		"id": "AS_FlexContainer_e4b1ac5955ae4f2d8191eb905ef0c8ef",
+		"type": "ACTION_SEQUENCE",
+		"actions": [
+			{
+				"id": "SET_FORM_WIDGET_PROPERTY_Untitled___a7eb1e2b50bb4ff9b2fbbde96e9be3d1",
+				"type": "SET_WIDGET_PROPERTY",
+				"itemType": "FORM",
+				"itemId": "frmMap",
+				"widgetId": "flexProgress",
+				"propertyName": "isVisible",
+				"propertyValue": "false",
+				"itemKUID": "6eb20c3c6a784926866ec0c5966382a5",
+				"widgetKUID": "78dba4ca66174cd18a7372440abc3a8f",
+				"isSkinProperty": false,
+				"forkedPlatform": "all",
+				"parentId": null,
+				"callbackType": null
+			},
+			{
+				"id": "ADD_SNIPPET__5e9474ab3a44455aafa001b9614e029a",
+				"type": "ADD_SNIPPET",
+				"codeSnippet": "stopLogoAnimation(frmMap.imgCircle);",
+				"parentId": null,
+				"callbackType": null
+			}
+		]
+	}
+}

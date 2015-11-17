@@ -1,0 +1,76 @@
+{
+    "@class": "com.kony.gen.viz.model.component.KVizButton",
+    "DNDConfig": null,
+    "__parentReadjusting__": false,
+    "_height_": {
+        "type": "string",
+        "value": "70%"
+    },
+    "_margin_": [
+        6,
+        6,
+        6,
+        6
+    ],
+    "_padding_": [
+        0,
+        0,
+        0,
+        0
+    ],
+    "_skin_": "sa32cc3f8b4e40238a1d13061b36826a",
+    "_text_": "",
+    "_top_": {
+        "type": "string",
+        "value": "8dp"
+    },
+    "_width_": {
+        "type": "string",
+        "value": "15%"
+    },
+    "canUpdateUI": true,
+    "centerX": "71%",
+    "centerx": {
+        "type": "string",
+        "value": "71%"
+    },
+    "containerWeight": 100,
+    "containerweight": 100,
+    "contentAlignment": 5,
+    "contentalignment": 5,
+    "displayText": true,
+    "displaytext": true,
+    "enabled": false,
+    "focusSkin": "s8481205459a44f999b58da660338141",
+    "focusskin": "s8481205459a44f999b58da660338141",
+    "height": "70%",
+    "id": "btnPerson5",
+    "info": null,
+    "isVisible": true,
+    "isvisible": true,
+    "kuid": "4d25f00acfce4a5dae03021056516858",
+    "margin": [
+        6,
+        6,
+        6,
+        6
+    ],
+    "name": "kony.ui.Button",
+    "padding": [
+        0,
+        0,
+        0,
+        0
+    ],
+    "parent": "flexNoOfPeople",
+    "pf": "frmMap",
+    "render": true,
+    "skin": "sa32cc3f8b4e40238a1d13061b36826a",
+    "text": "",
+    "top": "8dp",
+    "wType": "Button",
+    "widgetAlignment": 5,
+    "width": "15%",
+    "zIndex": 900,
+    "zindex": 900
+}

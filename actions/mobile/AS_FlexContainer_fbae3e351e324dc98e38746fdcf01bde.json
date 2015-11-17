@@ -1,0 +1,14 @@
+{
+	"AS_FlexContainer_fbae3e351e324dc98e38746fdcf01bde": {
+		"id": "AS_FlexContainer_fbae3e351e324dc98e38746fdcf01bde",
+		"type": "ACTION_SEQUENCE",
+		"actions": [
+			{
+				"id": "ADD_SNIPPET_onTouchStart_24b3286629ea479588c387b213f89b58",
+				"type": "ADD_SNIPPET",
+				"codeSnippet": "onSearchComplete(0);",
+				"callbackType": null
+			}
+		]
+	}
+}

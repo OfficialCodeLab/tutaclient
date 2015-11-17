@@ -1,0 +1,14 @@
+{
+	"AS_TextField_a4ab095c5e2543339383bba2b1defaee": {
+		"id": "AS_TextField_a4ab095c5e2543339383bba2b1defaee",
+		"type": "ACTION_SEQUENCE",
+		"actions": [
+			{
+				"id": "ADD_SNIPPET_onTextChange_8978e95813404d9c903db4cdc6fe7bd8",
+				"type": "ADD_SNIPPET",
+				"codeSnippet": "frmMap.flexAddressList.visible = false;",
+				"callbackType": null
+			}
+		]
+	}
+}

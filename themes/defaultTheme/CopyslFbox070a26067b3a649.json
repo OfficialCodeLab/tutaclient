@@ -1,0 +1,11 @@
+{
+    "background_image": "tutabg.png",
+    "bg_type": "image",
+    "border_color": "000000ff",
+    "border_style": "plain",
+    "border_type": 0,
+    "border_width": 0,
+    "isDefaultSkin": false,
+    "kuid": "sb4bab3591e3449b8211cdcc58af19d6",
+    "wType": "FlexContainer"
+}

@@ -1,0 +1,81 @@
+{
+    "DNDConfig": null,
+    "__parentReadjusting__": false,
+    "_height_": {
+        "type": "string",
+        "value": "45%"
+    },
+    "_left_": {
+        "type": "number",
+        "value": "10"
+    },
+    "_margin_": [
+        0,
+        0,
+        0,
+        0
+    ],
+    "_padding_": [
+        0,
+        0,
+        0,
+        0
+    ],
+    "_skin_": "sbac5b614df34d138415f1bd9421ec82",
+    "_text_": "<span style=\"color:#e44e4a\">To</span><br>90 Parel Vallei<br><br><span style=\"color:#e44e4a\">From</span><br>22 West Road<br><br><span style=\"color:#e44e4a\">Time</span><br>15:05 - 16:00<br>\n\n24/09/2015\n\n\n",
+    "_top_": {
+        "type": "string",
+        "value": "15%"
+    },
+    "_width_": {
+        "type": "string",
+        "value": "80%"
+    },
+    "_wrapping_": 2,
+    "canUpdateUI": true,
+    "centerX": "50%",
+    "centerx": {
+        "type": "string",
+        "value": "50%"
+    },
+    "channel": "mobile",
+    "containerWeight": 100,
+    "containerweight": 100,
+    "contentAlignment": 2,
+    "contentalignment": 2,
+    "enabled": false,
+    "height": "45%",
+    "id": "rtInfo",
+    "info": null,
+    "isVisible": true,
+    "isvisible": true,
+    "kuid": "008cf3eda1454ce8993f922cdaf59575",
+    "left": 10,
+    "margin": [
+        0,
+        0,
+        0,
+        0
+    ],
+    "name": "kony.ui.RichText",
+    "padding": [
+        0,
+        0,
+        0,
+        0
+    ],
+    "parent": "FlexContainer03d11d945e7de4a",
+    "pf": "frmRating",
+    "render": true,
+    "skin": "sbac5b614df34d138415f1bd9421ec82",
+    "text": "<span style=\"color:#e44e4a\">To</span><br>90 Parel Vallei<br><br><span style=\"color:#e44e4a\">From</span><br>22 West Road<br><br><span style=\"color:#e44e4a\">Time</span><br>15:05 - 16:00<br>\n\n24/09/2015\n\n\n",
+    "toolTip": "",
+    "top": "15%",
+    "wType": "RichText",
+    "widgetAlignment": 5,
+    "widgetalignment": 5,
+    "width": "80%",
+    "wrapping": 2,
+    "zIndex": 2,
+    "zindex": 2
+}

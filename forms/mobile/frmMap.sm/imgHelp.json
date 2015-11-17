@@ -1,0 +1,86 @@
+{
+    "@class": "com.kony.gen.viz.model.component.KVizImage2",
+    "DNDConfig": null,
+    "__parentReadjusting__": false,
+    "_base64_": null,
+    "_height_": {
+        "type": "string",
+        "value": "30dp"
+    },
+    "_left_": {
+        "type": "string",
+        "value": "25dp"
+    },
+    "_margin_": [
+        0,
+        0,
+        0,
+        0
+    ],
+    "_padding_": [
+        0,
+        0,
+        0,
+        0
+    ],
+    "_skin_": "s4ea8d4d07574957b839f06194980e52",
+    "_src_": "helpicon.png",
+    "_width_": {
+        "type": "string",
+        "value": "30dp"
+    },
+    "base64": null,
+    "canUpdateUI": true,
+    "centerY": "150dp",
+    "centery": {
+        "type": "string",
+        "value": "150dp"
+    },
+    "containerWeight": 100,
+    "containerweight": 100,
+    "context": {
+        "channel": "mobile",
+        "formID": "frmMap",
+        "ispercent": true,
+        "platform": "android",
+        "templateType": "forms",
+        "topLevelBox": null
+    },
+    "enabled": false,
+    "height": "30dp",
+    "id": "imgHelp",
+    "imageScaleMode": 1,
+    "imagescalemode": 1,
+    "info": null,
+    "invokedProperty": "src",
+    "isVisible": true,
+    "ispercent": true,
+    "isvisible": true,
+    "kuid": "a7de59e7f057494183ac8210c5b56a90",
+    "left": "25dp",
+    "margin": [
+        0,
+        0,
+        0,
+        0
+    ],
+    "name": "kony.ui.Image2",
+    "padding": [
+        0,
+        0,
+        0,
+        0
+    ],
+    "parent": "flexMenuItems",
+    "pf": "frmMap",
+    "render": true,
+    "skin": "s4ea8d4d07574957b839f06194980e52",
+    "src": "helpicon.png",
+    "srcType": 1,
+    "wType": "Image",
+    "widgetAlignment": 5,
+    "widgetalignment": 5,
+    "width": "30dp",
+    "zIndex": 50,
+    "zindex": 50
+}

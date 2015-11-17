@@ -1,0 +1,14 @@
+{
+	"AS_Segment_604a91b86ef542459d2fcce733e3db56": {
+		"id": "AS_Segment_604a91b86ef542459d2fcce733e3db56",
+		"type": "ACTION_SEQUENCE",
+		"actions": [
+			{
+				"id": "ADD_SNIPPET_onRowClick_741a564fe26640f3bbbabf46120c5f46",
+				"type": "ADD_SNIPPET",
+				"codeSnippet": "onDestinationSelected();",
+				"callbackType": null
+			}
+		]
+	}
+}

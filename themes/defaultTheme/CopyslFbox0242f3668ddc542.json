@@ -1,0 +1,11 @@
+{
+  "background_image": "maplg.png",
+  "bg_type": "image",
+  "border_color": "000000ff",
+  "border_style": "plain",
+  "border_type": 0,
+  "border_width": 0,
+  "isDefaultSkin": false,
+  "kuid": "s3e8a3c4213a44e09c75faf9788d864a",
+  "wType": "FlexContainer"
+}

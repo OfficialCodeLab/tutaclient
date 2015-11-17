@@ -1,0 +1,77 @@
+{
+    "DNDConfig": null,
+    "__parentReadjusting__": false,
+    "_height_": {
+        "type": "string",
+        "value": "100%"
+    },
+    "_left_": {
+        "type": "string",
+        "value": "0dp"
+    },
+    "_margin_": [
+        6,
+        6,
+        6,
+        6
+    ],
+    "_padding_": [
+        0,
+        0,
+        0,
+        0
+    ],
+    "_skin_": "sdd3408811f5429e9181112a2b9c0386",
+    "_text_": "",
+    "_top_": {
+        "type": "string",
+        "value": "0dp"
+    },
+    "_width_": {
+        "type": "string",
+        "value": "50%"
+    },
+    "canUpdateUI": true,
+    "channel": "mobile",
+    "containerWeight": 100,
+    "containerweight": 100,
+    "contentAlignment": 5,
+    "contentalignment": 5,
+    "disabledSkins": {},
+    "displayText": true,
+    "displaytext": true,
+    "enabled": false,
+    "focusSkin": "s876bd6f8a4847febd4ecc29dbefa79a",
+    "focusskin": "s876bd6f8a4847febd4ecc29dbefa79a",
+    "height": "100%",
+    "id": "btnReturnToTrip",
+    "info": null,
+    "isVisible": true,
+    "isvisible": true,
+    "kuid": "949325de53d34fa294a655cdfd76cf9f",
+    "left": "0dp",
+    "margin": [
+        6,
+        6,
+        6,
+        6
+    ],
+    "name": "kony.ui.Button",
+    "padding": [
+        0,
+        0,
+        0,
+        0
+    ],
+    "parent": "flexBottomBar",
+    "pf": "frmMap",
+    "render": true,
+    "skin": "sdd3408811f5429e9181112a2b9c0386",
+    "text": "",
+    "top": "0dp",
+    "wType": "Button",
+    "widgetAlignment": 5,
+    "width": "50%",
+    "zIndex": 900,
+    "zindex": 900
+}

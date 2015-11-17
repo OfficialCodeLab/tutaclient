@@ -1,0 +1,29 @@
+{
+	"AS_Button_599a40f7a72d4ff987ee0c7473c613e4": {
+		"id": "AS_Button_599a40f7a72d4ff987ee0c7473c613e4",
+		"type": "ACTION_SEQUENCE",
+		"params": [
+			{
+				"datatype": "collection",
+				"name": "eventobject"
+			},
+			{
+				"datatype": "string",
+				"name": "x"
+			},
+			{
+				"datatype": "string",
+				"name": "y"
+			}
+		],
+		"actions": [
+			{
+				"id": "ADD_SNIPPET__d86c8596dbff4239aabb58678bb54278",
+				"type": "ADD_SNIPPET",
+				"codeSnippet": "snapToSides();",
+				"parentId": null,
+				"callbackType": null
+			}
+		]
+	}
+}

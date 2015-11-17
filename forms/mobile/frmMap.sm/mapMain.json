@@ -1,0 +1,135 @@
+{
+    "DNDConfig": null,
+    "__parentReadjusting__": false,
+    "_height_": {
+        "type": "string",
+        "value": "100%"
+    },
+    "_left_": {
+        "type": "string",
+        "value": "0dp"
+    },
+    "_margin_": [
+        0,
+        0,
+        0,
+        0
+    ],
+    "_mode_": 1,
+    "_padding_": [
+        0,
+        0,
+        0,
+        0
+    ],
+    "_top_": {
+        "type": "string",
+        "value": "0dp"
+    },
+    "_width_": {
+        "type": "string",
+        "value": "100%"
+    },
+    "android": {
+        "@class": "com.kony.gen.viz.model.component.property.map.AndroidMapProperty",
+        "psp": {
+            "showZoomControl": false
+        }
+    },
+    "calloutWidth": 100,
+    "calloutwidth": 100,
+    "canUpdateUI": true,
+    "channel": "mobile",
+    "containerWeight": 100,
+    "containerweight": 100,
+    "defaultPinImage": "imgnone.png",
+    "defaultpinimage": "imgnone.png",
+    "enabled": false,
+    "height": "100%",
+    "id": "mapMain",
+    "info": null,
+    "invokedProperty": "maps",
+    "iphone": {
+        "@class": "com.kony.gen.viz.model.component.property.map.IPhoneMapProperty",
+        "psp": {
+            "showCurrentLocation": "none"
+        },
+        "zoomLevel": 12
+    },
+    "isVisible": true,
+    "isvisible": true,
+    "kuid": "bb43825c56f346e98093a58939a0bb12",
+    "left": "0dp",
+    "locationData": [
+        {
+            "desc": "Phoenix infocity, Gachibowli",
+            "lat": "17.447326",
+            "lon": "78.371358",
+            "name": "KonyLabs(New)"
+        },
+        {
+            "desc": "Mindspace, Hitech City",
+            "lat": "17.441839",
+            "lon": "78.380928",
+            "name": "KonyLabs(Old)"
+        },
+        {
+            "desc": "Jaihind Enclave, Madhapur",
+            "lat": "17.450378",
+            "lon": "78.388398",
+            "name": "My Residence"
+        }
+    ],
+    "locationdata": [
+        {
+            "desc": "Phoenix infocity, Gachibowli",
+            "lat": "17.447326",
+            "lon": "78.371358",
+            "name": "KonyLabs(New)"
+        },
+        {
+            "desc": "Mindspace, Hitech City",
+            "lat": "17.441839",
+            "lon": "78.380928",
+            "name": "KonyLabs(Old)"
+        },
+        {
+            "desc": "Jaihind Enclave, Madhapur",
+            "lat": "17.450378",
+            "lon": "78.388398",
+            "name": "My Residence"
+        }
+    ],
+    "mapSource": "non-native",
+    "mapsource": "non-native",
+    "mapsrc": "non-native",
+    "margin": [
+        0,
+        0,
+        0,
+        0
+    ],
+    "mode": 1,
+    "name": "kony.ui.Map",
+    "padding": [
+        0,
+        0,
+        0,
+        0
+    ],
+    "parent": "flexMain",
+    "pf": "frmMap",
+    "provider": "google",
+    "render": true,
+    "screenLevelWidget": false,
+    "screenlevelwidget": false,
+    "showCurrentLocation": "none",
+    "top": "0dp",
+    "wType": "Map",
+    "widgetAlignment": 5,
+    "width": "100%",
+    "zIndex": 1,
+    "zindex": 1,
+    "zoomLevel": 12,
+    "zoomlevel": 12
+}

@@ -1,0 +1,91 @@
+{
+	"AS_Segment_cb2e2e8b574049dc828d81e502f2c15e": {
+		"id": "AS_Segment_cb2e2e8b574049dc828d81e502f2c15e",
+		"type": "ACTION_SEQUENCE",
+		"actions": [
+			{
+				"id": "___onRowClick_3e8f4ed203bb4074a4881eb726a7ca9a",
+				"type": "SCALE_ACTION",
+				"itemType": "FORM",
+				"itemId": "frmMap",
+				"widgetId": "__missing_id__",
+				"itemKUID": "6eb20c3c6a784926866ec0c5966382a5",
+				"widgetKUID": "28266629047d4197ad3fa552e235bfb7",
+				"animationObject": {
+					"anchorPoint": {},
+					"stepConfig": {
+						"timingFunction": "kony.anim.EASE"
+					},
+					"height": "0px"
+				},
+				"config": {
+					"delay": "0",
+					"iterationCount": 1,
+					"fillMode": "kony.anim.FILL_MODE_FORWARDS",
+					"duration": "250"
+				},
+				"start": "Immediately",
+				"animationId": "SCALE_ACTION____1ebc629a9970440ab61d074a950182bb",
+				"displayAnimationId": "SCALE_ACTION____1ebc629a9970440ab61d074a950182bb",
+				"forkedPlatform": "all",
+				"callbackType": null
+			},
+			{
+				"id": "___onRowClick_8e9e23c1608d453e9f0c5e6c5d3ca55e",
+				"type": "MOVE_ACTION",
+				"itemType": "FORM",
+				"itemId": "frmMap",
+				"widgetId": "__missing_id__",
+				"itemKUID": "6eb20c3c6a784926866ec0c5966382a5",
+				"widgetKUID": "4eb7e9f438984cd78a8f5af6aef9a5d1",
+				"animationObject": {
+					"top": "14%",
+					"anchorPoint": {},
+					"stepConfig": {
+						"timingFunction": "kony.anim.EASE"
+					}
+				},
+				"config": {
+					"delay": "0",
+					"iterationCount": 1,
+					"fillMode": "kony.anim.FILL_MODE_FORWARDS",
+					"duration": "250"
+				},
+				"start": "Immediately",
+				"parentAnimation": "SCALE_ACTION____1ebc629a9970440ab61d074a950182bb",
+				"animationId": "MOVE_ACTION____75401ecddecb422a9355af75a5d4a630",
+				"displayAnimationId": "MOVE_ACTION____75401ecddecb422a9355af75a5d4a630",
+				"forkedPlatform": "all",
+				"callbackType": null
+			},
+			{
+				"id": "___onRowClick_60cb05840b6140a2a3ccaaeeb271f44f",
+				"type": "MOVE_ACTION",
+				"itemType": "FORM",
+				"itemId": "frmMap",
+				"widgetId": "__missing_id__",
+				"itemKUID": "6eb20c3c6a784926866ec0c5966382a5",
+				"widgetKUID": "4bd5a803c8474602ade830b4b5681657",
+				"animationObject": {
+					"top": "8%",
+					"anchorPoint": {},
+					"stepConfig": {
+						"timingFunction": "kony.anim.EASE"
+					}
+				},
+				"config": {
+					"delay": "0",
+					"iterationCount": 1,
+					"fillMode": "kony.anim.FILL_MODE_FORWARDS",
+					"duration": "250"
+				},
+				"start": "Immediately",
+				"parentAnimation": "SCALE_ACTION____1ebc629a9970440ab61d074a950182bb",
+				"animationId": "MOVE_ACTION____54220c04ed5c4bc2b7bbbb186c3b5362",
+				"displayAnimationId": "MOVE_ACTION____54220c04ed5c4bc2b7bbbb186c3b5362",
+				"forkedPlatform": "all",
+				"callbackType": null
+			}
+		]
+	}
+}

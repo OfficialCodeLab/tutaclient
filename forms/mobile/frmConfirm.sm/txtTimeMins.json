@@ -1,0 +1,113 @@
+{
+    "@class": "com.kony.gen.viz.model.component.KVizTextBox2",
+    "DNDConfig": null,
+    "__parentReadjusting__": false,
+    "_height_": {
+        "type": "string",
+        "value": "50dp"
+    },
+    "_left_": {
+        "type": "string",
+        "value": "30dp"
+    },
+    "_margin_": [
+        0,
+        0,
+        0,
+        0
+    ],
+    "_padding_": [
+        0,
+        0,
+        0,
+        0
+    ],
+    "_placeholder_": "00",
+    "_skin_": "se012a5bcdc04226a6a387b6c8c049d4",
+    "_text_": "30",
+    "_top_": {
+        "type": "string",
+        "value": "260dp"
+    },
+    "_width_": {
+        "type": "string",
+        "value": "50dp"
+    },
+    "android": {
+        "psp": {
+            "keyboardActionLabel": 1
+        }
+    },
+    "autoCapitalize": "none",
+    "autoComplete": false,
+    "autoCorrect": false,
+    "autoFilter": false,
+    "autocapitalize": "none",
+    "autocomplete": false,
+    "autocorrect": false,
+    "autofilter": false,
+    "canUpdateUI": true,
+    "centerX": "50%",
+    "centerx": {
+        "type": "string",
+        "value": "50%"
+    },
+    "containerHeight": "",
+    "containerHeightMode": 1,
+    "containerWeight": 100,
+    "containerheight": "",
+    "containerheightmode": 1,
+    "containerweight": 100,
+    "contentAlignment": 5,
+    "contentalignment": 5,
+    "enabled": false,
+    "focusSkin": "s2582c436b4743fab4b16a6941c8d8ac",
+    "focusskin": "s2582c436b4743fab4b16a6941c8d8ac",
+    "height": "50dp",
+    "id": "txtTimeMins",
+    "info": null,
+    "isVisible": true,
+    "isvisible": true,
+    "keyBoardStyle": "A",
+    "keyboardstyle": "A",
+    "keyboardtype": "A",
+    "kuid": "c4de6f5319c646d78e630ea840a94b39",
+    "left": "30dp",
+    "margin": [
+        0,
+        0,
+        0,
+        0
+    ],
+    "maxTextLength": 2,
+    "maxtextlength": 2,
+    "mode": "A",
+    "name": "kony.ui.TextBox2",
+    "padding": [
+        0,
+        0,
+        0,
+        0
+    ],
+    "parent": "flexSetTime",
+    "pf": "frmConfirm",
+    "placeholder": "00",
+    "placeholderSkin": "s1349136f27a4d878326ce3ac540cb72",
+    "placeholderskin": "s1349136f27a4d878326ce3ac540cb72",
+    "render": true,
+    "secureTextEntry": false,
+    "securetextentry": false,
+    "skin": "se012a5bcdc04226a6a387b6c8c049d4",
+    "text": "30",
+    "textInputMode": "N",
+    "textinputmode": "N",
+    "toolTip": "",
+    "top": "260dp",
+    "viewType": "default",
+    "viewtype": "default",
+    "wType": "TextField",
+    "widgetAlignment": 5,
+    "width": "50dp",
+    "zIndex": 1,
+    "zindex": 1
+}

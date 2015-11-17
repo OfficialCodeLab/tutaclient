@@ -1,0 +1,61 @@
+{
+    "@class": "com.kony.gen.viz.model.component.KVizButton",
+    "DNDConfig": null,
+    "_margin_": [
+        6,
+        6,
+        6,
+        6
+    ],
+    "_padding_": [
+        4,
+        4,
+        4,
+        4
+    ],
+    "_skin_": "s461e8be9ce549e584a029b3f9470d1c",
+    "_text_": "OK",
+    "canUpdateUI": true,
+    "containerWeight": 100,
+    "containerweight": 100,
+    "contentAlignment": 5,
+    "contentalignment": 5,
+    "displayText": true,
+    "displaytext": true,
+    "enabled": false,
+    "focusSkin": "seae9897bb7749a1a7b93820b2636a29",
+    "focusskin": "seae9897bb7749a1a7b93820b2636a29",
+    "id": "Button0b9285a0f897e4d",
+    "info": null,
+    "isVisible": true,
+    "isvisible": true,
+    "kuid": "bf323dd4e38a471a84c7b984ed6ebfca",
+    "margin": [
+        6,
+        6,
+        6,
+        6
+    ],
+    "name": "kony.ui.Button",
+    "onClick": "AS_Button_52528bc3b85b4dc99fe2b94db5f6a781",
+    "onclick": "AS_Button_52528bc3b85b4dc99fe2b94db5f6a781",
+    "paddInPixel": [
+        20.48,
+        20.48,
+        20.48,
+        20.48
+    ],
+    "padding": [
+        4,
+        4,
+        4,
+        4
+    ],
+    "parent": "VBox0133f327694fe4e",
+    "pf": "popNoResults",
+    "render": true,
+    "skin": "s461e8be9ce549e584a029b3f9470d1c",
+    "text": "OK",
+    "wType": "Button",
+    "widgetAlignment": 5
+}

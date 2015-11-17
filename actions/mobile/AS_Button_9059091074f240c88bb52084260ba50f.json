@@ -1,0 +1,21 @@
+{
+	"AS_Button_9059091074f240c88bb52084260ba50f": {
+		"id": "AS_Button_9059091074f240c88bb52084260ba50f",
+		"type": "ACTION_SEQUENCE",
+		"params": [
+			{
+				"datatype": "collection",
+				"name": "eventobject"
+			}
+		],
+		"actions": [
+			{
+				"id": "DISPLAY_POPUP___36462314f6f240c8af0c308a671dc00d",
+				"type": "DISPLAY_POPUP",
+				"popupKUID": "da5b2d3f538f4363b5d4ea9b35c9cac1",
+				"parentId": null,
+				"callbackType": null
+			}
+		]
+	}
+}

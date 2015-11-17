@@ -1,0 +1,38 @@
+{
+	"AS_Form_d4ed43dda9df430c9139bd12d99975d2": {
+		"id": "AS_Form_d4ed43dda9df430c9139bd12d99975d2",
+		"type": "ACTION_SEQUENCE",
+		"actions": [
+			{
+				"id": "SET_FORM_WIDGET_PROPERTY_Untitled___8021b70c6cf04838a9047deb66828757",
+				"type": "SET_WIDGET_PROPERTY",
+				"itemType": "FORM",
+				"itemId": "frmConfirm",
+				"widgetId": "lblDateTimeNew",
+				"propertyName": "isVisible",
+				"propertyValue": "false",
+				"itemKUID": "2955918f0d594eafbfb045b7a8b080e8",
+				"widgetKUID": "aa77761e6add4fea80312e1a696b9ec1",
+				"isSkinProperty": false,
+				"forkedPlatform": "all",
+				"parentId": null,
+				"callbackType": null
+			},
+			{
+				"id": "SET_FORM_WIDGET_PROPERTY_Untitled___f6e3503894e54b4490f27da55090596c",
+				"type": "SET_WIDGET_PROPERTY",
+				"itemType": "FORM",
+				"itemId": "frmConfirm",
+				"widgetId": "lblDateTime",
+				"propertyName": "isVisible",
+				"propertyValue": "true",
+				"itemKUID": "2955918f0d594eafbfb045b7a8b080e8",
+				"widgetKUID": "e8641483dd9142989e024d1f63ecbaa5",
+				"isSkinProperty": false,
+				"forkedPlatform": "all",
+				"parentId": null,
+				"callbackType": null
+			}
+		]
+	}
+}

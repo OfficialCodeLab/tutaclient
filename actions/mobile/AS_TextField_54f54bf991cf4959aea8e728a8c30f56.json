@@ -1,0 +1,25 @@
+{
+	"AS_TextField_54f54bf991cf4959aea8e728a8c30f56": {
+		"id": "AS_TextField_54f54bf991cf4959aea8e728a8c30f56",
+		"type": "ACTION_SEQUENCE",
+		"params": [
+			{
+				"datatype": "collection",
+				"name": "eventobject"
+			},
+			{
+				"datatype": "string",
+				"name": "changedtext"
+			}
+		],
+		"actions": [
+			{
+				"id": "ADD_SNIPPET__487fde912f3b435e9fd9b0bf758ea306",
+				"type": "ADD_SNIPPET",
+				"codeSnippet": "frmMap.flexOptions.isVisible = false;",
+				"parentId": null,
+				"callbackType": null
+			}
+		]
+	}
+}

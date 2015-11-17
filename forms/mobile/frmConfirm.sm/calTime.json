@@ -1,0 +1,156 @@
+{
+    "DNDConfig": null,
+    "Image": "imgnone.png",
+    "__parentReadjusting__": false,
+    "_data_": null,
+    "_date_": null,
+    "_height_": {
+        "type": "string",
+        "value": "40dp"
+    },
+    "_left_": {
+        "type": "string",
+        "value": "20%"
+    },
+    "_margin_": [
+        0,
+        0,
+        0,
+        0
+    ],
+    "_mode_": 2,
+    "_padding_": [
+        0,
+        0,
+        0,
+        0
+    ],
+    "_placeholder_": "Click to set",
+    "_render_": true,
+    "_skin_": "sfb6951c79c84c24a18e869bed83a803",
+    "_top_": {
+        "type": "string",
+        "value": "130dp"
+    },
+    "_width_": {
+        "type": "string",
+        "value": "150dp"
+    },
+    "advview": "default",
+    "android": {
+        "render": true
+    },
+    "calendarIcon": "imgnone.png",
+    "calendaricon": "imgnone.png",
+    "canUpdateUI": true,
+    "channel": "mobile",
+    "containerWeight": 100,
+    "containerweight": 100,
+    "contentAlignment": 4,
+    "contentalignment": 4,
+    "data": null,
+    "date": null,
+    "dateComponents": null,
+    "dateEditable": true,
+    "dateFormat": "dd/MM/yyyy",
+    "dateeditable": true,
+    "dateformat": "dd/MM/yyyy",
+    "dayTextAlignmentInCell": 5,
+    "daytextalignmentincell": 5,
+    "disabledSkins": {
+        "gridCellSkin": "s56aac908e494b8c9c3e1904c123b8cd"
+    },
+    "enabled": false,
+    "enddate": [
+        30,
+        8,
+        2013
+    ],
+    "format": "dd/MM/yyyy",
+    "formattedDate": null,
+    "formatteddate": null,
+    "height": "40dp",
+    "hideDaysHeader": false,
+    "hideMonthsHeader": false,
+    "hidedaysheader": false,
+    "hidemonthsheader": false,
+    "hour": 0,
+    "id": "calTime",
+    "info": null,
+    "invokedProperty": "leftNavigationImage",
+    "iphone": {
+        "@class": "com.kony.gen.viz.model.component.property.datefield.IPhoneDateFieldProperty",
+        "psp": {
+            "mode": 2
+        },
+        "render": true
+    },
+    "isVisible": false,
+    "isvisible": false,
+    "kuid": "3f1175d7ac68446f95a146e44e7a1460",
+    "left": "20%",
+    "margin": [
+        0,
+        0,
+        0,
+        0
+    ],
+    "minutes": 0,
+    "mode": 2,
+    "name": "kony.ui.Calendar",
+    "noOfMonths": 1,
+    "noofmonths": 1,
+    "padding": [
+        0,
+        0,
+        0,
+        0
+    ],
+    "pagedate": "8/2013",
+    "parent": "flexDetails2",
+    "pf": "frmConfirm",
+    "placeholder": "Click to set",
+    "render": true,
+    "seconds": 0,
+    "selectdate": "8/0/2013",
+    "skin": "sfb6951c79c84c24a18e869bed83a803",
+    "spaan": {
+        "render": true
+    },
+    "spabb": {
+        "render": true
+    },
+    "spaip": {
+        "render": true
+    },
+    "spawinphone8": {
+        "render": true
+    },
+    "startdate": [
+        1,
+        8,
+        2013
+    ],
+    "title": "calTitle",
+    "titleOnPopup": "calTitle",
+    "titleonpopup": "calTitle",
+    "toolTip": "",
+    "top": "130dp",
+    "viewConfig": {
+        "gridConfig": {}
+    },
+    "viewType": "default",
+    "viewconfig": {
+        "gridConfig": {}
+    },
+    "viewtype": "default",
+    "wType": "Calendar",
+    "widgetAlignment": 5,
+    "widgetalignment": 5,
+    "width": "150dp",
+    "winphone8": {
+        "render": true
+    },
+    "zIndex": 9,
+    "zindex": 9
+}

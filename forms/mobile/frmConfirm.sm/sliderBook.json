@@ -1,0 +1,115 @@
+{
+    "DNDConfig": null,
+    "__parentReadjusting__": false,
+    "_height_": {
+        "type": "string",
+        "value": "100%"
+    },
+    "_left_": {
+        "type": "string",
+        "value": "0dp"
+    },
+    "_margin_": [
+        0,
+        0,
+        0,
+        0
+    ],
+    "_max_": 120,
+    "_min_": -5,
+    "_padding_": [
+        0,
+        0,
+        0,
+        0
+    ],
+    "_step_": 1,
+    "_thickness_": 70,
+    "_top_": {
+        "type": "string",
+        "value": "0dp"
+    },
+    "_width_": {
+        "type": "string",
+        "value": "100%"
+    },
+    "android": {
+        "@class": "com.kony.gen.viz.model.component.property.slider.AndroidSliderProperty"
+    },
+    "canUpdateUI": true,
+    "channel": "mobile",
+    "containerWeight": 100,
+    "containerweight": 100,
+    "desktopweb": {
+        "psp": {
+            "orientation": "horizontal",
+            "viewType": "default"
+        }
+    },
+    "disabledSkins": {},
+    "enabled": false,
+    "focusThumbImage": "slider_android.png",
+    "focusthumbimage": "slider_android.png",
+    "height": "100%",
+    "id": "sliderBook",
+    "imgwt": 33,
+    "info": null,
+    "ipad": {
+        "psp": {
+            "enableThumbTintColor": true,
+            "thumbTintColor": "ffffff00"
+        },
+        "thumbImage": "slider_ios7.png"
+    },
+    "iphone": {
+        "@class": "com.kony.gen.viz.model.component.property.slider.IPhoneSliderProperty",
+        "psp": {
+            "enableThumbTintColor": true,
+            "thumbTintColor": "ffffff00"
+        }
+    },
+    "isVisible": true,
+    "isvisible": true,
+    "kuid": "0b1641b19e8446658f053986cab2dc08",
+    "left": "0dp",
+    "leftSkin": "sb52499a25d841189054fa035761bcd6",
+    "leftskin": "sb52499a25d841189054fa035761bcd6",
+    "margin": [
+        0,
+        0,
+        0,
+        0
+    ],
+    "max": 120,
+    "min": -5,
+    "name": "kony.ui.Slider",
+    "noofsteps": 125,
+    "osPlatform": "iphone",
+    "osVersion": "iOS7",
+    "padding": [
+        0,
+        0,
+        0,
+        0
+    ],
+    "parent": "flexSliderHidden",
+    "pf": "frmConfirm",
+    "render": true,
+    "rightSkin": "s38193232cb64f75b0f5c3fa0b748c67",
+    "rightskin": "s38193232cb64f75b0f5c3fa0b748c67",
+    "selectedValue": 0,
+    "selectedvalue": 0,
+    "step": 1,
+    "stepwidth": 0,
+    "thickness": 70,
+    "thumbImage": "slider_android.png",
+    "thumbimage": "slider_android.png",
+    "top": "0dp",
+    "view": "default",
+    "wType": "Slider",
+    "widgetAlignment": 5,
+    "widgetalignment": 5,
+    "width": "100%",
+    "zIndex": 1,
+    "zindex": 1
+}

@@ -1,0 +1,92 @@
+{
+    "DNDConfig": null,
+    "__parentReadjusting__": false,
+    "_height_": {
+        "type": "string",
+        "value": "710dp"
+    },
+    "_left_": {
+        "type": "string",
+        "value": "0dp"
+    },
+    "_margin_": [
+        0,
+        0,
+        0,
+        0
+    ],
+    "_padding_": [
+        0,
+        0,
+        0,
+        0
+    ],
+    "_skin_": "sba9822181254116bc800ec4cfcc14da",
+    "_top_": {
+        "type": "string",
+        "value": "0dp"
+    },
+    "_width_": {
+        "type": "string",
+        "value": "100%"
+    },
+    "allboxes": [],
+    "autogrowMode": 0,
+    "autogrowmode": 0,
+    "canUpdateUI": true,
+    "children": [
+        "flexCancel1",
+        "flexSetTime",
+        "flexCancel2"
+    ],
+    "clipBounds": false,
+    "clipbounds": false,
+    "containerWeight": 100,
+    "containerweight": 100,
+    "defaultUnit": 2,
+    "defaultunit": 2,
+    "enableScrolling": true,
+    "enabled": false,
+    "enablescrolling": true,
+    "height": "710dp",
+    "id": "flexDateTime",
+    "info": null,
+    "isVisible": false,
+    "isvisible": false,
+    "kuid": "4afde099c5f8498bb1ac9fe544aea156",
+    "layoutType": 4,
+    "layouttype": 4,
+    "left": "0dp",
+    "margin": [
+        0,
+        0,
+        0,
+        0
+    ],
+    "name": "kony.ui.FlexContainer",
+    "onTouchStart": "AS_FlexContainer_e3315701a1d54e6e9e0d412e3004df97",
+    "ontouchstart": "AS_FlexContainer_e3315701a1d54e6e9e0d412e3004df97",
+    "orientation": 6,
+    "padding": [
+        0,
+        0,
+        0,
+        0
+    ],
+    "parent": "frmConfirm",
+    "percent": true,
+    "pf": "frmConfirm",
+    "render": true,
+    "skin": "sba9822181254116bc800ec4cfcc14da",
+    "snapGridSize": "10",
+    "snapToGrid": true,
+    "snapgridsize": "10",
+    "snaptogrid": true,
+    "top": "0dp",
+    "wType": "FlexContainer",
+    "widgetAlignment": 1,
+    "widgetalignment": 1,
+    "width": "100%",
+    "zIndex": 999,
+    "zindex": 999
+}

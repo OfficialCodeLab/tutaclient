@@ -1,0 +1,32 @@
+{
+	"AS_TextField_52aaeebf89384d0eae024bd9d89948a0": {
+		"id": "AS_TextField_52aaeebf89384d0eae024bd9d89948a0",
+		"type": "ACTION_SEQUENCE",
+		"params": [
+			{
+				"datatype": "collection",
+				"name": "eventobject"
+			},
+			{
+				"datatype": "string",
+				"name": "changedtext"
+			}
+		],
+		"actions": [
+			{
+				"id": "SET_FORM_WIDGET_PROPERTY_Untitled___972d1572bf7c403da72051e239e19408",
+				"type": "SET_WIDGET_PROPERTY",
+				"itemType": "FORM",
+				"itemId": "frmMap",
+				"propertyName": "isVisible",
+				"propertyValue": "true",
+				"itemKUID": "6eb20c3c6a784926866ec0c5966382a5",
+				"widgetKUID": "94f8f9d248db43f5bab7b2657bf29acb",
+				"isSkinProperty": false,
+				"forkedPlatform": "all",
+				"parentId": null,
+				"callbackType": null
+			}
+		]
+	}
+}

@@ -1,0 +1,81 @@
+{
+    "DNDConfig": null,
+    "__parentReadjusting__": false,
+    "_height_": {
+        "type": "string",
+        "value": "70dp"
+    },
+    "_left_": {
+        "type": "string",
+        "value": "104dp"
+    },
+    "_margin_": [
+        0,
+        0,
+        0,
+        0
+    ],
+    "_padding_": [
+        0,
+        0,
+        0,
+        0
+    ],
+    "_skin_": "s10b2c174e1649c5959c99cb9af7cbe9",
+    "_text_": "ARE YOU SURE YOU<br>WANT TO CANCEL<br>YOUR CAB?",
+    "_top_": {
+        "type": "string",
+        "value": "95dp"
+    },
+    "_width_": {
+        "type": "string",
+        "value": "100%"
+    },
+    "_wrapping_": 2,
+    "canUpdateUI": true,
+    "centerX": "50%",
+    "centerx": {
+        "type": "string",
+        "value": "50%"
+    },
+    "channel": "mobile",
+    "containerWeight": 100,
+    "containerweight": 100,
+    "contentAlignment": 2,
+    "contentalignment": 2,
+    "enabled": false,
+    "height": "70dp",
+    "id": "rtCancel",
+    "info": null,
+    "isVisible": true,
+    "isvisible": true,
+    "kuid": "e41e2392b13c4088a48f084995bedc90",
+    "left": "104dp",
+    "margin": [
+        0,
+        0,
+        0,
+        0
+    ],
+    "name": "kony.ui.RichText",
+    "padding": [
+        0,
+        0,
+        0,
+        0
+    ],
+    "parent": "flexCancelHail",
+    "pf": "frmMap",
+    "render": true,
+    "skin": "s10b2c174e1649c5959c99cb9af7cbe9",
+    "text": "ARE YOU SURE YOU<br>WANT TO CANCEL<br>YOUR CAB?",
+    "toolTip": "",
+    "top": "95dp",
+    "wType": "RichText",
+    "widgetAlignment": 5,
+    "widgetalignment": 5,
+    "width": "100%",
+    "wrapping": 2,
+    "zIndex": 900,
+    "zindex": 900
+}

@@ -1,0 +1,15 @@
+{
+	"AS_FlexContainer_78d79b8c39ce4900bf5c07862e3c45ab": {
+		"id": "AS_FlexContainer_78d79b8c39ce4900bf5c07862e3c45ab",
+		"type": "ACTION_SEQUENCE",
+		"actions": [
+			{
+				"id": "ADD_SNIPPET__55b6ac643a774f5fa27be5b8aab0201a",
+				"type": "ADD_SNIPPET",
+				"codeSnippet": "cancelHail();",
+				"parentId": null,
+				"callbackType": null
+			}
+		]
+	}
+}
