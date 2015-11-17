@@ -1117,8 +1117,8 @@ tuta.initCallback = function(error) {
 tuta.init = function() {
   	// initialize form controllers
   	new tuta.forms.frmSplash();
-    new ssa.forms.frmExample();
   
   	// initialize application
  	application = new tuta.application(tuta.initCallback);
+  	new tuta.forms.frmCreateAcc();
 };

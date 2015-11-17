@@ -57,8 +57,12 @@ tuta.forms.frmSplash = function() {
     	
     };
     
-    this.control("btnLogin").onClick = function(button){
+    this.control("btnLogin").onClick = function(button){ 
       self.moveLoginButtons.toggle();
+    };
+    
+    this.control("btnSignUp").onClick = function(button){
+      tuta.forms.frmCreateAcc.show();
     };
     
   };
