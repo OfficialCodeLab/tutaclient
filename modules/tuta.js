@@ -16,6 +16,18 @@ var viaList = [];
 
 var GLOBAL_CONCAT_LENGTH = 35;
 
+if (typeof(tuta) === "undefined") {
+	tuta = {};
+}
+
+// global reference to your app object
+var application = null; 
+
+function initApp() {
+  //ssa.util.alert("INIT");
+  tuta.init();
+}
+
 var lastPersonClicked = 0;
 function onPeopleSelect(eventobject, x , y) {
   var nopeople = eventobject.id.replace("btnPerson","");
@@ -63,7 +75,7 @@ function uMap()
 var animationSelected = kony.ui.createAnimation({"100":{"anchorPoint":{"x":0.5,"y":0.5},"stepConfig":{"timingFunction":kony.anim.EASIN_IN_OUT},"width":"100dp","height":"100dp"}});
 var animationDeselect = kony.ui.createAnimation({"100":{"anchorPoint":{"x":0.5,"y":0.5},"stepConfig":{"timingFunction":kony.anim.EASIN_IN_OUT},"width":"80dp","height":"80dp"}});
 
-function initApp() {
+function initOld() {
 
   hailState = false;
   frmMap.btnPerson1.onTouchStart = onPeopleSelect;
@@ -1095,3 +1107,17 @@ function animateMenu(){
     //}, 0.1, false);
   }
 }
+
+tuta.initCallback = function(error) {
+
+};
+
+// Should be called in the App init lifecycle event
+// In Visualizer this should be call in the init event of the startup form
+tuta.init = function() {
+  	// initialize form controllers
+  	new tuta.forms.frmSplash();
+  
+  	// initialize application
+ 	application = new tuta.application(tuta.initCallback);
+};

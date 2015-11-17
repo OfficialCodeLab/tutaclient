@@ -3,7 +3,7 @@
     "__parentReadjusting__": false,
     "_bottom_": {
         "type": "string",
-        "value": "-35%"
+        "value": "0%"
     },
     "_height_": {
         "type": "string",
@@ -34,7 +34,7 @@
     "allboxes": [],
     "autogrowMode": 0,
     "autogrowmode": 0,
-    "bottom": "-35%",
+    "bottom": "0%",
     "canUpdateUI": true,
     "channel": "mobile",
     "children": [
