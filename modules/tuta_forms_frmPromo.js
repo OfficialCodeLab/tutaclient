@@ -16,7 +16,7 @@ tuta.forms.frmPromo = function() {
   
   tuta.forms.frmPromo.onPreShow = function(form) {
     var self = this;
-   // PUT BUTTONS HERE
+    this.control("btnBack").onClick = function (button) {tuta.forms.frmMap.show();};
   };
   
   tuta.forms.frmPromo.onPostShow = function(form) {
