@@ -75,7 +75,7 @@
         0,
         0
     ],
-    "parent": "flexBars",
+    "parent": "flexMainButtons",
     "pf": "frmSplash",
     "render": true,
     "right": "3%",

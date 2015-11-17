@@ -67,15 +67,13 @@
         6
     ],
     "name": "kony.ui.Button",
-    "onClick": "AS_Button_6213be3c8ca648d19b464532ccd4aa63",
-    "onclick": "AS_Button_6213be3c8ca648d19b464532ccd4aa63",
     "padding": [
         0,
         0,
         0,
         0
     ],
-    "parent": "flexBars",
+    "parent": "flexMainButtons",
     "pf": "frmSplash",
     "render": true,
     "skin": "se6955b3e0514edb8c685acb09685de7",

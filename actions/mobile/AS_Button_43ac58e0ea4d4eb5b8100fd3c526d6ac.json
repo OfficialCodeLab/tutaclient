@@ -14,7 +14,7 @@
 				"type": "MOVE_ACTION",
 				"itemType": "FORM",
 				"itemId": "frmSplash",
-				"widgetId": "flexLogin",
+				"widgetId": "flexLoginButtons",
 				"itemKUID": "2900f01502014865afbca4438414bc59",
 				"widgetKUID": "ec75b66fd86144008972c9c6e6067d2f",
 				"animationObject": {
@@ -43,7 +43,7 @@
 				"type": "MOVE_ACTION",
 				"itemType": "FORM",
 				"itemId": "frmSplash",
-				"widgetId": "flexBars",
+				"widgetId": "flexMainButtons",
 				"itemKUID": "2900f01502014865afbca4438414bc59",
 				"widgetKUID": "267d5e5b1a694f0885c60927ca92f320",
 				"animationObject": {

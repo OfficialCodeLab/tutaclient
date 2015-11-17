@@ -63,15 +63,13 @@
         6
     ],
     "name": "kony.ui.Button",
-    "onClick": "AS_Button_8f5f44aea38042d6be3d282f2ba2b79c",
-    "onclick": "AS_Button_8f5f44aea38042d6be3d282f2ba2b79c",
     "padding": [
         0,
         0,
         0,
         0
     ],
-    "parent": "flexLogin",
+    "parent": "flexLoginButtons",
     "pf": "frmSplash",
     "render": true,
     "skin": "se6955b3e0514edb8c685acb09685de7",

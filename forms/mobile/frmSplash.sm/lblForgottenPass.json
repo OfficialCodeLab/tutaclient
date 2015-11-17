@@ -79,7 +79,7 @@
         0,
         0
     ],
-    "parent": "flexLogin",
+    "parent": "flexLoginButtons",
     "pf": "frmSplash",
     "render": true,
     "skin": "s045c05e69cb493aae31e5c6bb689b22",

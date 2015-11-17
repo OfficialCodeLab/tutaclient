@@ -84,7 +84,7 @@
         0,
         0
     ],
-    "parent": "flexBars",
+    "parent": "flexMainButtons",
     "pf": "frmSplash",
     "render": true,
     "skin": "se8ed1117de848ea95103d913362b696",

@@ -3,7 +3,7 @@
     "__parentReadjusting__": false,
     "_bottom_": {
         "type": "string",
-        "value": "150dp"
+        "value": "200dp"
     },
     "_height_": {
         "type": "string",
@@ -21,7 +21,7 @@
         0,
         0
     ],
-    "_placeholder_": "Password",
+    "_placeholder_": "Email",
     "_skin_": "s62aaba755b84e769df0729a9cb5e8bd",
     "_text_": "",
     "_width_": {
@@ -30,7 +30,7 @@
     },
     "android": {
         "psp": {
-            "keyboardActionLabel": 1
+            "keyboardActionLabel": 4
         }
     },
     "autoCapitalize": "none",
@@ -41,7 +41,7 @@
     "autocomplete": false,
     "autocorrect": false,
     "autofilter": false,
-    "bottom": "150dp",
+    "bottom": "200dp",
     "canUpdateUI": true,
     "centerX": "50%",
     "centerx": {
@@ -57,19 +57,27 @@
     "containerweight": 100,
     "contentAlignment": 4,
     "contentalignment": 4,
+    "disabledSkins": {},
     "enabled": false,
     "focusSkin": "s62aaba755b84e769df0729a9cb5e8bd",
     "focusskin": "s62aaba755b84e769df0729a9cb5e8bd",
     "height": "45dp",
-    "id": "txtLoginPass",
+    "id": "txtEmail",
     "info": null,
     "iphone": {
-        "@class": "com.kony.gen.viz.model.component.property.textbox2.IPhoneTextBox2Property"
+        "@class": "com.kony.gen.viz.model.component.property.textbox2.IPhoneTextBox2Property",
+        "psp": {
+            "keyboardActionLabel": 4
+        }
     },
     "isVisible": true,
     "isvisible": true,
+    "keyBoardStyle": "emailpad",
+    "keyboardActionLabel": 4,
+    "keyboardactionlabel": 4,
+    "keyboardstyle": "emailpad",
     "keyboardtype": "A",
-    "kuid": "4dfd3eff16344d78b303fc298f6d5eac",
+    "kuid": "417b3f0059eb48be893ebbeb22e0b54b",
     "margin": [
         0,
         0,
@@ -86,14 +94,14 @@
     ],
     "paddingInPixel": false,
     "paddinginpixel": false,
-    "parent": "flexLogin",
+    "parent": "flexLoginButtons",
     "pf": "frmSplash",
-    "placeholder": "Password",
+    "placeholder": "Email",
     "placeholderSkin": "s62aaba755b84e769df0729a9cb5e8bd",
     "placeholderskin": "s62aaba755b84e769df0729a9cb5e8bd",
     "render": true,
-    "secureTextEntry": true,
-    "securetextentry": true,
+    "secureTextEntry": false,
+    "securetextentry": false,
     "skin": "s62aaba755b84e769df0729a9cb5e8bd",
     "text": "",
     "textInputMode": "A",

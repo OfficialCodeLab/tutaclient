@@ -6,20 +6,20 @@ if (typeof(tuta.forms) === "undefined") {
 	tuta.forms = {};
 }
 
-tuta.forms.frmSplash = function() {
+tuta.forms.frmTrip = function() {
 // initialize controller 
-  tuta.forms.frmSplash = new tuta.controller(frmSplash); 
+  tuta.forms.frmTrip = new tuta.controller(frmTrip); 
 
   // Initialize form events	
-  tuta.forms.frmSplash.onInit = function(form) {
+  tuta.forms.frmTrip.onInit = function(form) {
   };  
   
-  tuta.forms.frmSplash.onPreShow = function(form) {
+  tuta.forms.frmTrip.onPreShow = function(form) {
     var self = this;
    // PUT BUTTONS HERE
   };
   
-  tuta.forms.frmSplash.onPostShow = function(form) {
+  tuta.forms.frmTrip.onPostShow = function(form) {
     var self = this;
   };
 };

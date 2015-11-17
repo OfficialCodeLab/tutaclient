@@ -38,8 +38,8 @@
     "channel": "mobile",
     "children": [
         "imgTaxi",
-        "flexBars",
-        "flexLogin"
+        "flexMainButtons",
+        "flexLoginButtons"
     ],
     "clipBounds": true,
     "clipbounds": true,
