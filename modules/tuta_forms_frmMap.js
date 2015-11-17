@@ -36,6 +36,10 @@ tuta.forms.frmMap = function() {
     this.control("btnHelp").onClick = function (button) {tuta.forms.frmHelp.show();};
     this.control("btnPromo").onClick = function (button) {tuta.forms.frmPromo.show();};
     this.control("btnAbout").onClick = function (button) {tuta.forms.frmAbout.show();};
+    
+    this.control("btnBack").onClick = function (button) {
+      
+      tuta.forms.frmMap.show();};
    // PUT BUTTONS HERE
   };
   
