@@ -21,7 +21,8 @@ tuta.forms.frmLogin = function() {
         application.service("userService").invokeOperation(
             "login", {}, inputs,
             function(result) {
-                tuta.util.alert("LOGIN SUCCESS", result.value);
+                //tuta.util.alert("LOGIN SUCCESS", result.value);
+                tuta.forms.frmMap.show();
                 //Move to next form
             },
             function(error) {
