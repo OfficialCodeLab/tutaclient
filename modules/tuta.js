@@ -418,12 +418,12 @@ function minusOne(txt, mins){
 }
 
 
-function changeAmPm(){
-  if (frmConfirm.lblAmPm.text == "AM")
-    frmConfirm.lblAmPm.text = "PM";
-  else
-    frmConfirm.lblAmPm.text = "AM";
-}
+// function changeAmPm(){
+//   if (frmConfirm.lblAmPm.text == "AM")
+//     frmConfirm.lblAmPm.text = "PM";
+//   else
+//     frmConfirm.lblAmPm.text = "AM";
+// }
 
 function setNewTime(){
   var newTime = frmConfirm.txtTimeHrs.text + ":" + frmConfirm.txtTimeMins.text + " " + frmConfirm.lblAmPm.text;
@@ -1117,7 +1117,10 @@ tuta.initCallback = function(error) {
 tuta.init = function() {
   	// initialize form controllers
   	new tuta.forms.frmSplash();
-    new ssa.forms.frmExample();
+    new tuta.forms.frmAbout();
+    new tuta.forms.frmConfirm();
+    new tuta.forms.frmMap();
+    // new ssa.forms.frmExample();
   
   	// initialize application
  	application = new tuta.application(tuta.initCallback);
