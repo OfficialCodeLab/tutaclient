@@ -19,15 +19,16 @@ tuta.forms.frmLogin = function() {
       
       	// try log user in
         application.service("userService").invokeOperation(
-          	"login", {}, inputs,
+            "login", {}, inputs,
             function(result) {
- 				tuta.util.alert("LOGIN SUCCESS", result.value);
+                tuta.util.alert("LOGIN SUCCESS", result.value);
+                //Move to next form
             },
             function(error) {
                 // the service returns 403 (Not Authorised) if credentials are wrong
                 tuta.util.alert(error);
             }
-    	);
+        );
     };
       
     self.control("btnAdd").onClick = function(button) {
