@@ -1108,6 +1108,20 @@ function animateMenu(){
   }
 }
 
+tuta.userExists = function (response){
+  try{
+    if(response.value[0] !== [])
+      return true;
+
+  }
+  catch(ex)
+  {
+    return false;
+  }
+
+  return false;
+};
+
 tuta.initCallback = function(error) {
 
 };

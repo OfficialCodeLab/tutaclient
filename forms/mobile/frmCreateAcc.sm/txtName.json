@@ -23,7 +23,7 @@
     ],
     "_placeholder_": "Name & Surname",
     "_skin_": "s58e380e3bb7489a80e6cd369fe00bce",
-    "_text_": "",
+    "_text_": "Test Test",
     "_top_": {
         "type": "string",
         "value": "83dp"
@@ -92,7 +92,7 @@
     "secureTextEntry": false,
     "securetextentry": false,
     "skin": "s58e380e3bb7489a80e6cd369fe00bce",
-    "text": "",
+    "text": "Test Test",
     "textInputMode": "A",
     "textinputmode": "A",
     "toolTip": "",
