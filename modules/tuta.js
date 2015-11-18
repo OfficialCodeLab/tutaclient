@@ -718,6 +718,7 @@ function updateMap() {
   frmMap.mapMain.zoomLevel = 10;
   //frmMap.mapMain.locationData
  // setZoomLevelFromBounds();
+  /*
   var pickupicon = "";
   if(frmMap.flexAddress.isVisible == false)
   	pickupicon = "pickupicon.png";
@@ -740,7 +741,7 @@ function updateMap() {
        image : "dropofficon.png"});  
   }
 
-  frmMap.mapMain.locationData = locationData;
+  frmMap.mapMain.locationData = locationData;*/
 }
 
 function getCabPinForBearing(startloc,endloc) {
@@ -1172,7 +1173,9 @@ tuta.init = function() {
       //Random position for taxi
       var randomPos = tuta.location.randomPoints(1, pickupPoint.geometry.location.lat, pickupPoint.geometry.location.lng, 1000);
       tuta.location.geoCode(randomPos[0].lat, randomPos[0].lon, function(s, e){
-        taxiPosition = s.results[0];      
+        taxiPosition = s.results[0];
+		
+        
       });
     });
 

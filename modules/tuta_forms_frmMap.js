@@ -12,6 +12,15 @@ tuta.forms.frmMap = function() {
 
   // Initialize form events	
   tuta.forms.frmMap.onInit = function(form) {
+    kony.timer.schedule("watchpos", function() {
+      var positionoptions = {enableHighAccuracy: true, timeout: 20000, maximumAge: 10000};
+      kony.location.watchPosition(function(position){
+
+        tuta.util.alert("TEST", JSON.stringify(position));
+      }, function(error){
+        tuta.util.alert("ERROR", error);          
+      }, positionoptions);
+    }, 0.5, false);
   };  
 
   tuta.forms.frmMap.onPreShow = function(form) {
@@ -153,6 +162,10 @@ tuta.forms.frmMap = function() {
   tuta.forms.frmMap.onPostShow = function(form) {
     var self = this;
     updateMap();     
+  };
+  
+  tuta.forms.frmMap.update = function(position){
+    tuta.util.alert("TEST", JSON.stringify(position));
   };
 };
 
