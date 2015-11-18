@@ -1142,7 +1142,9 @@ tuta.userExists = function (response){
 };
 
 tuta.initCallback = function(error) {
-
+  application.login("techuser@ssa.co.za","T3chpassword", function(result,error) {
+      	if(error) ssa.util.alert("Login Error", error);  
+    });
 };
 
 // Should be called in the App init lifecycle event

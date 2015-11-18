@@ -42,6 +42,7 @@ tuta.forms.frmSplash = function() {
             function(result) {
                 // tuta.util.alert("LOGIN SUCCESS", result.value);
                 self.moveLoginButtons.toggle();
+              	updateMap();
                 tuta.forms.frmMap.show();
                 //tuta.forms.frm003CheckBox.show();
             },

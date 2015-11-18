@@ -87,20 +87,35 @@ tuta.forms.frmCreateAcc = function() {
 
                             application.service("manageService").invokeOperation(
                               "userInfoAdd", {}, input, function(success) {
-                                tuta.util.alert("USER CREATED", "User has been created, now log in");
+                                input = { userName : self.control("txtEmail").text , password : self.control("txtPass").text };
+      
+                                // try log user in
+                                application.service("userService").invokeOperation(
+                                  "login", {}, input,
+                                  function(result) {                                    
+                                    tuta.forms.frmMap.show();
+                                    updateMap();
+                                    tuta.util.alert("SUCCESS", "Account has been created.");
+                                  },
+                                  function(error) {
+                                    // the service returns 403 (Not Authorised) if credentials are wrong
+                                    tuta.util.alert("Error " + error.httpStatusCode, error.errmsg);
+                                    self.control("txtPass").text = "";
+                                  }
+                                );
                               },
                               function(error) {
-                                tuta.util.alert("ERROR1", error);
+                                tuta.util.alert("ERROR", error);
                               }
                             );
                           },
                           function(error) {
-                            tuta.util.alert("ERROR2", error);
+                            tuta.util.alert("ERROR", error);
                           }
                         );
 
                       }, function (error){
-                        tuta.util.alert("ERROR3", "");
+                        tuta.util.alert("ERROR", "");
                       }
                                                    );
                     }
