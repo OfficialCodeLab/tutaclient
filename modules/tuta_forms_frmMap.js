@@ -19,12 +19,12 @@ tuta.forms.frmMap = function() {
 
     //if(hailState === false) updateMap();
     hailState = false;
-    this.control("btnPerson1").onTouchStart = onPeopleSelect;
-    this.control("btnPerson2").onTouchStart = onPeopleSelect;
-    this.control("btnPerson3").onTouchStart = onPeopleSelect;
-    this.control("btnPerson4").onTouchStart = onPeopleSelect;
-    this.control("btnPerson5").onTouchStart = onPeopleSelect;
-    this.control("btnPerson6").onTouchStart = onPeopleSelect;
+    this.control("btnPerson1").onClick = onPeopleSelect;
+    this.control("btnPerson2").onClick = onPeopleSelect;
+    this.control("btnPerson3").onClick = onPeopleSelect;
+    this.control("btnPerson4").onClick = onPeopleSelect;
+    this.control("btnPerson5").onClick = onPeopleSelect;
+    this.control("btnPerson6").onClick = onPeopleSelect;
     people.push(frmMap.imgPeople1);
     people.push(frmMap.imgPeople2);
     people.push(frmMap.imgPeople3);
@@ -89,6 +89,8 @@ tuta.forms.frmMap = function() {
       tuta.forms.frmLegal.show();
     };
     this.control("btnSignOut").onClick = function (button) {
+      kony.store.removeItem("user");
+      tuta.animate.moveBottomLeft(frmSplash.flexMainButtons, 0, "0%", "0", null);
       tuta.menuToggle(0, self.leftMenu._open);     
       self.leftMenu.toggle();
       tuta.forms.frmSplash.show();
@@ -150,6 +152,7 @@ tuta.forms.frmMap = function() {
 
   tuta.forms.frmMap.onPostShow = function(form) {
     var self = this;
+    updateMap();     
   };
 };
 

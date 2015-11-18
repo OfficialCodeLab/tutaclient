@@ -92,9 +92,9 @@ tuta.forms.frmCreateAcc = function() {
                                 // try log user in
                                 application.service("userService").invokeOperation(
                                   "login", {}, input,
-                                  function(result) {                                    
+                                  function(result) {
+                                    kony.store.setItem("user", JSON.stringify(input));
                                     tuta.forms.frmMap.show();
-                                    updateMap();
                                     tuta.util.alert("SUCCESS", "Account has been created.");
                                   },
                                   function(error) {
