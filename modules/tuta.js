@@ -783,10 +783,10 @@ function onLocationSelected() {
     destination = getSelectedAddress();
     deselectAllOptions();
     frmConfirm.lblDestination.text = shortenText (destination.formatted_address.replace(/`+/g,""), GLOBAL_CONCAT_LENGTH);
-    frmConfirm.lblPickUpLocation.text = shortenText (pickupPoint.formatted_address.replace(/`+/g,""), GLOBAL_CONCAT_LENGTH);
+    frmConfirm.lblPickUpLocation.text = shortenText (currentPos.formatted_address.replace(/`+/g,""), GLOBAL_CONCAT_LENGTH);
     //updateConfirmForm();
     resetSearchBar();
-    getDirections(pickupPoint,destination,null,function(response) {
+    getDirections(currentPos,destination,null,function(response) {
       //ssa.mobile.alert(reponse.results);
       finalroute = response;
       //renderDirections(frmMap.mapMain,response);
@@ -799,11 +799,11 @@ function onLocationSelected() {
     frmConfirm.lblCost = "R" + Math.round(taxiRate(30));
     frmConfirm.lblDuration = 30 + " MIN";
   } else {
-    pickupPoint = getSelectedAddress();
+    currentPos = getSelectedAddress();
     resetSearchBar();
     updateMap();
     searchMode = 0;
-    kony.timer.schedule("showMarker", function(){frmMap["flexChangeDest"]["isVisible"] = true;}, 0.5, false);
+    //kony.timer.schedule("showMarker", function(){frmMap["flexChangeDest"]["isVisible"] = true;}, 0.5, false);
 
   }
 }
@@ -832,6 +832,7 @@ function hailTaxi(widget) {
   frmMap.flexAddress.setVisibility(false);
   frmMap.flexShadow.setVisibility(false);
   hailstate = tempState;
+  /*
   kony.timer.schedule("movetomap", function() { 
     frmMap.mapMain.clear();
     updateMap();
@@ -852,7 +853,7 @@ function hailTaxi(widget) {
     });
     //frmMap.flexOptions.visible = false;
 
-  },2,false );
+  },2,false );*/
 
   kony.timer.schedule("fetchPerson", function(){
     animateTaxiOnRoute(0);
