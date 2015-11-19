@@ -1181,21 +1181,22 @@ tuta.menuToggle = function (time, bool){
 
 var inputBooking;
 tuta.awaitConfirm = function(bookingID) {
-  tuta.util.alert("Please wait","Waiting for confirmation:\n"+bookingID);
-  //frmMap["flexProgress"]["isVisible"] = true;
+
+  frmMap.flexProgress.setVisibility(true);
   //Kony timer – checks evert 5 seconds for the booking (if there is one) , 
   //take the result and check the status value of the key status – 
   //when it changes to CONFIRMED, then hide the flex container again
-  inputBooking = {"id" : "" + bookingID};
-  
+  inputBooking = { id : bookingID };
+
   kony.timer.schedule("taxiHailTimer", function(){
 
     application.service("userService").invokeOperation(
-      "trackBooking", {}, JSON.stringify(inputBooking),
+      "booking", {}, inputBooking,
       function(result) { //This is the default function that runs if the query is succesful, if there is a result.
         if (result.value[0].status==="Confirmed")
         {
 
+          frmMap.flexProgress.setVisibility(false);
           //frmMap["flexProgress"]["isVisible"] = false;
           tuta.util.alert("success","Your booking has been confirmed!");
           kony.timer.cancel("taxiHailTimer");
