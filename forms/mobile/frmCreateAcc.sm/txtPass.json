@@ -23,7 +23,7 @@
     ],
     "_placeholder_": "Password",
     "_skin_": "s58e380e3bb7489a80e6cd369fe00bce",
-    "_text_": "Passw0rd",
+    "_text_": "",
     "_top_": {
         "type": "string",
         "value": "248dp"
@@ -92,7 +92,7 @@
     "secureTextEntry": true,
     "securetextentry": true,
     "skin": "s58e380e3bb7489a80e6cd369fe00bce",
-    "text": "Passw0rd",
+    "text": "",
     "textInputMode": "A",
     "textinputmode": "A",
     "toolTip": "",

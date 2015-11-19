@@ -22,15 +22,13 @@ tuta.forms.frmCreateAcc = function() {
       
       var userEmail = self.control("txtEmail").text;
 
-      if(userEmail === null || userEmail === "")
-      {
-
+      if(userEmail === null || userEmail === "") {
+        tuta.util.alert("Error", "Please fill in all fields");  
       }
-      else
-      {
+      else {
         var input = { id : userEmail};      
         
-        //TODO: email regex
+        //TODO: email regex test
 
         application.service("userService").invokeOperation(
           "userExists", {}, input, function(success) {
@@ -38,8 +36,7 @@ tuta.forms.frmCreateAcc = function() {
             if(userExists === true){
               tuta.util.alert("Error", "USER EXISTS ALREADY");               
             }
-            else
-            {
+            else {
               //COMPARE PASSWORDS AND DO REGEX MATCH
               if(self.control("txtPass").text === self.control("txtPass2").text){
                 var passRegex = self.control("txtPass").text.match(/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])[a-zA-Z0-9]{8,}$/);
@@ -47,7 +44,7 @@ tuta.forms.frmCreateAcc = function() {
                   //tuta.util.alert("PASSWORDS correct", ""); 
                   var names = self.control("txtName").text.split(" ");
 
-                  if(names.length >= 2){
+                  if(names.length >= 2) {
                     var firstname = names[0];
                     var surname = names[1];
                     for (var i = 2; i < names.length; i++){
@@ -90,7 +87,22 @@ tuta.forms.frmCreateAcc = function() {
 
                             application.service("manageService").invokeOperation(
                               "userInfoAdd", {}, input, function(success) {
-                                tuta.util.alert("USER CREATED", "User has been created, now log in");
+                                input = { userName : self.control("txtEmail").text , password : self.control("txtPass").text };
+      
+                                // try log user in
+                                application.service("userService").invokeOperation(
+                                  "login", {}, input,
+                                  function(result) {
+                                    kony.store.setItem("user", JSON.stringify(input));
+                                    tuta.forms.frmMap.show();
+                                    tuta.util.alert("SUCCESS", "Account has been created.");
+                                  },
+                                  function(error) {
+                                    // the service returns 403 (Not Authorised) if credentials are wrong
+                                    tuta.util.alert("Error " + error.httpStatusCode, error.errmsg);
+                                    self.control("txtPass").text = "";
+                                  }
+                                );
                               },
                               function(error) {
                                 tuta.util.alert("ERROR", error);
@@ -107,20 +119,19 @@ tuta.forms.frmCreateAcc = function() {
                       }
                                                    );
                     }
-                    else{
+                    else {
                       tuta.util.alert("Enter contact number", "Please enter your contact number");
                     }
                   }
-                  else{
+                  else {
                     tuta.util.alert("Enter full name", "Please enter both your first name and surname");
                   }
                 }
-                else
-                {
+                else {
                   tuta.util.alert("PASSWORD TOO EASY", "Password must have 8 characters and should contain at least one digit, one lower case and one upper case");
                 }
               }
-              else{
+              else {
                 tuta.util.alert("PASSWORDS DONT MATCH", "");                
               }
             }            

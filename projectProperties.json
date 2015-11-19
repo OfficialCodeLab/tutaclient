@@ -135,5 +135,14 @@
         "osVersion": "iOS7",
         "osPlatform": "",
         "wType": "Appmenu"
+    },
+    "accountCloudGuid": "f618eaaf-e810-4263-82ab-92210361ccbb",
+    "projectCloudGuid": "ca0d53fb-c579-44bb-97e5-3b6214690f31",
+    "prototype": {
+        "createdOn": "2015-11-18T07:21:21.506Z",
+        "createdById": "f618eaaf-e810-4263-82ab-92210361ccbb",
+        "createdBy": "Courtney Jooste",
+        "shareGuid": "ZPB8V",
+        "resourceId": "e9228e5e-b5bc-4147-bf9d-83bffbd5ac35"
     }
 }
