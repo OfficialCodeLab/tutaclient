@@ -34,6 +34,7 @@ tuta.forms.frmSplash = function() {
         tuta.util.alert("Error", "Please enter your password");        
       }
       else{
+        //Inputs stored as a JSON object temporarily
         var inputs = { userName : self.control("txtEmail").text , password : self.control("txtPassword").text };
 
         // try log user in
@@ -43,6 +44,9 @@ tuta.forms.frmSplash = function() {
             // tuta.util.alert("LOGIN SUCCESS", result.value);
             self.control("txtEmail").text = "";
             self.control("txtPassword").text = "";
+
+            //Creates a new item, "user", in the store. 
+            //User is the key / ID, and contains a JSON structure as a value
             kony.store.setItem("user", JSON.stringify(inputs));
             self.moveLoginButtons.toggle();
             tuta.forms.frmMap.show();

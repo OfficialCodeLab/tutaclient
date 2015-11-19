@@ -94,10 +94,11 @@ tuta.forms.frmConfirm = function() {
         function requestButtonClick(){
           if (instantBooking === true)
           {
+            //Gets current user as a JSON Object
             var currentUser = JSON.parse(kony.store.getItem("user"));
             var booking = {
-              userId: currentUser.userName,
-              address: {
+                userId: currentUser.userName,
+                address: {
                 description: currentPos
               },
               location: {
@@ -272,3 +273,36 @@ tuta.forms.frmConfirm = function() {
 };
 
 //Methods used for custom time picker
+
+
+/*
+Info
+
+application.service(" <insert service name here> ").invokeOperation(
+          " <insert service operation here> ", { <header function - nothing here> }, <json variable here, usually as a string> ,
+          function(result) { //This is the default function that runs if the query is succesful, if there is a result.
+
+            //Just a popup, you can show some info here if the method is succesful
+            //tuta.util.alert("LOGIN SUCCESS", result.value);
+
+            //Do some stuff here
+            
+
+            //Storing information locally:
+
+            //Creates a new item, "user", in the store. (Can be named anything)
+            //User is the key/ID, and contains a JSON structure as a value
+            kony.store.setItem("user", JSON.stringify(inputs <This is the json struct> ));
+
+            //Do some more stuff
+            self.moveLoginButtons.toggle();
+            tuta.forms.frmMap.show();
+            //tuta.forms.frm003CheckBox.show();
+          },
+          function(error) { //The second function will always run if there is an error.
+            // the service returns 403 (Not Authorised) if credentials are wrong
+            tuta.util.alert("Error " + error.httpStatusCode, error.errmsg);
+            self.control("txtPassword").text = "";
+          }
+        );
+*/
