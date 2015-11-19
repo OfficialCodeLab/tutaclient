@@ -7,7 +7,7 @@
     },
     "_height_": {
         "type": "string",
-        "value": "100dp"
+        "value": "15%"
     },
     "_left_": {
         "type": "string",
@@ -59,7 +59,7 @@
     "enableScrolling": true,
     "enabled": false,
     "enablescrolling": true,
-    "height": "100dp",
+    "height": "15%",
     "id": "flexNoOfPeople",
     "info": null,
     "isVisible": true,
@@ -82,7 +82,7 @@
         0,
         0
     ],
-    "parent": "flexOptions",
+    "parent": "flexMain",
     "percent": true,
     "pf": "frmMap",
     "render": true,
