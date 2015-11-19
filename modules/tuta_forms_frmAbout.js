@@ -17,6 +17,8 @@ tuta.forms.frmAbout = function() {
   tuta.forms.frmAbout.onPreShow = function(form) {
     var self = this;
     this.control("btnBack").onClick = function (button) {tuta.forms.frmMap.show();};
+    
+    
   };
   
   tuta.forms.frmAbout.onPostShow = function(form) {

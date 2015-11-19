@@ -26,76 +26,15 @@ tuta.forms.frmConfirm = function() {
                                         
         ==============================================================*/
 
-        /*
-          Variables:
-
-          - Pickup (Current Location)
-          - Destination (Location)
-          - Nearest Driver (Location)
-          - Trip Duration (Based on distance from nearest driver)
-          - ID of current user logged in
-          - Trip Distance 
-
-          - Instant Booking? (true / false)
-
-          If false,
-
-          Show Date & Time Picker, 
-          - Date
-          - Time
-
-          Send through booking information
-          on request button click
-        */
-
-        var pickupLocation = {
-          LAT:"",
-          LON:""
-        };
-        var tripDestination = {
-          LAT:"",
-          LON:""
-        }
-        var nearestDriverPos; //Serverside
-
-        var estimatedTripDuration; //Ignore for now
-
-       // boolean instantBooking;
-
-        var pickupTime;
-        var pickupDay;
-        var pickupMonth;
-        var pickupYear;
-        var currentUserID;
-
-        var tripDistance;
-
-        //Initialise variables
-        instantBooking = true;
-
-        //Set Pickup Location (sent through from pickup button)
-
-        //Set Trip Destination (on button click, type in an address)
-
-        //nearestDriverPos = Get position of nearest driver
-
-        //tripDistance = work out distance for trip
-
-        //Work out estimated trip duration in seconds, 60 seconds per 1000m
-        estimatedTripDuration = tripDistance * 60;
-
-        
-
-
-
+      
 
         //Request button click
       	var bookingID = "";
         function requestButtonClick(){
-          if (instantBooking === true)
+          var currentUser = JSON.parse(kony.store.getItem("user"));
+          if (frmConfirm.lblDateTimeNew.isVisisble === false)
           {
             //Gets current user as a JSON Object
-            var currentUser = JSON.parse(kony.store.getItem("user"));
             var booking = {
               userId: currentUser.userName + "",
               address: {
@@ -116,14 +55,9 @@ tuta.forms.frmConfirm = function() {
             application.service("userService").invokeOperation(
               "book", {}, input,
               function(result) {
-                // tuta.util.alert("LOGIN SUCCESS", result.value);
-                //bookingID = result._id;
                 bookingID = result.value[0].id;
                 tuta.forms.frmMap.show();
-                tuta.awaitConfirm(bookingID);
-                //tuta.logUser();
-                //hailTaxi();
-                //tuta.forms.frm003CheckBox.show();
+                //tuta.awaitConfirm(bookingID);
               },
               function(error) {
                 // the service returns 403 (Not Authorised) if credentials are wrong
@@ -133,9 +67,45 @@ tuta.forms.frmConfirm = function() {
             );
           } 
           else{
+            var bookingLater = {
+              userId: currentUser.userName + "",
+              time: "" + getEpoch(),
+              address: {
+                description: destination.formatted_address.replace(/`+/g,"") + ""
+              },
+              location: {
+                lat: currentPos.geometry.location.lat + "",
+                long: currentPos.geometry.location.lng + ""
+              },
+              status: "Unconfirmed"
+            };
+            
+            //tuta.logTechUser();
+            
+            var inputLater = { data : JSON.stringify(bookingLater) };
+            //tuta.util.alert("TEST", input);
+            
+            application.service("userService").invokeOperation(
+              "book", {}, inputLater,
+              function(result) {
+                bookingID = result.value[0].id;
+                tuta.forms.frmMap.show();
+              },
+              function(error) {
+                // the service returns 403 (Not Authorised) if credentials are wrong
+                tuta.util.alert("Error " + error.httpStatusCode, error.errmsg);
+                self.control("txtPassword").text = "";
+              }
+            );
             //collect all variables, send through WITH date & time
           }
         }
+      
+      function getEpoch(){
+        var dateTime = new Date(timeformatted.year, timeformatted.month, timeformatted.day, timeformatted.hours, timeformatted.mins);
+        var time = dateTime.getTime();
+        return time;
+      }
 
 
 
@@ -251,6 +221,8 @@ tuta.forms.frmConfirm = function() {
         this.control("imgX").onTouchStart = function() {
             frmConfirm["flexDateTime"]["isVisible"] = false;
         };
+      
+      	
         this.control("imgTick").onTouchStart = setNewTime;
         this.control("flexCancel1").onTouchStart = function() {
             frmConfirm["flexDateTime"]["isVisible"] = false;

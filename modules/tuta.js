@@ -14,6 +14,16 @@ var pickupPoint = null;
 var taxiPosition = null;
 var viaList = [];
 
+var timeformatted = 
+    {
+      month: "",
+      day: "",
+      year: "",
+      hours: "",
+      mins: "",
+      meridian: ""
+    }
+
 var GLOBAL_CONCAT_LENGTH = 35;
 
 if (typeof(tuta) === "undefined") {
@@ -424,10 +434,32 @@ function changeAmPm(){
     frmConfirm.lblAmPm.text = "AM";
 }
 
+function getMonth (month){
+  return (months.track)+1;
+}
+
+function getHour (hour, meridian){
+  if(meridian.toLowerCase() === "pm")
+    return hour+12;
+  
+  return hour;
+  
+}
+
 function setNewTime(){
   var newTime = frmConfirm.txtTimeHrs.text + ":" + frmConfirm.txtTimeMins.text + " " + frmConfirm.lblAmPm.text;
   // frmConfirm.lblTime.text = newTime;
   var newDate = frmConfirm.lblDay.text + " " + frmConfirm.lblMonth.text + " " + frmConfirm.lblYear.text;
+  
+  
+  timeformatted.day = parseInt(frmConfirm.lblDay.text);
+  timeformatted.month = getMonth(frmConfirm.lblMonth.text);
+  timeformatted.year = parseInt(frmConfirm.lblYear.text);
+  timeformatted.mins = parseInt(frmConfirm.txtTimeMins.text);
+  timeformatted.meridian = (frmConfirm.lblAmPm.text).toLowerCase();
+  timeformatted.hours = getHour(parseInt(frmConfirm.txtTimeHrs.text), timeformatted.meridian);
+  
+  
   frmConfirm.lblDateTimeNew.text = newDate + " - " + newTime;
   frmConfirm.flexDateTime.setVisibility(false);
 }
