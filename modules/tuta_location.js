@@ -28,18 +28,35 @@ tuta.location.init = function(callback) {
 * Retrieves the current position of the app user
 **/
 tuta.location.currentPosition = function(callback) {
-  
-	kony.location.getCurrentPosition(
-    	function success(position) {
-          callback(position);
-        },
+
+  kony.location.getCurrentPosition(
+    function success(position) {
+      callback(position);
+    },
+
+    function error(errorMsg) {
+      callback(null,errorMsg);
+    },
+
+    { timeout: 35000, maximumAge: 0, enableHighAccuracy : true, useBestProvider : true }
+  );  
+};
+
+/**
+* Watches the current position of the app user
+**/
+tuta.location.watchPosition = function(callback) {
+
+  kony.location.watchPosition(
+    function(position) {
       
-      	function error(errorMsg) {
-          callback(null,errorMsg);
-        },
-      
-      	{ timeout: 35000, maximumAge: 0, enableHighAccuracy : true, useBestProvider : true }
-    );  
+    },
+
+    function (errorMsg) {
+    }, 
+
+    { timeout: 35000, maximumAge: 0, enableHighAccuracy : true, useBestProvider : true }
+  );
 };
 
 /** Converts numeric degrees to radians */

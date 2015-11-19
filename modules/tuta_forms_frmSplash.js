@@ -74,31 +74,10 @@ tuta.forms.frmSplash = function() {
     var self = this;
 
     kony.timer.schedule("login", function(){
-      var input = null;
-      input = kony.store.getItem("user");
-      if (input !== null){
-        try{
-          application.service("userService").invokeOperation(
-            "login", {}, JSON.parse(input),
-            function(result) {
-              //tuta.util.alert("LOGIN SUCCESS", result.value);
-              tuta.forms.frmMap.show();
-              //tuta.forms.frm003CheckBox.show();
-            },
-            function(error) {
-              // the service returns 403 (Not Authorised) if credentials are wrong
-              tuta.util.alert("Error " + error.httpStatusCode, error.errmsg);
-            }
-          );
-        }
-        catch (ex){
-          tuta.util.alert("Error", ex);
-        }
-      }  
-      else{
-        tuta.animate.moveBottomLeft(frmSplash.flexMainButtons, 0.2, "0%", "0", null);
-      }
-    }, 0.2, false);
+      
+    }, 0.5, false);
   };
+  
+  
 };
 
