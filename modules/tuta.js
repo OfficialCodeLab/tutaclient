@@ -17,7 +17,7 @@ var viaList = [];
 var GLOBAL_CONCAT_LENGTH = 35;
 
 if (typeof(tuta) === "undefined") {
-	tuta = {};
+  tuta = {};
 }
 
 // global reference to your app object
@@ -38,7 +38,7 @@ function onPeopleSelect(eventobject, x , y) {
   }
   else
     lastPersonClicked = nopeople;
-  
+
   for(var i = 0; i < nopeople; i++) {
     people[i].src = "personselected.png";
   }
@@ -57,7 +57,7 @@ function onStarSelect(eventobject, x , y) {
   }
   else
     lastStarSelected = nostar;
-  
+
   for(var i =0; i < nostar; i++) {
     star[i].src = "starselected.png";
   }
@@ -102,14 +102,14 @@ function initOld() {
   star.push(frmMap.imgStar3);
   star.push(frmMap.imgStar4);
   star.push(frmMap.imgStar5);
-  
+
   frmPayments.rtPay.text = "All Tuta transactions will happen directly with your cab driver. "
-                           + "This will be done with either cash or via credit,"
-                           + " cheque or debit card using the card machine on board.<br><br>"
-                           + "Future functionality will allow for you to upload and securely" 
-                           +" save your credit card information on the app." 
-                           +" Trip payments will happen automatically once you are at your destination."
-  
+    + "This will be done with either cash or via credit,"
+    + " cheque or debit card using the card machine on board.<br><br>"
+    + "Future functionality will allow for you to upload and securely" 
+    +" save your credit card information on the app." 
+    +" Trip payments will happen automatically once you are at your destination."
+
 
   frmMap.preShow = function() {if(hailState == false) updateMap();};
   //Ext.device.Orientation.off();
@@ -121,14 +121,14 @@ function initOld() {
   frmConfirm.imgTick.onTouchStart = setNewTime;
   frmConfirm.flexCancel1.onTouchStart = function() {frmConfirm["flexDateTime"]["isVisible"] = false;};
   frmConfirm.flexCancel2.onTouchStart = function() {frmConfirm["flexDateTime"]["isVisible"] = false;};
-  
+
   frmMap.btnChs.onClick = animateMenu;
   frmMap.btnChsRight.onClick = animateMenu;
-  
+
   frmConfirm.txtTimeHrs.onTextChange = fixHours;
   frmConfirm.txtTimeMins.onTextChange = fixMins;
   frmConfirm.txtTimeMins.onDone = fixMins2;
-  
+
   frmConfirm.btnHrsPlus.onClick = function (){frmConfirm.txtTimeHrs.text = addOne(frmConfirm.txtTimeHrs.text); fixHours();};
   frmConfirm.btnHrsMinus.onClick = function (){frmConfirm.txtTimeHrs.text = minusOne(frmConfirm.txtTimeHrs.text, false); fixHours();};
   frmConfirm.btnMinsPlus.onClick = function (){frmConfirm.txtTimeMins.text = addOne(frmConfirm.txtTimeMins.text); fixMins(); fixMins2();};
@@ -142,8 +142,8 @@ function initOld() {
   frmConfirm.btnMonthDown.onClick = function() {onMonthChange(0);};
   frmConfirm.btnYearUp.onClick = function() {onYearChange(1);};
   frmConfirm.btnYearDown.onClick = function() {onYearChange(0);};
- // frmConfirm.btnMonthDown.onClick = onYearChange(0);
-  
+  // frmConfirm.btnMonthDown.onClick = onYearChange(0);
+
   frmConfirm.btnChangeDest.onClick = function(){
     frmMap.show();    
     frmMap.flexAddressList.setVisibility(false);
@@ -154,55 +154,55 @@ function initOld() {
     frmMap.txtDest.setFocus(true);
     searchMode = 0;
   }
-  
+
   frmConfirm.btnChangePickup.onClick = function(){
     frmMap.show();  
     selectPickUpLocation();  
   }
-  
+
   setUpSwipes();
-  
+
   //SET UP CHEESEBURGER MENU
-  
+
   frmMap.btnPay.onClick = function (){frmPayments.show();};
   frmPayments.btnBack.onClick = function (){frmMap.show();};
-  
+
   frmMap.btnPromo.onClick = function (){frmPromo.show();};
   frmPromo.btnBack.onClick = function (){frmMap.show();} ;
-  
+
   frmMap.btnAbout.onClick = function (){frmAbout.show();};
   frmAbout.btnBack.onClick = function (){frmMap.show();};
-  
+
   frmMap.btnLegal.onClick = function (){frmLegal.show();};
   frmLegal.btnBack.onClick = function (){frmMap.show();};  
-  
+
   frmMap.btnHelp.onClick = function (){frmHelp.show();};
   frmHelp.btnBack.onClick = function (){frmMap.show();};  
-  
+
   frmMap.btnHistory.onClick = function (){frmTrip.show();};
   frmTrip.btnBack.onClick = function (){frmMap.show();}; 
-  
+
   frmMap.btnSignOut.onClick = function (){frmSplash.show();};
-  
+
   //TODO: Map data according to which row is selected
   frmTrip.segTrips.onRowClick = function (){ loadTripHistory(""); frmSelectedTrip.show();};
   frmTrip.btnBack.onClick = function (){frmMap.show();}; 
   frmSelectedTrip.btnBack.onClick = function (){frmMap.show();}; 
-  
+
   frmCreateAcc.btnConfirm.onClick = function (){frmMap.show();};
-  
+
   //END SET UP CHEESEBURGER MENU
-  
+
   //frmMap.textDest.onBeginEditing = function () {frmMap.flexOptions.setVisibility(false);};
   //frmMap.textDest.onEndEditing = function () {frmMap.flexOptions.setVisibility(true);};
 
-  
- // frmMap.flexCheepest.onTouchEnd = selectOption;
+
+  // frmMap.flexCheepest.onTouchEnd = selectOption;
   //frmMap.flexQuickest.onTouchEnd = selectOption;
   //frmMap.flexPremium.onTouchEnd = selectOption;
-  
+
   frmConfirm.sliderBook.onSlide = sliderMove;
-  
+
   //SET UP DAYS
   setUpDays("Apr");
   frmConfirm.lblDay.text = days.values[0];
@@ -215,28 +215,28 @@ function initOld() {
     frmMap.flexOverlay2.setVisibility(false);
     //#ifdef iphone
     kony.timer.schedule("cancelHail", function() {  
-        cancelHail();
-      }, 0.3, false);
+      cancelHail();
+    }, 0.3, false);
     //#endif
-    
+
     //ifdef android
     cancelHail();
   };
   frmMap.btnCancelHailDriving.onTouchStart = cancelHailPrompt;
   frmMap.segAddressList.onRowClick = onLocationSelected;
-  
+
   frmMap.txtDest.setFocus(false);
-  
+
   frmMap.mapMain.onPinClick = function(map,location) {selectPickUpLocation();};
   frmMap.mapMain.onClick = function(map, location) {
     frmMap.flexAddressList.setVisibility(false);
     frmMap.flexAddressShadow.setVisibility(false);
-   	//kony.timer.schedule("showMarker", function(){frmMap["flexChangeDest"]["isVisible"] = true;}, 0.3, false);
+    //kony.timer.schedule("showMarker", function(){frmMap["flexChangeDest"]["isVisible"] = true;}, 0.3, false);
     resetSearchBar();
     searchMode = 0;
   };
 
-  
+
   frmMap.txtDest.onDone = function(widget) {
     if(frmMap.txtDest.text != null){
       frmMap.flexFindingDest.setVisibility(true);
@@ -265,21 +265,21 @@ function initOld() {
     frmMap.flexNoOfPeople.setVisibility(true);
   };
   frmConfirm.btnHailTaxi.onClick = hailTaxi;
-  
+
   //frmMap.flexDestinations.onTouchStart = toggleDestinations;
-  
-  
+
+
   frmSelectedTrip.btnHelp.onClick = function (){frmHelp.show();};
-  
+
   frmHelp.btnCancel.onClick = function (){frmMap.show();};
   frmHelp.btnSubmit.onClick = function (){
     frmMap.show();
     kony.timer.schedule("popRequestSent", function() {  
-         popRequestSent.show();
-      }, 0.5, false);
-    
+      popRequestSent.show();
+    }, 0.5, false);
+
   };
-    /*selectedPin = location;
+  /*selectedPin = location;
     if(hailState) return;
     if(location.name == "Pickup Location") {
       selectPickUpLocation();
@@ -287,7 +287,7 @@ function initOld() {
     } else {
       frmMap.txtDestination.setFocus(true);
     }*/
-  
+
 
   var selectedPin = null;
   /*frmMap.mapMain.onSelection = function(map,location) {
@@ -311,7 +311,7 @@ function initOld() {
       kony.timer.schedule("splash", function() {  
         var randomPos = randomPoints(1, pickupPoint.geometry.location.lat, pickupPoint.geometry.location.lng, 1000);
         geoCodeNew(randomPos[0].lat, randomPos[0].lon, function(success, error){
-        	taxiPosition = success.results[0]; 
+          taxiPosition = success.results[0]; 
         });  
       }, 2, false);
 
@@ -328,7 +328,7 @@ function initOld() {
       kony.timer.schedule("splash2", function() { 
         var randomPos = randomPoints(1, pickupPoint.geometry.location.lat, pickupPoint.geometry.location.lng, 1000);
         geoCodeNew(randomPos[0].lat, randomPos[0].lon, function(success, error){
-          	taxiPosition = success.results[0]; 
+          taxiPosition = success.results[0]; 
         }); 
       }, 2, false);
     });
@@ -336,45 +336,45 @@ function initOld() {
 }
 
 function fixHours(){ 
-	var txt = parseInt(frmConfirm.txtTimeHrs.text, 10);
-  	if (txt == txt){ //Checking for NaN
-      if(txt <= 0){
-          txt = 12;
-      }
-      else if (txt > 12 && txt < 24){
-          txt -= 12;
-          frmConfirm.lblAmPm.text = "PM";
-      }  
-      else if (txt > 24){
-          txt = 12;
-          if(frmConfirm.lblAmPm.text == "AM")
-            frmConfirm.lblAmPm.text = "PM";      
-      }
-
-      }
-    else
-    {        
-      frmConfirm.txtTimeHrs.text = "";
-      return;
+  var txt = parseInt(frmConfirm.txtTimeHrs.text, 10);
+  if (txt == txt){ //Checking for NaN
+    if(txt <= 0){
+      txt = 12;
     }
-    
-    //frmConfirm.txtTimeHrs.text = txt;
-  
-  	frmConfirm.txtTimeHrs.text = Math.round(txt) + "";
-  
-  	//frmConfirm.txtTimeHrs.onTextChange = fixHours;
+    else if (txt > 12 && txt < 24){
+      txt -= 12;
+      frmConfirm.lblAmPm.text = "PM";
+    }  
+    else if (txt > 24){
+      txt = 12;
+      if(frmConfirm.lblAmPm.text == "AM")
+        frmConfirm.lblAmPm.text = "PM";      
+    }
+
   }
+  else
+  {        
+    frmConfirm.txtTimeHrs.text = "";
+    return;
+  }
+
+  //frmConfirm.txtTimeHrs.text = txt;
+
+  frmConfirm.txtTimeHrs.text = Math.round(txt) + "";
+
+  //frmConfirm.txtTimeHrs.onTextChange = fixHours;
+}
 
 function fixMins(){
   var txt = parseInt(frmConfirm.txtTimeMins.text, 10);
-  
+
   if(txt == txt){ 
     if(txt >=60){
       txt = 0;
-  	  frmConfirm.txtTimeMins.text = "00";
+      frmConfirm.txtTimeMins.text = "00";
       var x = 1;
       x += parseInt(frmConfirm.txtTimeHrs.text, 10);
-  	  frmConfirm.txtTimeHrs.text = Math.round(x) + "";      
+      frmConfirm.txtTimeHrs.text = Math.round(x) + "";      
     }
   }
   else
@@ -386,11 +386,11 @@ function fixMins(){
 
 function fixMins2()
 {
-   var txt = parseInt(frmConfirm.txtTimeMins.text, 10);
-  
+  var txt = parseInt(frmConfirm.txtTimeMins.text, 10);
+
   if(txt == txt){
     if(txt < 10){
-  	  frmConfirm.txtTimeMins.text = "0" + Math.round(txt);
+      frmConfirm.txtTimeMins.text = "0" + Math.round(txt);
     }
   }
   else
@@ -406,7 +406,7 @@ function minusOne(txt, mins){
   var newVal = parseInt(txt, 10) - 1;
   if(newVal < 0 && mins === true)
   {
-	frmConfirm.txtTimeHrs.text = minusOne(frmConfirm.txtTimeHrs.text, false); 
+    frmConfirm.txtTimeHrs.text = minusOne(frmConfirm.txtTimeHrs.text, false); 
     fixHours();
     return 59;
   }
@@ -426,7 +426,7 @@ function changeAmPm(){
 
 function setNewTime(){
   var newTime = frmConfirm.txtTimeHrs.text + ":" + frmConfirm.txtTimeMins.text + " " + frmConfirm.lblAmPm.text;
- // frmConfirm.lblTime.text = newTime;
+  // frmConfirm.lblTime.text = newTime;
   var newDate = frmConfirm.lblDay.text + " " + frmConfirm.lblMonth.text + " " + frmConfirm.lblYear.text;
   frmConfirm.lblDateTimeNew.text = newDate + " - " + newTime;
   frmConfirm.flexDateTime.setVisibility(false);
@@ -453,7 +453,7 @@ function onMonthChange(bool){
     cyclicIncrement(months);
   else if (bool === 0)
     cyclicDecrement(months);
-  
+
   setUpDays(frmConfirm.lblMonth.text);
   var selectedDay = parseInt(frmConfirm.lblDay.text, 10);
   if(selectedDay > days.values.length) {
@@ -467,7 +467,7 @@ function onYearChange(bool){
     cyclicIncrement(years);
   else if (bool === 0)
     cyclicDecrement(years);
-  
+
   setUpDays("Feb");
   var selectedDay = parseInt(frmConfirm.lblDay.text, 10);
   if(selectedDay > days.values.length) {
@@ -478,19 +478,19 @@ function onYearChange(bool){
 
 function cyclicIncrement(obj){
   if(obj.values.length-1 === obj.track)
-	obj.track = 0;
+    obj.track = 0;
   else
     obj.track++;
-  
+
   updateObj(obj);
 }
 
 function cyclicDecrement(obj){
   if(obj.track === 0)
-	obj.track = obj.values.length -1;
+    obj.track = obj.values.length -1;
   else
     obj.track--;  
-  
+
   updateObj(obj);
 }
 
@@ -499,11 +499,11 @@ function updateObj(obj){
     case "d":
       frmConfirm.lblDay.text = obj.values[obj.track];
       break;
-      
+
     case "m":
       frmConfirm.lblMonth.text = obj.values[obj.track];
       break;
-      
+
     case "y":
       frmConfirm.lblYear.text = obj.values[obj.track];
       break;
@@ -517,9 +517,9 @@ function setUpDays(month){
   else if (month == "Feb") { //28 or 29
     var leap = parseInt(frmConfirm.lblYear.text, 10);
     if(leap % 4 === 0)
-    	pushPopNumbers(29);	
+      pushPopNumbers(29);	
     else
-    	pushPopNumbers(28);      
+      pushPopNumbers(28);      
   }
   else { //31
     pushPopNumbers(31);     
@@ -537,8 +537,8 @@ function pushPopNumbers(x){
     }
   }
   else {
-      while(days.values.length > x)
-        days.values.pop();
+    while(days.values.length > x)
+      days.values.pop();
   }    
 }
 
@@ -559,7 +559,7 @@ function sliderMove(){
 
 function showNow(){
   if(sliderDir == 1){    
-  	sliderDir = 0;
+    sliderDir = 0;
     kony.timer.schedule("reset", function() {   
       frmConfirm.imgNow.src = "slidernow.png";
       sliderDir = 2;
@@ -570,13 +570,13 @@ function showNow(){
       //frmConfirm["flexDetails2"]["height"] = 185;
       frmConfirm.lblDateTimeNew.setVisibility(false);
       //frmConfirm.lblTime.setVisibility(false);
-     // frmConfirm.btnSetTime.setVisibility(false); 
-  //frmConfirm.flexDetails2.height = 185; 
+      // frmConfirm.btnSetTime.setVisibility(false); 
+      //frmConfirm.flexDetails2.height = 185; 
       //disableChangeTime();      
     }, 0.25, false);
     animateMove(frmConfirm.imgNow, 0.25, "0", "-15", null);
   }
- /* sliderDir = 0;
+  /* sliderDir = 0;
     frmConfirm.sliderBook.setVisibility(false);       
     kony.timer.schedule("reset", function() { 
       frmConfirm.sliderBook.setVisibility(true);  
@@ -587,7 +587,7 @@ function showNow(){
 
 function showLater(){
   if(sliderDir == 2){    
-  	sliderDir = 0;
+    sliderDir = 0;
     kony.timer.schedule("reset", function() {   
       frmConfirm.imgNow.src = "sliderlater.png";
       sliderDir = 1;
@@ -600,7 +600,7 @@ function showLater(){
       //frmConfirm["lblTime"]["isVisible"] = true;
       frmConfirm.scrollToBeginning();
       kony.timer.schedule("showDateTime", function(){frmConfirm["flexDateTime"]["isVisible"] = true;
-      frmConfirm.btnSetTime.setVisibility(true);}, 0.3, false);  
+                                                     frmConfirm.btnSetTime.setVisibility(true);}, 0.3, false);  
       //frmConfirm["flexDetails2"]["height"] = 215; 
       //enableChangeTime();     
     }, 0.25, false);
@@ -610,25 +610,25 @@ function showLater(){
 
 var setupTblSwipe = {fingers: 1};
 function setUpSwipes(){
-  
+
   //frmConfirm["calTime"]["isVisible"] = false;
   //frmConfirm.lblTime.setVisibility(false);
- // frmConfirm.btnSetTime.setVisibility(false); 
+  // frmConfirm.btnSetTime.setVisibility(false); 
 
   frmConfirm.flexSlider.addGestureRecognizer(constants.GESTURE_TYPE_SWIPE, setupTblSwipe,  function(widget, gestureInformationSwipe) {
     //ssa.mobile.alert("","" + gestureInformationSwipe.swipeDirection );
-      if(gestureInformationSwipe.swipeDirection == 2) { 
-        showLater(); 
-      }
-      else if (gestureInformationSwipe.swipeDirection == 1){
-        showNow();
-      }
-    });
-  
+    if(gestureInformationSwipe.swipeDirection == 2) { 
+      showLater(); 
+    }
+    else if (gestureInformationSwipe.swipeDirection == 1){
+      showNow();
+    }
+  });
+
   //frmMap.flexSwipe.addGestureRecognizer(constants.GESTURE_TYPE_SWIPE, setupTblSwipe,  function(widget, gestureInformationSwipe) {
-    //ssa.mobile.alert("","" + gestureInformationSwipe.swipeDirection );
-     // if (gestureInformationSwipe.swipeDirection == 1){
-   //     animateMenu();
+  //ssa.mobile.alert("","" + gestureInformationSwipe.swipeDirection );
+  // if (gestureInformationSwipe.swipeDirection == 1){
+  //     animateMenu();
   //    }
   //  });
 }
@@ -648,12 +648,12 @@ function onSearchComplete() {
   // = 2 FROM SEARCH
 
 
- 
+
 }
 
 function cancelHailPrompt(){
   if(menuOpen === false)
-  	frmMap["flexOverlay1"]["isVisible"] = true;
+    frmMap["flexOverlay1"]["isVisible"] = true;
 }
 
 function selectDest(form) {
@@ -662,7 +662,7 @@ function selectDest(form) {
     add = frmMap.txtDest.text;
   else
     add = frmMap.txtPick.text;
-    
+
   findAddress(add, function(result) {
     //ssa.mobile.alert("RES", JSON.stringify(result));
     frmMap.flexFindingDest.setVisibility(false);
@@ -696,14 +696,14 @@ function getSelectedAddress() {
 function shortenText (str, len){
   var newStr = "";
   if(str.length > len)
-  	newStr = str.substring(0, (len-1)) + "...";
-  
+    newStr = str.substring(0, (len-1)) + "...";
+
   return newStr;
 }
 
 function loadTripHistory(selected){
-    frmSelectedTrip.lblPickup.text = shortenText ("32 Woodlands Drive, 2191, South Africa", GLOBAL_CONCAT_LENGTH);
-    frmSelectedTrip.lblDropoff.text = shortenText( "21 Ebury Ave Bryanston, 2191, South Africa", GLOBAL_CONCAT_LENGTH);
+  frmSelectedTrip.lblPickup.text = shortenText ("32 Woodlands Drive, 2191, South Africa", GLOBAL_CONCAT_LENGTH);
+  frmSelectedTrip.lblDropoff.text = shortenText( "21 Ebury Ave Bryanston, 2191, South Africa", GLOBAL_CONCAT_LENGTH);
 }
 
 function resetSearchBar() {
@@ -714,16 +714,33 @@ function resetSearchBar() {
   animateMove(frmMap.flexAdd, 0.3, "70", "-100%", null);
 }
 
+var currentPos;
 function updateMap() {
-  frmMap.mapMain.zoomLevel = 10;
+
+  var pickupicon = "";
+  if(frmMap.flexAddress.isVisible == false)
+    pickupicon = "pickupicon.png";
+
+
+  var locationData = [];
+  locationData.push(
+    {lat: "" + currentPos.geometry.location.lat + "", 
+     lon: "" + currentPos.geometry.location.lng + "", 
+     name:"Pickup Location", 
+     desc: currentPos.formatted_address.replace(/`+/g,""), 
+     image : pickupicon + ""});
+
+  frmMap.mapMain.locationData = locationData;
+
+  //frmMap.mapMain.zoomLevel = 10;
   //frmMap.mapMain.locationData
- // setZoomLevelFromBounds();
+  // setZoomLevelFromBounds();
   /*
   var pickupicon = "";
   if(frmMap.flexAddress.isVisible == false)
   	pickupicon = "pickupicon.png";
-    
-    
+
+
   var locationData = [];
   locationData.push(
     {lat: "" + pickupPoint.geometry.location.lat + "", 
@@ -749,10 +766,10 @@ function getCabPinForBearing(startloc,endloc) {
                                          startloc.lon, 
                                          endloc.lat,
                                          endloc.lon) / 15)) * 15; 
-  
+
   if(brng >= 360)
     brng = 0;
-  
+
   return "cabpin" + brng + ".png";
 }
 
@@ -762,7 +779,7 @@ var taxiRoute = null;
 function onLocationSelected() {
   // Search mode 0 means we have a destination
   if(searchMode == 0) {
-    
+
     destination = getSelectedAddress();
     deselectAllOptions();
     frmConfirm.lblDestination.text = shortenText (destination.formatted_address.replace(/`+/g,""), GLOBAL_CONCAT_LENGTH);
@@ -777,7 +794,7 @@ function onLocationSelected() {
     frmMap.flexAddressList.setVisibility(false);
     frmMap.flexAddressShadow.setVisibility(false);
     tuta.forms.frmConfirm.show();
-    
+
     //REPLACE 30 WITH DISTANCE TO TRAVEL
     frmConfirm.lblCost = "R" + Math.round(taxiRate(30));
     frmConfirm.lblDuration = 30 + " MIN";
@@ -787,7 +804,7 @@ function onLocationSelected() {
     updateMap();
     searchMode = 0;
     kony.timer.schedule("showMarker", function(){frmMap["flexChangeDest"]["isVisible"] = true;}, 0.5, false);
-    
+
   }
 }
 
@@ -826,7 +843,7 @@ function hailTaxi(widget) {
       getDirections(taxiPosition,pickupPoint,null, function(response) {
         taxiRoute = response;
         //ssa.mobile.alert("test", JSON.stringify(response));
-  		frmMap.flexProgress.setVisibility(false);
+        frmMap.flexProgress.setVisibility(false);
         frmMap.btnCancelHailDriving.setVisibility(true);
         renderDirections(frmMap.mapMain, taxiRoute, "0xFF0000FF","","pickupicon.png");
         //test = 0;
@@ -866,7 +883,7 @@ function animateTaxiOnRoute(dir) {
         frmMap.mapMain.clear();
         if(dir === 0){
           onRoute = false;
-    	  updateMap();
+          updateMap();
           renderDirections(frmMap.mapMain, finalroute, "0x0000FFFF","pickupicon.png","dropofficon.png");
           //animateMove2(frmMap.flexDriverInfo, 0.3, "0%", "0dp", function() {});
           kony.timer.schedule("dropPerson", function(){
@@ -900,7 +917,7 @@ function animateTaxiOnRoute(dir) {
           //This sometimes happens then the directions cannot be shown?
           frmMap.mapMain.clear();
           onRoute = false;
-    	  updateMap();
+          updateMap();
           renderDirections(frmMap.mapMain, finalroute, "0x0000FFFF","pickupicon.png","dropofficon.png");
           animateTaxiOnRoute(1);
         },2,false );
@@ -1033,18 +1050,18 @@ function closeDestinations() {
 }
 
 function animateSplash(){
-  
+
   frmSplash.flexBars.animate(
     kony.ui.createAnimation({"100":{"bottom":"0%", stepConfig:{"timingFunction":kony.anim.EASE}}}),
     {"delay":0,"iterationCount":1,"fillMode":kony.anim.FILL_MODE_FORWARDS,"duration":"0.5"},
     {"animationEnd" : null});
-  
-  
+
+
   frmSplash.imgTaxi.animate(
     kony.ui.createAnimation({"100":{"centerY":"40%", stepConfig:{"timingFunction":kony.anim.EASE}}}),
     {"delay":0,"iterationCount":1,"fillMode":kony.anim.FILL_MODE_FORWARDS,"duration":"0.5"},
     {"animationEnd" : null});
-  
+
 }
 
 var menuOpen = false;
@@ -1057,54 +1074,54 @@ function animateMenu(){
     //animateMove(frmMap.lblChs3, 0.2, "30", "15", null);
 
     //kony.timer.schedule("menuOpen1", function() { 
-      frmMap.imgChsC.setVisibility(false);
-      frmMap.flexDarken.setVisibility(true);
-      //frmMap.lblChs1.setVisibility(false);
-      //frmMap.lblChs2.setVisibility(false);
-      //frmMap.lblChs3.setVisibility(false);
-      animateMove(frmMap.flexAll, 0.3, "0", "80%");
-      animateMove(frmMap.flexMenu, 0.3, "0", "0%");
-      //kony.timer.schedule("menuOpen2", function() { 
-        frmMap.imgChsO.setVisibility(true);
-      	//frmMap.lblChs2.setVisibility(false);
-      	//frmMap.lblChs1b.setVisibility(true);
-      	//frmMap.lblChs2b.setVisibility(true);
-      	//frmMap.lblChs3b.setVisibility(true);
-        //animateMove(frmMap.lblChs1b, 0.2, "15", "17", null);
-       // animateMove(frmMap.lblChs3b, 0.2, "15", "43", null);
-        frmMap["btnChs"]["height"] = "100%";
-        frmMap.btnChs.setVisibility(true);
-        //frmMap.flexSwipe.setVisibility(true);
-        menuOpen = true;
-      //}, 0.35, false);
-      frmMap.btnChs.setVisibility(true);
-      menuOpen = true;
+    frmMap.imgChsC.setVisibility(false);
+    frmMap.flexDarken.setVisibility(true);
+    //frmMap.lblChs1.setVisibility(false);
+    //frmMap.lblChs2.setVisibility(false);
+    //frmMap.lblChs3.setVisibility(false);
+    animateMove(frmMap.flexAll, 0.3, "0", "80%");
+    animateMove(frmMap.flexMenu, 0.3, "0", "0%");
+    //kony.timer.schedule("menuOpen2", function() { 
+    frmMap.imgChsO.setVisibility(true);
+    //frmMap.lblChs2.setVisibility(false);
+    //frmMap.lblChs1b.setVisibility(true);
+    //frmMap.lblChs2b.setVisibility(true);
+    //frmMap.lblChs3b.setVisibility(true);
+    //animateMove(frmMap.lblChs1b, 0.2, "15", "17", null);
+    // animateMove(frmMap.lblChs3b, 0.2, "15", "43", null);
+    frmMap["btnChs"]["height"] = "100%";
+    frmMap.btnChs.setVisibility(true);
+    //frmMap.flexSwipe.setVisibility(true);
+    menuOpen = true;
+    //}, 0.35, false);
+    frmMap.btnChs.setVisibility(true);
+    menuOpen = true;
     //}, 0.1, false);
   }
   else //CLOSE MENU
   {
     //animateMove(frmMap.lblChs1b, 0.2, "15", "30", null);
     //animateMove(frmMap.lblChs3b, 0.2, "15", "30", null);
-    
+
     //kony.timer.schedule("menuClose1", function() {
-        frmMap.imgChsO.setVisibility(false);
-       frmMap.flexDarken.setVisibility(false);
-      //frmMap.lblChs1b.setVisibility(false);
-      //frmMap.lblChs2b.setVisibility(false);
-      //frmMap.lblChs3b.setVisibility(false);
-      animateMove(frmMap.flexAll, 0.3, "0", "0%");
-      animateMove(frmMap.flexMenu, 0.3, "0", "-80%");
-      //kony.timer.schedule("menuClose2", function() {
-        //frmMap.lblChs1.setVisibility(true);
-        //frmMap.lblChs2.setVisibility(true); 
-        //frmMap.lblChs3.setVisibility(true);
-        frmMap.imgChsC.setVisibility(true);
-        //animateMove(frmMap.lblChs1, 0.2, "19", "15", null);
-        //animateMove(frmMap.lblChs3, 0.2, "41", "15", null);
-        frmMap["btnChs"]["height"] = "55dp";
-        frmMap.btnChs.setVisibility(true); 
-        menuOpen = false;
-      //}, 0.35, false);
+    frmMap.imgChsO.setVisibility(false);
+    frmMap.flexDarken.setVisibility(false);
+    //frmMap.lblChs1b.setVisibility(false);
+    //frmMap.lblChs2b.setVisibility(false);
+    //frmMap.lblChs3b.setVisibility(false);
+    animateMove(frmMap.flexAll, 0.3, "0", "0%");
+    animateMove(frmMap.flexMenu, 0.3, "0", "-80%");
+    //kony.timer.schedule("menuClose2", function() {
+    //frmMap.lblChs1.setVisibility(true);
+    //frmMap.lblChs2.setVisibility(true); 
+    //frmMap.lblChs3.setVisibility(true);
+    frmMap.imgChsC.setVisibility(true);
+    //animateMove(frmMap.lblChs1, 0.2, "19", "15", null);
+    //animateMove(frmMap.lblChs3, 0.2, "41", "15", null);
+    frmMap["btnChs"]["height"] = "55dp";
+    frmMap.btnChs.setVisibility(true); 
+    menuOpen = false;
+    //}, 0.35, false);
     //}, 0.1, false);
   }
 }
@@ -1144,8 +1161,77 @@ tuta.userExists = function (response){
 
 tuta.initCallback = function(error) {
   application.login("techuser@ssa.co.za","T3chpassword", function(result,error) {
-      	if(error) ssa.util.alert("Login Error", error);  
-    });
+    if(error) ssa.util.alert("Login Error", error);  
+    else
+    {
+      var input = null;
+      input = kony.store.getItem("user");
+      if (input !== null){
+        try{
+          application.service("userService").invokeOperation(
+            "login", {}, JSON.parse(input),
+            function(result) {
+              //tuta.util.alert("LOGIN SUCCESS", result.value);
+              tuta.forms.frmMap.show();
+              kony.timer.schedule("startwatch", function(){tuta.startWatchLocation();}, 2, false);
+              //tuta.forms.frm003CheckBox.show();
+            },
+            function(error) {
+              // the service returns 403 (Not Authorised) if credentials are wrong
+              tuta.util.alert("Error " + error.httpStatusCode, error.errmsg);
+            }
+          );
+        }
+        catch (ex){
+          tuta.util.alert("Error", ex);
+        }
+      }  
+      else{
+        tuta.animate.moveBottomLeft(frmSplash.flexMainButtons, 0.2, "0%", "0", null);
+      }
+    }
+  });
+};
+
+var watchID = null;
+var initialized = 0;
+tuta.startWatchLocation = function(){
+  try{
+    watchID = kony.store.getItem("watch");
+    if(watchID === null){
+      watchID = kony.location.watchPosition(
+        function(position) {
+          kony.store.removeItem("watch");
+          kony.store.setItem("watch", watchID);
+          tuta.location.geoCode(position.coords.latitude, position.coords.longitude, function(s, e){
+            currentPos = s.results[0];
+            updateMap();
+          });
+
+        },
+
+        function (errorMsg) {
+          if(errorMsg.code !==3 )
+            tuta.util.alert("ERROR", errorMsg);
+        }, 
+
+        { timeout: 35000, maximumAge: 5000, enableHighAccuracy : true }
+      );
+
+
+      initialized = 1;
+    }
+    else
+    {
+      kony.location.clearWatch(watchID);
+      kony.store.removeItem("watch");
+      watchID = null;
+      tuta.startWatchLocation();
+    }
+  }
+  catch(ex){
+	tuta.util.alert("TEST", ex);
+  }
 };
 
 // Should be called in the App init lifecycle event
@@ -1168,19 +1254,16 @@ tuta.init = function() {
   application = new tuta.application(tuta.initCallback);
 
   tuta.location.currentPosition(function(response) {
-    tuta.location.geoCode(response.coords.latitude, response.coords.longitude, function(success, error){
-      pickupPoint = success.results[0]; 
-      //Random position for taxi
-      var randomPos = tuta.location.randomPoints(1, pickupPoint.geometry.location.lat, pickupPoint.geometry.location.lng, 1000);
-      tuta.location.geoCode(randomPos[0].lat, randomPos[0].lon, function(s, e){
-        taxiPosition = s.results[0];
-		
-        
-      });
-    });
 
+    tuta.location.geoCode(response.coords.latitude, response.coords.longitude, function(success, error){
+      currentPos = success.results[0]; 
+      updateMap();
+
+
+
+    });
   }, function(error) {
     tuta.util.alert("Error", error);
   });
-  	
+
 };

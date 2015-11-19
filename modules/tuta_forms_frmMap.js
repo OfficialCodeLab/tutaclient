@@ -12,15 +12,6 @@ tuta.forms.frmMap = function() {
 
   // Initialize form events	
   tuta.forms.frmMap.onInit = function(form) {
-    kony.timer.schedule("watchpos", function() {
-      var positionoptions = {enableHighAccuracy: true, timeout: 20000, maximumAge: 10000};
-      kony.location.watchPosition(function(position){
-
-        tuta.util.alert("TEST", JSON.stringify(position));
-      }, function(error){
-        tuta.util.alert("ERROR", error);          
-      }, positionoptions);
-    }, 0.5, false);
   };  
 
   tuta.forms.frmMap.onPreShow = function(form) {
@@ -160,8 +151,39 @@ tuta.forms.frmMap = function() {
   };
 
   tuta.forms.frmMap.onPostShow = function(form) {
-    var self = this;
-    updateMap();     
+    var self = this;    
+    
+    /*
+    try{
+      if(initialized === 0){
+        kony.location.watchPosition(
+          function(position) {
+
+            tuta.location.geoCode(position.coords.latitude, position.coords.longitude, function(s, e){
+              currentPos = s.results[0];
+              updateMap();
+            });
+
+          },
+
+          function (errorMsg) {
+            if(errorMsg.code !==3 )
+              tuta.util.alert("ERROR", errorMsg);
+          }, 
+
+          { timeout: 35000, maximumAge: 5000, enableHighAccuracy : true }
+        );
+
+
+        initialized = 1;
+      }
+    }
+    catch(ex){
+
+    }*/
+    
+    
+    //updateMap();     
   };
   
   tuta.forms.frmMap.update = function(position){
