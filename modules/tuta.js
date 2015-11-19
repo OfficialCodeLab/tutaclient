@@ -1170,16 +1170,10 @@ tuta.initCallback = function(error) {
       input = kony.store.getItem("user");
       if (input !== null){
         try{
-          input = JSON.parse(input);
           application.service("userService").invokeOperation(
-            "login", {}, input,
+            "login", {}, JSON.parse(input),
             function(result) {
               //tuta.util.alert("LOGIN SUCCESS", result.value);
-              
-              application.login(input.userName,input.password, function(r,e) {
-                if(e) ssa.util.alert("Login Error", e);  
-              });
-              
               tuta.forms.frmMap.show();
               kony.timer.schedule("startwatch", function(){tuta.startWatchLocation();}, 2, false);
               //tuta.forms.frm003CheckBox.show();
@@ -1199,26 +1193,6 @@ tuta.initCallback = function(error) {
       }
     }
   });
-};
-
-tuta.logTechUser = function(){
-  
-  application.login("techuser@ssa.co.za","T3chpassword", function(result,error) {
-    if(error) ssa.util.alert("Login Error", error);  
-  });
-};
-
-tuta.logUser = function(){
-  application.service("userService").invokeOperation(
-            "login", {}, JSON.parse(kony.store.getItem("user")),
-            function(result) {
-              //tuta.util.alert("LOGIN SUCCESS", result.value);
-            },
-            function(error) {
-              // the service returns 403 (Not Authorised) if credentials are wrong
-              tuta.util.alert("Error " + error.httpStatusCode, error.errmsg);
-            }
-          );
 };
 
 var watchID = null;

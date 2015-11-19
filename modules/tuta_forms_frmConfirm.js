@@ -97,28 +97,32 @@ tuta.forms.frmConfirm = function() {
             //Gets current user as a JSON Object
             var currentUser = JSON.parse(kony.store.getItem("user"));
             var booking = {
-                userId: currentUser.userName,
-                address: {
-                description: currentPos
+              userId: currentUser.userName + "",
+              address: {
+                description: destination.formatted_address.replace(/`+/g,"") + ""
               },
               location: {
-                lat: currentPos.geometry.location.lat,
-                long: currentPos.geometry.location.lng
+                lat: currentPos.geometry.location.lat + "",
+                long: currentPos.geometry.location.lng + ""
               },
-              "status": "Unconfirmed"
+              status: "Unconfirmed"
             };
             
             //tuta.logTechUser();
             
+            var input = { data : JSON.stringify(booking) };
+            //tuta.util.alert("TEST", input);
+            
             application.service("userService").invokeOperation(
-              "book", {}, booking,
+              "book", {}, input,
               function(result) {
                 // tuta.util.alert("LOGIN SUCCESS", result.value);
-                bookingID = result._id;
-                tuta.util.alert("TEST", bookingID);
+                //bookingID = result._id;
+                bookingID = result.value[0].id;
                 tuta.forms.frmMap.show();
+                tuta.awaitConfirm(bookingID);
                 //tuta.logUser();
-                hailTaxi();
+                //hailTaxi();
                 //tuta.forms.frm003CheckBox.show();
               },
               function(error) {
