@@ -1147,6 +1147,35 @@ tuta.menuToggle = function (time, bool){
   }         
 }
 
+tuta.awaitConfirm = function(bookingID) {
+    flexProgress.setVisiblity(true);
+    //Kony timer – checks evert 5 seconds for the booking (if there is one) , 
+    //take the result and check the status value of the key status – 
+    //when it changes to CONFIRMED, then hide the flex container again
+    kony.timer.schedule("taxiHailTimer", function(){
+
+
+
+      application.service("userService").invokeOperation(
+          "booking", {}, bookingID,
+          function(result) { //This is the default function that runs if the query is succesful, if there is a result.
+            if (result.value[0].status==="Confirmed")
+            {
+              flexProgress.setVisiblity(false);
+              tuta.util.alert("success","Your booking has been confirmed!");
+              kony.timer.cancel("taxiHailTimer");
+            }
+          },
+          function(error) { //The second function will always run if there is an error.
+            tuta.util.alert("error",error);
+          }
+        );
+
+
+    }, 3.0, true);
+
+};
+
 tuta.userExists = function (response){
   try{
     if(response.value[0] !== [])
