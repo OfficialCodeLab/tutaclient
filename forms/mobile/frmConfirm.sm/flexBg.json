@@ -1,9 +1,9 @@
 {
     "DNDConfig": null,
     "__parentReadjusting__": false,
-    "_height_": {
-        "type": "string",
-        "value": "615dp"
+    "_bottom_": {
+        "type": "number",
+        "value": "0"
     },
     "_left_": {
         "type": "string",
@@ -34,6 +34,7 @@
     "allboxes": [],
     "autogrowMode": 0,
     "autogrowmode": 0,
+    "bottom": 0,
     "canUpdateUI": true,
     "channel": "mobile",
     "children": [
@@ -47,7 +48,6 @@
     "enableScrolling": true,
     "enabled": false,
     "enablescrolling": true,
-    "height": "615dp",
     "id": "flexBg",
     "info": null,
     "isVisible": true,

@@ -32,7 +32,7 @@ tuta.forms.frmConfirm = function() {
       	var bookingID = "";
         function requestButtonClick(){
           var currentUser = JSON.parse(kony.store.getItem("user"));
-          if (frmConfirm.lblDateTimeNew.isVisisble === false)
+          if (sliderDir == 2)
           {
             //Gets current user as a JSON Object
             var booking = {
@@ -66,7 +66,7 @@ tuta.forms.frmConfirm = function() {
               }
             );
           } 
-          else{
+          else if (sliderDir == 1){
             var bookingLater = {
               userId: currentUser.userName + "",
               time: "" + getEpoch(),
@@ -90,7 +90,7 @@ tuta.forms.frmConfirm = function() {
               function(result) {
                 bookingID = result.value[0].id;
                 tuta.forms.frmMap.show();
-                kony.timer.schedule("awaitConfirm", function(){tuta.awaitConfirm(bookingID);}, 1, false);
+                kony.timer.schedule("awaitConfirm", function(){tuta.util.alert("Success", "Booking has been made.Please await confirmation.");}, 1, false);
                 
               },
               function(error) {

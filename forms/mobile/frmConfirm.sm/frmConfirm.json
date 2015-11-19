@@ -30,8 +30,7 @@
     "channel": "mobile",
     "children": [
         "flexDateTime",
-        "flexBg",
-        "btnEpoch"
+        "flexBg"
     ],
     "containerWeight": 100,
     "containerweight": 100,
