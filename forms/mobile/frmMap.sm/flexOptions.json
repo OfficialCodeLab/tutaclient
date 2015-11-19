@@ -40,8 +40,7 @@
     "children": [
         "flexCheepest",
         "flexPremium",
-        "flexQuickest",
-        "flexNoOfPeople"
+        "flexQuickest"
     ],
     "clipBounds": false,
     "clipbounds": false,
