@@ -56,8 +56,10 @@ tuta.forms.frmConfirm = function() {
           LAT:"",
           LON:""
         }
-        var nearestDriverPos;
-        var estimatedTripDuration;
+        var nearestDriverPos; //Serverside
+
+        var estimatedTripDuration; //Ignore for now
+
         boolean instantBooking;
 
         var pickupTime;
