@@ -60,7 +60,7 @@ tuta.forms.frmConfirm = function() {
 
         var estimatedTripDuration; //Ignore for now
 
-        boolean instantBooking;
+       // boolean instantBooking;
 
         var pickupTime;
         var pickupDay;
@@ -90,10 +90,42 @@ tuta.forms.frmConfirm = function() {
 
 
         //Request button click
+      	var bookingID = "";
         function requestButtonClick(){
           if (instantBooking === true)
           {
-            //collect all variables, send through without date & time
+            var currentUser = JSON.parse(kony.store.getItem("user"));
+            var booking = {
+              userId: currentUser.userName,
+              address: {
+                description: currentPos
+              },
+              location: {
+                lat: currentPos.geometry.location.lat,
+                long: currentPos.geometry.location.lng
+              },
+              "status": "Unconfirmed"
+            };
+            
+            //tuta.logTechUser();
+            
+            application.service("userService").invokeOperation(
+              "book", {}, booking,
+              function(result) {
+                // tuta.util.alert("LOGIN SUCCESS", result.value);
+                bookingID = result._id;
+                tuta.util.alert("TEST", bookingID);
+                tuta.forms.frmMap.show();
+                //tuta.logUser();
+                hailTaxi();
+                //tuta.forms.frm003CheckBox.show();
+              },
+              function(error) {
+                // the service returns 403 (Not Authorised) if credentials are wrong
+                tuta.util.alert("Error " + error.httpStatusCode, error.errmsg);
+                self.control("txtPassword").text = "";
+              }
+            );
           } 
           else{
             //collect all variables, send through WITH date & time
@@ -164,7 +196,8 @@ tuta.forms.frmConfirm = function() {
             cyclicIncrement(days);
         };
         this.control("btnHailTaxi").onClick = function(button) {
-            hailTaxi();
+          requestButtonClick();
+            //hailTaxi();
         };
         this.control("btnHrsMinus").onClick = function(button) {
             self.control("txtTimeHrs").text = minusOne(self.control("txtTimeHrs").text, false);

@@ -173,6 +173,18 @@ tuta.location.zoomLevelFromBounds = function(bounds) {
     return Math.floor(Math.log(kony.os.deviceInfo().screenWidth * 360 / angle / GLOBE_WIDTH) / Math.LN2);
 };
 
+tuta.location.zoomLevelFromLatLng = function(lat, lng) {
+  	var GLOBE_WIDTH = 256; // a constant in Google's map projection
+	var west = lng;
+	var east = lng;
+    var angle = east - west;
+    if (angle < 0) {
+      angle += 360;
+    }
+
+    return Math.floor(Math.log(kony.os.deviceInfo().screenWidth * 360 / angle / GLOBE_WIDTH) / Math.LN2);
+};
+
 // decode a google polyline into coordinates
 tuta.location.decodePoly = function(encoded) {
 
