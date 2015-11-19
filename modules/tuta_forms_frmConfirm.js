@@ -18,6 +18,87 @@ tuta.forms.frmConfirm = function() {
         var self = this;
 
         /*==============================================================
+          __  __      _   _               _     
+         |  \/  | ___| |_| |__   ___   __| |___ 
+         | |\/| |/ _ \ __| '_ \ / _ \ / _` / __|
+         | |  | |  __/ |_| | | | (_) | (_| \__ \
+         |_|  |_|\___|\__|_| |_|\___/ \__,_|___/
+                                        
+        ==============================================================*/
+
+        /*
+          Variables:
+
+          - Pickup (Current Location)
+          - Destination (Location)
+          - Nearest Driver (Location)
+          - Trip Duration (Based on distance from nearest driver)
+          - ID of current user logged in
+          - Trip Distance 
+
+          - Instant Booking? (true / false)
+
+          If false,
+
+          Show Date & Time Picker, 
+          - Date
+          - Time
+
+          Send through booking information
+          on request button click
+        */
+
+        var pickupLocation = {
+          LAT:"",
+          LON:""
+        };
+        var tripDestination = {
+          LAT:"",
+          LON:""
+        }
+        var nearestDriver;
+        var estimatedTripDuration;
+        boolean instantBooking;
+        var pickupTime;
+        var pickupDay;
+        var pickupMonth;
+        var pickupYear;
+        var currentUserID;
+        var tripDistance;
+
+        //Set Pickup Location (sent through from pickup button)
+
+        //Set Trip Destination (on button click, type in an address)
+
+        //Work out nearest available driver
+        //nearestDriver =
+
+        //Work out distance for drip
+        //tripDistance = tuta.location. etc etc etc
+
+        //Work out estimated trip duration in seconds, 60 seconds per 1000m
+        estimatedTripDuration = tripDistance * 60;
+
+        
+
+
+
+
+        //Request button click
+        function(){
+          if trip
+        }
+
+
+
+
+
+
+
+
+
+
+        /*==============================================================
           ____        _   _                  
          | __ ) _   _| |_| |_ ___  _ __  ___ 
          |  _ \| | | | __| __/ _ \| '_ \/ __|
