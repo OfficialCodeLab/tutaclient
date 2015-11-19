@@ -81,10 +81,10 @@ function uMap()
   if(hailState == true) 
     updateMap();
 }
-
+/*
 var animationSelected = kony.ui.createAnimation({"100":{"anchorPoint":{"x":0.5,"y":0.5},"stepConfig":{"timingFunction":kony.anim.EASIN_IN_OUT},"width":"100dp","height":"100dp"}});
 var animationDeselect = kony.ui.createAnimation({"100":{"anchorPoint":{"x":0.5,"y":0.5},"stepConfig":{"timingFunction":kony.anim.EASIN_IN_OUT},"width":"80dp","height":"80dp"}});
-
+*/
 function initOld() {
 
   hailState = false;
@@ -641,11 +641,7 @@ function showLater(){
 }
 
 var setupTblSwipe = {fingers: 1};
-function setUpSwipes(){
-
-  //frmConfirm["calTime"]["isVisible"] = false;
-  //frmConfirm.lblTime.setVisibility(false);
-  // frmConfirm.btnSetTime.setVisibility(false); 
+function setUpSwipes(){ 
 
   frmConfirm.flexSlider.addGestureRecognizer(constants.GESTURE_TYPE_SWIPE, setupTblSwipe,  function(widget, gestureInformationSwipe) {
     //ssa.mobile.alert("","" + gestureInformationSwipe.swipeDirection );
@@ -657,12 +653,6 @@ function setUpSwipes(){
     }
   });
 
-  //frmMap.flexSwipe.addGestureRecognizer(constants.GESTURE_TYPE_SWIPE, setupTblSwipe,  function(widget, gestureInformationSwipe) {
-  //ssa.mobile.alert("","" + gestureInformationSwipe.swipeDirection );
-  // if (gestureInformationSwipe.swipeDirection == 1){
-  //     animateMenu();
-  //    }
-  //  });
 }
 
 function selectPickUpLocation() {
@@ -674,14 +664,7 @@ function selectPickUpLocation() {
   //frmMap.txtDest.placeholder = "Click to Set Pickup Location"
 }
 
-function onSearchComplete() {
-  // result Mode = 0 CANCEL
-  // = 1 FROM EXISTING ADDRESSES
-  // = 2 FROM SEARCH
 
-
-
-}
 
 function cancelHailPrompt(){
   if(menuOpen === false)
@@ -986,7 +969,7 @@ function cancelHail() {
   updateMap();
 
 }
-
+/*
 function showProgress() {
   frmMap.flexProgress.setVisibility(true);
   animateLogo(frmMap.imgTaxi);
@@ -997,9 +980,6 @@ function hideProgress() {
   stopLogoAnimation(frmMap.imgTaxi);
 }
 
-function showOptions(location) {
-
-}
 
 function deselectAllOptions() {
   animateDeselect(frmMap.flexCheepest);
@@ -1038,6 +1018,7 @@ function animateDeselect(eventObject) {
                       {"animationEnd" : function() {}});
 }  
 
+
 var destinationsOpen = false;
 function toggleDestinations(eventObject, x , y) {
   if(destinationsOpen) {
@@ -1045,7 +1026,7 @@ function toggleDestinations(eventObject, x , y) {
   } else {
     openDestinations();
   }
-}
+}*/
 
 function animateMove(object, time, top, left, finish) {
   object.animate(
@@ -1060,7 +1041,7 @@ function animateMove2(object, time, bot, right, finish) {
     {"delay":0,"iterationCount":1,"fillMode":kony.anim.FILL_MODE_FORWARDS,"duration":time},
     {"animationEnd" : function(){ if(finish) { finish(); }}});
 }
-
+/*
 function animateScale(object, time, height, top, finish) {
   object.animate(
     kony.ui.createAnimation({"100":{"stepConfig":{"timingFunction":kony.anim.EASE},"top":top, "height":height}}),
@@ -1159,7 +1140,7 @@ function animateMenu(){
     //}, 0.1, false);
   }
 }
-
+*/
 tuta.menuToggle = function (time, bool){
   if(bool === true){
     frmMap.imgChsO.setVisibility(false);
@@ -1214,7 +1195,6 @@ tuta.awaitConfirm = function(bookingID) {
 
 
   }, 3, true);
-
 };
 
 tuta.userExists = function (response){
@@ -1283,8 +1263,8 @@ tuta.startWatchLocation = function(){
         },
 
         function (errorMsg) {
-          if(errorMsg.code !==3 )
-            tuta.util.alert("ERROR", errorMsg);
+          //if(errorMsg.code !==3 )
+            //tuta.util.alert("ERROR", errorMsg);
         }, 
 
         { timeout: 35000, maximumAge: 5000, enableHighAccuracy : true }
