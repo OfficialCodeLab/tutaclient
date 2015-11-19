@@ -441,25 +441,25 @@ function getMonth (month){
 function getHour (hour, meridian){
   if(meridian.toLowerCase() === "pm")
     return hour+12;
-  
+
   return hour;
-  
+
 }
 
 function setNewTime(){
   var newTime = frmConfirm.txtTimeHrs.text + ":" + frmConfirm.txtTimeMins.text + " " + frmConfirm.lblAmPm.text;
   // frmConfirm.lblTime.text = newTime;
   var newDate = frmConfirm.lblDay.text + " " + frmConfirm.lblMonth.text + " " + frmConfirm.lblYear.text;
-  
-  
+
+
   timeformatted.day = parseInt(frmConfirm.lblDay.text);
   timeformatted.month = getMonth(frmConfirm.lblMonth.text);
   timeformatted.year = parseInt(frmConfirm.lblYear.text);
   timeformatted.mins = parseInt(frmConfirm.txtTimeMins.text);
   timeformatted.meridian = (frmConfirm.lblAmPm.text).toLowerCase();
   timeformatted.hours = getHour(parseInt(frmConfirm.txtTimeHrs.text), timeformatted.meridian);
-  
-  
+
+
   frmConfirm.lblDateTimeNew.text = newDate + " - " + newTime;
   frmConfirm.flexDateTime.setVisibility(false);
 }
@@ -1179,32 +1179,35 @@ tuta.menuToggle = function (time, bool){
   }         
 }
 
+var inputBooking;
 tuta.awaitConfirm = function(bookingID) {
-    flexProgress.setVisiblity(true);
-    //Kony timer – checks evert 5 seconds for the booking (if there is one) , 
-    //take the result and check the status value of the key status – 
-    //when it changes to CONFIRMED, then hide the flex container again
-    kony.timer.schedule("taxiHailTimer", function(){
+  tuta.util.alert("Please wait","Waiting for confirmation:\n"+bookingID);
+  //frmMap["flexProgress"]["isVisible"] = true;
+  //Kony timer – checks evert 5 seconds for the booking (if there is one) , 
+  //take the result and check the status value of the key status – 
+  //when it changes to CONFIRMED, then hide the flex container again
+  inputBooking = {"id" : "" + bookingID};
+  
+  kony.timer.schedule("taxiHailTimer", function(){
+
+    application.service("userService").invokeOperation(
+      "trackBooking", {}, JSON.stringify(inputBooking),
+      function(result) { //This is the default function that runs if the query is succesful, if there is a result.
+        if (result.value[0].status==="Confirmed")
+        {
+
+          //frmMap["flexProgress"]["isVisible"] = false;
+          tuta.util.alert("success","Your booking has been confirmed!");
+          kony.timer.cancel("taxiHailTimer");
+        }
+      },
+      function(error) { //The second function will always run if there is an error.
+        tuta.util.alert("error",error);
+      }
+    );
 
 
-
-      application.service("userService").invokeOperation(
-          "booking", {}, bookingID,
-          function(result) { //This is the default function that runs if the query is succesful, if there is a result.
-            if (result.value[0].status==="Confirmed")
-            {
-              flexProgress.setVisiblity(false);
-              tuta.util.alert("success","Your booking has been confirmed!");
-              kony.timer.cancel("taxiHailTimer");
-            }
-          },
-          function(error) { //The second function will always run if there is an error.
-            tuta.util.alert("error",error);
-          }
-        );
-
-
-    }, 3.0, true);
+  }, 3, true);
 
 };
 
@@ -1293,7 +1296,7 @@ tuta.startWatchLocation = function(){
     }
   }
   catch(ex){
-	tuta.util.alert("TEST", ex);
+    tuta.util.alert("TEST", ex);
   }
 };
 

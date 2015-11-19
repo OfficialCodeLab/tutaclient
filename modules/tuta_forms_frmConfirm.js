@@ -57,7 +57,7 @@ tuta.forms.frmConfirm = function() {
               function(result) {
                 bookingID = result.value[0].id;
                 tuta.forms.frmMap.show();
-                //tuta.awaitConfirm(bookingID);
+                kony.timer.schedule("awaitConfirm", function(){tuta.awaitConfirm(bookingID);}, 1, false);
               },
               function(error) {
                 // the service returns 403 (Not Authorised) if credentials are wrong
@@ -90,6 +90,8 @@ tuta.forms.frmConfirm = function() {
               function(result) {
                 bookingID = result.value[0].id;
                 tuta.forms.frmMap.show();
+                kony.timer.schedule("awaitConfirm", function(){tuta.awaitConfirm(bookingID);}, 1, false);
+                
               },
               function(error) {
                 // the service returns 403 (Not Authorised) if credentials are wrong
