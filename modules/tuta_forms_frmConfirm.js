@@ -56,25 +56,28 @@ tuta.forms.frmConfirm = function() {
           LAT:"",
           LON:""
         }
-        var nearestDriver;
+        var nearestDriverPos;
         var estimatedTripDuration;
         boolean instantBooking;
+
         var pickupTime;
         var pickupDay;
         var pickupMonth;
         var pickupYear;
         var currentUserID;
+
         var tripDistance;
+
+        //Initialise variables
+        instantBooking = true;
 
         //Set Pickup Location (sent through from pickup button)
 
         //Set Trip Destination (on button click, type in an address)
 
-        //Work out nearest available driver
-        //nearestDriver =
+        //nearestDriverPos = Get position of nearest driver
 
-        //Work out distance for drip
-        //tripDistance = tuta.location. etc etc etc
+        //tripDistance = work out distance for trip
 
         //Work out estimated trip duration in seconds, 60 seconds per 1000m
         estimatedTripDuration = tripDistance * 60;
@@ -85,8 +88,14 @@ tuta.forms.frmConfirm = function() {
 
 
         //Request button click
-        function(){
-          if trip
+        function requestButtonClick(){
+          if (instantBooking === true)
+          {
+            //collect all variables, send through without date & time
+          } 
+          else{
+            //collect all variables, send through WITH date & time
+          }
         }
 
 
