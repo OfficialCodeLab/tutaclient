@@ -15,7 +15,8 @@ var taxiPosition = null;
 var viaList = [];
 
 //Carl's Varibles
-
+var hailingTaxi = false; //Used to prevent multiple requests
+var bookingConfirmedFlag = false;
 
 var timeformatted = 
     {
@@ -740,7 +741,7 @@ tuta.awaitConfirm = function(bookingID) {
   //take the result and check the status value of the key status – 
   //when it changes to CONFIRMED, then hide the flex container again
   inputBooking = { id : bookingID };
-          kony.timer.cancel("taxiHailTimer");
+  kony.timer.cancel("taxiHailTimer");
 
   kony.timer.schedule("taxiHailTimer", function(){
 
@@ -752,8 +753,11 @@ tuta.awaitConfirm = function(bookingID) {
 
           frmMap.flexProgress.setVisibility(false);
           //frmMap["flexProgress"]["isVisible"] = false;
+
           tuta.util.alert("success","Your booking has been confirmed!");
           kony.timer.cancel("taxiHailTimer");
+
+          
         }
       },
       function(error) { //The second function will always run if there is an error.

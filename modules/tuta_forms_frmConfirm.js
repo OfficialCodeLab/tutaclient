@@ -26,80 +26,89 @@ tuta.forms.frmConfirm = function() {
                                         
         ==============================================================*/
 
-      
-
         //Request button click
       	var bookingID = "";
         function requestButtonClick(){
           var currentUser = JSON.parse(kony.store.getItem("user"));
-          if (sliderDir == 2)
-          {
-            //Gets current user as a JSON Object
-            var booking = {
-              userId: currentUser.userName + "",
-              address: {
-                description: destination.formatted_address.replace(/`+/g,"") + ""
-              },
-              location: {
-                lat: currentPos.geometry.location.lat + "",
-                long: currentPos.geometry.location.lng + ""
-              },
-              status: "Unconfirmed"
-            };
-            
-            //tuta.logTechUser();
-            
-            var input = { data : JSON.stringify(booking) };
-            //tuta.util.alert("TEST", input);
-            
-            application.service("driverService").invokeOperation(
-              "book", {}, input,
-              function(result) {
-                bookingID = result.value[0].id;
-                tuta.forms.frmMap.show();
-                kony.timer.schedule("awaitConfirm", function(){tuta.awaitConfirm(bookingID); tuta.util.alert("TEST", bookingID);}, 1, false);
-              },
-              function(error) {
-                // the service returns 403 (Not Authorised) if credentials are wrong
-                tuta.util.alert("Error " + error.httpStatusCode, error.errmsg);
-              }
-            );
-          } 
-          else if (sliderDir == 1){
-            var bookingLater = {
-              userId: currentUser.userName + "",
-              time: "" + getEpoch(),
-              address: {
-                description: destination.formatted_address.replace(/`+/g,"") + ""
-              },
-              location: {
-                lat: currentPos.geometry.location.lat + "",
-                long: currentPos.geometry.location.lng + ""
-              },
-              status: "Unconfirmed"
-            };
-            
-            //tuta.logTechUser();
-            
-            var inputLater = { data : JSON.stringify(bookingLater) };
-            //tuta.util.alert("TEST", input);
-            
-            application.service("driverService").invokeOperation(
-              "book", {}, inputLater,
-              function(result) {
-                bookingID = result.value[0].id;
-                tuta.forms.frmMap.show();
-                kony.timer.schedule("awaitConfirm", function(){tuta.util.alert("Success", "Booking has been made.Please await confirmation.");}, 1, false);
-                
-              },
-              function(error) {
-                // the service returns 403 (Not Authorised) if credentials are wrong
-                tuta.util.alert("Error " + error.httpStatusCode, error.errmsg);
-                self.control("txtPassword").text = "";
-              }
-            );
-            //collect all variables, send through WITH date & time
+          if (hailingTaxi === false){
+
+            //Stop repetitive clicks
+            hailingTaxi = true;
+
+            if (sliderDir == 2)
+            {
+              //Gets current user as a JSON Object
+              var booking = {
+                userId: currentUser.userName + "",
+                address: {
+                  description: destination.formatted_address.replace(/`+/g,"") + ""
+                },
+                location: {
+                  lat: currentPos.geometry.location.lat + "",
+                  long: currentPos.geometry.location.lng + ""
+                },
+                status: "Unconfirmed"
+              };
+              
+              //tuta.logTechUser();
+              
+              var input = { data : JSON.stringify(booking) };
+              //tuta.util.alert("TEST", input);
+              
+              application.service("driverService").invokeOperation(
+                "book", {}, input,
+                function(result) {
+                  bookingID = result.value[0].id;
+                  tuta.forms.frmMap.show();
+                  kony.timer.schedule("awaitConfirm", function(){tuta.awaitConfirm(bookingID); tuta.util.alert("TEST", bookingID);}, 1, false);
+                  hailingTaxi = false;
+                },
+                function(error) {
+                  // the service returns 403 (Not Authorised) if credentials are wrong
+                  tuta.util.alert("Error " + error.httpStatusCode, error.errmsg);
+                }
+              );
+            } 
+            else if (sliderDir == 1){
+              var bookingLater = {
+                userId: currentUser.userName + "",
+                time: "" + getEpoch(),
+                address: {
+                  description: destination.formatted_address.replace(/`+/g,"") + ""
+                },
+                location: {
+                  lat: currentPos.geometry.location.lat + "",
+                  long: currentPos.geometry.location.lng + ""
+                },
+                status: "Unconfirmed"
+              };
+              
+              //tuta.logTechUser();
+              
+              var inputLater = { data : JSON.stringify(bookingLater) };
+              //tuta.util.alert("TEST", input);
+              
+              application.service("driverService").invokeOperation(
+                "book", {}, inputLater,
+                function(result) {
+                  bookingID = result.value[0].id;
+                  tuta.forms.frmMap.show();
+                  kony.timer.schedule("awaitConfirm", function(){tuta.util.alert("Success", "Booking has been made.Please await confirmation.");}, 1, false);
+                  hailingTaxi = false;
+                },
+                function(error) {
+                  // the service returns 403 (Not Authorised) if credentials are wrong
+                  tuta.util.alert("Error " + error.httpStatusCode, error.errmsg);
+                  self.control("txtPassword").text = "";
+                }
+              );
+              //collect all variables, send through WITH date & time
+            }
           }
+          else{
+
+          }
+
         }//END OF REQUEST BUTTON CLICK
       
       function getEpoch(){
