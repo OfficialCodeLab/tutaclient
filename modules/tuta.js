@@ -797,7 +797,7 @@ function onLocationSelected() {
   if(searchMode == 0) {
 
     destination = getSelectedAddress();
-    deselectAllOptions();
+    //deselectAllOptions();
     frmConfirm.lblDestination.text = shortenText (destination.formatted_address.replace(/`+/g,""), GLOBAL_CONCAT_LENGTH);
     frmConfirm.lblPickUpLocation.text = shortenText (currentPos.formatted_address.replace(/`+/g,""), GLOBAL_CONCAT_LENGTH);
     //updateConfirmForm();
@@ -1230,7 +1230,9 @@ tuta.initCallback = function(error) {
             },
             function(error) {
               // the service returns 403 (Not Authorised) if credentials are wrong
-              tuta.util.alert("Error " + error.httpStatusCode, error.errmsg);
+              input = kony.store.removeItem("user");
+              tuta.animate.moveBottomLeft(frmSplash.flexMainButtons, 0.2, "0%", "0", null);
+              
             }
           );
         }
