@@ -14,6 +14,9 @@ var pickupPoint = null;
 var taxiPosition = null;
 var viaList = [];
 
+//Carl's Varibles
+
+
 var timeformatted = 
     {
       month: "",
@@ -909,9 +912,9 @@ tuta.startWatchLocation = function(){
 
             //Popup displaying latitude and longitude,
             //on position change
-            var testUserName = "Your username is: " + JSON.stringify(userTemp.userName + "\n");
-            var testOutput = "Your current position is:\n" + "Latitude: " + JSON.stringify(inputData.location.lat) + "\nLongitude: " + JSON.stringify(inputData.location.long) + "";
-            tuta.util.alert("Location Update", testUserName + testOutput);
+            // var testUserName = "Your username is: " + JSON.stringify(userTemp.userName + "\n");
+            // var testOutput = "Your current position is:\n" + "Latitude: " + JSON.stringify(inputData.location.lat) + "\nLongitude: " + JSON.stringify(inputData.location.long) + "";
+            // tuta.util.alert("Location Update", testUserName + testOutput);
             //
 
             

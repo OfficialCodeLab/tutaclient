@@ -100,7 +100,7 @@ tuta.forms.frmConfirm = function() {
             );
             //collect all variables, send through WITH date & time
           }
-        }
+        }//END OF REQUEST BUTTON CLICK
       
       function getEpoch(){
         var dateTime = new Date(timeformatted.year, timeformatted.month, timeformatted.day, timeformatted.hours, timeformatted.mins);

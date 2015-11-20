@@ -1,9 +1,9 @@
 {
     "DNDConfig": null,
     "__parentReadjusting__": false,
-    "_height_": {
+    "_bottom_": {
         "type": "string",
-        "value": "545dp"
+        "value": "65dp"
     },
     "_left_": {
         "type": "string",
@@ -35,6 +35,7 @@
     "allowVerticalBounce": true,
     "allowhorizontalbounce": false,
     "allowverticalbounce": true,
+    "bottom": "65dp",
     "bounces": false,
     "canUpdateUI": true,
     "channel": "mobile",
@@ -55,7 +56,6 @@
     "enableScrolling": true,
     "enabled": false,
     "enablescrolling": true,
-    "height": "545dp",
     "horizontalScrollIndicator": true,
     "horizontalscrollindicator": true,
     "id": "flexMain",

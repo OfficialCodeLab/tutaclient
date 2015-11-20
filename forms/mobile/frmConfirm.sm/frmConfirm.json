@@ -42,7 +42,7 @@
     "desktopweb": {
         "needAppMenu": false
     },
-    "device": "iPhone6PlusZoomed",
+    "device": "iPhone6",
     "displayOrientation": 1,
     "displayorientation": 1,
     "enableScrolling": true,
@@ -113,11 +113,11 @@
     "postShow": "AS_Form_d4ed43dda9df430c9139bd12d99975d2",
     "postshow": "AS_Form_d4ed43dda9df430c9139bd12d99975d2",
     "prevDevice": "iPhone3",
-    "prevPlatform": "spaip",
+    "prevPlatform": "android",
     "render": true,
     "retainScrollPosition": false,
     "retainscrollposition": false,
-    "shellCSS": "iOS_iPhone6PlusZoomed",
+    "shellCSS": "iOS_iPhone6",
     "skin": "s1938375ce72486f894e571cf35fe3d8",
     "snapGridSize": 10,
     "snapToGrid": true,
