@@ -145,45 +145,21 @@ tuta.forms.frmMap = function() {
         selectDest(frmMap);      
       }
     };
-
-
-    // PUT BUTTONS HERE
-  };
+  };//End Preshow
 
   tuta.forms.frmMap.onPostShow = function(form) {
     var self = this;    
+
+    //Cancel kony timer
+    kony.timer.cancel("trackDemoDriver");
     
-    /*
-    try{
-      if(initialized === 0){
-        kony.location.watchPosition(
-          function(position) {
-
-            tuta.location.geoCode(position.coords.latitude, position.coords.longitude, function(s, e){
-              currentPos = s.results[0];
-              updateMap();
-            });
-
-          },
-
-          function (errorMsg) {
-            if(errorMsg.code !==3 )
-              tuta.util.alert("ERROR", errorMsg);
-          }, 
-
-          { timeout: 35000, maximumAge: 5000, enableHighAccuracy : true }
-        );
-
-
-        initialized = 1;
-      }
-    }
-    catch(ex){
-
-    }*/
+    //Create timer to drack drivers,
+    //Update map every 5 seconds
+    kony.timer.schedule("trackDemoDriver", function(){
+      tuta.trackDriver("serv3@ssa.co.za");
+    }, 5, true);
     
-    
-    //updateMap();     
+
   };
   
   tuta.forms.frmMap.update = function(position){

@@ -746,6 +746,17 @@ function updateMap() {
      desc: currentPos.formatted_address.replace(/`+/g,""), 
      image : pickupicon + ""});
 
+var count = 0;
+  while(nearbyDrivers !== [] && count <= nearbyDrivers.length){
+    locationData.push(
+    {lat: "" + nearbyDrivers[count].location.lat + "", 
+     lon: "" + nearbyDrivers[count].location.long + "", 
+     name: nearbyDrivers[count].id, 
+     desc: "", 
+     image : "cabpin0.png"});
+    count++;
+  }
+
   frmMap.mapMain.locationData = locationData;
 
   //frmMap.mapMain.zoomLevel = 10;
@@ -1210,6 +1221,50 @@ tuta.userExists = function (response){
 
   return false;
 };
+
+
+
+var nearbyDrivers = [];
+
+
+tuta.trackDriver = function(driverID){
+
+  //Query information struct
+  var input = {
+    id: driverID
+  };
+
+  //Query the server
+  application.service("driverService").invokeOperation(
+    "user", {}, input,
+    function(result) { 
+
+      nearbyDrivers = [];
+
+      var driver = {
+        id: result.value[0]._id,
+        location: {
+          lat: result.value[0].lat,
+          long: result.value[0].long
+        };
+
+      nearbyDrivers.push(driver);
+      updateMap();
+
+      }
+    },
+    function(error) { //The second function will always run if there is an error.
+
+      // the service returns 403 (Not Authorised) if credentials are wrong
+      tuta.util.alert("Error " + error);
+
+
+    }
+  );
+
+
+
+}
 
 tuta.initCallback = function(error) {
   application.login("techuser@ssa.co.za","T3chpassword", function(result,error) {
