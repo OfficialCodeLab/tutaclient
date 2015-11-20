@@ -93,6 +93,13 @@ tuta.forms.frmDebug = function() {
       );
 
     };
+    
+    this.control("btnTickPress6").onClick = function (button){
+      var csDemoDriver = "Courtney@codelab.io";
+      tuta.trackDriver(csDemoDriver);
+      updateMap();
+      tuta.util.alert("Notification", "The map has been updated, and is currently tracking " + csDemoDriver + ".");
+    };
 
   };//END OF PRE-SHOW
 

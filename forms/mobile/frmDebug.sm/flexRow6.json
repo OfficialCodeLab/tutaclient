@@ -1,9 +1,9 @@
 {
     "DNDConfig": null,
     "__parentReadjusting__": false,
-    "_bottom_": {
-        "type": "number",
-        "value": "0"
+    "_height_": {
+        "type": "string",
+        "value": "80dp"
     },
     "_left_": {
         "type": "string",
@@ -21,49 +21,37 @@
         0,
         0
     ],
-    "_skin_": "s77a36c5c00c49c2a9c2fdb8730664b8",
+    "_skin_": "s9b2ce2774e144da99f795c3ff096827",
     "_top_": {
         "type": "string",
-        "value": "80dp"
+        "value": "400dp"
     },
     "_width_": {
         "type": "string",
         "value": "100%"
     },
     "allboxes": [],
-    "allowHorizontalBounce": true,
-    "allowVerticalBounce": true,
-    "allowhorizontalbounce": true,
-    "allowverticalbounce": true,
-    "bottom": 0,
-    "bounces": false,
+    "autogrowMode": 0,
+    "autogrowmode": 0,
     "canUpdateUI": true,
     "children": [
-        "flexRow1",
-        "flexRow2",
-        "flexRow3",
-        "flexRow4",
-        "flexRow5",
-        "flexRow6"
+        "lblRowDesc6",
+        "imgTickIcon6",
+        "btnTickPress6"
     ],
     "clipBounds": true,
     "clipbounds": true,
     "containerWeight": 100,
     "containerweight": 100,
-    "decelerat": false,
-    "decelerating": false,
-    "dragg": false,
-    "dragging": false,
     "enableScrolling": true,
     "enabled": false,
     "enablescrolling": true,
-    "horizontalScrollIndicator": false,
-    "horizontalscrollindicator": false,
-    "id": "flexScrollDebugContent",
+    "height": "80dp",
+    "id": "flexRow6",
     "info": null,
     "isVisible": true,
     "isvisible": true,
-    "kuid": "c51d2d6c21f6430790732a0fa3873a5a",
+    "kuid": "e7f0952cd8e54087859800ff3cf810e9",
     "layoutType": 2,
     "layouttype": 2,
     "left": "0dp",
@@ -73,7 +61,7 @@
         0,
         0
     ],
-    "name": "kony.ui.FlexScrollContainer",
+    "name": "kony.ui.FlexContainer",
     "orientation": 6,
     "padding": [
         0,
@@ -81,25 +69,17 @@
         0,
         0
     ],
-    "pagingEnabled": false,
-    "pagingenabled": false,
-    "parent": "frmDebug",
+    "parent": "flexScrollDebugContent",
     "percent": true,
     "pf": "frmDebug",
     "render": true,
-    "scrollDirection": 2,
-    "scrolldirection": 2,
-    "skin": "s77a36c5c00c49c2a9c2fdb8730664b8",
+    "skin": "s9b2ce2774e144da99f795c3ff096827",
     "snapGridSize": 10,
     "snapToGrid": true,
     "snapgridsize": 10,
     "snaptogrid": true,
-    "top": "80dp",
-    "track": false,
-    "tracking": false,
-    "verticalScrollIndicator": true,
-    "verticalscrollindicator": true,
-    "wType": "FlexScrollContainer",
+    "top": "400dp",
+    "wType": "FlexContainer",
     "widgetAlignment": 1,
     "widgetalignment": 1,
     "width": "100%"

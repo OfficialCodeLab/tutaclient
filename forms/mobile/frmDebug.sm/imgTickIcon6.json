@@ -24,7 +24,7 @@
         "value": "10%"
     },
     "_skin_": "s4ea8d4d07574957b839f06194980e52",
-    "_src_": "csuserimage.png",
+    "_src_": "csmapicon.png",
     "_top_": {
         "type": "string",
         "value": "22dp"
@@ -45,22 +45,19 @@
     "context": {
         "channel": "mobile",
         "formID": "frmDebug",
-        "ispercent": true,
-        "platform": "iphone",
         "templateType": "forms",
         "topLevelBox": null
     },
     "enabled": false,
     "height": "40dp",
-    "id": "imgTickIcon5",
+    "id": "imgTickIcon6",
     "imageScaleMode": 1,
     "imagescalemode": 1,
     "info": null,
     "invokedProperty": "src",
     "isVisible": true,
-    "ispercent": true,
     "isvisible": true,
-    "kuid": "ef896d15f8da4f4c8c49b9f7d378452a",
+    "kuid": "de6ffb7151714a9c8ff1c26820994d53",
     "margin": [
         0,
         0,
@@ -74,12 +71,12 @@
         0,
         0
     ],
-    "parent": "flexRow5",
+    "parent": "flexRow6",
     "pf": "frmDebug",
     "render": true,
     "right": "10%",
     "skin": "s4ea8d4d07574957b839f06194980e52",
-    "src": "csuserimage.png",
+    "src": "csmapicon.png",
     "srcType": 1,
     "top": "22dp",
     "wType": "Image",
