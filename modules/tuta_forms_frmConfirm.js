@@ -62,7 +62,6 @@ tuta.forms.frmConfirm = function() {
               function(error) {
                 // the service returns 403 (Not Authorised) if credentials are wrong
                 tuta.util.alert("Error " + error.httpStatusCode, error.errmsg);
-                self.control("txtPassword").text = "";
               }
             );
           } 

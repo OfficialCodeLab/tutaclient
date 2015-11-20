@@ -55,7 +55,10 @@ tuta.forms.frmLogin = function() {
         );
       
       	// user update example
-      	var inputParams = { id : "craig@ssa.com", data : JSON.stringify( {  location : { lat : "234234", long : "234234234" }}   ) };
+      	var inputParams = { 
+          id : "craig@ssa.com", 
+          data : JSON.stringify( {  location : { lat : "234234", long : "234234234" }}   ) 
+        };
       
       	application.service("manageService").invokeOperation(
         	"userUpdate", {}, inputParams, function(success) {
