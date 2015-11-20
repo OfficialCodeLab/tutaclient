@@ -80,3 +80,35 @@ application.service("manageService").invokeOperation(
 //User is the key/ID, and contains a JSON structure as a value
 kony.store.setItem(" <itemname> ", JSON.stringify( <Json Variable here> ));
 
+
+//user JSON
+
+{
+    "@odata.context": "http://localhost:8000/ustuck/services/$metadata#Users",
+    "value": [{
+        "_id": "craig@ssa.com",
+        "password": "*****",
+        "userType": "private",
+        "location": {
+            "lat": -34.07425,
+            "long": 18.85089
+        },
+        "lastModified": 1448051930465,
+        "userInfo": [{
+            "_id": "craig@ssa.com",
+            "firstName": "Craig",
+            "lastName": "Haworth",
+            "mobileNumber": "072 012 1187",
+            "addresses": [{
+                "description": "Home",
+                "street": "8 Frere Street",
+                "suburb": "Kensington B",
+                "province": "Gauteng"
+            }],
+            "avatarDocId": "null",
+            "lastModified": 1448016696222
+        }]
+    }]
+}
+
+

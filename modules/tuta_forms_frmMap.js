@@ -51,6 +51,35 @@ tuta.forms.frmMap = function() {
       tuta.controls.behavior.MOVE_OVER,
       0.25
     );	
+    
+    //Get the name of the user
+    var userTempQuery = JSON.parse(kony.store.getItem("user"));
+      var currentUserEmail = JSON.stringify(userTempQuery.userName);
+      // var userInfoResults = "";
+      //
+
+      //Store the user ID as variable 'input' for query
+      var input = {
+        id: currentUserEmail
+      };
+
+
+      application.service("userService").invokeOperation(
+        "user", {}, input,
+        function(result) { 
+          var csFirstName = result.value[0].userInfo.firstName;
+          var csLastName = result.value[0].userInfo.lastName;
+          var csFullName = csFirstName + " " + csLastName;
+          //tuta.util.alert("User Information", "Name: " + csFullName);
+          frmMap.lblUser.text = csFullName;
+          
+        },
+        function(error) {
+          // the service returns 403 (Not Authorised) if credentials are wrong
+          tuta.util.alert("Error " + error);
+
+        }
+      );
 
     // this.control("btnChs").onClick = function (button) {tuta.forms.frmMap.show();};
     this.control("btnChs").onClick = function(button) {
@@ -126,6 +155,13 @@ tuta.forms.frmMap = function() {
     };
 
 
+    this.control("btnDebug").onClick = function(button) {
+      tuta.menuToggle(0, self.leftMenu._open);     
+      self.leftMenu.toggle();
+      tuta.forms.frmDebug.show();
+    };
+
+
     this.control("txtDest").onDone = function(widget) {
       if(frmMap.txtDest.text != null){
         frmMap.flexFindingDest.setVisibility(true);
@@ -145,6 +181,8 @@ tuta.forms.frmMap = function() {
         selectDest(frmMap);      
       }
     };
+
+
   };//End Preshow
 
   tuta.forms.frmMap.onPostShow = function(form) {
@@ -155,9 +193,18 @@ tuta.forms.frmMap = function() {
     
     //Create timer to drack drivers,
     //Update map every 5 seconds
-    kony.timer.schedule("trackDemoDriver", function(){
-      tuta.trackDriver("Courtney@codelab.io");
-    }, 5, true);
+    if (taxiScanFlag === true){
+          kony.timer.schedule("trackDemoDriver", function(){
+            tuta.trackDriver("Courtney@codelab.io");
+          }, 5, true);
+    }
+    else{
+      	kony.timer.cancel("trackDemoDriver");
+    }
+
+
+    //Hide overlay
+    
     
 
   };

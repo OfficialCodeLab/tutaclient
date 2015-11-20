@@ -1,0 +1,91 @@
+{
+    "@class": "com.kony.gen.viz.model.component.KVizImage2",
+    "DNDConfig": null,
+    "__parentReadjusting__": false,
+    "_base64_": null,
+    "_height_": {
+        "type": "string",
+        "value": "20dp"
+    },
+    "_margin_": [
+        0,
+        0,
+        0,
+        0
+    ],
+    "_padding_": [
+        0,
+        0,
+        0,
+        0
+    ],
+    "_right_": {
+        "type": "string",
+        "value": "12.80%"
+    },
+    "_skin_": "s4ea8d4d07574957b839f06194980e52",
+    "_src_": "radiotick.png",
+    "_top_": {
+        "type": "string",
+        "value": "22dp"
+    },
+    "_width_": {
+        "type": "string",
+        "value": "20dp"
+    },
+    "base64": null,
+    "canUpdateUI": true,
+    "centerY": "50.00%",
+    "centery": {
+        "type": "string",
+        "value": "50.00%"
+    },
+    "containerWeight": 100,
+    "containerweight": 100,
+    "context": {
+        "channel": "mobile",
+        "formID": "frmDebug",
+        "ispercent": true,
+        "platform": "iphone",
+        "templateType": "forms",
+        "topLevelBox": null
+    },
+    "enabled": false,
+    "height": "20dp",
+    "id": "imgTickIcon2",
+    "imageScaleMode": 1,
+    "imagescalemode": 1,
+    "info": null,
+    "invokedProperty": "src",
+    "isVisible": true,
+    "ispercent": true,
+    "isvisible": true,
+    "kuid": "6a61057edf464a23a2a974eaab8002df",
+    "margin": [
+        0,
+        0,
+        0,
+        0
+    ],
+    "name": "kony.ui.Image2",
+    "padding": [
+        0,
+        0,
+        0,
+        0
+    ],
+    "parent": "flexRow2",
+    "pf": "frmDebug",
+    "render": true,
+    "right": "12.80%",
+    "skin": "s4ea8d4d07574957b839f06194980e52",
+    "src": "radiotick.png",
+    "srcType": 1,
+    "top": "22dp",
+    "wType": "Image",
+    "widgetAlignment": 5,
+    "widgetalignment": 5,
+    "width": "20dp",
+    "zIndex": 1,
+    "zindex": 1
+}

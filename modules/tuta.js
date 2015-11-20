@@ -17,6 +17,8 @@ var viaList = [];
 //Carl's Varibles
 var hailingTaxi = false; //Used to prevent multiple requests
 var bookingConfirmedFlag = false;
+var overlayEnabledFlag = true;
+var taxiScanFlag = true;
 
 var timeformatted = 
     {
@@ -570,6 +572,17 @@ function onLocationSelected() {
   }
 }
 
+function toggleImage(widget){
+  //var widget = toggleImage;
+  if (widget.isVisible === false)
+  {
+    widget["isVisible"] = true;
+  }
+  else{
+    widget["isVisible"] = false;
+  }
+}
+
 function hideSearchBar() {
   frmMap.flexAddress.setVisibility(false);
   frmMap.flexShadow.setVisibility(false);
@@ -832,10 +845,9 @@ tuta.trackDriver = function(driverID){
       //tuta.util.alert("Error " + error);
     }
   );
-
-
-
 }
+
+/*=========================================================*/
 
 tuta.initCallback = function(error) {
   application.login("techuser@ssa.co.za","T3chpassword", function(result,error) {
@@ -979,6 +991,7 @@ tuta.init = function() {
   new tuta.forms.frmPromo();
   new tuta.forms.frmSelectedTrip();
   new tuta.forms.frmTrip();
+  new tuta.forms.frmDebug();
 
   // initialize application
   application = new tuta.application(tuta.initCallback);
