@@ -52,17 +52,16 @@ tuta.forms.frmConfirm = function() {
             var input = { data : JSON.stringify(booking) };
             //tuta.util.alert("TEST", input);
             
-            application.service("userService").invokeOperation(
+            application.service("driverService").invokeOperation(
               "book", {}, input,
               function(result) {
                 bookingID = result.value[0].id;
                 tuta.forms.frmMap.show();
-                kony.timer.schedule("awaitConfirm", function(){tuta.awaitConfirm(bookingID);}, 1, false);
+                kony.timer.schedule("awaitConfirm", function(){tuta.awaitConfirm(bookingID); tuta.util.alert("TEST", bookingID);}, 1, false);
               },
               function(error) {
                 // the service returns 403 (Not Authorised) if credentials are wrong
                 tuta.util.alert("Error " + error.httpStatusCode, error.errmsg);
-                self.control("txtPassword").text = "";
               }
             );
           } 
@@ -85,7 +84,7 @@ tuta.forms.frmConfirm = function() {
             var inputLater = { data : JSON.stringify(bookingLater) };
             //tuta.util.alert("TEST", input);
             
-            application.service("userService").invokeOperation(
+            application.service("driverService").invokeOperation(
               "book", {}, inputLater,
               function(result) {
                 bookingID = result.value[0].id;
