@@ -156,7 +156,7 @@ tuta.forms.frmMap = function() {
     //Create timer to drack drivers,
     //Update map every 5 seconds
     kony.timer.schedule("trackDemoDriver", function(){
-      tuta.trackDriver("serv3@ssa.co.za");
+      tuta.trackDriver("Courtney@codelab.io");
     }, 5, true);
     
 

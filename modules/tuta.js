@@ -729,28 +729,43 @@ function resetSearchBar() {
   animateMove(frmMap.flexAdd, 0.3, "70", "-100%", null);
 }
 
+/*=========================================================
+  _   _           _       _       
+ | | | |_ __   __| | __ _| |_ ___ 
+ | | | | '_ \ / _` |/ _` | __/ _ \
+ | |_| | |_) | (_| | (_| | ||  __/
+  \___/| .__/ \__,_|\__,_|\__\___|
+  __  _|_|                        
+ |  \/  | __ _ _ __               
+ | |\/| |/ _` | '_ \              
+ | |  | | (_| | |_) |             
+ |_|  |_|\__,_| .__/              
+              |_|                 
+=========================================================*/   
+
 var currentPos;
 function updateMap() {
-  frmMap.mapMain.zoomLevel = tuta.location.zoomLevelFromLatLng(currentPos.geometry.location.lat, currentPos.geometry.location.lng);
+  //frmMap.mapMain.zoomLevel = tuta.location.zoomLevelFromLatLng(currentPos.geometry.location.lat, currentPos.geometry.location.lng);
 
   var pickupicon = "";
   if(frmMap.flexAddress.isVisible == false)
     pickupicon = "pickupicon.png";
 
-
   var locationData = [];
+
+var count = 0;
   locationData.push(
     {lat: "" + currentPos.geometry.location.lat + "", 
      lon: "" + currentPos.geometry.location.lng + "", 
      name:"Pickup Location", 
      desc: currentPos.formatted_address.replace(/`+/g,""), 
      image : pickupicon + ""});
-
-var count = 0;
-  while(nearbyDrivers !== [] && count <= nearbyDrivers.length){
+  
+  
+  while(nearbyDrivers !== [] && count <= nearbyDrivers.length-1){
     locationData.push(
     {lat: "" + nearbyDrivers[count].location.lat + "", 
-     lon: "" + nearbyDrivers[count].location.long + "", 
+     lon: "" + nearbyDrivers[count].location.lng + "", 
      name: nearbyDrivers[count].id, 
      desc: "", 
      image : "cabpin0.png"});
@@ -758,35 +773,9 @@ var count = 0;
   }
 
   frmMap.mapMain.locationData = locationData;
-
-  //frmMap.mapMain.zoomLevel = 10;
-  //frmMap.mapMain.locationData
-  // setZoomLevelFromBounds();
-  /*
-  var pickupicon = "";
-  if(frmMap.flexAddress.isVisible == false)
-  	pickupicon = "pickupicon.png";
-
-
-  var locationData = [];
-  locationData.push(
-    {lat: "" + pickupPoint.geometry.location.lat + "", 
-     lon: "" + pickupPoint.geometry.location.lng + "", 
-     name:"Pickup Location", 
-     desc: pickupPoint.formatted_address.replace(/`+/g,""), 
-     image : pickupicon + ""});
-
-  if(destination != null) {
-    locationData.push(
-      {lat: "" + destination.geometry.location.lat + "", 
-       lon: "" + destination.geometry.location.lng + "", 
-       name:"Destination", 
-       desc: destination.formatted_address.replace(/`+/g,""), 
-       image : "dropofficon.png"});  
-  }
-
-  frmMap.mapMain.locationData = locationData;*/
 }
+
+/*=========================================================*/ 
 
 function getCabPinForBearing(startloc,endloc) {
   var brng = Math.abs(Math.round(bearing(startloc.lat, 
@@ -859,28 +848,7 @@ function hailTaxi(widget) {
   frmMap.flexAddress.setVisibility(false);
   frmMap.flexShadow.setVisibility(false);
   hailstate = tempState;
-  /*
-  kony.timer.schedule("movetomap", function() { 
-    frmMap.mapMain.clear();
-    updateMap();
-    hideProgress();
-    //frmMap.flexDriverInfo.top = "100%";
-    frmMap.flexDriverInfo.visible = true;
-    animateMove2(frmMap.flexOptions, 0.3, "-110", "", function() {
-      animateMove2(frmMap.flexDriverInfo, 0.3, "0%", "0dp", null);      
-      getDirections(taxiPosition,pickupPoint,null, function(response) {
-        taxiRoute = response;
-        //ssa.mobile.alert("test", JSON.stringify(response));
-        frmMap.flexProgress.setVisibility(false);
-        frmMap.btnCancelHailDriving.setVisibility(true);
-        renderDirections(frmMap.mapMain, taxiRoute, "0xFF0000FF","","pickupicon.png");
-        //test = 0;
-      });
-
-    });
-    //frmMap.flexOptions.visible = false;
-
-  },2,false );*/
+  
 
   kony.timer.schedule("fetchPerson", function(){
     animateTaxiOnRoute(0);
@@ -980,64 +948,7 @@ function cancelHail() {
   updateMap();
 
 }
-/*
-function showProgress() {
-  frmMap.flexProgress.setVisibility(true);
-  animateLogo(frmMap.imgTaxi);
-}
 
-function hideProgress() {
-  frmMap.flexProgress.setVisibility(false);
-  stopLogoAnimation(frmMap.imgTaxi);
-}
-
-
-function deselectAllOptions() {
-  animateDeselect(frmMap.flexCheepest);
-  animateDeselect(frmMap.flexQuickest);
-  animateDeselect(frmMap.flexPremium);
-}
-
-function selectOption(eventObject,x,y) {
-  deselectAllOptions();
-  animateSelected(eventObject);
-}
-
-function animateLogo(eventObject) {
-  eventObject.animate(
-    kony.ui.createAnimation({"100":{"stepConfig":{"timingFunction":kony.anim.EASIN_IN_OUT},"width":"150dp","height":"150dp"}}),
-    {"delay":0,"iterationCount":0,"fillMode":kony.anim.FILL_MODE_FORWARDS,"duration":0.25,"direction":kony.anim.DIRECTION_ALTERNATE},
-    {"animationEnd" : function() {}});
-}
-
-function stopLogoAnimation(eventObject) {
-  eventObject.animate(
-    kony.ui.createAnimation({"100":{"stepConfig":{"timingFunction":kony.anim.EASIN_IN_OUT},"width":"140dp","height":"140dp"}}),
-    {"delay":0,"iterationCount":0,"fillMode":kony.anim.FILL_MODE_FORWARDS,"duration":0.0,"direction":kony.anim.DIRECTION_NONE},
-    {"animationEnd" : function() {}});
-}
-
-function animateSelected(eventObject) {
-  eventObject.animate(animationSelected, 
-                      {"delay":0.15,"iterationCount":0,"fillMode":kony.anim.FILL_MODE_FORWARDS,"duration":0.25,"direction":kony.anim.DIRECTION_ALTERNATE},
-                      {"animationEnd" : function() {}});
-}   
-
-function animateDeselect(eventObject) {
-  eventObject.animate(animationDeselect, 
-                      {"delay":0,"iterationCount":1,"fillMode":kony.anim.FILL_MODE_FORWARDS,"duration":0.0,"direction":kony.anim.DIRECTION_NONE},
-                      {"animationEnd" : function() {}});
-}  
-
-
-var destinationsOpen = false;
-function toggleDestinations(eventObject, x , y) {
-  if(destinationsOpen) {
-    closeDestinations();
-  } else {
-    openDestinations();
-  }
-}*/
 
 function animateMove(object, time, top, left, finish) {
   object.animate(
@@ -1052,106 +963,7 @@ function animateMove2(object, time, bot, right, finish) {
     {"delay":0,"iterationCount":1,"fillMode":kony.anim.FILL_MODE_FORWARDS,"duration":time},
     {"animationEnd" : function(){ if(finish) { finish(); }}});
 }
-/*
-function animateScale(object, time, height, top, finish) {
-  object.animate(
-    kony.ui.createAnimation({"100":{"stepConfig":{"timingFunction":kony.anim.EASE},"top":top, "height":height}}),
-    {"delay":0,"iterationCount":1,"fillMode":kony.anim.FILL_MODE_FORWARDS,"duration":time},
-    {"animationEnd" : function(){ if(finish) { finish(); }}});
-}
 
-function openDestinations() {
-  animateMove(frmMap.flexDestinations, 0.25, "34%", "0%", null);
-  animateMove(frmMap.txtDestination, 0.25, "28%", "0%", null);
-  animateScale(frmMap.flexDestinationList,0.25,"20%", "8%",null);
-  destinationsOpen = true;
-}
-
-function closeDestinations() {
-  animateMove(frmMap.flexDestinations, 0.25, "14%", "0%", null);
-  animateMove(frmMap.txtDestination,0.25,"8%", "0%", null);
-  animateScale(frmMap.flexDestinationList,0.25,"0%", "8%", null);
-  destinationsOpen = false;
-
-}
-
-function animateSplash(){
-
-  frmSplash.flexBars.animate(
-    kony.ui.createAnimation({"100":{"bottom":"0%", stepConfig:{"timingFunction":kony.anim.EASE}}}),
-    {"delay":0,"iterationCount":1,"fillMode":kony.anim.FILL_MODE_FORWARDS,"duration":"0.5"},
-    {"animationEnd" : null});
-
-
-  frmSplash.imgTaxi.animate(
-    kony.ui.createAnimation({"100":{"centerY":"40%", stepConfig:{"timingFunction":kony.anim.EASE}}}),
-    {"delay":0,"iterationCount":1,"fillMode":kony.anim.FILL_MODE_FORWARDS,"duration":"0.5"},
-    {"animationEnd" : null});
-
-}
-
-var menuOpen = false;
-var addressesShown = false;
-function animateMenu(){
-  //frmMap.flexSwipe.setVisibility(false); 
-  frmMap.btnChs.setVisibility(false);  
-  if(menuOpen === false){ //OPEN MENU
-    //animateMove(frmMap.lblChs1, 0.2, "30", "15", null);
-    //animateMove(frmMap.lblChs3, 0.2, "30", "15", null);
-
-    //kony.timer.schedule("menuOpen1", function() { 
-    frmMap.imgChsC.setVisibility(false);
-    frmMap.flexDarken.setVisibility(true);
-    //frmMap.lblChs1.setVisibility(false);
-    //frmMap.lblChs2.setVisibility(false);
-    //frmMap.lblChs3.setVisibility(false);
-    animateMove(frmMap.flexAll, 0.3, "0", "80%");
-    animateMove(frmMap.flexMenu, 0.3, "0", "0%");
-    //kony.timer.schedule("menuOpen2", function() { 
-    frmMap.imgChsO.setVisibility(true);
-    //frmMap.lblChs2.setVisibility(false);
-    //frmMap.lblChs1b.setVisibility(true);
-    //frmMap.lblChs2b.setVisibility(true);
-    //frmMap.lblChs3b.setVisibility(true);
-    //animateMove(frmMap.lblChs1b, 0.2, "15", "17", null);
-    // animateMove(frmMap.lblChs3b, 0.2, "15", "43", null);
-    frmMap["btnChs"]["height"] = "100%";
-    frmMap.btnChs.setVisibility(true);
-    //frmMap.flexSwipe.setVisibility(true);
-    menuOpen = true;
-    //}, 0.35, false);
-    frmMap.btnChs.setVisibility(true);
-    menuOpen = true;
-    //}, 0.1, false);
-  }
-  else //CLOSE MENU
-  {
-    //animateMove(frmMap.lblChs1b, 0.2, "15", "30", null);
-    //animateMove(frmMap.lblChs3b, 0.2, "15", "30", null);
-
-    //kony.timer.schedule("menuClose1", function() {
-    frmMap.imgChsO.setVisibility(false);
-    frmMap.flexDarken.setVisibility(false);
-    //frmMap.lblChs1b.setVisibility(false);
-    //frmMap.lblChs2b.setVisibility(false);
-    //frmMap.lblChs3b.setVisibility(false);
-    animateMove(frmMap.flexAll, 0.3, "0", "0%");
-    animateMove(frmMap.flexMenu, 0.3, "0", "-80%");
-    //kony.timer.schedule("menuClose2", function() {
-    //frmMap.lblChs1.setVisibility(true);
-    //frmMap.lblChs2.setVisibility(true); 
-    //frmMap.lblChs3.setVisibility(true);
-    frmMap.imgChsC.setVisibility(true);
-    //animateMove(frmMap.lblChs1, 0.2, "19", "15", null);
-    //animateMove(frmMap.lblChs3, 0.2, "41", "15", null);
-    frmMap["btnChs"]["height"] = "55dp";
-    frmMap.btnChs.setVisibility(true); 
-    menuOpen = false;
-    //}, 0.35, false);
-    //}, 0.1, false);
-  }
-}
-*/
 tuta.menuToggle = function (time, bool){
   if(bool === true){
     frmMap.imgChsO.setVisibility(false);
@@ -1222,43 +1034,53 @@ tuta.userExists = function (response){
   return false;
 };
 
-
+/*=========================================================
+  ____       _                      
+ |  _ \ _ __(_)_   _____ _ __       
+ | | | | '__| \ \ / / _ \ '__|      
+ | |_| | |  | |\ V /  __/ |         
+ |____/|_|  |_| \_/ \___|_|         
+ |_   _| __ __ _  ___| | _____ _ __ 
+   | || '__/ _` |/ __| |/ / _ \ '__|
+   | || | | (_| | (__|   <  __/ |   
+   |_||_|  \__,_|\___|_|\_\___|_|   
+                                    
+=========================================================*/  
 
 var nearbyDrivers = [];
 
-
 tuta.trackDriver = function(driverID){
 
-  //Query information struct
+  //Store the driver ID as variable 'input' for query
   var input = {
     id: driverID
   };
 
   //Query the server
-  application.service("driverService").invokeOperation(
+  application.service("userService").invokeOperation(
     "user", {}, input,
     function(result) { 
 
-      nearbyDrivers = [];
+      nearbyDrivers = []; //clear the array of drivers
 
       var driver = {
         id: result.value[0]._id,
-        location: {
-          lat: result.value[0].lat,
-          long: result.value[0].long
-        };
+        location: result.value[0].location
+      };
 
       nearbyDrivers.push(driver);
+
+      /*
+        This needs to be reworked to only 
+        update and not zoom in on current location.
+
+        Update map is on line 747.
+      */
       updateMap();
-
-      }
     },
-    function(error) { //The second function will always run if there is an error.
-
+    function(error) {
       // the service returns 403 (Not Authorised) if credentials are wrong
-      tuta.util.alert("Error " + error);
-
-
+      //tuta.util.alert("Error " + error);
     }
   );
 
@@ -1300,8 +1122,23 @@ tuta.initCallback = function(error) {
   });
 };
 
+/*=========================================================
+ __        __    _       _               
+ \ \      / /_ _| |_ ___| |__            
+  \ \ /\ / / _` | __/ __| '_ \           
+   \ V  V / (_| | || (__| | | |          
+  _ \_/\_/ \__,_|\__\___|_|_|_|          
+ | |    ___   ___ __ _| |_(_) ___  _ __  
+ | |   / _ \ / __/ _` | __| |/ _ \| '_ \ 
+ | |__| (_) | (_| (_| | |_| | (_) | | | |
+ |_____\___/ \___\__,_|\__|_|\___/|_| |_|
+                                              
+=========================================================*/
+
 var watchID = null;
 var initialized = 0;
+
+//This is called evert time user's position changes
 tuta.startWatchLocation = function(){
   try{
     watchID = kony.store.getItem("watch");
@@ -1313,10 +1150,43 @@ tuta.startWatchLocation = function(){
           tuta.location.geoCode(position.coords.latitude, position.coords.longitude, function(s, e){
             currentPos = s.results[0];
             updateMap();
+
+            //Update user's position on the server
+            var inputData = {
+              //id : JSON.parse(kony.store.getItem("user")).userName,
+              location : {
+                lat : s.results[0].geometry.location.lat,
+                long : s.results[0].geometry.location.lng
+              }
+            };
+
+            var userTemp = JSON.parse(kony.store.getItem("user"));
+            var input = {data: JSON.stringify(inputData), id : userTemp.userName + ""};
+
+            //Popup displaying latitude and longitude,
+            //on position change
+            var testUserName = "Your username is: " + JSON.stringify(userTemp.userName + "\n");
+            var testOutput = "Your current position is:\n" + "Latitude: " + JSON.stringify(inputData.location.lat) + "\nLongitude: " + JSON.stringify(inputData.location.long) + "";
+            tuta.util.alert("Location Update", testUserName + testOutput);
+            //
+
+            
+            
+
+            //Updates server with user's current position
+            application.service("manageService").invokeOperation(
+                "userUpdate", {}, input,
+                function(result) {
+                  //tuta.util.alert("TEST" + "Map updated with your current position");
+                },
+                function(error) {
+
+                    // the service returns 403 (Not Authorised) if credentials are wrong
+                    tuta.util.alert("Error " + error.httpStatusCode, error.errmsg);
+                }
+            );
           });
-
         },
-
         function (errorMsg) {
           //if(errorMsg.code !==3 )
             //tuta.util.alert("ERROR", errorMsg);
@@ -1340,6 +1210,8 @@ tuta.startWatchLocation = function(){
     tuta.util.alert("TEST", ex);
   }
 };
+
+/*===================================================================*/
 
 // Should be called in the App init lifecycle event
 // In Visualizer this should be call in the init event of the startup form
