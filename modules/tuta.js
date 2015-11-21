@@ -28,7 +28,7 @@ var timeformatted =
       hours: "",
       mins: "",
       meridian: ""
-    }
+    };
 
 var GLOBAL_CONCAT_LENGTH = 35;
 
@@ -766,10 +766,9 @@ tuta.awaitConfirm = function(bookingID) {
 
           frmMap.flexProgress.setVisibility(false);
           //frmMap["flexProgress"]["isVisible"] = false;
-
-          tuta.util.alert("success","Your booking has been confirmed!");
           kony.timer.cancel("taxiHailTimer");
-
+          tuta.util.alert("success","Your booking has been confirmed!");
+          tuta.fetchDriverInfo(result.value[0].providerId);
           
         }
       },
@@ -780,6 +779,41 @@ tuta.awaitConfirm = function(bookingID) {
 
 
   }, 3, true);
+};
+
+tuta.fetchDriverInfo = function(driverID){
+  application.service("driverService").invokeOperation(
+    "user", {}, {id: driverID}, 
+    function(result){
+      frmMap.lblDriverName.text = result.value[0].userInfo.firstName + " " + result.value[0].userInfo.lastName;
+      application.service("driverService").invokeOperation(
+        "assignedVehicle", {}, {userId: driverID}, 
+        function(res){
+          //tuta.util.alert("TEST", JSON.stringify(res));
+          frmMap.lblCar.text = res.value[0].make + " " + res.value[0].model;
+          frmMap.lblReg.text = res.value[0].VRN + "";
+          application.service("driverService").invokeOperation(
+            "rating", {}, {userId: driverID}, 
+            function(r){
+              //tuta.util.alert("TEST", JSON.stringify(r));
+              frmMap.lblRating.text = r.averageRating + "";
+              tuta.animate.moveBottomLeft(frmMap.flexDriverInfo, 0.3, "0", "0", false);
+              tuta.animate.moveBottomLeft(frmMap.flexCancel, 0.3, "105", "0", false);
+              tuta.animate.moveBottomRight(frmMap.flexPhone, 0.3, "105", "0", false);
+            }, 
+            function(e){}  
+          );
+        }, 
+        function(err){}  
+      );
+    }, 
+    function(error){}  
+  );
+
+
+
+
+  
 };
 
 tuta.userExists = function (response){
