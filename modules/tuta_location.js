@@ -8,21 +8,54 @@ if (typeof(tuta) === "undefined") {
 
 tuta.location = {};
 
-tuta.location.init = function(callback) {
-  
-  	//frmSplash.rtDebug.text = "<span>Initializing Services...</span>";
-  
-  	// create new service model
-  	model = new ustuck.services();
+tuta.location.updateLocationOnServer = function(location){
+   //Update user's position on the server
+  var inputData = {
+    //id : JSON.parse(kony.store.getItem("user")).userName,
+    location : {
+      lat : location.geometry.location.lat,
+      long : location.geometry.location.lng
+    }
+  };
 
-  	// temporary variables
-  	model.user = {};
-	model.user.location = {};
+  var userTemp = JSON.parse(kony.store.getItem("user"));
+  var input = {data: JSON.stringify(inputData), id : userTemp.userName + ""};
+
+  //Popup displaying latitude and longitude,
+  //on position change
+  // var testUserName = "Your username is: " + JSON.stringify(userTemp.userName + "\n");
+  // var testOutput = "Your current position is:\n" + "Latitude: " + JSON.stringify(inputData.location.lat) + "\nLongitude: " + JSON.stringify(inputData.location.long) + "";
+  // tuta.util.alert("Location Update", testUserName + testOutput);
+
   
-  	// initialise model and specify init success function
-  	model.init(this.currentPosition(callback));
-  	//frmSplash.rtDebug.text = "<span>Retrieving Geocode...</span>";
-}
+  //Updates server with user's current position
+  application.service("manageService").invokeOperation(
+    "userUpdate", {}, input,
+    function(result) {
+      //tuta.util.alert("TEST" + "Map updated with your current position");
+    },
+    function(error) {
+
+      // the service returns 403 (Not Authorised) if credentials are wrong
+      tuta.util.alert("Error " + error.httpStatusCode, error.errmsg);
+    }
+  );
+};
+
+tuta.location.loadPositionInit = function(){
+  tuta.location.currentPosition(function(response) {
+
+    tuta.location.geoCode(response.coords.latitude, response.coords.longitude, function(success, error){
+      currentPos = success.results[0]; 
+      updateMap();
+
+	  tuta.updateLocationOnServer(success.results[0]);
+
+    });
+  }, function(error) {
+    tuta.util.alert("Error", error);
+  });
+};
 
 /**
 * Retrieves the current position of the app user
@@ -40,23 +73,6 @@ tuta.location.currentPosition = function(callback) {
 
     { timeout: 35000, maximumAge: 0, enableHighAccuracy : true, useBestProvider : true }
   );  
-};
-
-/**
-* Watches the current position of the app user
-**/
-tuta.location.watchPosition = function(callback) {
-
-  kony.location.watchPosition(
-    function(position) {
-      
-    },
-
-    function (errorMsg) {
-    }, 
-
-    { timeout: 35000, maximumAge: 0, enableHighAccuracy : true, useBestProvider : true }
-  );
 };
 
 /** Converts numeric degrees to radians */

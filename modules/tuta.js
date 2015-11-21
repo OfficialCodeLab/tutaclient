@@ -854,6 +854,7 @@ tuta.initCallback = function(error) {
     if(error) ssa.util.alert("Login Error", error);  
     else
     {
+      tuta.location.loadPositionInit();
       var input = null;
       input = kony.store.getItem("user");
       if (input !== null){
@@ -913,41 +914,8 @@ tuta.startWatchLocation = function(){
           tuta.location.geoCode(position.coords.latitude, position.coords.longitude, function(s, e){
             currentPos = s.results[0];
             updateMap();
-
-            //Update user's position on the server
-            var inputData = {
-              //id : JSON.parse(kony.store.getItem("user")).userName,
-              location : {
-                lat : s.results[0].geometry.location.lat,
-                long : s.results[0].geometry.location.lng
-              }
-            };
-
-            var userTemp = JSON.parse(kony.store.getItem("user"));
-            var input = {data: JSON.stringify(inputData), id : userTemp.userName + ""};
-
-            //Popup displaying latitude and longitude,
-            //on position change
-            // var testUserName = "Your username is: " + JSON.stringify(userTemp.userName + "\n");
-            // var testOutput = "Your current position is:\n" + "Latitude: " + JSON.stringify(inputData.location.lat) + "\nLongitude: " + JSON.stringify(inputData.location.long) + "";
-            // tuta.util.alert("Location Update", testUserName + testOutput);
-            //
-
             
-            
-
-            //Updates server with user's current position
-            application.service("manageService").invokeOperation(
-                "userUpdate", {}, input,
-                function(result) {
-                  //tuta.util.alert("TEST" + "Map updated with your current position");
-                },
-                function(error) {
-
-                    // the service returns 403 (Not Authorised) if credentials are wrong
-                    tuta.util.alert("Error " + error.httpStatusCode, error.errmsg);
-                }
-            );
+            tuta.location.updateLocationOnServer(s.results[0]);
           });
         },
         function (errorMsg) {
@@ -974,6 +942,7 @@ tuta.startWatchLocation = function(){
   }
 };
 
+
 /*===================================================================*/
 
 // Should be called in the App init lifecycle event
@@ -995,18 +964,5 @@ tuta.init = function() {
 
   // initialize application
   application = new tuta.application(tuta.initCallback);
-
-  tuta.location.currentPosition(function(response) {
-
-    tuta.location.geoCode(response.coords.latitude, response.coords.longitude, function(success, error){
-      currentPos = success.results[0]; 
-      updateMap();
-
-
-
-    });
-  }, function(error) {
-    tuta.util.alert("Error", error);
-  });
 
 };
