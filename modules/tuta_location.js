@@ -57,6 +57,8 @@ tuta.location.loadPositionInit = function(){
   });
 };
 
+
+
 /**
 * Retrieves the current position of the app user
 **/

@@ -501,7 +501,7 @@ function updateMap() {
 
   var locationData = [];
 
-var count = 0;
+//var count = 0;
   locationData.push(
     {lat: "" + currentPos.geometry.location.lat + "", 
      lon: "" + currentPos.geometry.location.lng + "", 
@@ -510,14 +510,14 @@ var count = 0;
      image : pickupicon + ""});
   
   
-  while(nearbyDrivers !== [] && count <= nearbyDrivers.length-1){
+  if(nearbyDrivers.length > 0){
     locationData.push(
-    {lat: "" + nearbyDrivers[count].location.lat + "", 
-     lon: "" + nearbyDrivers[count].location.lng + "", 
-     name: nearbyDrivers[count].id, 
+    {lat: "" + nearbyDrivers[0].location.lat + "", 
+     lon: "" + nearbyDrivers[0].location.lng + "", 
+     name: nearbyDrivers[0].id, 
      desc: "", 
      image : "cabpin0.png"});
-    count++;
+    //count++;
   }
 
   frmMap.mapMain.locationData = locationData;
@@ -693,7 +693,12 @@ function cancelHail() {
   frmMap.btnCancelHailDriving.setVisibility(false);
   hailState = false;
   destination = null;
-  kony.timer.cancel("onroute");
+  try{
+    kony.timer.cancel("onroute");
+  }
+  catch(ex){
+
+  }
   frmMap.mapMain.clear();
   animateMove2(frmMap.flexOptions, 0.3, "0", "", null);
   animateMove(frmMap.flexTimeToDest, 0.3, "", "-150dp",  null); 
@@ -754,7 +759,12 @@ tuta.awaitConfirm = function(bookingID) {
   //take the result and check the status value of the key status – 
   //when it changes to CONFIRMED, then hide the flex container again
   inputBooking = { id : bookingID };
-  kony.timer.cancel("taxiHailTimer");
+  try{
+    kony.timer.cancel("taxiHailTimer");
+  }
+  catch(ex){
+
+  }
 
   kony.timer.schedule("taxiHailTimer", function(){
 
@@ -767,7 +777,7 @@ tuta.awaitConfirm = function(bookingID) {
           frmMap.flexProgress.setVisibility(false);
           //frmMap["flexProgress"]["isVisible"] = false;
           kony.timer.cancel("taxiHailTimer");
-          tuta.util.alert("success","Your booking has been confirmed!");
+          //tuta.util.alert("success","Your booking has been confirmed!");
           tuta.fetchDriverInfo(result.value[0].providerId);
           
         }
@@ -800,6 +810,7 @@ tuta.fetchDriverInfo = function(driverID){
               tuta.animate.moveBottomLeft(frmMap.flexDriverInfo, 0.3, "0", "0", false);
               tuta.animate.moveBottomLeft(frmMap.flexCancel, 0.3, "105", "0", false);
               tuta.animate.moveBottomRight(frmMap.flexPhone, 0.3, "105", "0", false);
+              tuta.trackDriverLoop(driverID);
             }, 
             function(e){}  
           );
@@ -814,6 +825,13 @@ tuta.fetchDriverInfo = function(driverID){
 
 
   
+};
+
+tuta.startUpdateMapFunction = function(){
+  kony.timer.cancel("updateMapSlow");
+  kony.timer.schedule("updateMapSlow", function(){
+    updateMap();
+  }, 10, true);
 };
 
 tuta.userExists = function (response){
@@ -842,6 +860,19 @@ tuta.userExists = function (response){
    |_||_|  \__,_|\___|_|\_\___|_|   
                                     
 =========================================================*/  
+
+tuta.trackDriverLoop = function (driverID){
+  try{
+    kony.timer.cancel("trackdriverloop" + driverID);
+  }
+  catch(ex){
+
+  }
+  kony.timer.schedule("trackdriverloop" + driverID, function(){
+    tuta.trackDriver(driverID);
+
+  }, 5, true);
+};
 
 var nearbyDrivers = [];
 
@@ -872,14 +903,14 @@ tuta.trackDriver = function(driverID){
 
         Update map is on line 747.
       */
-      updateMap();
+      //updateMap();
     },
     function(error) {
       // the service returns 403 (Not Authorised) if credentials are wrong
       //tuta.util.alert("Error " + error);
     }
   );
-}
+};
 
 /*=========================================================*/
 
@@ -938,6 +969,7 @@ var initialized = 0;
 
 //This is called evert time user's position changes
 tuta.startWatchLocation = function(){
+  tuta.startUpdateMapFunction();
   try{
     watchID = kony.store.getItem("watch");
     if(watchID === null){
@@ -947,7 +979,7 @@ tuta.startWatchLocation = function(){
           kony.store.setItem("watch", watchID);
           tuta.location.geoCode(position.coords.latitude, position.coords.longitude, function(s, e){
             currentPos = s.results[0];
-            updateMap();
+            //updateMap();
             
             tuta.location.updateLocationOnServer(s.results[0]);
           });

@@ -189,7 +189,13 @@ tuta.forms.frmMap = function() {
     var self = this;    
 
     //Cancel kony timer
-    kony.timer.cancel("trackDemoDriver");
+    /*
+    try{
+      kony.timer.cancel("trackDemoDriver");
+    }
+    catch(ex){
+
+    }
     
     //Create timer to drack drivers,
     //Update map every 5 seconds
@@ -200,7 +206,7 @@ tuta.forms.frmMap = function() {
     }
     else{
       	kony.timer.cancel("trackDemoDriver");
-    }
+    }*/
 
 
     //Hide overlay
