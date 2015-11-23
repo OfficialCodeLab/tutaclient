@@ -195,7 +195,7 @@ tuta.forms.frmMap = function() {
     //Update map every 5 seconds
     if (taxiScanFlag === true){
           kony.timer.schedule("trackDemoDriver", function(){
-            tuta.trackDriver("Courtney@codelab.io");
+            tuta.trackDriver("craig@ssa.com");
           }, 5, true);
     }
     else{

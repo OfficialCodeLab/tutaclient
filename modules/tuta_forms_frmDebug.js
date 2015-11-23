@@ -81,8 +81,13 @@ tuta.forms.frmDebug = function() {
           var csFirstName = result.value[0].userInfo.firstName;
           var csLastName = result.value[0].userInfo.lastName;
           var csEmail = currentUserEmail;
+          var csLong = result.value[0].location.lng;
+          var csLat = result.value[0].location.lat;
+          
           tuta.util.alert("User Information", "Name: " + csFirstName + " " + csLastName +
-                         "\nEmail Address: " + csEmail);
+                         "\nEmail Address: " + csEmail +
+                         "\nLattitude: " + csLat + 
+          				 "\nLongitude: " + csLong);
           
         },
         function(error) {
@@ -95,7 +100,7 @@ tuta.forms.frmDebug = function() {
     };
     
     this.control("btnTickPress6").onClick = function (button){
-      var csDemoDriver = "Courtney@codelab.io";
+      var csDemoDriver = "craig@ssa.co.za";
       tuta.trackDriver(csDemoDriver);
       updateMap();
       tuta.util.alert("Notification", "The map has been updated, and is currently tracking " + csDemoDriver + ".");
