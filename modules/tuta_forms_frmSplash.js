@@ -48,6 +48,7 @@ tuta.forms.frmSplash = function() {
             //Creates a new item, "user", in the store. 
             //User is the key / ID, and contains a JSON structure as a value
             kony.store.setItem("user", JSON.stringify(inputs));
+            tuta.location.loadPositionInit();
             self.moveLoginButtons.toggle();
             tuta.forms.frmMap.show();
             //tuta.forms.frm003CheckBox.show();

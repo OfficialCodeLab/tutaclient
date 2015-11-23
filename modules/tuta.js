@@ -778,6 +778,7 @@ tuta.awaitConfirm = function(bookingID) {
           //frmMap["flexProgress"]["isVisible"] = false;
           kony.timer.cancel("taxiHailTimer");
           //tuta.util.alert("success","Your booking has been confirmed!");
+          tuta.renderRouteAndDriver(result.value[0]);
           tuta.fetchDriverInfo(result.value[0].providerId);
           
         }
@@ -789,6 +790,36 @@ tuta.awaitConfirm = function(bookingID) {
 
 
   }, 3, true);
+};
+
+tuta.renderRouteAndDriver = function (booking){
+  var driver = booking.providerId;
+  application.service("driverService").invokeOperation(
+    "user", {}, {id : driver},
+    function(result) { 
+
+      tuta.location.geoCode(result.value[0].location.lat, result.value[0].location.lng, function(success, error){
+        //tuta.util.alert("PICKUP", JSON.stringify(success));
+        // tuta.util.alert("SELF", JSON.stringify(currentPos));
+        tuta.location.geoCode(booking.location.lat, booking.location.lng, function(s, e){
+        getDirections(s.results[0],success.results[0],null,function(response) {
+          ///tuta.util.alert("ROUTE", JSON.stringify(response));
+          kony.timer.schedule("renderDir", function(){
+            renderDirections(frmMap.mapMain, response, "0x0000FFFF","","");
+            //tuta.util.alert("DISTANCE: ", tuta.location.distance(result.value[0].location.lat, result.value[0].location.lng, booking.location.lat, booking.location.lng));
+          }, 2, false);
+        });
+          
+        });
+
+      });
+      },
+    function(error) {
+      // the service returns 403 (Not Authorised) if credentials are wrong
+      //tuta.util.alert("Error " + error);
+    }
+  );
+
 };
 
 tuta.fetchDriverInfo = function(driverID){
@@ -821,10 +852,6 @@ tuta.fetchDriverInfo = function(driverID){
     function(error){}  
   );
 
-
-
-
-  
 };
 
 tuta.startUpdateMapFunction = function(){
@@ -919,11 +946,11 @@ tuta.initCallback = function(error) {
     if(error) ssa.util.alert("Login Error", error);  
     else
     {
-      tuta.location.loadPositionInit();
       var input = null;
       input = kony.store.getItem("user");
       if (input !== null){
         try{
+          tuta.location.loadPositionInit();
           application.service("userService").invokeOperation(
             "login", {}, JSON.parse(input),
             function(result) {
@@ -934,6 +961,7 @@ tuta.initCallback = function(error) {
             },
             function(error) {
               // the service returns 403 (Not Authorised) if credentials are wrong
+              // make IF statement to check for 403 error only
               input = kony.store.removeItem("user");
               tuta.animate.moveBottomLeft(frmSplash.flexMainButtons, 0.2, "0%", "0", null);
               
