@@ -1,0 +1,95 @@
+{
+    "DNDConfig": null,
+    "__parentReadjusting__": false,
+    "_height_": {
+        "type": "string",
+        "value": "276dp"
+    },
+    "_left_": {
+        "type": "string",
+        "value": "200%"
+    },
+    "_margin_": [
+        0,
+        0,
+        0,
+        0
+    ],
+    "_padding_": [
+        0,
+        0,
+        0,
+        0
+    ],
+    "_skin_": "sbaace5e40584c20ab27e7d3500863db",
+    "_top_": {
+        "type": "string",
+        "value": "254dp"
+    },
+    "_width_": {
+        "type": "string",
+        "value": "80%"
+    },
+    "allboxes": [],
+    "autogrowMode": 0,
+    "autogrowmode": 0,
+    "canUpdateUI": true,
+    "centerY": "50%",
+    "centery": {
+        "type": "string",
+        "value": "50%"
+    },
+    "children": [
+        "flexSwiper",
+        "imgAlert",
+        "lblAlertArrival",
+        "lblSwipeMessage",
+        "lblSep"
+    ],
+    "clipBounds": true,
+    "clipbounds": true,
+    "containerWeight": 100,
+    "containerweight": 100,
+    "enableScrolling": true,
+    "enabled": false,
+    "enablescrolling": true,
+    "height": "276dp",
+    "id": "flexDriverArrival",
+    "info": null,
+    "isVisible": true,
+    "isvisible": true,
+    "kuid": "dc31129181664fbd8a9884758ae3bfd4",
+    "layoutType": 2,
+    "layouttype": 2,
+    "left": "200%",
+    "margin": [
+        0,
+        0,
+        0,
+        0
+    ],
+    "name": "kony.ui.FlexContainer",
+    "orientation": 6,
+    "padding": [
+        0,
+        0,
+        0,
+        0
+    ],
+    "parent": "frmMap",
+    "percent": true,
+    "pf": "frmMap",
+    "render": true,
+    "skin": "sbaace5e40584c20ab27e7d3500863db",
+    "snapGridSize": 10,
+    "snapToGrid": true,
+    "snapgridsize": 10,
+    "snaptogrid": true,
+    "top": "254dp",
+    "wType": "FlexContainer",
+    "widgetAlignment": 1,
+    "widgetalignment": 1,
+    "width": "80%",
+    "zIndex": 900,
+    "zindex": 900
+}
