@@ -42,7 +42,8 @@
         "txtDestination",
         "flexOptions",
         "Image09f88626815dd4e",
-        "flexNoOfPeople"
+        "flexNoOfPeople",
+        "flexNoPanning"
     ],
     "clipBounds": true,
     "clipbounds": true,

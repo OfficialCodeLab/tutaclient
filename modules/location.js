@@ -269,6 +269,12 @@ function decodeRoute(routes, count) {
   	return path;
 }
 
+var overview = {zoom: "",
+                lat: "",
+                lng: "",
+                active: 0
+               };
+
 function renderDirections(object, directions, color, startpin, endpin) {
   //ssa.mobile.alert("RENDER", directions);
   
@@ -298,6 +304,10 @@ function renderDirections(object, directions, color, startpin, endpin) {
   var lng = (bounds.southwest.lng + bounds.northeast.lng)/2;
   
   object.navigateToLocation({ "lat" : lat, "lon": lng, name:"", desc: ""},false,false);
+  overview.lat = lat;
+  overview.lng = lng;
+  overview.zoom = newZoom;
+  overview.active = 1;
   //ssa.mobile.alert("ZOOM", "OLD = " + object.zoomLevel + " NEW = " + newZoom);
   //object.zoomLevel = newZoom-1;
 }

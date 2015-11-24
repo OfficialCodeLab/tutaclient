@@ -400,6 +400,10 @@ function setUpSwipes(){
       showNow();
     }
   });
+  
+  frmMap.flexNoPanning.addGestureRecognizer(constants.GESTURE_TYPE_SWIPE, setupTblSwipe,  function(widget, gestureInformationSwipe) {
+    
+  });
 
 }
 
@@ -501,22 +505,31 @@ function updateMap() {
 
   var locationData = [];
 
-//var count = 0;
+  if(overview.active === 1){
+    locationData.push(
+      {lat: "" + overview.lat + "", 
+       lon: "" + overview.lng + "", 
+       name:"Map Middle", 
+       desc: "", 
+       image : ""});    
+  }
+
+  //var count = 0;
   locationData.push(
     {lat: "" + currentPos.geometry.location.lat + "", 
      lon: "" + currentPos.geometry.location.lng + "", 
      name:"Pickup Location", 
      desc: currentPos.formatted_address.replace(/`+/g,""), 
      image : pickupicon + ""});
-  
-  
+
+
   if(nearbyDrivers.length > 0){
     locationData.push(
-    {lat: "" + nearbyDrivers[0].location.lat + "", 
-     lon: "" + nearbyDrivers[0].location.lng + "", 
-     name: nearbyDrivers[0].id, 
-     desc: "", 
-     image : "cabpin0.png"});
+      {lat: "" + nearbyDrivers[0].location.lat + "", 
+       lon: "" + nearbyDrivers[0].location.lng + "", 
+       name: nearbyDrivers[0].id, 
+       desc: "", 
+       image : "cabpin0.png"});
     //count++;
   }
 
@@ -607,7 +620,7 @@ function hailTaxi(widget) {
   frmMap.flexAddress.setVisibility(false);
   frmMap.flexShadow.setVisibility(false);
   hailstate = tempState;
-  
+
 
   kony.timer.schedule("fetchPerson", function(){
     animateTaxiOnRoute(0);
@@ -773,14 +786,14 @@ tuta.awaitConfirm = function(bookingID) {
       function(result) { //This is the default function that runs if the query is succesful, if there is a result.
         if (result.value[0].status==="OnRoute")
         {
-
+		  frmMap.flexNoPanning.setVisibility(true);
           frmMap.flexProgress.setVisibility(false);
           //frmMap["flexProgress"]["isVisible"] = false;
           kony.timer.cancel("taxiHailTimer");
           //tuta.util.alert("success","Your booking has been confirmed!");
           tuta.renderRouteAndDriver(result.value[0]);
           tuta.fetchDriverInfo(result.value[0].providerId);
-          
+
         }
       },
       function(error) { //The second function will always run if there is an error.
@@ -792,6 +805,8 @@ tuta.awaitConfirm = function(bookingID) {
   }, 3, true);
 };
 
+
+
 tuta.renderRouteAndDriver = function (booking){
   var driver = booking.providerId;
   application.service("driverService").invokeOperation(
@@ -802,18 +817,18 @@ tuta.renderRouteAndDriver = function (booking){
         //tuta.util.alert("PICKUP", JSON.stringify(success));
         // tuta.util.alert("SELF", JSON.stringify(currentPos));
         tuta.location.geoCode(booking.location.lat, booking.location.lng, function(s, e){
-        getDirections(s.results[0],success.results[0],null,function(response) {
-          ///tuta.util.alert("ROUTE", JSON.stringify(response));
-          kony.timer.schedule("renderDir", function(){
-            renderDirections(frmMap.mapMain, response, "0x0000FFFF","","");
-            //tuta.util.alert("DISTANCE: ", tuta.location.distance(result.value[0].location.lat, result.value[0].location.lng, booking.location.lat, booking.location.lng));
-          }, 2, false);
-        });
-          
+          getDirections(success.results[0],s.results[0],null,function(response) {
+            ///tuta.util.alert("ROUTE", JSON.stringify(response));
+            kony.timer.schedule("renderDir", function(){
+              renderDirections(frmMap.mapMain, response, "0x0036bba7","","");
+              //tuta.util.alert("DISTANCE: ", tuta.location.distance(result.value[0].location.lat, result.value[0].location.lng, booking.location.lat, booking.location.lng));
+            }, 2, false);
+          });
+
         });
 
       });
-      },
+    },
     function(error) {
       // the service returns 403 (Not Authorised) if credentials are wrong
       //tuta.util.alert("Error " + error);
@@ -838,9 +853,9 @@ tuta.fetchDriverInfo = function(driverID){
             function(r){
               //tuta.util.alert("TEST", JSON.stringify(r));
               frmMap.lblRating.text = r.averageRating + "";
-              tuta.animate.moveBottomLeft(frmMap.flexDriverInfo, 0.3, "0", "0", false);
-              tuta.animate.moveBottomLeft(frmMap.flexCancel, 0.3, "105", "0", false);
-              tuta.animate.moveBottomRight(frmMap.flexPhone, 0.3, "105", "0", false);
+              tuta.animate.moveBottomLeft(frmMap.flexDriverInfo, 0.3, "0", "0", null);
+              tuta.animate.moveBottomLeft(frmMap.flexCancel, 0.3, "105", "-5", null);
+              tuta.animate.moveBottomRight(frmMap.flexPhone, 0.3, "105", "-5", null);
               tuta.trackDriverLoop(driverID);
             }, 
             function(e){}  
@@ -885,7 +900,7 @@ tuta.userExists = function (response){
    | || '__/ _` |/ __| |/ / _ \ '__|
    | || | | (_| | (__|   <  __/ |   
    |_||_|  \__,_|\___|_|\_\___|_|   
-                                    
+
 =========================================================*/  
 
 tuta.trackDriverLoop = function (driverID){
@@ -898,7 +913,7 @@ tuta.trackDriverLoop = function (driverID){
   kony.timer.schedule("trackdriverloop" + driverID, function(){
     tuta.trackDriver(driverID);
 
-  }, 5, true);
+  }, 20, true);
 };
 
 var nearbyDrivers = [];
@@ -911,26 +926,45 @@ tuta.trackDriver = function(driverID){
   };
 
   //Query the server
-  application.service("userService").invokeOperation(
+  application.service("driverService").invokeOperation(
     "user", {}, input,
     function(result) { 
 
       nearbyDrivers = []; //clear the array of drivers
 
-      var driver = {
-        id: result.value[0]._id,
-        location: result.value[0].location
+      driver = {
+        id: result.value[0].id,
+        location: {
+          lat: result.value[0].location.lat,
+          lng: result.value[0].location.lng
+        }
       };
 
       nearbyDrivers.push(driver);
+      
+      var lat1 = parseFloat(driver.location.lat);
+      var lon1 = parseFloat(driver.location.lng);
+      var lat2 = parseFloat(currentPos.geometry.location.lat);
+      var lon2 = parseFloat(currentPos.geometry.location.lng);
+      var distNow = tuta.location.distance(lat1, lon1, lat2, lon2);
+      
+      if(distNow < 200 && distNow > 50){
+        driverIsNearby = true;
+        tuta.animate.move(frmMap.flexArriving, 0.2, "65", "15%", null);
+        tuta.animate.moveBottomLeft(frmMap.flexCancel, 0.1, "105", "-100", null);
+      }
+      else if (distNow <= 50){
+        //ANIMATE IN NEARBY SLIDER
+        tuta.animate.moveBottomRight(frmMap.flexPhone, 0.1, "105", "-100", null);
+        frmMap.flexDarken.setVisibility(true);
+      }
+      
 
-      /*
-        This needs to be reworked to only 
-        update and not zoom in on current location.
+      //tuta.util.alert("LOCATIONS", driver.location.lat + " " + driver.location.lng + " " + currentPos.geometry.location.lat + " " + currentPos.geometry.location.lng);
+      //var distNow = 0;
+      
 
-        Update map is on line 747.
-      */
-      //updateMap();
+      //updateMap(); 
     },
     function(error) {
       // the service returns 403 (Not Authorised) if credentials are wrong
@@ -938,6 +972,8 @@ tuta.trackDriver = function(driverID){
     }
   );
 };
+
+var driverIsNearby = true;
 
 /*=========================================================*/
 
@@ -964,7 +1000,7 @@ tuta.initCallback = function(error) {
               // make IF statement to check for 403 error only
               input = kony.store.removeItem("user");
               tuta.animate.moveBottomLeft(frmSplash.flexMainButtons, 0.2, "0%", "0", null);
-              
+
             }
           );
         }
@@ -989,7 +1025,7 @@ tuta.initCallback = function(error) {
  | |   / _ \ / __/ _` | __| |/ _ \| '_ \ 
  | |__| (_) | (_| (_| | |_| | (_) | | | |
  |_____\___/ \___\__,_|\__|_|\___/|_| |_|
-                                              
+
 =========================================================*/
 
 var watchID = null;
@@ -1008,13 +1044,13 @@ tuta.startWatchLocation = function(){
           tuta.location.geoCode(position.coords.latitude, position.coords.longitude, function(s, e){
             currentPos = s.results[0];
             //updateMap();
-            
+
             tuta.location.updateLocationOnServer(s.results[0]);
           });
         },
         function (errorMsg) {
           //if(errorMsg.code !==3 )
-            //tuta.util.alert("ERROR", errorMsg);
+          //tuta.util.alert("ERROR", errorMsg);
         }, 
 
         { timeout: 35000, maximumAge: 5000, enableHighAccuracy : true }

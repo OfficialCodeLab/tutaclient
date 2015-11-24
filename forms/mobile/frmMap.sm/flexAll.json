@@ -48,7 +48,8 @@
         "btnChs",
         "flexDarken",
         "btnCancelHailDriving",
-        "flexAdd"
+        "flexAdd",
+        "flexArriving"
     ],
     "clipBounds": true,
     "clipbounds": true,

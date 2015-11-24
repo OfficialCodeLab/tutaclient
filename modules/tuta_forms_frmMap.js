@@ -187,6 +187,8 @@ tuta.forms.frmMap = function() {
 
   tuta.forms.frmMap.onPostShow = function(form) {
     var self = this;    
+    //var testDist = tuta.location.distance(12.33,12.55,22.67,23.52);
+    //tuta.util.alert("TEST", testDist);
 
     //Cancel kony timer
     /*
