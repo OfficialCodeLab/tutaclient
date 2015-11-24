@@ -37,7 +37,8 @@
         "flexMenu",
         "flexAll",
         "flexPayment",
-        "flexSwipe"
+        "flexSwipe",
+        "flexDriverArrival"
     ],
     "containerWeight": 100,
     "containerweight": 100,
@@ -115,8 +116,8 @@
     "paddinginpixel": false,
     "percent": true,
     "platform": "android",
-    "prevDevice": "iPhone6Plus",
-    "prevPlatform": "iphone",
+    "prevDevice": "GalaxyS4",
+    "prevPlatform": "spaan",
     "render": true,
     "retainScrollPosition": false,
     "retainscrollposition": false,
