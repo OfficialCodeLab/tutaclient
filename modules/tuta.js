@@ -7,8 +7,8 @@ var geocodeRecieved = false;
 
 var searchMode = 0;
 /*
-	These will hold geocoding data
-*/
+      These will hold geocoding data
+  */
 var destination = null;
 var pickupPoint = null;
 var taxiPosition = null;
@@ -88,9 +88,9 @@ function uMap()
     updateMap();
 }
 /*
-var animationSelected = kony.ui.createAnimation({"100":{"anchorPoint":{"x":0.5,"y":0.5},"stepConfig":{"timingFunction":kony.anim.EASIN_IN_OUT},"width":"100dp","height":"100dp"}});
-var animationDeselect = kony.ui.createAnimation({"100":{"anchorPoint":{"x":0.5,"y":0.5},"stepConfig":{"timingFunction":kony.anim.EASIN_IN_OUT},"width":"80dp","height":"80dp"}});
-*/
+  var animationSelected = kony.ui.createAnimation({"100":{"anchorPoint":{"x":0.5,"y":0.5},"stepConfig":{"timingFunction":kony.anim.EASIN_IN_OUT},"width":"100dp","height":"100dp"}});
+  var animationDeselect = kony.ui.createAnimation({"100":{"anchorPoint":{"x":0.5,"y":0.5},"stepConfig":{"timingFunction":kony.anim.EASIN_IN_OUT},"width":"80dp","height":"80dp"}});
+  */
 
 
 function fixHours(){ 
@@ -357,12 +357,12 @@ function showNow(){
     animateMove(frmConfirm.imgNow, 0.25, "0", "-15", null);
   }
   /* sliderDir = 0;
-    frmConfirm.sliderBook.setVisibility(false);       
-    kony.timer.schedule("reset", function() { 
-      frmConfirm.sliderBook.setVisibility(true);  
-      sliderDir = 1;
-    }, 1, false);
-    frmConfirm.sliderBook.selectedValue = -10;  */  
+      frmConfirm.sliderBook.setVisibility(false);       
+      kony.timer.schedule("reset", function() { 
+        frmConfirm.sliderBook.setVisibility(true);  
+        sliderDir = 1;
+      }, 1, false);
+      frmConfirm.sliderBook.selectedValue = -10;  */  
 }
 
 function showLater(){
@@ -374,9 +374,9 @@ function showLater(){
       //frmConfirm["calTime"]["isVisible"] = true;
       frmConfirm.lblDateTimeNew.setVisibility(true);
       frmConfirm.lblDateTime.setVisibility(false); /*
-  frmConfirm.lblTime.setVisibility(true);
-  frmConfirm.btnSetTime.setVisibility(true);  
-  frmConfirm.flexDetails2.height = 215; */  
+    frmConfirm.lblTime.setVisibility(true);
+    frmConfirm.btnSetTime.setVisibility(true);  
+    frmConfirm.flexDetails2.height = 215; */  
       //frmConfirm["lblTime"]["isVisible"] = true;
       frmConfirm.scrollToBeginning();
       kony.timer.schedule("showDateTime", function(){frmConfirm["flexDateTime"]["isVisible"] = true;
@@ -400,9 +400,15 @@ function setUpSwipes(){
       showNow();
     }
   });
-  
+
   frmMap.flexNoPanning.addGestureRecognizer(constants.GESTURE_TYPE_SWIPE, setupTblSwipe,  function(widget, gestureInformationSwipe) {
-    
+
+  });
+
+  frmMap.flexSwiper.addGestureRecognizer(constants.GESTURE_TYPE_SWIPE, setupTblSwipe,  function(widget, gestureInformationSwipe) {
+    if(gestureInformationSwipe.swipeDirection == 2) { //RIGHT
+      tuta.renderFinalRoute();
+    }
   });
 
 }
@@ -482,18 +488,18 @@ function resetSearchBar() {
 }
 
 /*=========================================================
-  _   _           _       _       
- | | | |_ __   __| | __ _| |_ ___ 
- | | | | '_ \ / _` |/ _` | __/ _ \
- | |_| | |_) | (_| | (_| | ||  __/
-  \___/| .__/ \__,_|\__,_|\__\___|
-  __  _|_|                        
- |  \/  | __ _ _ __               
- | |\/| |/ _` | '_ \              
- | |  | | (_| | |_) |             
- |_|  |_|\__,_| .__/              
-              |_|                 
-=========================================================*/   
+    _   _           _       _       
+   | | | |_ __   __| | __ _| |_ ___ 
+   | | | | '_ \ / _` |/ _` | __/ _ \
+   | |_| | |_) | (_| | (_| | ||  __/
+    \___/| .__/ \__,_|\__,_|\__\___|
+    __  _|_|                        
+   |  \/  | __ _ _ __               
+   | |\/| |/ _` | '_ \              
+   | |  | | (_| | |_) |             
+   |_|  |_|\__,_| .__/              
+                |_|                 
+  =========================================================*/   
 
 var currentPos;
 function updateMap() {
@@ -505,22 +511,26 @@ function updateMap() {
 
   var locationData = [];
 
-  if(overview.active === 1){
-    locationData.push(
-      {lat: "" + overview.lat + "", 
-       lon: "" + overview.lng + "", 
-       name:"Map Middle", 
-       desc: "", 
-       image : ""});    
-  }
+  if(driverArrived === false){
 
-  //var count = 0;
-  locationData.push(
-    {lat: "" + currentPos.geometry.location.lat + "", 
-     lon: "" + currentPos.geometry.location.lng + "", 
-     name:"Pickup Location", 
-     desc: currentPos.formatted_address.replace(/`+/g,""), 
-     image : pickupicon + ""});
+    if(overview.active === 1){
+      locationData.push(
+        {lat: "" + overview.lat + "", 
+         lon: "" + overview.lng + "", 
+         name:"Map Middle", 
+         desc: "", 
+         image : ""});    
+    }
+
+    //var count = 0;
+    locationData.push(
+      {lat: "" + currentPos.geometry.location.lat + "", 
+       lon: "" + currentPos.geometry.location.lng + "", 
+       name:"Pickup Location", 
+       desc: currentPos.formatted_address.replace(/`+/g,""), 
+       image : pickupicon + ""});
+
+  }
 
 
   if(nearbyDrivers.length > 0){
@@ -552,6 +562,7 @@ function getCabPinForBearing(startloc,endloc) {
 
 var finalroute = null;
 var taxiRoute = null;
+var finaldestination = null
 
 function onLocationSelected() {
   // Search mode 0 means we have a destination
@@ -760,6 +771,16 @@ tuta.menuToggle = function (time, bool){
   }         
 }
 
+tuta.resetMap = function (){
+  frmMap.flexNoPanning.setVisibility(false);
+  nearbyDrivers = [];
+  driverArrived = false;
+  frmMap.flexAdd.setVisibility(true);
+  frmMap.flexChangeDest.setVisibility(true);
+  frmMap.flexNoOfPeople.setVisibility(true);
+  frmMap.mapMain.clear();
+};
+
 
 var inputBooking;
 tuta.awaitConfirm = function(bookingID) {
@@ -786,13 +807,14 @@ tuta.awaitConfirm = function(bookingID) {
       function(result) { //This is the default function that runs if the query is succesful, if there is a result.
         if (result.value[0].status==="OnRoute")
         {
-		  frmMap.flexNoPanning.setVisibility(true);
+          frmMap.flexNoPanning.setVisibility(true);
           frmMap.flexProgress.setVisibility(false);
           //frmMap["flexProgress"]["isVisible"] = false;
           kony.timer.cancel("taxiHailTimer");
           //tuta.util.alert("success","Your booking has been confirmed!");
           tuta.renderRouteAndDriver(result.value[0]);
           tuta.fetchDriverInfo(result.value[0].providerId);
+          yourBooking = bookingID;
 
         }
       },
@@ -805,7 +827,35 @@ tuta.awaitConfirm = function(bookingID) {
   }, 3, true);
 };
 
+tuta.renderFinalRoute = function(){
+  tuta.animate.move(frmMap.imgSwipeLever, 0.3, "", "70%", null);
+  kony.timer.schedule("swiperball", function(){
+    awaitingConfirmation = false;
+    tuta.animate.move(frmMap.flexDriverArrival, 0, "", "200%", null);
 
+    frmMap["flexDarken"]["isVisible"] = false;
+    frmMap.mapMain.removePolyline("polyid1");
+    application.service("driverService").invokeOperation(
+      "booking", {}, {id: yourBooking},
+      function(result){
+        //var finaldestination = result.value[0].address.description;
+
+        tuta.location.geoCode(nearbyDrivers[0].location.lat, nearbyDrivers[0].location.lng, function(s, e){
+          getDirections(s.results[0], destination, null, function(response){
+            kony.timer.schedule("renderDirFinal", function(){
+              renderDirections(frmMap.mapMain, response, "0x0036bba7","","");
+            }, 1, false);
+          });
+        });
+
+      }, function(error){
+
+      });
+    // NOW GET DIRECTIONS FROM DRIVER TO FINAL DESTINATION
+  }, 0.5, false);
+};
+
+var yourBooking;
 
 tuta.renderRouteAndDriver = function (booking){
   var driver = booking.providerId;
@@ -891,17 +941,17 @@ tuta.userExists = function (response){
 };
 
 /*=========================================================
-  ____       _                      
- |  _ \ _ __(_)_   _____ _ __       
- | | | | '__| \ \ / / _ \ '__|      
- | |_| | |  | |\ V /  __/ |         
- |____/|_|  |_| \_/ \___|_|         
- |_   _| __ __ _  ___| | _____ _ __ 
-   | || '__/ _` |/ __| |/ / _ \ '__|
-   | || | | (_| | (__|   <  __/ |   
-   |_||_|  \__,_|\___|_|\_\___|_|   
+    ____       _                      
+   |  _ \ _ __(_)_   _____ _ __       
+   | | | | '__| \ \ / / _ \ '__|      
+   | |_| | |  | |\ V /  __/ |         
+   |____/|_|  |_| \_/ \___|_|         
+   |_   _| __ __ _  ___| | _____ _ __ 
+     | || '__/ _` |/ __| |/ / _ \ '__|
+     | || | | (_| | (__|   <  __/ |   
+     |_||_|  \__,_|\___|_|\_\___|_|   
 
-=========================================================*/  
+  =========================================================*/  
 
 tuta.trackDriverLoop = function (driverID){
   try{
@@ -913,7 +963,7 @@ tuta.trackDriverLoop = function (driverID){
   kony.timer.schedule("trackdriverloop" + driverID, function(){
     tuta.trackDriver(driverID);
 
-  }, 20, true);
+  }, 10, true);
 };
 
 var nearbyDrivers = [];
@@ -941,28 +991,54 @@ tuta.trackDriver = function(driverID){
       };
 
       nearbyDrivers.push(driver);
-      
-      var lat1 = parseFloat(driver.location.lat);
-      var lon1 = parseFloat(driver.location.lng);
-      var lat2 = parseFloat(currentPos.geometry.location.lat);
-      var lon2 = parseFloat(currentPos.geometry.location.lng);
-      var distNow = tuta.location.distance(lat1, lon1, lat2, lon2);
-      
-      if(distNow < 200 && distNow > 50){
-        driverIsNearby = true;
-        tuta.animate.move(frmMap.flexArriving, 0.2, "65", "15%", null);
-        tuta.animate.moveBottomLeft(frmMap.flexCancel, 0.1, "105", "-100", null);
+
+
+      if(driverArrived === false){
+        var lat1 = parseFloat(driver.location.lat);
+        var lon1 = parseFloat(driver.location.lng);
+        var lat2 = parseFloat(currentPos.geometry.location.lat);
+        var lon2 = parseFloat(currentPos.geometry.location.lng);
+        var distNow = tuta.location.distance(lat1, lon1, lat2, lon2);
+
+        if(distNow < 500 && distNow > 200){
+          driverIsNearby = true;
+          tuta.animate.move(frmMap.flexArriving, 0.2, "65", "15%", null);
+          tuta.animate.moveBottomLeft(frmMap.flexCancel, 0.1, "105", "-100", null);
+        }
+        else if (distNow <= 200){
+          //ANIMATE IN NEARBY SLIDER
+          frmMap["flexDarken"]["isVisible"] = true;
+          tuta.animate.moveBottomLeft(frmMap.flexCancel, 0, "105", "-100", null);
+          tuta.animate.move(frmMap.flexArriving, 0, "65", "105%", null);
+          tuta.animate.move(frmMap.flexDriverArrival, 0, "", "10%", null);
+          tuta.animate.moveBottomLeft(frmMap.flexTimeToDest, 0.1, "105", "-5", null);
+          tuta.animate.moveBottomRight(frmMap.flexPhone, 0.1, "105", "-100", null);
+          driverArrived = true;
+        }        
       }
-      else if (distNow <= 50){
-        //ANIMATE IN NEARBY SLIDER
-        tuta.animate.moveBottomRight(frmMap.flexPhone, 0.1, "105", "-100", null);
-        frmMap.flexDarken.setVisibility(true);
+      else if (awaitingConfirmation === false)
+      {
+        var finallat1 = parseFloat(driver.location.lat);
+        var finallon1 = parseFloat(driver.location.lng);
+        var finallat2 = parseFloat(destination.geometry.location.lat);
+        var finallon2 = parseFloat(destination.geometry.location.lng);
+        var finaldistNow = tuta.location.distance(finallat1, finallon1, finallat2, finallon2);
+        //frmMap.lblMins.text = Math.trunc(Math.round(finalDistNow/1000)) + " MINS";
+        if (finaldistNow <= 150){
+          //ANIMATE IN NEARBY SLIDER
+          frmMap.flexOverlay2.isVisisble = true;
+          tuta.animate.moveBottomLeft(frmMap.flexTimeToDest, 0.1, "105", "-150", null);
+          tuta.animate.moveBottomLeft(frmMap.flexDriverInfo, 0.1, "-110", "", null);
+          kony.timer.cancel("trackdriverloop");
+        }  
+
       }
-      
+
+
 
       //tuta.util.alert("LOCATIONS", driver.location.lat + " " + driver.location.lng + " " + currentPos.geometry.location.lat + " " + currentPos.geometry.location.lng);
       //var distNow = 0;
-      
+
 
       //updateMap(); 
     },
@@ -973,11 +1049,13 @@ tuta.trackDriver = function(driverID){
   );
 };
 
-var driverIsNearby = true;
+var driverArrived = false;
+var awaitingConfirmation = true;
 
 /*=========================================================*/
 
 tuta.initCallback = function(error) {
+  setUpSwipes();
   application.login("techuser@ssa.co.za","T3chpassword", function(result,error) {
     if(error) ssa.util.alert("Login Error", error);  
     else
@@ -1016,17 +1094,17 @@ tuta.initCallback = function(error) {
 };
 
 /*=========================================================
- __        __    _       _               
- \ \      / /_ _| |_ ___| |__            
-  \ \ /\ / / _` | __/ __| '_ \           
-   \ V  V / (_| | || (__| | | |          
-  _ \_/\_/ \__,_|\__\___|_|_|_|          
- | |    ___   ___ __ _| |_(_) ___  _ __  
- | |   / _ \ / __/ _` | __| |/ _ \| '_ \ 
- | |__| (_) | (_| (_| | |_| | (_) | | | |
- |_____\___/ \___\__,_|\__|_|\___/|_| |_|
+   __        __    _       _               
+   \ \      / /_ _| |_ ___| |__            
+    \ \ /\ / / _` | __/ __| '_ \           
+     \ V  V / (_| | || (__| | | |          
+    _ \_/\_/ \__,_|\__\___|_|_|_|          
+   | |    ___   ___ __ _| |_(_) ___  _ __  
+   | |   / _ \ / __/ _` | __| |/ _ \| '_ \ 
+   | |__| (_) | (_| (_| | |_| | (_) | | | |
+   |_____\___/ \___\__,_|\__|_|\___/|_| |_|
 
-=========================================================*/
+  =========================================================*/
 
 var watchID = null;
 var initialized = 0;

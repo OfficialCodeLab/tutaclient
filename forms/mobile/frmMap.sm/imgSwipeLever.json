@@ -5,11 +5,11 @@
     "_base64_": null,
     "_height_": {
         "type": "string",
-        "value": "40dp"
+        "value": "35dp"
     },
     "_left_": {
         "type": "string",
-        "value": "107dp"
+        "value": "15%"
     },
     "_margin_": [
         0,
@@ -31,16 +31,11 @@
     },
     "_width_": {
         "type": "string",
-        "value": "40dp"
+        "value": "35dp"
     },
     "base64": null,
     "canUpdateUI": true,
-    "centerX": "10%",
     "centerY": "50%",
-    "centerx": {
-        "type": "string",
-        "value": "10%"
-    },
     "centery": {
         "type": "string",
         "value": "50%"
@@ -56,7 +51,7 @@
         "topLevelBox": null
     },
     "enabled": false,
-    "height": "40dp",
+    "height": "35dp",
     "id": "imgSwipeLever",
     "imageScaleMode": 1,
     "imagescalemode": 1,
@@ -64,8 +59,8 @@
     "isVisible": true,
     "ispercent": true,
     "isvisible": true,
-    "kuid": "f293f601a7ba4b93a33a7e140f17363e",
-    "left": "107dp",
+    "kuid": "2fb600a6808a46adbc076b2913c58f39",
+    "left": "15%",
     "margin": [
         0,
         0,
@@ -89,7 +84,7 @@
     "wType": "Image",
     "widgetAlignment": 5,
     "widgetalignment": 5,
-    "width": "40dp",
+    "width": "35dp",
     "zIndex": 1,
     "zindex": 1
 }

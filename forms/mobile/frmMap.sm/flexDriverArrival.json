@@ -58,7 +58,7 @@
     "info": null,
     "isVisible": true,
     "isvisible": true,
-    "kuid": "dc31129181664fbd8a9884758ae3bfd4",
+    "kuid": "7cb4a78cd56b437a86b9104a5af88c53",
     "layoutType": 2,
     "layouttype": 2,
     "left": "200%",
@@ -76,7 +76,7 @@
         0,
         0
     ],
-    "parent": "frmMap",
+    "parent": "flexAll",
     "percent": true,
     "pf": "frmMap",
     "render": true,

@@ -130,15 +130,9 @@ tuta.forms.frmMap = function() {
     this.control("btnCancelHailNow").onClick = function () {frmMap.flexOverlay1.setVisibility(false); cancelHail();};
     this.control("btnReturnToTrip").onClick = function () {frmMap.flexOverlay1.setVisibility(false);};
     this.control("btnSubmitRating").onClick = function(){
-      frmMap.flexOverlay2.setVisibility(false);
-      //#ifdef iphone
-      kony.timer.schedule("cancelHail", function() {  
-        cancelHail();
-      }, 0.3, false);
-      //#endif
-
-      //ifdef android
-      cancelHail();
+      frmMap["flexOverlay2"]["isVisible"] = false;
+      
+          tuta.resetMap();
     };
     this.control("btnCancelHailDriving").onTouchStart = cancelHailPrompt;
     this.control("segAddressList").onRowClick = onLocationSelected;

@@ -37,8 +37,7 @@
         "flexMenu",
         "flexAll",
         "flexPayment",
-        "flexSwipe",
-        "flexDriverArrival"
+        "flexSwipe"
     ],
     "containerWeight": 100,
     "containerweight": 100,

@@ -4,8 +4,12 @@
     "__parentReadjusting__": false,
     "_base64_": null,
     "_height_": {
+        "type": "number",
+        "value": "40"
+    },
+    "_left_": {
         "type": "string",
-        "value": "30dp"
+        "value": "20%"
     },
     "_margin_": [
         0,
@@ -19,15 +23,15 @@
         0,
         0
     ],
+    "_right_": {
+        "type": "string",
+        "value": "20%"
+    },
     "_skin_": "s4ea8d4d07574957b839f06194980e52",
     "_src_": "swipebar.png",
     "_top_": {
         "type": "string",
         "value": "29dp"
-    },
-    "_width_": {
-        "type": "string",
-        "value": "90%"
     },
     "base64": null,
     "canUpdateUI": true,
@@ -52,7 +56,7 @@
         "topLevelBox": null
     },
     "enabled": false,
-    "height": "30dp",
+    "height": 40,
     "id": "imgSwipeBar",
     "imageScaleMode": 1,
     "imagescalemode": 1,
@@ -60,7 +64,8 @@
     "isVisible": true,
     "ispercent": true,
     "isvisible": true,
-    "kuid": "e4a3c5af85284bdfbcd36684e2076231",
+    "kuid": "d2f21c99a10d4d1aa45b49ca1847e692",
+    "left": "20%",
     "margin": [
         0,
         0,
@@ -77,12 +82,12 @@
     "parent": "flexSwiper",
     "pf": "frmMap",
     "render": true,
+    "right": "20%",
     "skin": "s4ea8d4d07574957b839f06194980e52",
     "src": "swipebar.png",
     "srcType": 1,
     "top": "29dp",
     "wType": "Image",
     "widgetAlignment": 5,
-    "widgetalignment": 5,
-    "width": "90%"
+    "widgetalignment": 5
 }
