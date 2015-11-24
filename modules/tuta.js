@@ -851,6 +851,14 @@ tuta.renderFinalRoute = function(){
       }, function(error){
 
       });
+    
+    application.service("manageService").invokeOperation(
+      "bookingUpdate", {}, {id: yourBooking, data: {status: "InTransit"}},
+      function(result){
+
+      }, function(error){
+
+      });
     // NOW GET DIRECTIONS FROM DRIVER TO FINAL DESTINATION
   }, 0.5, false);
 };
