@@ -879,7 +879,7 @@ tuta.renderRouteAndDriver = function (booking){
         // tuta.util.alert("SELF", JSON.stringify(currentPos));
         //tuta.location.geoCode(booking.location.lat, booking.location.lng, function(s, e){
           //getDirections(success.results[0],s.results[0],null,function(response) {
-            tuta.location.directionsFromCoordinates(result.value[0].location.lat, result.value[0].location.lat, booking.location.lng, booking.location.lng, function(response){
+            tuta.location.directionsFromCoordinates(result.value[0].location.lat, result.value[0].location.lng, booking.location.lat, booking.location.lng, function(response){
               
             ///tuta.util.alert("ROUTE", JSON.stringify(response));
             kony.timer.schedule("renderDir", function(){
