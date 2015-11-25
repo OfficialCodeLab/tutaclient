@@ -5,6 +5,7 @@ var star = [];
 var hailState;
 var geocodeRecieved = false;
 var trackingZoom = 0;
+var lastbrng = 0;
 
 var searchMode = 0;
 /*
@@ -14,6 +15,7 @@ var destination = null;
 var pickupPoint = null;
 var taxiPosition = null;
 var viaList = [];
+var tripOnRoute = false;
 
 //Carl's Varibles
 var hailingTaxi = false; //Used to prevent multiple requests
@@ -728,10 +730,14 @@ tuta.menuToggle = function (time, bool){
   =========================================================*/   
 
 var currentPos;
+var currentPin = "cabpin0.png";
 function updateMap() {
   //frmMap.mapMain.zoomLevel = tuta.location.zoomLevelFromLatLng(currentPos.geometry.location.lat, currentPos.geometry.location.lng);
 
   var pickupicon = "";
+  
+  
+    
 
   var locationData = [];
 
@@ -762,12 +768,17 @@ function updateMap() {
 
 
   if(nearbyDrivers.length > 0){
-    locationData.push(
-      {lat: "" + nearbyDrivers[0].location.lat + "", 
-       lon: "" + nearbyDrivers[0].location.lng + "", 
-       name: nearbyDrivers[0].id, 
-       desc: "", 
-       image : "cabpin0.png"});
+      //tuta.util.alert("TEST", response);
+    tuta.driverBearing(nearbyDrivers[0].id, function(response){
+      currentPin = response;
+    });
+      locationData.push(
+        {lat: "" + nearbyDrivers[0].location.lat + "", 
+         lon: "" + nearbyDrivers[0].location.lng + "", 
+         name: nearbyDrivers[0].id, 
+         desc: "", 
+         image : currentPin});
+
     //count++;
   }
   
@@ -793,6 +804,7 @@ tuta.resetMap = function (){
   frmMap.mapMain.clear();
   initialLoad = true;
   trackingZoom = 0;
+  tripOnRoute = false;
 };
 
 
@@ -819,8 +831,9 @@ tuta.awaitConfirm = function(bookingID) {
     application.service("userService").invokeOperation(
       "booking", {}, inputBooking,
       function(result) { //This is the default function that runs if the query is succesful, if there is a result.
-        if (result.value[0].status==="OnRoute")
+        if (result.value[0].status ==="OnRoute")
         {
+          tripOnRoute = true;
           frmMap.flexNoPanning.setVisibility(true);
           frmMap.flexProgress.setVisibility(false);
           //frmMap["flexProgress"]["isVisible"] = false;
@@ -845,7 +858,7 @@ tuta.renderFinalRoute = function(){
   tuta.animate.move(frmMap.imgSwipeLever, 0.3, "", "70%", null);
   kony.timer.schedule("swiperball", function(){
     awaitingConfirmation = false;
-    tuta.animate.move(frmMap.flexDriverArrival, 0, "", "200%", null);
+    //tuta.animate.move(frmMap.flexDriverArrival, 0, "", "200%", null);
 
     frmMap["flexDarken"]["isVisible"] = false;
     frmMap.mapMain.removePolyline("polyid1");
@@ -868,6 +881,8 @@ tuta.renderFinalRoute = function(){
       }, function(error){
 
       });
+    
+    /*
 
     application.service("manageService").invokeOperation(
       "bookingUpdate", {}, {id: yourBooking, data: {status: "InTransit"}},
@@ -875,9 +890,37 @@ tuta.renderFinalRoute = function(){
 
       }, function(error){
 
-      });
+      });*/
     // NOW GET DIRECTIONS FROM DRIVER TO FINAL DESTINATION
   }, 0.5, false);
+};
+
+tuta.driverBearing = function (driverID, callback){
+  application.service("driverService").invokeOperation(
+    "user", {}, {id : driverID},
+    function(result){
+      try{
+        var brng = 0;
+        brng = Math.abs(Math.round(result.value[0].location.direction / 15)) * 15; 
+
+        if(brng >= 360)
+          brng = 0;
+
+        if(brng !== null && brng === brng){
+          lastbrng = brng;
+          callback("cabpin" + brng + ".png");
+        }
+        else
+          callback("cabpin" + lastbrng + ".png");
+      }
+      catch (ex){
+        callback("cabpin" + lastbrng + ".png");
+      }
+
+    }, function (error){
+      tuta.util.alert("ERROR", error);
+      callback("cabpin" + lastbrng + ".png");
+    });
 };
 
 var yourBooking;
@@ -1038,7 +1081,7 @@ tuta.trackDriver = function(driverID){
       }
 
 
-      if(driverArrived === false){
+      if(driverArrived === false && tripOnRoute === true){
         var lat1 = parseFloat(driver.location.lat);
         var lon1 = parseFloat(driver.location.lng);
         var lat2 = parseFloat(currentPos.geometry.location.lat);
@@ -1051,15 +1094,14 @@ tuta.trackDriver = function(driverID){
           tuta.animate.moveBottomLeft(frmMap.flexCancel, 0.1, "105", "-100", null);
         }
         else if (distNow <= 200){
-          //ANIMATE IN NEARBY SLIDER
-          tuta.awaitDriverPickupConfirmation();
-          frmMap["flexDarken"]["isVisible"] = true;
           tuta.animate.moveBottomLeft(frmMap.flexCancel, 0, "105", "-100", null);
           tuta.animate.move(frmMap.flexArriving, 0, "65", "105%", null);
+          tuta.animate.moveBottomRight(frmMap.flexPhone, 0, "105", "-100", null);
+          frmMap.flexDarken.setVisibility(true);
           tuta.animate.move(frmMap.flexDriverArrived, 0, "", "10%", null);
-          tuta.animate.moveBottomLeft(frmMap.flexTimeToDest, 0.1, "105", "-5", null);
-          tuta.animate.moveBottomRight(frmMap.flexPhone, 0.1, "105", "-100", null);
+          overview.active = 0;
           driverArrived = true;     
+          tuta.awaitDriverPickupConfirmation();
         }        
       }
       else if (awaitingConfirmation === false)
@@ -1070,13 +1112,17 @@ tuta.trackDriver = function(driverID){
         var finallon2 = parseFloat(destination.geometry.location.lng);
         var finaldistNow = tuta.location.distance(finallat1, finallon1, finallat2, finallon2);
         var etaNow = parseInt(Math.round(finaldistNow/1000));
-        frmMap.lblMins.text = etaNow + " MINS";
+        if(etaNow === 1)
+          frmMap.lblMins.text = etaNow + " MIN";
+        else
+          frmMap.lblMins.text = etaNow + " MINS";
 
         application.service("driverService").invokeOperation(
-          "booking", {}, {id: inputBooking}, 
+          "booking", {}, inputBooking, 
           function(result){
             try{
               if (result.value[0].status==="Completed"){
+                kony.timer.cancel("trackdriverloop");
                 frmMap.mapMain.zoomLevel = overview.zoom;
                 frmMap.flexOverlay2.setVisibility(true);
                 tuta.animate.moveBottomLeft(frmMap.flexTimeToDest, 0.1, "105", "-150", null);
@@ -1134,14 +1180,16 @@ tuta.awaitDriverPickupConfirmation = function(){
 
   kony.timer.schedule("taxiAwaitTimer", function(){
 
-    var input = {id: inputBooking};
 
-    application.service("userService").invokeOperation(
-      "booking", {}, input,
+    application.service("driverService").invokeOperation(
+      "booking", {}, inputBooking,
       function(result) { 
         try{
-          if (result.value[0].status==="InTransit")
+          if (result.value[0].status==="InTransit"){
+            kony.timer.cancel("taxiAwaitTimer");
+            tuta.animate.moveBottomLeft(frmMap.flexTimeToDest, 0.1, "105", "-5", null);
             tuta.renderFinalRoute();
+          }
         }
         catch(ex){
 

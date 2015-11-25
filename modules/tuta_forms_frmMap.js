@@ -50,6 +50,11 @@ tuta.forms.frmMap = function() {
       0.25
     );	
     
+    this.control("btnArrivedConfirm").onClick = function(button){
+      tuta.animate.move(frmMap.flexDriverArrived, 0, "", "100%", null);
+      frmMap.flexDarken.setVisibility(false);
+    }
+    
     //Get the name of the user
     var userTempQuery = JSON.parse(kony.store.getItem("user"));
       var currentUserEmail = JSON.stringify(userTempQuery.userName);
@@ -173,7 +178,8 @@ tuta.forms.frmMap = function() {
         selectDest(frmMap);      
       }
     };
-    
+
+    frmMap.flexDarken.setVisibility(false);
     frmMap.flexOverlay2.setVisibility(false);
 
 
