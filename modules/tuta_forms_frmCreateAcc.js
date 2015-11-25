@@ -88,12 +88,14 @@ tuta.forms.frmCreateAcc = function() {
                             application.service("manageService").invokeOperation(
                               "userInfoAdd", {}, input, function(success) {
                                 input = { userName : self.control("txtEmail").text , password : self.control("txtPass").text };
-      
+
                                 // try log user in
                                 application.service("userService").invokeOperation(
                                   "login", {}, input,
                                   function(result) {
                                     kony.store.setItem("user", JSON.stringify(input));
+                                    tuta.location.loadPositionInit();
+                                    tuta.animate.moveBottomLeft(frmSplash.flexMainButtons, 0, "0%", "0", null);
                                     tuta.forms.frmMap.show();
                                     tuta.util.alert("SUCCESS", "Account has been created.");
                                   },

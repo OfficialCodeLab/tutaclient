@@ -542,6 +542,7 @@ function updateMap() {
        image : "cabpin0.png"});
     //count++;
   }
+  
 
   frmMap.mapMain.locationData = locationData;
 }
@@ -840,13 +841,15 @@ tuta.renderFinalRoute = function(){
       function(result){
         //var finaldestination = result.value[0].address.description;
 
-        tuta.location.geoCode(nearbyDrivers[0].location.lat, nearbyDrivers[0].location.lng, function(s, e){
-          getDirections(s.results[0], destination, null, function(response){
+        //tuta.location.geoCode(nearbyDrivers[0].location.lat, nearbyDrivers[0].location.lng, function(s, e){
+          //getDirections(s.results[0], destination, null, function(response){
+            tuta.location.directionsFromCoordinates(nearbyDrivers[0].location.lat, nearbyDrivers[0].location.lng, destination.geometry.location.lat, destination.geometry.location.lng, function(response){
+             
             kony.timer.schedule("renderDirFinal", function(){
               renderDirections(frmMap.mapMain, response, "0x0036bba7","","");
             }, 1, false);
           });
-        });
+        //});
 
       }, function(error){
 
@@ -874,8 +877,10 @@ tuta.renderRouteAndDriver = function (booking){
       tuta.location.geoCode(result.value[0].location.lat, result.value[0].location.lng, function(success, error){
         //tuta.util.alert("PICKUP", JSON.stringify(success));
         // tuta.util.alert("SELF", JSON.stringify(currentPos));
-        tuta.location.geoCode(booking.location.lat, booking.location.lng, function(s, e){
-          getDirections(success.results[0],s.results[0],null,function(response) {
+        //tuta.location.geoCode(booking.location.lat, booking.location.lng, function(s, e){
+          //getDirections(success.results[0],s.results[0],null,function(response) {
+            tuta.location.directionsFromCoordinates(success.results[0].geometry.location.lat, success.results[0].geometry.location.lng, booking.location.lat, booking.location.lng, function(response){
+              
             ///tuta.util.alert("ROUTE", JSON.stringify(response));
             kony.timer.schedule("renderDir", function(){
               renderDirections(frmMap.mapMain, response, "0x0036bba7","","");
@@ -883,7 +888,7 @@ tuta.renderRouteAndDriver = function (booking){
             }, 2, false);
           });
 
-        });
+        //});
 
       });
     },
@@ -928,7 +933,12 @@ tuta.fetchDriverInfo = function(driverID){
 };
 
 tuta.startUpdateMapFunction = function(){
-  kony.timer.cancel("updateMapSlow");
+  try{
+    kony.timer.cancel("updateMapSlow");
+  }
+  catch(ex){
+    
+  }
   kony.timer.schedule("updateMapSlow", function(){
     updateMap();
   }, 10, true);
@@ -969,7 +979,12 @@ tuta.trackDriverLoop = function (driverID){
 
   }
   kony.timer.schedule("trackdriverloop" + driverID, function(){
-    tuta.trackDriver(driverID);
+    if(journeyComplete === false)
+    	tuta.trackDriver(driverID);
+    else{
+      kony.timer.cancel("trackdriverloop" + driverID);
+      journeyComplete = true;      
+    }
 
   }, 10, true);
 };
@@ -1034,10 +1049,10 @@ tuta.trackDriver = function(driverID){
         //frmMap.lblMins.text = Math.trunc(Math.round(finalDistNow/1000)) + " MINS";
         if (finaldistNow <= 150){
           //ANIMATE IN NEARBY SLIDER
-          frmMap.flexOverlay2.isVisisble = true;
+          frmMap.flexOverlay2.setVisibility(true);
           tuta.animate.moveBottomLeft(frmMap.flexTimeToDest, 0.1, "105", "-150", null);
           tuta.animate.moveBottomLeft(frmMap.flexDriverInfo, 0.1, "-110", "", null);
-          kony.timer.cancel("trackdriverloop");
+          journeyComplete = true;
         }  
 
       }
@@ -1057,6 +1072,7 @@ tuta.trackDriver = function(driverID){
   );
 };
 
+var journeyComplete = false;
 var driverArrived = false;
 var awaitingConfirmation = true;
 
@@ -1130,7 +1146,7 @@ tuta.startWatchLocation = function(){
           tuta.location.geoCode(position.coords.latitude, position.coords.longitude, function(s, e){
             currentPos = s.results[0];
             //updateMap();
-
+			
             tuta.location.updateLocationOnServer(s.results[0]);
           });
         },

@@ -38,6 +38,10 @@
     "canUpdateUI": true,
     "channel": "mobile",
     "children": [
+        "btnPerson1",
+        "btnPerson2",
+        "btnPerson3",
+        "btnPerson4",
         "imgPeople1",
         "imgPeople2",
         "imgPeople3",
@@ -45,10 +49,6 @@
         "imgPeople5",
         "imgPeople6",
         "lblHowMany",
-        "btnPerson1",
-        "btnPerson2",
-        "btnPerson3",
-        "btnPerson4",
         "btnPerson5",
         "btnPerson6"
     ],

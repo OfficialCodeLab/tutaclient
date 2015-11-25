@@ -49,7 +49,7 @@ tuta.location.loadPositionInit = function(){
       currentPos = success.results[0]; 
       updateMap();
 
-	  tuta.updateLocationOnServer(success.results[0]);
+	  tuta.location.updateLocationOnServer(success.results[0]);
 
     });
   }, function(error) {

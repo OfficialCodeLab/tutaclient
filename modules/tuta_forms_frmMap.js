@@ -17,8 +17,6 @@ tuta.forms.frmMap = function() {
   tuta.forms.frmMap.onPreShow = function(form) {
     var self = this;
 
-    //if(hailState === false) updateMap();
-    hailState = false;
     this.control("btnPerson1").onClick = onPeopleSelect;
     this.control("btnPerson2").onClick = onPeopleSelect;
     this.control("btnPerson3").onClick = onPeopleSelect;
@@ -175,6 +173,8 @@ tuta.forms.frmMap = function() {
         selectDest(frmMap);      
       }
     };
+    
+    frmMap.flexOverlay2.setVisibility(false);
 
 
   };//End Preshow

@@ -50,6 +50,7 @@ tuta.forms.frmSplash = function() {
             kony.store.setItem("user", JSON.stringify(inputs));
             tuta.location.loadPositionInit();
             self.moveLoginButtons.toggle();
+            tuta.animate.moveBottomLeft(frmSplash.flexMainButtons, 0, "0%", "0", null);
             tuta.forms.frmMap.show();
             //tuta.forms.frm003CheckBox.show();
           },
