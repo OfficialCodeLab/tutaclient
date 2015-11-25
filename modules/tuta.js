@@ -874,12 +874,12 @@ tuta.renderRouteAndDriver = function (booking){
     "user", {}, {id : driver},
     function(result) { 
 
-      tuta.location.geoCode(result.value[0].location.lat, result.value[0].location.lng, function(success, error){
+      //tuta.location.geoCode(result.value[0].location.lat, result.value[0].location.lng, function(success, error){
         //tuta.util.alert("PICKUP", JSON.stringify(success));
         // tuta.util.alert("SELF", JSON.stringify(currentPos));
         //tuta.location.geoCode(booking.location.lat, booking.location.lng, function(s, e){
           //getDirections(success.results[0],s.results[0],null,function(response) {
-            tuta.location.directionsFromCoordinates(success.results[0].geometry.location.lat, success.results[0].geometry.location.lng, booking.location.lat, booking.location.lng, function(response){
+            tuta.location.directionsFromCoordinates(result.value[0].location.lat, result.value[0].location.lat, booking.location.lng, booking.location.lng, function(response){
               
             ///tuta.util.alert("ROUTE", JSON.stringify(response));
             kony.timer.schedule("renderDir", function(){
@@ -890,7 +890,7 @@ tuta.renderRouteAndDriver = function (booking){
 
         //});
 
-      });
+      //});
     },
     function(error) {
       // the service returns 403 (Not Authorised) if credentials are wrong
