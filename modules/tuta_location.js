@@ -45,13 +45,13 @@ tuta.location.updateLocationOnServer = function(location){
 tuta.location.loadPositionInit = function(){
   tuta.location.currentPosition(function(response) {
 
-    tuta.location.geoCode(response.coords.latitude, response.coords.longitude, function(success, error){
-      currentPos = success.results[0]; 
+    //tuta.location.geoCode(response.coords.latitude, response.coords.longitude, function(success, error){
+      currentPos = {geometry:{location:{lat: response.coords.latitude,lng: response.coords.longitude}}};
       updateMap();
 
-	  tuta.location.updateLocationOnServer(success.results[0]);
+	  tuta.location.updateLocationOnServer(currentPos);
 
-    });
+    //});
   }, function(error) {
     tuta.util.alert("Error", error);
   });

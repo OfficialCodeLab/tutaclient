@@ -761,7 +761,7 @@ function updateMap() {
       {lat: "" + currentPos.geometry.location.lat + "", 
        lon: "" + currentPos.geometry.location.lng + "", 
        name:"Pickup Location", 
-       desc: currentPos.formatted_address.replace(/`+/g,""), 
+       desc: "", 
        image : pickupicon + ""});
 
   }
@@ -1276,8 +1276,8 @@ tuta.startWatchLocation = function(){
         function(position) {
           kony.store.removeItem("watch");
           kony.store.setItem("watch", watchID);
-          tuta.location.geoCode(position.coords.latitude, position.coords.longitude, function(s, e){
-            currentPos = s.results[0];
+          //tuta.location.geoCode(position.coords.latitude, position.coords.longitude, function(s, e){
+            currentPos = {geometry:{location:{lat: position.coords.latitude,lng: position.coords.longitude}}};
             //updateMap();
 			try{
               tuta.location.updateLocationOnServer(s.results[0]);
@@ -1285,7 +1285,7 @@ tuta.startWatchLocation = function(){
             catch(ex){
               
             }
-          });
+          //});
         },
         function (errorMsg) {
           //if(errorMsg.code !==3 )
@@ -1307,7 +1307,7 @@ tuta.startWatchLocation = function(){
     }
   }
   catch(ex){
-    tuta.util.alert("TEST", ex);
+    //tuta.util.alert("TEST", ex);
   }
 };
 
