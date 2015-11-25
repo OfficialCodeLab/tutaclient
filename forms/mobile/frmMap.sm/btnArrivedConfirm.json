@@ -1,0 +1,74 @@
+{
+    "@class": "com.kony.gen.viz.model.component.KVizButton",
+    "DNDConfig": null,
+    "__parentReadjusting__": false,
+    "_bottom_": {
+        "type": "number",
+        "value": "0"
+    },
+    "_height_": {
+        "type": "string",
+        "value": "50dp"
+    },
+    "_left_": {
+        "type": "string",
+        "value": "0dp"
+    },
+    "_margin_": [
+        6,
+        6,
+        6,
+        6
+    ],
+    "_padding_": [
+        0,
+        0,
+        0,
+        0
+    ],
+    "_skin_": "s2b1ab3f1b5d45e2858fe81b5063b00f",
+    "_text_": "OK",
+    "_width_": {
+        "type": "string",
+        "value": "100%"
+    },
+    "bottom": 0,
+    "canUpdateUI": true,
+    "containerWeight": 100,
+    "containerweight": 100,
+    "contentAlignment": 5,
+    "contentalignment": 5,
+    "displayText": true,
+    "displaytext": true,
+    "enabled": false,
+    "focusSkin": "s9eb2d797c474169b7be7d9ffba9ee5b",
+    "focusskin": "s9eb2d797c474169b7be7d9ffba9ee5b",
+    "height": "50dp",
+    "id": "btnArrivedConfirm",
+    "info": null,
+    "isVisible": true,
+    "isvisible": true,
+    "kuid": "4242e0b2bb234444843be0ecb39091f2",
+    "left": "0dp",
+    "margin": [
+        6,
+        6,
+        6,
+        6
+    ],
+    "name": "kony.ui.Button",
+    "padding": [
+        0,
+        0,
+        0,
+        0
+    ],
+    "parent": "flexDriverArrived",
+    "pf": "frmMap",
+    "render": true,
+    "skin": "s2b1ab3f1b5d45e2858fe81b5063b00f",
+    "text": "OK",
+    "wType": "Button",
+    "widgetAlignment": 5,
+    "width": "100%"
+}

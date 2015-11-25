@@ -28,7 +28,10 @@ tuta.forms.frmLogin = function() {
             },
             function(error) {
                 // the service returns 403 (Not Authorised) if credentials are wrong
-                tuta.util.alert(error);
+              if(error.httpStatusCode + "" == "403"){
+                tuta.util.alert("Invalid Credentials", "Your username and password combination was wrong, please try again.");
+              }
+                //tuta.util.alert(error);
             }
         );
     };

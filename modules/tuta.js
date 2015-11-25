@@ -4,6 +4,7 @@ var people = [];
 var star = [];
 var hailState;
 var geocodeRecieved = false;
+var trackingZoom = 0;
 
 var searchMode = 0;
 /*
@@ -407,7 +408,7 @@ function setUpSwipes(){
 
   frmMap.flexSwiper.addGestureRecognizer(constants.GESTURE_TYPE_SWIPE, setupTblSwipe,  function(widget, gestureInformationSwipe) {
     if(gestureInformationSwipe.swipeDirection == 2) { //RIGHT
-      tuta.renderFinalRoute();
+      //tuta.renderFinalRoute();
     }
   });
 
@@ -487,67 +488,6 @@ function resetSearchBar() {
   animateMove(frmMap.flexAdd, 0.3, "70", "-100%", null);
 }
 
-/*=========================================================
-    _   _           _       _       
-   | | | |_ __   __| | __ _| |_ ___ 
-   | | | | '_ \ / _` |/ _` | __/ _ \
-   | |_| | |_) | (_| | (_| | ||  __/
-    \___/| .__/ \__,_|\__,_|\__\___|
-    __  _|_|                        
-   |  \/  | __ _ _ __               
-   | |\/| |/ _` | '_ \              
-   | |  | | (_| | |_) |             
-   |_|  |_|\__,_| .__/              
-                |_|                 
-  =========================================================*/   
-
-var currentPos;
-function updateMap() {
-  //frmMap.mapMain.zoomLevel = tuta.location.zoomLevelFromLatLng(currentPos.geometry.location.lat, currentPos.geometry.location.lng);
-
-  var pickupicon = "";
-  if(frmMap.flexAddress.isVisible == false)
-    pickupicon = "pickupicon.png";
-
-  var locationData = [];
-
-  if(driverArrived === false){
-
-    if(overview.active === 1){
-      locationData.push(
-        {lat: "" + overview.lat + "", 
-         lon: "" + overview.lng + "", 
-         name:"Map Middle", 
-         desc: "", 
-         image : ""});    
-    }
-
-    //var count = 0;
-    locationData.push(
-      {lat: "" + currentPos.geometry.location.lat + "", 
-       lon: "" + currentPos.geometry.location.lng + "", 
-       name:"Pickup Location", 
-       desc: currentPos.formatted_address.replace(/`+/g,""), 
-       image : pickupicon + ""});
-
-  }
-
-
-  if(nearbyDrivers.length > 0){
-    locationData.push(
-      {lat: "" + nearbyDrivers[0].location.lat + "", 
-       lon: "" + nearbyDrivers[0].location.lng + "", 
-       name: nearbyDrivers[0].id, 
-       desc: "", 
-       image : "cabpin0.png"});
-    //count++;
-  }
-  
-
-  frmMap.mapMain.locationData = locationData;
-}
-
-/*=========================================================*/ 
 
 function getCabPinForBearing(startloc,endloc) {
   var brng = Math.abs(Math.round(bearing(startloc.lat, 
@@ -772,14 +712,87 @@ tuta.menuToggle = function (time, bool){
   }         
 }
 
+
+/*=========================================================
+    _   _           _       _       
+   | | | |_ __   __| | __ _| |_ ___ 
+   | | | | '_ \ / _` |/ _` | __/ _ \
+   | |_| | |_) | (_| | (_| | ||  __/
+    \___/| .__/ \__,_|\__,_|\__\___|
+    __  _|_|                        
+   |  \/  | __ _ _ __               
+   | |\/| |/ _` | '_ \              
+   | |  | | (_| | |_) |             
+   |_|  |_|\__,_| .__/              
+                |_|                 
+  =========================================================*/   
+
+var currentPos;
+function updateMap() {
+  //frmMap.mapMain.zoomLevel = tuta.location.zoomLevelFromLatLng(currentPos.geometry.location.lat, currentPos.geometry.location.lng);
+
+  var pickupicon = "";
+
+  var locationData = [];
+
+  if(driverArrived === false){
+
+    if(overview.active === 1){
+      locationData.push(
+        {lat: "" + overview.lat + "", 
+         lon: "" + overview.lng + "", 
+         name:"Map Middle", 
+         desc: "", 
+         image : ""});    
+
+
+      pickupicon = "pickupicon.png";
+      frmMap.mapMain.zoomLevel = overview.zoom;
+    }
+
+    //var count = 0;
+    locationData.push(
+      {lat: "" + currentPos.geometry.location.lat + "", 
+       lon: "" + currentPos.geometry.location.lng + "", 
+       name:"Pickup Location", 
+       desc: currentPos.formatted_address.replace(/`+/g,""), 
+       image : pickupicon + ""});
+
+  }
+
+
+  if(nearbyDrivers.length > 0){
+    locationData.push(
+      {lat: "" + nearbyDrivers[0].location.lat + "", 
+       lon: "" + nearbyDrivers[0].location.lng + "", 
+       name: nearbyDrivers[0].id, 
+       desc: "", 
+       image : "cabpin0.png"});
+    //count++;
+  }
+  
+  if(trackingZoom !== 0){
+    frmMap.mapMain.zoomLevel = trackingZoom;    
+  }
+
+
+  frmMap.mapMain.locationData = locationData;
+}
+
+/*=========================================================*/ 
+
 tuta.resetMap = function (){
   frmMap.flexNoPanning.setVisibility(false);
   nearbyDrivers = [];
+  journeyComplete = false;
+  awaitingConfirmation = true;
   driverArrived = false;
   frmMap.flexAdd.setVisibility(true);
   frmMap.flexChangeDest.setVisibility(true);
   frmMap.flexNoOfPeople.setVisibility(true);
   frmMap.mapMain.clear();
+  initialLoad = true;
+  trackingZoom = 0;
 };
 
 
@@ -820,7 +833,7 @@ tuta.awaitConfirm = function(bookingID) {
         }
       },
       function(error) { //The second function will always run if there is an error.
-        tuta.util.alert("error",error);
+        //tuta.util.alert("error",error);
       }
     );
 
@@ -842,19 +855,20 @@ tuta.renderFinalRoute = function(){
         //var finaldestination = result.value[0].address.description;
 
         //tuta.location.geoCode(nearbyDrivers[0].location.lat, nearbyDrivers[0].location.lng, function(s, e){
-          //getDirections(s.results[0], destination, null, function(response){
-            tuta.location.directionsFromCoordinates(nearbyDrivers[0].location.lat, nearbyDrivers[0].location.lng, destination.geometry.location.lat, destination.geometry.location.lng, function(response){
-             
-            kony.timer.schedule("renderDirFinal", function(){
-              renderDirections(frmMap.mapMain, response, "0x0036bba7","","");
-            }, 1, false);
-          });
+        //getDirections(s.results[0], destination, null, function(response){
+        tuta.location.directionsFromCoordinates(nearbyDrivers[0].location.lat, nearbyDrivers[0].location.lng, destination.geometry.location.lat, destination.geometry.location.lng, function(response){
+
+          kony.timer.schedule("renderDirFinal", function(){
+            renderDirections(frmMap.mapMain, response, "0x0036bba7","","");
+            updateMap();
+          }, 1, false);
+        });
         //});
 
       }, function(error){
 
       });
-    
+
     application.service("manageService").invokeOperation(
       "bookingUpdate", {}, {id: yourBooking, data: {status: "InTransit"}},
       function(result){
@@ -870,25 +884,27 @@ var yourBooking;
 
 tuta.renderRouteAndDriver = function (booking){
   var driver = booking.providerId;
+  initialLoad = true;
   application.service("driverService").invokeOperation(
     "user", {}, {id : driver},
     function(result) { 
 
       //tuta.location.geoCode(result.value[0].location.lat, result.value[0].location.lng, function(success, error){
-        //tuta.util.alert("PICKUP", JSON.stringify(success));
-        // tuta.util.alert("SELF", JSON.stringify(currentPos));
-        //tuta.location.geoCode(booking.location.lat, booking.location.lng, function(s, e){
-          //getDirections(success.results[0],s.results[0],null,function(response) {
-            tuta.location.directionsFromCoordinates(result.value[0].location.lat, result.value[0].location.lng, booking.location.lat, booking.location.lng, function(response){
-              
-            ///tuta.util.alert("ROUTE", JSON.stringify(response));
-            kony.timer.schedule("renderDir", function(){
-              renderDirections(frmMap.mapMain, response, "0x0036bba7","","");
-              //tuta.util.alert("DISTANCE: ", tuta.location.distance(result.value[0].location.lat, result.value[0].location.lng, booking.location.lat, booking.location.lng));
-            }, 2, false);
-          });
+      //tuta.util.alert("PICKUP", JSON.stringify(success));
+      // tuta.util.alert("SELF", JSON.stringify(currentPos));
+      //tuta.location.geoCode(booking.location.lat, booking.location.lng, function(s, e){
+      //getDirections(success.results[0],s.results[0],null,function(response) {
+      tuta.location.directionsFromCoordinates(result.value[0].location.lat, result.value[0].location.lng, booking.location.lat, booking.location.lng, function(response){
 
-        //});
+        ///tuta.util.alert("ROUTE", JSON.stringify(response));
+        kony.timer.schedule("renderDir", function(){
+          renderDirections(frmMap.mapMain, response, "0x0036bba7","","");
+          updateMap();
+          //tuta.util.alert("DISTANCE: ", tuta.location.distance(result.value[0].location.lat, result.value[0].location.lng, booking.location.lat, booking.location.lng));
+        }, 2, false);
+      });
+
+      //});
 
       //});
     },
@@ -937,11 +953,11 @@ tuta.startUpdateMapFunction = function(){
     kony.timer.cancel("updateMapSlow");
   }
   catch(ex){
-    
+
   }
   kony.timer.schedule("updateMapSlow", function(){
     updateMap();
-  }, 10, true);
+  }, 7, true);
 };
 
 tuta.userExists = function (response){
@@ -971,6 +987,7 @@ tuta.userExists = function (response){
 
   =========================================================*/  
 
+var initialLoad = true;
 tuta.trackDriverLoop = function (driverID){
   try{
     kony.timer.cancel("trackdriverloop" + driverID);
@@ -980,13 +997,13 @@ tuta.trackDriverLoop = function (driverID){
   }
   kony.timer.schedule("trackdriverloop" + driverID, function(){
     if(journeyComplete === false)
-    	tuta.trackDriver(driverID);
+      tuta.trackDriver(driverID);
     else{
       kony.timer.cancel("trackdriverloop" + driverID);
       journeyComplete = true;      
     }
 
-  }, 10, true);
+  }, 8, true);
 };
 
 var nearbyDrivers = [];
@@ -1015,6 +1032,11 @@ tuta.trackDriver = function(driverID){
 
       nearbyDrivers.push(driver);
 
+      if(initialLoad === true){
+        updateMap();
+        initialLoad = false;
+      }
+
 
       if(driverArrived === false){
         var lat1 = parseFloat(driver.location.lat);
@@ -1030,13 +1052,14 @@ tuta.trackDriver = function(driverID){
         }
         else if (distNow <= 200){
           //ANIMATE IN NEARBY SLIDER
+          tuta.awaitDriverPickupConfirmation();
           frmMap["flexDarken"]["isVisible"] = true;
           tuta.animate.moveBottomLeft(frmMap.flexCancel, 0, "105", "-100", null);
           tuta.animate.move(frmMap.flexArriving, 0, "65", "105%", null);
-          tuta.animate.move(frmMap.flexDriverArrival, 0, "", "10%", null);
+          tuta.animate.move(frmMap.flexDriverArrived, 0, "", "10%", null);
           tuta.animate.moveBottomLeft(frmMap.flexTimeToDest, 0.1, "105", "-5", null);
           tuta.animate.moveBottomRight(frmMap.flexPhone, 0.1, "105", "-100", null);
-          driverArrived = true;
+          driverArrived = true;     
         }        
       }
       else if (awaitingConfirmation === false)
@@ -1046,14 +1069,41 @@ tuta.trackDriver = function(driverID){
         var finallat2 = parseFloat(destination.geometry.location.lat);
         var finallon2 = parseFloat(destination.geometry.location.lng);
         var finaldistNow = tuta.location.distance(finallat1, finallon1, finallat2, finallon2);
-        //frmMap.lblMins.text = Math.trunc(Math.round(finalDistNow/1000)) + " MINS";
+        var etaNow = parseInt(Math.round(finaldistNow/1000));
+        frmMap.lblMins.text = etaNow + " MINS";
+
+        application.service("driverService").invokeOperation(
+          "booking", {}, {id: inputBooking}, 
+          function(result){
+            try{
+              if (result.value[0].status==="Completed"){
+                frmMap.mapMain.zoomLevel = overview.zoom;
+                frmMap.flexOverlay2.setVisibility(true);
+                tuta.animate.moveBottomLeft(frmMap.flexTimeToDest, 0.1, "105", "-150", null);
+                tuta.animate.moveBottomLeft(frmMap.flexDriverInfo, 0.1, "-110", "", null);
+                journeyComplete = true;
+              }
+            }
+            catch(ex){
+
+            }
+
+          }, function (error){
+
+          });
+
+
+        //DEPRECIATED, checks if destination is near and then ends trip
+        /*
         if (finaldistNow <= 150){
           //ANIMATE IN NEARBY SLIDER
+
           frmMap.flexOverlay2.setVisibility(true);
           tuta.animate.moveBottomLeft(frmMap.flexTimeToDest, 0.1, "105", "-150", null);
           tuta.animate.moveBottomLeft(frmMap.flexDriverInfo, 0.1, "-110", "", null);
           journeyComplete = true;
-        }  
+
+        } */ 
 
       }
 
@@ -1071,6 +1121,41 @@ tuta.trackDriver = function(driverID){
     }
   );
 };
+
+
+tuta.awaitDriverPickupConfirmation = function(){
+
+  try{
+    kony.timer.cancel("taxiAwaitTimer");
+  }
+  catch(ex){
+
+  }
+
+  kony.timer.schedule("taxiAwaitTimer", function(){
+
+    var input = {id: inputBooking};
+
+    application.service("userService").invokeOperation(
+      "booking", {}, input,
+      function(result) { 
+        try{
+          if (result.value[0].status==="InTransit")
+            tuta.renderFinalRoute();
+        }
+        catch(ex){
+
+        }
+      },
+      function(error) { 
+        //tuta.util.alert("error",error);
+      }
+    );
+
+
+  }, 3, true);
+
+}
 
 var journeyComplete = false;
 var driverArrived = false;
@@ -1107,7 +1192,7 @@ tuta.initCallback = function(error) {
           );
         }
         catch (ex){
-          tuta.util.alert("Error", ex);
+          //tuta.util.alert("Error", ex);
         }
       }  
       else{
@@ -1146,8 +1231,12 @@ tuta.startWatchLocation = function(){
           tuta.location.geoCode(position.coords.latitude, position.coords.longitude, function(s, e){
             currentPos = s.results[0];
             //updateMap();
-			
-            tuta.location.updateLocationOnServer(s.results[0]);
+			try{
+              tuta.location.updateLocationOnServer(s.results[0]);
+            }
+            catch(ex){
+              
+            }
           });
         },
         function (errorMsg) {

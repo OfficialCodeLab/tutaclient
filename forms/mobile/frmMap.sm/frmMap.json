@@ -37,7 +37,8 @@
         "flexMenu",
         "flexAll",
         "flexPayment",
-        "flexSwipe"
+        "flexSwipe",
+        "flexDriverArrived"
     ],
     "containerWeight": 100,
     "containerweight": 100,
@@ -49,7 +50,7 @@
     "desktopweb": {
         "needAppMenu": false
     },
-    "device": "GalaxyS4",
+    "device": "GalaxyS5",
     "displayOrientation": 1,
     "displayorientation": 1,
     "enableScrolling": false,
@@ -115,12 +116,12 @@
     "paddinginpixel": false,
     "percent": true,
     "platform": "android",
-    "prevDevice": "GalaxyS4",
+    "prevDevice": "GalaxyS2",
     "prevPlatform": "spaan",
     "render": true,
     "retainScrollPosition": false,
     "retainscrollposition": false,
-    "shellCSS": "and_GalaxyS4",
+    "shellCSS": "and_GalaxyS5",
     "skin": "sdddcf54709c49da9f82e8affadd01a6",
     "snapGridSize": 10,
     "snapToGrid": true,

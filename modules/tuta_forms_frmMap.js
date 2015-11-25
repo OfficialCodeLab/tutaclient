@@ -117,10 +117,10 @@ tuta.forms.frmMap = function() {
     };
     this.control("btnSignOut").onClick = function (button) {
       kony.store.removeItem("user");
-      tuta.animate.moveBottomLeft(frmSplash.flexMainButtons, 0, "0%", "0", null);
       tuta.menuToggle(0, self.leftMenu._open);     
       self.leftMenu.toggle();
       tuta.forms.frmSplash.show();
+      tuta.animate.moveBottomLeft(frmSplash.flexMainButtons, 0, "0%", "0", null);
     };
 
     this.control("btnDrop").onClick = selectPickUpLocation;
