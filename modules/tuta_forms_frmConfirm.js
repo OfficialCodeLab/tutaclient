@@ -60,7 +60,7 @@ tuta.forms.frmConfirm = function() {
                 function(result) {
                   bookingID = result.value[0].id;
                   tuta.forms.frmMap.show();
-                  kony.timer.schedule("awaitConfirm", function(){tuta.awaitConfirm(bookingID); tuta.util.alert("TEST", bookingID);}, 1, false);
+                  kony.timer.schedule("awaitConfirm", function(){tuta.awaitConfirm(bookingID);}, 1, false);
                   hailingTaxi = false;
                 },
                 function(error) {

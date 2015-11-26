@@ -35,6 +35,7 @@
     "autogrowmode": 0,
     "canUpdateUI": true,
     "children": [
+        "flexNoOfPeople",
         "flexMain",
         "flexAddressList",
         "flexAddressShadow",

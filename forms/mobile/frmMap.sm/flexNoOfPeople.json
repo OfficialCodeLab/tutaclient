@@ -42,15 +42,15 @@
         "btnPerson2",
         "btnPerson3",
         "btnPerson4",
+        "btnPerson5",
+        "btnPerson6",
         "imgPeople1",
         "imgPeople2",
         "imgPeople3",
         "imgPeople4",
         "imgPeople5",
         "imgPeople6",
-        "lblHowMany",
-        "btnPerson5",
-        "btnPerson6"
+        "lblHowMany"
     ],
     "clipBounds": true,
     "clipbounds": true,
@@ -82,7 +82,7 @@
         0,
         0
     ],
-    "parent": "flexMain",
+    "parent": "flexAll",
     "percent": true,
     "pf": "frmMap",
     "render": true,
@@ -95,6 +95,6 @@
     "widgetAlignment": 1,
     "widgetalignment": 1,
     "width": "100%",
-    "zIndex": 3,
-    "zindex": 3
+    "zIndex": 889,
+    "zindex": 889
 }

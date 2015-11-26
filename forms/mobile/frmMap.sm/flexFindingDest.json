@@ -63,8 +63,6 @@
         0
     ],
     "name": "kony.ui.FlexContainer",
-    "onTouchEnd": "AS_FlexContainer_5ae53f0c2093488fbd4bb8ed7c039574",
-    "ontouchend": "AS_FlexContainer_5ae53f0c2093488fbd4bb8ed7c039574",
     "orientation": 6,
     "padding": [
         0,

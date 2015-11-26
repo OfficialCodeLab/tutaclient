@@ -8,13 +8,13 @@ if (typeof(tuta) === "undefined") {
 
 tuta.location = {};
 
-tuta.location.updateLocationOnServer = function(location){
+tuta.location.updateLocationOnServer = function(latitude, longitude){
    //Update user's position on the server
   var inputData = {
     //id : JSON.parse(kony.store.getItem("user")).userName,
     location : {
-      lat : location.geometry.location.lat,
-      long : location.geometry.location.lng
+      lat : latitude,
+      long : longitude
     }
   };
 
@@ -46,10 +46,11 @@ tuta.location.loadPositionInit = function(){
   tuta.location.currentPosition(function(response) {
 
     //tuta.location.geoCode(response.coords.latitude, response.coords.longitude, function(success, error){
-      currentPos = {geometry:{location:{lat: response.coords.latitude,lng: response.coords.longitude}}};
-      updateMap();
+    currentPos.geometry.location.lat = response.coords.latitude;
+    currentPos.geometry.location.lng =  response.coords.longitude;
+    updateMap();
 
-	  tuta.location.updateLocationOnServer(currentPos);
+    tuta.location.updateLocationOnServer(response.coords.latitude, response.coords.longitude);
 
     //});
   }, function(error) {
