@@ -740,7 +740,7 @@ tuta.menuToggle = function (time, bool){
      |_|  |_|\__,_| .__/              
                   |_|                 
     =========================================================*/   
-
+//UPDATEMAPFUNCTION
 var currentPin = "cabpin0.png";
 function updateMap() {
   //frmMap.mapMain.zoomLevel = tuta.location.zoomLevelFromLatLng(currentPos.geometry.location.lat, currentPos.geometry.location.lng);
@@ -882,7 +882,7 @@ tuta.renderFinalRoute = function(){
         tuta.location.directionsFromCoordinates(nearbyDrivers[0].location.lat, nearbyDrivers[0].location.lng, destination.geometry.location.lat, destination.geometry.location.lng, function(response){
 
           kony.timer.schedule("renderDirFinal", function(){
-            renderDirections(frmMap.mapMain, response, "0x0036bba7","","");
+            renderDirections(frmMap.mapMain, response, "0x0036bba7","","dropofficon.png");
             updateMap();
           }, 1, false);
         });
@@ -1048,6 +1048,7 @@ tuta.userExists = function (response){
 
 var initialLoad = true;
 tuta.trackDriverLoop = function (driverID){
+        tuta.awaitDriverPickupConfirmation();
   try{
     kony.timer.cancel("trackdriverloop" + driverID);
   }
@@ -1098,7 +1099,6 @@ tuta.trackDriver = function(driverID){
 
 
       if(driverArrived === false && tripOnRoute === true){
-        tuta.awaitDriverPickupConfirmation();
         var lat1 = parseFloat(driver.location.lat);
         var lon1 = parseFloat(driver.location.lng);
         var lat2 = parseFloat(currentPos.geometry.location.lat);
@@ -1106,7 +1106,6 @@ tuta.trackDriver = function(driverID){
         var distNow = tuta.location.distance(lat1, lon1, lat2, lon2);
 
         if(distNow < 500 && distNow > 200){
-          driverIsNearby = true;
           tuta.animate.move(frmMap.flexArriving, 0.2, "65", "15%", null);
           tuta.animate.moveBottomLeft(frmMap.flexCancel, 0.1, "105", "-100", null);
         }
@@ -1116,8 +1115,6 @@ tuta.trackDriver = function(driverID){
           tuta.animate.moveBottomRight(frmMap.flexPhone, 0, "105", "-100", null);
           frmMap.flexDarken.setVisibility(true);
           tuta.animate.move(frmMap.flexDriverArrived, 0, "", "10%", null);
-          overview.active = 0;
-          driverArrived = true;     
         }        
       }
       else if (awaitingConfirmation === false)
@@ -1133,26 +1130,7 @@ tuta.trackDriver = function(driverID){
         else
           frmMap.lblMins.text = etaNow + " MINS";
 
-        application.service("driverService").invokeOperation(
-          "booking", {}, inputBooking, 
-          function(result){
-            try{
-              if (result.value[0].status==="Completed"){
-                kony.timer.cancel("trackdriverloop");
-                frmMap.mapMain.zoomLevel = overview.zoom;
-                frmMap.flexOverlay2.setVisibility(true);
-                tuta.animate.moveBottomLeft(frmMap.flexTimeToDest, 0.1, "105", "-150", null);
-                tuta.animate.moveBottomLeft(frmMap.flexDriverInfo, 0.1, "-110", "", null);
-                journeyComplete = true;
-              }
-            }
-            catch(ex){
-
-            }
-
-          }, function (error){
-
-          });
+        
 
 
         //DEPRECIATED, checks if destination is near and then ends trip
@@ -1202,12 +1180,55 @@ tuta.awaitDriverPickupConfirmation = function(){
       function(result) { 
         try{
           if (result.value[0].status==="InTransit"){
+            overview.active = 0;   
+            driverArrived = true;  
             kony.timer.cancel("taxiAwaitTimer");
             tuta.animate.moveBottomLeft(frmMap.flexCancel, 0, "105", "-100", null);
             tuta.animate.move(frmMap.flexArriving, 0, "65", "105%", null);
             tuta.animate.moveBottomRight(frmMap.flexPhone, 0, "105", "-100", null);
             tuta.animate.moveBottomLeft(frmMap.flexTimeToDest, 0.1, "105", "-5", null);
             tuta.renderFinalRoute();
+            tuta.awaitDriverDropOffConfirmation();
+          }
+        }
+        catch(ex){
+
+        }
+      },
+      function(error) { 
+        //tuta.util.alert("error",error);
+      }
+    );
+
+
+  }, 3, true);
+
+}
+
+tuta.awaitDriverDropOffConfirmation = function(){
+
+  try{
+    kony.timer.cancel("tripCompleteAwaitTimer");
+  }
+  catch(ex){
+
+  }
+
+  kony.timer.schedule("tripCompleteAwaitTimer", function(){
+
+
+    application.service("driverService").invokeOperation(
+      "booking", {}, inputBooking,
+      function(result) { 
+        try{
+          if (result.value[0].status==="Completed"){
+            kony.timer.cancel("tripCompleteAwaitTimer");
+            kony.timer.cancel("trackdriverloop");
+            frmMap.mapMain.zoomLevel = overview.zoom;
+            frmMap.flexOverlay2.setVisibility(true);
+            tuta.animate.moveBottomLeft(frmMap.flexTimeToDest, 0.1, "105", "-150", null);
+            tuta.animate.moveBottomLeft(frmMap.flexDriverInfo, 0.1, "-110", "", null);
+            journeyComplete = true;
           }
         }
         catch(ex){

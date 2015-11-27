@@ -93,6 +93,6 @@
         "value": "preferred"
     },
     "wrapping": 2,
-    "zIndex": 120,
-    "zindex": 120
+    "zIndex": 1,
+    "zindex": 1
 }
