@@ -133,7 +133,8 @@ tuta.forms.frmMap = function() {
     this.control("btnCancelHailNow").onClick = function () {frmMap.flexOverlay1.setVisibility(false); cancelHail();};
     this.control("btnReturnToTrip").onClick = function () {frmMap.flexOverlay1.setVisibility(false);};
     this.control("btnSubmitRating").onClick = function(){
-      frmMap["flexOverlay2"]["isVisible"] = false;
+      
+            tuta.animate.move(frmMap.flexOverlay2, 0, "0", "100%", null);
       
           tuta.resetMap();
     };
@@ -180,7 +181,6 @@ tuta.forms.frmMap = function() {
     };
 
     frmMap.flexDarken.setVisibility(false);
-    frmMap.flexOverlay2.setVisibility(false);
 
 
   };//End Preshow

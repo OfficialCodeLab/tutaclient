@@ -1110,6 +1110,7 @@ tuta.trackDriver = function(driverID){
           tuta.animate.moveBottomLeft(frmMap.flexCancel, 0.1, "105", "-100", null);
         }
         else if (distNow <= 200){
+          driverArrived = true;
           tuta.animate.moveBottomLeft(frmMap.flexCancel, 0, "105", "-100", null);
           tuta.animate.move(frmMap.flexArriving, 0, "65", "105%", null);
           tuta.animate.moveBottomRight(frmMap.flexPhone, 0, "105", "-100", null);
@@ -1180,6 +1181,7 @@ tuta.awaitDriverPickupConfirmation = function(){
       function(result) { 
         try{
           if (result.value[0].status==="InTransit"){
+            tuta.awaitDriverDropOffConfirmation();
             overview.active = 0;   
             driverArrived = true;  
             kony.timer.cancel("taxiAwaitTimer");
@@ -1188,7 +1190,6 @@ tuta.awaitDriverPickupConfirmation = function(){
             tuta.animate.moveBottomRight(frmMap.flexPhone, 0, "105", "-100", null);
             tuta.animate.moveBottomLeft(frmMap.flexTimeToDest, 0.1, "105", "-5", null);
             tuta.renderFinalRoute();
-            tuta.awaitDriverDropOffConfirmation();
           }
         }
         catch(ex){
@@ -1225,7 +1226,8 @@ tuta.awaitDriverDropOffConfirmation = function(){
             kony.timer.cancel("tripCompleteAwaitTimer");
             kony.timer.cancel("trackdriverloop");
             frmMap.mapMain.zoomLevel = overview.zoom;
-            frmMap.flexOverlay2.setVisibility(true);
+            tuta.animate.move(frmMap.flexOverlay2, 0, "0", "0", null);
+            //frmMap.flexOverlay2.setVisibility(true);
             tuta.animate.moveBottomLeft(frmMap.flexTimeToDest, 0.1, "105", "-150", null);
             tuta.animate.moveBottomLeft(frmMap.flexDriverInfo, 0.1, "-110", "", null);
             journeyComplete = true;
