@@ -1,0 +1,89 @@
+{
+    "@class": "com.kony.gen.viz.model.component.KVizImage2",
+    "DNDConfig": null,
+    "__parentReadjusting__": false,
+    "_base64_": null,
+    "_height_": {
+        "type": "string",
+        "value": "25dp"
+    },
+    "_margin_": [
+        0,
+        0,
+        0,
+        0
+    ],
+    "_padding_": [
+        0,
+        0,
+        0,
+        0
+    ],
+    "_right_": {
+        "type": "number",
+        "value": "8"
+    },
+    "_skin_": "s4ea8d4d07574957b839f06194980e52",
+    "_src_": "canceliconnew.png",
+    "_top_": {
+        "type": "string",
+        "value": "90dp"
+    },
+    "_width_": {
+        "type": "string",
+        "value": "25dp"
+    },
+    "base64": null,
+    "canUpdateUI": true,
+    "centerY": "50%",
+    "centery": {
+        "type": "string",
+        "value": "50%"
+    },
+    "containerWeight": 100,
+    "containerweight": 100,
+    "context": {
+        "channel": "mobile",
+        "formID": "frmMap",
+        "ispercent": true,
+        "platform": "android",
+        "templateType": "forms",
+        "topLevelBox": null
+    },
+    "enabled": false,
+    "height": "25dp",
+    "id": "Image066d5e18d311e4b",
+    "imageScaleMode": 1,
+    "imagescalemode": 1,
+    "info": null,
+    "invokedProperty": "src",
+    "isVisible": true,
+    "ispercent": true,
+    "isvisible": true,
+    "kuid": "3155c0bd8ec840b1960048fcd5115aab",
+    "margin": [
+        0,
+        0,
+        0,
+        0
+    ],
+    "name": "kony.ui.Image2",
+    "padding": [
+        0,
+        0,
+        0,
+        0
+    ],
+    "parent": "flexAddress",
+    "pf": "frmMap",
+    "render": true,
+    "right": 8,
+    "skin": "s4ea8d4d07574957b839f06194980e52",
+    "src": "canceliconnew.png",
+    "srcType": 1,
+    "top": "90dp",
+    "wType": "Image",
+    "widgetAlignment": 5,
+    "widgetalignment": 5,
+    "width": "25dp"
+}
