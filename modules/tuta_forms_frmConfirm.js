@@ -142,10 +142,10 @@ tuta.forms.frmConfirm = function() {
         ==============================================================*/
 
         this.control("btnAmPmMinus").onClick = function(button) {
-            changeAmPm();
+            tuta.calendar.changeAmPm();
         };
         this.control("btnAmPmPlus").onClick = function(button) {
-            changeAmPm();
+            tuta.calendar.changeAmPm();
         };
 
         //Button: Cancel Request
@@ -181,38 +181,38 @@ tuta.forms.frmConfirm = function() {
         //End of Change Pickup Button
 
         this.control("btnDayDown").onClick = function(button) {
-            cyclicDecrement(days);
+            tuta.calendar.cyclicDecrement(days);
         };
         this.control("btnDayUp").onClick = function(button) {
-            cyclicIncrement(days);
+            tuta.calendar.cyclicIncrement(days);
         };
         this.control("btnHailTaxi").onClick = function(button) {
           requestButtonClick();
             //hailTaxi();
         };
         this.control("btnHrsMinus").onClick = function(button) {
-            self.control("txtTimeHrs").text = minusOne(self.control("txtTimeHrs").text, false);
-            fixHours();
+            self.control("txtTimeHrs").text = tuta.calendar.minusOne(self.control("txtTimeHrs").text, false);
+            tuta.calendar.fixHours();
         };
         this.control("btnHrsPlus").onClick = function(button) {
-            self.control("txtTimeHrs").text = addOne(self.control("txtTimeHrs").text);
-            fixHours();
+            self.control("txtTimeHrs").text = tuta.calendar.addOne(self.control("txtTimeHrs").text);
+            tuta.calendar.fixHours();
         };
         this.control("btnMinsMinus").onClick = function(button) {
-            self.control("txtTimeMins").text = minusOne(self.control("txtTimeMins").text, true);
-            fixMins();
-            fixMins2();
+            self.control("txtTimeMins").text = tuta.calendar.minusOne(self.control("txtTimeMins").text, true);
+            tuta.calendar.fixMins();
+            tuta.calendar.fixMins2();
         };
         this.control("btnMinsPlus").onClick = function(button) {
-            self.control("txtTimeMins").text = addOne(self.control("txtTimeMins").text);
-            fixMins();
-            fixMins2();
+            self.control("txtTimeMins").text = tuta.calendar.addOne(self.control("txtTimeMins").text);
+            tuta.calendar.fixMins();
+            tuta.calendar.fixMins2();
         };
         this.control("btnMonthDown").onClick = function(button) {
-            onMonthChange(0);
+            tuta.calendar.onMonthChange(0);
         };
         this.control("btnMonthUp").onClick = function(button) {
-            onMonthChange(1);
+            tuta.calendar.onMonthChange(1);
         };
         /*
             this.control("btnPickUp").onClick = function(button) {
@@ -220,6 +220,8 @@ tuta.forms.frmConfirm = function() {
             };
             This button doesn't seem to do anything!
             */
+      
+      
         this.control("btnSetTime").onClick = function(button) {
             frmConfirm.scrollToBeginning();
             kony.timer.schedule("showDateTime", function() {
@@ -227,10 +229,10 @@ tuta.forms.frmConfirm = function() {
             }, 0.3, false);
         };
         this.control("btnYearDown").onClick = function(button) {
-            onYearChange(0);
+            tuta.calendar.onYearChange(0);
         };
         this.control("btnYearUp").onClick = function(button) {
-            onYearChange(1);
+            tuta.calendar.onYearChange(1);
         };
 
 
@@ -239,7 +241,7 @@ tuta.forms.frmConfirm = function() {
         };
       
       	
-        this.control("imgTick").onTouchStart = setNewTime;
+        this.control("imgTick").onTouchStart = tuta.calendar.setNewTime;
         this.control("flexCancel1").onTouchStart = function() {
             frmConfirm["flexDateTime"]["isVisible"] = false;
         };
@@ -259,7 +261,7 @@ tuta.forms.frmConfirm = function() {
 
     tuta.forms.frmConfirm.onPostShow = function(form) {
         var self = this;
-        setUpDays("Jan");
+        tuta.calendar.setUpDays("Jan");
         this.control("lblDay").text = days.values[0];
     };
 };
