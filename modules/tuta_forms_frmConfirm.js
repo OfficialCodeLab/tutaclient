@@ -34,6 +34,12 @@ tuta.forms.frmConfirm = function() {
 
             //Stop repetitive clicks
             hailingTaxi = true;
+            var pickupPosition;
+            
+            if(pickupPoint === null)
+              pickupPosition = currentPos;
+            else
+              pickupPosition = pickupPoint;
 
             if (sliderDir == 2)
             {
@@ -44,8 +50,8 @@ tuta.forms.frmConfirm = function() {
                   description: destination.formatted_address.replace(/`+/g,"") + ""
                 },
                 location: {
-                  lat: currentPos.geometry.location.lat + "",
-                  long: currentPos.geometry.location.lng + ""
+                  lat: pickupPosition.geometry.location.lat + "",
+                  long: pickupPosition.geometry.location.lng + ""
                 },
                 status: "Unconfirmed"
               };
@@ -77,8 +83,8 @@ tuta.forms.frmConfirm = function() {
                   description: destination.formatted_address.replace(/`+/g,"") + ""
                 },
                 location: {
-                  lat: currentPos.geometry.location.lat + "",
-                  long: currentPos.geometry.location.lng + ""
+                  lat: pickupPosition.geometry.location.lat + "",
+                  long: pickupPosition.geometry.location.lng + ""
                 },
                 status: "Unconfirmed"
               };
@@ -93,7 +99,7 @@ tuta.forms.frmConfirm = function() {
                 function(result) {
                   bookingID = result.value[0].id;
                   tuta.forms.frmMap.show();
-                  kony.timer.schedule("awaitConfirm", function(){tuta.util.alert("Success", "Booking has been made.Please await confirmation.");}, 1, false);
+                  kony.timer.schedule("awaitConfirm", function(){tuta.util.alert("Success", "Booking has been made. Please await confirmation.");}, 1, false);
                   hailingTaxi = false;
                 },
                 function(error) {
@@ -144,11 +150,11 @@ tuta.forms.frmConfirm = function() {
 
         //Button: Cancel Request
         this.control("btnCancelRequest").onClick = function(button) {
-            destination = null;
+            //destination = null;
             tuta.forms.frmMap.show();
-            updateMap();
+            //updateMap();
             //This might need to be re-worked
-            frmMap.flexNoOfPeople.setVisibility(true);
+            //frmMap.flexNoOfPeople.setVisibility(true);
         };
         //End of Cancel Request Button
 
@@ -241,7 +247,7 @@ tuta.forms.frmConfirm = function() {
             frmConfirm["flexDateTime"]["isVisible"] = false;
         };
 
-        this.control("flexSlider").addGestureRecognizer(constants.GESTURE_TYPE_SWIPE, setupTblSwipe, function(widget, gestureInformationSwipe) {
+        this.control("flexSlider").addGestureRecognizer(constants.GESTURE_TYPE_SWIPE, GLOBAL_GESTURE_FINGERS_1, function(widget, gestureInformationSwipe) {
             //ssa.mobile.alert("","" + gestureInformationSwipe.swipeDirection );
             if (gestureInformationSwipe.swipeDirection == 2) {
                 showLater();

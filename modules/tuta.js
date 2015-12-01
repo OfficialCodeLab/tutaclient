@@ -1,12 +1,55 @@
-// setup inital events
+// global reference to your app object
+var application = null; 
 
+//App state flags
+var searchMode = 0;
+var sliderDir = 2;
+var journeyComplete = false;
+var driverArrived = false;
+var awaitingConfirmation = true;
+var tripOnRoute = false;
+var hailingTaxi = false; //Used to prevent multiple requests
+var onJourney = 0;
+
+//Location variables
+var destination = null;
+var pickupPoint = null;
+var nearbyDrivers = [];
+var initialLoad = true;
+var finalroute = null;
+var taxiRoute = null;
+
+//Booking variables
+var inputBooking;
+var yourBooking;
+
+//Selector variables
 var people = [];
 var star = [];
-var hailState;
-var geocodeRecieved = false;
-var trackingZoom = 0;
-var lastbrng = 0;
+var lastPersonClicked = 0;
+var lastStarSelected = 0;
 
+//Watch location variables
+var watchID = null;
+var initialized = 0;
+
+//Updating Map variables
+var lastbrng = 0;
+var trackingZoom = 0;
+var currentPin = "cabpin0.png";
+
+//Calendar trackers
+var days = {track:0, label:"d", values:[]};
+var months = {track:0, label:"m", values:["Jan", "Feb", "Mar", "Apr", "May", "June", "July", "Aug", "Sep", "Oct", "Nov", "Dec"]};
+var years = {track:0, label:"y", values:["2015", "2016", "2017", "2018", "2019", "2020", "2021", "2022", "2023", "2024", "2025"]};
+//var hailState;
+//var geocodeRecieved = false;
+//var taxiPosition = null;
+//var viaList = [];
+//var finaldestination = null;
+//var bookingConfirmedFlag = false;
+//var overlayEnabledFlag = true;
+//var taxiScanFlag = true;
 
 var currentPos = 
     {
@@ -22,22 +65,6 @@ var currentPos =
 
     };
 
-var searchMode = 0;
-/*
-        These will hold geocoding data
-    */
-var destination = null;
-var pickupPoint = null;
-var taxiPosition = null;
-var viaList = [];
-var tripOnRoute = false;
-
-//Carl's Varibles
-var hailingTaxi = false; //Used to prevent multiple requests
-var bookingConfirmedFlag = false;
-var overlayEnabledFlag = true;
-var taxiScanFlag = true;
-
 var timeformatted = 
     {
       month: "",
@@ -48,21 +75,18 @@ var timeformatted =
       meridian: ""
     };
 
+//Global variables
+var GLOBAL_GESTURE_FINGERS_1 = {fingers: 1};
 var GLOBAL_CONCAT_LENGTH = 35;
 
 if (typeof(tuta) === "undefined") {
   tuta = {};
 }
 
-// global reference to your app object
-var application = null; 
-
 function initApp() {
-  //ssa.util.alert("INIT");
   tuta.init();
 }
 
-var lastPersonClicked = 0;
 function onPeopleSelect(eventobject, x , y) {
   var nopeople = eventobject.id.replace("btnPerson","");
   if(nopeople === lastPersonClicked && nopeople > 1)
@@ -81,7 +105,6 @@ function onPeopleSelect(eventobject, x , y) {
   }
 }
 
-var lastStarSelected = 0;
 function onStarSelect(eventobject, x , y) {
   var nostar = eventobject.id.replace("imgStar","");
   if(nostar === lastStarSelected && nostar > 1)
@@ -100,16 +123,9 @@ function onStarSelect(eventobject, x , y) {
   }
 }
 
-function uMap()
-{
-  if(hailState == true) 
-    updateMap();
-}
-/*
-    var animationSelected = kony.ui.createAnimation({"100":{"anchorPoint":{"x":0.5,"y":0.5},"stepConfig":{"timingFunction":kony.anim.EASIN_IN_OUT},"width":"100dp","height":"100dp"}});
-    var animationDeselect = kony.ui.createAnimation({"100":{"anchorPoint":{"x":0.5,"y":0.5},"stepConfig":{"timingFunction":kony.anim.EASIN_IN_OUT},"width":"80dp","height":"80dp"}});
-    */
-
+//==========================================
+// START CALENDAR AND DATEPICKER FUNCTIONS
+//==========================================
 
 function fixHours(){ 
   var txt = parseInt(frmConfirm.txtTimeHrs.text, 10);
@@ -134,11 +150,7 @@ function fixHours(){
     return;
   }
 
-  //frmConfirm.txtTimeHrs.text = txt;
-
   frmConfirm.txtTimeHrs.text = Math.round(txt) + "";
-
-  //frmConfirm.txtTimeHrs.onTextChange = fixHours;
 }
 
 function fixMins(){
@@ -214,7 +226,6 @@ function getHour (hour, meridian){
 
 function setNewTime(){
   var newTime = frmConfirm.txtTimeHrs.text + ":" + frmConfirm.txtTimeMins.text + " " + frmConfirm.lblAmPm.text;
-  // frmConfirm.lblTime.text = newTime;
   var newDate = frmConfirm.lblDay.text + " " + frmConfirm.lblMonth.text + " " + frmConfirm.lblYear.text;
 
 
@@ -242,9 +253,6 @@ function disableChangeTime(){
   frmConfirm.btnSetTime.setVisibility(false);  
 }
 
-var days = {track:0, label:"d", values:[]};
-var months = {track:0, label:"m", values:["Jan", "Feb", "Mar", "Apr", "May", "June", "July", "Aug", "Sep", "Oct", "Nov", "Dec"]};
-var years = {track:0, label:"y", values:["2015", "2016", "2017", "2018", "2019", "2020", "2021", "2022", "2023", "2024", "2025"]};
 
 function onMonthChange(bool){
   if(bool === 1)
@@ -340,18 +348,19 @@ function pushPopNumbers(x){
   }    
 }
 
-var sliderDir = 2;
+//==========================================
+// END CALENDAR AND DATEPICKER FUNCTIONS
+//==========================================
+
 function sliderMove(){   
   if(frmConfirm.sliderBook.selectedValue > 65 && sliderDir === 2){
     showLater();    
-    //frmConfirm.calTime.render();
   }
   else if (frmConfirm.sliderBook.selectedValue < 45 && sliderDir === 1){    
     showNow();
   }
   else if(sliderDir !== 0 )
-  {
-    //frmConfirm.imgNow.left = frmConfirm.sliderBook.selectedValue -10;       
+  {      
   }  
 }
 
@@ -361,26 +370,13 @@ function showNow(){
     kony.timer.schedule("reset", function() {   
       frmConfirm.imgNow.src = "slidernow.png";
       sliderDir = 2;
-      //frmConfirm["calTime"]["isVisible"] = false;
       frmConfirm.lblDateTime.setVisibility(true); 
       frmConfirm.lblTime.setVisibility(false);
       frmConfirm.btnSetTime.setVisibility(false);  
-      //frmConfirm["flexDetails2"]["height"] = 185;
       frmConfirm.lblDateTimeNew.setVisibility(false);
-      //frmConfirm.lblTime.setVisibility(false);
-      // frmConfirm.btnSetTime.setVisibility(false); 
-      //frmConfirm.flexDetails2.height = 185; 
-      //disableChangeTime();      
     }, 0.25, false);
-    animateMove(frmConfirm.imgNow, 0.25, "0", "-15", null);
+    tuta.animate.move(frmConfirm.imgNow, 0.25, "0", "-15", null);
   }
-  /* sliderDir = 0;
-        frmConfirm.sliderBook.setVisibility(false);       
-        kony.timer.schedule("reset", function() { 
-          frmConfirm.sliderBook.setVisibility(true);  
-          sliderDir = 1;
-        }, 1, false);
-        frmConfirm.sliderBook.selectedValue = -10;  */  
 }
 
 function showLater(){
@@ -389,27 +385,19 @@ function showLater(){
     kony.timer.schedule("reset", function() {   
       frmConfirm.imgNow.src = "sliderlater.png";
       sliderDir = 1;
-      //frmConfirm["calTime"]["isVisible"] = true;
       frmConfirm.lblDateTimeNew.setVisibility(true);
-      frmConfirm.lblDateTime.setVisibility(false); /*
-      frmConfirm.lblTime.setVisibility(true);
-      frmConfirm.btnSetTime.setVisibility(true);  
-      frmConfirm.flexDetails2.height = 215; */  
-      //frmConfirm["lblTime"]["isVisible"] = true;
+      frmConfirm.lblDateTime.setVisibility(false); 
       frmConfirm.scrollToBeginning();
       kony.timer.schedule("showDateTime", function(){frmConfirm["flexDateTime"]["isVisible"] = true;
                                                      frmConfirm.btnSetTime.setVisibility(true);}, 0.3, false);  
-      //frmConfirm["flexDetails2"]["height"] = 215; 
-      //enableChangeTime();     
     }, 0.25, false);
-    animateMove(frmConfirm.imgNow, 0.25, "0", "110", null);
+    tuta.animate.move(frmConfirm.imgNow, 0.25, "0", "110", null);
   }
 }
 
-var setupTblSwipe = {fingers: 1};
 function setUpSwipes(){ 
 
-  frmConfirm.flexSlider.addGestureRecognizer(constants.GESTURE_TYPE_SWIPE, setupTblSwipe,  function(widget, gestureInformationSwipe) {
+  frmConfirm.flexSlider.addGestureRecognizer(constants.GESTURE_TYPE_SWIPE, GLOBAL_GESTURE_FINGERS_1,  function(widget, gestureInformationSwipe) {
     //ssa.mobile.alert("","" + gestureInformationSwipe.swipeDirection );
     if(gestureInformationSwipe.swipeDirection == 2) { 
       showLater(); 
@@ -419,11 +407,11 @@ function setUpSwipes(){
     }
   });
 
-  frmMap.flexNoPanning.addGestureRecognizer(constants.GESTURE_TYPE_SWIPE, setupTblSwipe,  function(widget, gestureInformationSwipe) {
+  frmMap.flexNoPanning.addGestureRecognizer(constants.GESTURE_TYPE_SWIPE, GLOBAL_GESTURE_FINGERS_1,  function(widget, gestureInformationSwipe) {
 
   });
 
-  frmMap.flexSwiper.addGestureRecognizer(constants.GESTURE_TYPE_SWIPE, setupTblSwipe,  function(widget, gestureInformationSwipe) {
+  frmMap.flexSwiper.addGestureRecognizer(constants.GESTURE_TYPE_SWIPE, GLOBAL_GESTURE_FINGERS_1,  function(widget, gestureInformationSwipe) {
     if(gestureInformationSwipe.swipeDirection == 2) { //RIGHT
       //tuta.renderFinalRoute();
     }
@@ -432,20 +420,11 @@ function setUpSwipes(){
 }
 
 function selectPickUpLocation() {
-  // this means we are searching for pickup location
   searchMode = 1;
-  animateMove(frmMap.flexAdd, 0.3, "70", "0%", null);
+  tuta.animate.move(frmMap.flexAdd, 0.3, "70", "0%", null);
   kony.timer.schedule("focusPick", function(){frmMap.txtPick.setFocus(true);}, 0.4, false);
-  //frmMap.lblDest.text = "CHANGE PICKUP LOCATION";
-  //frmMap.txtDest.placeholder = "Click to Set Pickup Location"
 }
 
-
-
-function cancelHailPrompt(){
-  if(menuOpen === false)
-    frmMap["flexOverlay1"]["isVisible"] = true;
-}
 
 function selectDest(form) {
   var add = "";
@@ -475,7 +454,7 @@ function selectDest(form) {
 }
 
 function getSelectedAddress() {
-  // hide address llist
+  // hide address list
   var selectedItem = frmMap.segAddressList.selectedItems[0];
   frmMap.flexAddressList.setVisibility(false);
   frmMap.flexAddressShadow.setVisibility(false);
@@ -498,29 +477,19 @@ function loadTripHistory(selected){
 }
 
 function resetSearchBar() {
-  //frmMap.lblDest.text = "SET DESTINATION";
-  //frmMap.txtDest.placeholder = "Click to Set a Destination";
   frmMap.txtPick.text = "";
   frmMap.txtDest.text = "";
-  animateMove(frmMap.flexAdd, 0.3, "70", "-100%", null);
+  tuta.animate.move(frmMap.flexAdd, 0.3, "70", "-100%", null);
 }
 
-
-function getCabPinForBearing(startloc,endloc) {
-  var brng = Math.abs(Math.round(bearing(startloc.lat, 
-                                         startloc.lon, 
-                                         endloc.lat,
-                                         endloc.lon) / 15)) * 15; 
-
-  if(brng >= 360)
-    brng = 0;
-
-  return "cabpin" + brng + ".png";
+function clearDestPick(){
+  frmMap.txtDest.text = "";
+  frmMap.txtPick.text = "";
+  frmMap.flexAddressList.setVisibility(false);
+  frmMap.flexAddressShadow.setVisibility(false);
+  frmMap.flexChangeDest.setVisibility(true);
 }
 
-var finalroute = null;
-var taxiRoute = null;
-var finaldestination = null
 
 function onLocationSelected() {
   // Search mode 0 means we have a destination
@@ -542,17 +511,16 @@ function onLocationSelected() {
       frmConfirm.lblDuration = 30 + " MIN";
     });
   } else {
-    currentPos = getSelectedAddress();
+    pickupPoint = getSelectedAddress();
+    frmMap.mapMain.navigateToLocation({ "lat" : pickupPoint.geometry.location.lat, "lon": pickupPoint.geometry.location.lng, name:"", desc: ""},false,false);
     resetSearchBar();
-    updateMap();
+    //updateMap();
     searchMode = 0;
-    //kony.timer.schedule("showMarker", function(){frmMap["flexChangeDest"]["isVisible"] = true;}, 0.5, false);
 
   }
 }
 
 function toggleImage(widget){
-  //var widget = toggleImage;
   if (widget.isVisible === false)
   {
     widget["isVisible"] = true;
@@ -572,139 +540,6 @@ function showSearchBar() {
   frmMap.flexAddress.setVisibility(true);
   frmMap.flexShadow.setVisibility(true);
   frmMap.flexNoOfPeople.setVisibility(true); 
-}
-var test = 0;
-function hailTaxi(widget) {
-  //kony.timer.cancel("swap");
-  frmMap["flexChangeDest"]["isVisible"] = false;
-  var tempState = true;
-  frmMap.flexProgress.setVisibility(true);
-  frmMap.show();
-  hideSearchBar();
-  renderDirections(frmMap.mapMain, finalroute, "0x0000FFFF","pickupicon.png","dropofficon.png");
-  //frmMap.flexNoOfPeople.setVisibility(false);
-  frmMap.flexAddress.setVisibility(false);
-  frmMap.flexShadow.setVisibility(false);
-  hailstate = tempState;
-
-
-  kony.timer.schedule("fetchPerson", function(){
-    animateTaxiOnRoute(0);
-  },4,false );
-}
-
-var onRoute = false;
-function animateTaxiOnRoute(dir) {
-  //ssa.mobile.alert("TEST", "TEST");
-  var currentIndex = 0;
-  if(dir === 0)
-    var routePoints = decodeRoute(taxiRoute.routes,0);
-  else {
-    var routePoints = decodeRoute(finalroute.routes,0);
-    frmMap.btnCancelHailDriving.setVisibility(false);
-    animateMove(frmMap.flexTimeToDest, 0.3, "", "-10dp",  null); 
-    animateMove2(frmMap.flexPhone, 0.4, "105dp", "-100dp", null);
-    animateMove(frmMap.flexCancel, 0.4, "", "-100dp",  null);  
-  }
-
-  kony.timer.schedule("onroute", function() { 
-    animateMove2(frmMap.flexPhone, 0.4, "105dp", "-10dp", null);
-    animateMove(frmMap.flexCancel, 0.4, "", "-10dp", null);
-    onRoute = true;
-    try{
-      if(currentIndex >= routePoints.length - 2) {
-        kony.timer.cancel("onroute");
-        frmMap.mapMain.clear();
-        if(dir === 0){
-          onRoute = false;
-          updateMap();
-          renderDirections(frmMap.mapMain, finalroute, "0x0000FFFF","pickupicon.png","dropofficon.png");
-          //animateMove2(frmMap.flexDriverInfo, 0.3, "0%", "0dp", function() {});
-          kony.timer.schedule("dropPerson", function(){
-            animateTaxiOnRoute(1);
-          },2,false );
-        }
-        else{
-          updateMap();
-          animateMove(frmMap.flexTimeToDest, 0.3, "", "-150dp",  null); 
-          animateMove2(frmMap.flexPhone, 0.4, "105dp", "-100dp", null);
-          animateMove(frmMap.flexCancel, 0.4, "", "-100dp", null);  
-          //animateMove2(frmMap.flexDriverInfo, 0.2, "-110dp", "", null);
-          frmMap.flexDriverInfo.bottom = -110;
-          frmMap.flexOverlay2.setVisibility(true);
-        }
-      } else {
-        currentIndex++;
-
-        var locdat = [{lat: "" + routePoints[currentIndex].lat + "", 
-                       lon: "" + routePoints[currentIndex].lon + "", 
-                       name:"John", 
-                       desc: "MoziCab Taxi", 
-                       image : getCabPinForBearing(routePoints[currentIndex],routePoints[currentIndex+1])}];
-
-        frmMap.mapMain.locationData = locdat;
-      }
-    }
-    catch(ex){
-      if(dir === 0){
-        kony.timer.schedule("dropPerson", function(){
-          //This sometimes happens then the directions cannot be shown?
-          frmMap.mapMain.clear();
-          onRoute = false;
-          updateMap();
-          renderDirections(frmMap.mapMain, finalroute, "0x0000FFFF","pickupicon.png","dropofficon.png");
-          animateTaxiOnRoute(1);
-        },2,false );
-      }
-      else{
-        updateMap();
-        animateMove(frmMap.flexTimeToDest, 0.3, "", "-150dp",  null); 
-        animateMove2(frmMap.flexPhone, 0.4, "105dp", "-100dp", null);
-        animateMove(frmMap.flexCancel, 0.4, "", "-100dp", null);  
-        //animateMove2(frmMap.flexDriverInfo, 0.2, "-110dp", "", null);
-        frmMap.flexDriverInfo.bottom = -110;
-        frmMap.flexOverlay2.setVisibility(true);
-      }
-    }
-  },0.3,true);
-}
-function cancelHail() {
-  frmMap.btnCancelHailDriving.setVisibility(false);
-  hailState = false;
-  destination = null;
-  try{
-    kony.timer.cancel("onroute");
-  }
-  catch(ex){
-
-  }
-  frmMap.mapMain.clear();
-  animateMove2(frmMap.flexOptions, 0.3, "0", "", null);
-  animateMove(frmMap.flexTimeToDest, 0.3, "", "-150dp",  null); 
-  animateMove2(frmMap.flexPhone, 0.4, "105dp", "-100dp", null);
-  animateMove(frmMap.flexCancel, 0.4, "", "-100dp", null);  
-  //animateMove2(frmMap.flexDriverInfo, 0.2, "-110dp", "", null);
-  frmMap.flexDriverInfo.bottom = -110;
-  frmMap["flexChangeDest"]["isVisible"] = true;
-  deselectAllOptions();
-  showSearchBar();
-  updateMap();
-
-}
-
-
-function animateMove(object, time, top, left, finish) {
-  object.animate(
-    kony.ui.createAnimation({"100":{"top":top, "left": left, stepConfig:{"timingFunction":kony.anim.EASE}}}),
-    {"delay":0,"iterationCount":1,"fillMode":kony.anim.FILL_MODE_FORWARDS,"duration":time},
-    {"animationEnd" : function(){ if(finish) { finish(); }}});
-}
-
-function animateMove2(object, time, bot, right, finish) {
-  object.animate(
-    kony.ui.createAnimation({"100":{"bottom":bot, "right":right, stepConfig:{"timingFunction":kony.anim.EASE}}}),
-    {"delay":0,"iterationCount":1,"fillMode":kony.anim.FILL_MODE_FORWARDS,"duration":time},
-    {"animationEnd" : function(){ if(finish) { finish(); }}});
 }
 
 tuta.menuToggle = function (time, bool){
@@ -741,9 +576,8 @@ tuta.menuToggle = function (time, bool){
                   |_|                 
     =========================================================*/   
 //UPDATEMAPFUNCTION
-var currentPin = "cabpin0.png";
+
 function updateMap() {
-  //frmMap.mapMain.zoomLevel = tuta.location.zoomLevelFromLatLng(currentPos.geometry.location.lat, currentPos.geometry.location.lng);
 
   var pickupicon = "";
   var locationData = [];
@@ -796,8 +630,6 @@ function updateMap() {
        name: nearbyDrivers[0].id, 
        desc: "", 
        image : currentPin});
-
-    //count++;
   }
 
   if(trackingZoom !== 0){
@@ -806,8 +638,6 @@ function updateMap() {
 
 
   frmMap.mapMain.zoomLevel = zoomset;
-
-
   frmMap.mapMain.locationData = locationData;
 }
 
@@ -826,16 +656,16 @@ tuta.resetMap = function (){
   initialLoad = true;
   trackingZoom = 0;
   tripOnRoute = false;
+  onJourney = 0;
 };
 
-
-var inputBooking;
 tuta.awaitConfirm = function(bookingID) {
 
   frmMap.flexAdd.setVisibility(false);
   frmMap.flexChangeDest.setVisibility(false);
   frmMap.flexNoOfPeople.setVisibility(false);
   frmMap.flexProgress.setVisibility(true);
+  onJourney = 1;
   //Kony timer – checks evert 5 seconds for the booking (if there is one) , 
   //take the result and check the status value of the key status – 
   //when it changes to CONFIRMED, then hide the flex container again
@@ -857,9 +687,7 @@ tuta.awaitConfirm = function(bookingID) {
           tripOnRoute = true;
           frmMap.flexNoPanning.setVisibility(true);
           frmMap.flexProgress.setVisibility(false);
-          //frmMap["flexProgress"]["isVisible"] = false;
           kony.timer.cancel("taxiHailTimer");
-          //tuta.util.alert("success","Your booking has been confirmed!");
           tuta.renderRouteAndDriver(result.value[0]);
           tuta.fetchDriverInfo(result.value[0].providerId);
           yourBooking = bookingID;
@@ -879,17 +707,12 @@ tuta.renderFinalRoute = function(){
   tuta.animate.move(frmMap.imgSwipeLever, 0.3, "", "70%", null);
   kony.timer.schedule("swiperball", function(){
     awaitingConfirmation = false;
-    //tuta.animate.move(frmMap.flexDriverArrival, 0, "", "200%", null);
 
     frmMap["flexDarken"]["isVisible"] = false;
     frmMap.mapMain.removePolyline("polyid1");
     application.service("driverService").invokeOperation(
       "booking", {}, {id: yourBooking},
       function(result){
-        //var finaldestination = result.value[0].address.description;
-
-        //tuta.location.geoCode(nearbyDrivers[0].location.lat, nearbyDrivers[0].location.lng, function(s, e){
-        //getDirections(s.results[0], destination, null, function(response){
         tuta.location.directionsFromCoordinates(nearbyDrivers[0].location.lat, nearbyDrivers[0].location.lng, destination.geometry.location.lat, destination.geometry.location.lng, function(response){
 
           kony.timer.schedule("renderDirFinal", function(){
@@ -897,22 +720,10 @@ tuta.renderFinalRoute = function(){
             updateMap();
           }, 1, false);
         });
-        //});
 
       }, function(error){
 
       });
-
-    /*
-
-      application.service("manageService").invokeOperation(
-        "bookingUpdate", {}, {id: yourBooking, data: {status: "InTransit"}},
-        function(result){
-
-        }, function(error){
-
-        });*/
-    // NOW GET DIRECTIONS FROM DRIVER TO FINAL DESTINATION
   }, 0.5, false);
 };
 
@@ -944,7 +755,6 @@ tuta.driverBearing = function (driverID, callback){
     });
 };
 
-var yourBooking;
 
 tuta.renderRouteAndDriver = function (booking){
   //#ifdef iphone
@@ -959,27 +769,17 @@ tuta.renderRouteAndDriver = function (booking){
   application.service("driverService").invokeOperation(
     "user", {}, {id : driver},
     function(result) { 
-      //tuta.location.geoCode(result.value[0].location.lat, result.value[0].location.lng, function(success, error){
-      //tuta.util.alert("PICKUP", JSON.stringify(success));
-      // tuta.util.alert("SELF", JSON.stringify(currentPos));
-      //tuta.location.geoCode(booking.location.lat, booking.location.lng, function(s, e){
-      //getDirections(success.results[0],s.results[0],null,function(response) {
+      
       tuta.location.directionsFromCoordinates(result.value[0].location.lat, result.value[0].location.lng, booking.location.lat, booking.location.lng, function(response){
 
-        //tuta.util.alert("ROUTE", JSON.stringify(response));
         kony.timer.schedule("renderDir", function(){
           renderDirections(frmMap.mapMain, response, "0x0036bba7","","");
           updateMap();
-          //tuta.util.alert("DISTANCE: ", tuta.location.distance(result.value[0].location.lat, result.value[0].location.lng, booking.location.lat, booking.location.lng));
-        }, 2, false);
+          }, 2, false);
       });
 
-      //});
-
-      //});
     },
     function(error) {
-      // the service returns 403 (Not Authorised) if credentials are wrong
       //tuta.util.alert("Error " + error);
     }
   );
@@ -994,13 +794,11 @@ tuta.fetchDriverInfo = function(driverID){
       application.service("driverService").invokeOperation(
         "assignedVehicle", {}, {userId: driverID}, 
         function(res){
-          //tuta.util.alert("TEST", JSON.stringify(res));
           frmMap.lblCar.text = res.value[0].make + " " + res.value[0].model;
           frmMap.lblReg.text = res.value[0].VRN + "";
           application.service("driverService").invokeOperation(
             "rating", {}, {userId: driverID}, 
             function(r){
-              //tuta.util.alert("TEST", JSON.stringify(r));
               frmMap.lblRating.text = r.averageRating + "";
               tuta.animate.moveBottomLeft(frmMap.flexDriverInfo, 0.3, "0", "0", null);
               tuta.animate.moveBottomLeft(frmMap.flexCancel, 0.3, "105", "-5", null);
@@ -1057,7 +855,6 @@ tuta.userExists = function (response){
 
     =========================================================*/  
 
-var initialLoad = true;
 tuta.trackDriverLoop = function (driverID){
         tuta.awaitDriverPickupConfirmation();
   try{
@@ -1077,7 +874,6 @@ tuta.trackDriverLoop = function (driverID){
   }, 8, true);
 };
 
-var nearbyDrivers = [];
 
 tuta.trackDriver = function(driverID){
 
@@ -1146,7 +942,7 @@ tuta.trackDriver = function(driverID){
 
 
         //DEPRECIATED, checks if destination is near and then ends trip
-        /*
+        /* KEEP HERE FOR NOW
           if (finaldistNow <= 150){
             //ANIMATE IN NEARBY SLIDER
 
@@ -1158,17 +954,8 @@ tuta.trackDriver = function(driverID){
           } */ 
 
       }
-
-
-
-      //tuta.util.alert("LOCATIONS", driver.location.lat + " " + driver.location.lng + " " + currentPos.geometry.location.lat + " " + currentPos.geometry.location.lng);
-      //var distNow = 0;
-
-
-      //updateMap(); 
     },
     function(error) {
-      // the service returns 403 (Not Authorised) if credentials are wrong
       //tuta.util.alert("Error " + error);
     }
   );
@@ -1238,7 +1025,6 @@ tuta.awaitDriverDropOffConfirmation = function(){
             kony.timer.cancel("trackdriverloop");
             frmMap.mapMain.zoomLevel = overview.zoom;
             tuta.animate.move(frmMap.flexOverlay2, 0, "0", "0", null);
-            //frmMap.flexOverlay2.setVisibility(true);
             tuta.animate.moveBottomLeft(frmMap.flexTimeToDest, 0.1, "105", "-150", null);
             tuta.animate.moveBottomLeft(frmMap.flexDriverInfo, 0.1, "-110", "", null);
             journeyComplete = true;
@@ -1258,14 +1044,11 @@ tuta.awaitDriverDropOffConfirmation = function(){
 
 }
 
-var journeyComplete = false;
-var driverArrived = false;
-var awaitingConfirmation = true;
 
 /*=========================================================*/
 
 tuta.initCallback = function(error) {
-  setUpSwipes();
+  //setUpSwipes();
   application.login("techuser@ssa.co.za","T3chpassword", function(result,error) {
     if(error) ssa.util.alert("Login Error", error);  
     else
@@ -1278,10 +1061,8 @@ tuta.initCallback = function(error) {
           application.service("userService").invokeOperation(
             "login", {}, JSON.parse(input),
             function(result) {
-              //tuta.util.alert("LOGIN SUCCESS", result.value);
               tuta.forms.frmMap.show();
               kony.timer.schedule("startwatch", function(){tuta.startWatchLocation();}, 2, false);
-              //tuta.forms.frm003CheckBox.show();
             },
             function(error) {
               // the service returns 403 (Not Authorised) if credentials are wrong
@@ -1293,7 +1074,7 @@ tuta.initCallback = function(error) {
           );
         }
         catch (ex){
-          //tuta.util.alert("Error", ex);
+          tuta.util.alert("Error", ex);
         }
       }  
       else{
@@ -1316,8 +1097,6 @@ tuta.initCallback = function(error) {
 
     =========================================================*/
 
-var watchID = null;
-var initialized = 0;
 
 //This is called evert time user's position changes
 tuta.startWatchLocation = function(){
@@ -1329,20 +1108,16 @@ tuta.startWatchLocation = function(){
         function(position) {
           kony.store.removeItem("watch");
           kony.store.setItem("watch", watchID);
-          //tuta.location.geoCode(position.coords.latitude, position.coords.longitude, function(s, e){
           currentPos.geometry.location.lat = position.coords.latitude;
           currentPos.geometry.location.lng =  position.coords.longitude;
-          //updateMap();
           try{
             tuta.location.updateLocationOnServer(position.coords.latitude, position.coords.longitude);
           }
           catch(ex){
 
           }
-          //});
         },
         function (errorMsg) {
-          //if(errorMsg.code !==3 )
           //tuta.util.alert("ERROR", errorMsg);
         }, 
 
@@ -1361,7 +1136,6 @@ tuta.startWatchLocation = function(){
     }
   }
   catch(ex){
-    //tuta.util.alert("TEST", ex);
   }
 };
 

@@ -39,7 +39,9 @@
     "children": [
         "CopyimgSearch00f955cc22b8245",
         "CopylblDest0803698c44e8e46",
-        "txtPick"
+        "txtPick",
+        "btnCancelSetPick",
+        "CopyImage0943e5358a1de41"
     ],
     "clipBounds": true,
     "clipbounds": true,

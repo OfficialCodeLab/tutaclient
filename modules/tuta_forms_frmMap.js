@@ -129,7 +129,7 @@ tuta.forms.frmMap = function() {
     };
 
     this.control("btnDrop").onClick = selectPickUpLocation;
-    this.control("btnCancelHail").onClick = cancelHail;  
+    //this.control("btnCancelHail").onClick = cancelHail;  
     this.control("btnCancelHailNow").onClick = function () {frmMap.flexOverlay1.setVisibility(false); cancelHail();};
     this.control("btnReturnToTrip").onClick = function () {frmMap.flexOverlay1.setVisibility(false);};
     this.control("btnSubmitRating").onClick = function(){
@@ -138,16 +138,19 @@ tuta.forms.frmMap = function() {
       
           tuta.resetMap();
     };
-    this.control("btnCancelHailDriving").onTouchStart = cancelHailPrompt;
+    //this.control("btnCancelHailDriving").onTouchStart = cancelHailPrompt;
     this.control("segAddressList").onRowClick = onLocationSelected;
 
     this.control("txtDest").setFocus(false);
 
-    this.control("mapMain").onPinClick = function(map,location) {selectPickUpLocation();};
+    //this.control("mapMain").onPinClick = function(map,location) {selectPickUpLocation();};
     this.control("mapMain").onClick = function(map, location) {
       frmMap.flexAddressList.setVisibility(false);
       frmMap.flexAddressShadow.setVisibility(false);
       //kony.timer.schedule("showMarker", function(){frmMap["flexChangeDest"]["isVisible"] = true;}, 0.3, false);
+      if(onJourney === 0 )
+      	frmMap.flexChangeDest.setVisibility(true);
+      
       resetSearchBar();
       searchMode = 0;
     };
@@ -179,6 +182,9 @@ tuta.forms.frmMap = function() {
         selectDest(frmMap);      
       }
     };
+    
+    this.control("btnCancelSetDest").onClick = clearDestPick;
+    this.control("btnCancelSetPick").onClick = clearDestPick;
 
     frmMap.flexDarken.setVisibility(false);
 

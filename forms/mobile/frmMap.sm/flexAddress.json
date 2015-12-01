@@ -39,7 +39,9 @@
     "children": [
         "imgSearch",
         "lblDest",
-        "txtDest"
+        "txtDest",
+        "btnCancelSetDest",
+        "Image066d5e18d311e4b"
     ],
     "clipBounds": true,
     "clipbounds": true,
