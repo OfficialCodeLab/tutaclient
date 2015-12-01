@@ -746,11 +746,10 @@ function updateMap() {
   //frmMap.mapMain.zoomLevel = tuta.location.zoomLevelFromLatLng(currentPos.geometry.location.lat, currentPos.geometry.location.lng);
 
   var pickupicon = "";
-
-
-
-
   var locationData = [];
+  var zoomset = frmMap.mapMain.zoomLevel;
+  var bounds = frmMap.mapMain.getBounds();
+  //tuta.util.alert("TEST", JSON.stringify(bounds));
 
   if(driverArrived === false){
 
@@ -764,7 +763,16 @@ function updateMap() {
 
 
       pickupicon = "pickupicon.png";
-      frmMap.mapMain.zoomLevel = overview.zoom;
+      zoomset = overview.zoom;
+    }
+    else if (bounds !== null) {
+      locationData.push(
+      {lat: "" + bounds.center.lat + "", 
+       lon: "" + bounds.center.lon + "", 
+       name:"", 
+       desc: "", 
+       image : ""});
+      
     }
 
     //var count = 0;
@@ -773,7 +781,7 @@ function updateMap() {
        lon: "" + currentPos.geometry.location.lng + "", 
        name:"Pickup Location", 
        desc: "", 
-       image : pickupicon + ""});
+       image : "pickupicon.png"});
 
   }
 
@@ -793,8 +801,11 @@ function updateMap() {
   }
 
   if(trackingZoom !== 0){
-    frmMap.mapMain.zoomLevel = trackingZoom;    
+    zoomSet = trackingZoom;    
   }
+
+
+  frmMap.mapMain.zoomLevel = zoomset;
 
 
   frmMap.mapMain.locationData = locationData;

@@ -189,7 +189,7 @@ tuta.location.zoomLevelFromBounds = function(bounds) {
       angle += 360;
     }
 
-    return Math.floor(Math.log(kony.os.deviceInfo().screenWidth * 360 / angle / GLOBE_WIDTH) / Math.LN2);
+  return Math.floor(Math.log(kony.os.deviceInfo().screenWidth * 360 / angle / GLOBE_WIDTH) / Math.LN2);
 };
 
 tuta.location.zoomLevelFromLatLng = function(lat, lng) {
