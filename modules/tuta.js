@@ -1,4 +1,4 @@
-// global reference to your app object
+// global reference to app object
 var application = null; 
 
 //App state flags
@@ -87,44 +87,7 @@ function initApp() {
   tuta.init();
 }
 
-function onPeopleSelect(eventobject, x , y) {
-  var nopeople = eventobject.id.replace("btnPerson","");
-  if(nopeople === lastPersonClicked && nopeople > 1)
-  {
-    nopeople--;
-    lastPersonClicked = 0;
-  }
-  else
-    lastPersonClicked = nopeople;
-
-  for(var i = 0; i < nopeople; i++) {
-    people[i].src = "personselected.png";
-  }
-  for(var j = nopeople; j < 6; j++) {
-    people[j].src = "person.png";
-  }
-}
-
-function onStarSelect(eventobject, x , y) {
-  var nostar = eventobject.id.replace("imgStar","");
-  if(nostar === lastStarSelected && nostar > 1)
-  {
-    nostar--;
-    lastStarSelected = 0;
-  }
-  else
-    lastStarSelected = nostar;
-
-  for(var i =0; i < nostar; i++) {
-    star[i].src = "starselected.png";
-  }
-  for(var j = nostar; j < 5; j++) {
-    star[j].src = "starunselected.png";
-  }
-}
-
-
-
+/*
 function sliderMove(){   
   if(frmConfirm.sliderBook.selectedValue > 65 && sliderDir === 2){
     showLater();    
@@ -135,205 +98,7 @@ function sliderMove(){
   else if(sliderDir !== 0 )
   {      
   }  
-}
-
-function showNow(){
-  if(sliderDir == 1){    
-    sliderDir = 0;
-    kony.timer.schedule("reset", function() {   
-      frmConfirm.imgNow.src = "slidernow.png";
-      sliderDir = 2;
-      frmConfirm.lblDateTime.setVisibility(true); 
-      frmConfirm.lblTime.setVisibility(false);
-      frmConfirm.btnSetTime.setVisibility(false);  
-      frmConfirm.lblDateTimeNew.setVisibility(false);
-    }, 0.25, false);
-    tuta.animate.move(frmConfirm.imgNow, 0.25, "0", "-15", null);
-  }
-}
-
-function showLater(){
-  if(sliderDir == 2){    
-    sliderDir = 0;
-    kony.timer.schedule("reset", function() {   
-      frmConfirm.imgNow.src = "sliderlater.png";
-      sliderDir = 1;
-      frmConfirm.lblDateTimeNew.setVisibility(true);
-      frmConfirm.lblDateTime.setVisibility(false); 
-      frmConfirm.scrollToBeginning();
-      kony.timer.schedule("showDateTime", function(){frmConfirm["flexDateTime"]["isVisible"] = true;
-                                                     frmConfirm.btnSetTime.setVisibility(true);}, 0.3, false);  
-    }, 0.25, false);
-    tuta.animate.move(frmConfirm.imgNow, 0.25, "0", "110", null);
-  }
-}
-
-function setUpSwipes(){ 
-
-  frmConfirm.flexSlider.addGestureRecognizer(constants.GESTURE_TYPE_SWIPE, GLOBAL_GESTURE_FINGERS_1,  function(widget, gestureInformationSwipe) {
-    //ssa.mobile.alert("","" + gestureInformationSwipe.swipeDirection );
-    if(gestureInformationSwipe.swipeDirection == 2) { 
-      showLater(); 
-    }
-    else if (gestureInformationSwipe.swipeDirection == 1){
-      showNow();
-    }
-  });
-
-  frmMap.flexNoPanning.addGestureRecognizer(constants.GESTURE_TYPE_SWIPE, GLOBAL_GESTURE_FINGERS_1,  function(widget, gestureInformationSwipe) {
-
-  });
-
-  frmMap.flexSwiper.addGestureRecognizer(constants.GESTURE_TYPE_SWIPE, GLOBAL_GESTURE_FINGERS_1,  function(widget, gestureInformationSwipe) {
-    if(gestureInformationSwipe.swipeDirection == 2) { //RIGHT
-      //tuta.renderFinalRoute();
-    }
-  });
-
-}
-
-function selectPickUpLocation() {
-  searchMode = 1;
-  tuta.animate.move(frmMap.flexAdd, 0.3, "70", "0%", null);
-  kony.timer.schedule("focusPick", function(){frmMap.txtPick.setFocus(true);}, 0.4, false);
-}
-
-
-function selectDest(form) {
-  var add = "";
-  if(searchMode == 0)
-    add = frmMap.txtDest.text;
-  else
-    add = frmMap.txtPick.text;
-
-  findAddress(add, function(result) {
-    //ssa.mobile.alert("RES", JSON.stringify(result));
-    frmMap.flexFindingDest.setVisibility(false);
-    if(result.status === "ZERO_RESULTS")
-    {
-      popNoResults.show();
-      frmMap.txtDest.text = "";
-      frmMap.txtPick.text = "";
-    }
-    else{
-      frmMap.flexAddressList.setVisibility(true);
-      frmMap.flexAddressShadow.setVisibility(true);
-      frmMap.segAddressList.widgetDataMap = { lblAddress : "formatted_address"};  
-      frmMap.segAddressList.setData(result.results);
-      frmMap.txtDest.text = "";
-      frmMap.txtPick.text = "";
-    }
-  });
-}
-
-function getSelectedAddress() {
-  // hide address list
-  var selectedItem = frmMap.segAddressList.selectedItems[0];
-  frmMap.flexAddressList.setVisibility(false);
-  frmMap.flexAddressShadow.setVisibility(false);
-  kony.timer.schedule("showMarker", function(){frmMap["flexChangeDest"]["isVisible"] = true;}, 0.3, false);
-
-  return selectedItem;
-}
-
-function shortenText (str, len){
-  var newStr = "";
-  if(str.length > len)
-    newStr = str.substring(0, (len-1)) + "...";
-
-  return newStr;
-}
-
-function loadTripHistory(selected){
-  frmSelectedTrip.lblPickup.text = shortenText ("32 Woodlands Drive, 2191, South Africa", GLOBAL_CONCAT_LENGTH);
-  frmSelectedTrip.lblDropoff.text = shortenText( "21 Ebury Ave Bryanston, 2191, South Africa", GLOBAL_CONCAT_LENGTH);
-}
-
-function resetSearchBar() {
-  frmMap.txtPick.text = "";
-  frmMap.txtDest.text = "";
-  tuta.animate.move(frmMap.flexAdd, 0.3, "70", "-100%", null);
-}
-
-function clearDestPick(){
-  frmMap.txtDest.text = "";
-  frmMap.txtPick.text = "";
-  frmMap.flexAddressList.setVisibility(false);
-  frmMap.flexAddressShadow.setVisibility(false);
-  frmMap.flexChangeDest.setVisibility(true);
-}
-
-
-function onLocationSelected() {
-  // Search mode 0 means we have a destination
-  if(searchMode == 0) {
-    destination = getSelectedAddress();
-    //deselectAllOptions();
-    frmConfirm.lblDestination.text = shortenText (destination.formatted_address.replace(/`+/g,""), GLOBAL_CONCAT_LENGTH);
-    tuta.location.geoCode(currentPos.geometry.location.lat, currentPos.geometry.location.lng, function(success, error){
-      frmConfirm.lblPickUpLocation.text = shortenText (success.results[0].formatted_address.replace(/`+/g,""), GLOBAL_CONCAT_LENGTH);
-
-      //updateConfirmForm();
-      resetSearchBar();
-      frmMap.flexAddressList.setVisibility(false);
-      frmMap.flexAddressShadow.setVisibility(false);
-      tuta.forms.frmConfirm.show();
-
-      //REPLACE 30 WITH DISTANCE TO TRAVEL
-      frmConfirm.lblCost = "R" + Math.round(taxiRate(30));
-      frmConfirm.lblDuration = 30 + " MIN";
-    });
-  } else {
-    pickupPoint = getSelectedAddress();
-    frmMap.mapMain.navigateToLocation({ "lat" : pickupPoint.geometry.location.lat, "lon": pickupPoint.geometry.location.lng, name:"", desc: ""},false,false);
-    resetSearchBar();
-    //updateMap();
-    searchMode = 0;
-
-  }
-}
-
-function toggleImage(widget){
-  if (widget.isVisible === false)
-  {
-    widget["isVisible"] = true;
-  }
-  else{
-    widget["isVisible"] = false;
-  }
-}
-
-function hideSearchBar() {
-  frmMap.flexAddress.setVisibility(false);
-  frmMap.flexShadow.setVisibility(false);
-  frmMap.flexNoOfPeople.setVisibility(false);
-}
-
-function showSearchBar() {
-  frmMap.flexAddress.setVisibility(true);
-  frmMap.flexShadow.setVisibility(true);
-  frmMap.flexNoOfPeople.setVisibility(true); 
-}
-
-tuta.menuToggle = function (time, bool){
-  if(bool === true){
-    frmMap.imgChsO.setVisibility(false);
-    frmMap.flexDarken.setVisibility(false);
-    kony.timer.schedule("chsC", function(){
-      frmMap.imgChsC.setVisibility(true);
-      frmMap["btnChs"]["height"] = "55dp";
-    }, time, false);      
-  }
-  else{
-    frmMap.imgChsC.setVisibility(false);
-    frmMap.flexDarken.setVisibility(true);
-    kony.timer.schedule("chsO", function(){
-      frmMap.imgChsO.setVisibility(true);
-      frmMap["btnChs"]["height"] = "100%";
-    }, time, false);  
-  }         
-}
-
+}*/
 
 /*=========================================================
       _   _           _       _       
@@ -366,8 +131,7 @@ function updateMap() {
          lon: "" + overview.lng + "", 
          name:"Map Middle", 
          desc: "", 
-         image : ""});    
-
+         image : ""});
 
       pickupicon = "pickupicon.png";
       zoomset = overview.zoom;
@@ -378,8 +142,7 @@ function updateMap() {
        lon: "" + bounds.center.lon + "", 
        name:"", 
        desc: "", 
-       image : ""});
-      
+       image : ""});      
     }
 
     //var count = 0;
@@ -389,7 +152,6 @@ function updateMap() {
        name:"Pickup Location", 
        desc: "", 
        image : "pickupicon.png"});
-
   }
 
 
@@ -408,7 +170,6 @@ function updateMap() {
   if(trackingZoom !== 0){
     zoomSet = trackingZoom;    
   }
-
 
   frmMap.mapMain.zoomLevel = zoomset;
   frmMap.mapMain.locationData = locationData;
@@ -430,6 +191,25 @@ tuta.resetMap = function (){
   trackingZoom = 0;
   tripOnRoute = false;
   onJourney = 0;
+};
+
+tuta.menuToggle = function (time, bool){
+  if(bool === true){
+    frmMap.imgChsO.setVisibility(false);
+    frmMap.flexDarken.setVisibility(false);
+    kony.timer.schedule("chsC", function(){
+      frmMap.imgChsC.setVisibility(true);
+      frmMap["btnChs"]["height"] = "55dp";
+    }, time, false);      
+  }
+  else{
+    frmMap.imgChsC.setVisibility(false);
+    frmMap.flexDarken.setVisibility(true);
+    kony.timer.schedule("chsO", function(){
+      frmMap.imgChsO.setVisibility(true);
+      frmMap["btnChs"]["height"] = "100%";
+    }, time, false);  
+  }         
 };
 
 tuta.awaitConfirm = function(bookingID) {
@@ -471,7 +251,6 @@ tuta.awaitConfirm = function(bookingID) {
         //tuta.util.alert("error",error);
       }
     );
-
 
   }, 3, true);
 };
@@ -647,7 +426,6 @@ tuta.trackDriverLoop = function (driverID){
   }, 8, true);
 };
 
-
 tuta.trackDriver = function(driverID){
 
   //Store the driver ID as variable 'input' for query
@@ -676,7 +454,6 @@ tuta.trackDriver = function(driverID){
         updateMap();
         initialLoad = false;
       }
-
 
       if(driverArrived === false && tripOnRoute === true){
         var lat1 = parseFloat(driver.location.lat);
@@ -711,9 +488,6 @@ tuta.trackDriver = function(driverID){
         else
           frmMap.lblMins.text = etaNow + " MINS";
 
-        
-
-
         //DEPRECIATED, checks if destination is near and then ends trip
         /* KEEP HERE FOR NOW
           if (finaldistNow <= 150){
@@ -725,7 +499,6 @@ tuta.trackDriver = function(driverID){
             journeyComplete = true;
 
           } */ 
-
       }
     },
     function(error) {
@@ -870,7 +643,6 @@ tuta.initCallback = function(error) {
 
     =========================================================*/
 
-
 //This is called evert time user's position changes
 tuta.startWatchLocation = function(){
   tuta.startUpdateMapFunction();
@@ -911,7 +683,6 @@ tuta.startWatchLocation = function(){
   catch(ex){
   }
 };
-
 
 /*===================================================================*/
 

@@ -49,40 +49,40 @@ tuta.forms.frmMap = function() {
       tuta.controls.behavior.MOVE_OVER,
       0.25
     );	
-    
+
     this.control("btnArrivedConfirm").onClick = function(button){
       tuta.animate.move(frmMap.flexDriverArrived, 0, "", "100%", null);
       frmMap.flexDarken.setVisibility(false);
     }
-    
+
     //Get the name of the user
     var userTempQuery = JSON.parse(kony.store.getItem("user"));
-      var currentUserEmail = JSON.stringify(userTempQuery.userName);
-      // var userInfoResults = "";
-      //
+    var currentUserEmail = JSON.stringify(userTempQuery.userName);
+    // var userInfoResults = "";
+    //
 
-      //Store the user ID as variable 'input' for query
-      var input = {
-        id: currentUserEmail
-      };
+    //Store the user ID as variable 'input' for query
+    var input = {
+      id: currentUserEmail
+    };
 
 
-      application.service("userService").invokeOperation(
-        "user", {}, input,
-        function(result) { 
-          var csFirstName = result.value[0].userInfo.firstName;
-          var csLastName = result.value[0].userInfo.lastName;
-          var csFullName = csFirstName + " " + csLastName;
-          //tuta.util.alert("User Information", "Name: " + csFullName);
-          frmMap.lblUser.text = csFullName;
-          
-        },
-        function(error) {
-          // the service returns 403 (Not Authorised) if credentials are wrong
-          tuta.util.alert("Error " + error);
+    application.service("userService").invokeOperation(
+      "user", {}, input,
+      function(result) { 
+        var csFirstName = result.value[0].userInfo.firstName;
+        var csLastName = result.value[0].userInfo.lastName;
+        var csFullName = csFirstName + " " + csLastName;
+        //tuta.util.alert("User Information", "Name: " + csFullName);
+        frmMap.lblUser.text = csFullName;
 
-        }
-      );
+      },
+      function(error) {
+        // the service returns 403 (Not Authorised) if credentials are wrong
+        tuta.util.alert("Error " + error);
+
+      }
+    );
 
     // this.control("btnChs").onClick = function (button) {tuta.forms.frmMap.show();};
     this.control("btnChs").onClick = function(button) {
@@ -133,10 +133,10 @@ tuta.forms.frmMap = function() {
     this.control("btnCancelHailNow").onClick = function () {frmMap.flexOverlay1.setVisibility(false); cancelHail();};
     this.control("btnReturnToTrip").onClick = function () {frmMap.flexOverlay1.setVisibility(false);};
     this.control("btnSubmitRating").onClick = function(){
-      
-            tuta.animate.move(frmMap.flexOverlay2, 0, "0", "100%", null);
-      
-          tuta.resetMap();
+
+      tuta.animate.move(frmMap.flexOverlay2, 0, "0", "100%", null);
+
+      tuta.resetMap();
     };
     //this.control("btnCancelHailDriving").onTouchStart = cancelHailPrompt;
     this.control("segAddressList").onRowClick = onLocationSelected;
@@ -149,8 +149,8 @@ tuta.forms.frmMap = function() {
       frmMap.flexAddressShadow.setVisibility(false);
       //kony.timer.schedule("showMarker", function(){frmMap["flexChangeDest"]["isVisible"] = true;}, 0.3, false);
       if(onJourney === 0 )
-      	frmMap.flexChangeDest.setVisibility(true);
-      
+        frmMap.flexChangeDest.setVisibility(true);
+
       resetSearchBar();
       searchMode = 0;
     };
@@ -182,7 +182,7 @@ tuta.forms.frmMap = function() {
         selectDest(frmMap);      
       }
     };
-    
+
     this.control("btnCancelSetDest").onClick = clearDestPick;
     this.control("btnCancelSetPick").onClick = clearDestPick;
 
@@ -204,7 +204,7 @@ tuta.forms.frmMap = function() {
     catch(ex){
 
     }
-    
+
     //Create timer to drack drivers,
     //Update map every 5 seconds
     if (taxiScanFlag === true){
@@ -218,11 +218,11 @@ tuta.forms.frmMap = function() {
 
 
     //Hide overlay
-    
-    
+
+
 
   };
-  
+
   tuta.forms.frmMap.update = function(position){
     tuta.util.alert("TEST", JSON.stringify(position));
   };
