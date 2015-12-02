@@ -34,7 +34,8 @@
         "@class": "com.kony.gen.viz.model.component.property.map.AndroidMapProperty",
         "psp": {
             "showZoomControl": false
-        }
+        },
+        "zoomLevel": 16
     },
     "calloutWidth": 100,
     "calloutwidth": 100,
@@ -54,7 +55,7 @@
         "psp": {
             "showCurrentLocation": "none"
         },
-        "zoomLevel": 12
+        "zoomLevel": 16
     },
     "isVisible": true,
     "isvisible": true,
@@ -130,6 +131,6 @@
     "width": "100%",
     "zIndex": 1,
     "zindex": 1,
-    "zoomLevel": 12,
-    "zoomlevel": 12
+    "zoomLevel": 16,
+    "zoomlevel": 16
 }
