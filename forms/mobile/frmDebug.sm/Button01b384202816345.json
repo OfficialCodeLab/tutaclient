@@ -1,0 +1,83 @@
+{
+    "@class": "com.kony.gen.viz.model.component.KVizButton",
+    "DNDConfig": null,
+    "__parentReadjusting__": false,
+    "_height_": {
+        "type": "string",
+        "value": "50dp"
+    },
+    "_left_": {
+        "type": "string",
+        "value": "35dp"
+    },
+    "_margin_": [
+        6,
+        6,
+        6,
+        6
+    ],
+    "_padding_": [
+        0,
+        0,
+        0,
+        0
+    ],
+    "_skin_": "sa23fe82fe814c97857ca8bd55521218",
+    "_text_": "MADE BY",
+    "_top_": {
+        "type": "string",
+        "value": "470dp"
+    },
+    "_width_": {
+        "type": "string",
+        "value": "260dp"
+    },
+    "canUpdateUI": true,
+    "centerX": "50%",
+    "centerx": {
+        "type": "string",
+        "value": "50%"
+    },
+    "containerWeight": 100,
+    "containerweight": 100,
+    "contentAlignment": 5,
+    "contentalignment": 5,
+    "displayText": true,
+    "displaytext": true,
+    "enabled": false,
+    "focusSkin": "sa23fe82fe814c97857ca8bd55521218",
+    "focusskin": "sa23fe82fe814c97857ca8bd55521218",
+    "height": "50dp",
+    "id": "Button01b384202816345",
+    "info": null,
+    "isVisible": true,
+    "isvisible": true,
+    "kuid": "c383bf3be9ea48d8802c2166ec4fb13e",
+    "left": "35dp",
+    "margin": [
+        6,
+        6,
+        6,
+        6
+    ],
+    "name": "kony.ui.Button",
+    "onClick": "AS_Button_fc13a652ea724400a89306899ce05a71",
+    "onclick": "AS_Button_fc13a652ea724400a89306899ce05a71",
+    "padding": [
+        0,
+        0,
+        0,
+        0
+    ],
+    "parent": "flexScrollDebugContent",
+    "pf": "frmDebug",
+    "render": true,
+    "skin": "sa23fe82fe814c97857ca8bd55521218",
+    "text": "MADE BY",
+    "top": "470dp",
+    "wType": "Button",
+    "widgetAlignment": 5,
+    "width": "260dp",
+    "zIndex": 999,
+    "zindex": 999
+}

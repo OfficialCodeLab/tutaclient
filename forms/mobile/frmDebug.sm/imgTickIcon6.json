@@ -45,6 +45,8 @@
     "context": {
         "channel": "mobile",
         "formID": "frmDebug",
+        "ispercent": true,
+        "platform": "iphone",
         "templateType": "forms",
         "topLevelBox": null
     },
@@ -56,6 +58,7 @@
     "info": null,
     "invokedProperty": "src",
     "isVisible": true,
+    "ispercent": true,
     "isvisible": true,
     "kuid": "de6ffb7151714a9c8ff1c26820994d53",
     "margin": [
