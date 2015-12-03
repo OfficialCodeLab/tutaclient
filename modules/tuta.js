@@ -125,7 +125,8 @@ function updateMap() {
   //#ifdef iphone
   frmMap.mapMain.locationData = [];
   bounds = frmMap.mapMain.getBounds();
-  frmMap.mapMain.zoomLevel = frmMap.mapMain.zoomLevel;  
+  if(frmMap.mapMain.zoomLevel < 14)
+  	frmMap.mapMain.zoomLevel = frmMap.mapMain.zoomLevel;  
   //#endif
   
   
