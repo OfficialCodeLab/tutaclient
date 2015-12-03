@@ -114,15 +114,21 @@ function sliderMove(){
                   |_|                 
     =========================================================*/   
 //UPDATEMAPFUNCTION
-
+var oldbounds;
+var newbounds = null;
 function updateMap() {
 
   var pickupicon = "";
   var locationData = [];
+  
   var bounds = frmMap.mapMain.getBounds();
   //#ifdef iphone
-  frmMap.mapMain.zoomLevel = frmMap.mapMain.zoomLevel;
+  frmMap.mapMain.locationData = [];
+  bounds = frmMap.mapMain.getBounds();
+  frmMap.mapMain.zoomLevel = frmMap.mapMain.zoomLevel;  
   //#endif
+  
+  
 
   if(driverArrived === false){
 
@@ -136,7 +142,7 @@ function updateMap() {
 
       pickupicon = "pickupicon.png";
     }
-    else if (bounds !== null) {
+    else if (bounds !== null && newbounds === null) {
       locationData.push(
       {lat: "" + bounds.center.lat + "", 
        lon: "" + bounds.center.lon + "", 
@@ -167,7 +173,7 @@ function updateMap() {
   }
 
   frmMap.mapMain.locationData = locationData;
-  frmMap.mapMain.navigateTo(0,false);
+  //frmMap.mapMain.navigateTo(0,false);
 }
 
 /*=========================================================*/ 
