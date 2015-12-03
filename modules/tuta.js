@@ -256,6 +256,27 @@ tuta.awaitConfirm = function(bookingID) {
   }, 3, true);
 };
 
+tuta.cancelBooking = function(bookingID) {
+  var input = {
+    id: bookingID
+  };
+  try{
+    application.service("driverService").invokeOperation(
+    "cancelBooking", {}, input,
+    function(results) {
+      //tuta.util.alert("TEST", JSON.stringify(results));
+      currentBooking = null;
+
+    },
+    function(error) {
+      //tuta.util.alert("ERROR", error);
+    });
+  }
+  catch (ex){
+
+  }
+};
+
 tuta.renderFinalRoute = function(){
   tuta.animate.move(frmMap.imgSwipeLever, 0.3, "", "70%", null);
   kony.timer.schedule("swiperball", function(){

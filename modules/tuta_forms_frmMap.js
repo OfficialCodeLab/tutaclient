@@ -130,8 +130,8 @@ tuta.forms.frmMap = function() {
 
     this.control("btnDrop").onClick = selectPickUpLocation;
     //this.control("btnCancelHail").onClick = cancelHail;  
-    this.control("btnCancelHailNow").onClick = function () {frmMap.flexOverlay1.setVisibility(false); cancelHail();};
-    this.control("btnReturnToTrip").onClick = function () {frmMap.flexOverlay1.setVisibility(false);};
+    this.control("btnCancelHailNow").onClick = function () { tuta.animate.move(frmMap.flexOverlay1, 0, "100%", 0, null); };
+    this.control("btnReturnToTrip").onClick = function () { tuta.animate.move(frmMap.flexOverlay1, 0, "100%", 0, null);};
     this.control("btnSubmitRating").onClick = function(){
 
       tuta.animate.move(frmMap.flexOverlay2, 0, "0", "100%", null);
@@ -185,6 +185,12 @@ tuta.forms.frmMap = function() {
 
     this.control("btnCancelSetDest").onClick = clearDestPick;
     this.control("btnCancelSetPick").onClick = clearDestPick;
+    
+    this.control("imgCancel").onTouchStart = function (widget){
+      tuta.animate.move(frmMap.flexOverlay1, 0, 0, 0, null);
+      tuta.cancelBooking(yourBooking);
+      tuta.resetMap();
+    };
 
     frmMap.flexDarken.setVisibility(false);
 
