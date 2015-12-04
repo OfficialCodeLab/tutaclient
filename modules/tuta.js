@@ -22,6 +22,7 @@ var taxiRoute = null;
 //Booking variables
 var inputBooking;
 var yourBooking;
+var drivercell;
 
 //Selector variables
 var people = [];
@@ -78,6 +79,7 @@ var timeformatted =
 //Global variables
 var GLOBAL_GESTURE_FINGERS_1 = {fingers: 1};
 var GLOBAL_CONCAT_LENGTH = 35;
+
 
 if (typeof(tuta) === "undefined") {
   tuta = {};
@@ -342,6 +344,7 @@ tuta.fetchDriverInfo = function(driverID){
   application.service("driverService").invokeOperation(
     "user", {}, {id: driverID}, 
     function(result){
+      drivercell = result.value[0].userInfo.mobileNumber;
       frmMap.lblDriverName.text = result.value[0].userInfo.firstName + " " + result.value[0].userInfo.lastName;
       application.service("driverService").invokeOperation(
         "assignedVehicle", {}, {userId: driverID}, 

@@ -1,0 +1,77 @@
+{
+    "@class": "com.kony.gen.viz.model.component.KVizButton",
+    "DNDConfig": null,
+    "__parentReadjusting__": false,
+    "_height_": {
+        "type": "string",
+        "value": "100%"
+    },
+    "_left_": {
+        "type": "string",
+        "value": "0dp"
+    },
+    "_margin_": [
+        6,
+        6,
+        6,
+        6
+    ],
+    "_padding_": [
+        0,
+        0,
+        0,
+        0
+    ],
+    "_skin_": "sebc9829f55b4fde9e63fdc9a2291d05",
+    "_text_": "",
+    "_top_": {
+        "type": "string",
+        "value": "0dp"
+    },
+    "_width_": {
+        "type": "string",
+        "value": "100%"
+    },
+    "canUpdateUI": true,
+    "containerWeight": 100,
+    "containerweight": 100,
+    "contentAlignment": 5,
+    "contentalignment": 5,
+    "disabledSkins": {},
+    "displayText": true,
+    "displaytext": true,
+    "enabled": false,
+    "focusSkin": "sebc9829f55b4fde9e63fdc9a2291d05",
+    "focusskin": "sebc9829f55b4fde9e63fdc9a2291d05",
+    "height": "100%",
+    "id": "btnPhone",
+    "info": null,
+    "isVisible": true,
+    "isvisible": true,
+    "kuid": "5d979bbdcf40401487006dcd658e7f33",
+    "left": "0dp",
+    "margin": [
+        6,
+        6,
+        6,
+        6
+    ],
+    "name": "kony.ui.Button",
+    "padding": [
+        0,
+        0,
+        0,
+        0
+    ],
+    "parent": "flexPhone",
+    "pf": "frmMap",
+    "render": true,
+    "skin": "sebc9829f55b4fde9e63fdc9a2291d05",
+    "text": "",
+    "top": "0dp",
+    "wType": "Button",
+    "widgetAlignment": 5,
+    "width": "100%",
+    "zIndex": 202,
+    "zindex": 202
+}

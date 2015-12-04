@@ -38,7 +38,8 @@
     "canUpdateUI": true,
     "channel": "mobile",
     "children": [
-        "imgPhone"
+        "imgPhone",
+        "btnPhone"
     ],
     "clipBounds": true,
     "clipbounds": true,

@@ -41,7 +41,7 @@ tuta.forms.frmMap = function() {
     star.push(frmMap.imgStar3);
     star.push(frmMap.imgStar4);
     star.push(frmMap.imgStar5);
-
+	
     this.leftMenu = new tuta.controls.menu(
       this.control("flexAll"), 
       this.control("flexMenu"), 
@@ -187,7 +187,16 @@ tuta.forms.frmMap = function() {
     this.control("btnCancelSetPick").onClick = clearDestPick;
 
     frmMap.flexDarken.setVisibility(false);
-
+	
+    this.control("btnPhone").onClick = function(button) {
+      try {
+		
+		kony.phone.dial(drivercell);
+	  } 
+      catch(err) {
+		alert("error in dial:: "+ err);
+      }
+    };
 
   };//End Preshow
 
