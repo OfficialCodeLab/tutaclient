@@ -116,14 +116,22 @@ function sliderMove(){
                   |_|                 
     =========================================================*/   
 //UPDATEMAPFUNCTION
-
+var oldbounds;
+var newbounds = null;
 function updateMap() {
 
   var pickupicon = "";
   var locationData = [];
-  var zoomset = frmMap.mapMain.zoomLevel;
+  
   var bounds = frmMap.mapMain.getBounds();
-  //tuta.util.alert("TEST", JSON.stringify(bounds));
+  //#ifdef iphone
+  frmMap.mapMain.locationData = [];
+  bounds = frmMap.mapMain.getBounds();
+  if(frmMap.mapMain.zoomLevel < 14)
+  	frmMap.mapMain.zoomLevel = frmMap.mapMain.zoomLevel;  
+  //#endif
+  
+  
 
   if(driverArrived === false){
 
@@ -136,15 +144,14 @@ function updateMap() {
          image : ""});
 
       pickupicon = "pickupicon.png";
-      zoomset = overview.zoom;
     }
-    else if (bounds !== null) {
+    else if (bounds !== null && newbounds === null) {
       locationData.push(
       {lat: "" + bounds.center.lat + "", 
        lon: "" + bounds.center.lon + "", 
        name:"", 
        desc: "", 
-       image : ""});      
+       image : ""});     
     }
 
     //var count = 0;
@@ -155,7 +162,6 @@ function updateMap() {
        desc: "", 
        image : "pickupicon.png"});
   }
-
 
   if(nearbyDrivers.length > 0){
     tuta.driverBearing(nearbyDrivers[0].id, function(response){
@@ -169,12 +175,8 @@ function updateMap() {
        image : currentPin});
   }
 
-  if(trackingZoom !== 0){
-    zoomSet = trackingZoom;    
-  }
-
-  frmMap.mapMain.zoomLevel = zoomset;
   frmMap.mapMain.locationData = locationData;
+  //frmMap.mapMain.navigateTo(0,false);
 }
 
 /*=========================================================*/ 
@@ -257,6 +259,27 @@ tuta.awaitConfirm = function(bookingID) {
   }, 3, true);
 };
 
+tuta.cancelBooking = function(bookingID) {
+  var input = {
+    id: bookingID
+  };
+  try{
+    application.service("driverService").invokeOperation(
+    "cancelBooking", {}, input,
+    function(results) {
+      //tuta.util.alert("TEST", JSON.stringify(results));
+      currentBooking = null;
+
+    },
+    function(error) {
+      //tuta.util.alert("ERROR", error);
+    });
+  }
+  catch (ex){
+
+  }
+};
+
 tuta.renderFinalRoute = function(){
   tuta.animate.move(frmMap.imgSwipeLever, 0.3, "", "70%", null);
   kony.timer.schedule("swiperball", function(){
@@ -272,6 +295,15 @@ tuta.renderFinalRoute = function(){
           kony.timer.schedule("renderDirFinal", function(){
             renderDirections(frmMap.mapMain, response, "0x0036bba7","","dropofficon.png");
             updateMap();
+            kony.timer.schedule("zoomIn", function(){
+              //#ifdef android
+              frmMap.mapMain.zoomLevel = 19;
+              //#endif
+              
+              //#ifdef iphone
+              frmMap.mapMain.zoomLevel = 21;
+              //#endif
+            }, 3, false);
           }, 1, false);
         });
 
@@ -311,13 +343,7 @@ tuta.driverBearing = function (driverID, callback){
 
 
 tuta.renderRouteAndDriver = function (booking){
-  //#ifdef iphone
-  trackingZoom = 14;
-  //#endif
-
-  //#ifdef android
-  trackingZoom = 12;
-  //#endif
+  
   var driver = booking.providerId;
   initialLoad = true;
   application.service("driverService").invokeOperation(
@@ -572,7 +598,7 @@ tuta.awaitDriverDropOffConfirmation = function(){
           if (result.value[0].status==="Completed"){
             kony.timer.cancel("tripCompleteAwaitTimer");
             kony.timer.cancel("trackdriverloop");
-            frmMap.mapMain.zoomLevel = overview.zoom;
+            //frmMap.mapMain.zoomLevel = overview.zoom;
             tuta.animate.move(frmMap.flexOverlay2, 0, "0", "0", null);
             tuta.animate.moveBottomLeft(frmMap.flexTimeToDest, 0.1, "105", "-150", null);
             tuta.animate.moveBottomLeft(frmMap.flexDriverInfo, 0.1, "-110", "", null);

@@ -130,8 +130,15 @@ tuta.forms.frmMap = function() {
 
     this.control("btnDrop").onClick = selectPickUpLocation;
     //this.control("btnCancelHail").onClick = cancelHail;  
-    this.control("btnCancelHailNow").onClick = function () {frmMap.flexOverlay1.setVisibility(false); cancelHail();};
-    this.control("btnReturnToTrip").onClick = function () {frmMap.flexOverlay1.setVisibility(false);};
+    this.control("btnCancelHailNow").onClick = function () { 
+      tuta.animate.move(frmMap.flexOverlay1, 0, "100%", 0, null); 
+      tuta.animate.moveBottomLeft(frmMap.flexDriverInfo, 0.2, "0", "0", null);
+      tuta.animate.moveBottomLeft(frmMap.flexCancel, 0.2, "105", "-5", null);
+      tuta.animate.moveBottomRight(frmMap.flexPhone, 0.2, "105", "-5", null);
+      tuta.cancelBooking(yourBooking);
+      tuta.resetMap();
+    };
+    this.control("btnReturnToTrip").onClick = function () { tuta.animate.move(frmMap.flexOverlay1, 0, "100%", 0, null);};
     this.control("btnSubmitRating").onClick = function(){
 
       tuta.animate.move(frmMap.flexOverlay2, 0, "0", "100%", null);
@@ -185,6 +192,10 @@ tuta.forms.frmMap = function() {
 
     this.control("btnCancelSetDest").onClick = clearDestPick;
     this.control("btnCancelSetPick").onClick = clearDestPick;
+    
+    this.control("btnCancelHailOnRoute").onClick = function (button){
+      tuta.animate.move(frmMap.flexOverlay1, 0, 0, 0, null);
+    };
 
     frmMap.flexDarken.setVisibility(false);
 	
@@ -202,6 +213,9 @@ tuta.forms.frmMap = function() {
 
   tuta.forms.frmMap.onPostShow = function(form) {
     var self = this;    
+    //#ifdef iphone
+    frmMap.mapMain.zoomLevel = 17;
+    //#endif
     //var testDist = tuta.location.distance(12.33,12.55,22.67,23.52);
     //tuta.util.alert("TEST", testDist);
 

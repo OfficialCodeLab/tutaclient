@@ -51,7 +51,8 @@
         "btnCancelHailDriving",
         "flexAdd",
         "flexArriving",
-        "flexDriverArrival"
+        "flexDriverArrival",
+        "flexSwipe"
     ],
     "clipBounds": true,
     "clipbounds": true,
