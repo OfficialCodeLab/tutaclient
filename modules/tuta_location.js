@@ -43,6 +43,7 @@ tuta.location.updateLocationOnServer = function(latitude, longitude){
 };
 
 tuta.location.loadPositionInit = function(){
+  newbounds = 1;
   tuta.location.currentPosition(function(response) {
     tuta.location.geoCode(response.coords.latitude, response.coords.longitude, function(success, error) {
       currentPos.geometry.location.lat = response.coords.latitude;
@@ -58,6 +59,7 @@ tuta.location.loadPositionInit = function(){
             }
           }
         }
+        
 
 
       }
@@ -67,9 +69,10 @@ tuta.location.loadPositionInit = function(){
       //tuta.util.alert("TEST", "COUNTRY CODE: " + country.short_name);
       updateMap();
       kony.timer.schedule("startwatch", function(){
+        newbounds = null;
         tuta.startWatchLocation();
       }, 4, false);
-
+		
       tuta.location.updateLocationOnServer(response.coords.latitude, response.coords.longitude);
 
     });

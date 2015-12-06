@@ -637,6 +637,7 @@ tuta.initCallback = function(error) {
           application.service("userService").invokeOperation(
             "login", {}, JSON.parse(input),
             function(result) {
+              //tuta.location.loadPositionInit();
               tuta.forms.frmMap.show();
               //kony.timer.schedule("startwatch", function(){tuta.startWatchLocation();}, 2, false);
             },
