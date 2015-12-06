@@ -80,6 +80,10 @@ var timeformatted =
 //Global variables
 var GLOBAL_GESTURE_FINGERS_1 = {fingers: 1};
 var GLOBAL_CONCAT_LENGTH = 35;
+var GLOBAL_BASE_RATE = 40;
+
+//Need to be initialized
+var CURRENT_EST_FEE = 0;
 
 
 if (typeof(tuta) === "undefined") {
