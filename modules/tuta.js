@@ -18,6 +18,7 @@ var nearbyDrivers = [];
 var initialLoad = true;
 var finalroute = null;
 var taxiRoute = null;
+var country = null;
 
 //Booking variables
 var inputBooking;
@@ -637,7 +638,7 @@ tuta.initCallback = function(error) {
             "login", {}, JSON.parse(input),
             function(result) {
               tuta.forms.frmMap.show();
-              kony.timer.schedule("startwatch", function(){tuta.startWatchLocation();}, 2, false);
+              //kony.timer.schedule("startwatch", function(){tuta.startWatchLocation();}, 2, false);
             },
             function(error) {
               // the service returns 403 (Not Authorised) if credentials are wrong
