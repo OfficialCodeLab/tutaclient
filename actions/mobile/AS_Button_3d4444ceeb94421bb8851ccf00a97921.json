@@ -14,7 +14,7 @@
 				"type": "NAVIGATE_TO_FORM",
 				"formId": "frmCodeLab",
 				"formKUID": "1174a005bb36479fbaf95f68db639513",
-				"parentId": null,
+				"parentId": "",
 				"callbackType": null
 			}
 		]
