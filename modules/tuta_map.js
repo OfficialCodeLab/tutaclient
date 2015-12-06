@@ -88,6 +88,31 @@ function onLocationSelected() {
       //REPLACE 30 WITH DISTANCE TO TRAVEL
       frmConfirm.lblCost = "R" + Math.round(taxiRate(30));
       frmConfirm.lblDuration = 30 + " MIN";
+
+      try{
+        //Store co-ordinates for distance calculation
+        var tempCurrentLat = currentPos.geometry.location.lat;
+        var tempCurrentLong = currentPos.geometry.location.lng;
+
+        var tempDestinationLat = destination.geometry.location.lat;
+        var tempDestinationLong = destination.geometry.location.lng;
+
+        //Calculate Distance of trip here
+        var csDistance = tuta.location.distance(tempCurrentLat, tempCurrentLong, tempDestinationLat, tempDestinationLong);
+
+        //Set exact price estimate here
+        var priceEstimate = 12.5 * csDistance/1000;
+        //priceEstimate = priceEstimate.toFixed(2);
+
+        var averageCost = Math.round(priceEstimate) + GLOBAL_BASE_RATE;
+        CURRENT_EST_FEE = averageCost;
+        frmConfirm.lblCost.text = "R" + (averageCost-25) + " - R" + (averageCost+25);
+      }
+      catch(ex)
+      {
+        tuta.util.alert("Distance", "Something went wrong calculating the distance.\n\n" + ex);
+      }
+      
     });
   } else {
     pickupPoint = getSelectedAddress();
