@@ -91,22 +91,19 @@ function onLocationSelected() {
 
       try{
         //Store co-ordinates for distance calculation
-        var tempCurrentLat = currentPos.geometry.location.lat;
-        var tempCurrentLong = currentPos.geometry.location.lng;
+        var locA = [{
+          lat: currentPos.geometry.location.lat,
+          lon: currentPos.geometry.location.lng
+        }];
 
-        var tempDestinationLat = destination.geometry.location.lat;
-        var tempDestinationLong = destination.geometry.location.lng;
+        var locB = [{
+          lat: destination.geometry.location.lat,
+          lon: destination.geometry.location.lng          
+        }];
 
-        //Calculate Distance of trip here
-        var csDistance = tuta.location.distance(tempCurrentLat, tempCurrentLong, tempDestinationLat, tempDestinationLong);
-
-        //Set exact price estimate here
-        var priceEstimate = 12.5 * csDistance/1000;
-        //priceEstimate = priceEstimate.toFixed(2);
-
-        var averageCost = Math.round(priceEstimate) + GLOBAL_BASE_RATE;
-        CURRENT_EST_FEE = averageCost;
-        frmConfirm.lblCost.text = "R" + (averageCost-25) + " - R" + (averageCost+25);
+        estimateTripCost(locA, locB, function(minCost, maxCost){
+          frmConfirm.lblCost.text = "R" + minCost + " - R" + maxCost;          
+        });
       }
       catch(ex)
       {
@@ -134,4 +131,15 @@ function showSearchBar() {
   frmMap.flexAddress.setVisibility(true);
   frmMap.flexShadow.setVisibility(true);
   frmMap.flexNoOfPeople.setVisibility(true); 
+}
+
+function estimateTripCost (locationA, locationB, callback){
+  //var dist = tuta.location.distance(locationA.lat, locationA.lng, locationB.lat, locationB.lng);
+  var matrixDist = tuta.location.distanceMatrix(locationA, locationB, function(response){
+    var dist = response[0].elements[0].distance.value;
+    var averageCost = (dist/1000)*GLOBAL_FEE_KM + GLOBAL_BASE_RATE;
+    var minCost = Math.round(averageCost-(averageCost*GLOBAL_FEE_DEVIATION));
+    var maxCost = Math.round(averageCost+(averageCost*GLOBAL_FEE_DEVIATION));
+    callback(minCost, maxCost); 
+  }, 1);  
 }
