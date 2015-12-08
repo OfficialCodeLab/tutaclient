@@ -3,7 +3,7 @@
     "__parentReadjusting__": false,
     "_bottom_": {
         "type": "string",
-        "value": "16%"
+        "value": "100dp"
     },
     "_height_": {
         "type": "string",
@@ -23,21 +23,22 @@
     ],
     "_right_": {
         "type": "string",
-        "value": "10dp"
+        "value": "-10dp"
     },
-    "_skin_": "s9b2ce2774e144da99f795c3ff096827",
+    "_skin_": "sdc78ba53dde4aa1b9270068129741fc",
     "_width_": {
         "type": "string",
-        "value": "60dp"
+        "value": "75dp"
     },
     "allboxes": [],
     "autogrowMode": 0,
     "autogrowmode": 0,
-    "bottom": "16%",
+    "bottom": "100dp",
     "canUpdateUI": true,
     "children": [
         "imgMapCenter",
-        "btnMapCenter"
+        "btnMapCenter",
+        "Image0ce4ac8f9da8445"
     ],
     "clipBounds": true,
     "clipbounds": true,
@@ -72,8 +73,8 @@
     "percent": true,
     "pf": "frmMap",
     "render": true,
-    "right": "10dp",
-    "skin": "s9b2ce2774e144da99f795c3ff096827",
+    "right": "-10dp",
+    "skin": "sdc78ba53dde4aa1b9270068129741fc",
     "snapGridSize": 10,
     "snapToGrid": true,
     "snapgridsize": 10,
@@ -81,5 +82,5 @@
     "wType": "FlexContainer",
     "widgetAlignment": 1,
     "widgetalignment": 1,
-    "width": "60dp"
+    "width": "75dp"
 }
