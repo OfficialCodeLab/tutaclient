@@ -104,7 +104,6 @@ tuta.forms.frmCreateAcc = function() {
                                       kony.store.setItem("user", JSON.stringify(input));
                                       tuta.location.loadPositionInit();
                                       tuta.animate.moveBottomLeft(frmSplash.flexMainButtons, 0, "0%", "0", null);
-                                      tuta.forms.frmMap.show();
                                       tuta.util.alert("SUCCESS", "Account has been created.");
                                       creatingAccount = false;
                                     },

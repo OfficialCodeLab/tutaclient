@@ -191,6 +191,7 @@ function updateMap() {
 
   }
   catch(ex){
+    //tuta.util.alert("UPDATE MAP ERROR", ex);
 
   }
   //frmMap.mapMain.navigateTo(0,false);
@@ -649,12 +650,12 @@ tuta.initCallback = function(error) {
       input = kony.store.getItem("user");
       if (input !== null){
         try{
-          tuta.location.loadPositionInit();
           application.service("userService").invokeOperation(
             "login", {}, JSON.parse(input),
             function(result) {
+              tuta.location.loadPositionInit();
               //tuta.location.loadPositionInit();
-              tuta.forms.frmMap.show();
+              //tuta.forms.frmMap.show();
               //kony.timer.schedule("startwatch", function(){tuta.startWatchLocation();}, 2, false);
             },
             function(error) {

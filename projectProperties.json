@@ -136,13 +136,7 @@
         "osPlatform": "",
         "wType": "Appmenu"
     },
-    "accountCloudGuid": "f618eaaf-e810-4263-82ab-92210361ccbb",
-    "projectCloudGuid": "ca0d53fb-c579-44bb-97e5-3b6214690f31",
-    "prototype": {
-        "createdOn": "2015-11-18T07:21:21.506Z",
-        "createdById": "f618eaaf-e810-4263-82ab-92210361ccbb",
-        "createdBy": "Courtney Jooste",
-        "shareGuid": "ZPB8V",
-        "resourceId": "e9228e5e-b5bc-4147-bf9d-83bffbd5ac35"
-    }
+    "accountCloudGuid": "a40fb97b-190e-4cb7-89d4-8c21d9a3011b",
+    "projectCloudGuid": "841a4845-3af7-4ba7-968f-aa5095afd9b7",
+    "projectResourceCloudGuid": "0f28aa4b-2fab-439f-a3e1-afbc375edb6e"
 }
