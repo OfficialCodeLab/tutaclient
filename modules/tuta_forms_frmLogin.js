@@ -23,8 +23,10 @@ tuta.forms.frmLogin = function() {
             function(result) {
               //tuta.util.alert("LOGIN SUCCESS", result.value);
               tuta.animate.moveBottomLeft(frmSplash.flexMainButtons, 0, "0%", "0", null);
-                tuta.forms.frmMap.show();
+                //Check for app states, resume accordingly.
+                
                 //Move to next form
+                tuta.forms.frmMap.show();
             },
             function(error) {
                 // the service returns 403 (Not Authorised) if credentials are wrong

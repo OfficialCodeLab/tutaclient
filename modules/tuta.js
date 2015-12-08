@@ -1,3 +1,15 @@
+/*
+    Tuta Client App
+
+    Trip States:
+    1. Idling (panning the map etc)
+    2. Hailing a driver
+    3. Driver on route (waiting for driver, centers on self)
+    4. In transit (in car with driver)
+    
+*/
+
+
 // global reference to app object
 var application = null; 
 
@@ -97,19 +109,6 @@ if (typeof(tuta) === "undefined") {
 function initApp() {
   tuta.init();
 }
-
-/*
-function sliderMove(){   
-  if(frmConfirm.sliderBook.selectedValue > 65 && sliderDir === 2){
-    showLater();    
-  }
-  else if (frmConfirm.sliderBook.selectedValue < 45 && sliderDir === 1){    
-    showNow();
-  }
-  else if(sliderDir !== 0 )
-  {      
-  }  
-}*/
 
 /*=========================================================
       _   _           _       _       
@@ -249,6 +248,16 @@ tuta.awaitConfirm = function(bookingID) {
   //Kony timer – checks evert 5 seconds for the booking (if there is one) , 
   //take the result and check the status value of the key status – 
   //when it changes to CONFIRMED, then hide the flex container again
+
+  /*
+    TODO-CODELAB
+    ============
+    Name: APPHOOK_1
+    Reason: App states need to hook in here.
+    - Set the app state to HAILING (2)
+    - Store the current booking, app state and user in the kony store
+  */
+
   inputBooking = { id : bookingID };
   try{
     kony.timer.cancel("taxiHailTimer");
@@ -377,6 +386,16 @@ tuta.renderRouteAndDriver = function (booking){
 
   var driver = booking.providerId;
   initialLoad = true;
+
+  /*
+    TODO-CODELAB
+    ============
+    Name: APPHOOK_2
+    Reason: App states need to hook in here.
+    - Set the app state to EN_ROUTE (3)
+    - Store the current booking, app state and user in the kony store
+  */
+
   application.service("driverService").invokeOperation(
     "user", {}, {id : driver},
     function(result) { 
@@ -586,6 +605,7 @@ tuta.awaitDriverPickupConfirmation = function(){
 
   }
 
+
   kony.timer.schedule("taxiAwaitTimer", function(){
 
 
@@ -594,6 +614,16 @@ tuta.awaitDriverPickupConfirmation = function(){
       function(result) { 
         try{
           if (result.value[0].status==="InTransit"){
+
+              /*
+                TODO-CODELAB
+                ============
+                Name: APPHOOK_3
+                Reason: App states need to hook in here.
+                - Set the app state to IN_TRANSIT (4)
+                - Store the current booking, app state and user in the kony store
+              */
+
             tuta.awaitDriverDropOffConfirmation();
             overview.active = 0;   
             driverArrived = true;  
@@ -638,6 +668,16 @@ tuta.awaitDriverDropOffConfirmation = function(){
           if (result.value[0].status==="Completed"){
             kony.timer.cancel("tripCompleteAwaitTimer");
             kony.timer.cancel("trackdriverloop");
+
+
+              /*
+                TODO-CODELAB
+                ============
+                Name: APPHOOK_4
+                Reason: App states need to hook in here.
+                - Set the app state to IDLE (1)
+                - Store the current booking, app state and user in the kony store
+              */
             //frmMap.mapMain.zoomLevel = overview.zoom;
             tuta.animate.move(frmMap.flexOverlay2, 0, "0", "0", null);
             tuta.animate.moveBottomLeft(frmMap.flexTimeToDest, 0.1, "105", "-150", null);

@@ -41,7 +41,7 @@ tuta.forms.frmConfirm = function() {
         else
           pickupPosition = pickupPoint;
 
-        if (sliderDir == 2)
+        if (sliderDir == 2) //Booking Now
         {
           //Gets current user as a JSON Object
           var booking = {
@@ -56,6 +56,8 @@ tuta.forms.frmConfirm = function() {
             status: "Unconfirmed"
           };
 
+
+
           //tuta.logTechUser();
 
           var input = { data : JSON.stringify(booking) };
@@ -65,8 +67,14 @@ tuta.forms.frmConfirm = function() {
             "book", {}, input,
             function(result) {
               bookingID = result.value[0].id;
+
+              //Store the current booking
+              ksAppState.bookingID = bookingID;
+
               tuta.forms.frmMap.show();
               kony.timer.schedule("awaitConfirm", function(){tuta.awaitConfirm(bookingID);}, 1, false);
+              
+              //Stops repetitive clicks
               hailingTaxi = false;
             },
             function(error) {
@@ -75,7 +83,8 @@ tuta.forms.frmConfirm = function() {
             }
           );
         } 
-        else if (sliderDir == 1){
+        else if (sliderDir == 1) //Booking Later
+        {
           var pickupTime = getEpoch();
           var pickupTimeShort = Math.round(pickupTime/1000);
           var timeNow = Math.round(new Date().getTime()/1000);
@@ -84,7 +93,8 @@ tuta.forms.frmConfirm = function() {
           //                time1.getFullYear() + "\nTime " + time1.getHours() + ":" + time1.getMinutes());
 
           
-          if(pickupTimeShort - timeNow > 600){
+          if(pickupTimeShort - timeNow > 600) //Booking restrictions satisfied
+          {
             var bookingLater = {
               userId: currentUser.userName + "",
               time: "" + pickupTime,
