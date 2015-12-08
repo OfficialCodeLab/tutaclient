@@ -418,6 +418,15 @@ tuta.startUpdateMapFunction = function(){
   }, 7, true);
 };
 
+tuta.stopUpdateMapFunction = function(){
+  try{
+    kony.timer.cancel("updateMapSlow");
+  }
+  catch(ex){
+
+  }
+}
+
 tuta.userExists = function (response){
   try{
     if(response.value[0] !== [])
