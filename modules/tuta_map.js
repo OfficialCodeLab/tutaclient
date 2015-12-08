@@ -2,7 +2,10 @@
 function selectPickUpLocation() {
   searchMode = 1;
   tuta.animate.move(frmMap.flexAdd, 0.3, "70", "0%", null);
-  kony.timer.schedule("focusPick", function(){frmMap.txtPick.setFocus(true);}, 0.4, false);
+  try{
+    kony.timer.schedule("focusPick", function(){frmMap.txtPick.setFocus(true);}, 0.4, false);
+  }
+  catch(ex){}
 }
 
 function selectDest(form) {
