@@ -1,3 +1,16 @@
+/*
+    Tuta Client App
+
+    Trip States:
+    1. Idling (panning the map etc)
+    2. Hailing a driver
+    3. Driver on route (waiting for driver, centers on self)
+    4. In transit (in car with driver)
+    
+*/
+
+
+
 // global reference to app object
 var application = null; 
 
@@ -10,6 +23,18 @@ var awaitingConfirmation = true;
 var tripOnRoute = false;
 var hailingTaxi = false; //Used to prevent multiple requests
 var onJourney = 0;
+
+//More app state variables
+//(See top of this file)
+var ksAppState = {};
+
+/*
+ksAppState = {
+  tripState: 0,
+  bookingID: "";
+}
+*/
+
 
 //Location variables
 var destination = null;
@@ -250,6 +275,19 @@ tuta.awaitConfirm = function(bookingID) {
   //take the result and check the status value of the key status – 
   //when it changes to CONFIRMED, then hide the flex container again
   inputBooking = { id : bookingID };
+
+  //Set app state to HAILING ( 2 )
+  ksAppState.tripState = 2;
+
+/*
+  tripState: 0,
+  bookingID: "";
+}
+*/
+
+
+
+
   try{
     kony.timer.cancel("taxiHailTimer");
   }
