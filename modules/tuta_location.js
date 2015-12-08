@@ -58,20 +58,33 @@ tuta.location.loadPositionInit = function(){
               country = components[i];
             }
           }
-        }
-        
-
-
+        }    
       }
       catch(ex){
 
       }
       //tuta.util.alert("TEST", "COUNTRY CODE: " + country.short_name);
-      updateMap();
-      kony.timer.schedule("startwatch", function(){
-        newbounds = null;
-        tuta.startWatchLocation();
-      }, 4, false);
+      try{
+        if(currentPos.geometry.location.lat !== null && currentPos.geometry.location.lat !== undefined &&
+           currentPos.geometry.location.lng !== null && currentPos.geometry.location.lng !== undefined)
+        {
+          kony.timer.schedule("loadMap", function(){
+            tuta.forms.frmMap.show();
+            updateMap();
+          }, 0.2, false);
+
+          kony.timer.schedule("startwatch", function(){
+            newbounds = null;
+            tuta.startWatchLocation();
+          }, 4, false);
+
+        }
+        else{
+          tuta.location.loadPositionInit();
+        }
+      }catch(ex){
+        
+      }
 		
       tuta.location.updateLocationOnServer(response.coords.latitude, response.coords.longitude);
 

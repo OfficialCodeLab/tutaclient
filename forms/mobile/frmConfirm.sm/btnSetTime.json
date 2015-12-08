@@ -27,7 +27,7 @@
     "_text_": "",
     "_top_": {
         "type": "string",
-        "value": "140dp"
+        "value": "125dp"
     },
     "_width_": {
         "type": "string",
@@ -57,8 +57,8 @@
     "iphone": {
         "render": true
     },
-    "isVisible": true,
-    "isvisible": true,
+    "isVisible": false,
+    "isvisible": false,
     "kuid": "ba5b0450c3e143ac9313b2d92164ed3a",
     "left": "80dp",
     "margin": [
@@ -91,7 +91,7 @@
         "render": true
     },
     "text": "",
-    "top": "140dp",
+    "top": "125dp",
     "wType": "Button",
     "widgetAlignment": 5,
     "width": "65%",
