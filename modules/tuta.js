@@ -204,6 +204,11 @@ tuta.resetMap = function (){
   trackingZoom = 0;
   tripOnRoute = false;
   onJourney = 0;
+  try{
+    tuta.forms.frmMap.flexMapCenter.setVisibility(true);
+  } catch (ex){
+
+  }
 };
 
 tuta.menuToggle = function (time, bool){
@@ -257,6 +262,14 @@ tuta.awaitConfirm = function(bookingID) {
           tuta.renderRouteAndDriver(result.value[0]);
           tuta.fetchDriverInfo(result.value[0].providerId);
           yourBooking = bookingID;
+
+          //Show map center button
+          try{
+            tuta.forms.frmMap.flexMapCenter.setVisibility(false);
+          }
+          catch(ex){
+            //tuta.util.alert("Info", "Unable to remove the map centering button.");
+          }
 
         }
       },
