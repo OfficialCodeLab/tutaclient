@@ -58,10 +58,7 @@ tuta.location.loadPositionInit = function(){
               country = components[i];
             }
           }
-        }
-        
-
-
+        }    
       }
       catch(ex){
 

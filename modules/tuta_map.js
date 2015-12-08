@@ -12,7 +12,7 @@ function selectDest(form) {
   else
     add = frmMap.txtPick.text;
 
-  findAddress(add, function(result) {
+  tuta.location.addressList(add, function(result) {
     //ssa.mobile.alert("RES", JSON.stringify(result));
     frmMap.flexFindingDest.setVisibility(false);
     if(result.status === "ZERO_RESULTS")

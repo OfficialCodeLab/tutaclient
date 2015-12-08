@@ -93,7 +93,8 @@ tuta.calendar.changeAmPm = function(){
 };
 
 tuta.calendar.getMonth = function (month){
-  return (months.track)+1;
+  
+  return (months.track);
 };
 
 tuta.calendar.getHour = function (hour, meridian){
