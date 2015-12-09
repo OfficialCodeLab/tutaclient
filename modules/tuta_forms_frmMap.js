@@ -16,6 +16,7 @@ tuta.forms.frmMap = function() {
 
   tuta.forms.frmMap.onPreShow = function(form) {
     var self = this;
+    
 
     this.control("btnPerson1").onClick = onPeopleSelect;
     this.control("btnPerson2").onClick = onPeopleSelect;
