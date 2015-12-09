@@ -41,7 +41,7 @@ function getCurrentPosition(callback) {
           }
           //frmsplash action initapp ->frm map show
           
-          model.user.location = { lat: position.coords.latitude , long: position.coords.longitude, time: position.timestamp };
+          model.user.location = { lat: position.coords.latitude , lng: position.coords.longitude, time: position.timestamp };
 		  
           geoCode(position.coords.latitude,position.coords.longitude,callback);
         },

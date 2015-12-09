@@ -51,7 +51,7 @@ tuta.forms.frmConfirm = function() {
             },
             location: {
               lat: pickupPosition.geometry.location.lat + "",
-              long: pickupPosition.geometry.location.lng + ""
+              lng: pickupPosition.geometry.location.lng + ""
             },
             status: "Unconfirmed"
           };
@@ -103,7 +103,7 @@ tuta.forms.frmConfirm = function() {
               },
               location: {
                 lat: pickupPosition.geometry.location.lat + "",
-                long: pickupPosition.geometry.location.lng + ""
+                lng: pickupPosition.geometry.location.lng + ""
               },
               status: "Unconfirmed"
             };
