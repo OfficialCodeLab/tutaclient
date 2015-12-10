@@ -37,6 +37,11 @@ var inputBooking;
 var yourBooking;
 var drivercell;
 
+//Current Variables
+var currentUser;
+var currentBooking;
+var currentAppState = {};
+
 //Selector variables
 var people = [];
 var star = [];
@@ -257,6 +262,18 @@ tuta.awaitConfirm = function(bookingID) {
     - Set the app state to HAILING (2)
     - Store the current booking, app state and user in the kony store
   */
+
+  currentBooking = bookingID;
+
+  //Create an object for storage
+  currentAppState = {
+    user: currentUser,
+    booking: currentBooking,
+    stateNum: 2
+  };
+
+  //Store the object in case of crash
+  tuta.appstate.setState(currentAppState);
 
   inputBooking = { id : bookingID };
   try{
@@ -715,15 +732,20 @@ tuta.initCallback = function(error) {
           application.service("userService").invokeOperation(
             "login", {}, JSON.parse(input),
             function(result) {
-              tuta.location.loadPositionInit();
+              currentUser = input;
+              
+              //CS002
+
+              tuta.appstate.helper.resumeFromState();
+
               //tuta.location.loadPositionInit();
-              //tuta.forms.frmMap.show();
-              //kony.timer.schedule("startwatch", function(){tuta.startWatchLocation();}, 2, false);
+              
             },
             function(error) {
               // the service returns 403 (Not Authorised) if credentials are wrong
               // make IF statement to check for 403 error only
               input = kony.store.removeItem("user");
+
               tuta.animate.moveBottomLeft(frmSplash.flexMainButtons, 0.2, "0%", "0", null);
 
             }

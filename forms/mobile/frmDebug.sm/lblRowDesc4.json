@@ -23,7 +23,7 @@
         0
     ],
     "_skin_": "sa9c7cb492224adb8fb8c5a1b9f1d4d7",
-    "_text_": "Toggle Setting 4",
+    "_text_": "Check App State",
     "_top_": {
         "type": "string",
         "value": "0dp"
@@ -73,7 +73,7 @@
     "pf": "frmDebug",
     "render": true,
     "skin": "sa9c7cb492224adb8fb8c5a1b9f1d4d7",
-    "text": "Toggle Setting 4",
+    "text": "Check App State",
     "toolTip": "",
     "tooltip": "",
     "top": "0dp",

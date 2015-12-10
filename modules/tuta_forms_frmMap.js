@@ -229,6 +229,22 @@ tuta.forms.frmMap = function() {
       }
     };
 
+
+    currentAppState = {
+        user: currentUser,
+        booking: "None",
+        stateNum: 1
+      };
+
+    try{
+      //Store the object in case of crash
+      tuta.appstate.setState(currentAppState);
+    } catch(ex){
+      tuta.util.alert("Error", "Unable to store app state for some reason.\n\n" + ex + 
+        "\n\n" + JSON.stringify(currentAppState));
+    }
+    
+
   };//End Preshow
 
   tuta.forms.frmMap.onPostShow = function(form) {

@@ -58,7 +58,14 @@ tuta.forms.frmDebug = function() {
     };
 
     this.control("btnTickPress4").onClick = function (button){
-      toggleImage(frmDebug.imgTickIcon4);
+      //toggleImage(frmDebug.imgTickIcon4);
+      //tuta.util.alert("Current User Value", currentUser);
+      try{
+        tuta.util.alert("Resuming from", JSON.stringify(tuta.appstate.getState()) + "test");
+      } catch (ex){
+        tuta.util.alert("Error!", ex);
+      }
+      
     };
 
     //User info button
@@ -78,6 +85,7 @@ tuta.forms.frmDebug = function() {
       application.service("userService").invokeOperation(
         "user", {}, input,
         function(result) { 
+          
           var csFirstName = result.value[0].userInfo.firstName;
           var csLastName = result.value[0].userInfo.lastName;
           var csEmail = currentUserEmail;
@@ -88,6 +96,7 @@ tuta.forms.frmDebug = function() {
                          "\nEmail Address: " + csEmail +
                          "\nLattitude: " + csLat + 
           				 "\nLongitude: " + csLong);
+          
           
         },
         function(error) {
