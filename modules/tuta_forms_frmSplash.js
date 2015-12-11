@@ -36,7 +36,7 @@ tuta.forms.frmSplash = function() {
       else{
         //Inputs stored as a JSON object temporarily
         var inputs = { userName : self.control("txtEmail").text.toLowerCase() , password : self.control("txtPassword").text };
-
+        currentUser = inputs;
         // try log user in
         application.service("userService").invokeOperation(
           "login", {}, inputs,

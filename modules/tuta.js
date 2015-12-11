@@ -40,6 +40,7 @@ var drivercell;
 //Current Variables
 var currentUser;
 var currentBooking;
+var currentBookingObj = {};
 var currentAppState = {};
 
 //Selector variables
@@ -60,7 +61,7 @@ var currentPin = "cabpin0.png";
 //Calendar trackers
 var days = {track:0, label:"d", values:[]};
 var months = {track:0, label:"m", values:["Jan", "Feb", "Mar", "Apr", "May", "June", "July", "Aug", "Sep", "Oct", "Nov", "Dec"]};
-var years = {track:0, label:"y", values:["2015", "2016", "2017", "2018", "2019", "2020", "2021", "2022", "2023", "2024", "2025", "2026", "2027", "2028", "2029", "2030", "2031", "2032", "2033", "2034", "2035"]};
+var years = {track:0, label:"y", values:["2015", "2016", "2017", "2018", "2019", "2020", "2021", "2022", "2023", "2024", "2025"]};
 //var hailState;
 //var geocodeRecieved = false;
 //var taxiPosition = null;
@@ -263,17 +264,21 @@ tuta.awaitConfirm = function(bookingID) {
     - Store the current booking, app state and user in the kony store
   */
 
+
+  
   currentBooking = bookingID;
 
   //Create an object for storage
   currentAppState = {
-    user: currentUser,
-    booking: currentBooking,
+    user: JSON.parse(currentUser).userName,
+    booking: bookingID,
     stateNum: 2
   };
 
   //Store the object in case of crash
   tuta.appstate.setState(currentAppState);
+
+  
 
   inputBooking = { id : bookingID };
   try{
@@ -294,6 +299,11 @@ tuta.awaitConfirm = function(bookingID) {
           frmMap.flexNoPanning.setVisibility(true);
           frmMap.flexProgress.setVisibility(false);
           kony.timer.cancel("taxiHailTimer");
+
+          //Store the actual booking
+          currentBookingObj = result.value[0];
+
+          //Start the route
           tuta.renderRouteAndDriver(result.value[0]);
           tuta.fetchDriverInfo(result.value[0].providerId);
           yourBooking = bookingID;
@@ -412,6 +422,15 @@ tuta.renderRouteAndDriver = function (booking){
     - Set the app state to EN_ROUTE (3)
     - Store the current booking, app state and user in the kony store
   */
+
+  currentAppState = {
+    user: JSON.parse(currentUser).userName,
+    booking: currentBooking,
+    stateNum: 3
+  };
+
+  //Store the object in case of crash
+  tuta.appstate.setState(currentAppState);
 
   application.service("driverService").invokeOperation(
     "user", {}, {id : driver},
@@ -627,19 +646,28 @@ tuta.awaitDriverPickupConfirmation = function(){
 
 
     application.service("driverService").invokeOperation(
-      "booking", {}, inputBooking,
+      "booking", {}, currentBooking,
       function(result) { 
         try{
           if (result.value[0].status==="InTransit"){
 
-              /*
-                TODO-CODELAB
-                ============
-                Name: APPHOOK_3
-                Reason: App states need to hook in here.
-                - Set the app state to IN_TRANSIT (4)
-                - Store the current booking, app state and user in the kony store
-              */
+            /*
+              TODO-CODELAB
+              ============
+              Name: APPHOOK_3
+              Reason: App states need to hook in here.
+              - Set the app state to IN_TRANSIT (4)
+              - Store the current booking, app state and user in the kony store
+            */
+
+            currentAppState = {
+              user: JSON.parse(currentUser).userName,
+              booking: currentBooking,
+              stateNum: 4
+            };
+
+            //Store the object in case of crash
+            tuta.appstate.setState(currentAppState);
 
             tuta.awaitDriverDropOffConfirmation();
             overview.active = 0;   
@@ -695,6 +723,16 @@ tuta.awaitDriverDropOffConfirmation = function(){
                 - Set the app state to IDLE (1)
                 - Store the current booking, app state and user in the kony store
               */
+
+              currentAppState = {
+                user: JSON.parse(currentUser).userName,
+                booking: currentBooking,
+                stateNum: 1
+              };
+
+              //Store the object in case of crash
+              tuta.appstate.setState(currentAppState);
+
             //frmMap.mapMain.zoomLevel = overview.zoom;
             tuta.animate.move(frmMap.flexOverlay2, 0, "0", "0", null);
             tuta.animate.moveBottomLeft(frmMap.flexTimeToDest, 0.1, "105", "-150", null);
@@ -733,11 +771,9 @@ tuta.initCallback = function(error) {
             "login", {}, JSON.parse(input),
             function(result) {
               currentUser = input;
-              
-              //CS002
 
               tuta.appstate.helper.resumeFromState();
-
+              //tuta.util.alert("Appstate", currentAppState);
               //tuta.location.loadPositionInit();
               
             },
@@ -813,6 +849,7 @@ tuta.startWatchLocation = function(){
     }
   }
   catch(ex){
+    
   }
 };
 

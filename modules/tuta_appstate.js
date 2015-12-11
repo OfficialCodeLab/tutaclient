@@ -52,7 +52,9 @@ tuta.appstate.clearState = function(){
 // @Default
 //    appstate_key will be used for the encoding
 tuta.appstate.getEncodedKey = function(key){
-  appstate_key = JSON.stringify(currentUser.userName);
-  return GLOBAL_ENCODING_PREFIX + Base64.encode(key) || GLOBAL_ENCODING_PREFIX + Base64.encode(appstate_key);
+  appstate_key = JSON.stringify(JSON.parse(currentUser).userName);
+  return appstate_key;
+  //tuta.util.alert("Appstate Key:", appstate_key);
+  //return GLOBAL_ENCODING_PREFIX + Base64.encode(key) || GLOBAL_ENCODING_PREFIX + Base64.encode(appstate_key);
 };
 

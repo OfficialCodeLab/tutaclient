@@ -228,13 +228,17 @@ tuta.forms.frmMap = function() {
 		alert("error in dial:: "+ err);
       }
     };
-
-
+	
+    
+    //Begin storing the appstate as the map is loaded
+    
+    /*
     currentAppState = {
-        user: currentUser,
+        user: JSON.parse(currentUser).userName,
         booking: "None",
         stateNum: 1
       };
+    */
 
     try{
       //Store the object in case of crash

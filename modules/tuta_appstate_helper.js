@@ -60,7 +60,23 @@ tuta.appstate.helper.checkState = function(callback){
 tuta.appstate.helper.resumeFromState = function(){
   //tuta.appstate.helper.checkState(function(booking_state){
     //tuta.util.alert("Resuming from", tuta.appstate.getState());
+    try{
+      currentAppState = tuta.appstate.getState();
+    } catch (ex){
+      tuta.util.alert("Appstate Helper", ex);
+    }
 
+    currentAppState = {
+      user: JSON.parse(currentUser).userName,
+      booking: "",
+      stateNum: 1
+    };
+
+    //Store the object in case of crash
+    tuta.appstate.setState(currentAppState);
+
+
+    
 
     var booking_state = currentAppState.stateNum;
     if (booking_state === null){
@@ -72,17 +88,79 @@ tuta.appstate.helper.resumeFromState = function(){
     }
     else if(booking_state === 2){
       //Resume from hailing
-      tuta.loadPositionInit();
-      //tuta.awaitConfirm(currentAppState.booking);
+      tuta.location.loadPositionInit();
+      //tuta.forms.frmMap.show();
+
+      	
+      kony.timer.schedule("tempLoad", function(){
+        try{
+          tuta.awaitConfirm(currentAppState.booking);
+        }
+        catch (ex){
+          tuta.util.alert("Error", ex);
+        }
+        
+      }, 1, false);
+      
 
     }
     else if(booking_state === 3){
       //Resume from en route
       tuta.location.loadPositionInit();
+
+
+      application.service("userService").invokeOperation(
+        "booking", {}, currentBooking,
+        function(result) { 
+          if (result.value[0].status ==="OnRoute")
+          {
+            tripOnRoute = true;
+            frmMap.flexNoPanning.setVisibility(true);
+            frmMap.flexProgress.setVisibility(false);
+            try{
+              kony.timer.cancel("taxiHailTimer");
+            }
+            catch (ex){
+
+            }
+
+            //Store the actual booking
+            currentBookingObj = result.value[0];
+
+            //Start the route
+            tuta.renderRouteAndDriver(result.value[0]);
+            tuta.fetchDriverInfo(result.value[0].providerId);
+            yourBooking = currentBooking;
+
+            //Show map center button
+            try{
+              tuta.forms.frmMap.flexMapCenter.setVisibility(false);
+            }
+            catch(ex){
+              //tuta.util.alert("Info", "Unable to remove the map centering button.");
+            }
+
+          }
+        },
+        function(error) { //The second function will always run if there is an error.
+          //tuta.util.alert("error",error);
+        }
+      );
+
+
+
+
+
+
     }
     else if(booking_state === 4){
       //Resume from in transit
       tuta.location.loadPositionInit();
+      frmMap.flexNoPanning.setVisibility(true);
+      frmMap.flexProgress.setVisibility(false);
+
+      tuta.awaitDriverPickupConfirmation();
+
     }
     else{
       tuta.location.loadPositionInit();
