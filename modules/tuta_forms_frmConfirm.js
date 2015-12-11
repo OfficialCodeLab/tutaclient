@@ -69,7 +69,7 @@ tuta.forms.frmConfirm = function() {
               bookingID = result.value[0].id;
 
               //Store the current booking
-              ksAppState.bookingID = bookingID;
+              //ksAppState.bookingID = bookingID;
 
               tuta.forms.frmMap.show();
               kony.timer.schedule("awaitConfirm", function(){tuta.awaitConfirm(bookingID);}, 1, false);
