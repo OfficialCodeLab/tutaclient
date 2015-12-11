@@ -45,7 +45,7 @@ tuta.forms.frmLogin = function() {
           userType: "private",
           location: {
           	lat : "1231231",
-            long : "234234234"
+            lng : "234234234"
         	}
         };
       
@@ -63,7 +63,7 @@ tuta.forms.frmLogin = function() {
       	// user update example
       	var inputParams = { 
           id : "craig@ssa.com", 
-          data : JSON.stringify( {  location : { lat : "234234", long : "234234234" }}   ) 
+          data : JSON.stringify( {  location : { lat : "234234", lng : "234234234" }}   ) 
         };
       
       	application.service("manageService").invokeOperation(

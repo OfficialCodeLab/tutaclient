@@ -14,7 +14,7 @@ tuta.location.updateLocationOnServer = function(latitude, longitude){
     //id : JSON.parse(kony.store.getItem("user")).userName,
     location : {
       lat : latitude,
-      long : longitude
+      lng : longitude
     }
   };
 
@@ -24,7 +24,7 @@ tuta.location.updateLocationOnServer = function(latitude, longitude){
   //Popup displaying latitude and longitude,
   //on position change
   // var testUserName = "Your username is: " + JSON.stringify(userTemp.userName + "\n");
-  // var testOutput = "Your current position is:\n" + "Latitude: " + JSON.stringify(inputData.location.lat) + "\nLongitude: " + JSON.stringify(inputData.location.long) + "";
+  // var testOutput = "Your current position is:\n" + "Latitude: " + JSON.stringify(inputData.location.lat) + "\nLongitude: " + JSON.stringify(inputData.location.lng) + "";
   // tuta.util.alert("Location Update", testUserName + testOutput);
 
 

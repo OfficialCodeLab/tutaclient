@@ -71,7 +71,7 @@ tuta.forms.frmCreateAcc = function() {
                             userType: "private",
                             location: {
                               lat : JSON.stringify(success.coords.latitude),
-                              long : JSON.stringify(success.coords.longitude)
+                              lng : JSON.stringify(success.coords.longitude)
                             }                          
                           }; 
 
