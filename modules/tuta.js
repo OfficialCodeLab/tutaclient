@@ -248,11 +248,17 @@ tuta.menuToggle = function (time, bool){
 
 tuta.awaitConfirm = function(bookingID) {
 
+  //TRY THE ENTIRE METHOD
+  try{
   frmMap.flexAdd.setVisibility(false);
   frmMap.flexChangeDest.setVisibility(false);
   frmMap.flexNoOfPeople.setVisibility(false);
   frmMap.flexProgress.setVisibility(true);
   onJourney = 1;
+
+  
+
+
   //Kony timer – checks evert 5 seconds for the booking (if there is one) , 
   //take the result and check the status value of the key status – 
   //when it changes to CONFIRMED, then hide the flex container again
@@ -327,6 +333,12 @@ tuta.awaitConfirm = function(bookingID) {
     );
 
   }, 3, true);
+  }catch (ex){
+    tuta.util.alert("AwaitConfirm Error", ex);
+  }
+
+
+
 };
 
 tuta.cancelBooking = function(bookingID) {
