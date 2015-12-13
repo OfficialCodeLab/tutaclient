@@ -4,7 +4,7 @@
     "_base64_": null,
     "_height_": {
         "type": "string",
-        "value": "35dp"
+        "value": "80%"
     },
     "_left_": {
         "type": "string",
@@ -24,13 +24,9 @@
     ],
     "_skin_": "s4ea8d4d07574957b839f06194980e52",
     "_src_": "tutalogosm.png",
-    "_top_": {
-        "type": "string",
-        "value": "369dp"
-    },
     "_width_": {
         "type": "string",
-        "value": "40dp"
+        "value": "10%"
     },
     "base64": null,
     "canUpdateUI": true,
@@ -56,7 +52,7 @@
         "topLevelBox": null
     },
     "enabled": false,
-    "height": "35dp",
+    "height": "80%",
     "id": "imgLogo",
     "imageScaleMode": 1,
     "imagescalemode": 1,
@@ -86,9 +82,8 @@
     "skin": "s4ea8d4d07574957b839f06194980e52",
     "src": "tutalogosm.png",
     "srcType": 1,
-    "top": "369dp",
     "wType": "Image",
     "widgetAlignment": 5,
     "widgetalignment": 5,
-    "width": "40dp"
+    "width": "10%"
 }

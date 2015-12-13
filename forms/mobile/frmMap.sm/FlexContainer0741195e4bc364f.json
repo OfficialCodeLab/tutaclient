@@ -3,11 +3,11 @@
     "__parentReadjusting__": false,
     "_height_": {
         "type": "string",
-        "value": "80%"
+        "value": "50%"
     },
     "_left_": {
         "type": "string",
-        "value": "5dp"
+        "value": "4%"
     },
     "_margin_": [
         0,
@@ -28,12 +28,17 @@
     },
     "_width_": {
         "type": "string",
-        "value": "55dp"
+        "value": "6%"
     },
     "allboxes": [],
     "autogrowMode": 0,
     "autogrowmode": 0,
     "canUpdateUI": true,
+    "centerY": "50%",
+    "centery": {
+        "type": "string",
+        "value": "50%"
+    },
     "children": [
         "imgChsC",
         "imgChsO"
@@ -45,7 +50,7 @@
     "enableScrolling": true,
     "enabled": false,
     "enablescrolling": true,
-    "height": "80%",
+    "height": "50%",
     "id": "FlexContainer0741195e4bc364f",
     "info": null,
     "isVisible": true,
@@ -53,7 +58,7 @@
     "kuid": "a3a17135b7114afbbbbf9cd2c94b05b9",
     "layoutType": 2,
     "layouttype": 2,
-    "left": "5dp",
+    "left": "4%",
     "margin": [
         0,
         0,
@@ -81,7 +86,7 @@
     "wType": "FlexContainer",
     "widgetAlignment": 1,
     "widgetalignment": 1,
-    "width": "55dp",
+    "width": "6%",
     "zIndex": 900,
     "zindex": 900
 }
