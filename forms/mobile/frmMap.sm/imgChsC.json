@@ -4,8 +4,8 @@
     "__parentReadjusting__": false,
     "_base64_": null,
     "_height_": {
-        "type": "ref",
-        "value": "preferred"
+        "type": "string",
+        "value": "100%"
     },
     "_left_": {
         "type": "string",
@@ -30,8 +30,8 @@
         "value": "6dp"
     },
     "_width_": {
-        "type": "ref",
-        "value": "preferred"
+        "type": "string",
+        "value": "100%"
     },
     "base64": null,
     "canUpdateUI": true,
@@ -56,10 +56,7 @@
         "topLevelBox": null
     },
     "enabled": false,
-    "height": {
-        "type": "ref",
-        "value": "preferred"
-    },
+    "height": "100%",
     "id": "imgChsC",
     "imageScaleMode": 1,
     "imagescalemode": 1,
@@ -93,10 +90,7 @@
     "wType": "Image",
     "widgetAlignment": 5,
     "widgetalignment": 5,
-    "width": {
-        "type": "ref",
-        "value": "preferred"
-    },
+    "width": "100%",
     "zIndex": 900,
     "zindex": 900
 }

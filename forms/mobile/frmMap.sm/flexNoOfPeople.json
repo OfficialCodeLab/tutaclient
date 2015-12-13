@@ -7,7 +7,7 @@
     },
     "_height_": {
         "type": "string",
-        "value": "15%"
+        "value": "12%"
     },
     "_left_": {
         "type": "string",
@@ -59,7 +59,7 @@
     "enableScrolling": true,
     "enabled": false,
     "enablescrolling": true,
-    "height": "15%",
+    "height": "12%",
     "id": "flexNoOfPeople",
     "info": null,
     "isVisible": true,

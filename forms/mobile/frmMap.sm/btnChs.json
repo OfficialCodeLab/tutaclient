@@ -4,11 +4,11 @@
     "__parentReadjusting__": false,
     "_height_": {
         "type": "string",
-        "value": "55dp"
+        "value": "8%"
     },
     "_left_": {
         "type": "string",
-        "value": "0dp"
+        "value": "0%"
     },
     "_margin_": [
         6,
@@ -42,13 +42,13 @@
     "enabled": false,
     "focusSkin": "s9bc2d47b2cd45dcb063b29519c43bf8",
     "focusskin": "s9bc2d47b2cd45dcb063b29519c43bf8",
-    "height": "55dp",
+    "height": "8%",
     "id": "btnChs",
     "info": null,
     "isVisible": true,
     "isvisible": true,
     "kuid": "dbe8c1f645e04fccb87b2cbdda7b2815",
-    "left": "0dp",
+    "left": "0%",
     "margin": [
         6,
         6,

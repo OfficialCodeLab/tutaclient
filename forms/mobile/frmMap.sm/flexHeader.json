@@ -3,7 +3,7 @@
     "__parentReadjusting__": false,
     "_height_": {
         "type": "string",
-        "value": "55dp"
+        "value": "8%"
     },
     "_left_": {
         "type": "string",
@@ -53,7 +53,7 @@
     "enableScrolling": true,
     "enabled": false,
     "enablescrolling": true,
-    "height": "55dp",
+    "height": "8%",
     "id": "flexHeader",
     "info": null,
     "isVisible": true,
