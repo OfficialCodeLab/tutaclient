@@ -21,12 +21,14 @@ tuta.appstate = {};
 tuta.appstate.getState = function(){  
   var state_str_key = tuta.appstate.getEncodedKey();
   var state_str = kony.store.getItem(state_str_key);
-  if(state_str !== null && state_str !== undefined){
-    var state_obj = JSON.parse(state_str);
-    return JSON.parse(JSON.stringify(state_obj));
+  //tuta.util.alert("ASDF", JSON.stringify(state_str));
+  if(state_str === null){
+    return default_value;
   }
+
+  var state_obj = JSON.parse(state_str);
+  return JSON.parse(JSON.stringify(state_obj));
   
-  return default_value;
 };
 
 //Set the state in the kony store
@@ -52,9 +54,7 @@ tuta.appstate.clearState = function(){
 // @Default
 //    appstate_key will be used for the encoding
 tuta.appstate.getEncodedKey = function(key){
-  appstate_key = JSON.stringify(JSON.parse(currentUser).userName);
-  return appstate_key;
   //tuta.util.alert("Appstate Key:", appstate_key);
-  //return GLOBAL_ENCODING_PREFIX + Base64.encode(key) || GLOBAL_ENCODING_PREFIX + Base64.encode(appstate_key);
+  return GLOBAL_ENCODING_PREFIX + Base64.encode(appstate_key);
 };
 

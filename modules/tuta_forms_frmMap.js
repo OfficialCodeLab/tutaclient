@@ -238,7 +238,7 @@ tuta.forms.frmMap = function() {
         booking: "None",
         stateNum: 1
       };
-    */
+    
 
     try{
       //Store the object in case of crash
@@ -247,7 +247,7 @@ tuta.forms.frmMap = function() {
       tuta.util.alert("Error", "Unable to store app state for some reason.\n\n" + ex + 
         "\n\n" + JSON.stringify(currentAppState));
     }
-    
+    */
 
   };//End Preshow
 

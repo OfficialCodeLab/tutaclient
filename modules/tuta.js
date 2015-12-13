@@ -38,10 +38,12 @@ var yourBooking;
 var drivercell;
 
 //Current Variables
-var currentUser;
+var currentUser = {};
 var currentBooking;
 var currentBookingObj = {};
+var currentBookingObject = {};
 var currentAppState = {};
+var appState = {};
 
 //Selector variables
 var people = [];
@@ -269,14 +271,15 @@ tuta.awaitConfirm = function(bookingID) {
   currentBooking = bookingID;
 
   //Create an object for storage
-  currentAppState = {
-    user: JSON.parse(currentUser).userName,
-    booking: bookingID,
-    stateNum: 2
-  };
+  appState = {
+              state_string: "HAILING",
+              bookingID: currentBooking
+            };
+
+  //tuta.util.alert("Current Appstate to be stored", JSON.stringify(currentAppState));
 
   //Store the object in case of crash
-  tuta.appstate.setState(currentAppState);
+  tuta.appstate.setState(appState);
 
   
 
@@ -423,14 +426,13 @@ tuta.renderRouteAndDriver = function (booking){
     - Store the current booking, app state and user in the kony store
   */
 
-  currentAppState = {
-    user: JSON.parse(currentUser).userName,
-    booking: currentBooking,
-    stateNum: 3
-  };
+ appState = {
+              state_string: "ONROUTE",
+              bookingID: currentBooking
+            };
 
   //Store the object in case of crash
-  tuta.appstate.setState(currentAppState);
+  tuta.appstate.setState(appState);
 
   application.service("driverService").invokeOperation(
     "user", {}, {id : driver},
@@ -481,6 +483,30 @@ tuta.fetchDriverInfo = function(driverID){
     function(error){}  
   );
 
+};
+
+tuta.retrieveBooking = function(id, callback) {
+    var input = {
+        id: id,
+    };
+
+    try {
+        application.service("driverService").invokeOperation(
+            "booking", {}, input,
+            function(results) {
+                try {
+                    callback(results);
+                } catch (ex) {
+
+                }
+            },
+            function(error) {
+                callback(null, error);
+            });
+    }
+    catch(ex){
+
+    }
 };
 
 tuta.startUpdateMapFunction = function(){
@@ -646,7 +672,7 @@ tuta.awaitDriverPickupConfirmation = function(){
 
 
     application.service("driverService").invokeOperation(
-      "booking", {}, currentBooking,
+      "booking", {}, {id : currentBooking},
       function(result) { 
         try{
           if (result.value[0].status==="InTransit"){
@@ -660,14 +686,13 @@ tuta.awaitDriverPickupConfirmation = function(){
               - Store the current booking, app state and user in the kony store
             */
 
-            currentAppState = {
-              user: JSON.parse(currentUser).userName,
-              booking: currentBooking,
-              stateNum: 4
+            appState = {
+              state_string: "INTRANSIT",
+              bookingID: currentBooking
             };
 
             //Store the object in case of crash
-            tuta.appstate.setState(currentAppState);
+            tuta.appstate.setState(appState);
 
             tuta.awaitDriverDropOffConfirmation();
             overview.active = 0;   
@@ -724,14 +749,13 @@ tuta.awaitDriverDropOffConfirmation = function(){
                 - Store the current booking, app state and user in the kony store
               */
 
-              currentAppState = {
-                user: JSON.parse(currentUser).userName,
-                booking: currentBooking,
-                stateNum: 1
-              };
+            var appState = {
+              state_string: null,
+              bookingID: null
+            };
 
               //Store the object in case of crash
-              tuta.appstate.setState(currentAppState);
+              tuta.appstate.clearState();
 
             //frmMap.mapMain.zoomLevel = overview.zoom;
             tuta.animate.move(frmMap.flexOverlay2, 0, "0", "0", null);
@@ -770,10 +794,10 @@ tuta.initCallback = function(error) {
           application.service("userService").invokeOperation(
             "login", {}, JSON.parse(input),
             function(result) {
-              currentUser = input;
+              currentUser.userName = JSON.parse(input).userName;
 
               tuta.appstate.helper.resumeFromState();
-              //tuta.util.alert("Appstate", currentAppState);
+              //tuta.util.alert("Appstate Start", currentAppState);
               //tuta.location.loadPositionInit();
               
             },
