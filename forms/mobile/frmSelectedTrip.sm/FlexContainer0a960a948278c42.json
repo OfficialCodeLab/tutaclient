@@ -42,11 +42,11 @@
         "CopyImage0576948aacfab4c",
         "Label062bc3cad664a46",
         "FlexContainer0bc4e1887a39a44",
-        "Image0c8927d5111694b",
+        "imgDriverProfile",
         "lblPickup",
         "lblDropoff",
         "lblDriverName",
-        "mapTrip"
+        "mapHistory"
     ],
     "clipBounds": true,
     "clipbounds": true,

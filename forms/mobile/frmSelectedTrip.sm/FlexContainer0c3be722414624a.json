@@ -38,7 +38,7 @@
     "children": [
         "Label061e46bc7b68947",
         "Image0561e4ab5b1ca45",
-        "Label040cfb9198bd246"
+        "lblRating"
     ],
     "clipBounds": true,
     "clipbounds": true,

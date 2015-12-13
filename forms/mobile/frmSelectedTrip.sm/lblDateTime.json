@@ -3,8 +3,12 @@
     "DNDConfig": null,
     "__parentReadjusting__": false,
     "_height_": {
-        "type": "ref",
-        "value": "preferred"
+        "type": "string",
+        "value": "50dp"
+    },
+    "_left_": {
+        "type": "string",
+        "value": "147dp"
     },
     "_margin_": [
         1,
@@ -18,32 +22,35 @@
         0,
         0
     ],
-    "_right_": {
-        "type": "string",
-        "value": "10dp"
-    },
-    "_skin_": "s93006c7c59e45d4b032bff46699df2a",
-    "_text_": "R400.23",
+    "_skin_": "sf24182748404fb986e912eb721d2c26",
+    "_text_": "20 OCT 2015, 11:31AM",
     "_top_": {
         "type": "string",
-        "value": "30dp"
+        "value": "13dp"
     },
     "_width_": {
-        "type": "ref",
-        "value": "preferred"
+        "type": "string",
+        "value": "100%"
     },
     "_wrapping_": 2,
     "canUpdateUI": true,
+    "centerX": "50%",
+    "centerY": "50%",
+    "centerx": {
+        "type": "string",
+        "value": "50%"
+    },
+    "centery": {
+        "type": "string",
+        "value": "50%"
+    },
     "containerWeight": 100,
     "containerweight": 100,
-    "contentAlignment": 6,
-    "contentalignment": 6,
+    "contentAlignment": 5,
+    "contentalignment": 5,
     "enabled": false,
-    "height": {
-        "type": "ref",
-        "value": "preferred"
-    },
-    "id": "Label00765b155961349",
+    "height": "50dp",
+    "id": "lblDateTime",
     "info": null,
     "ipad": {
         "psp": {
@@ -57,7 +64,8 @@
     },
     "isVisible": true,
     "isvisible": true,
-    "kuid": "19008494331141828ff51b7e1b20e7de",
+    "kuid": "2dfcccb062c04c50a78796939f25530d",
+    "left": "147dp",
     "margin": [
         1,
         1,
@@ -71,21 +79,17 @@
         0,
         0
     ],
-    "parent": "FlexContainer0bc4e1887a39a44",
+    "parent": "flexHeader",
     "pf": "frmSelectedTrip",
     "render": true,
-    "right": "10dp",
-    "skin": "s93006c7c59e45d4b032bff46699df2a",
-    "text": "R400.23",
+    "skin": "sf24182748404fb986e912eb721d2c26",
+    "text": "20 OCT 2015, 11:31AM",
     "toolTip": "",
     "tooltip": "",
-    "top": "30dp",
+    "top": "13dp",
     "wType": "Label",
     "widgetAlignment": 5,
-    "width": {
-        "type": "ref",
-        "value": "preferred"
-    },
+    "width": "100%",
     "wrapping": 2,
     "zIndex": 1,
     "zindex": 1

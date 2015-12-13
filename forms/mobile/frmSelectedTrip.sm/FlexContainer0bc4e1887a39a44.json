@@ -42,7 +42,7 @@
     },
     "children": [
         "Label013eda42885444e",
-        "Label00765b155961349",
+        "lblCost",
         "Label01ea3f930d4414a",
         "FlexContainer0c3be722414624a"
     ],

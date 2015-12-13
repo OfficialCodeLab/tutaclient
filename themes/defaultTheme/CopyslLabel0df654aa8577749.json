@@ -5,12 +5,12 @@
   "border_style": "plain",
   "border_type": 0,
   "border_width": 0,
-  "font_color": "000000ff",
+  "font_color": "f4f4f4ff",
   "font_name": "Helvetica",
-  "font_size": 90,
+  "font_size": 215,
   "font_style": "normal",
   "font_weight": "normal",
   "isDefaultSkin": false,
-  "kuid": "s9c4490e2f8b4a5e80b7701b1d29186c",
+  "kuid": "se805db0ebf24648a9ec4b6ac90785f3",
   "wType": "Label"
 }

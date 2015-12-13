@@ -117,7 +117,7 @@
     "_rowTemplateId": "tripHistory",
     "_top_": {
         "type": "string",
-        "value": "22%"
+        "value": "175dp"
     },
     "_width_": {
         "type": "string",
@@ -231,7 +231,7 @@
     "groupcells": false,
     "hasSections": false,
     "height": "78%",
-    "id": "segTrips",
+    "id": "segTripHistoryMain",
     "indicator": "none",
     "info": null,
     "ipad": {
@@ -310,7 +310,7 @@
     "separatorthickness": 0,
     "showScrollbars": false,
     "showscrollbars": false,
-    "top": "22%",
+    "top": "175dp",
     "viewType": "tableview",
     "viewtype": "tableview",
     "wType": "Segment",

@@ -62,8 +62,8 @@ tuta.appstate.helper.checkState = function(callback) {
 tuta.appstate.helper.resumeFromState = function() {
     //tuta.appstate.helper.checkState(function(booking_state){
     //tuta.util.alert("Resuming from", tuta.appstate.getState());
-
     //Trying to check the state
+  
     try {
         tuta.appstate.helper.checkState(function(result) {
 

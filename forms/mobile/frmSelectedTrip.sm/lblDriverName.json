@@ -29,12 +29,17 @@
     "_skin_": "se53ae1ccd054a75a523f678d9860656",
     "_text_": "JAMES",
     "_width_": {
-        "type": "ref",
-        "value": "preferred"
+        "type": "string",
+        "value": "35%"
     },
     "_wrapping_": 2,
     "bottom": 50,
     "canUpdateUI": true,
+    "centerX": "20%",
+    "centerx": {
+        "type": "string",
+        "value": "20%"
+    },
     "containerWeight": 100,
     "containerweight": 100,
     "contentAlignment": 5,
@@ -82,10 +87,7 @@
     "tooltip": "",
     "wType": "Label",
     "widgetAlignment": 5,
-    "width": {
-        "type": "ref",
-        "value": "preferred"
-    },
+    "width": "35%",
     "wrapping": 2,
     "zIndex": 10,
     "zindex": 10

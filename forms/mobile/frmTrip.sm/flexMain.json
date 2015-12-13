@@ -36,7 +36,8 @@
     "canUpdateUI": true,
     "children": [
         "flexHeader",
-        "segTrips"
+        "segTripHistoryMain",
+        "flexLoading"
     ],
     "clipBounds": true,
     "clipbounds": true,

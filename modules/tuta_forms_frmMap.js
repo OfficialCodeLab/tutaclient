@@ -16,7 +16,7 @@ tuta.forms.frmMap = function() {
 
   tuta.forms.frmMap.onPreShow = function(form) {
     var self = this;
-    
+
 
     this.control("btnPerson1").onClick = onPeopleSelect;
     this.control("btnPerson2").onClick = onPeopleSelect;
@@ -42,7 +42,7 @@ tuta.forms.frmMap = function() {
     star.push(frmMap.imgStar3);
     star.push(frmMap.imgStar4);
     star.push(frmMap.imgStar5);
-	
+
     this.leftMenu = new tuta.controls.menu(
       this.control("flexAll"), 
       this.control("flexMenu"), 
@@ -160,10 +160,13 @@ tuta.forms.frmMap = function() {
     };
     this.control("btnReturnToTrip").onClick = function () { tuta.animate.move(frmMap.flexOverlay1, 0, "100%", 0, null);};
     this.control("btnSubmitRating").onClick = function(){
+      var rating = tuta.events.getRating();
+      tuta.updateBookingHistoryRating(currentBooking, rating, function(){
 
-      tuta.animate.move(frmMap.flexOverlay2, 0, "0", "100%", null);
+        tuta.animate.move(frmMap.flexOverlay2, 0, "0", "100%", null);
 
-      tuta.resetMap();
+        tuta.resetMap();
+      });
     };
     //this.control("btnCancelHailDriving").onTouchStart = cancelHailPrompt;
     this.control("segAddressList").onRowClick = onLocationSelected;
@@ -212,33 +215,33 @@ tuta.forms.frmMap = function() {
 
     this.control("btnCancelSetDest").onClick = clearDestPick;
     this.control("btnCancelSetPick").onClick = clearDestPick;
-    
+
     this.control("btnCancelHailOnRoute").onClick = function (button){
       tuta.animate.move(frmMap.flexOverlay1, 0, 0, 0, null);
     };
 
     frmMap.flexDarken.setVisibility(false);
-	
+
     this.control("btnPhone").onClick = function(button) {
       try {
-		
-		kony.phone.dial(drivercell);
-	  } 
+
+        kony.phone.dial(drivercell);
+      } 
       catch(err) {
-		alert("error in dial:: "+ err);
+        alert("error in dial:: "+ err);
       }
     };
-	
-    
+
+
     //Begin storing the appstate as the map is loaded
-    
+
     /*
     currentAppState = {
         user: JSON.parse(currentUser).userName,
         booking: "None",
         stateNum: 1
       };
-    
+
 
     try{
       //Store the object in case of crash

@@ -341,6 +341,32 @@ tuta.awaitConfirm = function(bookingID) {
 
 };
 
+//Retrieves completed bookings that are
+//assigned to the driver based
+tuta.retrieveBookingsHistory = function(callback) {
+  var input = {
+    userid: currentUser.userName
+  };
+
+  try {
+    application.service("driverService").invokeOperation(
+      "bookingHistory", {}, input,
+      function(results) {
+        try {
+          callback(results);
+        } catch (ex) {
+
+        }
+      },
+      function(error) {
+        callback(null, error);
+      });
+  }
+  catch(ex){
+
+  }
+};
+
 tuta.cancelBooking = function(bookingID) {
   var input = {
     id: bookingID
@@ -493,6 +519,23 @@ tuta.fetchDriverInfo = function(driverID){
       );
     }, 
     function(error){}  
+  );
+
+};
+
+
+tuta.updateBookingHistoryRating = function(bookingID, rating, callback){
+
+  var input = { id: bookingID, user : "customer", rating : rating.toString() };
+
+  application.service("manageService").invokeOperation(
+    "bookingHistoryUpdateRating", {}, input,
+    function(result) {
+      callback();
+    },
+    function(error) {
+      // the service returns 403 (Not Authorised) if credentials are wrong
+    }
   );
 
 };

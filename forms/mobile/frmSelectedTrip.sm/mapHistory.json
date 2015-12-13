@@ -45,7 +45,7 @@
     "defaultPinImage": "pinb.png",
     "defaultpinimage": "pinb.png",
     "enabled": false,
-    "id": "mapTrip",
+    "id": "mapHistory",
     "info": null,
     "isVisible": true,
     "isvisible": true,

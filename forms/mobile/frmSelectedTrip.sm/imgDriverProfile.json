@@ -36,6 +36,11 @@
     "base64": null,
     "bottom": 65,
     "canUpdateUI": true,
+    "centerX": "20%",
+    "centerx": {
+        "type": "string",
+        "value": "20%"
+    },
     "containerWeight": 100,
     "containerweight": 100,
     "context": {
@@ -48,7 +53,7 @@
     },
     "enabled": false,
     "height": "130dp",
-    "id": "Image0c8927d5111694b",
+    "id": "imgDriverProfile",
     "imageScaleMode": 1,
     "imagescalemode": 1,
     "info": null,
