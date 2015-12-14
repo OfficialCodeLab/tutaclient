@@ -22,6 +22,7 @@ var awaitingConfirmation = true;
 var tripOnRoute = false;
 var hailingTaxi = false; //Used to prevent multiple requests
 var onJourney = 0;
+var driver;
 
 //Location variables
 var destination = null;
@@ -249,15 +250,11 @@ tuta.menuToggle = function (time, bool){
 tuta.awaitConfirm = function(bookingID) {
 
   //TRY THE ENTIRE METHOD
-  try{
   frmMap.flexAdd.setVisibility(false);
   frmMap.flexChangeDest.setVisibility(false);
   frmMap.flexNoOfPeople.setVisibility(false);
   frmMap.flexProgress.setVisibility(true);
   onJourney = 1;
-
-  
-
 
   //Kony timer – checks evert 5 seconds for the booking (if there is one) , 
   //take the result and check the status value of the key status – 
@@ -272,9 +269,8 @@ tuta.awaitConfirm = function(bookingID) {
     - Store the current booking, app state and user in the kony store
   */
 
-
-  
   currentBooking = bookingID;
+  
 
   //Create an object for storage
   appState = {
@@ -287,9 +283,9 @@ tuta.awaitConfirm = function(bookingID) {
   //Store the object in case of crash
   tuta.appstate.setState(appState);
 
-  
 
   inputBooking = { id : bookingID };
+  //tuta.util.alert("Input Booking: " + bookingID);
   try{
     kony.timer.cancel("taxiHailTimer");
   }
@@ -298,12 +294,17 @@ tuta.awaitConfirm = function(bookingID) {
   }
 
   kony.timer.schedule("taxiHailTimer", function(){
+    //tuta.util.alert("Test 3", "Starting hailtimer");
 
-    application.service("userService").invokeOperation(
+
+    //Try make the booking
+    try {
+      application.service("userService").invokeOperation(
       "booking", {}, inputBooking,
-      function(result) { //This is the default function that runs if the query is succesful, if there is a result.
+      function(result) { 
         if (result.value[0].status ==="OnRoute")
         {
+          //tuta.util.alert("Test 4", "There is a result");
           tripOnRoute = true;
           frmMap.flexNoPanning.setVisibility(true);
           frmMap.flexProgress.setVisibility(false);
@@ -328,14 +329,19 @@ tuta.awaitConfirm = function(bookingID) {
         }
       },
       function(error) { //The second function will always run if there is an error.
-        //tuta.util.alert("error",error);
+        //tuta.util.alert("Test 4", error);
       }
     );
+    } catch (ex){
+      //tuta.util.alert("The ultimate EXCEPTION :D", ex);
+    }
+
+
+
+    
 
   }, 3, true);
-  }catch (ex){
-    tuta.util.alert("AwaitConfirm Error", ex);
-  }
+
 
 
 
@@ -363,12 +369,23 @@ tuta.cancelBooking = function(bookingID) {
 };
 
 tuta.renderFinalRoute = function(){
-  tuta.animate.move(frmMap.imgSwipeLever, 0.3, "", "70%", null);
+  
+  try{
+    tuta.animate.move(frmMap.imgSwipeLever, 0.3, "", "70%", null);
+  } catch (ex){
+
+  }
+  
   kony.timer.schedule("swiperball", function(){
     awaitingConfirmation = false;
 
     frmMap["flexDarken"]["isVisible"] = false;
-    frmMap.mapMain.removePolyline("polyid1");
+    try{
+      frmMap.mapMain.removePolyline("polyid1");
+    }catch (ex){
+      
+    }
+    tuta.util.alert("TEST CARL", nearbyDrivers[0]);
     application.service("driverService").invokeOperation(
       "booking", {}, {id: yourBooking},
       function(result){
@@ -376,6 +393,7 @@ tuta.renderFinalRoute = function(){
 
           kony.timer.schedule("renderDirFinal", function(){
             renderDirections(frmMap.mapMain, response, "0x0036bba7","","dropofficon.png");
+            tuta.util.alert("TEST 3", JSON.stringify(response));
             updateMap();
             kony.timer.schedule("zoomIn", function(){
               //#ifdef android
@@ -426,7 +444,7 @@ tuta.driverBearing = function (driverID, callback){
 
 tuta.renderRouteAndDriver = function (booking){
 
-  var driver = booking.providerId;
+  driver = booking.providerId;
   initialLoad = true;
 
   /*

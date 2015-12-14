@@ -4,6 +4,11 @@ if (typeof(tuta) === "undefined") {
 
 tuta.appstate.helper = {};
 
+
+var current_state;
+var current_booking;
+
+
 tuta.appstate.helper.checkState = function(callback) {
     //SET UP:
     //SET THE GLOBAL KEY TO USE HERE
@@ -13,6 +18,7 @@ tuta.appstate.helper.checkState = function(callback) {
 
     //Retrieve the current state as an object
     var state_obj = tuta.appstate.getState();
+
     //tuta.util.alert("State object", JSON.stringify(state_obj));
     // Shallow copy the object to neccessary variable
 
@@ -21,8 +27,8 @@ tuta.appstate.helper.checkState = function(callback) {
 
         // CUSTOMIZE AFTER THIS LINE
         //======================================
-        var current_state = state_obj.state_string;
-        var current_booking = state_obj.bookingID;
+        current_state = state_obj.state_string;
+        current_booking = state_obj.bookingID;
 
         //tuta.util.alert("TEST", current_state + " ||| " + current_booking);
 
@@ -85,13 +91,24 @@ tuta.appstate.helper.resumeFromState = function() {
             } else if (result === null) {
                 tuta.location.loadPositionInit();
                 tuta.forms.frmMap.show();
-            } else if (result === "HAILING") {
+            } else if (result === "HAILING" || result === "Unconfirmed") {
                 tuta.location.loadPositionInit();
                 kony.timer.schedule("tempLoad", function() {
 
+
+                    try {
+                        //tuta.util.alert("Appstate: ", current_booking);
+                    } catch (ex) {
+                        tuta.util.alert("Unable to display current booking: ", ex);
+                    }
+
+
+
+
                     try {
                         //tuta.util.alert("Current App State Details: ", JSON.stringify(currentAppState));
-                        tuta.awaitConfirm(appState.bookingID);
+
+                        tuta.awaitConfirm(current_booking);
                     } catch (ex) {
                         tuta.util.alert("Error", ex);
                     }
@@ -110,6 +127,7 @@ tuta.appstate.helper.resumeFromState = function() {
                     frmMap.flexNoOfPeople.setVisibility(false);
                     frmMap.flexNoPanning.setVisibility(true);
                     frmMap.flexProgress.setVisibility(false);
+                    journeyComplete = false;
                     //tuta.forms.frmMap.flexMapCenter.setVisibility(false);
                     tripOnRoute = true;
                     onJourney = 1;
@@ -137,24 +155,64 @@ tuta.appstate.helper.resumeFromState = function() {
                     frmMap.flexAdd.setVisibility(false);
                     frmMap.flexChangeDest.setVisibility(false);
                     frmMap.flexNoOfPeople.setVisibility(false);
-                    frmMap.flexNoPanning.setVisibility(true);
+                    frmMap.flexNoPanning.setVisibility(false);
                     frmMap.flexProgress.setVisibility(false);
                     //tuta.forms.frmMap.flexMapCenter.setVisibility(false);
                     tripOnRoute = true;
                     onJourney = 1;
+                    yourBooking = current_booking;
 
-                    //Do some stuff
+                    //Reset flex positions
+                    try {
+                        tuta.animate.moveBottomLeft(frmMap.flexCancel, 0, "105", "-100", null);
+                        tuta.animate.move(frmMap.flexArriving, 0, "65", "105%", null);
+                        tuta.animate.moveBottomRight(frmMap.flexPhone, 0, "105", "-100", null);
+                        tuta.animate.moveBottomLeft(frmMap.flexTimeToDest, 0.1, "105", "-5", null);
+                    } catch (ex) {
+                        //Nothing to do here, move along
+                    }
+
+
+                    //What to do on resume from app state
+                    driverArrived = true;
+                    tripOnRoute = false;
+                    distNow = 0;
+                    awaitingConfirmation = false;
+
+                    //tuta.awaitDriverDropOffConfirmation();
+                  	//tuta.fetchDriverInfo(currentBookingObject.providerId);
+                    overview.active = 0;
+                    driverArrived = true;
+                    //tuta.renderFinalRoute();
+
+
+                    tuta.awaitDriverDropOffConfirmation();
+                    overview.active = 0;   
+                    driverArrived = true;  
+                    kony.timer.cancel("taxiAwaitTimer");
                     tuta.animate.moveBottomLeft(frmMap.flexCancel, 0, "105", "-100", null);
                     tuta.animate.move(frmMap.flexArriving, 0, "65", "105%", null);
                     tuta.animate.moveBottomRight(frmMap.flexPhone, 0, "105", "-100", null);
                     tuta.animate.moveBottomLeft(frmMap.flexTimeToDest, 0.1, "105", "-5", null);
+                    tuta.renderFinalRoute();
 
-                    //What to do on resume from app state
-                    //tuta.renderRouteAndDriver(currentBookingObject);
-                    //tuta.fetchDriverInfo(currentBookingObject.providerId);
+
+
+
+
+
+
+                    
+
+
+
                 } catch (ex) {
                     tuta.util.alert("Something went wrong resuming from IN TRANSIT", ex);
                 }
+            } else {
+                //tuta.util.alert("ERROR!", "Something went horribly wrong.\n" + result);
+              tuta.location.loadPositionInit();
+                tuta.forms.frmMap.show();
             }
 
         });

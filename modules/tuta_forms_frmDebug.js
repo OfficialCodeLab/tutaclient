@@ -54,7 +54,8 @@ tuta.forms.frmDebug = function() {
     };
 
     this.control("btnTickPress3").onClick = function (button){
-      toggleImage(frmDebug.imgTickIcon3);
+      //toggleImage(frmDebug.imgTickIcon3);
+      tuta.appstate.clearState();
     };
 
     this.control("btnTickPress4").onClick = function (button){
