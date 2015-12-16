@@ -39,7 +39,8 @@
     "children": [
         "imgTaxi",
         "flexMainButtons",
-        "flexLoginButtons"
+        "flexLoginButtons",
+        "btnClearState"
     ],
     "clipBounds": true,
     "clipbounds": true,

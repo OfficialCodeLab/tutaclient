@@ -24,6 +24,13 @@ tuta.forms.frmSplash = function() {
       tuta.controls.behavior.MOVE_OVER, 
       0.3
     );
+    
+    
+    this.control("btnClearState").onClick = function (button){
+      tuta.appstate.clearState();
+      tuta.location.loadPositionInit();
+      tuta.forms.frmMap.show();
+    };
 
     this.control("btnLogin2").onClick = function(button) {
       if(self.control("txtEmail").text === "" || self.control("txtEmail").text === null){

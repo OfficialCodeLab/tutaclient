@@ -90,6 +90,7 @@ tuta.forms.frmMap = function() {
       tuta.menuToggle(0.3, self.leftMenu._open);     
       self.leftMenu.toggle();
     };
+    
 
     this.control("btnPay").onClick = function (button) {
       tuta.menuToggle(0, self.leftMenu._open);     
@@ -172,6 +173,32 @@ tuta.forms.frmMap = function() {
     this.control("segAddressList").onRowClick = onLocationSelected;
 
     this.control("txtDest").setFocus(false);
+    this.control("btnCancelHailProgress").onClick = function (button){
+      kony.timer.schedule("cancelBookingHail",  function(){tuta.cancelBooking(yourBooking);}, 2, false);
+      
+      tuta.resetMap();
+      try{
+        kony.timer.cancel("taxiHailTimer");
+      }
+      catch(ex){
+
+      }
+
+      frmMap.flexProgress.setVisibility(false);
+      onJourney = 0;
+      currentBooking = null;
+
+      //Clear appstate
+      appState = {
+        state_string: "NONE",
+        bookingID: "NONE"
+      };
+      
+      try{      
+        tuta.appstate.clearState();
+      }
+      catch(ex){}
+    };
 
     //this.control("mapMain").onPinClick = function(map,location) {selectPickUpLocation();};
     this.control("mapMain").onClick = function(map, location) {

@@ -274,6 +274,7 @@ tuta.awaitConfirm = function(bookingID) {
   */
 
 
+    yourBooking = bookingID;
   
   currentBooking = bookingID;
 
@@ -316,7 +317,6 @@ tuta.awaitConfirm = function(bookingID) {
           //Start the route
           tuta.renderRouteAndDriver(result.value[0]);
           tuta.fetchDriverInfo(result.value[0].providerId);
-          yourBooking = bookingID;
 
           //Show map center button
           try{
