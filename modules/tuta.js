@@ -105,6 +105,7 @@ var GLOBAL_MIN_DIST = 25;
 var GLOBAL_FEE_KM = 12.5;
 var GLOBAL_FEE_MINUTES = 12.5;
 var GLOBAL_FEE_DEVIATION = 0.15; 
+var GLOBAL_PROVIDER_EMAIL = "courtney@codelab.io";
 
 //Need to be initialized
 var CURRENT_EST_FEE = 0;

@@ -22,12 +22,12 @@
         0,
         0
     ],
-    "_placeholder_": "Your Full Name",
+    "_placeholder_": "Your Email Address",
     "_skin_": "s58e380e3bb7489a80e6cd369fe00bce",
     "_text_": "",
     "_top_": {
         "type": "string",
-        "value": "0dp"
+        "value": "50dp"
     },
     "_width_": {
         "type": "string",
@@ -59,13 +59,13 @@
     "focusSkin": "s58e380e3bb7489a80e6cd369fe00bce",
     "focusskin": "s58e380e3bb7489a80e6cd369fe00bce",
     "height": "50dp",
-    "id": "TextField0a8ac002e768d4f",
+    "id": "txtEmail",
     "info": null,
     "iphone": {},
     "isVisible": true,
     "isvisible": true,
     "keyboardtype": "A",
-    "kuid": "78778dd85f744aeea582543c09f35c13",
+    "kuid": "ac4b5d0ffaa74eac951f919a0032eec4",
     "left": "56dp",
     "margin": [
         0,
@@ -73,6 +73,8 @@
         0,
         0
     ],
+    "maxTextLength": "",
+    "maxtextlength": "",
     "mode": "A",
     "name": "kony.ui.TextBox2",
     "padding": [
@@ -83,7 +85,7 @@
     ],
     "parent": "FlexScrollContainer071030639d13842",
     "pf": "frmHelp",
-    "placeholder": "Your Full Name",
+    "placeholder": "Your Email Address",
     "placeholderSkin": "s58e380e3bb7489a80e6cd369fe00bce",
     "placeholderskin": "s58e380e3bb7489a80e6cd369fe00bce",
     "render": true,
@@ -94,7 +96,7 @@
     "textInputMode": "A",
     "textinputmode": "A",
     "toolTip": "",
-    "top": "0dp",
+    "top": "50dp",
     "viewType": "default",
     "viewtype": "default",
     "wType": "TextField",

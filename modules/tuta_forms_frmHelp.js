@@ -19,7 +19,9 @@ tuta.forms.frmHelp = function() {
     
     this.control("btnBack").onClick = function (button) {tuta.forms.frmMap.show();};
     this.control("btnCancel").onClick = function (button) {tuta.forms.frmMap.show();};
-    this.control("btnSubmit").onClick = function (button) {tuta.forms.frmMap.show();};
+    this.control("btnSubmit").onClick = function (button) {
+      tuta.events.logIssue();
+    };
     
    // PUT BUTTONS HERE
   };

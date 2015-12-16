@@ -22,7 +22,7 @@
         2,
         2
     ],
-    "_placeholder_": "",
+    "_placeholder_": "How can we help you?",
     "_skin_": "s888b41a3b864ebd84cdb54fb7daf61b",
     "_text_": "",
     "_top_": {
@@ -35,7 +35,10 @@
     },
     "android": {
         "onBeginEditing": "AS_TextArea_8537ae64dced4ae1a287c7764dbd513f",
-        "onEndEditing": "AS_TextArea_2050d333e7c7465c9e6bc4718a809cbb"
+        "onEndEditing": "AS_TextArea_2050d333e7c7465c9e6bc4718a809cbb",
+        "psp": {
+            "placeholderSkin": "secf002d5d404b7fb68c4ed548486959"
+        }
     },
     "autoCapitalize": "none",
     "autoComplete": false,
@@ -65,7 +68,7 @@
     "focusSkin": "s2f8bb2dff0d45408c617075a9f81048",
     "focusskin": "s2f8bb2dff0d45408c617075a9f81048",
     "height": "140dp",
-    "id": "txtHelp",
+    "id": "txtareaEditIssue",
     "info": null,
     "iphone": {
         "onBeginEditing": "AS_TextArea_3776e06390554a648ba4fdc85a090d09",
@@ -98,7 +101,9 @@
     "paddinginpixel": false,
     "parent": "FlexContainer09dd4938c815f44",
     "pf": "frmHelp",
-    "placeholder": "",
+    "placeholder": "How can we help you?",
+    "placeholderSkin": "secf002d5d404b7fb68c4ed548486959",
+    "placeholderskin": "secf002d5d404b7fb68c4ed548486959",
     "render": true,
     "secureTextEntry": false,
     "securetextentry": false,

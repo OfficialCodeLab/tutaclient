@@ -41,7 +41,7 @@
     },
     "children": [
         "imgEdit",
-        "txtHelp",
+        "txtareaEditIssue",
         "lblHelp"
     ],
     "clipBounds": true,

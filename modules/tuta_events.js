@@ -91,6 +91,40 @@ tuta.events.loadTripHistory = function(callback){
 
 };
 
+tuta.events.logIssue = function (){
+  
+  
+  var input = {
+    userId : currentUser.userName,
+    providerId : GLOBAL_PROVIDER_EMAIL,
+    email : frmHelp.txtEmail.text.toLowerCase().replace(" ", ""),
+    userName : frmHelp.txtName.text,
+    companyName : frmHelp.txtCompanyName.text,
+    queryTopic : frmHelp.lbxQuery.selectedKeyValue[1],
+    queryFull : frmHelp.txtareaEditIssue.text,
+    date : (new Date()).getTime(),
+    status : "Pending"
+  };
+  
+  var data = { data : JSON.stringify(input) };
+  
+  //tuta.util.alert("TEST", (new Date()).getTime());
+  
+  
+  
+  application.service("manageService").invokeOperation(
+  "logIssueAdd", {}, data,
+  function(success){
+    tuta.util.alert("Issue Logged!", "Please check your emails and keep this id as reference : " + success.value[0].id);
+    tuta.forms.frmMap.show();
+  },function(error){
+    tuta.util.alert("Error", error);
+    
+  });
+  
+};
+
+
 tuta.events.directionsMaps = function (address){
   kony.application.openURL("http://maps.google.com/maps?f=d&daddr=" + address +
                              "&sspn=0.2,0.1&nav=1");

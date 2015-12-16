@@ -60,8 +60,8 @@
             "wrapping": 2
         }
     },
-    "isVisible": true,
-    "isvisible": true,
+    "isVisible": false,
+    "isvisible": false,
     "kuid": "abaf25f7cbb74ccd804051da46997cf9",
     "left": "128dp",
     "margin": [

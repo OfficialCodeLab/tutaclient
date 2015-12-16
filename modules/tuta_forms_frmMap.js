@@ -289,9 +289,6 @@ tuta.forms.frmMap = function() {
 
   };
 
-  tuta.forms.frmMap.update = function(position){
-    tuta.util.alert("TEST", JSON.stringify(position));
-  };
 };
 
 
