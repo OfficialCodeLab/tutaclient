@@ -14,7 +14,7 @@ tuta.appstate.helper.checkState = function(callback) {
     //SET THE GLOBAL KEY TO USE HERE
     appstate_key = currentUser.userName;
 
-    //tuta.appstate.clearState();
+    tuta.appstate.clearState();
 
     //Retrieve the current state as an object
     var state_obj = tuta.appstate.getState();
@@ -86,15 +86,15 @@ tuta.appstate.helper.resumeFromState = function() {
             //   CURRENTBOOKINGOBJECT : WILL HAVE ALL THE BOOKING STUFF YOU NEED (USERID, STATUS, ETC)
             //   RESULT : WILL BE THE STATUS OF THE BOOKING (IN_TRANSIT/ON_ROUTE OR UNCONFIRMED)
             if (result === default_value) {
-                tuta.util.alert("Resumin...", "resuming from default value.");
+                //tuta.util.alert("Resumin...", "resuming from default value.");
                 tuta.location.loadPositionInit();
                 tuta.forms.frmMap.show();
             } else if (result === null) {
-                tuta.util.alert("Resumin...", "resuming from null.");
+                //tuta.util.alert("Resumin...", "resuming from null.");
                 tuta.location.loadPositionInit();
                 tuta.forms.frmMap.show();
             } else if (result === "HAILING" || result === "Unconfirmed") {
-                tuta.util.alert("Resumin...", "resuming from HAILING.");
+                //tuta.util.alert("Resumin...", "resuming from HAILING.");
                 tuta.location.loadPositionInit();
                 kony.timer.schedule("tempLoad", function() {
 
@@ -119,7 +119,7 @@ tuta.appstate.helper.resumeFromState = function() {
                 }, 5, false);
             } else if (result === "OnRoute") {
 
-                tuta.util.alert("Resumin...", "resuming from ENROUTE.");
+                //tuta.util.alert("Resumin...", "resuming from ENROUTE.");
                 //Resume from en route
                 tuta.location.loadPositionInit();
                 //tuta.forms.frmMap.show();
@@ -147,7 +147,7 @@ tuta.appstate.helper.resumeFromState = function() {
                 //yourBooking = bookingID;
             } else if (result === "InTransit") {
                 //Resume from in transit
-                tuta.util.alert("Resumin...", "resuming from in transit.");
+                //tuta.util.alert("Resumin...", "resuming from in transit.");
                 tuta.location.loadPositionInit();
                 //tuta.forms.frmMap.show();
 
@@ -162,41 +162,36 @@ tuta.appstate.helper.resumeFromState = function() {
                     onJourney = 1;
                     yourBooking = current_booking;
 
-                    //Reset flex positions
-                    try {
-                        tuta.animate.moveBottomLeft(frmMap.flexCancel, 0, "105", "-100", null);
-                        tuta.animate.move(frmMap.flexArriving, 0, "65", "105%", null);
-                        tuta.animate.moveBottomRight(frmMap.flexPhone, 0, "105", "-100", null);
-                        tuta.animate.moveBottomLeft(frmMap.flexTimeToDest, 0.1, "105", "-5", null);
-                    } catch (ex) {
-                        //Nothing to do here, move along
-                    }
-
                     //What to do on resume from app state
                     driverArrived = true;
                     tripOnRoute = false;
                     distNow = 0;
                     awaitingConfirmation = false;
                     overview.active = 0;
+                    journeyComplete = false;
+                  	tripInTransitResume = true;
+                    tripInTransitResume2 = true;
 
                     tuta.fetchDriverInfo(currentBookingObject.providerId);
                     yourBooking = bookingID;
-                    tuta.awaitDriverPickupConfirmation();
 
-                    //tuta.awaitDriverDropOffConfirmation();
 
                     try {
                         kony.timer.cancel("taxiAwaitTimer");
                     } catch (ex) {
 
                     }
-                    tuta.renderFinalRoute();
+
+                    //tuta.renderFinalRoute();
+
+
+                    
 
                 } catch (ex) {
                     tuta.util.alert("Something went wrong resuming from IN TRANSIT", ex);
                 }
             } else {
-                tuta.util.alert("ERROR!", "Something went horribly wrong.\n" + result);
+                //tuta.util.alert("ERROR!", "Your booking is probably complete..\n" + result);
                 tuta.location.loadPositionInit();
                 tuta.forms.frmMap.show();
             }

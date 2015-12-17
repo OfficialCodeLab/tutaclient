@@ -23,6 +23,8 @@ var tripOnRoute = false;
 var hailingTaxi = false; //Used to prevent multiple requests
 var onJourney = 0;
 var driver;
+var tripInTransitResume = false;
+var tripInTransitResume2 = false;
 
 //Location variables
 var destination = null;
@@ -376,6 +378,10 @@ tuta.renderFinalRoute = function(){
 
   }
   
+  //tuta.util.alert("Nearby Drivers", JSON.stringify(nearbyDrivers[0]));
+  //tuta.util.alert("NearbyDrivers before route draw", nearbyDrivers[0]);
+	//frmMap.mapMain.clear();
+  tuta.util.alert("Destination", destination.geometry.location.lat);
   kony.timer.schedule("swiperball", function(){
     awaitingConfirmation = false;
 
@@ -385,10 +391,12 @@ tuta.renderFinalRoute = function(){
     }catch (ex){
       
     }
-    tuta.util.alert("Nearby Drivers", JSON.stringify(nearbyDrivers[0]));
+    
     application.service("driverService").invokeOperation(
       "booking", {}, {id: yourBooking},
       function(result){
+         tuta.util.alert("Results", "Booking ID: " + yourBooking + "\nBooking Results: \n\n" + JSON.stringify(result));
+      
         tuta.location.directionsFromCoordinates(nearbyDrivers[0].location.lat, nearbyDrivers[0].location.lng, destination.geometry.location.lat, destination.geometry.location.lng, function(response){
 
           kony.timer.schedule("renderDirFinal", function(){
@@ -397,7 +405,7 @@ tuta.renderFinalRoute = function(){
             updateMap();
             kony.timer.schedule("zoomIn", function(){
               //#ifdef android
-              frmMap.mapMain.zoomLevel = 19;
+              frmMap.mapMain.zoomLevel = 18;
               //#endif
 
               //#ifdef iphone
@@ -406,9 +414,12 @@ tuta.renderFinalRoute = function(){
             }, 3, false);
           }, 1, false);
         });
+      
+        
+
 
       }, function(error){
-
+        tuta.util.alert("Booking error", error);
       });
   }, 0.5, false);
 };
@@ -609,14 +620,20 @@ tuta.trackDriverLoop = function (driverID){
 tuta.trackDriver = function(driverID){
 
   //Store the driver ID as variable 'input' for query
+
+  //tuta.util.alert("Input 1", "Driver ID sent through:\n" + driverID);
+
   var input = {
     id: driverID
   };
+
+  //tuta.util.alert("Input 2", "Actual Input:\n" + JSON.stringify(input));
 
   //Query the server
   application.service("driverService").invokeOperation(
     "user", {}, input,
     function(result) { 
+
 
       nearbyDrivers = []; //clear the array of drivers
 
@@ -628,7 +645,13 @@ tuta.trackDriver = function(driverID){
         }
       };
 
+      
+
       nearbyDrivers[0] = driver;
+      if (tripInTransitResume === true){
+        tuta.renderFinalRoute();
+        tripInTransitResume = false;
+      }
 
       if(initialLoad === true){
         updateMap();
@@ -732,7 +755,10 @@ tuta.awaitDriverPickupConfirmation = function(){
             tuta.animate.move(frmMap.flexArriving, 0, "65", "105%", null);
             tuta.animate.moveBottomRight(frmMap.flexPhone, 0, "105", "-100", null);
             tuta.animate.moveBottomLeft(frmMap.flexTimeToDest, 0.1, "105", "-5", null);
-            tuta.renderFinalRoute();
+            if (tripInTransitResume === false){
+               tuta.renderFinalRoute();
+			      }
+           
           }
         }
         catch(ex){
