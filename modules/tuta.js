@@ -22,6 +22,9 @@ var awaitingConfirmation = true;
 var tripOnRoute = false;
 var hailingTaxi = false; //Used to prevent multiple requests
 var onJourney = 0;
+var driver;
+var tripInTransitResume = false;
+var tripInTransitResume2 = false;
 
 //Location variables
 var destination = null;
@@ -250,15 +253,11 @@ tuta.menuToggle = function (time, bool){
 tuta.awaitConfirm = function(bookingID) {
 
   //TRY THE ENTIRE METHOD
-  try{
   frmMap.flexAdd.setVisibility(false);
   frmMap.flexChangeDest.setVisibility(false);
   frmMap.flexNoOfPeople.setVisibility(false);
   frmMap.flexProgress.setVisibility(true);
   onJourney = 1;
-
-  
-
 
   //Kony timer – checks evert 5 seconds for the booking (if there is one) , 
   //take the result and check the status value of the key status – 
@@ -273,10 +272,9 @@ tuta.awaitConfirm = function(bookingID) {
     - Store the current booking, app state and user in the kony store
   */
 
-
     yourBooking = bookingID;
-  
   currentBooking = bookingID;
+  
 
   //Create an object for storage
   appState = {
@@ -289,9 +287,9 @@ tuta.awaitConfirm = function(bookingID) {
   //Store the object in case of crash
   tuta.appstate.setState(appState);
 
-  
 
   inputBooking = { id : bookingID };
+  //tuta.util.alert("Input Booking: " + bookingID);
   try{
     kony.timer.cancel("taxiHailTimer");
   }
@@ -300,12 +298,17 @@ tuta.awaitConfirm = function(bookingID) {
   }
 
   kony.timer.schedule("taxiHailTimer", function(){
+    //tuta.util.alert("Test 3", "Starting hailtimer");
 
-    application.service("userService").invokeOperation(
+
+    //Try make the booking
+    try {
+      application.service("userService").invokeOperation(
       "booking", {}, inputBooking,
-      function(result) { //This is the default function that runs if the query is succesful, if there is a result.
+      function(result) { 
         if (result.value[0].status ==="OnRoute")
         {
+          //tuta.util.alert("Test 4", "There is a result");
           tripOnRoute = true;
           frmMap.flexNoPanning.setVisibility(true);
           frmMap.flexProgress.setVisibility(false);
@@ -329,14 +332,19 @@ tuta.awaitConfirm = function(bookingID) {
         }
       },
       function(error) { //The second function will always run if there is an error.
-        //tuta.util.alert("error",error);
+        //tuta.util.alert("Test 4", error);
       }
     );
+    } catch (ex){
+      //tuta.util.alert("The ultimate EXCEPTION :D", ex);
+    }
+
+
+
+    
 
   }, 3, true);
-  }catch (ex){
-    tuta.util.alert("AwaitConfirm Error", ex);
-  }
+
 
 
 
@@ -390,23 +398,41 @@ tuta.cancelBooking = function(bookingID) {
 };
 
 tuta.renderFinalRoute = function(){
-  tuta.animate.move(frmMap.imgSwipeLever, 0.3, "", "70%", null);
+  
+  try{
+    tuta.animate.move(frmMap.imgSwipeLever, 0.3, "", "70%", null);
+  } catch (ex){
+
+  }
+  
+  //tuta.util.alert("Nearby Drivers", JSON.stringify(nearbyDrivers[0]));
+  //tuta.util.alert("NearbyDrivers before route draw", nearbyDrivers[0]);
+	//frmMap.mapMain.clear();
+  tuta.util.alert("Destination", destination.geometry.location.lat);
   kony.timer.schedule("swiperball", function(){
     awaitingConfirmation = false;
 
     frmMap["flexDarken"]["isVisible"] = false;
-    frmMap.mapMain.removePolyline("polyid1");
+    try{
+      frmMap.mapMain.removePolyline("polyid1");
+    }catch (ex){
+      
+    }
+    
     application.service("driverService").invokeOperation(
       "booking", {}, {id: yourBooking},
       function(result){
+         tuta.util.alert("Results", "Booking ID: " + yourBooking + "\nBooking Results: \n\n" + JSON.stringify(result));
+      
         tuta.location.directionsFromCoordinates(nearbyDrivers[0].location.lat, nearbyDrivers[0].location.lng, destination.geometry.location.lat, destination.geometry.location.lng, function(response){
 
           kony.timer.schedule("renderDirFinal", function(){
             renderDirections(frmMap.mapMain, response, "0x0036bba7","","dropofficon.png");
+            tuta.util.alert("TEST 3", JSON.stringify(response));
             updateMap();
             kony.timer.schedule("zoomIn", function(){
               //#ifdef android
-              frmMap.mapMain.zoomLevel = 19;
+              frmMap.mapMain.zoomLevel = 18;
               //#endif
 
               //#ifdef iphone
@@ -415,9 +441,12 @@ tuta.renderFinalRoute = function(){
             }, 3, false);
           }, 1, false);
         });
+      
+        
+
 
       }, function(error){
-
+        tuta.util.alert("Booking error", error);
       });
   }, 0.5, false);
 };
@@ -453,7 +482,7 @@ tuta.driverBearing = function (driverID, callback){
 
 tuta.renderRouteAndDriver = function (booking){
 
-  var driver = booking.providerId;
+  driver = booking.providerId;
   initialLoad = true;
 
   /*
@@ -635,14 +664,20 @@ tuta.trackDriverLoop = function (driverID){
 tuta.trackDriver = function(driverID){
 
   //Store the driver ID as variable 'input' for query
+
+  //tuta.util.alert("Input 1", "Driver ID sent through:\n" + driverID);
+
   var input = {
     id: driverID
   };
+
+  //tuta.util.alert("Input 2", "Actual Input:\n" + JSON.stringify(input));
 
   //Query the server
   application.service("driverService").invokeOperation(
     "user", {}, input,
     function(result) { 
+
 
       nearbyDrivers = []; //clear the array of drivers
 
@@ -654,7 +689,13 @@ tuta.trackDriver = function(driverID){
         }
       };
 
+      
+
       nearbyDrivers[0] = driver;
+      if (tripInTransitResume === true){
+        tuta.renderFinalRoute();
+        tripInTransitResume = false;
+      }
 
       if(initialLoad === true){
         updateMap();
@@ -758,7 +799,10 @@ tuta.awaitDriverPickupConfirmation = function(){
             tuta.animate.move(frmMap.flexArriving, 0, "65", "105%", null);
             tuta.animate.moveBottomRight(frmMap.flexPhone, 0, "105", "-100", null);
             tuta.animate.moveBottomLeft(frmMap.flexTimeToDest, 0.1, "105", "-5", null);
-            tuta.renderFinalRoute();
+            if (tripInTransitResume === false){
+               tuta.renderFinalRoute();
+			      }
+           
           }
         }
         catch(ex){
