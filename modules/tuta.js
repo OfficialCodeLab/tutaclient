@@ -385,7 +385,7 @@ tuta.renderFinalRoute = function(){
     }catch (ex){
       
     }
-    tuta.util.alert("TEST CARL", nearbyDrivers[0]);
+    tuta.util.alert("Nearby Drivers", JSON.stringify(nearbyDrivers[0]));
     application.service("driverService").invokeOperation(
       "booking", {}, {id: yourBooking},
       function(result){
