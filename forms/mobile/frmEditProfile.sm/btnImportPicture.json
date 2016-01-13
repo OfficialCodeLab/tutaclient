@@ -1,5 +1,5 @@
 {
-    "@class": "com.kony.gen.viz.model.component.KVizCamera",
+    "@class": "com.kony.gen.viz.model.component.KVizButton",
     "DNDConfig": null,
     "__parentReadjusting__": false,
     "_height_": {
@@ -8,13 +8,13 @@
     },
     "_left_": {
         "type": "string",
-        "value": "10%"
+        "value": "55%"
     },
     "_margin_": [
-        0,
-        0,
-        0,
-        0
+        6,
+        6,
+        6,
+        6
     ],
     "_padding_": [
         0,
@@ -22,8 +22,8 @@
         0,
         0
     ],
-    "_skin_": "sfba5520ec8a4b21b73a99502abfcd0a",
-    "_text_": "Take A Photo",
+    "_skin_": "s164f2bfa5fc4fdbbdbe6bb81aa81bb5",
+    "_text_": "Import Picture",
     "_top_": {
         "type": "string",
         "value": "200dp"
@@ -37,26 +37,25 @@
     "containerweight": 100,
     "contentAlignment": 5,
     "contentalignment": 5,
-    "desktopweb": {
-        "render": false
-    },
+    "displayText": true,
+    "displaytext": true,
     "enabled": false,
+    "focusSkin": "sd05b2785b254e69b689cd8b8f8fae1a",
+    "focusskin": "sd05b2785b254e69b689cd8b8f8fae1a",
     "height": "50dp",
-    "id": "cmrTakePhoto",
+    "id": "btnImportPicture",
     "info": null,
     "isVisible": true,
     "isvisible": true,
-    "kuid": "008e91af405c4fb1b063ba25c2f4e394",
-    "left": "10%",
+    "kuid": "2a65ba3bdd0648b58a778df202653d2d",
+    "left": "55%",
     "margin": [
-        0,
-        0,
-        0,
-        0
+        6,
+        6,
+        6,
+        6
     ],
-    "name": "kony.ui.Camera",
-    "onCapture": null,
-    "oncapture": null,
+    "name": "kony.ui.Button",
     "padding": [
         0,
         0,
@@ -66,32 +65,10 @@
     "parent": "FlexScrollContainer0cac64e57780f48",
     "pf": "frmEditProfile",
     "render": true,
-    "skin": "sfba5520ec8a4b21b73a99502abfcd0a",
-    "spaan": {
-        "render": false
-    },
-    "spaandroidtablet": {
-        "render": false
-    },
-    "spabb": {
-        "render": false
-    },
-    "spaip": {
-        "render": false
-    },
-    "spaipad": {
-        "render": false
-    },
-    "spawindowstablet": {
-        "render": false
-    },
-    "spawinphone8": {
-        "render": false
-    },
-    "text": "Take A Photo",
-    "toolTip": "",
+    "skin": "s164f2bfa5fc4fdbbdbe6bb81aa81bb5",
+    "text": "Import Picture",
     "top": "200dp",
-    "wType": "Camera",
+    "wType": "Button",
     "widgetAlignment": 5,
     "width": "40%",
     "zIndex": 1,

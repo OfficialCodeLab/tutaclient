@@ -23,7 +23,7 @@ tuta.forms.frmEditProfile = function() {
     // var userInfoResults = "";
     //
     
-    //Store the user ID as variable 'input' for query
+    //Store the user ID as variable 'input' for userService query
     var input = {
       id: currentUserEmail
     };
@@ -50,7 +50,19 @@ tuta.forms.frmEditProfile = function() {
     };*/
     
     this.control("btnBack").onClick = function (button) {tuta.forms.frmMap.show();};
+    
+    /*
+    this.control("btnImportPicture").onClick = function (button) {
+      var config = {
+        selectMultipleFiles: true,
+        filter: ["image/png", "image/jpeg"]
+      };      
+      kony.io.FileSystem.browse(config, selectedFileCallback);
+    };
+    */
+    
     this.control("btnSave").onClick = function (button) {
+      //Store the user ID as variable 'input' for manageService query
       var inputs = {
         data: JSON.stringify({
           firstName : frmEditProfile.txtFirstName.text,
@@ -76,3 +88,8 @@ tuta.forms.frmEditProfile = function() {
     var self = this;
   };
 };
+/*
+selectedFileCallback = function(event, fileList) {
+  frmEditProfile.imgUser.source = fileList[0];
+};
+*/
