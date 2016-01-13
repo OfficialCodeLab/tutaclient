@@ -48,7 +48,7 @@ tuta.forms.frmMap = function() {
       this.control("flexMenu"), 
       tuta.controls.position.LEFT,
       tuta.controls.behavior.MOVE_OVER,
-      0.25
+      0.15
     );	
 
     this.control("btnArrivedConfirm").onClick = function(button){
@@ -87,7 +87,7 @@ tuta.forms.frmMap = function() {
 
     // this.control("btnChs").onClick = function (button) {tuta.forms.frmMap.show();};
     this.control("btnChs").onClick = function(button) {
-      tuta.menuToggle(0.3, self.leftMenu._open);     
+      tuta.menuToggle(0.15, self.leftMenu._open);     
       self.leftMenu.toggle();
     };
     
