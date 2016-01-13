@@ -8,7 +8,7 @@
     },
     "_left_": {
         "type": "string",
-        "value": "30%"
+        "value": "0dp"
     },
     "_margin_": [
         6,
@@ -17,7 +17,7 @@
         6
     ],
     "_padding_": [
-        0,
+        30,
         0,
         0,
         0
@@ -30,7 +30,7 @@
     },
     "_width_": {
         "type": "string",
-        "value": "150dp"
+        "value": "100%"
     },
     "canUpdateUI": true,
     "containerWeight": 100,
@@ -48,7 +48,7 @@
     "isVisible": true,
     "isvisible": true,
     "kuid": "6dcc7c9eb26c441dbbf37c420ff60491",
-    "left": "30%",
+    "left": "0dp",
     "margin": [
         6,
         6,
@@ -57,11 +57,13 @@
     ],
     "name": "kony.ui.Button",
     "padding": [
-        0,
+        30,
         0,
         0,
         0
     ],
+    "paddingInPixel": false,
+    "paddinginpixel": false,
     "parent": "flexMenuItems",
     "pf": "frmMap",
     "render": true,
@@ -70,7 +72,7 @@
     "top": "180dp",
     "wType": "Button",
     "widgetAlignment": 5,
-    "width": "150dp",
-    "zIndex": 50,
-    "zindex": 50
+    "width": "100%",
+    "zIndex": 51,
+    "zindex": 51
 }
