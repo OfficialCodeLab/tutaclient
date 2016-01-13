@@ -26,7 +26,7 @@
     "_text_": "About Tuta",
     "_top_": {
         "type": "string",
-        "value": "240dp"
+        "value": "300dp"
     },
     "_width_": {
         "type": "string",
@@ -69,7 +69,7 @@
     "render": true,
     "skin": "sdcceba3395c458b80cf8e2b28c500b6",
     "text": "About Tuta",
-    "top": "240dp",
+    "top": "300dp",
     "wType": "Button",
     "widgetAlignment": 5,
     "width": "100%",

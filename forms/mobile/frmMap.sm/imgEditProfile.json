@@ -24,39 +24,36 @@
         0
     ],
     "_skin_": "s4ea8d4d07574957b839f06194980e52",
-    "_src_": "questionicon.png",
+    "_src_": "debugicon.png",
     "_width_": {
         "type": "string",
         "value": "30dp"
     },
     "base64": null,
     "canUpdateUI": true,
-    "centerY": "330dp",
+    "centerY": "150dp",
     "centery": {
         "type": "string",
-        "value": "330dp"
+        "value": "150dp"
     },
     "containerWeight": 100,
     "containerweight": 100,
     "context": {
         "channel": "mobile",
         "formID": "frmMap",
-        "ispercent": true,
-        "platform": "iphone",
         "templateType": "forms",
         "topLevelBox": null
     },
     "enabled": false,
     "height": "30dp",
-    "id": "imgQuestion",
+    "id": "imgEditProfile",
     "imageScaleMode": 1,
     "imagescalemode": 1,
     "info": null,
     "invokedProperty": "src",
     "isVisible": true,
-    "ispercent": true,
     "isvisible": true,
-    "kuid": "e505d421dbab4d92b3a74f51feda2a87",
+    "kuid": "37839b04e65841a5ba3a5fef48d4000f",
     "left": "25dp",
     "margin": [
         0,
@@ -75,7 +72,7 @@
     "pf": "frmMap",
     "render": true,
     "skin": "s4ea8d4d07574957b839f06194980e52",
-    "src": "questionicon.png",
+    "src": "debugicon.png",
     "srcType": 1,
     "wType": "Image",
     "widgetAlignment": 5,

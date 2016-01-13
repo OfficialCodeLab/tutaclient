@@ -26,7 +26,7 @@
     "_text_": "Help",
     "_top_": {
         "type": "string",
-        "value": "120dp"
+        "value": "180dp"
     },
     "_width_": {
         "type": "string",
@@ -69,7 +69,7 @@
     "render": true,
     "skin": "sdcceba3395c458b80cf8e2b28c500b6",
     "text": "Help",
-    "top": "120dp",
+    "top": "180dp",
     "wType": "Button",
     "widgetAlignment": 5,
     "width": "100%",

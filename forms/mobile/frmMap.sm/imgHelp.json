@@ -31,10 +31,10 @@
     },
     "base64": null,
     "canUpdateUI": true,
-    "centerY": "150dp",
+    "centerY": "210dp",
     "centery": {
         "type": "string",
-        "value": "150dp"
+        "value": "210dp"
     },
     "containerWeight": 100,
     "containerweight": 100,

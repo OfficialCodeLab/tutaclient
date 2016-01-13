@@ -23,10 +23,10 @@
         0
     ],
     "_skin_": "sdcceba3395c458b80cf8e2b28c500b6",
-    "_text_": "Promotions",
+    "_text_": "Edit Profile",
     "_top_": {
         "type": "string",
-        "value": "240dp"
+        "value": "120dp"
     },
     "_width_": {
         "type": "string",
@@ -43,11 +43,11 @@
     "focusSkin": "s406bd716e3a45f2a212e02e76d80745",
     "focusskin": "s406bd716e3a45f2a212e02e76d80745",
     "height": "60dp",
-    "id": "btnPromo",
+    "id": "btnEditProfile",
     "info": null,
     "isVisible": true,
     "isvisible": true,
-    "kuid": "6dcc7c9eb26c441dbbf37c420ff60491",
+    "kuid": "d121ae543ab049e8bc0d6c6cd40e7775",
     "left": "0dp",
     "margin": [
         6,
@@ -68,8 +68,8 @@
     "pf": "frmMap",
     "render": true,
     "skin": "sdcceba3395c458b80cf8e2b28c500b6",
-    "text": "Promotions",
-    "top": "240dp",
+    "text": "Edit Profile",
+    "top": "120dp",
     "wType": "Button",
     "widgetAlignment": 5,
     "width": "100%",
