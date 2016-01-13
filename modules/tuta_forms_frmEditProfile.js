@@ -18,6 +18,7 @@ tuta.forms.frmEditProfile = function() {
     var self = this;
     
     this.control("btnBack").onClick = function (button) {tuta.forms.frmMap.show();};
+    
     /*
     this.control("btnCancel").onClick = function (button) {tuta.forms.frmMap.show();};
     this.control("btnSubmit").onClick = function (button) {

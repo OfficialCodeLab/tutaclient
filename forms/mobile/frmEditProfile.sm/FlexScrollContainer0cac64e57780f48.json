@@ -44,7 +44,8 @@
         "txtFirstName",
         "txtSurname",
         "cmrTakePhoto",
-        "btnSave"
+        "btnSave",
+        "imgUser"
     ],
     "clipBounds": true,
     "clipbounds": true,

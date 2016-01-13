@@ -34,7 +34,7 @@
     },
     "_width_": {
         "type": "string",
-        "value": "260dp"
+        "value": "80%"
     },
     "canUpdateUI": true,
     "containerWeight": 100,
@@ -98,7 +98,7 @@
     "top": "200dp",
     "wType": "Camera",
     "widgetAlignment": 5,
-    "width": "260dp",
+    "width": "80%",
     "zIndex": 1,
     "zindex": 1
 }
