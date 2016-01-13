@@ -4,11 +4,11 @@
     "__parentReadjusting__": false,
     "_height_": {
         "type": "string",
-        "value": "45dp"
+        "value": "51dp"
     },
     "_left_": {
         "type": "string",
-        "value": "15dp"
+        "value": "6dp"
     },
     "_margin_": [
         6,
@@ -30,7 +30,7 @@
     },
     "_width_": {
         "type": "string",
-        "value": "50dp"
+        "value": "68dp"
     },
     "canUpdateUI": true,
     "centerY": "50%",
@@ -47,13 +47,13 @@
     "enabled": false,
     "focusSkin": "s5871028095a4083aa02ac5c9614d485",
     "focusskin": "s5871028095a4083aa02ac5c9614d485",
-    "height": "45dp",
+    "height": "51dp",
     "id": "btnBack",
     "info": null,
     "isVisible": true,
     "isvisible": true,
     "kuid": "9915ea93932342069ea070f66147b545",
-    "left": "15dp",
+    "left": "6dp",
     "margin": [
         6,
         6,
@@ -75,7 +75,7 @@
     "top": "11dp",
     "wType": "Button",
     "widgetAlignment": 5,
-    "width": "50dp",
+    "width": "68dp",
     "zIndex": 2,
     "zindex": 2
 }
