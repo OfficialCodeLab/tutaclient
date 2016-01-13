@@ -34,8 +34,6 @@
         "value": "100%"
     },
     "android": {
-        "onBeginEditing": "AS_TextArea_8537ae64dced4ae1a287c7764dbd513f",
-        "onEndEditing": "AS_TextArea_2050d333e7c7465c9e6bc4718a809cbb",
         "psp": {
             "placeholderSkin": "secf002d5d404b7fb68c4ed548486959"
         }
@@ -70,10 +68,7 @@
     "height": "140dp",
     "id": "txtareaEditIssue",
     "info": null,
-    "iphone": {
-        "onBeginEditing": "AS_TextArea_3776e06390554a648ba4fdc85a090d09",
-        "onEndEditing": "AS_TextArea_361b115aa39046e993f837139d9d906c"
-    },
+    "iphone": {},
     "isVisible": true,
     "isvisible": true,
     "keyBoardStyle": "A",
