@@ -18,6 +18,9 @@
     "addWidgetsdone": false,
     "allboxes": [],
     "android": {
+        "inTransitionConfig": {
+            "formAnimation": 3
+        },
         "needAppMenu": false
     },
     "bounces": false,
@@ -42,16 +45,28 @@
     "enabledForIdleTimeout": false,
     "enabledforidletimeout": false,
     "id": "frmEditProfile",
+    "inTransitionConfig": {
+        "transitionDirection": "fromRight",
+        "transitionEffect": "transitionMoveIn"
+    },
     "info": null,
     "initdone": false,
     "inputAccessoryViewType": 4,
     "inputaccessoryviewtype": 4,
+    "intransitionconfig": {
+        "transitionDirection": "fromRight",
+        "transitionEffect": "transitionMoveIn"
+    },
     "ipad": {
         "psp": {
             "inputAccessoryViewType": 4
         }
     },
     "iphone": {
+        "inTransitionConfig": {
+            "transitionDirection": "fromRight",
+            "transitionEffect": "transitionMoveIn"
+        },
         "needAppMenu": false,
         "psp": {
             "inputAccessoryViewType": 4,
@@ -109,6 +124,11 @@
     "snapToGrid": true,
     "snapgridsize": 10,
     "snaptogrid": true,
+    "spa": {
+        "inTransitionConfig": {
+            "formTransition": "none"
+        }
+    },
     "spaan": {
         "needAppMenu": false
     },
@@ -204,6 +224,11 @@
     "wType": "Form",
     "widgetAlignment": 5,
     "winphone8": {
+        "inTransitionConfig": {
+            "inTransition": "none",
+            "transitionMode": "none",
+            "transitionSpeed": 0
+        },
         "needAppMenu": false
     }
 }

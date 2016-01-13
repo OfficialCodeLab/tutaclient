@@ -1,4 +1,4 @@
-f (typeof(tuta) === "undefined") {
+if (typeof(tuta) === "undefined") {
 	tuta = {};
 }
 
@@ -18,10 +18,11 @@ tuta.forms.frmEditProfile = function() {
     var self = this;
     
     this.control("btnBack").onClick = function (button) {tuta.forms.frmMap.show();};
+    /*
     this.control("btnCancel").onClick = function (button) {tuta.forms.frmMap.show();};
     this.control("btnSubmit").onClick = function (button) {
       tuta.events.logIssue();
-    };
+    };*/
     
    // PUT BUTTONS HERE
   };

@@ -36,7 +36,7 @@
     "canUpdateUI": true,
     "children": [
         "flexHeader",
-        "flexEditForm"
+        "FlexScrollContainer0cac64e57780f48"
     ],
     "clipBounds": true,
     "clipbounds": true,
