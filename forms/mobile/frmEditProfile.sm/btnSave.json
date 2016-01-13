@@ -1,0 +1,81 @@
+{
+    "@class": "com.kony.gen.viz.model.component.KVizButton",
+    "DNDConfig": null,
+    "__parentReadjusting__": false,
+    "_bottom_": {
+        "type": "number",
+        "value": "10"
+    },
+    "_height_": {
+        "type": "string",
+        "value": "50dp"
+    },
+    "_left_": {
+        "type": "string",
+        "value": "5%"
+    },
+    "_margin_": [
+        6,
+        6,
+        6,
+        6
+    ],
+    "_padding_": [
+        0,
+        0,
+        0,
+        0
+    ],
+    "_right_": {
+        "type": "string",
+        "value": "5%"
+    },
+    "_skin_": "s13c2c7c601f48f8b6e4f3082ffd405e",
+    "_text_": "Save",
+    "_width_": {
+        "type": "string",
+        "value": "90%"
+    },
+    "bottom": 10,
+    "canUpdateUI": true,
+    "containerWeight": 100,
+    "containerweight": 100,
+    "contentAlignment": 5,
+    "contentalignment": 5,
+    "displayText": true,
+    "displaytext": true,
+    "enabled": false,
+    "focusSkin": "sd05b2785b254e69b689cd8b8f8fae1a",
+    "focusskin": "sd05b2785b254e69b689cd8b8f8fae1a",
+    "height": "50dp",
+    "id": "btnSave",
+    "info": null,
+    "isVisible": true,
+    "isvisible": true,
+    "kuid": "a06f16ce31c9445eb6f7bb0f1f9374bf",
+    "left": "5%",
+    "margin": [
+        6,
+        6,
+        6,
+        6
+    ],
+    "name": "kony.ui.Button",
+    "padding": [
+        0,
+        0,
+        0,
+        0
+    ],
+    "parent": "FlexScrollContainer0cac64e57780f48",
+    "pf": "frmEditProfile",
+    "render": true,
+    "right": "5%",
+    "skin": "s13c2c7c601f48f8b6e4f3082ffd405e",
+    "text": "Save",
+    "wType": "Button",
+    "widgetAlignment": 5,
+    "width": "90%",
+    "zIndex": 1,
+    "zindex": 1
+}

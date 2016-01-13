@@ -38,7 +38,14 @@
     "bottom": 0,
     "bounces": true,
     "canUpdateUI": true,
-    "children": [],
+    "children": [
+        "lblFirstName",
+        "lblLastName",
+        "txtFirstName",
+        "txtSurname",
+        "cmrTakePhoto",
+        "btnSave"
+    ],
     "clipBounds": true,
     "clipbounds": true,
     "containerWeight": 100,
