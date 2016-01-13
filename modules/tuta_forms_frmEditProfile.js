@@ -54,7 +54,7 @@ tuta.forms.frmEditProfile = function() {
       var inputs = {
         data: JSON.stringify({
           firstName : frmEditProfile.txtFirstName.text,
-          lastName : frmEditProfile.txtLastName.text
+          lastName : frmEditProfile.txtSurname.text
         }),
         id: currentUserEmail
       };
@@ -67,7 +67,7 @@ tuta.forms.frmEditProfile = function() {
           tuta.util.alert("Error", JSON.stringify(error));
         }
       );
-      tuta.forms.frmMap.show();
+      //tuta.forms.frmMap.show();
     };
    // PUT BUTTONS HERE
   };
