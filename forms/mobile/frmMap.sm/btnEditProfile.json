@@ -4,11 +4,7 @@
     "__parentReadjusting__": false,
     "_height_": {
         "type": "string",
-        "value": "60dp"
-    },
-    "_left_": {
-        "type": "string",
-        "value": "0dp"
+        "value": "35dp"
     },
     "_margin_": [
         6,
@@ -17,38 +13,46 @@
         6
     ],
     "_padding_": [
-        30,
+        0,
         0,
         0,
         0
     ],
-    "_skin_": "sdcceba3395c458b80cf8e2b28c500b6",
-    "_text_": "Edit Profile",
+    "_right_": {
+        "type": "string",
+        "value": "0dp"
+    },
+    "_skin_": "sbe848309a354d078e56a7aa6a1449d2",
+    "_text_": "",
     "_top_": {
         "type": "string",
-        "value": "120dp"
+        "value": "36dp"
     },
     "_width_": {
         "type": "string",
-        "value": "100%"
+        "value": "35dp"
     },
     "canUpdateUI": true,
+    "centerY": "50%",
+    "centery": {
+        "type": "string",
+        "value": "50%"
+    },
     "containerWeight": 100,
     "containerweight": 100,
-    "contentAlignment": 4,
-    "contentalignment": 4,
+    "contentAlignment": 5,
+    "contentalignment": 5,
     "displayText": true,
     "displaytext": true,
     "enabled": false,
-    "focusSkin": "s406bd716e3a45f2a212e02e76d80745",
-    "focusskin": "s406bd716e3a45f2a212e02e76d80745",
-    "height": "60dp",
+    "focusSkin": "s693518d6e3842038c7b43c7a1d5e526",
+    "focusskin": "s693518d6e3842038c7b43c7a1d5e526",
+    "height": "35dp",
     "id": "btnEditProfile",
     "info": null,
     "isVisible": true,
     "isvisible": true,
-    "kuid": "d121ae543ab049e8bc0d6c6cd40e7775",
-    "left": "0dp",
+    "kuid": "96e4d6f5bfef48c08091982d1797fbb0",
     "margin": [
         6,
         6,
@@ -56,23 +60,24 @@
         6
     ],
     "name": "kony.ui.Button",
+    "onClick": "AS_Button_c0d8a10a3da0491592c18dd43176d11d",
+    "onclick": "AS_Button_c0d8a10a3da0491592c18dd43176d11d",
     "padding": [
-        30,
+        0,
         0,
         0,
         0
     ],
-    "paddingInPixel": false,
-    "paddinginpixel": false,
-    "parent": "flexMenuItems",
+    "parent": "flexUserInfo",
     "pf": "frmMap",
     "render": true,
-    "skin": "sdcceba3395c458b80cf8e2b28c500b6",
-    "text": "Edit Profile",
-    "top": "120dp",
+    "right": "0dp",
+    "skin": "sbe848309a354d078e56a7aa6a1449d2",
+    "text": "",
+    "top": "36dp",
     "wType": "Button",
     "widgetAlignment": 5,
-    "width": "100%",
-    "zIndex": 51,
-    "zindex": 51
+    "width": "35dp",
+    "zIndex": 2,
+    "zindex": 2
 }

@@ -115,7 +115,7 @@
     "paddinginpixel": false,
     "percent": true,
     "platform": "iphone",
-    "prevDevice": "iPhone6",
+    "prevDevice": "iPhone6Plus",
     "prevPlatform": "android",
     "render": true,
     "retainScrollPosition": false,

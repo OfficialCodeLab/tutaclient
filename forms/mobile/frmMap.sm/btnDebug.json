@@ -17,7 +17,7 @@
         6
     ],
     "_padding_": [
-        30,
+        33,
         0,
         0,
         0
@@ -26,7 +26,7 @@
     "_text_": "Debug Options",
     "_top_": {
         "type": "string",
-        "value": "360dp"
+        "value": "300dp"
     },
     "_width_": {
         "type": "string",
@@ -57,7 +57,7 @@
     ],
     "name": "kony.ui.Button",
     "padding": [
-        30,
+        33,
         0,
         0,
         0
@@ -69,7 +69,7 @@
     "render": true,
     "skin": "sdcceba3395c458b80cf8e2b28c500b6",
     "text": "Debug Options",
-    "top": "360dp",
+    "top": "300dp",
     "wType": "Button",
     "widgetAlignment": 5,
     "width": "100%",

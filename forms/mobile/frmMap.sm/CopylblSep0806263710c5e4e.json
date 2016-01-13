@@ -26,7 +26,7 @@
     "_text_": "",
     "_top_": {
         "type": "string",
-        "value": "420dp"
+        "value": "180dp"
     },
     "_width_": {
         "type": "string",
@@ -40,7 +40,7 @@
     "contentalignment": 4,
     "enabled": false,
     "height": "1dp",
-    "id": "lblSep7",
+    "id": "CopylblSep0806263710c5e4e",
     "info": null,
     "ipad": {
         "psp": {
@@ -54,7 +54,7 @@
     },
     "isVisible": true,
     "isvisible": true,
-    "kuid": "6329dda21093483c902b82e52256d770",
+    "kuid": "9a83438f1b7f48ada02cd4b5b1c4eca6",
     "margin": [
         1,
         1,
@@ -76,7 +76,7 @@
     "text": "",
     "toolTip": "",
     "tooltip": "",
-    "top": "420dp",
+    "top": "180dp",
     "wType": "Label",
     "widgetAlignment": 5,
     "width": "70%",
