@@ -995,6 +995,7 @@ tuta.init = function() {
   new tuta.forms.frmSelectedTrip();
   new tuta.forms.frmTrip();
   new tuta.forms.frmDebug();
+  new tuta.forms.frmEditProfile();
 
   // initialize application
   application = new tuta.application(tuta.initCallback);
