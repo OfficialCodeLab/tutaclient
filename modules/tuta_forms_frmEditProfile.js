@@ -17,13 +17,39 @@ tuta.forms.frmEditProfile = function() {
   tuta.forms.frmEditProfile.onPreShow = function(form) {
     var self = this;
     
-    this.control("btnBack").onClick = function (button) {tuta.forms.frmMap.show();};
+    //Get the name of the user
+    var userTempQuery = JSON.parse(kony.store.getItem("user"));
+    var currentUserEmail = JSON.stringify(userTempQuery.userName);
+    // var userInfoResults = "";
+    //
+    
+    //Store the user ID as variable 'input' for query
+    var input = {
+      id: currentUserEmail
+    };
+    
+    application.service("userService").invokeOperation(
+      "user", {}, input,
+      function(result) { 
+        var firstName = result.value[0].userInfo.firstName;
+        var surname = result.value[0].userInfo.lastName;
+        frmEditProfile.txtFirstName.text = firstName;
+        frmEditProfile.txtSurname.text = surname;
+      },
+      function(error) {
+        // the service returns 403 (Not Authorised) if credentials are wrong
+        tuta.util.alert("Error " + error);
+
+      }
+    );
     
     /*
     this.control("btnCancel").onClick = function (button) {tuta.forms.frmMap.show();};
     this.control("btnSubmit").onClick = function (button) {
       tuta.events.logIssue();
     };*/
+    
+    this.control("btnBack").onClick = function (button) {tuta.forms.frmMap.show();};
     
    // PUT BUTTONS HERE
   };

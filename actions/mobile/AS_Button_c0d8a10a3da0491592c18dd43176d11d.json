@@ -14,7 +14,7 @@
 				"type": "NAVIGATE_TO_FORM",
 				"formId": "frmEditProfile",
 				"formKUID": "0100adf7803842b7a02f428086122b05",
-				"parentId": null,
+				"parentId": "",
 				"callbackType": null
 			}
 		]
