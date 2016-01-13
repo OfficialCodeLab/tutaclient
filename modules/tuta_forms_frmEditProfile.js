@@ -50,7 +50,25 @@ tuta.forms.frmEditProfile = function() {
     };*/
     
     this.control("btnBack").onClick = function (button) {tuta.forms.frmMap.show();};
-    
+    this.control("btnSave").onClick = function (button) {
+      var inputs = {
+        data: JSON.stringify({
+          firstName : frmEditProfile.txtFirstName.text,
+          lastName : frmEditProfile.txtLastName.text
+        }),
+        id: currentUserEmail
+      };
+      
+      application.service("manageService").invokeOperation(
+      	"userInfoUpdate", {}, inputs,
+        function(success) {
+          tuta.util.alert("Success", "Info has been update");
+        }, function(error) {
+          tuta.util.alert("Error", JSON.stringify(error));
+        }
+      );
+      tuta.forms.frmMap.show();
+    };
    // PUT BUTTONS HERE
   };
   
