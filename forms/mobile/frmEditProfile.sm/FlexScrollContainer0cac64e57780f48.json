@@ -40,8 +40,8 @@
     "canUpdateUI": true,
     "children": [
         "lblFirstName",
-        "lblLastName",
         "txtFirstName",
+        "lblSurname",
         "txtSurname",
         "cmrTakePhoto",
         "btnImportPicture",

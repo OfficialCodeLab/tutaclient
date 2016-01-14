@@ -32,6 +32,10 @@
     },
     "_skin_": "s13c2c7c601f48f8b6e4f3082ffd405e",
     "_text_": "Save",
+    "_top_": {
+        "type": "string",
+        "value": "90%"
+    },
     "_width_": {
         "type": "string",
         "value": "90%"
@@ -73,6 +77,7 @@
     "right": "5%",
     "skin": "s13c2c7c601f48f8b6e4f3082ffd405e",
     "text": "Save",
+    "top": "90%",
     "wType": "Button",
     "widgetAlignment": 5,
     "width": "90%",
