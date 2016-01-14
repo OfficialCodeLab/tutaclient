@@ -70,7 +70,7 @@
         0,
         0
     ],
-    "parent": "FlexScrollContainer0cac64e57780f48",
+    "parent": "flexScroll",
     "pf": "frmEditProfile",
     "render": true,
     "skin": "s4ea8d4d07574957b839f06194980e52",

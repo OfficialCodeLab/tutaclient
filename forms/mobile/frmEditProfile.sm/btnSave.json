@@ -2,10 +2,6 @@
     "@class": "com.kony.gen.viz.model.component.KVizButton",
     "DNDConfig": null,
     "__parentReadjusting__": false,
-    "_bottom_": {
-        "type": "number",
-        "value": "10"
-    },
     "_height_": {
         "type": "string",
         "value": "50dp"
@@ -40,7 +36,6 @@
         "type": "string",
         "value": "90%"
     },
-    "bottom": 10,
     "canUpdateUI": true,
     "containerWeight": 100,
     "containerweight": 100,
@@ -71,7 +66,7 @@
         0,
         0
     ],
-    "parent": "FlexScrollContainer0cac64e57780f48",
+    "parent": "flexScroll",
     "pf": "frmEditProfile",
     "render": true,
     "right": "5%",

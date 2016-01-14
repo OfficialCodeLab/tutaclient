@@ -75,7 +75,7 @@
     ],
     "paddingInPixel": false,
     "paddinginpixel": false,
-    "parent": "FlexScrollContainer0cac64e57780f48",
+    "parent": "flexScroll",
     "pf": "frmEditProfile",
     "placeholder": "",
     "render": true,

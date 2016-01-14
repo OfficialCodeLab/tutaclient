@@ -36,7 +36,7 @@
     "canUpdateUI": true,
     "children": [
         "flexHeader",
-        "FlexScrollContainer0cac64e57780f48"
+        "flexScroll"
     ],
     "clipBounds": true,
     "clipbounds": true,
