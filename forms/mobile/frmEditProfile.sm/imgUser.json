@@ -40,6 +40,8 @@
     "context": {
         "channel": "mobile",
         "formID": "frmEditProfile",
+        "ispercent": true,
+        "platform": "iphone",
         "templateType": "forms",
         "topLevelBox": null
     },
@@ -51,6 +53,7 @@
     "info": null,
     "invokedProperty": "src",
     "isVisible": true,
+    "ispercent": true,
     "isvisible": true,
     "kuid": "e663ad753e8346c1b59079bd4e77e1be",
     "left": "0dp",
