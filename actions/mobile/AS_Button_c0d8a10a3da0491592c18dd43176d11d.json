@@ -1,0 +1,22 @@
+{
+	"AS_Button_c0d8a10a3da0491592c18dd43176d11d": {
+		"id": "AS_Button_c0d8a10a3da0491592c18dd43176d11d",
+		"type": "ACTION_SEQUENCE",
+		"params": [
+			{
+				"datatype": "collection",
+				"name": "eventobject"
+			}
+		],
+		"actions": [
+			{
+				"id": "NAVIGATE_TO_FORM___8a923447d8584841a2a110f49850f812",
+				"type": "NAVIGATE_TO_FORM",
+				"formId": "frmEditProfile",
+				"formKUID": "0100adf7803842b7a02f428086122b05",
+				"parentId": "",
+				"callbackType": null
+			}
+		]
+	}
+}

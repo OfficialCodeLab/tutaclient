@@ -3,7 +3,7 @@
     "__parentReadjusting__": false,
     "_height_": {
         "type": "string",
-        "value": "100dp"
+        "value": "65dp"
     },
     "_left_": {
         "type": "string",
@@ -21,10 +21,10 @@
         0,
         0
     ],
-    "_skin_": "s8c1ee678b2b4373afc7646ef80f21d1",
+    "_skin_": "saef1903b76543bb852961b3e684e482",
     "_top_": {
         "type": "string",
-        "value": "55dp"
+        "value": "0dp"
     },
     "_width_": {
         "type": "string",
@@ -35,10 +35,9 @@
     "autogrowmode": 0,
     "canUpdateUI": true,
     "children": [
-        "imgUser",
-        "lblUser",
-        "imgEdit",
-        "btnEditProfile"
+        "lblHeader",
+        "btnBack",
+        "imgBack"
     ],
     "clipBounds": true,
     "clipbounds": true,
@@ -47,12 +46,12 @@
     "enableScrolling": true,
     "enabled": false,
     "enablescrolling": true,
-    "height": "100dp",
-    "id": "flexUserInfo",
+    "height": "65dp",
+    "id": "flexHeader",
     "info": null,
     "isVisible": true,
     "isvisible": true,
-    "kuid": "1eefd22361264f20b3a7d081a8f55d46",
+    "kuid": "e873f0b9b786492dab29f94c8d0d27eb",
     "layoutType": 2,
     "layouttype": 2,
     "left": "0dp",
@@ -70,20 +69,18 @@
         0,
         0
     ],
-    "parent": "flexMenu",
+    "parent": "flexMain",
     "percent": true,
-    "pf": "frmMap",
+    "pf": "frmEditProfile",
     "render": true,
-    "skin": "s8c1ee678b2b4373afc7646ef80f21d1",
+    "skin": "saef1903b76543bb852961b3e684e482",
     "snapGridSize": 10,
     "snapToGrid": true,
     "snapgridsize": 10,
     "snaptogrid": true,
-    "top": "55dp",
+    "top": "0dp",
     "wType": "FlexContainer",
     "widgetAlignment": 1,
     "widgetalignment": 1,
-    "width": "100%",
-    "zIndex": 1,
-    "zindex": 1
+    "width": "100%"
 }

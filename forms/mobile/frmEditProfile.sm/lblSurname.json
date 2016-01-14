@@ -3,8 +3,12 @@
     "DNDConfig": null,
     "__parentReadjusting__": false,
     "_height_": {
+        "type": "ref",
+        "value": "preferred"
+    },
+    "_left_": {
         "type": "string",
-        "value": "1dp"
+        "value": "0dp"
     },
     "_margin_": [
         1,
@@ -13,24 +17,20 @@
         1
     ],
     "_padding_": [
-        0,
+        7,
         0,
         0,
         0
     ],
-    "_right_": {
-        "type": "number",
-        "value": "0"
-    },
-    "_skin_": "s93f2ffcd5c84357b9b7d4ba783bad69",
-    "_text_": "",
+    "_skin_": "s63a5b86f27d4f78928d09702b2b7546",
+    "_text_": "Surname:",
     "_top_": {
         "type": "string",
-        "value": "180dp"
+        "value": "100dp"
     },
     "_width_": {
         "type": "string",
-        "value": "70%"
+        "value": "100%"
     },
     "_wrapping_": 2,
     "canUpdateUI": true,
@@ -39,8 +39,11 @@
     "contentAlignment": 4,
     "contentalignment": 4,
     "enabled": false,
-    "height": "1dp",
-    "id": "lblSep3",
+    "height": {
+        "type": "ref",
+        "value": "preferred"
+    },
+    "id": "lblSurname",
     "info": null,
     "ipad": {
         "psp": {
@@ -54,7 +57,8 @@
     },
     "isVisible": true,
     "isvisible": true,
-    "kuid": "9a83438f1b7f48ada02cd4b5b1c4eca6",
+    "kuid": "c680c157034541f8b487d16a9a81b5f7",
+    "left": "0dp",
     "margin": [
         1,
         1,
@@ -63,24 +67,25 @@
     ],
     "name": "kony.ui.Label",
     "padding": [
-        0,
+        7,
         0,
         0,
         0
     ],
-    "parent": "flexMenuItems",
-    "pf": "frmMap",
+    "paddingInPixel": false,
+    "paddinginpixel": false,
+    "parent": "flexScroll",
+    "pf": "frmEditProfile",
     "render": true,
-    "right": 0,
-    "skin": "s93f2ffcd5c84357b9b7d4ba783bad69",
-    "text": "",
+    "skin": "s63a5b86f27d4f78928d09702b2b7546",
+    "text": "Surname:",
     "toolTip": "",
     "tooltip": "",
-    "top": "180dp",
+    "top": "100dp",
     "wType": "Label",
     "widgetAlignment": 5,
-    "width": "70%",
+    "width": "100%",
     "wrapping": 2,
-    "zIndex": 50,
-    "zindex": 50
+    "zIndex": 1,
+    "zindex": 1
 }

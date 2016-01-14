@@ -54,7 +54,7 @@ tuta.forms.frmMap = function() {
     this.control("btnArrivedConfirm").onClick = function(button){
       tuta.animate.move(frmMap.flexDriverArrived, 0, "", "100%", null);
       frmMap.flexDarken.setVisibility(false);
-    }
+    };
 
     //Get the name of the user
     var userTempQuery = JSON.parse(kony.store.getItem("user"));
@@ -91,6 +91,12 @@ tuta.forms.frmMap = function() {
       self.leftMenu.toggle();
     };
     
+    // Goes to edit profile form
+    this.control("btnEditProfile").onClick = function(button) {
+      tuta.menuToggle(0, self.leftMenu._open);
+      self.leftMenu.toggle();
+      tuta.forms.frmEditProfile.show();
+    };
 
     this.control("btnPay").onClick = function (button) {
       tuta.menuToggle(0, self.leftMenu._open);     

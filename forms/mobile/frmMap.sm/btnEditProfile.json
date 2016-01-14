@@ -48,7 +48,7 @@
     "focusSkin": "s693518d6e3842038c7b43c7a1d5e526",
     "focusskin": "s693518d6e3842038c7b43c7a1d5e526",
     "height": "35dp",
-    "id": "btnCustomize",
+    "id": "btnEditProfile",
     "info": null,
     "isVisible": true,
     "isvisible": true,
@@ -76,6 +76,6 @@
     "wType": "Button",
     "widgetAlignment": 5,
     "width": "35dp",
-    "zIndex": 1,
-    "zindex": 1
+    "zIndex": 2,
+    "zindex": 2
 }

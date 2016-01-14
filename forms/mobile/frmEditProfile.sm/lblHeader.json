@@ -3,8 +3,12 @@
     "DNDConfig": null,
     "__parentReadjusting__": false,
     "_height_": {
+        "type": "ref",
+        "value": "preferred"
+    },
+    "_left_": {
         "type": "string",
-        "value": "1dp"
+        "value": "147dp"
     },
     "_margin_": [
         1,
@@ -18,29 +22,38 @@
         0,
         0
     ],
-    "_right_": {
-        "type": "number",
-        "value": "0"
-    },
-    "_skin_": "s93f2ffcd5c84357b9b7d4ba783bad69",
-    "_text_": "",
+    "_skin_": "sb373b7ec8af42b58b9024c5630f8835",
+    "_text_": "EDIT PROFILE",
     "_top_": {
         "type": "string",
-        "value": "180dp"
+        "value": "13dp"
     },
     "_width_": {
         "type": "string",
-        "value": "70%"
+        "value": "100%"
     },
     "_wrapping_": 2,
     "canUpdateUI": true,
+    "centerX": "50%",
+    "centerY": "50%",
+    "centerx": {
+        "type": "string",
+        "value": "50%"
+    },
+    "centery": {
+        "type": "string",
+        "value": "50%"
+    },
     "containerWeight": 100,
     "containerweight": 100,
-    "contentAlignment": 4,
-    "contentalignment": 4,
+    "contentAlignment": 5,
+    "contentalignment": 5,
     "enabled": false,
-    "height": "1dp",
-    "id": "lblSep3",
+    "height": {
+        "type": "ref",
+        "value": "preferred"
+    },
+    "id": "lblHeader",
     "info": null,
     "ipad": {
         "psp": {
@@ -54,7 +67,8 @@
     },
     "isVisible": true,
     "isvisible": true,
-    "kuid": "9a83438f1b7f48ada02cd4b5b1c4eca6",
+    "kuid": "0c29338f31234141b349af455ffaad99",
+    "left": "147dp",
     "margin": [
         1,
         1,
@@ -68,19 +82,16 @@
         0,
         0
     ],
-    "parent": "flexMenuItems",
-    "pf": "frmMap",
+    "parent": "flexHeader",
+    "pf": "frmEditProfile",
     "render": true,
-    "right": 0,
-    "skin": "s93f2ffcd5c84357b9b7d4ba783bad69",
-    "text": "",
+    "skin": "sb373b7ec8af42b58b9024c5630f8835",
+    "text": "EDIT PROFILE",
     "toolTip": "",
     "tooltip": "",
-    "top": "180dp",
+    "top": "13dp",
     "wType": "Label",
     "widgetAlignment": 5,
-    "width": "70%",
-    "wrapping": 2,
-    "zIndex": 50,
-    "zindex": 50
+    "width": "100%",
+    "wrapping": 2
 }

@@ -4,11 +4,11 @@
     "__parentReadjusting__": false,
     "_height_": {
         "type": "string",
-        "value": "60dp"
+        "value": "50dp"
     },
     "_left_": {
         "type": "string",
-        "value": "0dp"
+        "value": "5%"
     },
     "_margin_": [
         6,
@@ -17,38 +17,42 @@
         6
     ],
     "_padding_": [
-        33,
+        0,
         0,
         0,
         0
     ],
-    "_skin_": "sdcceba3395c458b80cf8e2b28c500b6",
-    "_text_": "History",
+    "_right_": {
+        "type": "string",
+        "value": "5%"
+    },
+    "_skin_": "s13c2c7c601f48f8b6e4f3082ffd405e",
+    "_text_": "Save",
     "_top_": {
         "type": "string",
-        "value": "60dp"
+        "value": "90%"
     },
     "_width_": {
         "type": "string",
-        "value": "100%"
+        "value": "90%"
     },
     "canUpdateUI": true,
     "containerWeight": 100,
     "containerweight": 100,
-    "contentAlignment": 4,
-    "contentalignment": 4,
+    "contentAlignment": 5,
+    "contentalignment": 5,
     "displayText": true,
     "displaytext": true,
     "enabled": false,
-    "focusSkin": "s406bd716e3a45f2a212e02e76d80745",
-    "focusskin": "s406bd716e3a45f2a212e02e76d80745",
-    "height": "60dp",
-    "id": "btnHistory",
+    "focusSkin": "sd05b2785b254e69b689cd8b8f8fae1a",
+    "focusskin": "sd05b2785b254e69b689cd8b8f8fae1a",
+    "height": "50dp",
+    "id": "btnSave",
     "info": null,
     "isVisible": true,
     "isvisible": true,
-    "kuid": "2b127e35fb1f44e396ee814c9fd8fa06",
-    "left": "0dp",
+    "kuid": "a06f16ce31c9445eb6f7bb0f1f9374bf",
+    "left": "5%",
     "margin": [
         6,
         6,
@@ -57,22 +61,21 @@
     ],
     "name": "kony.ui.Button",
     "padding": [
-        33,
+        0,
         0,
         0,
         0
     ],
-    "paddingInPixel": false,
-    "paddinginpixel": false,
-    "parent": "flexMenuItems",
-    "pf": "frmMap",
+    "parent": "flexScroll",
+    "pf": "frmEditProfile",
     "render": true,
-    "skin": "sdcceba3395c458b80cf8e2b28c500b6",
-    "text": "History",
-    "top": "60dp",
+    "right": "5%",
+    "skin": "s13c2c7c601f48f8b6e4f3082ffd405e",
+    "text": "Save",
+    "top": "90%",
     "wType": "Button",
     "widgetAlignment": 5,
-    "width": "100%",
-    "zIndex": 51,
-    "zindex": 51
+    "width": "90%",
+    "zIndex": 1,
+    "zindex": 1
 }

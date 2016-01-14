@@ -17,21 +17,16 @@
     "_title_": null,
     "addWidgetsdone": false,
     "allboxes": [],
-    "allowHorizontalBounce": false,
-    "allowVerticalBounce": false,
-    "allowhorizontalbounce": false,
-    "allowverticalbounce": false,
     "android": {
         "inTransitionConfig": {
             "formAnimation": 3
         },
         "needAppMenu": false
     },
+    "bounces": false,
     "canUpdateUI": true,
     "children": [
-        "flexMain",
-        "flexHeader",
-        "flexScrMain"
+        "flexMain"
     ],
     "containerWeight": 100,
     "containerweight": 100,
@@ -43,16 +38,16 @@
     "desktopweb": {
         "needAppMenu": false
     },
-    "device": "iPhone3",
+    "device": "iPhone6PlusZoomed",
     "displayOrientation": 1,
     "displayorientation": 1,
     "enabled": false,
     "enabledForIdleTimeout": false,
     "enabledforidletimeout": false,
-    "id": "frmLegal",
+    "id": "frmEditProfile",
     "inTransitionConfig": {
         "transitionDirection": "fromRight",
-        "transitionEffect": "transitionCloth"
+        "transitionEffect": "transitionMoveIn"
     },
     "info": null,
     "initdone": false,
@@ -60,7 +55,7 @@
     "inputaccessoryviewtype": 4,
     "intransitionconfig": {
         "transitionDirection": "fromRight",
-        "transitionEffect": "transitionCloth"
+        "transitionEffect": "transitionMoveIn"
     },
     "ipad": {
         "psp": {
@@ -76,6 +71,8 @@
         "psp": {
             "inputAccessoryViewType": 4,
             "titleBarConfig": {
+                "buttonClosureLeftSideView": "",
+                "buttonClosureRightSideView": "",
                 "buttonText": "Edit",
                 "leftButtonText": "Back",
                 "leftTitle": "Back",
@@ -93,7 +90,7 @@
     },
     "isVisible": true,
     "isvisible": true,
-    "kuid": "c89c6d6f25d74c3899a3b451e7fd305e",
+    "kuid": "0100adf7803842b7a02f428086122b05",
     "layoutType": 2,
     "layouttype": 2,
     "margin": [
@@ -121,7 +118,7 @@
     "render": true,
     "retainScrollPosition": false,
     "retainscrollposition": false,
-    "shellCSS": "iOS_iPhone3",
+    "shellCSS": "iOS_iPhone6PlusZoomed",
     "skin": "s1938375ce72486f894e571cf35fe3d8",
     "snapGridSize": 10,
     "snapToGrid": true,
@@ -173,7 +170,7 @@
         "containerWeight": 0,
         "containerweight": 0,
         "enabled": false,
-        "id": "frmLegal_titleBar",
+        "id": "frmEditProfile_titleBar",
         "ide_buttonClosureLeftSideView": "",
         "ide_buttonClosureRightSideView": "",
         "ide_titleClosureLeftSideView": "",

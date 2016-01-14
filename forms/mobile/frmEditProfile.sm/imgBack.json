@@ -9,7 +9,7 @@
     },
     "_left_": {
         "type": "string",
-        "value": "20dp"
+        "value": "11dp"
     },
     "_margin_": [
         0,
@@ -44,9 +44,9 @@
     "containerweight": 100,
     "context": {
         "channel": "mobile",
-        "formID": "frmPayments",
+        "formID": "frmEditProfile",
         "ispercent": true,
-        "platform": "android",
+        "platform": "iphone",
         "templateType": "forms",
         "topLevelBox": null
     },
@@ -60,8 +60,8 @@
     "isVisible": true,
     "ispercent": true,
     "isvisible": true,
-    "kuid": "1d611472c45847bdbd5cffbc1c6a1b6d",
-    "left": "20dp",
+    "kuid": "1f5954c556fe4a80a4c364bb440dea1a",
+    "left": "11dp",
     "margin": [
         0,
         0,
@@ -76,7 +76,7 @@
         0
     ],
     "parent": "flexHeader",
-    "pf": "frmPayments",
+    "pf": "frmEditProfile",
     "render": true,
     "skin": "s4ea8d4d07574957b839f06194980e52",
     "src": "arrowback.png",
