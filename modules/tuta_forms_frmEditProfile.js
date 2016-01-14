@@ -28,6 +28,7 @@ tuta.forms.frmEditProfile = function() {
       id: currentUserEmail
     };
     
+    // Fill edit profile fields
     application.service("userService").invokeOperation(
       "user", {}, input,
       function(result) { 
