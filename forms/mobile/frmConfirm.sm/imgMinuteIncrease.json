@@ -9,7 +9,7 @@
     },
     "_left_": {
         "type": "string",
-        "value": "25dp"
+        "value": "97dp"
     },
     "_margin_": [
         0,
@@ -27,7 +27,7 @@
     "_src_": "timearrowup.png",
     "_top_": {
         "type": "string",
-        "value": "65dp"
+        "value": "215dp"
     },
     "_width_": {
         "type": "string",
@@ -52,7 +52,7 @@
     },
     "enabled": false,
     "height": "25dp",
-    "id": "CopyImage0e5bf1cf07aa94d",
+    "id": "imgMinuteIncrease",
     "imageScaleMode": 1,
     "imagescalemode": 1,
     "info": null,
@@ -60,8 +60,8 @@
     "isVisible": true,
     "ispercent": true,
     "isvisible": true,
-    "kuid": "c36130e795a645bd9cd8fd883db7dab6",
-    "left": "25dp",
+    "kuid": "dd2af49fabd04bfe90e57fe1d7c977c6",
+    "left": "97dp",
     "margin": [
         0,
         0,
@@ -81,7 +81,7 @@
     "skin": "s4ea8d4d07574957b839f06194980e52",
     "src": "timearrowup.png",
     "srcType": 1,
-    "top": "65dp",
+    "top": "215dp",
     "wType": "Image",
     "widgetAlignment": 5,
     "widgetalignment": 5,

@@ -34,10 +34,10 @@
     },
     "_wrapping_": 2,
     "canUpdateUI": true,
-    "centerX": "50%",
+    "centerX": "80%",
     "centerx": {
         "type": "string",
-        "value": "50%"
+        "value": "80%"
     },
     "containerWeight": 100,
     "containerweight": 100,
@@ -45,7 +45,7 @@
     "contentalignment": 4,
     "enabled": false,
     "height": "2dp",
-    "id": "CopyLabel0d7db629342174d",
+    "id": "lblYearSepBottom",
     "info": null,
     "ipad": {
         "psp": {
@@ -59,7 +59,7 @@
     },
     "isVisible": true,
     "isvisible": true,
-    "kuid": "4518f299ad6048db87a4ff72f6866bf3",
+    "kuid": "e0b5e57332c3432fa4593a2bfcf13b44",
     "left": "97dp",
     "margin": [
         1,

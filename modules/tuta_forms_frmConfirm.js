@@ -16,6 +16,42 @@ tuta.forms.frmConfirm = function() {
   //Form Pre-Show Functions
   tuta.forms.frmConfirm.onPreShow = function(form) {
     var self = this;
+    
+    /*==============================================================
+    
+    POPULATE SET DATE TIME FIELDS
+    
+    ===============================================================*/
+    
+    // Get date to populate fields
+    var today = new Date();
+
+    // Get different date elemetns
+    var dd = today.getDate();
+    var mm = today.getMonth()+1; //January is 0
+    var yyyy = today.getFullYear();
+    var hour = today.getHours();
+    var min = today.getMinutes();
+    var ampm = "AM";
+	
+    // Format date elemtens
+    if (dd < 10) { dd = '0' + dd; }
+    if (mm < 10) { mm = '0' + mm; }
+    if (hour > 12) { hour = hour - 12; ampm = "PM"; }
+    if (hour < 10) { hour = '0' + hour; }
+    if (min < 10) { min = '0' + min; }
+	
+    // Cut of .0 decimal points
+	dd = dd.toFixed(0);
+    yyyy = yyyy.toFixed(0);
+    
+    // Populate fields
+    frmConfirm.lblDay.text = dd;
+    frmConfirm.lblMonth.text = mm;
+    frmConfirm.lblYear.text = yyyy;
+    frmConfirm.txtTimeHrs.text = hour;
+    frmConfirm.txtTimeMins.text = min;
+    frmConfirm.lblAmPm.text = ampm;
 
     /*==============================================================
           __  __      _   _               _     
@@ -271,19 +307,17 @@ tuta.forms.frmConfirm = function() {
       tuta.calendar.onYearChange(1);
     };
 
-
-    this.control("imgX").onTouchStart = function() {
-      frmConfirm["flexDateTime"]["isVisible"] = false;
-    };
-
-
-    this.control("imgTick").onTouchStart = tuta.calendar.setNewTime;
+    this.control("btnConfirm").onClick = tuta.calendar.setNewTime;
+    
     this.control("flexCancel1").onTouchStart = function() {
       frmConfirm["flexDateTime"]["isVisible"] = false;
     };
     this.control("flexCancel2").onTouchStart = function() {
       frmConfirm["flexDateTime"]["isVisible"] = false;
     };
+    this.control("btnCancel").onClick = function() {
+      frmConfirm["flexDateTime"]["isVisible"] = false;
+    }
 
     this.control("flexSlider").addGestureRecognizer(constants.GESTURE_TYPE_SWIPE, GLOBAL_GESTURE_FINGERS_1, function(widget, gestureInformationSwipe) {
       //ssa.mobile.alert("","" + gestureInformationSwipe.swipeDirection );

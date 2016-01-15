@@ -70,7 +70,7 @@
         0,
         0
     ],
-    "parent": "FlexContainer0d637808b3cc945",
+    "parent": "flexSetHeading",
     "pf": "frmConfirm",
     "render": true,
     "right": 15,

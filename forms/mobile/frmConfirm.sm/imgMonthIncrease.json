@@ -9,7 +9,7 @@
     },
     "_left_": {
         "type": "string",
-        "value": "97dp"
+        "value": "25dp"
     },
     "_margin_": [
         0,
@@ -24,10 +24,10 @@
         0
     ],
     "_skin_": "s4ea8d4d07574957b839f06194980e52",
-    "_src_": "timearrowdown.png",
+    "_src_": "timearrowup.png",
     "_top_": {
         "type": "string",
-        "value": "325dp"
+        "value": "65dp"
     },
     "_width_": {
         "type": "string",
@@ -35,10 +35,10 @@
     },
     "base64": null,
     "canUpdateUI": true,
-    "centerX": "70%",
+    "centerX": "50%",
     "centerx": {
         "type": "string",
-        "value": "70%"
+        "value": "50%"
     },
     "containerWeight": 100,
     "containerweight": 100,
@@ -52,7 +52,7 @@
     },
     "enabled": false,
     "height": "25dp",
-    "id": "CopyImage0aeabf91606ab4a",
+    "id": "imgMonthIncrease",
     "imageScaleMode": 1,
     "imagescalemode": 1,
     "info": null,
@@ -60,8 +60,8 @@
     "isVisible": true,
     "ispercent": true,
     "isvisible": true,
-    "kuid": "2c67f63a7b74477bb177c43563e36c54",
-    "left": "97dp",
+    "kuid": "c36130e795a645bd9cd8fd883db7dab6",
+    "left": "25dp",
     "margin": [
         0,
         0,
@@ -79,9 +79,9 @@
     "pf": "frmConfirm",
     "render": true,
     "skin": "s4ea8d4d07574957b839f06194980e52",
-    "src": "timearrowdown.png",
+    "src": "timearrowup.png",
     "srcType": 1,
-    "top": "325dp",
+    "top": "65dp",
     "wType": "Image",
     "widgetAlignment": 5,
     "widgetalignment": 5,

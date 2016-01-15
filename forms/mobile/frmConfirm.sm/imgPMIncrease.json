@@ -9,7 +9,7 @@
     },
     "_left_": {
         "type": "string",
-        "value": "25dp"
+        "value": "97dp"
     },
     "_margin_": [
         0,
@@ -27,7 +27,7 @@
     "_src_": "timearrowup.png",
     "_top_": {
         "type": "string",
-        "value": "65dp"
+        "value": "215dp"
     },
     "_width_": {
         "type": "string",
@@ -35,10 +35,10 @@
     },
     "base64": null,
     "canUpdateUI": true,
-    "centerX": "80%",
+    "centerX": "70%",
     "centerx": {
         "type": "string",
-        "value": "80%"
+        "value": "70%"
     },
     "containerWeight": 100,
     "containerweight": 100,
@@ -52,7 +52,7 @@
     },
     "enabled": false,
     "height": "25dp",
-    "id": "CopyImage0733275e3840643",
+    "id": "imgPMIncrease",
     "imageScaleMode": 1,
     "imagescalemode": 1,
     "info": null,
@@ -60,8 +60,8 @@
     "isVisible": true,
     "ispercent": true,
     "isvisible": true,
-    "kuid": "4b68fa72dc9647c08864b3dd038e50f4",
-    "left": "25dp",
+    "kuid": "2ce2b548bd814c8faa38f01c038ff046",
+    "left": "97dp",
     "margin": [
         0,
         0,
@@ -81,7 +81,7 @@
     "skin": "s4ea8d4d07574957b839f06194980e52",
     "src": "timearrowup.png",
     "srcType": 1,
-    "top": "65dp",
+    "top": "215dp",
     "wType": "Image",
     "widgetAlignment": 5,
     "widgetalignment": 5,

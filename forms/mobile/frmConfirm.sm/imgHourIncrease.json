@@ -24,10 +24,10 @@
         0
     ],
     "_skin_": "s4ea8d4d07574957b839f06194980e52",
-    "_src_": "timearrowdown.png",
+    "_src_": "timearrowup.png",
     "_top_": {
         "type": "string",
-        "value": "165dp"
+        "value": "215dp"
     },
     "_width_": {
         "type": "string",
@@ -35,10 +35,10 @@
     },
     "base64": null,
     "canUpdateUI": true,
-    "centerX": "80%",
+    "centerX": "30%",
     "centerx": {
         "type": "string",
-        "value": "80%"
+        "value": "30%"
     },
     "containerWeight": 100,
     "containerweight": 100,
@@ -52,7 +52,7 @@
     },
     "enabled": false,
     "height": "25dp",
-    "id": "CopyImage0ac1403d414164f",
+    "id": "imgHourIncrease",
     "imageScaleMode": 1,
     "imagescalemode": 1,
     "info": null,
@@ -60,7 +60,7 @@
     "isVisible": true,
     "ispercent": true,
     "isvisible": true,
-    "kuid": "807fc025d153415fa844c0cf3c706e41",
+    "kuid": "db6f77a46a864db8ab52b3710654d1ee",
     "left": "97dp",
     "margin": [
         0,
@@ -79,9 +79,9 @@
     "pf": "frmConfirm",
     "render": true,
     "skin": "s4ea8d4d07574957b839f06194980e52",
-    "src": "timearrowdown.png",
+    "src": "timearrowup.png",
     "srcType": 1,
-    "top": "165dp",
+    "top": "215dp",
     "wType": "Image",
     "widgetAlignment": 5,
     "widgetalignment": 5,

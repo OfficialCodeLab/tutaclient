@@ -68,7 +68,7 @@
         0,
         0
     ],
-    "parent": "FlexContainer08c14a29df48447",
+    "parent": "flexFootMenu",
     "pf": "frmConfirm",
     "render": true,
     "skin": "s0aeb4bdf06e4de984e129c423ae8871",

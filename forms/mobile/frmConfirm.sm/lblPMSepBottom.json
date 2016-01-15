@@ -26,7 +26,7 @@
     "_text_": "Label",
     "_top_": {
         "type": "string",
-        "value": "250dp"
+        "value": "310dp"
     },
     "_width_": {
         "type": "string",
@@ -34,10 +34,10 @@
     },
     "_wrapping_": 2,
     "canUpdateUI": true,
-    "centerX": "50%",
+    "centerX": "70%",
     "centerx": {
         "type": "string",
-        "value": "50%"
+        "value": "70%"
     },
     "containerWeight": 100,
     "containerweight": 100,
@@ -45,7 +45,7 @@
     "contentalignment": 4,
     "enabled": false,
     "height": "2dp",
-    "id": "CopyLabel060dff31bba6748",
+    "id": "lblPMSepBottom",
     "info": null,
     "ipad": {
         "psp": {
@@ -59,7 +59,7 @@
     },
     "isVisible": true,
     "isvisible": true,
-    "kuid": "563cbd536b0e4969963a6aa0f85536f2",
+    "kuid": "83b5c132dac34a5bb76d33737dcdb8d4",
     "left": "97dp",
     "margin": [
         1,
@@ -81,7 +81,7 @@
     "text": "Label",
     "toolTip": "",
     "tooltip": "",
-    "top": "250dp",
+    "top": "310dp",
     "wType": "Label",
     "widgetAlignment": 5,
     "width": "50dp",

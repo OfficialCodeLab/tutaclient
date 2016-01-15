@@ -39,7 +39,7 @@
     "channel": "mobile",
     "children": [
         "flexMain",
-        "FlexContainer08c14a29df48447"
+        "flexFootMenu"
     ],
     "clipBounds": true,
     "clipbounds": true,

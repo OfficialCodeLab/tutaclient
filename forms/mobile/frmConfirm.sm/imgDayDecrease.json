@@ -35,10 +35,10 @@
     },
     "base64": null,
     "canUpdateUI": true,
-    "centerX": "50%",
+    "centerX": "20%",
     "centerx": {
         "type": "string",
-        "value": "50%"
+        "value": "20%"
     },
     "containerWeight": 100,
     "containerweight": 100,
@@ -52,7 +52,7 @@
     },
     "enabled": false,
     "height": "25dp",
-    "id": "CopyImage04eeb930daf2549",
+    "id": "imgDayDecrease",
     "imageScaleMode": 1,
     "imagescalemode": 1,
     "info": null,
@@ -60,7 +60,7 @@
     "isVisible": true,
     "ispercent": true,
     "isvisible": true,
-    "kuid": "dd156741dbb8406890ce2a1082ff8f56",
+    "kuid": "666dab9c27c24e4380c094e4c5f30012",
     "left": "97dp",
     "margin": [
         0,

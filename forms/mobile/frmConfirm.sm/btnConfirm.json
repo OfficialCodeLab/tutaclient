@@ -1,17 +1,10 @@
 {
+    "@class": "com.kony.gen.viz.model.component.KVizButton",
     "DNDConfig": null,
     "__parentReadjusting__": false,
-    "_bottom_": {
-        "type": "string",
-        "value": "0dp"
-    },
     "_height_": {
         "type": "string",
-        "value": "60dp"
-    },
-    "_left_": {
-        "type": "string",
-        "value": "0dp"
+        "value": "50dp"
     },
     "_margin_": [
         6,
@@ -25,20 +18,21 @@
         0,
         0
     ],
-    "_skin_": "s1550b05b4cd4490b4a5a5dfe985ad82",
-    "_text_": "Request",
+    "_right_": {
+        "type": "string",
+        "value": "0dp"
+    },
+    "_skin_": "s9ac25e26d504d60b5e148045b15b6eb",
+    "_text_": "",
+    "_top_": {
+        "type": "string",
+        "value": "6dp"
+    },
     "_width_": {
         "type": "string",
-        "value": "50%"
+        "value": "55dp"
     },
-    "bottom": "0dp",
     "canUpdateUI": true,
-    "centerX": "75%",
-    "centerx": {
-        "type": "string",
-        "value": "75%"
-    },
-    "channel": "mobile",
     "containerWeight": 100,
     "containerweight": 100,
     "contentAlignment": 5,
@@ -46,15 +40,14 @@
     "displayText": true,
     "displaytext": true,
     "enabled": false,
-    "focusSkin": "s1550b05b4cd4490b4a5a5dfe985ad82",
-    "focusskin": "s1550b05b4cd4490b4a5a5dfe985ad82",
-    "height": "60dp",
-    "id": "btnHailTaxi",
+    "focusSkin": "sb6ab6a7e70c4359a0442fd8d362a33f",
+    "focusskin": "sb6ab6a7e70c4359a0442fd8d362a33f",
+    "height": "50dp",
+    "id": "btnConfirm",
     "info": null,
     "isVisible": true,
     "isvisible": true,
-    "kuid": "73eb397a62c34602a1e7704201813697",
-    "left": "0dp",
+    "kuid": "3ed03c06741d431eba48b25547c32537",
     "margin": [
         6,
         6,
@@ -68,14 +61,16 @@
         0,
         0
     ],
-    "parent": "flexFootMenu",
+    "parent": "flexSetHeading",
     "pf": "frmConfirm",
     "render": true,
-    "skin": "s1550b05b4cd4490b4a5a5dfe985ad82",
-    "text": "Request",
+    "right": "0dp",
+    "skin": "s9ac25e26d504d60b5e148045b15b6eb",
+    "text": "",
+    "top": "6dp",
     "wType": "Button",
     "widgetAlignment": 5,
-    "width": "50%",
-    "zIndex": 2,
-    "zindex": 2
+    "width": "55dp",
+    "zIndex": 900,
+    "zindex": 900
 }

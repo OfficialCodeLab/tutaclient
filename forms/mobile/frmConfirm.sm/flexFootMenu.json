@@ -1,9 +1,13 @@
 {
     "DNDConfig": null,
     "__parentReadjusting__": false,
+    "_bottom_": {
+        "type": "number",
+        "value": "0"
+    },
     "_height_": {
-        "type": "string",
-        "value": "60dp"
+        "type": "number",
+        "value": "65"
     },
     "_left_": {
         "type": "string",
@@ -21,11 +25,7 @@
         0,
         0
     ],
-    "_skin_": "s3500d1e64e34306ab0538657876bd4f",
-    "_top_": {
-        "type": "string",
-        "value": "0dp"
-    },
+    "_skin_": "s9b2ce2774e144da99f795c3ff096827",
     "_width_": {
         "type": "string",
         "value": "100%"
@@ -33,11 +33,13 @@
     "allboxes": [],
     "autogrowMode": 0,
     "autogrowmode": 0,
+    "bottom": 0,
     "canUpdateUI": true,
     "children": [
-        "lblSetDateAndTime",
-        "imgX",
-        "imgTick"
+        "btnHailTaxi",
+        "btnCancelRequest",
+        "lblLine2",
+        "lblLine1"
     ],
     "clipBounds": true,
     "clipbounds": true,
@@ -46,12 +48,12 @@
     "enableScrolling": true,
     "enabled": false,
     "enablescrolling": true,
-    "height": "60dp",
-    "id": "FlexContainer0d637808b3cc945",
+    "height": 65,
+    "id": "flexFootMenu",
     "info": null,
     "isVisible": true,
     "isvisible": true,
-    "kuid": "7dec1df2e97c4fc399ab4d55534ac4ba",
+    "kuid": "7aff2d86ce1346148cca76477320efcb",
     "layoutType": 2,
     "layouttype": 2,
     "left": "0dp",
@@ -69,18 +71,19 @@
         0,
         0
     ],
-    "parent": "flexSetTime",
+    "parent": "flexBg",
     "percent": true,
     "pf": "frmConfirm",
     "render": true,
-    "skin": "s3500d1e64e34306ab0538657876bd4f",
+    "skin": "s9b2ce2774e144da99f795c3ff096827",
     "snapGridSize": 10,
     "snapToGrid": true,
     "snapgridsize": 10,
     "snaptogrid": true,
-    "top": "0dp",
     "wType": "FlexContainer",
     "widgetAlignment": 1,
     "widgetalignment": 1,
-    "width": "100%"
+    "width": "100%",
+    "zIndex": 999,
+    "zindex": 999
 }

@@ -26,7 +26,7 @@
     "_text_": "Label",
     "_top_": {
         "type": "string",
-        "value": "310dp"
+        "value": "250dp"
     },
     "_width_": {
         "type": "string",
@@ -45,7 +45,7 @@
     "contentalignment": 4,
     "enabled": false,
     "height": "2dp",
-    "id": "CopyLabel01c2f049afb2a4b",
+    "id": "lblPMSepTop",
     "info": null,
     "ipad": {
         "psp": {
@@ -59,7 +59,7 @@
     },
     "isVisible": true,
     "isvisible": true,
-    "kuid": "83b5c132dac34a5bb76d33737dcdb8d4",
+    "kuid": "a01fa568a036484398000cba5637d7f8",
     "left": "97dp",
     "margin": [
         1,
@@ -81,7 +81,7 @@
     "text": "Label",
     "toolTip": "",
     "tooltip": "",
-    "top": "310dp",
+    "top": "250dp",
     "wType": "Label",
     "widgetAlignment": 5,
     "width": "50dp",
