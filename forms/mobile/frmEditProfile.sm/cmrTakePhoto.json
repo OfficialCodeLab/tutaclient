@@ -55,8 +55,6 @@
         0
     ],
     "name": "kony.ui.Camera",
-    "onCapture": null,
-    "oncapture": null,
     "padding": [
         0,
         0,

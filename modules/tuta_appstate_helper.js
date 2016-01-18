@@ -14,7 +14,7 @@ tuta.appstate.helper.checkState = function(callback) {
     //SET THE GLOBAL KEY TO USE HERE
     appstate_key = currentUser.userName;
 
-    tuta.appstate.clearState();
+    //tuta.appstate.clearState();
 
     //Retrieve the current state as an object
     var state_obj = tuta.appstate.getState();
