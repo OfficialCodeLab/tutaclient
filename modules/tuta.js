@@ -495,7 +495,7 @@ tuta.renderRouteAndDriver = function (booking){
   */
 
  appState = {
-              state_string: "ONROUTE",
+              state_string: "EN_ROUTE",
               bookingID: currentBooking
             };
 

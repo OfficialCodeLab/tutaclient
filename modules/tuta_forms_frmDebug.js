@@ -56,6 +56,7 @@ tuta.forms.frmDebug = function() {
     this.control("btnTickPress3").onClick = function (button){
       //toggleImage(frmDebug.imgTickIcon3);
       tuta.appstate.clearState();
+      tuta.util.alert("Appstate", "Appstate has been cleared");
     };
 
     this.control("btnTickPress4").onClick = function (button){
