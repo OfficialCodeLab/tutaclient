@@ -66,6 +66,28 @@ tuta.forms.frmEditProfile = function() {
       frmEditProfile.imgUser.rawBytes = frmEditProfile.cmrTakePhoto.rawBytes;
     };
     
+    this.control("btnImportPicture").onClick = function() {
+      tuta.util.alert("Button Clicked", "Good job 1");
+      
+      function openGallery() {
+        tuta.util.alert("Open Gallery function called", "Good job 2");
+        var querycontext = {mimetype: "image/*"};
+        var returnStatus = kony.phone.openMediaGallery(onselectioncallback,
+                                                       querycontext);
+      }
+      
+      function onselectioncallback(rawbytes) {
+        tuta.util.alert("OnSelectionCallback", "Good job 3");
+        if (rawbytes === null) {
+          tuta.util.alert("No Image Selected", "Please select an image");
+          return;
+        }
+        frmEditProfile.imgUser.rawBytes = rawbytes;
+      }
+      
+      openGallery();
+    };
+    
     this.control("btnSave").onClick = function (button) {
       //Store the user ID as variable 'input' for manageService query
       var inputs = {
