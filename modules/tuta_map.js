@@ -1,7 +1,12 @@
+if (typeof(tuta) === "undefined") {
+	tuta = {};
+}
+
+tuta.map = {};
 
 function selectPickUpLocation() {
   searchMode = 1;
-  tuta.animate.move(frmMap.flexAdd, 0.3, "70", "0%", null);
+  tuta.animate.move(frmMap.flexAdd, 0.3, frmMap.flexAdd.top, "0%", null);
   try{
     kony.timer.schedule("focusPick", function(){frmMap.txtPick.setFocus(true);}, 0.4, false);
   }
@@ -61,7 +66,7 @@ function loadTripHistory(selected){
 function resetSearchBar() {
   frmMap.txtPick.text = "";
   frmMap.txtDest.text = "";
-  tuta.animate.move(frmMap.flexAdd, 0.3, "70", "-100%", null);
+  tuta.animate.move(frmMap.flexAdd, 0.3, frmMap.flexAdd.top, "-100%", null);
 }
 
 function clearDestPick(){
@@ -146,3 +151,101 @@ function estimateTripCost (locationA, locationB, callback){
     callback(minCost, maxCost); 
   }, 1);  
 }
+
+
+var mapCenter = {
+  location: 
+  {
+    lat: 0.0, 
+    lon: 0.0
+  }
+};
+
+
+tuta.map.storeCenter = function (bounds){
+  mapCenter.location.lat = bounds.center.lat;
+  mapCenter.location.lon = bounds.center.lon;  
+};
+
+
+// Checks if the point in current bounds is far enough away from the old center
+// Returns true if test is pasased, else false
+tuta.map.checkRadius = function (bounds){
+  var oldLat = mapCenter.location.lat;
+  var oldLon = mapCenter.location.lon;
+  var newLat = bounds.center.lat;
+  var newLon = bounds.center.lon;
+
+  var radius = tuta.location.distance(oldLat, oldLon, newLat, newLon);
+  /*TODO FUTURE:
+	- USE LATSPAN TO DETERMINE THE MAX RADIUS
+    - LATSPAN IS IN THE BOUNDS OBJECT
+*/
+  if(radius > GLOBAL_MAX_RADIUS){
+    tuta.map.storeCenter(bounds);
+    return true;
+  }
+
+  return false;
+};
+
+var timeStill = 0;
+tuta.map.startMapListener = function (){
+  try {
+    kony.timer.cancel("MapListener");
+  }
+  catch(ex){
+    
+  }
+  
+  var hasMovedAway = false;
+  var hasMovedBack = false;
+  kony.timer.schedule("MapListener", function(){
+    var bounds = frmMap.mapMain.getBounds();
+    if(tuta.map.checkRadius(bounds)){
+      //tuta.util.alert("MOVED");
+      if(!hasMovedAway){
+        tuta.animate.move(frmMap.flexHeader, 0.2, "-8%", "", null);
+        tuta.animate.move(frmMap.flexAdd, 0.2, "1%", frmMap.flexAdd.left, null);
+        tuta.animate.moveBottomLeft(frmMap.flexNoOfPeople, 0.2, "-12%", "", null);
+        tuta.animate.moveBottomRight(frmMap.flexMapCenter, 0.2, "100dp", "-75dp", null);
+        hasMovedAway = true;   
+        hasMovedBack = false;
+      }
+      timeStill = 0;
+      
+      
+      //TODO: Calculate time from nearest driver
+    }
+    else{
+      //tuta.util.alert("DIDN'T MOVE");
+      timeStill++;
+      
+      if(timeStill >= 3 && !hasMovedBack){
+        tuta.animate.move(frmMap.flexHeader, 0.2, "0%", "", null);
+        tuta.animate.move(frmMap.flexAdd, 0.2, "12%", frmMap.flexAdd.left, null);
+        tuta.animate.moveBottomLeft(frmMap.flexNoOfPeople, 0.2, "0%", "", null);
+        tuta.animate.moveBottomRight(frmMap.flexMapCenter, 0.2, "100dp", "-10dp", null);  
+        hasMovedBack = true;
+        hasMovedAway = false;
+      }     
+      
+      if(timeStill >= 7){
+        timeStill = 0;
+        /*
+        tuta.events.retrieveNearestDrivers(function(){
+          tuta.events.calculateWaitTime();
+        });*/
+      }
+      
+    }
+  }, 0.5, true);
+};
+tuta.map.stopMapListener = function (){
+  try {
+    kony.timer.cancel("MapListener");
+  }
+  catch(ex){
+    
+  }
+};
