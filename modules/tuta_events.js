@@ -211,3 +211,47 @@ tuta.events.dateStringLong = function(epoch){
   
   return day + "/" + month + "/" + year + "   " + hours + ":" + mins;
 };
+
+tuta.events.timedStateUpdate = function(state, time){
+  try{
+    kony.timer.cancel("UpdateState");
+  }
+  catch(ex){
+
+  }
+  kony.timer.schedule("UpdateState", function(){
+    tuta.events.updateUserState(state);        
+  }, time, false);
+};
+
+
+tuta.events.updateUserState = function (state){
+  var inputData = {
+    status: state
+  };
+
+  var input = {
+    data: JSON.stringify(inputData),
+    id: currentUser.userName
+  };
+
+  //Popup displaying latitude and longitude,
+  //on position change
+  // var testUserName = "Your username is: " + JSON.stringify(userTemp.userName + "\n");
+  // var testOutput = "Your current position is:\n" + "Latitude: " + JSON.stringify(inputData.location.lat) + "\nLongitude: " + JSON.stringify(inputData.location.long) + "";
+  // tuta.util.alert("Location Update", testUserName + testOutput);
+
+
+  //Updates server with user's current position
+  application.service("manageService").invokeOperation(
+    "userUpdate", {}, input,
+    function(result) {
+      //tuta.util.alert("TEST" + "Map updated with your current position");
+    },
+    function(error) {
+
+      // the service returns 403 (Not Authorised) if credentials are wrong
+      //tuta.util.alert("Error: " + error.httpStatusCode,"It looks like the server has crashed, or your location is not updating.\n\n" + error.errmsg);
+    }
+  );
+};

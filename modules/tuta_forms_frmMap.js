@@ -264,7 +264,24 @@ tuta.forms.frmMap = function() {
         alert("error in dial:: "+ err);
       }
     };
-
+    
+    if(client_state === 0){
+      //
+      
+      try {
+        kony.timer.cancel("updateMapBounds");
+      }catch(ex){}
+      kony.timer.schedule("updateMapBounds", function(){
+        var bds = frmMap.mapMain.getBounds();
+        tuta.map.storeCenter(bds);
+        tuta.map.startMapListener();
+      }, 2, false);
+      
+      //tuta.map.startMapListener();
+    }
+    else{
+      tuta.map.stopMapListener();
+    }
 
     //Begin storing the appstate as the map is loaded
 

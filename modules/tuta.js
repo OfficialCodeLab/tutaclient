@@ -2,10 +2,10 @@
     Tuta Client App
 
     Trip States:
-    1. Idling (panning the map etc)
-    2. Hailing a driver
-    3. Driver on route (waiting for driver, centers on self)
-    4. In transit (in car with driver)
+    0. Idling (panning the map etc)
+    1. Hailing a driver
+    2. Driver on route (waiting for driver, centers on self)
+    3. In transit (in car with driver)
     
 */
 
@@ -14,6 +14,7 @@
 var application = null; 
 
 //App state flags
+var client_state = 0;
 var searchMode = 0;
 var sliderDir = 2;
 var journeyComplete = false;
@@ -109,6 +110,7 @@ var GLOBAL_FEE_KM = 12.5;
 var GLOBAL_FEE_MINUTES = 12.5;
 var GLOBAL_FEE_DEVIATION = 0.15; 
 var GLOBAL_PROVIDER_EMAIL = "courtney@codelab.io";
+var GLOBAL_MAX_RADIUS = 200;
 
 //Need to be initialized
 var CURRENT_EST_FEE = 0;
