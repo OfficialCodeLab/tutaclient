@@ -62,6 +62,10 @@ tuta.forms.frmEditProfile = function() {
     };
     */
     
+    this.control("cmrTakePhoto").onCapture = function() {
+      frmEditProfile.imgUser.rawBytes = frmEditProfile.cmrTakePhoto.rawBytes;
+    };
+    
     this.control("btnSave").onClick = function (button) {
       //Store the user ID as variable 'input' for manageService query
       var inputs = {
