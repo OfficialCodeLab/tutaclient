@@ -56,6 +56,7 @@ tuta.forms.frmDebug = function() {
     this.control("btnTickPress3").onClick = function (button){
       //toggleImage(frmDebug.imgTickIcon3);
       tuta.appstate.clearState();
+      tuta.util.alert("Appstate", "Appstate has been cleared");
     };
 
     this.control("btnTickPress4").onClick = function (button){
@@ -114,6 +115,10 @@ tuta.forms.frmDebug = function() {
       tuta.trackDriver(csDemoDriver);
       updateMap();
       tuta.util.alert("Notification", "The map has been updated, and is currently tracking " + csDemoDriver + ".");
+    };
+    
+    this.control("btnTickPress7").onClick = function (button) {
+      tuta.util.alert("Button Clicked", "Functionality for this is still in developement");
     };
 
   };//END OF PRE-SHOW

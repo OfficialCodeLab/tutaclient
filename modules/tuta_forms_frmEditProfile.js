@@ -62,6 +62,28 @@ tuta.forms.frmEditProfile = function() {
     };
     */
     
+    this.control("cmrTakePhoto").onCapture = function() {
+      frmEditProfile.imgUser.rawBytes = frmEditProfile.cmrTakePhoto.rawBytes;
+    };
+    
+    this.control("btnImportPicture").onClick = function() {
+      
+      function openGallery() {
+        var querycontext = {mimetype: "image/*"};
+        var returnStatus = kony.phone.openMediaGallery(onselectioncallback,
+                                                       querycontext);
+      }
+      
+      function onselectioncallback(rawbytes) {
+        if (rawbytes === null) {
+          return;
+        }
+        frmEditProfile.imgUser.rawBytes = rawbytes;
+      }
+      
+      openGallery();
+    };
+    
     this.control("btnSave").onClick = function (button) {
       //Store the user ID as variable 'input' for manageService query
       var inputs = {

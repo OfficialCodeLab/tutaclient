@@ -204,7 +204,7 @@ function updateMap() {
 
   }
   catch(ex){
-    //tuta.util.alert("UPDATE MAP ERROR", ex);
+    tuta.util.alert("UPDATE MAP ERROR", ex);
 
   }
   //frmMap.mapMain.navigateTo(0,false);
@@ -497,7 +497,7 @@ tuta.renderRouteAndDriver = function (booking){
   */
 
  appState = {
-              state_string: "ONROUTE",
+              state_string: "EN_ROUTE",
               bookingID: currentBooking
             };
 

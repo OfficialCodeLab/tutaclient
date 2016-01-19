@@ -2,13 +2,9 @@
     "@class": "com.kony.gen.viz.model.component.KVizButton",
     "DNDConfig": null,
     "__parentReadjusting__": false,
-    "_height_": {
+    "_bottom_": {
         "type": "string",
-        "value": "50dp"
-    },
-    "_left_": {
-        "type": "string",
-        "value": "5%"
+        "value": "10%"
     },
     "_margin_": [
         6,
@@ -23,37 +19,35 @@
         0
     ],
     "_right_": {
-        "type": "string",
-        "value": "5%"
+        "type": "number",
+        "value": "0"
     },
-    "_skin_": "s13c2c7c601f48f8b6e4f3082ffd405e",
-    "_text_": "Save",
+    "_skin_": "sfc023b6844146e4b79c0b4615cd2b5d",
+    "_text_": "",
     "_top_": {
         "type": "string",
-        "value": "90%"
+        "value": "10%"
     },
     "_width_": {
         "type": "string",
-        "value": "90%"
+        "value": "100%"
     },
+    "bottom": "10%",
     "canUpdateUI": true,
     "containerWeight": 100,
     "containerweight": 100,
     "contentAlignment": 5,
     "contentalignment": 5,
-    "disabledSkins": {
-        "focusSkin": "sd05b2785b254e69b689cd8b8f8fae1a"
-    },
     "displayText": true,
     "displaytext": true,
     "enabled": false,
-    "height": "50dp",
-    "id": "btnSave",
+    "focusSkin": "s938035ae66e46cab0cfdf3607af0565",
+    "focusskin": "s938035ae66e46cab0cfdf3607af0565",
+    "id": "btnTickPress7",
     "info": null,
     "isVisible": true,
     "isvisible": true,
-    "kuid": "a06f16ce31c9445eb6f7bb0f1f9374bf",
-    "left": "5%",
+    "kuid": "5ec8f34455744cc9981a30e277e27739",
     "margin": [
         6,
         6,
@@ -67,16 +61,16 @@
         0,
         0
     ],
-    "parent": "flexScroll",
-    "pf": "frmEditProfile",
+    "parent": "flexRow7",
+    "pf": "frmDebug",
     "render": true,
-    "right": "5%",
-    "skin": "s13c2c7c601f48f8b6e4f3082ffd405e",
-    "text": "Save",
-    "top": "90%",
+    "right": 0,
+    "skin": "sfc023b6844146e4b79c0b4615cd2b5d",
+    "text": "",
+    "top": "10%",
     "wType": "Button",
     "widgetAlignment": 5,
-    "width": "90%",
-    "zIndex": 1,
-    "zindex": 1
+    "width": "100%",
+    "zIndex": 4,
+    "zindex": 4
 }

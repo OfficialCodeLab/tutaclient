@@ -38,7 +38,7 @@
     "channel": "mobile",
     "children": [
         "imgTaxi",
-        "Label07c771a85a8be4b",
+        "lblHailingTaxi",
         "btnCancelHailProgress"
     ],
     "clipBounds": true,

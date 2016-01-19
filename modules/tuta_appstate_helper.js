@@ -14,7 +14,7 @@ tuta.appstate.helper.checkState = function(callback) {
     //SET THE GLOBAL KEY TO USE HERE
     appstate_key = currentUser.userName;
 
-    tuta.appstate.clearState();
+    //tuta.appstate.clearState();
 
     //Retrieve the current state as an object
     var state_obj = tuta.appstate.getState();
@@ -117,7 +117,7 @@ tuta.appstate.helper.resumeFromState = function() {
                     }
 
                 }, 5, false);
-            } else if (result === "OnRoute") {
+            } else if (result === "ONROUTE") {
 
                 //tuta.util.alert("Resumin...", "resuming from ENROUTE.");
                 //Resume from en route
@@ -161,7 +161,7 @@ tuta.appstate.helper.resumeFromState = function() {
                     tripOnRoute = true;
                     onJourney = 1;
                     yourBooking = current_booking;
-
+					
                     //What to do on resume from app state
                     driverArrived = true;
                     tripOnRoute = false;
@@ -171,24 +171,38 @@ tuta.appstate.helper.resumeFromState = function() {
                     journeyComplete = false;
                   	tripInTransitResume = true;
                     tripInTransitResume2 = true;
-
-                    tuta.fetchDriverInfo(currentBookingObject.providerId);
-                    yourBooking = bookingID;
-
-
+					
+                  	tuta.fetchDriverInfo(currentBookingObject.providerId);
+                  	tuta.awaitDriverDropOffConfirmation ();
+                  
+                    //yourBooking = bookingID;
+					
+                  	findAddress(currentBookingObject.address.description, function(success, error) {
+                      destination = success.results[0];
+                      tuta.location.directionsFromCoordinates(currentPos.geometry.location.lat, currentPos.geometry.location.lng, destination.geometry.location.lat, destination.geometry.location.lng, function(response) {
+                        kony.timer.schedule("renderDir", function() {   
+                          //renderDirections(frmMap.mapMain, response, "0x0000FFFF", "pickupicon.png", "dropofficon.png");
+                          //updateMap();
+                          //tuta.updateDriverOnRoute();
+                          //tuta.startWatchLocation();
+                        }, 2, false);
+                      });
+						
+                    });
+                  	
+                  	tuta.animate.moveBottomLeft(frmMap.flexDriverInfo, 0.1, "-110", "", null);
+                  
                     try {
                         kony.timer.cancel("taxiAwaitTimer");
                     } catch (ex) {
-
+						//tuta.util.alert("kony.time.cancel error", ex);
                     }
 
                     //tuta.renderFinalRoute();
 
-
-                    
-
-                } catch (ex) {
-                    tuta.util.alert("Something went wrong resuming from IN TRANSIT", ex);
+                } catch (ex2) {
+                    tuta.util.alert("Something went wrong resuming from IN TRANSIT", ex2);
+                  
                 }
             } else {
                 //tuta.util.alert("ERROR!", "Your booking is probably complete..\n" + result);
