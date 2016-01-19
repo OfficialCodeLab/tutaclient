@@ -173,29 +173,29 @@ tuta.appstate.helper.resumeFromState = function() {
                     tripInTransitResume2 = true;
 					
                   	tuta.fetchDriverInfo(currentBookingObject.providerId);
-                  	//tuta.awaitDriverDropOffConfirmation ();
+                  	tuta.awaitDriverDropOffConfirmation ();
                   
                     //yourBooking = bookingID;
 					
                   	findAddress(currentBookingObject.address.description, function(success, error) {
                       destination = success.results[0];
                       tuta.location.directionsFromCoordinates(currentPos.geometry.location.lat, currentPos.geometry.location.lng, destination.geometry.location.lat, destination.geometry.location.lng, function(response) {
-						
-                        kony.timer.schedule("renderDir", function() {/*
-                          renderDirections(frmMap.mapMain, response, "0x0000FFFF", "", "");
-                          updateMap();
-                          tuta.updateDriverOnRoute();
-                          //tuta.startWatchLocation();*/
+                        kony.timer.schedule("renderDir", function() {   
+                          //renderDirections(frmMap.mapMain, response, "0x0000FFFF", "pickupicon.png", "dropofficon.png");
+                          //updateMap();
+                          //tuta.updateDriverOnRoute();
+                          //tuta.startWatchLocation();
                         }, 2, false);
                       });
 						
                     });
-                  
+                  	
+                  	tuta.animate.moveBottomLeft(frmMap.flexDriverInfo, 0.1, "-110", "", null);
                   
                     try {
                         kony.timer.cancel("taxiAwaitTimer");
                     } catch (ex) {
-
+						//tuta.util.alert("kony.time.cancel error", ex);
                     }
 
                     //tuta.renderFinalRoute();
