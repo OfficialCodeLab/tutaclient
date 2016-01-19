@@ -20,9 +20,14 @@ function showNow(){
   }
 }
 
-function showLater(){/*
+function showLater(){
   // Get date to populate fields
-  if (!populated) {
+  if(frmConfirm.lblDay.text === "01" &&
+	 frmConfirm.lblMonth.text === "Jan" &&
+	 frmConfirm.lblYear.text === "2015" &&
+     frmConfirm.txtTimeHrs.text === "5" &&
+     frmConfirm.txtTimeMins.text === "30" &&
+     frmConfirm.lblAmPm.text === "PM") {
     var today = new Date();
     var mmStr = ["Jan", "Feb", "Mar", "Apr", "May", "Jun",
                  "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
@@ -51,13 +56,10 @@ function showLater(){/*
     frmConfirm.txtTimeHrs.text = hour;
     frmConfirm.txtTimeMins.text = min;
     frmConfirm.lblAmPm.text = ampm;
-    
-    populated = true;
-  } else {}
-  
-  */
-  
-  if(sliderDir == 2){    
+  } else {
+    // Do nothing
+  }
+  if(sliderDir == 2){       
     sliderDir = 0;
     kony.timer.schedule("reset", function() {   
       frmConfirm.imgNow.src = "sliderlater.png";
