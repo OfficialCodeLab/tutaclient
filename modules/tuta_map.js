@@ -82,6 +82,28 @@ function onLocationSelected() {
     tuta.location.geoCode(currentPos.geometry.location.lat, currentPos.geometry.location.lng, function(success, error){
       frmConfirm.lblPickUpLocation.text = shortenText (success.results[0].formatted_address.replace(/`+/g,""), GLOBAL_CONCAT_LENGTH);
 
+    var tempTripDistance = 0;
+    //Calculate the distance between the current position and destination location
+    try{
+      tempTripDistance = tuta.location.distance(currentPos.geometry.location.lat,currentPos.geometry.location.lng,destination.geometry.location.lat,destination.geometry.location.lng)/1000;
+    }
+    catch (ex){
+      tuta.util.alert("Unable to calculate distance", ex);
+    }
+    
+
+    //TODO: Calculate time based on destination location, 1.2 mins per km
+    var tempTripTime = Math.round(tempTripDistance * 1.4) + 2;
+    //TODO: Update the text field with the correct data
+    if (tempTripTime < 2){
+      frmConfirm.lblDuration.text = tempTripTime + " Minute";
+    }
+    else{
+      frmConfirm.lblDuration.text = tempTripTime + " Minutes";
+    }
+    
+
+
       //updateConfirmForm();
       resetSearchBar();
       frmMap.flexAddressList.setVisibility(false);
@@ -90,7 +112,7 @@ function onLocationSelected() {
 
       //REPLACE 30 WITH DISTANCE TO TRAVEL
       frmConfirm.lblCost = "R" + Math.round(taxiRate(30));
-      frmConfirm.lblDuration = 30 + " MIN";
+      //frmConfirm.lblDuration = 30 + " MIN";
 
       try{
         //Store co-ordinates for distance calculation
