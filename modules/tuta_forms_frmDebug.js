@@ -116,6 +116,10 @@ tuta.forms.frmDebug = function() {
       updateMap();
       tuta.util.alert("Notification", "The map has been updated, and is currently tracking " + csDemoDriver + ".");
     };
+    
+    this.control("btnTickPress7").onClick = function (button) {
+      tuta.util.alert("Button Clicked", "Functionality for this is still in developement");
+    };
 
   };//END OF PRE-SHOW
 

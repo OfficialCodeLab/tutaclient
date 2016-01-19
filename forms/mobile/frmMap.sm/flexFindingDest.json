@@ -37,8 +37,8 @@
     "canUpdateUI": true,
     "channel": "mobile",
     "children": [
-        "CopyimgTaxi0f5013d477c7646",
-        "CopyLabel05d2e52e2ddb448"
+        "imgTaxi2",
+        "lblFindingLocation"
     ],
     "clipBounds": true,
     "clipbounds": true,
