@@ -14,7 +14,8 @@ tuta.appstate.helper.checkState = function(callback) {
     //SET THE GLOBAL KEY TO USE HERE
     appstate_key = currentUser.userName;
 
-    //tuta.appstate.clearState();
+    
+  	//tuta.appstate.clearState();
 
     //Retrieve the current state as an object
     var state_obj = tuta.appstate.getState();
@@ -189,8 +190,6 @@ tuta.appstate.helper.resumeFromState = function() {
                       });
 						
                     });
-                  	
-                  	tuta.animate.moveBottomLeft(frmMap.flexDriverInfo, 0.1, "-110", "", null);
                   
                     try {
                         kony.timer.cancel("taxiAwaitTimer");

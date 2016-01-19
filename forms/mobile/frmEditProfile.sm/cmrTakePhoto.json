@@ -94,6 +94,11 @@
     "wType": "Camera",
     "widgetAlignment": 5,
     "width": "40%",
+    "winphone8": {
+        "psp": {
+            "enablePhotoCropFeature": true
+        }
+    },
     "zIndex": 1,
     "zindex": 1
 }

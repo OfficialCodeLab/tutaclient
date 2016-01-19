@@ -16,14 +16,6 @@ tuta.forms.frmConfirm = function() {
   //Form Pre-Show Functions
   tuta.forms.frmConfirm.onPreShow = function(form) {
     var self = this;
-    
-    /*==============================================================
-    
-    POPULATE SET DATE TIME FIELDS
-    
-    ===============================================================*/
-    
-    showLater(); // This event created in tuta_events.js
 
     /*==============================================================
           __  __      _   _               _     
@@ -100,7 +92,7 @@ tuta.forms.frmConfirm = function() {
           var pickupTime = getEpoch();
           var pickupTimeShort = Math.round(pickupTime/1000);
           var timeNow = Math.round(new Date().getTime()/1000);
-          //var time1 = new Date(pickupTime);
+          var time = new Date(pickupTime);
           //tuta.util.alert("Time is", "Day " + time1.getDate() + "\nMonth " + time1.getMonth() + "\nYear " + 
           //                time1.getFullYear() + "\nTime " + time1.getHours() + ":" + time1.getMinutes());
 
