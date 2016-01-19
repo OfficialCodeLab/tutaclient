@@ -14,7 +14,7 @@ tuta.appstate.helper.checkState = function(callback) {
     //SET THE GLOBAL KEY TO USE HERE
     appstate_key = currentUser.userName;
 
-    tuta.appstate.clearState();
+    //tuta.appstate.clearState();
 
     //Retrieve the current state as an object
     var state_obj = tuta.appstate.getState();
@@ -180,16 +180,17 @@ tuta.appstate.helper.resumeFromState = function() {
                   	findAddress(currentBookingObject.address.description, function(success, error) {
                       destination = success.results[0];
                       tuta.location.directionsFromCoordinates(currentPos.geometry.location.lat, currentPos.geometry.location.lng, destination.geometry.location.lat, destination.geometry.location.lng, function(response) {
-
-                        kony.timer.schedule("renderDir", function() {
+						
+                        kony.timer.schedule("renderDir", function() {/*
                           renderDirections(frmMap.mapMain, response, "0x0000FFFF", "", "");
                           updateMap();
                           tuta.updateDriverOnRoute();
-                          //tuta.startWatchLocation();
+                          //tuta.startWatchLocation();*/
                         }, 2, false);
                       });
-
+						
                     });
+                  
                   
                     try {
                         kony.timer.cancel("taxiAwaitTimer");
@@ -197,7 +198,7 @@ tuta.appstate.helper.resumeFromState = function() {
 
                     }
 
-                    tuta.renderFinalRoute();
+                    //tuta.renderFinalRoute();
 
                 } catch (ex2) {
                     tuta.util.alert("Something went wrong resuming from IN TRANSIT", ex2);

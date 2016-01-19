@@ -202,7 +202,7 @@ function updateMap() {
 
   }
   catch(ex){
-    //tuta.util.alert("UPDATE MAP ERROR", ex);
+    tuta.util.alert("UPDATE MAP ERROR", ex);
 
   }
   //frmMap.mapMain.navigateTo(0,false);

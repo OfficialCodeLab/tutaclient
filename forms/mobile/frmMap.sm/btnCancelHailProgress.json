@@ -20,13 +20,13 @@
     ],
     "_right_": {
         "type": "number",
-        "value": "0"
+        "value": "-11"
     },
     "_skin_": "sc065f92395d40e7be0f4692fc99525b",
     "_text_": "X",
     "_top_": {
         "type": "string",
-        "value": "0dp"
+        "value": "-14dp"
     },
     "_width_": {
         "type": "string",
@@ -64,10 +64,10 @@
     "parent": "flexProgress",
     "pf": "frmMap",
     "render": true,
-    "right": 0,
+    "right": -11,
     "skin": "sc065f92395d40e7be0f4692fc99525b",
     "text": "X",
-    "top": "0dp",
+    "top": "-14dp",
     "wType": "Button",
     "widgetAlignment": 5,
     "width": "80dp"

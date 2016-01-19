@@ -33,14 +33,14 @@
     },
     "canUpdateUI": true,
     "centerX": "137.50%",
-    "centerY": "125.68%",
+    "centerY": "123.68%",
     "centerx": {
         "type": "string",
         "value": "137.50%"
     },
     "centery": {
         "type": "string",
-        "value": "125.68%"
+        "value": "123.68%"
     },
     "channel": "mobile",
     "containerWeight": 100,
