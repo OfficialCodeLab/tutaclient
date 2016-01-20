@@ -34,8 +34,10 @@ tuta.forms.frmEditProfile = function() {
       function(result) { 
         var firstName = result.value[0].userInfo.firstName;
         var surname = result.value[0].userInfo.lastName;
+        var avatar = kony.convertToRawBytes(result.value[0].userInfo.avatarDocId);
         frmEditProfile.txtFirstName.text = firstName;
         frmEditProfile.txtSurname.text = surname;
+        frmEditProfile.imgUser.rawBytes = avatar;
       },
       function(error) {
         // the service returns 403 (Not Authorised) if credentials are wrong
@@ -86,10 +88,12 @@ tuta.forms.frmEditProfile = function() {
     
     this.control("btnSave").onClick = function (button) {
       //Store the user ID as variable 'input' for manageService query
+      
       var inputs = {
         data: JSON.stringify({
           firstName : frmEditProfile.txtFirstName.text,
-          lastName : frmEditProfile.txtSurname.text
+          lastName : frmEditProfile.txtSurname.text,
+          avatarDocId: kony.convertToBase64(frmEditProfile.imgUser.rawBytes)
         }),
         id: currentUserEmail
       };

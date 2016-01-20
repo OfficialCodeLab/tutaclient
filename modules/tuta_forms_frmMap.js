@@ -71,11 +71,13 @@ tuta.forms.frmMap = function() {
     application.service("userService").invokeOperation(
       "user", {}, input,
       function(result) { 
-        var csFirstName = result.value[0].userInfo.firstName;
-        var csLastName = result.value[0].userInfo.lastName;
-        var csFullName = csFirstName + " " + csLastName;
+        var firstName = result.value[0].userInfo.firstName;
+        var lastName = result.value[0].userInfo.lastName;
+        var avatar = kony.convertToRawBytes(result.value[0].userInfo.avatarDocId);
+        var fullName = firstName + " " + lastName;
         //tuta.util.alert("User Information", "Name: " + csFullName);
-        frmMap.lblUser.text = csFullName;
+        frmMap.imgUser.rawBytes = avatar;
+        frmMap.lblUser.text = fullName;
 
       },
       function(error) {
