@@ -801,6 +801,7 @@ tuta.awaitDriverPickupConfirmation = function(){
             tuta.animate.move(frmMap.flexArriving, 0, "65", "105%", null);
             tuta.animate.moveBottomRight(frmMap.flexPhone, 0, "105", "-100", null);
             tuta.animate.moveBottomLeft(frmMap.flexTimeToDest, 0.1, "105", "-5", null);
+            tuta.animate.moveBottomLeft(frmMap.flexDriverInfo, 0.1, "-110", "", null);
             if (tripInTransitResume === false){
                tuta.renderFinalRoute();
 			      }
