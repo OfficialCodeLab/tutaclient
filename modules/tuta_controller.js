@@ -9,6 +9,7 @@ tuta.controller = function(form, widgets) {
   this.initI = form.init;
   this.preShowI = form.preShow;
   this.postShowI = form.postShow;
+  this.onHideI = form.onHide;
 
   // array to store widgets to dynamically control visibility
   this.managedWidgets = [];
@@ -43,6 +44,15 @@ tuta.controller = function(form, widgets) {
     
     // call controller onPostShow
     if(self.onPostShow) self.onPostShow(pForm);
+  
+  };
+  
+  this.form.onHide = function(pForm) {
+    // call original postShow
+  	if(self.onHideI) self.onHideI(pForm);
+    
+    // call controller onPostShow
+    if(self.onHide) self.onHide(pForm);
   
   };
 

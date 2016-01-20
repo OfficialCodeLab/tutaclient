@@ -268,6 +268,6 @@ tuta.map.stopMapListener = function (){
     kony.timer.cancel("MapListener");
   }
   catch(ex){
-    
+    console.log(ex);
   }
 };

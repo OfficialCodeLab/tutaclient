@@ -338,7 +338,11 @@ tuta.forms.frmMap = function() {
 
 
   };
-
+  
+  tuta.forms.frmMap.onHide = function(form){
+    var self = this;
+    tuta.map.stopMapListener();
+  };
 };
 
 
