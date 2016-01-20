@@ -73,12 +73,14 @@ tuta.forms.frmMap = function() {
       function(result) { 
         var firstName = result.value[0].userInfo.firstName;
         var lastName = result.value[0].userInfo.lastName;
-        var avatar = kony.convertToRawBytes(result.value[0].userInfo.avatarDocId);
+        var avatarBase64 = result.value[0].userInfo.avatarDocId;
         var fullName = firstName + " " + lastName;
         //tuta.util.alert("User Information", "Name: " + csFullName);
-        frmMap.imgUser.rawBytes = avatar;
         frmMap.lblUser.text = fullName;
-
+        
+        if (avatarBase64 !== "null") {
+        	frmMap.imgUser.rawBytes = kony.convertToRawBytes(avatarBase64);   
+        }
       },
       function(error) {
         // the service returns 403 (Not Authorised) if credentials are wrong

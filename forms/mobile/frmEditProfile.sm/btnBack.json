@@ -4,7 +4,7 @@
     "__parentReadjusting__": false,
     "_height_": {
         "type": "string",
-        "value": "45dp"
+        "value": "46dp"
     },
     "_left_": {
         "type": "string",
@@ -47,7 +47,7 @@
     "enabled": false,
     "focusSkin": "s5871028095a4083aa02ac5c9614d485",
     "focusskin": "s5871028095a4083aa02ac5c9614d485",
-    "height": "45dp",
+    "height": "46dp",
     "id": "btnBack",
     "info": null,
     "isVisible": true,

@@ -34,14 +34,17 @@ tuta.forms.frmEditProfile = function() {
       function(result) { 
         var firstName = result.value[0].userInfo.firstName;
         var surname = result.value[0].userInfo.lastName;
-        var avatar = kony.convertToRawBytes(result.value[0].userInfo.avatarDocId);
+        var avatarBase64 = result.value[0].userInfo.avatarDocId;
         frmEditProfile.txtFirstName.text = firstName;
         frmEditProfile.txtSurname.text = surname;
-        frmEditProfile.imgUser.rawBytes = avatar;
+
+        if (avatarBase64 !== "null") {
+          frmEditProfile.imgUser.rawBytes = kony.convertToRawBytes(avatarBase64);
+        }        
       },
       function(error) {
         // the service returns 403 (Not Authorised) if credentials are wrong
-        tuta.util.alert("Error " + error);
+        tuta.util.alert("userService error " + error);
 
       }
     );
@@ -101,9 +104,9 @@ tuta.forms.frmEditProfile = function() {
       application.service("manageService").invokeOperation(
       	"userInfoUpdate", {}, inputs,
         function(success) {
-          tuta.util.alert("Success", "Info has been update");
+          tuta.util.alert("Success", "Info has been updated");
         }, function(error) {
-          tuta.util.alert("Error", JSON.stringify(error));
+          tuta.util.alert("manageService error", JSON.stringify(error));
         }
       );
       //tuta.forms.frmMap.show();
