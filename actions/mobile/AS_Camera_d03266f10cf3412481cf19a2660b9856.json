@@ -1,0 +1,13 @@
+{
+	"AS_Camera_d03266f10cf3412481cf19a2660b9856": {
+		"id": "AS_Camera_d03266f10cf3412481cf19a2660b9856",
+		"type": "ACTION_SEQUENCE",
+		"params": [
+			{
+				"datatype": "collection",
+				"name": "eventobject"
+			}
+		],
+		"actions": []
+	}
+}

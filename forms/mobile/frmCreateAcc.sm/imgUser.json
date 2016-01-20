@@ -6,10 +6,6 @@
         "type": "string",
         "value": "38dp"
     },
-    "_left_": {
-        "type": "string",
-        "value": "121dp"
-    },
     "_margin_": [
         0,
         0,
@@ -52,7 +48,7 @@
     },
     "enabled": false,
     "height": "38dp",
-    "id": "imgInfo",
+    "id": "imgUser",
     "imageScaleMode": 1,
     "imagescalemode": 1,
     "info": null,
@@ -61,7 +57,6 @@
     "ispercent": true,
     "isvisible": true,
     "kuid": "5204d5a7679340dfaacbe038bf91845c",
-    "left": "121dp",
     "margin": [
         0,
         0,
@@ -85,5 +80,7 @@
     "wType": "Image",
     "widgetAlignment": 5,
     "widgetalignment": 5,
-    "width": "40dp"
+    "width": "40dp",
+    "zIndex": 2,
+    "zindex": 2
 }

@@ -1,4 +1,7 @@
 {
+  "android": {
+    "isForked": true
+  },
   "background_color": "313131ff",
   "bg_type": "one",
   "border_color": "ffffffff",
@@ -78,6 +81,9 @@
       "y": -1
     },
     "wType": "Button"
+  },
+  "iphone": {
+    "isForked": true
   },
   "isDefaultSkin": false,
   "kiosk": {

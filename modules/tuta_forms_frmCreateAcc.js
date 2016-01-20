@@ -16,13 +16,51 @@ tuta.forms.frmCreateAcc = function() {
 
   tuta.forms.frmCreateAcc.onPreShow = function(form) {
     var self = this;
-    var creatingAccount = false;    
+    var creatingAccount = false;
+    var avatarBase64;
+    
+    self.control("btnProfilePic").onClick = function(button) {
+      if(frmCreateAcc.cmrTakePhoto.isVisible === true) {
+        frmCreateAcc.cmrTakePhoto.isVisible = false;
+        frmCreateAcc.btnImportPicture.isVisible = false;
+      } else {
+		frmCreateAcc.cmrTakePhoto.isVisible = true;
+        frmCreateAcc.btnImportPicture.isVisible = true;
+      }
+    }
+    
+    self.control("cmrTakePhoto").onCapture = function() {
+      frmCreateAcc.imgUser.rawBytes = frmCreateAcc.cmrTakePhoto.rawBytes;
+      frmCreateAcc.cmrTakePhoto.isVisible = false;
+      frmCreateAcc.btnImportPicture.isVisible = false;
+    };
+    
+    self.control("btnImportPicture").onClick = function() {
+      
+      function openGallery() {
+        var querycontext = {mimetype: "image/*"};
+        var returnStatus = kony.phone.openMediaGallery(onselectioncallback,
+                                                       querycontext);
+        frmCreateAcc.cmrTakePhoto.isVisible = false;
+        frmCreateAcc.btnImportPicture.isVisible = false;
+      }
+      
+      function onselectioncallback(rawbytes) {
+        if (rawbytes === null) {
+          return;
+        }
+        frmCreateAcc.imgUser.rawBytes = rawbytes;
+      }
+      
+      openGallery();
+    };
 
     self.control("btnConfirm").onClick = function(button) {
       //CHECK IF EXISTS
 
       if(creatingAccount === false){
         creatingAccount = true;
+        avatarBase64 = kony.convertToBase64(frmCreateAcc.imgUser.rawBytes);
 
         var userEmail = (self.control("txtEmail").text).toLowerCase();
 
@@ -88,7 +126,7 @@ tuta.forms.frmCreateAcc = function() {
                                 lastName: surname,
                                 mobileNumber: self.control("txtContact").text,
                                 addresses: [],
-                                avatarDocId: "null"
+                                avatarDocId: avatarBase64
                               };
 
                               input = { data : JSON.stringify(userInfo) }; 
@@ -163,6 +201,7 @@ tuta.forms.frmCreateAcc = function() {
 
 
     }
+    tuta.map.stopMapListener();
   };
 
   tuta.forms.frmCreateAcc.onPostShow = function(form) {

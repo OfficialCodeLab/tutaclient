@@ -37,7 +37,10 @@
     "canUpdateUI": true,
     "channel": "mobile",
     "children": [
-        "imgInfo",
+        "imgUser",
+        "btnProfilePic",
+        "cmrTakePhoto",
+        "btnImportPicture",
         "lblSep1",
         "lblSep2",
         "lblSep3",

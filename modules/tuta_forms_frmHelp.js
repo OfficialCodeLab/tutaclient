@@ -22,6 +22,7 @@ tuta.forms.frmHelp = function() {
     this.control("btnSubmit").onClick = function (button) {
       tuta.events.logIssue();
     };
+    tuta.map.stopMapListener();
     
    // PUT BUTTONS HERE
   };

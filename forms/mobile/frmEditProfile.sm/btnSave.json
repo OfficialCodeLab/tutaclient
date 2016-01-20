@@ -41,15 +41,20 @@
     "containerweight": 100,
     "contentAlignment": 5,
     "contentalignment": 5,
-    "disabledSkins": {
-        "focusSkin": "sd05b2785b254e69b689cd8b8f8fae1a"
-    },
+    "disabledSkins": {},
     "displayText": true,
     "displaytext": true,
     "enabled": false,
+    "focusSkin": "s39a2d3738b84fa8abad338d12e24cc7",
+    "focusskin": "s39a2d3738b84fa8abad338d12e24cc7",
     "height": "50dp",
     "id": "btnSave",
     "info": null,
+    "iphone": {
+        "psp": {
+            "showProgressIndicator": false
+        }
+    },
     "isVisible": true,
     "isvisible": true,
     "kuid": "a06f16ce31c9445eb6f7bb0f1f9374bf",
@@ -71,6 +76,8 @@
     "pf": "frmEditProfile",
     "render": true,
     "right": "5%",
+    "showProgressIndicator": false,
+    "showprogressindicator": false,
     "skin": "s13c2c7c601f48f8b6e4f3082ffd405e",
     "text": "Save",
     "top": "90%",

@@ -16,6 +16,14 @@ tuta.forms.frmConfirm = function() {
   //Form Pre-Show Functions
   tuta.forms.frmConfirm.onPreShow = function(form) {
     var self = this;
+    
+    /*==============================================================
+    
+    POPULATE SET DATE TIME FIELDS
+    
+    ===============================================================*/
+    
+    showLater(); // This event created in tuta_events.js
 
     /*==============================================================
           __  __      _   _               _     
@@ -43,71 +51,70 @@ tuta.forms.frmConfirm = function() {
 
         if (sliderDir == 2) //Booking Now
         {
-          //Gets current user as a JSON Object
-          var booking = {
-            userId: currentUser.userName + "",
-            address: {
-              description: destination.formatted_address.replace(/`+/g,"") + ""
-            },
-            location: {
-              lat: pickupPosition.geometry.location.lat + "",
-              lng: pickupPosition.geometry.location.lng + ""
-            },
-            status: "Unconfirmed"
-          };
+          try {
+            //Gets current user as a JSON Object
+            var booking = {
+              userId: currentUser.userName + "",
+              address: {
+                description: destination.formatted_address.replace(/`+/g,"") + ""
+              },
+              location: {
+                lat: pickupPosition.geometry.location.lat + "",
+                lng: pickupPosition.geometry.location.lng + ""
+              },
+              status: "Unconfirmed"
+            };
 
 
 
-          //tuta.logTechUser();
+            //tuta.logTechUser();
 
-          var input = { data : JSON.stringify(booking) };
-          //tuta.util.alert("TEST", input);
+            var input = { data : JSON.stringify(booking) };
+            //tuta.util.alert("TEST", input);
 
-          application.service("driverService").invokeOperation(
-            "book", {}, input,
-            function(result) {
-              bookingID = result.value[0].id;
+            application.service("driverService").invokeOperation(
+              "book", {}, input,
+              function(result) {
+                bookingID = result.value[0].id;
 
-              //Store the current booking
-              //APPHOOK 0 
+                //Store the current booking
+                //APPHOOK 0 
 
-
-
-
-              
-              tuta.forms.frmMap.show();
-              kony.timer.schedule("awaitConfirm", function(){tuta.awaitConfirm(bookingID);}, 1, false);
-              
-              //Stops repetitive clicks
-              hailingTaxi = false;
-            },
-            function(error) {
-              // the service returns 403 (Not Authorised) if credentials are wrong
-              tuta.util.alert("Error " + error.httpStatusCode, error.errmsg);
-            }
-          );
+                tuta.forms.frmMap.show();
+                kony.timer.schedule("awaitConfirm", function(){tuta.awaitConfirm(bookingID);}, 1, false);
+                
+                //Resets hailingtaxi
+                hailingTaxi = false;
+              },
+              function(error) {
+                // the service returns 403 (Not Authorised) if credentials are wrong
+                //tuta.util.alert("Error " + error.httpStatusCode, error.errmsg);
+                hailingTaxi = false;
+              }
+            );
+          }
+          catch(ex){
+            //There is an error, try again.
+            tuta.util.alert("Booking Error", "Unable to make your booking. Please try again.\n\n" + ex);
+            hailingTaxi = false;
+          }
+            
         } 
         else if (sliderDir == 1) //Booking Later
         {
           var pickupTime = getEpoch();
           var pickupTimeShort = Math.round(pickupTime/1000);
-          var timeNow = Math.round(new Date().getTime()/1000); 
-          /*var time = new Date(pickupTime);
-          tuta.util.alert("Time is", "Day " + time.getDate() + "\nMonth " + time.getMonth() + "\nYear " + 
-                          time.getFullYear() + "\nTime " + time.getHours() + ":" + time.getMinutes());*/
-			/*
-          frmConfirm.lblDay.text = dd;
-          frmConfirm.lblMonth.text = mmStr[mm];
-          frmConfirm.lblYear.text = yyyy;
-          frmConfirm.txtTimeHrs.text = hour;
-          frmConfirm.txtTimeMins.text = min;
-          frmConfirm.lblAmPm.text = ampm;
-          */
+          var timeNow = Math.round(new Date().getTime()/1000);
+          //var time1 = new Date(pickupTime);
+          //tuta.util.alert("Time is", "Day " + time1.getDate() + "\nMonth " + time1.getMonth() + "\nYear " + 
+          //                time1.getFullYear() + "\nTime " + time1.getHours() + ":" + time1.getMinutes());
+
+          
           if(pickupTimeShort - timeNow > 600) //Booking restrictions satisfied
           {
             var bookingLater = {
               userId: currentUser.userName + "",
-              time: "" + pickupTime,
+              time: pickupTime,
               address: {
                 description: destination.formatted_address.replace(/`+/g,"") + ""
               },
@@ -297,6 +304,7 @@ tuta.forms.frmConfirm = function() {
         showNow();
       }
     });
+    tuta.map.stopMapListener();
   }; //End of Pre-Show
 
   tuta.forms.frmConfirm.onPostShow = function(form) {

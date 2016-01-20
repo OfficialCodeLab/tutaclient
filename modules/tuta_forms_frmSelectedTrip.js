@@ -18,6 +18,7 @@ tuta.forms.frmSelectedTrip = function() {
     var self = this;
     this.control("btnBack").onClick = function (button) {tuta.forms.frmTrip.show();};
     this.control("btnHelp").onClick = function (button) {tuta.forms.frmHelp.show();};
+    tuta.map.stopMapListener();
   };
   
   tuta.forms.frmSelectedTrip.onPostShow = function(form) {

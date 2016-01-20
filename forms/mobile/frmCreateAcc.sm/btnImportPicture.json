@@ -8,7 +8,7 @@
     },
     "_left_": {
         "type": "string",
-        "value": "52.50%"
+        "value": "54.83%"
     },
     "_margin_": [
         6,
@@ -26,7 +26,7 @@
     "_text_": "Import Picture",
     "_top_": {
         "type": "string",
-        "value": "200dp"
+        "value": "20dp"
     },
     "_width_": {
         "type": "string",
@@ -51,10 +51,10 @@
             "showProgressIndicator": false
         }
     },
-    "isVisible": true,
-    "isvisible": true,
-    "kuid": "2a65ba3bdd0648b58a778df202653d2d",
-    "left": "52.50%",
+    "isVisible": false,
+    "isvisible": false,
+    "kuid": "ae1923c121d74bb1a00e75485d33366a",
+    "left": "54.83%",
     "margin": [
         6,
         6,
@@ -68,14 +68,14 @@
         0,
         0
     ],
-    "parent": "flexScroll",
-    "pf": "frmEditProfile",
+    "parent": "flexMain",
+    "pf": "frmCreateAcc",
     "render": true,
     "showProgressIndicator": false,
     "showprogressindicator": false,
     "skin": "s164f2bfa5fc4fdbbdbe6bb81aa81bb5",
     "text": "Import Picture",
-    "top": "200dp",
+    "top": "20dp",
     "wType": "Button",
     "widgetAlignment": 5,
     "width": "40%",

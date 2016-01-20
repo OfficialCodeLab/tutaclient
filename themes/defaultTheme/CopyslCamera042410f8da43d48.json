@@ -1,7 +1,4 @@
 {
-  "android": {
-    "isForked": true
-  },
   "background_color": "313131ff",
   "bg_type": "one",
   "border_color": "000000ff",
@@ -13,10 +10,7 @@
   "font_size": 100,
   "font_style": "normal",
   "font_weight": "normal",
-  "iphone": {
-    "isForked": true
-  },
   "isDefaultSkin": false,
-  "kuid": "sfba5520ec8a4b21b73a99502abfcd0a",
+  "kuid": "s30bb1467e744705a0d8f25e34de433f",
   "wType": "Camera"
 }

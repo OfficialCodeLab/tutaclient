@@ -57,16 +57,6 @@ tuta.forms.frmEditProfile = function() {
     
     this.control("btnBack").onClick = function (button) {tuta.forms.frmMap.show();};
     
-    /*
-    this.control("btnImportPicture").onClick = function (button) {
-      var config = {
-        selectMultipleFiles: true,
-        filter: ["image/png", "image/jpeg"]
-      };      
-      kony.io.FileSystem.browse(config, selectedFileCallback);
-    };
-    */
-    
     this.control("cmrTakePhoto").onCapture = function() {
       frmEditProfile.imgUser.rawBytes = frmEditProfile.cmrTakePhoto.rawBytes;
     };

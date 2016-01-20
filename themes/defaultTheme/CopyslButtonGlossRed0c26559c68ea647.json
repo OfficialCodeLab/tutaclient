@@ -1,26 +1,30 @@
 {
   "android": {
-    "background_color": "ffffff00",
-    "bg_type": "one",
-    "isForked": true,
-    "text_shadow": {
-      "br": 0,
-      "color": "000000ff",
-      "nm": 0,
-      "x": 0,
-      "y": 0
-    },
-    "wType": "Button"
+    "isForked": true
   },
-  "background_color": "d62c3aff",
+  "background_color": "313131ff",
   "bg_type": "one",
   "border_color": "ffffffff",
   "border_style": "plain",
   "border_type": 0,
   "border_width": 0,
   "desktopweb": {
-    "background_color": "ffffff00",
-    "bg_type": "one",
+    "background_color": {
+      "angle": 0,
+      "colors": [
+        "d62c3aff",
+        "bd1421ff",
+        "dd878dff"
+      ],
+      "cs": [
+        0,
+        50,
+        100
+      ],
+      "gt": "linear"
+    },
+    "background_style": "linear",
+    "bg_type": "ms_gradient",
     "bottom_left_border_color": "ffffffff",
     "bottom_left_border_style": "plain",
     "bottom_left_border_width": 0,
@@ -29,19 +33,18 @@
     "bottom_right_border_width": 0,
     "isForked": true,
     "shadow": {
-      "br": 0,
+      "br": 2,
       "color": "000000ff",
       "inner": false,
       "nm": 0,
       "x": 0,
-      "y": 0
+      "y": 2
     },
     "text_shadow": {
       "br": 0,
       "color": "000000ff",
-      "nm": 0,
       "x": 0,
-      "y": 0
+      "y": -1
     },
     "top_left_border_color": "ffffffff",
     "top_left_border_style": "plain",
@@ -53,61 +56,65 @@
   },
   "font_color": "ffffffff",
   "font_name": "Helvetica",
-  "font_size": 148,
+  "font_size": 100,
   "font_style": "normal",
   "font_weight": "normal",
   "ipad": {
-    "background_color": "ffffff00",
-    "bg_type": "one",
+    "background_color": {
+      "angle": 0,
+      "colors": [
+        "d62c3aff",
+        "bd1421ff",
+        "dd878dff"
+      ],
+      "cs": [
+        0,
+        50,
+        100
+      ],
+      "gt": "linear"
+    },
+    "background_style": "linear",
+    "bg_type": "ms_gradient",
     "isForked": true,
     "shadow": {
-      "br": 0,
+      "br": 2,
       "color": "000000ff",
       "inner": false,
       "nm": 0,
       "x": 0,
-      "y": 0
+      "y": 2
     },
     "text_shadow": {
       "br": 0,
       "color": "000000ff",
-      "nm": 0,
       "x": 0,
-      "y": 0
+      "y": -1
     },
     "wType": "Button"
   },
   "iphone": {
-    "background_color": "ffffff00",
-    "bg_type": "one",
-    "isForked": true,
-    "shadow": {
-      "br": 0,
-      "color": "000000ff",
-      "inner": false,
-      "nm": 0,
-      "x": 0,
-      "y": 0
-    },
-    "text_shadow": {
-      "br": 0,
-      "color": "000000ff",
-      "nm": 0,
-      "x": 0,
-      "y": 0
-    },
-    "wType": "Button"
-  },
-  "isDefaultSkin": false,
-  "kiosk": {
-    "background_color": "ffffff00",
-    "bg_type": "one",
     "isForked": true
   },
-  "kuid": "s5871028095a4083aa02ac5c9614d485",
+  "isDefaultSkin": false,
+  "kuid": "sfc4f1db5c524bdebc047ce12cce7aee",
   "spaandroidtablet": {
-    "background_color": "ffffff00",
-    "bg_type": "one",
+    "background_color": {
+      "angle": 0,
+      "colors": [
+        "d62c3aff",
+        "bd1421ff",
+        "dd878dff"
+      ],
+      "cs": [
+        0,
+        50,
+        100
+      ],
+      "gt": "linear"
+    },
+    "background_style": "linear",
+    "bg_type": "ms_gradient",
     "bottom_left_border_color": "ffffffff",
     "bottom_left_border_style": "plain",
     "bottom_left_border_width": 0,
@@ -116,19 +123,18 @@
     "bottom_right_border_width": 0,
     "isForked": true,
     "shadow": {
-      "br": 0,
+      "br": 2,
       "color": "000000ff",
       "inner": false,
       "nm": 0,
       "x": 0,
-      "y": 0
+      "y": 2
     },
     "text_shadow": {
       "br": 0,
       "color": "000000ff",
-      "nm": 0,
       "x": 0,
-      "y": 0
+      "y": -1
     },
     "top_left_border_color": "ffffffff",
     "top_left_border_style": "plain",
@@ -139,8 +145,22 @@
     "wType": "Button"
   },
   "spaipad": {
-    "background_color": "ffffff00",
-    "bg_type": "one",
+    "background_color": {
+      "angle": 0,
+      "colors": [
+        "d62c3aff",
+        "bd1421ff",
+        "dd878dff"
+      ],
+      "cs": [
+        0,
+        50,
+        100
+      ],
+      "gt": "linear"
+    },
+    "background_style": "linear",
+    "bg_type": "ms_gradient",
     "bottom_left_border_color": "ffffffff",
     "bottom_left_border_style": "plain",
     "bottom_left_border_width": 0,
@@ -149,19 +169,18 @@
     "bottom_right_border_width": 0,
     "isForked": true,
     "shadow": {
-      "br": 0,
+      "br": 2,
       "color": "000000ff",
       "inner": false,
       "nm": 0,
       "x": 0,
-      "y": 0
+      "y": 2
     },
     "text_shadow": {
       "br": 0,
       "color": "000000ff",
-      "nm": 0,
       "x": 0,
-      "y": 0
+      "y": -1
     },
     "top_left_border_color": "ffffffff",
     "top_left_border_style": "plain",
@@ -172,8 +191,22 @@
     "wType": "Button"
   },
   "spawindowstablet": {
-    "background_color": "ffffff00",
-    "bg_type": "one",
+    "background_color": {
+      "angle": 0,
+      "colors": [
+        "d62c3aff",
+        "bd1421ff",
+        "dd878dff"
+      ],
+      "cs": [
+        0,
+        50,
+        100
+      ],
+      "gt": "linear"
+    },
+    "background_style": "linear",
+    "bg_type": "ms_gradient",
     "bottom_left_border_color": "ffffffff",
     "bottom_left_border_style": "plain",
     "bottom_left_border_width": 0,
@@ -182,19 +215,18 @@
     "bottom_right_border_width": 0,
     "isForked": true,
     "shadow": {
-      "br": 0,
+      "br": 2,
       "color": "000000ff",
       "inner": false,
       "nm": 0,
       "x": 0,
-      "y": 0
+      "y": 2
     },
     "text_shadow": {
       "br": 0,
       "color": "000000ff",
-      "nm": 0,
       "x": 0,
-      "y": 0
+      "y": -1
     },
     "top_left_border_color": "ffffffff",
     "top_left_border_style": "plain",
@@ -205,22 +237,30 @@
     "wType": "Button"
   },
   "tabrcandroid": {
-    "background_color": "ffffff00",
-    "bg_type": "one",
+    "background_color": {
+      "angle": 0,
+      "colors": [
+        "d62c3aff",
+        "bd1421ff",
+        "dd878dff"
+      ],
+      "cs": [
+        0,
+        50,
+        100
+      ],
+      "gt": "linear"
+    },
+    "background_style": "linear",
+    "bg_type": "ms_gradient",
     "isForked": true,
     "text_shadow": {
       "br": 0,
       "color": "000000ff",
-      "nm": 0,
       "x": 0,
-      "y": 0
+      "y": -1
     },
     "wType": "Button"
   },
-  "wType": "Button",
-  "windows8": {
-    "background_color": "ffffff00",
-    "bg_type": "one",
-    "isForked": true
-  }
+  "wType": "Button"
 }

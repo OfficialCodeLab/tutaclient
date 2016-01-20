@@ -12,6 +12,7 @@ tuta.forms.frmLogin = function() {
 
     tuta.forms.frmLogin.onPreShow = function(form) {
     var self = this;
+    tuta.map.stopMapListener();
 	
     self.control("btnLogin").onClick = function(button) {
 

@@ -8,7 +8,7 @@
     },
     "_left_": {
         "type": "string",
-        "value": "7.50%"
+        "value": "4.98%"
     },
     "_margin_": [
         0,
@@ -26,7 +26,7 @@
     "_text_": "Take A Photo",
     "_top_": {
         "type": "string",
-        "value": "200dp"
+        "value": "20dp"
     },
     "_width_": {
         "type": "string",
@@ -51,10 +51,10 @@
             "nativeUserInterface": false
         }
     },
-    "isVisible": true,
-    "isvisible": true,
-    "kuid": "008e91af405c4fb1b063ba25c2f4e394",
-    "left": "7.50%",
+    "isVisible": false,
+    "isvisible": false,
+    "kuid": "9f3cb7cb618a4dc6a135be58ceac6c9c",
+    "left": "4.98%",
     "margin": [
         0,
         0,
@@ -63,16 +63,16 @@
     ],
     "name": "kony.ui.Camera",
     "nativeUserInterface": false,
-    "onCapture": "AS_Camera_b0db3868016e4f7d8e912dfdb36552d4",
-    "oncapture": "AS_Camera_b0db3868016e4f7d8e912dfdb36552d4",
+    "onCapture": "AS_Camera_dffe2dbaec3742bbb68fadec34ca8d82",
+    "oncapture": "AS_Camera_dffe2dbaec3742bbb68fadec34ca8d82",
     "padding": [
         0,
         0,
         0,
         0
     ],
-    "parent": "flexScroll",
-    "pf": "frmEditProfile",
+    "parent": "flexMain",
+    "pf": "frmCreateAcc",
     "render": true,
     "skin": "sfba5520ec8a4b21b73a99502abfcd0a",
     "spaan": {
@@ -98,7 +98,7 @@
     },
     "text": "Take A Photo",
     "toolTip": "",
-    "top": "200dp",
+    "top": "20dp",
     "wType": "Camera",
     "widgetAlignment": 5,
     "width": "40%",

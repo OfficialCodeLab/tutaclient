@@ -18,6 +18,7 @@ tuta.forms.frmPayments = function() {
     var self = this;
     
     this.control("btnBack").onClick = function (button) {tuta.forms.frmMap.show();};
+    tuta.map.stopMapListener();
    // PUT BUTTONS HERE
   };
   
