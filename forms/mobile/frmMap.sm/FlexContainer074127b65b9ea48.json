@@ -40,7 +40,7 @@
         "value": "50%"
     },
     "children": [
-        "imgChsC"
+        "imgChsO"
     ],
     "clipBounds": true,
     "clipbounds": true,
@@ -50,11 +50,11 @@
     "enabled": false,
     "enablescrolling": true,
     "height": "50%",
-    "id": "FlexContainer0741195e4bc364f",
+    "id": "FlexContainer074127b65b9ea48",
     "info": null,
     "isVisible": true,
     "isvisible": true,
-    "kuid": "a3a17135b7114afbbbbf9cd2c94b05b9",
+    "kuid": "355ae92754f542fa8982c5ca8c2b19ca",
     "layoutType": 2,
     "layouttype": 2,
     "left": "4%",
