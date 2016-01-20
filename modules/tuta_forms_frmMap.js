@@ -9,15 +9,16 @@ if (typeof(tuta.forms) === "undefined") {
 tuta.forms.frmMap = function() {
   // initialize controller 
   tuta.forms.frmMap = new tuta.controller(frmMap); 
-
+  
   // Initialize form events	
   tuta.forms.frmMap.onInit = function(form) {
+    this.control("txtDest").setFocus(false);
   };  
 
   tuta.forms.frmMap.onPreShow = function(form) {
     var self = this;
-
-
+    
+	
     this.control("btnPerson1").onClick = onPeopleSelect;
     this.control("btnPerson2").onClick = onPeopleSelect;
     this.control("btnPerson3").onClick = onPeopleSelect;
@@ -178,7 +179,7 @@ tuta.forms.frmMap = function() {
     //this.control("btnCancelHailDriving").onTouchStart = cancelHailPrompt;
     this.control("segAddressList").onRowClick = onLocationSelected;
 
-    this.control("txtDest").setFocus(false);
+   
     this.control("btnCancelHailProgress").onClick = function (button){
       kony.timer.schedule("cancelBookingHail",  function(){tuta.cancelBooking(yourBooking);}, 2, false);
       
