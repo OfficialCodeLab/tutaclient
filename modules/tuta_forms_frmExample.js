@@ -60,6 +60,7 @@ tuta.forms.frmExample = function() {
       this.control("btn3").onClick = function(button) {
         self.topMenu.toggle();
       };
+    tuta.map.stopMapListener();
   };
   
   tuta.forms.frmExample.onPostShow = function(form) {

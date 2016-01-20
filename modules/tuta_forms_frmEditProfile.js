@@ -104,6 +104,7 @@ tuta.forms.frmEditProfile = function() {
       );
       //tuta.forms.frmMap.show();
     };
+    tuta.map.stopMapListener();
    // PUT BUTTONS HERE
   };
   

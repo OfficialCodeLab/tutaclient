@@ -16,6 +16,14 @@ tuta.forms.frmConfirm = function() {
   //Form Pre-Show Functions
   tuta.forms.frmConfirm.onPreShow = function(form) {
     var self = this;
+    
+    /*==============================================================
+    
+    POPULATE SET DATE TIME FIELDS
+    
+    ===============================================================*/
+    
+    showLater(); // This event created in tuta_events.js
 
     /*==============================================================
           __  __      _   _               _     
@@ -91,23 +99,17 @@ tuta.forms.frmConfirm = function() {
         {
           var pickupTime = getEpoch();
           var pickupTimeShort = Math.round(pickupTime/1000);
-          var timeNow = Math.round(new Date().getTime()/1000); 
-          /*var time = new Date(pickupTime);
-          tuta.util.alert("Time is", "Day " + time.getDate() + "\nMonth " + time.getMonth() + "\nYear " + 
-                          time.getFullYear() + "\nTime " + time.getHours() + ":" + time.getMinutes());*/
-			/*
-          frmConfirm.lblDay.text = dd;
-          frmConfirm.lblMonth.text = mmStr[mm];
-          frmConfirm.lblYear.text = yyyy;
-          frmConfirm.txtTimeHrs.text = hour;
-          frmConfirm.txtTimeMins.text = min;
-          frmConfirm.lblAmPm.text = ampm;
-          */
+          var timeNow = Math.round(new Date().getTime()/1000);
+          //var time1 = new Date(pickupTime);
+          //tuta.util.alert("Time is", "Day " + time1.getDate() + "\nMonth " + time1.getMonth() + "\nYear " + 
+          //                time1.getFullYear() + "\nTime " + time1.getHours() + ":" + time1.getMinutes());
+
+          
           if(pickupTimeShort - timeNow > 600) //Booking restrictions satisfied
           {
             var bookingLater = {
               userId: currentUser.userName + "",
-              time: "" + pickupTime,
+              time: pickupTime,
               address: {
                 description: destination.formatted_address.replace(/`+/g,"") + ""
               },
@@ -297,6 +299,7 @@ tuta.forms.frmConfirm = function() {
         showNow();
       }
     });
+    tuta.map.stopMapListener();
   }; //End of Pre-Show
 
   tuta.forms.frmConfirm.onPostShow = function(form) {

@@ -275,7 +275,7 @@ tuta.forms.frmMap = function() {
         var bds = frmMap.mapMain.getBounds();
         tuta.map.storeCenter(bds);
         tuta.map.startMapListener();
-      }, 2, false);
+      }, 3, false);
       
       //tuta.map.startMapListener();
     }
@@ -342,6 +342,7 @@ tuta.forms.frmMap = function() {
   tuta.forms.frmMap.onHide = function(form){
     var self = this;
     tuta.map.stopMapListener();
+    
   };
 };
 

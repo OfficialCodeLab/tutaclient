@@ -266,8 +266,13 @@ tuta.map.startMapListener = function (){
 tuta.map.stopMapListener = function (){
   try {
     kony.timer.cancel("MapListener");
-  }
-  catch(ex){
+  } catch(ex){
     console.log(ex);
+  }
+  
+  try {
+    kony.timer.cancel("updateMapBounds");
+  } catch(ex){
+    
   }
 };

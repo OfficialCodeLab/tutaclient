@@ -17,6 +17,7 @@ tuta.forms.frmTemplate = function() {
   tuta.forms.frmTemplate.onPreShow = function(form) {
     var self = this;
    // PUT BUTTONS HERE
+    tuta.map.stopMapListener();
   };
   
   tuta.forms.frmTemplate.onPostShow = function(form) {

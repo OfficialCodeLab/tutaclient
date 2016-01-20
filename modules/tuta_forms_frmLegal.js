@@ -18,6 +18,7 @@ tuta.forms.frmLegal = function() {
     var self = this;
     
     this.control("btnBack").onClick = function (button) {tuta.forms.frmMap.show();};
+    tuta.map.stopMapListener();
   };
   
   tuta.forms.frmLegal.onPostShow = function(form) {

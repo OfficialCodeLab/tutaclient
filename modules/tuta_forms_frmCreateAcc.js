@@ -163,6 +163,7 @@ tuta.forms.frmCreateAcc = function() {
 
 
     }
+    tuta.map.stopMapListener();
   };
 
   tuta.forms.frmCreateAcc.onPostShow = function(form) {

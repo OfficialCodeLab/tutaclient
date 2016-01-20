@@ -120,6 +120,7 @@ tuta.forms.frmDebug = function() {
     this.control("btnTickPress7").onClick = function (button) {
       tuta.util.alert("Button Clicked", "Functionality for this is still in developement");
     };
+    tuta.map.stopMapListener();
 
   };//END OF PRE-SHOW
 

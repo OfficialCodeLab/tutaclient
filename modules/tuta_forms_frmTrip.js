@@ -40,6 +40,7 @@ tuta.forms.frmTrip = function() {
         renderDirections(frmSelectedTrip.mapHistory,result,"0x0000FFFF", "pickupicon.png", "dropofficon.png");     
       }, "1");
     };
+    tuta.map.stopMapListener();
   };
   
   tuta.forms.frmTrip.onPostShow = function(form) {
