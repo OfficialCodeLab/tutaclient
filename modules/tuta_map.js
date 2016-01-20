@@ -1,5 +1,5 @@
 if (typeof(tuta) === "undefined") {
-	tuta = {};
+  tuta = {};
 }
 
 tuta.map = {};
@@ -87,26 +87,26 @@ function onLocationSelected() {
     tuta.location.geoCode(currentPos.geometry.location.lat, currentPos.geometry.location.lng, function(success, error){
       frmConfirm.lblPickUpLocation.text = shortenText (success.results[0].formatted_address.replace(/`+/g,""), GLOBAL_CONCAT_LENGTH);
 
-    var tempTripDistance = 0;
-    //Calculate the distance between the current position and destination location
-    try{
-      tempTripDistance = tuta.location.distance(currentPos.geometry.location.lat,currentPos.geometry.location.lng,destination.geometry.location.lat,destination.geometry.location.lng)/1000;
-    }
-    catch (ex){
-      tuta.util.alert("Unable to calculate distance", ex);
-    }
-    
+      var tempTripDistance = 0;
+      //Calculate the distance between the current position and destination location
+      try{
+        tempTripDistance = tuta.location.distance(currentPos.geometry.location.lat,currentPos.geometry.location.lng,destination.geometry.location.lat,destination.geometry.location.lng)/1000;
+      }
+      catch (ex){
+        tuta.util.alert("Unable to calculate distance", ex);
+      }
 
-    //TODO: Calculate time based on destination location, 1.2 mins per km
-    var tempTripTime = Math.round(tempTripDistance * 1.4) + 2;
-    //TODO: Update the text field with the correct data
-    if (tempTripTime < 2){
-      frmConfirm.lblDuration.text = tempTripTime + " Minute";
-    }
-    else{
-      frmConfirm.lblDuration.text = tempTripTime + " Minutes";
-    }
-    
+
+      //TODO: Calculate time based on destination location, 1.2 mins per km
+      var tempTripTime = Math.round(tempTripDistance * 1.4) + 2;
+      //TODO: Update the text field with the correct data
+      if (tempTripTime < 2){
+        frmConfirm.lblDuration.text = tempTripTime + " Minute";
+      }
+      else{
+        frmConfirm.lblDuration.text = tempTripTime + " Minutes";
+      }
+
 
 
       //updateConfirmForm();
@@ -139,7 +139,7 @@ function onLocationSelected() {
       {
         tuta.util.alert("Distance", "Something went wrong calculating the distance.\n\n" + ex);
       }
-      
+
     });
   } else {
     pickupPoint = getSelectedAddress();
@@ -217,16 +217,18 @@ tuta.map.startMapListener = function (){
     kony.timer.cancel("MapListener");
   }
   catch(ex){
-    
+
   }
-  
+
   var hasMovedAway = false;
   var hasMovedBack = false;
+  var hasLoaded = false;
   kony.timer.schedule("MapListener", function(){
     var bounds = frmMap.mapMain.getBounds();
     if(tuta.map.checkRadius(bounds)){
       //tuta.util.alert("MOVED");
       if(!hasMovedAway){
+        hasLoaded = false;
         tuta.animate.move(frmMap.flexHeader, 0.2, "-8%", "", null);
         tuta.animate.move(frmMap.flexAdd, 0.2, "1%", frmMap.flexAdd.left, null);
         tuta.animate.moveBottomLeft(frmMap.flexNoOfPeople, 0.2, "-12%", "", null);
@@ -235,14 +237,14 @@ tuta.map.startMapListener = function (){
         hasMovedBack = false;
       }
       timeStill = 0;
-      
-      
+
+
       //TODO: Calculate time from nearest driver
     }
     else{
       //tuta.util.alert("DIDN'T MOVE");
       timeStill++;
-      
+
       if(timeStill >= 3 && !hasMovedBack){
         tuta.animate.move(frmMap.flexHeader, 0.2, "0%", "", null);
         tuta.animate.move(frmMap.flexAdd, 0.2, "12%", frmMap.flexAdd.left, null);
@@ -251,15 +253,26 @@ tuta.map.startMapListener = function (){
         hasMovedBack = true;
         hasMovedAway = false;
       }     
-      
+
       if(timeStill >= 7){
         timeStill = 0;
-        /*
-        tuta.events.retrieveNearestDrivers(function(){
-          tuta.events.calculateWaitTime();
-        });*/
+        if (hasLoaded === false){
+          hasLoaded = true;
+          var position = { 
+            lat: mapCenter.location.lat,
+            lng: mapCenter.location.lon
+          };
+          tuta.events.getNearestDrivers(position, function(drivers, position){
+            tuta.events.calculateWaitTime(drivers, position, function(time){
+              //tuta.util.alert("Wait Time", Math.round(time/60) + " mins");
+              frmMap.rtClosest.text = Math.round(time/60) + "<br>min";
+            });
+          });
+
+        }
+
       }
-      
+
     }
   }, 0.5, true);
 };
@@ -269,10 +282,10 @@ tuta.map.stopMapListener = function (){
   } catch(ex){
     console.log(ex);
   }
-  
+
   try {
     kony.timer.cancel("updateMapBounds");
   } catch(ex){
-    
+
   }
 };

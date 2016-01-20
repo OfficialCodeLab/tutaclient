@@ -120,6 +120,20 @@ tuta.forms.frmDebug = function() {
     this.control("btnTickPress7").onClick = function (button) {
       tuta.util.alert("Button Clicked", "Functionality for this is still in developement");
     };
+    
+    this.control("btnTickPress8").onClick = function(button){
+      var position = { 
+        	lat: currentPos.geometry.location.lat,
+  			lng: currentPos.geometry.location.lng
+        };
+      tuta.events.getNearestDrivers(position, function(drivers, position){
+        tuta.events.calculateWaitTime(drivers, position, function(time){
+          tuta.util.alert("Wait Time", Math.round(time/60) + " mins");
+        });
+      });
+    };
+    
+    
     tuta.map.stopMapListener();
 
   };//END OF PRE-SHOW

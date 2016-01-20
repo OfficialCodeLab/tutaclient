@@ -42,7 +42,7 @@
     "desktopweb": {
         "needAppMenu": false
     },
-    "device": "iPhone6",
+    "device": "iPhone3",
     "displayOrientation": 1,
     "displayorientation": 1,
     "enableScrolling": false,
@@ -131,12 +131,12 @@
     "paddinginpixel": false,
     "percent": true,
     "platform": "iphone",
-    "prevDevice": "iPhone3",
+    "prevDevice": "iPhone6",
     "prevPlatform": "iphone",
     "render": true,
     "retainScrollPosition": false,
     "retainscrollposition": false,
-    "shellCSS": "iOS_iPhone6",
+    "shellCSS": "iOS_iPhone3",
     "skin": "s1938375ce72486f894e571cf35fe3d8",
     "snapGridSize": 10,
     "snapToGrid": true,
