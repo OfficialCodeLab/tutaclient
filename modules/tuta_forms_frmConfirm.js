@@ -43,49 +43,54 @@ tuta.forms.frmConfirm = function() {
 
         if (sliderDir == 2) //Booking Now
         {
-          //Gets current user as a JSON Object
-          var booking = {
-            userId: currentUser.userName + "",
-            address: {
-              description: destination.formatted_address.replace(/`+/g,"") + ""
-            },
-            location: {
-              lat: pickupPosition.geometry.location.lat + "",
-              lng: pickupPosition.geometry.location.lng + ""
-            },
-            status: "Unconfirmed"
-          };
+          try {
+            //Gets current user as a JSON Object
+            var booking = {
+              userId: currentUser.userName + "",
+              address: {
+                description: destination.formatted_address.replace(/`+/g,"") + ""
+              },
+              location: {
+                lat: pickupPosition.geometry.location.lat + "",
+                lng: pickupPosition.geometry.location.lng + ""
+              },
+              status: "Unconfirmed"
+            };
 
 
 
-          //tuta.logTechUser();
+            //tuta.logTechUser();
 
-          var input = { data : JSON.stringify(booking) };
-          //tuta.util.alert("TEST", input);
+            var input = { data : JSON.stringify(booking) };
+            //tuta.util.alert("TEST", input);
 
-          application.service("driverService").invokeOperation(
-            "book", {}, input,
-            function(result) {
-              bookingID = result.value[0].id;
+            application.service("driverService").invokeOperation(
+              "book", {}, input,
+              function(result) {
+                bookingID = result.value[0].id;
 
-              //Store the current booking
-              //APPHOOK 0 
+                //Store the current booking
+                //APPHOOK 0 
 
-
-
-
-              
-              tuta.forms.frmMap.show();
-              kony.timer.schedule("awaitConfirm", function(){tuta.awaitConfirm(bookingID);}, 1, false);
-              
-              //Stops repetitive clicks
-              hailingTaxi = false;
-            },
-            function(error) {
-              // the service returns 403 (Not Authorised) if credentials are wrong
-              tuta.util.alert("Error " + error.httpStatusCode, error.errmsg);
-            }
-          );
+                tuta.forms.frmMap.show();
+                kony.timer.schedule("awaitConfirm", function(){tuta.awaitConfirm(bookingID);}, 1, false);
+                
+                //Resets hailingtaxi
+                hailingTaxi = false;
+              },
+              function(error) {
+                // the service returns 403 (Not Authorised) if credentials are wrong
+                //tuta.util.alert("Error " + error.httpStatusCode, error.errmsg);
+                hailingTaxi = false;
+              }
+            );
+          }
+          catch(ex){
+            //There is an error, try again.
+            tuta.util.alert("Booking Error", "Unable to make your booking. Please try again.\n\n" + ex);
+            hailingTaxi = false;
+          }
+            
         } 
         else if (sliderDir == 1) //Booking Later
         {
