@@ -421,6 +421,8 @@ tuta.renderFinalRoute = function(){
       
     }
     
+    
+    try {
     application.service("driverService").invokeOperation(
       "booking", {}, {id: yourBooking},
       function(result){
@@ -450,10 +452,14 @@ tuta.renderFinalRoute = function(){
       }, function(error){
         tuta.util.alert("Booking error", error);
       });
+    } catch (ex) {
+      // This is an internet service exception handler
+    }
   }, 0.5, false);
 };
 
 tuta.driverBearing = function (driverID, callback){
+  try {
   application.service("driverService").invokeOperation(
     "user", {}, {id : driverID},
     function(result){
@@ -479,6 +485,9 @@ tuta.driverBearing = function (driverID, callback){
       tuta.util.alert("ERROR", error);
       callback("cabpin" + lastbrng + ".png");
     });
+   } catch (ex) {
+      // This is an internet service exception handler
+   }
 };
 
 
@@ -503,7 +512,7 @@ tuta.renderRouteAndDriver = function (booking){
 
   //Store the object in case of crash
   tuta.appstate.setState(appState);
-
+  try {
   application.service("driverService").invokeOperation(
     "user", {}, {id : driver},
     function(result) { 
@@ -521,10 +530,14 @@ tuta.renderRouteAndDriver = function (booking){
       //tuta.util.alert("Error " + error);
     }
   );
+  } catch (ex) {
+    // This is an internet service exception handler
+  }
 
 };
 
 tuta.fetchDriverInfo = function(driverID){
+  try {
   application.service("driverService").invokeOperation(
     "user", {}, {id: driverID}, 
     function(result){
@@ -552,6 +565,9 @@ tuta.fetchDriverInfo = function(driverID){
     }, 
     function(error){}  
   );
+  } catch (ex) {
+    // This is an internet service exception handler
+  }
 
 };
 
@@ -559,7 +575,8 @@ tuta.fetchDriverInfo = function(driverID){
 tuta.updateBookingHistoryRating = function(bookingID, rating, callback){
 
   var input = { id: bookingID, user : "customer", rating : rating.toString() };
-
+	
+  try {
   application.service("manageService").invokeOperation(
     "bookingHistoryUpdateRating", {}, input,
     function(result) {
@@ -569,6 +586,9 @@ tuta.updateBookingHistoryRating = function(bookingID, rating, callback){
       // the service returns 403 (Not Authorised) if credentials are wrong
     }
   );
+  } catch (ex) {
+    // This is an internet service exception handler
+  }
 
 };
 
@@ -676,6 +696,7 @@ tuta.trackDriver = function(driverID){
   //tuta.util.alert("Input 2", "Actual Input:\n" + JSON.stringify(input));
 
   //Query the server
+  try {
   application.service("driverService").invokeOperation(
     "user", {}, input,
     function(result) { 
@@ -754,6 +775,9 @@ tuta.trackDriver = function(driverID){
       //tuta.util.alert("Error " + error);
     }
   );
+  } catch (ex) {
+    // This is an internet service exception handler
+  }
 };
 
 
@@ -769,7 +793,7 @@ tuta.awaitDriverPickupConfirmation = function(){
 
   kony.timer.schedule("taxiAwaitTimer", function(){
 
-
+	try {
     application.service("driverService").invokeOperation(
       "booking", {}, {id : currentBooking},
       function(result) { 
@@ -816,6 +840,9 @@ tuta.awaitDriverPickupConfirmation = function(){
         //tuta.util.alert("error",error);
       }
     );
+    } catch (ex) {
+      // This is an internet service exception handler
+    }
 
 
   }, 3, true);
@@ -833,7 +860,7 @@ tuta.awaitDriverDropOffConfirmation = function(){
 
   kony.timer.schedule("tripCompleteAwaitTimer", function(){
 
-
+	try {
     application.service("driverService").invokeOperation(
       "booking", {}, inputBooking,
       function(result) { 
@@ -875,7 +902,9 @@ tuta.awaitDriverDropOffConfirmation = function(){
         //tuta.util.alert("error",error);
       }
     );
-
+	} catch (ex) {
+    // This is an internet service exception handler
+  }
 
   }, 3, true);
 
@@ -891,6 +920,7 @@ tuta.initCallback = function(error) {
     else
     {
       var input = null;
+      
       input = kony.store.getItem("user");
       if (input !== null){
         try{
@@ -974,9 +1004,8 @@ tuta.startWatchLocation = function(){
       watchID = null;
       tuta.startWatchLocation();
     }
-  }
-  catch(ex){
-    
+  } catch (ex) {
+    // This is an internet service exception handler
   }
 };
 
