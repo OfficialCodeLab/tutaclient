@@ -32,7 +32,12 @@
         "type": "string",
         "value": "40%"
     },
+    "android": {
+        "compressionLevel": 30
+    },
     "canUpdateUI": true,
+    "compressionLevel": 30,
+    "compressionlevel": 30,
     "containerWeight": 100,
     "containerweight": 100,
     "contentAlignment": 5,
@@ -47,6 +52,7 @@
     "id": "cmrTakePhoto",
     "info": null,
     "iphone": {
+        "compressionLevel": 30,
         "psp": {
             "nativeUserInterface": false
         }
@@ -74,6 +80,8 @@
     "parent": "flexScroll",
     "pf": "frmEditProfile",
     "render": true,
+    "scaleFactor": 30,
+    "scalefactor": 30,
     "skin": "sfba5520ec8a4b21b73a99502abfcd0a",
     "spaan": {
         "render": false
