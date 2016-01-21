@@ -27,12 +27,13 @@ tuta.forms.frmCreateAcc = function() {
 		frmCreateAcc.cmrTakePhoto.isVisible = true;
         frmCreateAcc.btnImportPicture.isVisible = true;
       }
-    }
+    };
     
     self.control("cmrTakePhoto").onCapture = function() {
       frmCreateAcc.imgUser.rawBytes = frmCreateAcc.cmrTakePhoto.rawBytes;
       frmCreateAcc.cmrTakePhoto.isVisible = false;
       frmCreateAcc.btnImportPicture.isVisible = false;
+      avatarBase64 = kont.convertToBase64(frmCreateAcc.imgUser.rawBytes);
     };
     
     self.control("btnImportPicture").onClick = function() {
@@ -43,6 +44,7 @@ tuta.forms.frmCreateAcc = function() {
                                                        querycontext);
         frmCreateAcc.cmrTakePhoto.isVisible = false;
         frmCreateAcc.btnImportPicture.isVisible = false;
+        avatarBase64 = kont.convertToBase64(frmCreateAcc.imgUser.rawBytes);
       }
       
       function onselectioncallback(rawbytes) {
@@ -60,7 +62,6 @@ tuta.forms.frmCreateAcc = function() {
 
       if(creatingAccount === false){
         creatingAccount = true;
-        avatarBase64 = kony.convertToBase64(frmCreateAcc.imgUser.rawBytes);
 
         var userEmail = (self.control("txtEmail").text).toLowerCase();
 
