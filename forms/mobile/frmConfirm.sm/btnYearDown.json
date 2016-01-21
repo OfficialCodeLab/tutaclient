@@ -22,7 +22,7 @@
         0,
         0
     ],
-    "_skin_": "s8246ec3a3794f63b1bb6e0afbf4bd58",
+    "_skin_": "sa9604b6af4e470eacc52ba50dfd6091",
     "_text_": "",
     "_top_": {
         "type": "string",
@@ -45,8 +45,8 @@
     "displayText": true,
     "displaytext": true,
     "enabled": false,
-    "focusSkin": "sea2fc009dd9469595631851c3339d71",
-    "focusskin": "sea2fc009dd9469595631851c3339d71",
+    "focusSkin": "sa919f3bb28c4e07b03727784aebac89",
+    "focusskin": "sa919f3bb28c4e07b03727784aebac89",
     "height": "40dp",
     "id": "btnYearDown",
     "info": null,
@@ -70,7 +70,7 @@
     "parent": "flexSetTime",
     "pf": "frmConfirm",
     "render": true,
-    "skin": "s8246ec3a3794f63b1bb6e0afbf4bd58",
+    "skin": "sa9604b6af4e470eacc52ba50dfd6091",
     "text": "",
     "top": "155dp",
     "wType": "Button",

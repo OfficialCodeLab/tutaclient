@@ -26,7 +26,7 @@
         0,
         0
     ],
-    "_skin_": "sc75a824e79c47e697cadb6820474ed1",
+    "_skin_": "s9614827f4ad44c0ba2cd2e0343cac6d",
     "_text_": "Cancel",
     "_width_": {
         "type": "string",
@@ -46,8 +46,8 @@
     "displayText": true,
     "displaytext": true,
     "enabled": false,
-    "focusSkin": "s6ee436e0c2b41f68d98e485ad7cbb80",
-    "focusskin": "s6ee436e0c2b41f68d98e485ad7cbb80",
+    "focusSkin": "s07066e9cde24d7581fdc192a5296659",
+    "focusskin": "s07066e9cde24d7581fdc192a5296659",
     "height": "65dp",
     "id": "btnCancel",
     "info": null,
@@ -71,7 +71,7 @@
     "parent": "flexMain",
     "pf": "frmHelp",
     "render": true,
-    "skin": "sc75a824e79c47e697cadb6820474ed1",
+    "skin": "s9614827f4ad44c0ba2cd2e0343cac6d",
     "text": "Cancel",
     "wType": "Button",
     "widgetAlignment": 5,

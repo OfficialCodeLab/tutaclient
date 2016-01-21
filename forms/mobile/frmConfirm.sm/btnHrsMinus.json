@@ -22,7 +22,7 @@
         0,
         0
     ],
-    "_skin_": "s8246ec3a3794f63b1bb6e0afbf4bd58",
+    "_skin_": "sd8df31711b74fe6af0f077ff1969109",
     "_text_": "",
     "_top_": {
         "type": "string",
@@ -45,8 +45,8 @@
     "displayText": true,
     "displaytext": true,
     "enabled": false,
-    "focusSkin": "sea2fc009dd9469595631851c3339d71",
-    "focusskin": "sea2fc009dd9469595631851c3339d71",
+    "focusSkin": "s0fa40e8b94f4242b6db4f11a25eb0d5",
+    "focusskin": "s0fa40e8b94f4242b6db4f11a25eb0d5",
     "height": "45dp",
     "id": "btnHrsMinus",
     "info": null,
@@ -70,7 +70,7 @@
     "parent": "flexSetTime",
     "pf": "frmConfirm",
     "render": true,
-    "skin": "s8246ec3a3794f63b1bb6e0afbf4bd58",
+    "skin": "sd8df31711b74fe6af0f077ff1969109",
     "text": "",
     "top": "305dp",
     "wType": "Button",

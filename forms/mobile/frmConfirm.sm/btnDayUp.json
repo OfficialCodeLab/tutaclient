@@ -22,7 +22,7 @@
         0,
         0
     ],
-    "_skin_": "s8246ec3a3794f63b1bb6e0afbf4bd58",
+    "_skin_": "s9576703f9ef400098498e7a7e969507",
     "_text_": "",
     "_top_": {
         "type": "string",
@@ -45,8 +45,8 @@
     "displayText": true,
     "displaytext": true,
     "enabled": false,
-    "focusSkin": "sea2fc009dd9469595631851c3339d71",
-    "focusskin": "sea2fc009dd9469595631851c3339d71",
+    "focusSkin": "s7281a42eacb414d96973dc9a5bfd030",
+    "focusskin": "s7281a42eacb414d96973dc9a5bfd030",
     "height": "40dp",
     "id": "btnDayUp",
     "info": null,
@@ -70,7 +70,7 @@
     "parent": "flexSetTime",
     "pf": "frmConfirm",
     "render": true,
-    "skin": "s8246ec3a3794f63b1bb6e0afbf4bd58",
+    "skin": "s9576703f9ef400098498e7a7e969507",
     "text": "",
     "top": "55dp",
     "wType": "Button",

@@ -22,7 +22,7 @@
         0,
         0
     ],
-    "_skin_": "s8246ec3a3794f63b1bb6e0afbf4bd58",
+    "_skin_": "s6bcfc13d03b427f85fc16ce2f714170",
     "_text_": "",
     "_top_": {
         "type": "string",
@@ -45,8 +45,8 @@
     "displayText": true,
     "displaytext": true,
     "enabled": false,
-    "focusSkin": "sea2fc009dd9469595631851c3339d71",
-    "focusskin": "sea2fc009dd9469595631851c3339d71",
+    "focusSkin": "se79a723c7d94037b38aee10235d9c12",
+    "focusskin": "se79a723c7d94037b38aee10235d9c12",
     "height": "45dp",
     "id": "btnAmPmPlus",
     "info": null,
@@ -70,7 +70,7 @@
     "parent": "flexSetTime",
     "pf": "frmConfirm",
     "render": true,
-    "skin": "s8246ec3a3794f63b1bb6e0afbf4bd58",
+    "skin": "s6bcfc13d03b427f85fc16ce2f714170",
     "text": "",
     "top": "215dp",
     "wType": "Button",

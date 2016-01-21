@@ -21,7 +21,7 @@
         0,
         0
     ],
-    "_skin_": "s86a5fc29c2147c0aeb37c7cfd109cb0",
+    "_skin_": "se5721d130b74fc4a90298808c120a8b",
     "_text_": ">>  <<",
     "_top_": {
         "type": "string",
@@ -40,8 +40,8 @@
     "displayText": true,
     "displaytext": true,
     "enabled": false,
-    "focusSkin": "sd05b2785b254e69b689cd8b8f8fae1a",
-    "focusskin": "sd05b2785b254e69b689cd8b8f8fae1a",
+    "focusSkin": "sedac6df4e484098b9e2a58d9ad823dc",
+    "focusskin": "sedac6df4e484098b9e2a58d9ad823dc",
     "height": "30%",
     "id": "btnPickUp",
     "info": null,
@@ -67,7 +67,7 @@
     "parent": "CopyFlexContainer0b0fefa583dbc42",
     "pf": "frmConfirm",
     "render": true,
-    "skin": "s86a5fc29c2147c0aeb37c7cfd109cb0",
+    "skin": "se5721d130b74fc4a90298808c120a8b",
     "text": ">>  <<",
     "top": "0dp",
     "wType": "Button",

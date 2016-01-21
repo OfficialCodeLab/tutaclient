@@ -22,7 +22,7 @@
         0,
         0
     ],
-    "_skin_": "sebc9829f55b4fde9e63fdc9a2291d05",
+    "_skin_": "sb275f2b66c3496aa75a177f19298b69",
     "_text_": "",
     "_top_": {
         "type": "string",
@@ -41,8 +41,8 @@
     "displayText": true,
     "displaytext": true,
     "enabled": false,
-    "focusSkin": "sebc9829f55b4fde9e63fdc9a2291d05",
-    "focusskin": "sebc9829f55b4fde9e63fdc9a2291d05",
+    "focusSkin": "s1c5f92906a145bfba1437734fdb55c9",
+    "focusskin": "s1c5f92906a145bfba1437734fdb55c9",
     "height": "100%",
     "id": "btnPhone",
     "info": null,
@@ -66,7 +66,7 @@
     "parent": "flexPhone",
     "pf": "frmMap",
     "render": true,
-    "skin": "sebc9829f55b4fde9e63fdc9a2291d05",
+    "skin": "sb275f2b66c3496aa75a177f19298b69",
     "text": "",
     "top": "0dp",
     "wType": "Button",

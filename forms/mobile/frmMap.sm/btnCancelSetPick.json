@@ -22,7 +22,7 @@
         "type": "number",
         "value": "0"
     },
-    "_skin_": "sa32cc3f8b4e40238a1d13061b36826a",
+    "_skin_": "sc37be355c554dc1a09ad6ec959764a0",
     "_text_": "",
     "_top_": {
         "type": "string",
@@ -40,8 +40,8 @@
     "displayText": true,
     "displaytext": true,
     "enabled": false,
-    "focusSkin": "sa32cc3f8b4e40238a1d13061b36826a",
-    "focusskin": "sa32cc3f8b4e40238a1d13061b36826a",
+    "focusSkin": "se3b2fe48de14e44829e596885b21ed2",
+    "focusskin": "se3b2fe48de14e44829e596885b21ed2",
     "height": "100%",
     "id": "btnCancelSetPick",
     "info": null,
@@ -65,7 +65,7 @@
     "pf": "frmMap",
     "render": true,
     "right": 0,
-    "skin": "sa32cc3f8b4e40238a1d13061b36826a",
+    "skin": "sc37be355c554dc1a09ad6ec959764a0",
     "text": "",
     "top": "0dp",
     "wType": "Button",
