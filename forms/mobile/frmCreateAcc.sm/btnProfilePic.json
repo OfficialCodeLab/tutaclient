@@ -17,7 +17,7 @@
         0,
         0
     ],
-    "_skin_": "sa23fe82fe814c97857ca8bd55521218",
+    "_skin_": "s1a5bc3e9655455fa2f6a22d08e8bfd4",
     "_text_": "",
     "_top_": {
         "type": "string",
@@ -41,8 +41,8 @@
     "displayText": true,
     "displaytext": true,
     "enabled": false,
-    "focusSkin": "s2ecc7c2d9c045b0a0f4474e623d9682",
-    "focusskin": "s2ecc7c2d9c045b0a0f4474e623d9682",
+    "focusSkin": "sd685ac4046e452494485c60382296a6",
+    "focusskin": "sd685ac4046e452494485c60382296a6",
     "height": "70dp",
     "id": "btnProfilePic",
     "info": null,
@@ -65,7 +65,7 @@
     "parent": "flexMain",
     "pf": "frmCreateAcc",
     "render": true,
-    "skin": "sa23fe82fe814c97857ca8bd55521218",
+    "skin": "s1a5bc3e9655455fa2f6a22d08e8bfd4",
     "text": "",
     "top": "5dp",
     "wType": "Button",

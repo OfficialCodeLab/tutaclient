@@ -25,7 +25,7 @@
         0,
         0
     ],
-    "_skin_": "s899966def21422db426f3ccae6eb360",
+    "_skin_": "s08dad176bf14ea88920efdc1953bd55",
     "_text_": "Submit",
     "_width_": {
         "type": "string",
@@ -41,8 +41,8 @@
     "displayText": true,
     "displaytext": true,
     "enabled": false,
-    "focusSkin": "sa6525e3ad474e5da3b69be118d8a017",
-    "focusskin": "sa6525e3ad474e5da3b69be118d8a017",
+    "focusSkin": "s15acff8fc0847f38a616fa440255f1d",
+    "focusskin": "s15acff8fc0847f38a616fa440255f1d",
     "height": "60dp",
     "id": "btnSubmitRating",
     "info": null,
@@ -66,7 +66,7 @@
     "parent": "CopyflexCancelHail04775c97c967944",
     "pf": "frmMap",
     "render": true,
-    "skin": "s899966def21422db426f3ccae6eb360",
+    "skin": "s08dad176bf14ea88920efdc1953bd55",
     "text": "Submit",
     "wType": "Button",
     "widgetAlignment": 5,

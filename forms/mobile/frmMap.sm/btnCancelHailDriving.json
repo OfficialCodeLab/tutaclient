@@ -25,7 +25,7 @@
         0,
         0
     ],
-    "_skin_": "sb4f4a194f6c4a01a917a2ae2ec272d3",
+    "_skin_": "sf27f304775d4a5cb0e6d4e9b656af99",
     "_text_": "",
     "_width_": {
         "type": "string",
@@ -41,8 +41,8 @@
     "displayText": true,
     "displaytext": true,
     "enabled": false,
-    "focusSkin": "s4fb104559f14ef2a7d63e87ea15eb13",
-    "focusskin": "s4fb104559f14ef2a7d63e87ea15eb13",
+    "focusSkin": "s7f8a441d55048d9a6f523bb47ab4f0d",
+    "focusskin": "s7f8a441d55048d9a6f523bb47ab4f0d",
     "height": "70dp",
     "id": "btnCancelHailDriving",
     "info": null,
@@ -66,7 +66,7 @@
     "parent": "flexAll",
     "pf": "frmMap",
     "render": true,
-    "skin": "sb4f4a194f6c4a01a917a2ae2ec272d3",
+    "skin": "sf27f304775d4a5cb0e6d4e9b656af99",
     "text": "",
     "wType": "Button",
     "widgetAlignment": 5,

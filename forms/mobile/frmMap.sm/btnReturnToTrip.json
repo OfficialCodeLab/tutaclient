@@ -21,7 +21,7 @@
         0,
         0
     ],
-    "_skin_": "sdd3408811f5429e9181112a2b9c0386",
+    "_skin_": "s06ab14f06c44f5f8d1f6f32ca9a9054",
     "_text_": "",
     "_top_": {
         "type": "string",
@@ -41,8 +41,8 @@
     "displayText": true,
     "displaytext": true,
     "enabled": false,
-    "focusSkin": "s876bd6f8a4847febd4ecc29dbefa79a",
-    "focusskin": "s876bd6f8a4847febd4ecc29dbefa79a",
+    "focusSkin": "sd4329e02a164f0da5ec13ff344cd5ee",
+    "focusskin": "sd4329e02a164f0da5ec13ff344cd5ee",
     "height": "100%",
     "id": "btnReturnToTrip",
     "info": null,
@@ -66,7 +66,7 @@
     "parent": "flexBottomBar",
     "pf": "frmMap",
     "render": true,
-    "skin": "sdd3408811f5429e9181112a2b9c0386",
+    "skin": "s06ab14f06c44f5f8d1f6f32ca9a9054",
     "text": "",
     "top": "0dp",
     "wType": "Button",

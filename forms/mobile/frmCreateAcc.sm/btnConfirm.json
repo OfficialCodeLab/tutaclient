@@ -21,7 +21,7 @@
         0,
         0
     ],
-    "_skin_": "sa23fe82fe814c97857ca8bd55521218",
+    "_skin_": "sb7176daece746feaa30d727bc7a2f09",
     "_text_": "Confirm",
     "_top_": {
         "type": "string",
@@ -45,8 +45,8 @@
     "displayText": true,
     "displaytext": true,
     "enabled": false,
-    "focusSkin": "s2ecc7c2d9c045b0a0f4474e623d9682",
-    "focusskin": "s2ecc7c2d9c045b0a0f4474e623d9682",
+    "focusSkin": "sb000b71e564467d88aff6462a747c90",
+    "focusskin": "sb000b71e564467d88aff6462a747c90",
     "height": "50dp",
     "id": "btnConfirm",
     "info": null,
@@ -70,7 +70,7 @@
     "parent": "flexMain",
     "pf": "frmCreateAcc",
     "render": true,
-    "skin": "sa23fe82fe814c97857ca8bd55521218",
+    "skin": "sb7176daece746feaa30d727bc7a2f09",
     "text": "Confirm",
     "top": "420dp",
     "wType": "Button",

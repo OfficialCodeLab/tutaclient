@@ -22,7 +22,7 @@
         "type": "number",
         "value": "0"
     },
-    "_skin_": "sa32cc3f8b4e40238a1d13061b36826a",
+    "_skin_": "scb135896a8e41d38abee82a6347e21d",
     "_text_": "",
     "_top_": {
         "type": "string",
@@ -40,8 +40,8 @@
     "displayText": true,
     "displaytext": true,
     "enabled": false,
-    "focusSkin": "sa32cc3f8b4e40238a1d13061b36826a",
-    "focusskin": "sa32cc3f8b4e40238a1d13061b36826a",
+    "focusSkin": "s49f407623c146ff9182ed95850aced4",
+    "focusskin": "s49f407623c146ff9182ed95850aced4",
     "height": "100%",
     "id": "btnCancelSetDest",
     "info": null,
@@ -65,7 +65,7 @@
     "pf": "frmMap",
     "render": true,
     "right": 0,
-    "skin": "sa32cc3f8b4e40238a1d13061b36826a",
+    "skin": "scb135896a8e41d38abee82a6347e21d",
     "text": "",
     "top": "0dp",
     "wType": "Button",

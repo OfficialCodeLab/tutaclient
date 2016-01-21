@@ -21,7 +21,7 @@
         0,
         0
     ],
-    "_skin_": "sdd3408811f5429e9181112a2b9c0386",
+    "_skin_": "s8f181f3016f45c595d5f3b7832b397a",
     "_text_": "",
     "_top_": {
         "type": "string",
@@ -41,8 +41,8 @@
     "displayText": true,
     "displaytext": true,
     "enabled": false,
-    "focusSkin": "s876bd6f8a4847febd4ecc29dbefa79a",
-    "focusskin": "s876bd6f8a4847febd4ecc29dbefa79a",
+    "focusSkin": "sea63845020e46bb8e30c71f99fea54e",
+    "focusskin": "sea63845020e46bb8e30c71f99fea54e",
     "height": "100%",
     "id": "btnCancelHailNow",
     "info": null,
@@ -66,7 +66,7 @@
     "parent": "flexBottomBar",
     "pf": "frmMap",
     "render": true,
-    "skin": "sdd3408811f5429e9181112a2b9c0386",
+    "skin": "s8f181f3016f45c595d5f3b7832b397a",
     "text": "",
     "top": "0dp",
     "wType": "Button",

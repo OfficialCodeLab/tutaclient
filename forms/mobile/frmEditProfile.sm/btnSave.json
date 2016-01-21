@@ -26,7 +26,7 @@
         "type": "string",
         "value": "5%"
     },
-    "_skin_": "s13c2c7c601f48f8b6e4f3082ffd405e",
+    "_skin_": "s73f66f3040a438daad43d1097b49748",
     "_text_": "Save",
     "_top_": {
         "type": "string",
@@ -45,8 +45,8 @@
     "displayText": true,
     "displaytext": true,
     "enabled": false,
-    "focusSkin": "s39a2d3738b84fa8abad338d12e24cc7",
-    "focusskin": "s39a2d3738b84fa8abad338d12e24cc7",
+    "focusSkin": "s98c98448af54de5b4bb7e0c28791c83",
+    "focusskin": "s98c98448af54de5b4bb7e0c28791c83",
     "height": "50dp",
     "id": "btnSave",
     "info": null,
@@ -78,7 +78,7 @@
     "right": "5%",
     "showProgressIndicator": false,
     "showprogressindicator": false,
-    "skin": "s13c2c7c601f48f8b6e4f3082ffd405e",
+    "skin": "s73f66f3040a438daad43d1097b49748",
     "text": "Save",
     "top": "90%",
     "wType": "Button",

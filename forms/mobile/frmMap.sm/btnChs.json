@@ -22,7 +22,7 @@
         0,
         0
     ],
-    "_skin_": "sebc9829f55b4fde9e63fdc9a2291d05",
+    "_skin_": "sa08991d7c24439f8c4d2d3e02594ae4",
     "_text_": "",
     "_top_": {
         "type": "string",
@@ -40,8 +40,8 @@
     "displayText": true,
     "displaytext": true,
     "enabled": false,
-    "focusSkin": "s9bc2d47b2cd45dcb063b29519c43bf8",
-    "focusskin": "s9bc2d47b2cd45dcb063b29519c43bf8",
+    "focusSkin": "s004c3156ac14cf580e2f69f3bae1710",
+    "focusskin": "s004c3156ac14cf580e2f69f3bae1710",
     "height": "8%",
     "id": "btnChs",
     "info": null,
@@ -65,7 +65,7 @@
     "parent": "flexAll",
     "pf": "frmMap",
     "render": true,
-    "skin": "sebc9829f55b4fde9e63fdc9a2291d05",
+    "skin": "sa08991d7c24439f8c4d2d3e02594ae4",
     "text": "",
     "top": "0dp",
     "wType": "Button",

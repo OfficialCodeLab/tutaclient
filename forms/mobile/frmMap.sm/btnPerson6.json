@@ -18,7 +18,7 @@
         0,
         0
     ],
-    "_skin_": "sa32cc3f8b4e40238a1d13061b36826a",
+    "_skin_": "s7b013db10d847b8865491a472e97350",
     "_text_": "",
     "_top_": {
         "type": "string",
@@ -65,7 +65,7 @@
     "parent": "flexNoOfPeople",
     "pf": "frmMap",
     "render": true,
-    "skin": "sa32cc3f8b4e40238a1d13061b36826a",
+    "skin": "s7b013db10d847b8865491a472e97350",
     "text": "",
     "top": "8dp",
     "wType": "Button",

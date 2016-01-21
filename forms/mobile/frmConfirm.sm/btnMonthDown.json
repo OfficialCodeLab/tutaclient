@@ -22,7 +22,7 @@
         0,
         0
     ],
-    "_skin_": "s8246ec3a3794f63b1bb6e0afbf4bd58",
+    "_skin_": "s1789e2618cf4db992d4658485befdc2",
     "_text_": "",
     "_top_": {
         "type": "string",
@@ -45,8 +45,8 @@
     "displayText": true,
     "displaytext": true,
     "enabled": false,
-    "focusSkin": "sea2fc009dd9469595631851c3339d71",
-    "focusskin": "sea2fc009dd9469595631851c3339d71",
+    "focusSkin": "s17aaad5fa104e0180f78fef4338311f",
+    "focusskin": "s17aaad5fa104e0180f78fef4338311f",
     "height": "40dp",
     "id": "btnMonthDown",
     "info": null,
@@ -70,7 +70,7 @@
     "parent": "flexSetTime",
     "pf": "frmConfirm",
     "render": true,
-    "skin": "s8246ec3a3794f63b1bb6e0afbf4bd58",
+    "skin": "s1789e2618cf4db992d4658485befdc2",
     "text": "",
     "top": "155dp",
     "wType": "Button",
