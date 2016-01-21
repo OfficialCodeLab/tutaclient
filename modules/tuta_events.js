@@ -281,18 +281,30 @@ tuta.events.calculateWaitTime = function(drivers, position, callback){
   var count = 0;
   var total = 0;
   for(var i = 0; i < drivers.length; i++){
-    var destination = [{
-      lat: drivers[i].location.lat,
-      lon: drivers[i].location.lng
-    }];
-    
-   	tuta.location.distanceMatrix(origin, destination, function(response, id){
-      //tuta.util.alert(id, JSON.stringify(response)); 
-      total += response[0].elements[0].duration.value;
+    if(drivers[i].distance < 100000){
+      var destination = [{
+        lat: drivers[i].location.lat,
+        lon: drivers[i].location.lng
+      }];
+
+      tuta.location.distanceMatrix(origin, destination, function(response, id){
+        //tuta.util.alert(id, JSON.stringify(response)); 
+        var dist = response[0].elements[0].duration.value;
+        if(dist < 3600){
+          total += dist;
+        }
+
+        if(count++ === drivers.length-1){
+          callback(total/count);
+        }
+
+      }, drivers[i].id);
+    }
+    else{
       if(count++ === drivers.length-1){
-        callback(total/count);
-      }
-    }, drivers[i].id);
+          callback(total/count);
+        }
+    }
   }  
 };
 
