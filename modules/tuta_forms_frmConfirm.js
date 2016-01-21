@@ -17,13 +17,7 @@ tuta.forms.frmConfirm = function() {
   tuta.forms.frmConfirm.onPreShow = function(form) {
     var self = this;
     
-    /*==============================================================
-    
-    POPULATE SET DATE TIME FIELDS
-    
-    ===============================================================*/
-    
-    showLater(); // This event created in tuta_events.js
+    //showLater(); // This event created in tuta_events.js
 
     /*==============================================================
           __  __      _   _               _     
