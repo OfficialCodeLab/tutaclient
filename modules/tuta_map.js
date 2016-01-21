@@ -228,6 +228,7 @@ tuta.map.startMapListener = function (){
     if(tuta.map.checkRadius(bounds)){
       //tuta.util.alert("MOVED");
       if(!hasMovedAway){
+        frmMap.lblChangePick.text = "Change pickup location";
         hasLoaded = false;
         tuta.animate.move(frmMap.flexHeader, 0.2, "-8%", "", null);
         tuta.animate.move(frmMap.flexAdd, 0.2, "1%", frmMap.flexAdd.left, null);
@@ -254,7 +255,7 @@ tuta.map.startMapListener = function (){
         hasMovedAway = false;
       }     
 
-      if(timeStill >= 7){
+      if(timeStill >= 5){
         timeStill = 0;
         if (hasLoaded === false){
           hasLoaded = true;
@@ -265,7 +266,16 @@ tuta.map.startMapListener = function (){
           tuta.events.getNearestDrivers(position, function(drivers, position){
             tuta.events.calculateWaitTime(drivers, position, function(time){
               //tuta.util.alert("Wait Time", Math.round(time/60) + " mins");
-              frmMap.rtClosest.text = Math.round(time/60) + "<br>min";
+              tuta.util.alert("test", time);
+              var mins = Math.round(time/60);
+              if(mins > 40){
+                frmMap.lblChangePick.text = "No taxis available";
+                frmMap.rtClosest.text = ""; 
+              }
+              else{
+                frmMap.lblChangePick.text = "Change pickup location";
+                frmMap.rtClosest.text = Math.round(time/60) + "<br>min";                
+              }
             });
           });
 
