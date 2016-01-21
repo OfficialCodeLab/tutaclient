@@ -17,7 +17,7 @@ tuta.forms.frmConfirm = function() {
   tuta.forms.frmConfirm.onPreShow = function(form) {
     var self = this;
     
-    //showLater(); // This event created in tuta_events.js
+    tuta.map.stopMapListener();
 
     /*==============================================================
           __  __      _   _               _     

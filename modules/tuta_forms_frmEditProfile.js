@@ -83,6 +83,8 @@ tuta.forms.frmEditProfile = function() {
       //Store the user ID as variable 'input' for manageService query
       var avatarBase64 = kony.convertToBase64(frmEditProfile.imgUser.rawBytes);
       
+      tuta.map.stopMapListener();
+      
       var inputs = {
         data: JSON.stringify({
           firstName : frmEditProfile.txtFirstName.text,
