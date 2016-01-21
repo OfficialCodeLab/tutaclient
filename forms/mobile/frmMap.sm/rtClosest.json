@@ -23,7 +23,7 @@
         0
     ],
     "_skin_": "s9b5367575654c5c95afe6f62b0dabc8",
-    "_text_": "5<br>min",
+    "_text_": "",
     "_top_": {
         "type": "string",
         "value": "9dp"
@@ -73,7 +73,7 @@
     "pf": "frmMap",
     "render": true,
     "skin": "s9b5367575654c5c95afe6f62b0dabc8",
-    "text": "5<br>min",
+    "text": "",
     "toolTip": "",
     "top": "9dp",
     "wType": "RichText",

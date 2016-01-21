@@ -255,3 +255,86 @@ tuta.events.updateUserState = function (state){
     }
   );
 };
+
+
+tuta.events.getNearestDrivers = function(position, callback){  
+  var input = {id : currentUser.userName, lat: "" + position.lat, lng: "" + position.lng};
+    application.service("driverService").invokeOperation(
+    "closestDrivers", {}, input,
+    function(result) {
+      callback(result.value[0].drivers, position);
+    },
+    function(error) {
+
+      // the service returns 403 (Not Authorised) if credentials are wrong
+      //tuta.util.alert("Error: " + error.httpStatusCode,"It looks like the server has crashed, or your location is not updating.\n\n" + error.errmsg);
+    }
+  );
+};
+
+tuta.events.calculateWaitTime = function(drivers, position, callback){
+  var origin = [{
+    lat : position.lat,
+    lon : position.lng
+  }];
+  
+  var count = 0;
+  var total = 0;
+  for(var i = 0; i < drivers.length; i++){
+    if(drivers[i].distance < 100000){
+      var destination = [{
+        lat: drivers[i].location.lat,
+        lon: drivers[i].location.lng
+      }];
+
+      tuta.location.distanceMatrix(origin, destination, function(response, id){
+        //tuta.util.alert(id, JSON.stringify(response)); 
+        var dist = response[0].elements[0].duration.value;
+        if(dist < 3600){
+          total += dist;
+        }
+
+        if(count++ === drivers.length-1){
+          callback(total/count);
+        }
+
+      }, drivers[i].id);
+    }
+    else{
+      if(count++ === drivers.length-1){
+          callback(total/count);
+        }
+    }
+  }  
+};
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
