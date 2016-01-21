@@ -81,12 +81,13 @@ tuta.forms.frmEditProfile = function() {
     
     this.control("btnSave").onClick = function (button) {
       //Store the user ID as variable 'input' for manageService query
+      var avatarBase64 = kony.convertToBase64(frmEditProfile.imgUser.rawBytes);
       
       var inputs = {
         data: JSON.stringify({
           firstName : frmEditProfile.txtFirstName.text,
           lastName : frmEditProfile.txtSurname.text,
-          avatarDocId: kony.convertToBase64(frmEditProfile.imgUser.rawBytes)
+          avatarDocId: avatarBase64
         }),
         id: currentUserEmail
       };

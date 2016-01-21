@@ -201,7 +201,7 @@ tuta.forms.frmCreateAcc = function() {
       }
 
 
-    }
+    };
     tuta.map.stopMapListener();
   };
 
