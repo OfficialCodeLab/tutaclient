@@ -1,18 +1,5 @@
 {
-  "android": {
-    "background_color": "ffffff00",
-    "bg_type": "one",
-    "isForked": true,
-    "text_shadow": {
-      "br": 0,
-      "color": "000000ff",
-      "nm": 0,
-      "x": 0,
-      "y": 0
-    },
-    "wType": "Button"
-  },
-  "background_color": "d62c3aff",
+  "background_color": "d62c3a00",
   "bg_type": "one",
   "border_color": "ffffffff",
   "border_style": "plain",
@@ -57,27 +44,6 @@
   "font_style": "normal",
   "font_weight": "normal",
   "ipad": {
-    "background_color": "ffffff00",
-    "bg_type": "one",
-    "isForked": true,
-    "shadow": {
-      "br": 0,
-      "color": "000000ff",
-      "inner": false,
-      "nm": 0,
-      "x": 0,
-      "y": 0
-    },
-    "text_shadow": {
-      "br": 0,
-      "color": "000000ff",
-      "nm": 0,
-      "x": 0,
-      "y": 0
-    },
-    "wType": "Button"
-  },
-  "iphone": {
     "background_color": "ffffff00",
     "bg_type": "one",
     "isForked": true,

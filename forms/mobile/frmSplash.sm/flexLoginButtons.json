@@ -7,7 +7,7 @@
     },
     "_left_": {
         "type": "string",
-        "value": "100%"
+        "value": "100.00%"
     },
     "_margin_": [
         0,
@@ -58,7 +58,7 @@
     "kuid": "ec75b66fd86144008972c9c6e6067d2f",
     "layoutType": 2,
     "layouttype": 2,
-    "left": "100%",
+    "left": "100.00%",
     "margin": [
         0,
         0,
