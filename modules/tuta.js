@@ -203,7 +203,6 @@ function updateMap() {
     if(client_state === 0) {
       for (var i = 0; i < driversNear.length; i++){
         var brng = tuta.driverBearingStored(driversNear[i].location.bearing);
-        //tuta.util.alert(brng);
         locationData.push(
           {
             lat: "" + driversNear[i].location.lat + "", 
@@ -240,6 +239,7 @@ tuta.resetMap = function (){
   frmMap.mapMain.clear();
   initialLoad = true;
   trackingZoom = 0;
+  client_state = 0;
   tripOnRoute = false;
   onJourney = 0;
   try{

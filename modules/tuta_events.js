@@ -296,7 +296,7 @@ tuta.events.calculateWaitTime = function(drivers, position, callback){
         }
 
         if(count++ === drivers.length-1){
-          tuta.events.sortDrivers();
+         // tuta.events.sortDrivers();
           callback(total/count);
         }
 
@@ -304,7 +304,7 @@ tuta.events.calculateWaitTime = function(drivers, position, callback){
     }
     else{
       if(count++ === drivers.length-1){
-        tuta.events.sortDrivers();
+        //tuta.events.sortDrivers();
         callback(total/count);
       }
     }

@@ -16,7 +16,6 @@ tuta.forms.frmConfirm = function() {
   //Form Pre-Show Functions
   tuta.forms.frmConfirm.onPreShow = function(form) {
     var self = this;
-    
     tuta.map.stopMapListener();
 
     /*==============================================================
@@ -74,6 +73,7 @@ tuta.forms.frmConfirm = function() {
                 //Store the current booking
                 //APPHOOK 0 
 
+                client_state = 1;
                 tuta.forms.frmMap.show();
                 kony.timer.schedule("awaitConfirm", function(){tuta.awaitConfirm(bookingID);}, 1, false);
                 
@@ -128,6 +128,7 @@ tuta.forms.frmConfirm = function() {
               "book", {}, inputLater,
               function(result) {
                 bookingID = result.value[0].id;
+                client_state = 1;
                 tuta.forms.frmMap.show();
                 kony.timer.schedule("awaitConfirm", function(){tuta.util.alert("Success", "Booking has been made. Please await confirmation.");}, 1, false);
                 hailingTaxi = false;

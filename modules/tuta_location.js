@@ -72,6 +72,12 @@ tuta.location.loadPositionInit = function(){
             tuta.forms.frmMap.show();
             updateMap();
           }, 0.2, false);
+          
+          try{
+            kony.timer.cancel("startwatch");
+             } catch(ex){
+               
+             }
 
           kony.timer.schedule("startwatch", function(){
             newbounds = null;
@@ -83,6 +89,7 @@ tuta.location.loadPositionInit = function(){
           tuta.location.loadPositionInit();
         }
       }catch(ex){
+            tuta.util.alert("Error", ex);
         
       }
 		
