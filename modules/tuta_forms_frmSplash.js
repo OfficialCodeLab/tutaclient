@@ -88,6 +88,10 @@ tuta.forms.frmSplash = function() {
     this.control("btnSignUp").onClick = function(button){
       tuta.forms.frmCreateAcc.show();
     };
+    
+    this.control("btnSignUp2").onClick = function(button){
+      tuta.forms.frmCreateAcc.show();
+    };
     tuta.map.stopMapListener();
 
   };
