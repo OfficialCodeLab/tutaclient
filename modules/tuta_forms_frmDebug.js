@@ -122,6 +122,7 @@ tuta.forms.frmDebug = function() {
     };
     
     this.control("btnTickPress8").onClick = function(button){
+      
       var position = { 
         	lat: currentPos.geometry.location.lat,
   			lng: currentPos.geometry.location.lng
@@ -132,6 +133,7 @@ tuta.forms.frmDebug = function() {
         });
       });
     };
+    
     
     
     tuta.map.stopMapListener();

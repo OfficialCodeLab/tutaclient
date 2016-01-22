@@ -1,6 +1,6 @@
 
 if (typeof(tuta) === "undefined") {
-	tuta = {};
+  tuta = {};
 }
 
 tuta.events = {};
@@ -23,8 +23,8 @@ function showNow(){
 function showLater(){
   // Get date to populate fields
   if(frmConfirm.lblDay.text === "01" &&
-	 frmConfirm.lblMonth.text === "Jan" &&
-	 frmConfirm.lblYear.text === "2015" &&
+     frmConfirm.lblMonth.text === "Jan" &&
+     frmConfirm.lblYear.text === "2015" &&
      frmConfirm.txtTimeHrs.text === "5" &&
      frmConfirm.txtTimeMins.text === "30" &&
      frmConfirm.lblAmPm.text === "PM") {
@@ -130,8 +130,8 @@ tuta.events.loadTripHistory = function(callback){
 };
 
 tuta.events.logIssue = function (){
-  
-  
+
+
   var input = {
     userId : currentUser.userName,
     providerId : GLOBAL_PROVIDER_EMAIL,
@@ -143,29 +143,29 @@ tuta.events.logIssue = function (){
     date : (new Date()).getTime(),
     status : "Pending"
   };
-  
+
   var data = { data : JSON.stringify(input) };
-  
+
   //tuta.util.alert("TEST", (new Date()).getTime());
-  
-  
-  
+
+
+
   application.service("manageService").invokeOperation(
-  "logIssueAdd", {}, data,
-  function(success){
-    tuta.util.alert("Issue Logged!", "Please check your emails and keep this id as reference : " + success.value[0].id);
-    tuta.forms.frmMap.show();
-  },function(error){
-    tuta.util.alert("Error", error);
-    
-  });
-  
+    "logIssueAdd", {}, data,
+    function(success){
+      tuta.util.alert("Issue Logged!", "Please check your emails and keep this id as reference : " + success.value[0].id);
+      tuta.forms.frmMap.show();
+    },function(error){
+      tuta.util.alert("Error", error);
+
+    });
+
 };
 
 
 tuta.events.directionsMaps = function (address){
   kony.application.openURL("http://maps.google.com/maps?f=d&daddr=" + address +
-                             "&sspn=0.2,0.1&nav=1");
+                           "&sspn=0.2,0.1&nav=1");
 };
 
 
@@ -177,11 +177,11 @@ tuta.events.dateString = function(epoch){
   if (hours < 10){
     hours = "0" + hours;    
   }
-  
+
   if (mins < 10){
     mins = "0" + mins;    
   }
-  
+
   return hours + ":" + mins;
 };
 
@@ -196,19 +196,19 @@ tuta.events.dateStringLong = function(epoch){
   if (hours < 10){
     hours = "0" + hours;    
   }
-  
+
   if (mins < 10){
     mins = "0" + mins;    
   }
-  
+
   if (day < 10){
     day = "0" + day;    
   }
-  
+
   if (month < 10){
     month = "0" + month;    
   }
-  
+
   return day + "/" + month + "/" + year + "   " + hours + ":" + mins;
 };
 
@@ -259,7 +259,7 @@ tuta.events.updateUserState = function (state){
 
 tuta.events.getNearestDrivers = function(position, callback){  
   var input = {id : currentUser.userName, lat: "" + position.lat, lng: "" + position.lng};
-    application.service("driverService").invokeOperation(
+  application.service("driverService").invokeOperation(
     "closestDrivers", {}, input,
     function(result) {
       callback(result.value[0].drivers, position);
@@ -277,7 +277,7 @@ tuta.events.calculateWaitTime = function(drivers, position, callback){
     lat : position.lat,
     lon : position.lng
   }];
-  
+
   var count = 0;
   var total = 0;
   for(var i = 0; i < drivers.length; i++){
@@ -292,9 +292,11 @@ tuta.events.calculateWaitTime = function(drivers, position, callback){
         var dist = response[0].elements[0].duration.value;
         if(dist < 3600){
           total += dist;
+          tuta.events.pushDriver(drivers[tuta.util.arrayObjectIndexOf(drivers, id, "id")]);
         }
 
         if(count++ === drivers.length-1){
+          //tuta.events.sortDrivers();
           callback(total/count);
         }
 
@@ -302,15 +304,34 @@ tuta.events.calculateWaitTime = function(drivers, position, callback){
     }
     else{
       if(count++ === drivers.length-1){
-          callback(total/count);
-        }
+        //tuta.events.sortDrivers();
+        callback(total/count);
+      }
     }
   }  
 };
 
 
+tuta.events.pushDriver = function(driver){
+  //tuta.util.alert("TEST", JSON.stringify(driver));
+  var position = tuta.util.arrayObjectIndexOf(driversNear, driver.id, "id");
+  if(position === -1){
+    driversNear.push(driver);
+  }
+  else{
+    driversNear[position] = driver;
+  }
+};
 
 
+tuta.events.sortDrivers = function(){
+  var driversSorted = tuta.util.quickSortObj(driversNear, "distance");
+  if(driversSorted.length >= 5){
+    driversNear = driversSorted.slice(0, 5);    
+  } else {
+    driversNear = driversSorted;
+  }
+};
 
 
 

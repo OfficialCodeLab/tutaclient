@@ -6,7 +6,7 @@
     1. Hailing a driver
     2. Driver on route (waiting for driver, centers on self)
     3. In transit (in car with driver)
-    
+
 */
 
 
@@ -28,6 +28,7 @@ var tripInTransitResume = false;
 var tripInTransitResume2 = false;
 
 //Location variables
+var driversNear = [];
 var destination = null;
 var pickupPoint = null;
 var nearbyDrivers = [];
@@ -199,6 +200,21 @@ function updateMap() {
          image : currentPin});
     }
 
+    if(client_state === 0) {
+      for (var i = 0; i < driversNear.length; i++){
+        var brng = tuta.driverBearingStored(driversNear[i].location.bearing);
+        //tuta.util.alert(brng);
+        locationData.push(
+          {
+            lat: "" + driversNear[i].location.lat + "", 
+            lon: "" + driversNear[i].location.lng + "", 
+            name: driversNear[i].id, 
+            desc: "", 
+            image : brng
+          });
+      }
+    }
+
     frmMap.mapMain.locationData = locationData;
 
 
@@ -274,15 +290,15 @@ tuta.awaitConfirm = function(bookingID) {
     - Store the current booking, app state and user in the kony store
   */
 
-    yourBooking = bookingID;
+  yourBooking = bookingID;
   currentBooking = bookingID;
-  
+
 
   //Create an object for storage
   appState = {
-              state_string: "HAILING",
-              bookingID: currentBooking
-            };
+    state_string: "HAILING",
+    bookingID: currentBooking
+  };
 
   //tuta.util.alert("Current Appstate to be stored", JSON.stringify(currentAppState));
 
@@ -306,44 +322,44 @@ tuta.awaitConfirm = function(bookingID) {
     //Try make the booking
     try {
       application.service("userService").invokeOperation(
-      "booking", {}, inputBooking,
-      function(result) { 
-        if (result.value[0].status ==="OnRoute")
-        {
-          //tuta.util.alert("Test 4", "There is a result");
-          tripOnRoute = true;
-          frmMap.flexNoPanning.setVisibility(true);
-          frmMap.flexProgress.setVisibility(false);
-          kony.timer.cancel("taxiHailTimer");
+        "booking", {}, inputBooking,
+        function(result) { 
+          if (result.value[0].status ==="OnRoute")
+          {
+            //tuta.util.alert("Test 4", "There is a result");
+            tripOnRoute = true;
+            frmMap.flexNoPanning.setVisibility(true);
+            frmMap.flexProgress.setVisibility(false);
+            kony.timer.cancel("taxiHailTimer");
 
-          //Store the actual booking
-          currentBookingObj = result.value[0];
+            //Store the actual booking
+            currentBookingObj = result.value[0];
 
-          //Start the route
-          tuta.renderRouteAndDriver(result.value[0]);
-          tuta.fetchDriverInfo(result.value[0].providerId);
+            //Start the route
+            tuta.renderRouteAndDriver(result.value[0]);
+            tuta.fetchDriverInfo(result.value[0].providerId);
 
-          //Show map center button
-          try{
-            tuta.forms.frmMap.flexMapCenter.setVisibility(false);
+            //Show map center button
+            try{
+              tuta.forms.frmMap.flexMapCenter.setVisibility(false);
+            }
+            catch(ex){
+              //tuta.util.alert("Info", "Unable to remove the map centering button.");
+            }
+
           }
-          catch(ex){
-            //tuta.util.alert("Info", "Unable to remove the map centering button.");
-          }
-
+        },
+        function(error) { //The second function will always run if there is an error.
+          //tuta.util.alert("Test 4", error);
         }
-      },
-      function(error) { //The second function will always run if there is an error.
-        //tuta.util.alert("Test 4", error);
-      }
-    );
+      );
     } catch (ex){
       //tuta.util.alert("The ultimate EXCEPTION :D", ex);
     }
 
 
 
-    
+
 
   }, 3, true);
 
@@ -400,16 +416,16 @@ tuta.cancelBooking = function(bookingID) {
 };
 
 tuta.renderFinalRoute = function(){
-  
+
   try{
     tuta.animate.move(frmMap.imgSwipeLever, 0.3, "", "70%", null);
   } catch (ex){
 
   }
-  
+
   //tuta.util.alert("Nearby Drivers", JSON.stringify(nearbyDrivers[0]));
   //tuta.util.alert("NearbyDrivers before route draw", nearbyDrivers[0]);
-	//frmMap.mapMain.clear();
+  //frmMap.mapMain.clear();
   tuta.util.alert("Destination", destination.geometry.location.lat);
   kony.timer.schedule("swiperball", function(){
     awaitingConfirmation = false;
@@ -418,40 +434,40 @@ tuta.renderFinalRoute = function(){
     try{
       frmMap.mapMain.removePolyline("polyid1");
     }catch (ex){
-      
+
     }
-    
-    
+
+
     try {
-    application.service("driverService").invokeOperation(
-      "booking", {}, {id: yourBooking},
-      function(result){
-         tuta.util.alert("Results", "Booking ID: " + yourBooking + "\nBooking Results: \n\n" + JSON.stringify(result));
-      
-        tuta.location.directionsFromCoordinates(nearbyDrivers[0].location.lat, nearbyDrivers[0].location.lng, destination.geometry.location.lat, destination.geometry.location.lng, function(response){
+      application.service("driverService").invokeOperation(
+        "booking", {}, {id: yourBooking},
+        function(result){
+          tuta.util.alert("Results", "Booking ID: " + yourBooking + "\nBooking Results: \n\n" + JSON.stringify(result));
 
-          kony.timer.schedule("renderDirFinal", function(){
-            renderDirections(frmMap.mapMain, response, "0x0036bba7","","dropofficon.png");
-            tuta.util.alert("TEST 3", JSON.stringify(response));
-            updateMap();
-            kony.timer.schedule("zoomIn", function(){
-              //#ifdef android
-              frmMap.mapMain.zoomLevel = 18;
-              //#endif
+          tuta.location.directionsFromCoordinates(nearbyDrivers[0].location.lat, nearbyDrivers[0].location.lng, destination.geometry.location.lat, destination.geometry.location.lng, function(response){
 
-              //#ifdef iphone
-              frmMap.mapMain.zoomLevel = 21;
-              //#endif
-            }, 3, false);
-          }, 1, false);
+            kony.timer.schedule("renderDirFinal", function(){
+              renderDirections(frmMap.mapMain, response, "0x0036bba7","","dropofficon.png");
+              tuta.util.alert("TEST 3", JSON.stringify(response));
+              updateMap();
+              kony.timer.schedule("zoomIn", function(){
+                //#ifdef android
+                frmMap.mapMain.zoomLevel = 18;
+                //#endif
+
+                //#ifdef iphone
+                frmMap.mapMain.zoomLevel = 21;
+                //#endif
+              }, 3, false);
+            }, 1, false);
+          });
+
+
+
+
+        }, function(error){
+          tuta.util.alert("Booking error", error);
         });
-      
-        
-
-
-      }, function(error){
-        tuta.util.alert("Booking error", error);
-      });
     } catch (ex) {
       // This is an internet service exception handler
     }
@@ -460,36 +476,49 @@ tuta.renderFinalRoute = function(){
 
 tuta.driverBearing = function (driverID, callback){
   try {
-  application.service("driverService").invokeOperation(
-    "user", {}, {id : driverID},
-    function(result){
-      try{
-        var brng = 0;
-        brng = Math.abs(Math.round(result.value[0].location.direction / 15)) * 15; 
+    application.service("driverService").invokeOperation(
+      "user", {}, {id : driverID},
+      function(result){
+        try{
+          var brng = 0;
+          brng = Math.abs(Math.round(result.value[0].location.direction / 15)) * 15; 
 
-        if(brng >= 360)
-          brng = 0;
+          if(brng >= 360)
+            brng = 0;
 
-        if(brng !== null && brng === brng){
-          lastbrng = brng;
-          callback("cabpin" + brng + ".png");
+          if(brng !== null && brng === brng){
+            lastbrng = brng;
+            callback("cabpin" + brng + ".png");
+          }
+          else
+            callback("cabpin" + lastbrng + ".png");
         }
-        else
+        catch (ex){
           callback("cabpin" + lastbrng + ".png");
-      }
-      catch (ex){
-        callback("cabpin" + lastbrng + ".png");
-      }
+        }
 
-    }, function (error){
-      tuta.util.alert("ERROR", error);
-      callback("cabpin" + lastbrng + ".png");
-    });
-   } catch (ex) {
-      // This is an internet service exception handler
-   }
+      }, function (error){
+        tuta.util.alert("ERROR", error);
+        callback("cabpin" + lastbrng + ".png");
+      });
+  } catch (ex) {
+    // This is an internet service exception handler
+  }
 };
 
+tuta.driverBearingStored = function (bearing){
+
+  var brng = Math.abs(Math.round(bearing / 15)) * 15; 
+
+  if(brng >= 360)
+    brng = 0;
+
+  if(brng !== null && brng === brng)
+    return "cabpin" + brng + ".png";
+
+  return "cabpin" + brng + ".png";
+
+};
 
 tuta.renderRouteAndDriver = function (booking){
 
@@ -505,31 +534,31 @@ tuta.renderRouteAndDriver = function (booking){
     - Store the current booking, app state and user in the kony store
   */
 
- appState = {
-              state_string: "EN_ROUTE",
-              bookingID: currentBooking
-            };
+  appState = {
+    state_string: "EN_ROUTE",
+    bookingID: currentBooking
+  };
 
   //Store the object in case of crash
   tuta.appstate.setState(appState);
   try {
-  application.service("driverService").invokeOperation(
-    "user", {}, {id : driver},
-    function(result) { 
+    application.service("driverService").invokeOperation(
+      "user", {}, {id : driver},
+      function(result) { 
 
-      tuta.location.directionsFromCoordinates(result.value[0].location.lat, result.value[0].location.lng, booking.location.lat, booking.location.lng, function(response){
+        tuta.location.directionsFromCoordinates(result.value[0].location.lat, result.value[0].location.lng, booking.location.lat, booking.location.lng, function(response){
 
-        kony.timer.schedule("renderDir", function(){
-          renderDirections(frmMap.mapMain, response, "0x0036bba7","","");
-          updateMap();
-        }, 2, false);
-      });
+          kony.timer.schedule("renderDir", function(){
+            renderDirections(frmMap.mapMain, response, "0x0036bba7","","");
+            updateMap();
+          }, 2, false);
+        });
 
-    },
-    function(error) {
-      //tuta.util.alert("Error " + error);
-    }
-  );
+      },
+      function(error) {
+        //tuta.util.alert("Error " + error);
+      }
+    );
   } catch (ex) {
     // This is an internet service exception handler
   }
@@ -538,33 +567,33 @@ tuta.renderRouteAndDriver = function (booking){
 
 tuta.fetchDriverInfo = function(driverID){
   try {
-  application.service("driverService").invokeOperation(
-    "user", {}, {id: driverID}, 
-    function(result){
-      drivercell = result.value[0].userInfo.mobileNumber;
-      frmMap.lblDriverName.text = result.value[0].userInfo.firstName + " " + result.value[0].userInfo.lastName;
-      application.service("driverService").invokeOperation(
-        "assignedVehicle", {}, {userId: driverID}, 
-        function(res){
-          frmMap.lblCar.text = res.value[0].make + " " + res.value[0].model;
-          frmMap.lblReg.text = res.value[0].VRN + "";
-          application.service("driverService").invokeOperation(
-            "rating", {}, {userId: driverID}, 
-            function(r){
-              frmMap.lblRating.text = r.averageRating + "";
-              tuta.animate.moveBottomLeft(frmMap.flexDriverInfo, 0.3, "0", "0", null);
-              tuta.animate.moveBottomLeft(frmMap.flexCancel, 0.3, "105", "-5", null);
-              tuta.animate.moveBottomRight(frmMap.flexPhone, 0.3, "105", "-5", null);
-              tuta.trackDriverLoop(driverID);
-            }, 
-            function(e){}  
-          );
-        }, 
-        function(err){}  
-      );
-    }, 
-    function(error){}  
-  );
+    application.service("driverService").invokeOperation(
+      "user", {}, {id: driverID}, 
+      function(result){
+        drivercell = result.value[0].userInfo.mobileNumber;
+        frmMap.lblDriverName.text = result.value[0].userInfo.firstName + " " + result.value[0].userInfo.lastName;
+        application.service("driverService").invokeOperation(
+          "assignedVehicle", {}, {userId: driverID}, 
+          function(res){
+            frmMap.lblCar.text = res.value[0].make + " " + res.value[0].model;
+            frmMap.lblReg.text = res.value[0].VRN + "";
+            application.service("driverService").invokeOperation(
+              "rating", {}, {userId: driverID}, 
+              function(r){
+                frmMap.lblRating.text = r.averageRating + "";
+                tuta.animate.moveBottomLeft(frmMap.flexDriverInfo, 0.3, "0", "0", null);
+                tuta.animate.moveBottomLeft(frmMap.flexCancel, 0.3, "105", "-5", null);
+                tuta.animate.moveBottomRight(frmMap.flexPhone, 0.3, "105", "-5", null);
+                tuta.trackDriverLoop(driverID);
+              }, 
+              function(e){}  
+            );
+          }, 
+          function(err){}  
+        );
+      }, 
+      function(error){}  
+    );
   } catch (ex) {
     // This is an internet service exception handler
   }
@@ -575,17 +604,17 @@ tuta.fetchDriverInfo = function(driverID){
 tuta.updateBookingHistoryRating = function(bookingID, rating, callback){
 
   var input = { id: bookingID, user : "customer", rating : rating.toString() };
-	
+
   try {
-  application.service("manageService").invokeOperation(
-    "bookingHistoryUpdateRating", {}, input,
-    function(result) {
-      callback();
-    },
-    function(error) {
-      // the service returns 403 (Not Authorised) if credentials are wrong
-    }
-  );
+    application.service("manageService").invokeOperation(
+      "bookingHistoryUpdateRating", {}, input,
+      function(result) {
+        callback();
+      },
+      function(error) {
+        // the service returns 403 (Not Authorised) if credentials are wrong
+      }
+    );
   } catch (ex) {
     // This is an internet service exception handler
   }
@@ -593,27 +622,27 @@ tuta.updateBookingHistoryRating = function(bookingID, rating, callback){
 };
 
 tuta.retrieveBooking = function(id, callback) {
-    var input = {
-        id: id,
-    };
+  var input = {
+    id: id,
+  };
 
-    try {
-        application.service("driverService").invokeOperation(
-            "booking", {}, input,
-            function(results) {
-                try {
-                    callback(results);
-                } catch (ex) {
+  try {
+    application.service("driverService").invokeOperation(
+      "booking", {}, input,
+      function(results) {
+        try {
+          callback(results);
+        } catch (ex) {
 
-                }
-            },
-            function(error) {
-                callback(null, error);
-            });
-    }
-    catch(ex){
+        }
+      },
+      function(error) {
+        callback(null, error);
+      });
+  }
+  catch(ex){
 
-    }
+  }
 };
 
 tuta.startUpdateMapFunction = function(){
@@ -697,69 +726,69 @@ tuta.trackDriver = function(driverID){
 
   //Query the server
   try {
-  application.service("driverService").invokeOperation(
-    "user", {}, input,
-    function(result) { 
+    application.service("driverService").invokeOperation(
+      "user", {}, input,
+      function(result) { 
 
 
-      nearbyDrivers = []; //clear the array of drivers
+        nearbyDrivers = []; //clear the array of drivers
 
-      driver = {
-        id: result.value[0].id,
-        location: {
-          lat: result.value[0].location.lat,
-          lng: result.value[0].location.lng
+        driver = {
+          id: result.value[0].id,
+          location: {
+            lat: result.value[0].location.lat,
+            lng: result.value[0].location.lng
+          }
+        };
+
+
+
+        nearbyDrivers[0] = driver;
+        if (tripInTransitResume === true){
+          tuta.renderFinalRoute();
+          tripInTransitResume = false;
         }
-      };
 
-      
-
-      nearbyDrivers[0] = driver;
-      if (tripInTransitResume === true){
-        tuta.renderFinalRoute();
-        tripInTransitResume = false;
-      }
-
-      if(initialLoad === true){
-        updateMap();
-        initialLoad = false;
-      }
-
-      if(driverArrived === false && tripOnRoute === true){
-        var lat1 = parseFloat(driver.location.lat);
-        var lon1 = parseFloat(driver.location.lng);
-        var lat2 = parseFloat(currentPos.geometry.location.lat);
-        var lon2 = parseFloat(currentPos.geometry.location.lng);
-        var distNow = tuta.location.distance(lat1, lon1, lat2, lon2);
-
-        if(distNow < 500 && distNow > 200){
-          tuta.animate.move(frmMap.flexArriving, 0.2, "65", "15%", null);
-          tuta.animate.moveBottomLeft(frmMap.flexCancel, 0.1, "105", "-100", null);
+        if(initialLoad === true){
+          updateMap();
+          initialLoad = false;
         }
-        else if (distNow <= 200){
-          driverArrived = true;
-          tuta.animate.moveBottomLeft(frmMap.flexCancel, 0, "105", "-100", null);
-          tuta.animate.move(frmMap.flexArriving, 0, "65", "105%", null);
-          tuta.animate.moveBottomRight(frmMap.flexPhone, 0, "105", "-100", null);
-          frmMap.flexDarken.setVisibility(true);
-          tuta.animate.move(frmMap.flexDriverArrived, 0, "", "10%", null);
-        }        
-      }
-      else if (awaitingConfirmation === false)
-      {
-        var finallat1 = parseFloat(driver.location.lat);
-        var finallon1 = parseFloat(driver.location.lng);
-        var finallat2 = parseFloat(destination.geometry.location.lat);
-        var finallon2 = parseFloat(destination.geometry.location.lng);
-        var finaldistNow = tuta.location.distance(finallat1, finallon1, finallat2, finallon2);
-        var etaNow = parseInt(Math.round(finaldistNow/1000));
-        if(etaNow === 1)
-          frmMap.lblMins.text = etaNow + " MIN";
-        else
-          frmMap.lblMins.text = etaNow + " MINS";
 
-        //DEPRECIATED, checks if destination is near and then ends trip
-        /* KEEP HERE FOR NOW
+        if(driverArrived === false && tripOnRoute === true){
+          var lat1 = parseFloat(driver.location.lat);
+          var lon1 = parseFloat(driver.location.lng);
+          var lat2 = parseFloat(currentPos.geometry.location.lat);
+          var lon2 = parseFloat(currentPos.geometry.location.lng);
+          var distNow = tuta.location.distance(lat1, lon1, lat2, lon2);
+
+          if(distNow < 500 && distNow > 200){
+            tuta.animate.move(frmMap.flexArriving, 0.2, "65", "15%", null);
+            tuta.animate.moveBottomLeft(frmMap.flexCancel, 0.1, "105", "-100", null);
+          }
+          else if (distNow <= 200){
+            driverArrived = true;
+            tuta.animate.moveBottomLeft(frmMap.flexCancel, 0, "105", "-100", null);
+            tuta.animate.move(frmMap.flexArriving, 0, "65", "105%", null);
+            tuta.animate.moveBottomRight(frmMap.flexPhone, 0, "105", "-100", null);
+            frmMap.flexDarken.setVisibility(true);
+            tuta.animate.move(frmMap.flexDriverArrived, 0, "", "10%", null);
+          }        
+        }
+        else if (awaitingConfirmation === false)
+        {
+          var finallat1 = parseFloat(driver.location.lat);
+          var finallon1 = parseFloat(driver.location.lng);
+          var finallat2 = parseFloat(destination.geometry.location.lat);
+          var finallon2 = parseFloat(destination.geometry.location.lng);
+          var finaldistNow = tuta.location.distance(finallat1, finallon1, finallat2, finallon2);
+          var etaNow = parseInt(Math.round(finaldistNow/1000));
+          if(etaNow === 1)
+            frmMap.lblMins.text = etaNow + " MIN";
+          else
+            frmMap.lblMins.text = etaNow + " MINS";
+
+          //DEPRECIATED, checks if destination is near and then ends trip
+          /* KEEP HERE FOR NOW
           if (finaldistNow <= 150){
             //ANIMATE IN NEARBY SLIDER
 
@@ -769,12 +798,12 @@ tuta.trackDriver = function(driverID){
             journeyComplete = true;
 
           } */ 
+        }
+      },
+      function(error) {
+        //tuta.util.alert("Error " + error);
       }
-    },
-    function(error) {
-      //tuta.util.alert("Error " + error);
-    }
-  );
+    );
   } catch (ex) {
     // This is an internet service exception handler
   }
@@ -793,14 +822,14 @@ tuta.awaitDriverPickupConfirmation = function(){
 
   kony.timer.schedule("taxiAwaitTimer", function(){
 
-	try {
-    application.service("driverService").invokeOperation(
-      "booking", {}, {id : currentBooking},
-      function(result) { 
-        try{
-          if (result.value[0].status==="InTransit"){
+    try {
+      application.service("driverService").invokeOperation(
+        "booking", {}, {id : currentBooking},
+        function(result) { 
+          try{
+            if (result.value[0].status==="InTransit"){
 
-            /*
+              /*
               TODO-CODELAB
               ============
               Name: APPHOOK_3
@@ -809,37 +838,37 @@ tuta.awaitDriverPickupConfirmation = function(){
               - Store the current booking, app state and user in the kony store
             */
 
-            appState = {
-              state_string: "INTRANSIT",
-              bookingID: currentBooking
-            };
+              appState = {
+                state_string: "INTRANSIT",
+                bookingID: currentBooking
+              };
 
-            //Store the object in case of crash
-            tuta.appstate.setState(appState);
+              //Store the object in case of crash
+              tuta.appstate.setState(appState);
 
-            tuta.awaitDriverDropOffConfirmation();
-            overview.active = 0;   
-            driverArrived = true;  
-            kony.timer.cancel("taxiAwaitTimer");
-            tuta.animate.moveBottomLeft(frmMap.flexCancel, 0, "105", "-100", null);
-            tuta.animate.move(frmMap.flexArriving, 0, "65", "105%", null);
-            tuta.animate.moveBottomRight(frmMap.flexPhone, 0, "105", "-100", null);
-            tuta.animate.moveBottomLeft(frmMap.flexTimeToDest, 0.1, "105", "-5", null);
-            tuta.animate.moveBottomLeft(frmMap.flexDriverInfo, 0.1, "-110", "", null);
-            if (tripInTransitResume === false){
-               tuta.renderFinalRoute();
-			      }
-           
+              tuta.awaitDriverDropOffConfirmation();
+              overview.active = 0;   
+              driverArrived = true;  
+              kony.timer.cancel("taxiAwaitTimer");
+              tuta.animate.moveBottomLeft(frmMap.flexCancel, 0, "105", "-100", null);
+              tuta.animate.move(frmMap.flexArriving, 0, "65", "105%", null);
+              tuta.animate.moveBottomRight(frmMap.flexPhone, 0, "105", "-100", null);
+              tuta.animate.moveBottomLeft(frmMap.flexTimeToDest, 0.1, "105", "-5", null);
+              tuta.animate.moveBottomLeft(frmMap.flexDriverInfo, 0.1, "-110", "", null);
+              if (tripInTransitResume === false){
+                tuta.renderFinalRoute();
+              }
+
+            }
           }
-        }
-        catch(ex){
+          catch(ex){
 
+          }
+        },
+        function(error) { 
+          //tuta.util.alert("error",error);
         }
-      },
-      function(error) { 
-        //tuta.util.alert("error",error);
-      }
-    );
+      );
     } catch (ex) {
       // This is an internet service exception handler
     }
@@ -860,14 +889,14 @@ tuta.awaitDriverDropOffConfirmation = function(){
 
   kony.timer.schedule("tripCompleteAwaitTimer", function(){
 
-	try {
-    application.service("driverService").invokeOperation(
-      "booking", {}, inputBooking,
-      function(result) { 
-        try{
-          if (result.value[0].status==="Completed"){
-            kony.timer.cancel("tripCompleteAwaitTimer");
-            kony.timer.cancel("trackdriverloop");
+    try {
+      application.service("driverService").invokeOperation(
+        "booking", {}, inputBooking,
+        function(result) { 
+          try{
+            if (result.value[0].status==="Completed"){
+              kony.timer.cancel("tripCompleteAwaitTimer");
+              kony.timer.cancel("trackdriverloop");
 
 
               /*
@@ -879,32 +908,32 @@ tuta.awaitDriverDropOffConfirmation = function(){
                 - Store the current booking, app state and user in the kony store
               */
 
-            var appState = {
-              state_string: null,
-              bookingID: null
-            };
+              var appState = {
+                state_string: null,
+                bookingID: null
+              };
 
               //Store the object in case of crash
               tuta.appstate.clearState();
 
-            //frmMap.mapMain.zoomLevel = overview.zoom;
-            tuta.animate.move(frmMap.flexOverlay2, 0, "0", "0", null);
-            tuta.animate.moveBottomLeft(frmMap.flexTimeToDest, 0.1, "105", "-150", null);
-            tuta.animate.moveBottomLeft(frmMap.flexDriverInfo, 0.1, "-110", "", null);
-            journeyComplete = true;
+              //frmMap.mapMain.zoomLevel = overview.zoom;
+              tuta.animate.move(frmMap.flexOverlay2, 0, "0", "0", null);
+              tuta.animate.moveBottomLeft(frmMap.flexTimeToDest, 0.1, "105", "-150", null);
+              tuta.animate.moveBottomLeft(frmMap.flexDriverInfo, 0.1, "-110", "", null);
+              journeyComplete = true;
+            }
           }
-        }
-        catch(ex){
+          catch(ex){
 
+          }
+        },
+        function(error) { 
+          //tuta.util.alert("error",error);
         }
-      },
-      function(error) { 
-        //tuta.util.alert("error",error);
-      }
-    );
-	} catch (ex) {
-    // This is an internet service exception handler
-  }
+      );
+    } catch (ex) {
+      // This is an internet service exception handler
+    }
 
   }, 3, true);
 
@@ -920,7 +949,7 @@ tuta.initCallback = function(error) {
     else
     {
       var input = null;
-      
+
       input = kony.store.getItem("user");
       if (input !== null){
         try{
@@ -932,7 +961,7 @@ tuta.initCallback = function(error) {
               tuta.appstate.helper.resumeFromState();
               //tuta.util.alert("Appstate Start", currentAppState);
               //tuta.location.loadPositionInit();
-              
+
             },
             function(error) {
               // the service returns 403 (Not Authorised) if credentials are wrong

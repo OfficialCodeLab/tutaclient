@@ -183,28 +183,34 @@ var mapCenter = {
 
 
 tuta.map.storeCenter = function (bounds){
-  mapCenter.location.lat = bounds.center.lat;
-  mapCenter.location.lon = bounds.center.lon;  
+  try{
+    mapCenter.location.lat = bounds.center.lat;
+    mapCenter.location.lon = bounds.center.lon; 
+  } 
+  catch(ex){}
 };
 
 
 // Checks if the point in current bounds is far enough away from the old center
 // Returns true if test is pasased, else false
 tuta.map.checkRadius = function (bounds){
-  var oldLat = mapCenter.location.lat;
-  var oldLon = mapCenter.location.lon;
-  var newLat = bounds.center.lat;
-  var newLon = bounds.center.lon;
+  try{
+    var oldLat = mapCenter.location.lat;
+    var oldLon = mapCenter.location.lon;
+    var newLat = bounds.center.lat;
+    var newLon = bounds.center.lon;
 
-  var radius = tuta.location.distance(oldLat, oldLon, newLat, newLon);
-  /*TODO FUTURE:
+    var radius = tuta.location.distance(oldLat, oldLon, newLat, newLon);
+    /*TODO FUTURE:
 	- USE LATSPAN TO DETERMINE THE MAX RADIUS
     - LATSPAN IS IN THE BOUNDS OBJECT
-*/
-  if(radius > GLOBAL_MAX_RADIUS){
-    tuta.map.storeCenter(bounds);
-    return true;
+	*/
+    if(radius > GLOBAL_MAX_RADIUS){
+      tuta.map.storeCenter(bounds);
+      return true;
+    }
   }
+  catch(ex){}
 
   return false;
 };
