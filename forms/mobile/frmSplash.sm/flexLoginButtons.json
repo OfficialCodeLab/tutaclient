@@ -41,7 +41,8 @@
         "txtEmail",
         "txtPassword",
         "lblForgottenPass",
-        "btnForgotPass"
+        "btnForgotPass",
+        "btnSignUp2"
     ],
     "clipBounds": true,
     "clipbounds": true,

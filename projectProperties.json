@@ -168,5 +168,12 @@
     ],
     "desktopwebbasefontsize": "16",
     "desktopwebwidthoption": "percentage",
-    "desktopwebaligenmentoption": "Left"
+    "desktopwebaligenmentoption": "Left",
+    "prototype": {
+        "createdOn": "2016-01-21T09:06:25.181Z",
+        "createdById": "f618eaaf-e810-4263-82ab-92210361ccbb",
+        "createdBy": "Courtney Jooste",
+        "shareGuid": "CGMHS",
+        "resourceId": "5ab1a3f4-33c3-42d6-a325-1c4e09587a3c"
+    }
 }
