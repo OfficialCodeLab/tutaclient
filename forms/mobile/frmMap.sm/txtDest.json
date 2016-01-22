@@ -32,7 +32,11 @@
         "type": "string",
         "value": "200dp"
     },
-    "android": {},
+    "android": {
+        "psp": {
+            "keyboardActionLabel": 12
+        }
+    },
     "autoCapitalize": "none",
     "autoComplete": false,
     "autoCorrect": false,
@@ -68,6 +72,8 @@
     },
     "isVisible": true,
     "isvisible": true,
+    "keyboardActionLabel": 12,
+    "keyboardactionlabel": 12,
     "keyboardtype": "A",
     "kuid": "9bb8e98e86504f85a6e9e861808cfd0b",
     "left": "150dp",
