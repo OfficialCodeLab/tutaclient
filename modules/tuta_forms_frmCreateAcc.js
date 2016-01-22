@@ -59,8 +59,10 @@ tuta.forms.frmCreateAcc = function() {
 
     self.control("btnConfirm").onClick = function(button) {
       //CHECK IF EXISTS
-
+	  //frmCreateAcc.flexCreatingAccount.isVisible = true;
       if(creatingAccount === false){
+        
+        
         creatingAccount = true;
 
         var userEmail = (self.control("txtEmail").text).toLowerCase();
@@ -200,7 +202,7 @@ tuta.forms.frmCreateAcc = function() {
         }
       }
 
-
+		//frmCreateAcc.flexCreatingAccount.isVisible = false;
     };
     tuta.map.stopMapListener();
   };
