@@ -182,7 +182,6 @@ tuta.forms.frmMap = function() {
     //this.control("btnCancelHailDriving").onTouchStart = cancelHailPrompt;
     this.control("segAddressList").onRowClick = onLocationSelected;
 
-    this.control("txtDest").setFocus(false);
     this.control("btnCancelHailProgress").onClick = function (button){
       kony.timer.schedule("cancelBookingHail",  function(){tuta.cancelBooking(yourBooking);}, 2, false);
       
@@ -253,6 +252,8 @@ tuta.forms.frmMap = function() {
     this.control("btnCancelSetDest").onClick = clearDestPick;
     this.control("btnCancelSetPick").onClick = clearDestPick;
 
+    this.control("txtDest").setFocus(false);
+    
     this.control("btnCancelHailOnRoute").onClick = function (button){
       tuta.animate.move(frmMap.flexOverlay1, 0, 0, 0, null);
     };
@@ -276,6 +277,7 @@ tuta.forms.frmMap = function() {
         kony.timer.cancel("updateMapBounds");
       }catch(ex){}
       kony.timer.schedule("updateMapBounds", function(){
+        
         var bds = frmMap.mapMain.getBounds();
         tuta.map.storeCenter(bds);
         tuta.map.startMapListener();
