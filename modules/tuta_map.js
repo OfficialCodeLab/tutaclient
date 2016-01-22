@@ -107,8 +107,6 @@ function onLocationSelected() {
         frmConfirm.lblDuration.text = tempTripTime + " Minutes";
       }
 
-
-
       //updateConfirmForm();
       resetSearchBar();
       frmMap.flexAddressList.setVisibility(false);
