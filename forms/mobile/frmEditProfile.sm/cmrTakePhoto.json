@@ -33,11 +33,11 @@
         "value": "40%"
     },
     "android": {
-        "compressionLevel": 30
+        "compressionLevel": 0
     },
     "canUpdateUI": true,
-    "compressionLevel": 30,
-    "compressionlevel": 30,
+    "compressionLevel": 0,
+    "compressionlevel": 0,
     "containerWeight": 100,
     "containerweight": 100,
     "contentAlignment": 5,
@@ -52,9 +52,8 @@
     "id": "cmrTakePhoto",
     "info": null,
     "iphone": {
-        "compressionLevel": 30,
         "psp": {
-            "nativeUserInterface": false
+            "nativeUserInterface": true
         }
     },
     "isVisible": true,
@@ -68,7 +67,7 @@
         0
     ],
     "name": "kony.ui.Camera",
-    "nativeUserInterface": false,
+    "nativeUserInterface": true,
     "onCapture": "AS_Camera_b0db3868016e4f7d8e912dfdb36552d4",
     "oncapture": "AS_Camera_b0db3868016e4f7d8e912dfdb36552d4",
     "padding": [
@@ -80,8 +79,8 @@
     "parent": "flexScroll",
     "pf": "frmEditProfile",
     "render": true,
-    "scaleFactor": 30,
-    "scalefactor": 30,
+    "scaleFactor": 10,
+    "scalefactor": 10,
     "skin": "sfba5520ec8a4b21b73a99502abfcd0a",
     "spaan": {
         "render": false

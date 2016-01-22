@@ -33,7 +33,7 @@ tuta.forms.frmCreateAcc = function() {
       frmCreateAcc.imgUser.rawBytes = frmCreateAcc.cmrTakePhoto.rawBytes;
       frmCreateAcc.cmrTakePhoto.isVisible = false;
       frmCreateAcc.btnImportPicture.isVisible = false;
-      avatarBase64 = kont.convertToBase64(frmCreateAcc.imgUser.rawBytes);
+      avatarBase64 = kony.convertToBase64(frmCreateAcc.imgUser.rawBytes);
     };
     
     self.control("btnImportPicture").onClick = function() {
@@ -44,7 +44,7 @@ tuta.forms.frmCreateAcc = function() {
                                                        querycontext);
         frmCreateAcc.cmrTakePhoto.isVisible = false;
         frmCreateAcc.btnImportPicture.isVisible = false;
-        avatarBase64 = kont.convertToBase64(frmCreateAcc.imgUser.rawBytes);
+        avatarBase64 = kony.convertToBase64(frmCreateAcc.imgUser.rawBytes);
       }
       
       function onselectioncallback(rawbytes) {

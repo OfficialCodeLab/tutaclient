@@ -15,7 +15,8 @@ tuta.forms.frmEditProfile = function() {
   };  
   
   tuta.forms.frmEditProfile.onPreShow = function(form) {
-    var self = this;
+    var self = this;   
+    tuta.map.stopMapListener();
     
     //Get the name of the user
     var userTempQuery = JSON.parse(kony.store.getItem("user"));
@@ -34,13 +35,13 @@ tuta.forms.frmEditProfile = function() {
       function(result) { 
         var firstName = result.value[0].userInfo.firstName;
         var surname = result.value[0].userInfo.lastName;
-        var avatarBase64 = result.value[0].userInfo.avatarDocId;
+        //var avatarBase64 = result.value[0].userInfo.avatarDocId;
         frmEditProfile.txtFirstName.text = firstName;
         frmEditProfile.txtSurname.text = surname;
 
-        if (avatarBase64 !== "null") {
+        /*if (avatarBase64 !== "null") {
           frmEditProfile.imgUser.rawBytes = kony.convertToRawBytes(avatarBase64);
-        }        
+        }    */    
       },
       function(error) {
         // the service returns 403 (Not Authorised) if credentials are wrong
@@ -48,7 +49,7 @@ tuta.forms.frmEditProfile = function() {
 
       }
     );
-    
+      
     /*
     this.control("btnCancel").onClick = function (button) {tuta.forms.frmMap.show();};
     this.control("btnSubmit").onClick = function (button) {
@@ -83,8 +84,6 @@ tuta.forms.frmEditProfile = function() {
       //Store the user ID as variable 'input' for manageService query
       var avatarBase64 = kony.convertToBase64(frmEditProfile.imgUser.rawBytes);
       
-      tuta.map.stopMapListener();
-      
       var inputs = {
         data: JSON.stringify({
           firstName : frmEditProfile.txtFirstName.text,
@@ -99,20 +98,16 @@ tuta.forms.frmEditProfile = function() {
         function(success) {
           tuta.util.alert("Success", "Info has been updated");
         }, function(error) {
-          tuta.util.alert("manageService error", JSON.stringify(error));
+          tuta.util.alert("Error Saving Data", JSON.stringify(error));
         }
       );
       //tuta.forms.frmMap.show();
     };
    // PUT BUTTONS HERE
+    
   };
   
   tuta.forms.frmEditProfile.onPostShow = function(form) {
     var self = this;
   };
 };
-/*
-selectedFileCallback = function(event, fileList) {
-  frmEditProfile.imgUser.source = fileList[0];
-};
-*/
