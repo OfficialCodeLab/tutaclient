@@ -46,7 +46,7 @@
         "channel": "mobile",
         "formID": "frmCreateAcc",
         "ispercent": true,
-        "platform": "iphone",
+        "platform": "android",
         "templateType": "forms",
         "topLevelBox": null
     },

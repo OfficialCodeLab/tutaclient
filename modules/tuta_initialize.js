@@ -50,6 +50,10 @@ function setUpSwipes(){
   frmMap.flexNoPanning.addGestureRecognizer(constants.GESTURE_TYPE_SWIPE, GLOBAL_GESTURE_FINGERS_1,  function(widget, gestureInformationSwipe) {
 
   });
+  
+  frmCreateAcc.flexCreatingAccount.addGestureRecognizer(constants.GESTURE_TYPE_SWIPE, GLOBAL_GESTURE_FINGERS_1,  function(widget, gestureInformationSwipe) {
+
+  });
 
   frmMap.flexSwiper.addGestureRecognizer(constants.GESTURE_TYPE_SWIPE, GLOBAL_GESTURE_FINGERS_1,  function(widget, gestureInformationSwipe) {
     if(gestureInformationSwipe.swipeDirection == 2) { //RIGHT
