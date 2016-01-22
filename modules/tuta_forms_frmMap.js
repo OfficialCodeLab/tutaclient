@@ -8,16 +8,17 @@ if (typeof(tuta.forms) === "undefined") {
 
 tuta.forms.frmMap = function() {
   // initialize controller 
-  tuta.forms.frmMap = new tuta.controller(frmMap); 
-
+  tuta.forms.frmMap = new tuta.controller(frmMap);
+  
   // Initialize form events	
   tuta.forms.frmMap.onInit = function(form) {
+  	frmMap.txtDest.setFocus(false);
   };  
 
   tuta.forms.frmMap.onPreShow = function(form) {
     var self = this;
 	tuta.map.stopMapListener();
-
+    frmMap.txtDest.setFocus(false);
     this.control("btnPerson1").onClick = onPeopleSelect;
     this.control("btnPerson2").onClick = onPeopleSelect;
     this.control("btnPerson3").onClick = onPeopleSelect;
@@ -314,6 +315,7 @@ tuta.forms.frmMap = function() {
     var self = this;    
     //#ifdef iphone
     frmMap.mapMain.zoomLevel = 17;
+    
     //#endif
     //var testDist = tuta.location.distance(12.33,12.55,22.67,23.52);
     //tuta.util.alert("TEST", testDist);
