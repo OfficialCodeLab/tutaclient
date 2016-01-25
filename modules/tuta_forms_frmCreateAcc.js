@@ -56,6 +56,10 @@ tuta.forms.frmCreateAcc = function() {
       
       openGallery();
     };
+    
+    self.control("btnBack").onClick = function(button) {
+      tuta.forms.frmSplash.show();
+    };
 
     self.control("btnConfirm").onClick = function(button) {
       //CHECK IF EXISTS
@@ -65,10 +69,16 @@ tuta.forms.frmCreateAcc = function() {
         
         creatingAccount = true;
 
-        var userEmail = (self.control("txtEmail").text).toLowerCase();
+        var userEmail = self.control("txtEmail").text;
 
         if(userEmail === null || userEmail === "") {
-          tuta.util.alert("Error", "Please fill in all fields");  
+          tuta.util.alert("Error", "Please fill in all fields");
+          
+          try{
+            userEmail.toLowerCase();
+          } catch(ex) {}
+          
+          creatingAccount = false;
         }
         else {
           var input = { id : userEmail};      
@@ -147,6 +157,13 @@ tuta.forms.frmCreateAcc = function() {
                                       tuta.animate.moveBottomLeft(frmSplash.flexMainButtons, 0, "0%", "0", null);
                                       tuta.util.alert("SUCCESS", "Account has been created.");
                                       creatingAccount = false;
+                                      
+                                      //Clear all fields
+                                      self.control("txtName").text = "";
+                                      self.control("txtEmail").text = "";
+                                      self.control("txtContact").text = "";
+                                      self.control("txtPass").text = "";
+                                      self.control("txtPass2").text = "";
                                     },
                                     function(error) {
                                       //tuta.util.alert("Error " + error.httpStatusCode, error.errmsg);

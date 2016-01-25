@@ -60,7 +60,9 @@
         "txtEmail",
         "txtContact",
         "txtPass",
-        "txtPass2"
+        "txtPass2",
+        "lblBack",
+        "btnBack"
     ],
     "clipBounds": true,
     "clipbounds": true,
