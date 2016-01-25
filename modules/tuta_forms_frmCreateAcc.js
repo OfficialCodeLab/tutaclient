@@ -17,7 +17,8 @@ tuta.forms.frmCreateAcc = function() {
   tuta.forms.frmCreateAcc.onPreShow = function(form) {
     var self = this;
     var creatingAccount = false;
-    var avatarBase64;
+    var profilePicUploaded = false;
+    var profilePic = "null";
     
     self.control("btnProfilePic").onClick = function(button) {
       if(frmCreateAcc.cmrTakePhoto.isVisible === true) {
@@ -33,7 +34,8 @@ tuta.forms.frmCreateAcc = function() {
       frmCreateAcc.imgUser.rawBytes = frmCreateAcc.cmrTakePhoto.rawBytes;
       frmCreateAcc.cmrTakePhoto.isVisible = false;
       frmCreateAcc.btnImportPicture.isVisible = false;
-      avatarBase64 = kony.convertToBase64(frmCreateAcc.imgUser.rawBytes);
+      profilePic = kony.convertToBase64(frmCreateAcc.imgUser.rawBytes);
+      profilePicUploaded = true;
     };
     
     self.control("btnImportPicture").onClick = function() {
@@ -44,7 +46,7 @@ tuta.forms.frmCreateAcc = function() {
                                                        querycontext);
         frmCreateAcc.cmrTakePhoto.isVisible = false;
         frmCreateAcc.btnImportPicture.isVisible = false;
-        avatarBase64 = kony.convertToBase64(frmCreateAcc.imgUser.rawBytes);
+        profilePic = kony.convertToBase64(frmCreateAcc.imgUser.rawBytes);
       }
       
       function onselectioncallback(rawbytes) {
@@ -52,6 +54,7 @@ tuta.forms.frmCreateAcc = function() {
           return;
         }
         frmCreateAcc.imgUser.rawBytes = rawbytes;
+        profilePicUploaded = true;
       }
       
       openGallery();
@@ -63,9 +66,9 @@ tuta.forms.frmCreateAcc = function() {
 
     self.control("btnConfirm").onClick = function(button) {
       //CHECK IF EXISTS
-	  //frmCreateAcc.flexCreatingAccount.isVisible = true;
+	  
       if(creatingAccount === false){
-        
+        frmCreateAcc.flexCreatingAccount.isVisible = true;
         
         creatingAccount = true;
 
@@ -134,14 +137,13 @@ tuta.forms.frmCreateAcc = function() {
                             "userAdd", {}, input, function(success) {
                               //BEGIN INSERT USER INFO
                               var userInfo = {
-                                _id: userEmail,
-                                firstName: firstname,
-                                lastName: surname,
-                                mobileNumber: self.control("txtContact").text,
-                                addresses: [],
-                                avatarDocId: avatarBase64
-                              };
-
+                                  _id: userEmail,
+                                  firstName: firstname,
+                                  lastName: surname,
+                                  mobileNumber: self.control("txtContact").text,
+                                  addresses: []
+                                };
+     
                               input = { data : JSON.stringify(userInfo) }; 
 
                               application.service("manageService").invokeOperation(
@@ -158,68 +160,93 @@ tuta.forms.frmCreateAcc = function() {
                                       tuta.util.alert("SUCCESS", "Account has been created.");
                                       creatingAccount = false;
                                       
-                                      //Clear all fields
-                                      self.control("txtName").text = "";
-                                      self.control("txtEmail").text = "";
-                                      self.control("txtContact").text = "";
-                                      self.control("txtPass").text = "";
-                                      self.control("txtPass2").text = "";
+                                      // Set profile picture here
+                                      if(profilePicUploaded) {                                     
+                                        var picInput = {
+                                          data: JSON.stringify({
+                                            avatarDocId: profilePic
+                                          }),
+                                          id: userEmail
+                                        };
+                                        
+                                        application.service("manageService").invokeOperation(
+                                        "userInfoUpdate", {}, picInput, function(success) {
+                                          //Clear all fields
+                                          self.control("txtName").text = "";
+                                          self.control("txtEmail").text = "";
+                                          self.control("txtContact").text = "";
+                                          self.control("txtPass").text = "";
+                                          self.control("txtPass2").text = "";
+                                        }, function(error) {
+                                          self.util.alert("Error updating profile picture", error.errmsg);
+                                          creatingAccount = false;
+                                          frmCreateAcc.flexCreatingAccount.isVisible = false;
+                                        });
+                                      }
                                     },
                                     function(error) {
                                       //tuta.util.alert("Error " + error.httpStatusCode, error.errmsg);
                                       self.control("txtPass").text = "";
                                       creatingAccount = false;
+                                      frmCreateAcc.flexCreatingAccount.isVisible = false;
                                     }
                                   );
                                 },
                                 function(error) {
                                   //tuta.util.alert("ERROR", error);
                                   creatingAccount = false;
+                                  frmCreateAcc.flexCreatingAccount.isVisible = false;
                                 }
                               );
+                              
                             },
                             function(error) {
                               //tuta.util.alert("ERROR", error);
                               creatingAccount = false;
+                              frmCreateAcc.flexCreatingAccount.isVisible = false;
                             }
                           );
 
                         }, function (error){
                           //tuta.util.alert("ERROR", "");
                           creatingAccount = false;
-                        }
-                                                     );
+                          frmCreateAcc.flexCreatingAccount.isVisible = false;
+                        });
                       }
                       else {
                         tuta.util.alert("Enter contact number", "Please enter your contact number");
                         creatingAccount = false;
+                        frmCreateAcc.flexCreatingAccount.isVisible = false;
                       }
                     }
                     else {
                       tuta.util.alert("Enter full name", "Please enter both your first name and surname");
                       creatingAccount = false;
+                      frmCreateAcc.flexCreatingAccount.isVisible = false;
                     }
                   }
                   else {
                     tuta.util.alert("PASSWORD TOO EASY", "Password must have 8 characters and should contain at least one digit, one lower case and one upper case");
                     creatingAccount = false;
+                    frmCreateAcc.flexCreatingAccount.isVisible = false;
                   }
                 }
                 else {
                   tuta.util.alert("PASSWORDS DONT MATCH", ""); 
-                  creatingAccount = false;               
+                  creatingAccount = false;
+                  frmCreateAcc.flexCreatingAccount.isVisible = false;
                 }
+                
               }            
             },
             function(error) {
               //tuta.util.alert("ERROR", error);    
-              creatingAccount = false;          
+              creatingAccount = false;   
+              frmCreateAcc.flexCreatingAccount.isVisible = false;
             }
           );
         }
       }
-
-		//frmCreateAcc.flexCreatingAccount.isVisible = false;
     };
     tuta.map.stopMapListener();
   };

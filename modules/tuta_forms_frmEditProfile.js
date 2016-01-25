@@ -35,13 +35,13 @@ tuta.forms.frmEditProfile = function() {
       function(result) { 
         var firstName = result.value[0].userInfo.firstName;
         var surname = result.value[0].userInfo.lastName;
-        //var avatarBase64 = result.value[0].userInfo.avatarDocId;
+        var avatarBase64 = result.value[0].userInfo.avatarDocId;
         frmEditProfile.txtFirstName.text = firstName;
         frmEditProfile.txtSurname.text = surname;
 
-        /*if (avatarBase64 !== "null") {
+        if (avatarBase64 !== "null") {
           frmEditProfile.imgUser.rawBytes = kony.convertToRawBytes(avatarBase64);
-        }    */    
+        }
       },
       function(error) {
         // the service returns 403 (Not Authorised) if credentials are wrong

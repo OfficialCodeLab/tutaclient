@@ -37,6 +37,7 @@
     "canUpdateUI": true,
     "channel": "mobile",
     "children": [
+        "imgPlaceholder",
         "imgUser",
         "btnProfilePic",
         "cmrTakePhoto",

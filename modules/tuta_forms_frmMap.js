@@ -78,7 +78,7 @@ tuta.forms.frmMap = function() {
         //tuta.util.alert("User Information", "Name: " + csFullName);
         frmMap.lblUser.text = fullName;
         
-        if (avatarBase64 !== "null") {
+        if (avatarBase64 !== 'null') {
         	frmMap.imgUser.rawBytes = kony.convertToRawBytes(avatarBase64);   
         }
       },
