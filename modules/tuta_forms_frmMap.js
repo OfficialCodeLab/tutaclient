@@ -172,7 +172,7 @@ tuta.forms.frmMap = function() {
     };
     this.control("btnReturnToTrip").onClick = function () { tuta.animate.move(frmMap.flexOverlay1, 0, "100%", 0, null);};
     this.control("btnSubmitRating").onClick = function(){
-      var rating = tuta.events.getRating();
+      var rating = "5";
       tuta.updateBookingHistoryRating(currentBooking, rating, function(){
 
         tuta.animate.move(frmMap.flexOverlay2, 0, "0", "100%", null);
@@ -199,6 +199,7 @@ tuta.forms.frmMap = function() {
       currentBooking = null;
 
       //Clear appstate
+      /*
       appState = {
         state_string: "NONE",
         bookingID: "NONE"
@@ -207,7 +208,7 @@ tuta.forms.frmMap = function() {
       try{      
         tuta.appstate.clearState();
       }
-      catch(ex){}
+      catch(ex){}*/
     };
 
     //this.control("mapMain").onPinClick = function(map,location) {selectPickUpLocation();};

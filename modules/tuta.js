@@ -219,7 +219,7 @@ function updateMap() {
 
   }
   catch(ex){
-    tuta.util.alert("UPDATE MAP ERROR", ex);
+    //tuta.util.alert("UPDATE MAP ERROR", ex);
 
   }
   //frmMap.mapMain.navigateTo(0,false);
@@ -276,6 +276,8 @@ tuta.awaitConfirm = function(bookingID) {
   frmMap.flexNoOfPeople.setVisibility(false);
   frmMap.flexProgress.setVisibility(true);
   onJourney = 1;
+  currentBooking = bookingID;
+  yourBooking = bookingID;
 
   //Kony timer – checks evert 5 seconds for the booking (if there is one) , 
   //take the result and check the status value of the key status – 
@@ -288,17 +290,15 @@ tuta.awaitConfirm = function(bookingID) {
     Reason: App states need to hook in here.
     - Set the app state to HAILING (2)
     - Store the current booking, app state and user in the kony store
-  */
+  
 
-  yourBooking = bookingID;
-  currentBooking = bookingID;
 
 
   //Create an object for storage
   appState = {
     state_string: "HAILING",
     bookingID: currentBooking
-  };
+  };*/
 
   //tuta.util.alert("Current Appstate to be stored", JSON.stringify(currentAppState));
 
@@ -426,7 +426,7 @@ tuta.renderFinalRoute = function(){
   //tuta.util.alert("Nearby Drivers", JSON.stringify(nearbyDrivers[0]));
   //tuta.util.alert("NearbyDrivers before route draw", nearbyDrivers[0]);
   //frmMap.mapMain.clear();
-  tuta.util.alert("Destination", destination.geometry.location.lat);
+  //tuta.util.alert("Destination", destination.geometry.location.lat);
   kony.timer.schedule("swiperball", function(){
     awaitingConfirmation = false;
 
@@ -442,13 +442,13 @@ tuta.renderFinalRoute = function(){
       application.service("driverService").invokeOperation(
         "booking", {}, {id: yourBooking},
         function(result){
-          tuta.util.alert("Results", "Booking ID: " + yourBooking + "\nBooking Results: \n\n" + JSON.stringify(result));
+          //tuta.util.alert("Results", "Booking ID: " + yourBooking + "\nBooking Results: \n\n" + JSON.stringify(result));
 
           tuta.location.directionsFromCoordinates(nearbyDrivers[0].location.lat, nearbyDrivers[0].location.lng, destination.geometry.location.lat, destination.geometry.location.lng, function(response){
 
             kony.timer.schedule("renderDirFinal", function(){
               renderDirections(frmMap.mapMain, response, "0x0036bba7","","dropofficon.png");
-              tuta.util.alert("TEST 3", JSON.stringify(response));
+              //tuta.util.alert("TEST 3", JSON.stringify(response));
               updateMap();
               kony.timer.schedule("zoomIn", function(){
                 //#ifdef android
@@ -466,7 +466,7 @@ tuta.renderFinalRoute = function(){
 
 
         }, function(error){
-          tuta.util.alert("Booking error", error);
+          //tuta.util.alert("Booking error", error);
         });
     } catch (ex) {
       // This is an internet service exception handler
@@ -532,7 +532,7 @@ tuta.renderRouteAndDriver = function (booking){
     Reason: App states need to hook in here.
     - Set the app state to EN_ROUTE (3)
     - Store the current booking, app state and user in the kony store
-  */
+  
 
   appState = {
     state_string: "EN_ROUTE",
@@ -540,7 +540,7 @@ tuta.renderRouteAndDriver = function (booking){
   };
 
   //Store the object in case of crash
-  tuta.appstate.setState(appState);
+  tuta.appstate.setState(appState);*/
   try {
     application.service("driverService").invokeOperation(
       "user", {}, {id : driver},
@@ -744,10 +744,11 @@ tuta.trackDriver = function(driverID){
 
 
         nearbyDrivers[0] = driver;
+        /*
         if (tripInTransitResume === true){
           tuta.renderFinalRoute();
           tripInTransitResume = false;
-        }
+        }*/
 
         if(initialLoad === true){
           updateMap();
@@ -755,6 +756,7 @@ tuta.trackDriver = function(driverID){
         }
 
         if(driverArrived === false && tripOnRoute === true){
+          
           var lat1 = parseFloat(driver.location.lat);
           var lon1 = parseFloat(driver.location.lng);
           var lat2 = parseFloat(currentPos.geometry.location.lat);
@@ -836,7 +838,7 @@ tuta.awaitDriverPickupConfirmation = function(){
               Reason: App states need to hook in here.
               - Set the app state to IN_TRANSIT (4)
               - Store the current booking, app state and user in the kony store
-            */
+            
 
               appState = {
                 state_string: "INTRANSIT",
@@ -844,8 +846,8 @@ tuta.awaitDriverPickupConfirmation = function(){
               };
 
               //Store the object in case of crash
-              tuta.appstate.setState(appState);
-
+              tuta.appstate.setState(appState);*/
+				//tuta.util.alert("IN TRANSIT", "");
               tuta.awaitDriverDropOffConfirmation();
               overview.active = 0;   
               driverArrived = true;  
@@ -854,7 +856,7 @@ tuta.awaitDriverPickupConfirmation = function(){
               tuta.animate.move(frmMap.flexArriving, 0, "65", "105%", null);
               tuta.animate.moveBottomRight(frmMap.flexPhone, 0, "105", "-100", null);
               tuta.animate.moveBottomLeft(frmMap.flexTimeToDest, 0.1, "105", "-5", null);
-              tuta.animate.moveBottomLeft(frmMap.flexDriverInfo, 0.1, "-110", "", null);
+              //tuta.animate.moveBottomLeft(frmMap.flexDriverInfo, 0.1, "-110", "", null);
               if (tripInTransitResume === false){
                 tuta.renderFinalRoute();
               }
@@ -897,6 +899,7 @@ tuta.awaitDriverDropOffConfirmation = function(){
             if (result.value[0].status==="Completed"){
               kony.timer.cancel("tripCompleteAwaitTimer");
               kony.timer.cancel("trackdriverloop");
+				//tuta.util.alert("COMPLETE", "");
 
 
               /*
@@ -906,7 +909,7 @@ tuta.awaitDriverDropOffConfirmation = function(){
                 Reason: App states need to hook in here.
                 - Set the app state to IDLE (1)
                 - Store the current booking, app state and user in the kony store
-              */
+              
 
               var appState = {
                 state_string: null,
@@ -914,7 +917,7 @@ tuta.awaitDriverDropOffConfirmation = function(){
               };
 
               //Store the object in case of crash
-              tuta.appstate.clearState();
+              tuta.appstate.clearState();*/
 
               //frmMap.mapMain.zoomLevel = overview.zoom;
               tuta.animate.move(frmMap.flexOverlay2, 0, "0", "0", null);

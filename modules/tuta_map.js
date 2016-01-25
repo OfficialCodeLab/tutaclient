@@ -195,17 +195,11 @@ tuta.map.storeCenter = function (bounds){
 // Returns true if test is pasased, else false
 tuta.map.checkRadius = function (bounds){
   try{
-    var oldLat = mapCenter.location.lat;
-    var oldLon = mapCenter.location.lon;
-    var newLat = bounds.center.lat;
-    var newLon = bounds.center.lon;
-
-    var radius = tuta.location.distance(oldLat, oldLon, newLat, newLon);
     /*TODO FUTURE:
 	- USE LATSPAN TO DETERMINE THE MAX RADIUS
     - LATSPAN IS IN THE BOUNDS OBJECT
 	*/
-    if(radius > GLOBAL_MAX_RADIUS){
+    if(mapCenter.location.lat !== bounds.center.lat || mapCenter.location.lon !== bounds.center.lon){
       tuta.map.storeCenter(bounds);
       return true;
     }
@@ -231,16 +225,16 @@ tuta.map.startMapListener = function (){
     var bounds = frmMap.mapMain.getBounds();
     if(tuta.map.checkRadius(bounds)){
       //tuta.util.alert("MOVED");
-      if(!hasMovedAway){
-        frmMap.lblChangePick.text = "Change pickup location";
+      //if(!hasMovedAway){
+        //frmMap.lblChangePick.text = "Change pickup location";
         hasLoaded = false;
-        tuta.animate.move(frmMap.flexHeader, 0.2, "-8%", "", null);
-        tuta.animate.move(frmMap.flexAdd, 0.2, "1%", frmMap.flexAdd.left, null);
-        tuta.animate.moveBottomLeft(frmMap.flexNoOfPeople, 0.2, "-12%", "", null);
-        tuta.animate.moveBottomRight(frmMap.flexMapCenter, 0.2, "100dp", "-75dp", null);
-        hasMovedAway = true;   
-        hasMovedBack = false;
-      }
+        //tuta.animate.move(frmMap.flexHeader, 0.2, "-8%", "", null);
+        //tuta.animate.move(frmMap.flexAdd, 0.2, "1%", frmMap.flexAdd.left, null);
+        //tuta.animate.moveBottomLeft(frmMap.flexNoOfPeople, 0.2, "-12%", "", null);
+        //tuta.animate.moveBottomRight(frmMap.flexMapCenter, 0.2, "100dp", "-75dp", null);
+        //hasMovedAway = true;   
+       // hasMovedBack = false;
+     // }
       timeStill = 0;
 
 
@@ -250,16 +244,17 @@ tuta.map.startMapListener = function (){
       //tuta.util.alert("DIDN'T MOVE");
       timeStill++;
 
-      if(timeStill >= 3 && !hasMovedBack){
+      /*
+      if(timeStill >= 6 && !hasMovedBack){
         tuta.animate.move(frmMap.flexHeader, 0.2, "0%", "", null);
         tuta.animate.move(frmMap.flexAdd, 0.2, "12%", frmMap.flexAdd.left, null);
         tuta.animate.moveBottomLeft(frmMap.flexNoOfPeople, 0.2, "0%", "", null);
         tuta.animate.moveBottomRight(frmMap.flexMapCenter, 0.2, "100dp", "-10dp", null);  
         hasMovedBack = true;
         hasMovedAway = false;
-      }     
+      } */    
 
-      if(timeStill >= 5){
+      if(timeStill >= 2){
         timeStill = 0;
         if (hasLoaded === false){
           hasLoaded = true;
@@ -271,7 +266,7 @@ tuta.map.startMapListener = function (){
             tuta.events.calculateWaitTime(drivers, position, function(time){
               //tuta.util.alert("Wait Time", Math.round(time/60) + " mins");
               var mins = Math.round(time/60);
-              if(mins > 40 || mins == 0){
+              if(mins > 40 || mins === 0){
                 frmMap.lblChangePick.text = "No taxis available";
                 frmMap.rtClosest.text = ""; 
               }
@@ -287,7 +282,7 @@ tuta.map.startMapListener = function (){
       }
 
     }
-  }, 0.5, true);
+  }, 1, true);
 };
 tuta.map.stopMapListener = function (){
   try {
