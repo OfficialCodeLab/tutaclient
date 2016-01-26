@@ -1,0 +1,44 @@
+{
+	"AS_Button_6fb3e7ee4e5f4a258d148728de591191": {
+		"id": "AS_Button_6fb3e7ee4e5f4a258d148728de591191",
+		"type": "ACTION_SEQUENCE",
+		"params": [
+			{
+				"datatype": "collection",
+				"name": "eventobject"
+			}
+		],
+		"actions": [
+			{
+				"id": "ROTATE_ACTION____02cc9b7970034954aa2b6bc98faaf7cd",
+				"type": "ROTATE_ACTION",
+				"itemType": "FORM",
+				"itemId": "frmDebug",
+				"widgetId": "imgCar1",
+				"itemKUID": "1195863d78f3439c925759dab11dc9bd",
+				"widgetKUID": "1d64efda9858409986c803caf9bc124b",
+				"animationObject": {
+					"anchorPoint": {
+						"x": "50",
+						"y": "50"
+					},
+					"stepConfig": {
+						"timingFunction": "kony.anim.EASE"
+					},
+					"rotate": "50"
+				},
+				"config": {
+					"delay": "0",
+					"iterationCount": 1,
+					"fillMode": "kony.anim.FILL_MODE_FORWARDS",
+					"duration": "250"
+				},
+				"start": "Immediately",
+				"animationId": "ROTATE_ACTION____02cc9b7970034954aa2b6bc98faaf7cd",
+				"displayAnimationId": "ROTATE_CAR",
+				"parentId": null,
+				"callbackType": null
+			}
+		]
+	}
+}

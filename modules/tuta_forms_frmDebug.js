@@ -121,8 +121,10 @@ tuta.forms.frmDebug = function() {
       tuta.util.alert("Button Clicked", "Functionality for this is still in developement");
     };
     
+    
     this.control("btnTickPress8").onClick = function(button){
-      
+      tuta.animate.rotate(frmDebug.imgCar1, 0.25, 30, null);
+      /*
       var position = { 
         	lat: currentPos.geometry.location.lat,
   			lng: currentPos.geometry.location.lng
@@ -132,8 +134,8 @@ tuta.forms.frmDebug = function() {
           tuta.util.alert("Wait Time", Math.round(time/60) + " mins");
         });
       });
+    };*/
     };
-    
     
     
     tuta.map.stopMapListener();

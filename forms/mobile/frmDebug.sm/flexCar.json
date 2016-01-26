@@ -3,7 +3,7 @@
     "__parentReadjusting__": false,
     "_height_": {
         "type": "string",
-        "value": "45dp"
+        "value": "55dp"
     },
     "_margin_": [
         0,
@@ -19,24 +19,28 @@
     ],
     "_right_": {
         "type": "number",
-        "value": "0"
+        "value": "25"
     },
-    "_skin_": "scf60cfc3c694b07ac5fd3ba8f259b09",
+    "_skin_": "s9b2ce2774e144da99f795c3ff096827",
     "_top_": {
         "type": "string",
-        "value": "0dp"
+        "value": "9dp"
     },
     "_width_": {
         "type": "string",
-        "value": "48dp"
+        "value": "55dp"
     },
     "allboxes": [],
     "autogrowMode": 0,
     "autogrowmode": 0,
     "canUpdateUI": true,
+    "centerY": "50%",
+    "centery": {
+        "type": "string",
+        "value": "50%"
+    },
     "children": [
-        "rtClosest",
-        "imgLoading"
+        "imgCar1"
     ],
     "clipBounds": true,
     "clipbounds": true,
@@ -45,12 +49,12 @@
     "enableScrolling": true,
     "enabled": false,
     "enablescrolling": true,
-    "height": "45dp",
-    "id": "FlexContainer07ebb1525e3fe42",
+    "height": "55dp",
+    "id": "flexCar",
     "info": null,
     "isVisible": true,
     "isvisible": true,
-    "kuid": "f37377844df14120b17154bcd6d5737b",
+    "kuid": "931bb0cec051458991b3d2224ebda0ae",
     "layoutType": 2,
     "layouttype": 2,
     "margin": [
@@ -67,21 +71,21 @@
         0,
         0
     ],
-    "parent": "flexChangeDest",
+    "parent": "flexRow8",
     "percent": true,
-    "pf": "frmMap",
+    "pf": "frmDebug",
     "render": true,
-    "right": 0,
-    "skin": "scf60cfc3c694b07ac5fd3ba8f259b09",
+    "right": 25,
+    "skin": "s9b2ce2774e144da99f795c3ff096827",
     "snapGridSize": 10,
     "snapToGrid": true,
     "snapgridsize": 10,
     "snaptogrid": true,
-    "top": "0dp",
+    "top": "9dp",
     "wType": "FlexContainer",
     "widgetAlignment": 1,
     "widgetalignment": 1,
-    "width": "48dp",
-    "zIndex": 8,
-    "zindex": 8
+    "width": "55dp",
+    "zIndex": 4,
+    "zindex": 4
 }
