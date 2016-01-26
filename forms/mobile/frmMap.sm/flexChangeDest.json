@@ -7,7 +7,7 @@
     },
     "_height_": {
         "type": "string",
-        "value": "70dp"
+        "value": "63dp"
     },
     "_left_": {
         "type": "string",
@@ -28,7 +28,7 @@
     "_skin_": "s9b2ce2774e144da99f795c3ff096827",
     "_width_": {
         "type": "string",
-        "value": "240dp"
+        "value": "200dp"
     },
     "allboxes": [],
     "autogrowMode": 0,
@@ -54,7 +54,7 @@
     "enableScrolling": true,
     "enabled": false,
     "enablescrolling": true,
-    "height": "70dp",
+    "height": "63dp",
     "id": "flexChangeDest",
     "info": null,
     "isVisible": true,
@@ -89,7 +89,7 @@
     "wType": "FlexContainer",
     "widgetAlignment": 1,
     "widgetalignment": 1,
-    "width": "240dp",
+    "width": "200dp",
     "zIndex": 887,
     "zindex": 887
 }
