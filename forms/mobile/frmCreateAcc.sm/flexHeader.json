@@ -54,7 +54,7 @@
     "info": null,
     "isVisible": true,
     "isvisible": true,
-    "kuid": "93ac1537e2254c9bb73e154704e68e1c",
+    "kuid": "0f71ab1252cf406bb5011c21176b27ae",
     "layoutType": 2,
     "layouttype": 2,
     "left": "0dp",
@@ -72,7 +72,7 @@
         0,
         0
     ],
-    "parent": "flexScrollMain",
+    "parent": "flexMain",
     "percent": true,
     "pf": "frmCreateAcc",
     "render": true,

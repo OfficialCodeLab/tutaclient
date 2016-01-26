@@ -26,7 +26,7 @@
     "_text_": "Take A Photo",
     "_top_": {
         "type": "string",
-        "value": "20dp"
+        "value": "145dp"
     },
     "_width_": {
         "type": "string",
@@ -108,7 +108,7 @@
     },
     "text": "Take A Photo",
     "toolTip": "",
-    "top": "20dp",
+    "top": "145dp",
     "wType": "Camera",
     "widgetAlignment": 5,
     "width": "40%",
