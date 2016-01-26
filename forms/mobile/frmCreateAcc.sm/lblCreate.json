@@ -5,10 +5,6 @@
         "type": "ref",
         "value": "preferred"
     },
-    "_left_": {
-        "type": "string",
-        "value": "80dp"
-    },
     "_margin_": [
         1,
         1,
@@ -25,7 +21,7 @@
     "_text_": "CREATE AN ACCOUNT",
     "_top_": {
         "type": "string",
-        "value": "50dp"
+        "value": "40dp"
     },
     "_width_": {
         "type": "string",
@@ -33,10 +29,10 @@
     },
     "_wrapping_": 2,
     "canUpdateUI": true,
-    "centerX": "55%",
+    "centerX": "58%",
     "centerx": {
         "type": "string",
-        "value": "55%"
+        "value": "58%"
     },
     "channel": "mobile",
     "containerWeight": 100,
@@ -64,7 +60,6 @@
     "isVisible": true,
     "isvisible": true,
     "kuid": "e2592cb3045642f199247f53955f3aaf",
-    "left": "80dp",
     "margin": [
         1,
         1,
@@ -85,7 +80,7 @@
     "text": "CREATE AN ACCOUNT",
     "toolTip": "",
     "tooltip": "",
-    "top": "50dp",
+    "top": "40dp",
     "wType": "Label",
     "widgetAlignment": 5,
     "width": "100%",

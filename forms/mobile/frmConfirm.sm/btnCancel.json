@@ -45,6 +45,11 @@
     "height": "50dp",
     "id": "btnCancel",
     "info": null,
+    "iphone": {
+        "psp": {
+            "showProgressIndicator": false
+        }
+    },
     "isVisible": true,
     "isvisible": true,
     "kuid": "256b6ecae4f240a5a2becf60b8d9575e",
@@ -65,6 +70,8 @@
     "parent": "flexSetHeading",
     "pf": "frmConfirm",
     "render": true,
+    "showProgressIndicator": false,
+    "showprogressindicator": false,
     "skin": "s9ac25e26d504d60b5e148045b15b6eb",
     "text": "",
     "top": "6dp",

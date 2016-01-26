@@ -4,11 +4,7 @@
     "_base64_": null,
     "_height_": {
         "type": "string",
-        "value": "62dp"
-    },
-    "_left_": {
-        "type": "string",
-        "value": "-15dp"
+        "value": "70dp"
     },
     "_margin_": [
         0,
@@ -23,31 +19,36 @@
         0
     ],
     "_skin_": "s4ea8d4d07574957b839f06194980e52",
-    "_src_": "slidernow.png",
+    "_src_": "personicon.png",
     "_top_": {
         "type": "string",
-        "value": "0dp"
+        "value": "5dp"
     },
     "_width_": {
         "type": "string",
-        "value": "160dp"
+        "value": "70dp"
     },
     "base64": null,
     "canUpdateUI": true,
+    "centerX": "50%",
+    "centerx": {
+        "type": "string",
+        "value": "50%"
+    },
     "channel": "mobile",
     "containerWeight": 100,
     "containerweight": 100,
     "context": {
         "channel": "mobile",
-        "formID": "frmConfirm",
+        "formID": "frmCreateAcc",
         "ispercent": true,
         "platform": "iphone",
         "templateType": "forms",
         "topLevelBox": null
     },
     "enabled": false,
-    "height": "62dp",
-    "id": "imgNow",
+    "height": "70dp",
+    "id": "imgPlaceholder",
     "imageScaleMode": 1,
     "imagescalemode": 1,
     "info": null,
@@ -55,8 +56,7 @@
     "isVisible": true,
     "ispercent": true,
     "isvisible": true,
-    "kuid": "b0049b689d4649e281fc583b0863ef37",
-    "left": "-15dp",
+    "kuid": "5204d5a7679340dfaacbe038bf91845c",
     "margin": [
         0,
         0,
@@ -70,17 +70,17 @@
         0,
         0
     ],
-    "parent": "flexSlider",
-    "pf": "frmConfirm",
+    "parent": "flexMain",
+    "pf": "frmCreateAcc",
     "render": true,
     "skin": "s4ea8d4d07574957b839f06194980e52",
-    "src": "slidernow.png",
+    "src": "personicon.png",
     "srcType": 1,
-    "top": "0dp",
+    "top": "5dp",
     "wType": "Image",
     "widgetAlignment": 5,
     "widgetalignment": 5,
-    "width": "160dp",
-    "zIndex": 5,
-    "zindex": 5
+    "width": "70dp",
+    "zIndex": 2,
+    "zindex": 2
 }

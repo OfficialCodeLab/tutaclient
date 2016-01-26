@@ -39,10 +39,18 @@
     "channel": "mobile",
     "children": [
         "lblBook",
-        "flexSliderHidden",
-        "flexSlider",
         "lblSeperatorLg2",
-        "lblPickUp"
+        "lblPickUp",
+        "btnLaterActive",
+        "btnNowInactive",
+        "btnLaterInactive",
+        "lblInactiveBackground",
+        "lblNowActive",
+        "lblNowActiveBottomBorder",
+        "lblNowActiveSideBorder",
+        "lblLaterActive",
+        "lblLaterActiveBottomBorder",
+        "lblLaterActiveSideBorder"
     ],
     "clipBounds": true,
     "clipbounds": true,

@@ -45,6 +45,11 @@
     "height": "100%",
     "id": "btnChsRight",
     "info": null,
+    "iphone": {
+        "psp": {
+            "showProgressIndicator": false
+        }
+    },
     "isVisible": true,
     "isvisible": true,
     "kuid": "b83a669bd6074b678c7f3df7f0ce1d79",
@@ -65,6 +70,8 @@
     "pf": "frmMap",
     "render": true,
     "right": 0,
+    "showProgressIndicator": false,
+    "showprogressindicator": false,
     "skin": "s4b0777560ed45748b679dd074f4aff2",
     "text": "",
     "top": "0dp",

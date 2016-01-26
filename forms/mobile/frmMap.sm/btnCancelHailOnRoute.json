@@ -46,6 +46,11 @@
     "height": "100%",
     "id": "btnCancelHailOnRoute",
     "info": null,
+    "iphone": {
+        "psp": {
+            "showProgressIndicator": false
+        }
+    },
     "isVisible": true,
     "isvisible": true,
     "kuid": "3bba15766ff04b19b09cc54808484a81",
@@ -66,6 +71,8 @@
     "parent": "flexCancel",
     "pf": "frmMap",
     "render": true,
+    "showProgressIndicator": false,
+    "showprogressindicator": false,
     "skin": "sdd504fa06f249a5a398adb6dc2211c2",
     "text": "",
     "top": "0dp",

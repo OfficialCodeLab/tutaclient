@@ -45,6 +45,11 @@
     "height": "40dp",
     "id": "btnChangePickup",
     "info": null,
+    "iphone": {
+        "psp": {
+            "showProgressIndicator": false
+        }
+    },
     "isVisible": true,
     "isvisible": true,
     "kuid": "e7a0a2ab883048ffaf3f28f3e7f9ab2b",
@@ -67,6 +72,8 @@
     "parent": "FlexContainer08d89f632aa864d",
     "pf": "frmConfirm",
     "render": true,
+    "showProgressIndicator": false,
+    "showprogressindicator": false,
     "skin": "s40f48a4648e49eaae036a6490abea85",
     "text": "",
     "top": "-45dp",

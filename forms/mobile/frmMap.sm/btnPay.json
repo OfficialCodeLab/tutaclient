@@ -45,6 +45,11 @@
     "height": "60dp",
     "id": "btnPay",
     "info": null,
+    "iphone": {
+        "psp": {
+            "showProgressIndicator": false
+        }
+    },
     "isVisible": true,
     "isvisible": true,
     "kuid": "ff598907547b407583f7399e664d8a4e",
@@ -67,6 +72,8 @@
     "parent": "flexMenuItems",
     "pf": "frmMap",
     "render": true,
+    "showProgressIndicator": false,
+    "showprogressindicator": false,
     "skin": "sdcceba3395c458b80cf8e2b28c500b6",
     "text": "Payment",
     "top": "0dp",

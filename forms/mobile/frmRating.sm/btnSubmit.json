@@ -51,6 +51,11 @@
     "height": "12%",
     "id": "btnSubmit",
     "info": null,
+    "iphone": {
+        "psp": {
+            "showProgressIndicator": false
+        }
+    },
     "isVisible": true,
     "isvisible": true,
     "kuid": "45501368980b4b5ba69e0622dd31d159",
@@ -68,7 +73,7 @@
         0,
         0
     ],
-    "parent": "FlexContainer03d11d945e7de4a",
+    "parent": "flexAllTripDetails",
     "pf": "frmRating",
     "render": true,
     "skin": "s540fa04d81f451e8855c7189f4bef5b",

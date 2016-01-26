@@ -56,6 +56,11 @@
     "height": "50dp",
     "id": "btnSignUp",
     "info": null,
+    "iphone": {
+        "psp": {
+            "showProgressIndicator": false
+        }
+    },
     "isVisible": true,
     "isvisible": true,
     "kuid": "aaae2f2a682241b4823b9fbd440778ac",
@@ -76,6 +81,8 @@
     "parent": "flexMainButtons",
     "pf": "frmSplash",
     "render": true,
+    "showProgressIndicator": false,
+    "showprogressindicator": false,
     "skin": "se6955b3e0514edb8c685acb09685de7",
     "text": "Sign Up",
     "wType": "Button",

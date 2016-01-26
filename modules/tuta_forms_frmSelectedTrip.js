@@ -16,7 +16,7 @@ tuta.forms.frmSelectedTrip = function() {
   
   tuta.forms.frmSelectedTrip.onPreShow = function(form) {
     var self = this;
-    this.control("btnBack").onClick = function (button) {tuta.forms.frmTrip.show();};
+    this.control("btnBack").onClick = function (button) {kony.application.getPreviousForm().show();};
     this.control("btnHelp").onClick = function (button) {tuta.forms.frmHelp.show();};
     tuta.map.stopMapListener();
   };

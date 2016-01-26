@@ -74,7 +74,7 @@
         0,
         0
     ],
-    "parent": "FlexScrollContainer071030639d13842",
+    "parent": "flexHelpDetails",
     "pf": "frmHelp",
     "render": true,
     "skin": "s34c26b24c9f4bf58810bb071864eba9",

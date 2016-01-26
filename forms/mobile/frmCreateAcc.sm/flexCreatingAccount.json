@@ -36,8 +36,7 @@
     "bottom": 0,
     "canUpdateUI": true,
     "children": [
-        "lblCreating",
-        "lblNote"
+        "lblCreating"
     ],
     "clipBounds": true,
     "clipbounds": true,

@@ -46,6 +46,11 @@
     "height": "60dp",
     "id": "btnSubmitRating",
     "info": null,
+    "iphone": {
+        "psp": {
+            "showProgressIndicator": false
+        }
+    },
     "isVisible": true,
     "isvisible": true,
     "kuid": "7de6b15ebaa94b65a31950e3597dfc1d",
@@ -66,6 +71,8 @@
     "parent": "CopyflexCancelHail04775c97c967944",
     "pf": "frmMap",
     "render": true,
+    "showProgressIndicator": false,
+    "showprogressindicator": false,
     "skin": "s08dad176bf14ea88920efdc1953bd55",
     "text": "Submit",
     "wType": "Button",

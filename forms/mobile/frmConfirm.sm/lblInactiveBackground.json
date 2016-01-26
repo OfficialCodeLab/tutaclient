@@ -2,17 +2,9 @@
     "@class": "com.kony.gen.viz.model.component.KVizLabel",
     "DNDConfig": null,
     "__parentReadjusting__": false,
-    "_bottom_": {
-        "type": "number",
-        "value": "5"
-    },
     "_height_": {
         "type": "string",
-        "value": "55dp"
-    },
-    "_left_": {
-        "type": "string",
-        "value": "158dp"
+        "value": "49dp"
     },
     "_margin_": [
         1,
@@ -26,14 +18,17 @@
         0,
         0
     ],
-    "_skin_": "s34c26b24c9f4bf58810bb071864eba9",
+    "_skin_": "s919e7560d474d979e7fa9870fac3070",
     "_text_": "",
+    "_top_": {
+        "type": "string",
+        "value": "70dp"
+    },
     "_width_": {
         "type": "string",
-        "value": "1dp"
+        "value": "5%"
     },
     "_wrapping_": 2,
-    "bottom": 5,
     "canUpdateUI": true,
     "centerX": "50%",
     "centerx": {
@@ -45,8 +40,8 @@
     "contentAlignment": 4,
     "contentalignment": 4,
     "enabled": false,
-    "height": "55dp",
-    "id": "CopylblSep0d2eac27f6fe54f",
+    "height": "49dp",
+    "id": "lblInactiveBackground",
     "info": null,
     "ipad": {
         "psp": {
@@ -60,8 +55,7 @@
     },
     "isVisible": true,
     "isvisible": true,
-    "kuid": "909a4d03c07f4b9bb9ba402b02e48418",
-    "left": "158dp",
+    "kuid": "ac5c1972f0324c4b99d646b7ace0525b",
     "margin": [
         1,
         1,
@@ -75,17 +69,18 @@
         0,
         0
     ],
-    "parent": "flexMain",
-    "pf": "frmHelp",
+    "parent": "flexConfirm",
+    "pf": "frmConfirm",
     "render": true,
-    "skin": "s34c26b24c9f4bf58810bb071864eba9",
+    "skin": "s919e7560d474d979e7fa9870fac3070",
     "text": "",
     "toolTip": "",
     "tooltip": "",
+    "top": "70dp",
     "wType": "Label",
     "widgetAlignment": 5,
-    "width": "1dp",
+    "width": "5%",
     "wrapping": 2,
-    "zIndex": 1,
-    "zindex": 1
+    "zIndex": 5,
+    "zindex": 5
 }

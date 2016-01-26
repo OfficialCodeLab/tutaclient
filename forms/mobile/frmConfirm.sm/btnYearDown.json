@@ -50,6 +50,11 @@
     "height": "40dp",
     "id": "btnYearDown",
     "info": null,
+    "iphone": {
+        "psp": {
+            "showProgressIndicator": false
+        }
+    },
     "isVisible": true,
     "isvisible": true,
     "kuid": "3127a4a3728d4ebb9131098465aad70e",
@@ -70,6 +75,8 @@
     "parent": "flexSetTime",
     "pf": "frmConfirm",
     "render": true,
+    "showProgressIndicator": false,
+    "showprogressindicator": false,
     "skin": "sa9604b6af4e470eacc52ba50dfd6091",
     "text": "",
     "top": "155dp",

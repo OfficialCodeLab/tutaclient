@@ -45,6 +45,11 @@
     "height": "60dp",
     "id": "btnHelp",
     "info": null,
+    "iphone": {
+        "psp": {
+            "showProgressIndicator": false
+        }
+    },
     "isVisible": true,
     "isvisible": true,
     "kuid": "2fe390afc9494a838dcb37f6e3bf3934",
@@ -67,6 +72,8 @@
     "parent": "flexMenuItems",
     "pf": "frmMap",
     "render": true,
+    "showProgressIndicator": false,
+    "showprogressindicator": false,
     "skin": "sdcceba3395c458b80cf8e2b28c500b6",
     "text": "Help",
     "top": "120dp",

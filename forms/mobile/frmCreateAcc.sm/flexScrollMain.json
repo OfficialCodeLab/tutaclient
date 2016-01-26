@@ -1,6 +1,10 @@
 {
     "DNDConfig": null,
     "__parentReadjusting__": false,
+    "_bottom_": {
+        "type": "string",
+        "value": "0dp"
+    },
     "_height_": {
         "type": "string",
         "value": "100%"
@@ -35,6 +39,7 @@
     "allowVerticalBounce": false,
     "allowhorizontalbounce": false,
     "allowverticalbounce": false,
+    "bottom": "0dp",
     "bounces": true,
     "canUpdateUI": true,
     "channel": "mobile",

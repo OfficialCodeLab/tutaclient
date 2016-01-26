@@ -71,7 +71,7 @@
         0,
         0
     ],
-    "parent": "FlexContainer0bc4e1887a39a44",
+    "parent": "flexFare",
     "pf": "frmSelectedTrip",
     "render": true,
     "right": "10dp",

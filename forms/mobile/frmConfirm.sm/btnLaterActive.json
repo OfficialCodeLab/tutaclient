@@ -1,0 +1,83 @@
+{
+    "@class": "com.kony.gen.viz.model.component.KVizButton",
+    "DNDConfig": null,
+    "__parentReadjusting__": false,
+    "_height_": {
+        "type": "string",
+        "value": "50dp"
+    },
+    "_left_": {
+        "type": "string",
+        "value": "50%"
+    },
+    "_margin_": [
+        6,
+        6,
+        6,
+        6
+    ],
+    "_padding_": [
+        0,
+        0,
+        0,
+        0
+    ],
+    "_skin_": "s93795a686244e0594292159755ceaf2",
+    "_text_": "Later",
+    "_top_": {
+        "type": "string",
+        "value": "70dp"
+    },
+    "_width_": {
+        "type": "string",
+        "value": "35%"
+    },
+    "canUpdateUI": true,
+    "containerWeight": 100,
+    "containerweight": 100,
+    "contentAlignment": 5,
+    "contentalignment": 5,
+    "displayText": true,
+    "displaytext": true,
+    "enabled": false,
+    "focusSkin": "s7464c9c9b734cceba3d3bc0992d66de",
+    "focusskin": "s7464c9c9b734cceba3d3bc0992d66de",
+    "height": "50dp",
+    "id": "btnLaterActive",
+    "info": null,
+    "iphone": {
+        "psp": {
+            "showProgressIndicator": false
+        }
+    },
+    "isVisible": false,
+    "isvisible": false,
+    "kuid": "83670136f090447bb52c62b56e553b80",
+    "left": "50%",
+    "margin": [
+        6,
+        6,
+        6,
+        6
+    ],
+    "name": "kony.ui.Button",
+    "padding": [
+        0,
+        0,
+        0,
+        0
+    ],
+    "parent": "flexConfirm",
+    "pf": "frmConfirm",
+    "render": true,
+    "showProgressIndicator": false,
+    "showprogressindicator": false,
+    "skin": "s93795a686244e0594292159755ceaf2",
+    "text": "Later",
+    "top": "70dp",
+    "wType": "Button",
+    "widgetAlignment": 5,
+    "width": "35%",
+    "zIndex": 5,
+    "zindex": 5
+}

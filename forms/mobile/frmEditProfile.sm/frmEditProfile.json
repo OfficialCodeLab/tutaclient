@@ -26,7 +26,8 @@
     "bounces": false,
     "canUpdateUI": true,
     "children": [
-        "flexMain"
+        "flexMain",
+        "flexUpdatingProfile"
     ],
     "containerWeight": 100,
     "containerweight": 100,

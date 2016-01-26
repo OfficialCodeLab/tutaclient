@@ -25,7 +25,7 @@
     "_text_": "New User",
     "_top_": {
         "type": "string",
-        "value": "80dp"
+        "value": "65dp"
     },
     "_width_": {
         "type": "string",
@@ -85,7 +85,7 @@
     "text": "New User",
     "toolTip": "",
     "tooltip": "",
-    "top": "80dp",
+    "top": "65dp",
     "wType": "Label",
     "widgetAlignment": 5,
     "width": "100%",

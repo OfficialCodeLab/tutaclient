@@ -54,7 +54,7 @@
     "enabled": false,
     "enablescrolling": true,
     "height": "100dp",
-    "id": "FlexContainer0bc4e1887a39a44",
+    "id": "flexFare",
     "info": null,
     "isVisible": true,
     "isvisible": true,
@@ -76,7 +76,7 @@
         0,
         0
     ],
-    "parent": "FlexContainer0a960a948278c42",
+    "parent": "flexMain",
     "percent": true,
     "pf": "frmSelectedTrip",
     "render": true,

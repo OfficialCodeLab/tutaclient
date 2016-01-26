@@ -45,6 +45,11 @@
     "height": "100%",
     "id": "btnCancelSetDest",
     "info": null,
+    "iphone": {
+        "psp": {
+            "showProgressIndicator": false
+        }
+    },
     "isVisible": true,
     "isvisible": true,
     "kuid": "7a97b3ef94624f329b0d401bad18219e",
@@ -65,6 +70,8 @@
     "pf": "frmMap",
     "render": true,
     "right": 0,
+    "showProgressIndicator": false,
+    "showprogressindicator": false,
     "skin": "scb135896a8e41d38abee82a6347e21d",
     "text": "",
     "top": "0dp",

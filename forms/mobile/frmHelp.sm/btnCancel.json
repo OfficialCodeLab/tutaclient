@@ -51,6 +51,11 @@
     "height": "65dp",
     "id": "btnCancel",
     "info": null,
+    "iphone": {
+        "psp": {
+            "showProgressIndicator": false
+        }
+    },
     "isVisible": true,
     "isvisible": true,
     "kuid": "0cfe2abe390d422393979d98f8d49905",

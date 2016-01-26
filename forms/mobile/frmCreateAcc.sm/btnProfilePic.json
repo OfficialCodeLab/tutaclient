@@ -46,6 +46,11 @@
     "height": "70dp",
     "id": "btnProfilePic",
     "info": null,
+    "iphone": {
+        "psp": {
+            "showProgressIndicator": false
+        }
+    },
     "isVisible": true,
     "isvisible": true,
     "kuid": "a68e1bd519054fb6b982d245f40babca",
@@ -65,6 +70,8 @@
     "parent": "flexMain",
     "pf": "frmCreateAcc",
     "render": true,
+    "showProgressIndicator": false,
+    "showprogressindicator": false,
     "skin": "s1a5bc3e9655455fa2f6a22d08e8bfd4",
     "text": "",
     "top": "5dp",

@@ -36,17 +36,6 @@ function onStarSelect(eventobject, x , y) {
 } 
 
 function setUpSwipes(){ 
-
-  frmConfirm.flexSlider.addGestureRecognizer(constants.GESTURE_TYPE_SWIPE, GLOBAL_GESTURE_FINGERS_1,  function(widget, gestureInformationSwipe) {
-    //ssa.mobile.alert("","" + gestureInformationSwipe.swipeDirection );
-    if(gestureInformationSwipe.swipeDirection == 2) { 
-      showLater(); 
-    }
-    else if (gestureInformationSwipe.swipeDirection == 1){
-      showNow();
-    }
-  });
-
   frmMap.flexNoPanning.addGestureRecognizer(constants.GESTURE_TYPE_SWIPE, GLOBAL_GESTURE_FINGERS_1,  function(widget, gestureInformationSwipe) {
 
   });

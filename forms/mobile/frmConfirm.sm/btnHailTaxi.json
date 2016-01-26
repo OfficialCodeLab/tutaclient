@@ -51,6 +51,11 @@
     "height": "60dp",
     "id": "btnHailTaxi",
     "info": null,
+    "iphone": {
+        "psp": {
+            "showProgressIndicator": false
+        }
+    },
     "isVisible": true,
     "isvisible": true,
     "kuid": "73eb397a62c34602a1e7704201813697",
@@ -71,6 +76,8 @@
     "parent": "flexFootMenu",
     "pf": "frmConfirm",
     "render": true,
+    "showProgressIndicator": false,
+    "showprogressindicator": false,
     "skin": "s1550b05b4cd4490b4a5a5dfe985ad82",
     "text": "Request",
     "wType": "Button",

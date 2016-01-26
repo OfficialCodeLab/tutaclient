@@ -1,14 +1,15 @@
 {
+    "@class": "com.kony.gen.viz.model.component.KVizImage2",
     "DNDConfig": null,
     "__parentReadjusting__": false,
     "_base64_": null,
     "_height_": {
         "type": "string",
-        "value": "50dp"
+        "value": "50%"
     },
     "_left_": {
         "type": "string",
-        "value": "0dp"
+        "value": "166dp"
     },
     "_margin_": [
         0,
@@ -23,14 +24,14 @@
         0
     ],
     "_skin_": "s4ea8d4d07574957b839f06194980e52",
-    "_src_": "sliderunderneath.png",
+    "_src_": "caniconlg.png",
     "_top_": {
         "type": "string",
-        "value": "4dp"
+        "value": "10dp"
     },
     "_width_": {
         "type": "string",
-        "value": "240dp"
+        "value": "100%"
     },
     "base64": null,
     "canUpdateUI": true,
@@ -39,29 +40,25 @@
         "type": "string",
         "value": "50%"
     },
-    "channel": "mobile",
     "containerWeight": 100,
     "containerweight": 100,
     "context": {
         "channel": "mobile",
-        "formID": "frmConfirm",
-        "ispercent": true,
-        "platform": "iphone",
+        "formID": "frmTrip",
         "templateType": "forms",
         "topLevelBox": null
     },
     "enabled": false,
-    "height": "50dp",
-    "id": "imgSlider",
+    "height": "50%",
+    "id": "imgTaxiIcon",
     "imageScaleMode": 1,
     "imagescalemode": 1,
     "info": null,
     "invokedProperty": "src",
     "isVisible": true,
-    "ispercent": true,
     "isvisible": true,
-    "kuid": "02f73342a14a44a79f0cb01a70b4a790",
-    "left": "0dp",
+    "kuid": "25a476e66bb64d4787b500dca55c4399",
+    "left": "166dp",
     "margin": [
         0,
         0,
@@ -75,17 +72,17 @@
         0,
         0
     ],
-    "parent": "flexSlider",
-    "pf": "frmConfirm",
+    "parent": "flexHeader",
+    "pf": "frmTrip",
     "render": true,
     "skin": "s4ea8d4d07574957b839f06194980e52",
-    "src": "sliderunderneath.png",
+    "src": "caniconlg.png",
     "srcType": 1,
-    "top": "4dp",
+    "top": "10dp",
     "wType": "Image",
     "widgetAlignment": 5,
     "widgetalignment": 5,
-    "width": "240dp",
-    "zIndex": 5,
-    "zindex": 5
+    "width": "100%",
+    "zIndex": 1,
+    "zindex": 1
 }

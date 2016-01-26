@@ -17,7 +17,7 @@ tuta.forms.frmDebug = function() {
   tuta.forms.frmDebug.onPreShow = function(form) {
     var self = this;
 
-    this.control("btnBack").onClick = function (button) {tuta.forms.frmMap.show();};
+    this.control("btnBack").onClick = function (button) {kony.application.getPreviousForm().show();};
 
     //Controls the flag for the map overlay
     this.control("btnTickPress1").onClick = function (button) {

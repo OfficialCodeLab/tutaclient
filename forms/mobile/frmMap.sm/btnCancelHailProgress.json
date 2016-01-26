@@ -45,6 +45,11 @@
     "height": "80dp",
     "id": "btnCancelHailProgress",
     "info": null,
+    "iphone": {
+        "psp": {
+            "showProgressIndicator": false
+        }
+    },
     "isVisible": true,
     "isvisible": true,
     "kuid": "9716b3ccf86845c6a59aabf733b8a62a",
@@ -65,6 +70,8 @@
     "pf": "frmMap",
     "render": true,
     "right": -11,
+    "showProgressIndicator": false,
+    "showprogressindicator": false,
     "skin": "sc065f92395d40e7be0f4692fc99525b",
     "text": "X",
     "top": "-14dp",

@@ -46,7 +46,7 @@
         "channel": "mobile",
         "formID": "frmConfirm",
         "ispercent": true,
-        "platform": "iphone",
+        "platform": "android",
         "templateType": "forms",
         "topLevelBox": null
     },

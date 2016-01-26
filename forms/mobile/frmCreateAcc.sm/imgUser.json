@@ -4,7 +4,7 @@
     "_base64_": null,
     "_height_": {
         "type": "string",
-        "value": "38dp"
+        "value": "70dp"
     },
     "_margin_": [
         0,
@@ -19,14 +19,14 @@
         0
     ],
     "_skin_": "s4ea8d4d07574957b839f06194980e52",
-    "_src_": "infoticon.png",
+    "_src_": "personicon.png",
     "_top_": {
         "type": "string",
-        "value": "20dp"
+        "value": "5dp"
     },
     "_width_": {
         "type": "string",
-        "value": "40dp"
+        "value": "70dp"
     },
     "base64": null,
     "canUpdateUI": true,
@@ -42,12 +42,12 @@
         "channel": "mobile",
         "formID": "frmCreateAcc",
         "ispercent": true,
-        "platform": "android",
+        "platform": "iphone",
         "templateType": "forms",
         "topLevelBox": null
     },
     "enabled": false,
-    "height": "38dp",
+    "height": "70dp",
     "id": "imgUser",
     "imageScaleMode": 1,
     "imagescalemode": 1,
@@ -56,7 +56,7 @@
     "isVisible": true,
     "ispercent": true,
     "isvisible": true,
-    "kuid": "5204d5a7679340dfaacbe038bf91845c",
+    "kuid": "bcd492a9c3c34f88b816ddb8e6efa0f9",
     "margin": [
         0,
         0,
@@ -74,13 +74,13 @@
     "pf": "frmCreateAcc",
     "render": true,
     "skin": "s4ea8d4d07574957b839f06194980e52",
-    "src": "infoticon.png",
+    "src": "personicon.png",
     "srcType": 1,
-    "top": "20dp",
+    "top": "5dp",
     "wType": "Image",
     "widgetAlignment": 5,
     "widgetalignment": 5,
-    "width": "40dp",
+    "width": "70dp",
     "zIndex": 2,
     "zindex": 2
 }

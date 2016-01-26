@@ -46,6 +46,11 @@
     "height": "25dp",
     "id": "btnForgotPass",
     "info": null,
+    "iphone": {
+        "psp": {
+            "showProgressIndicator": false
+        }
+    },
     "isVisible": true,
     "isvisible": true,
     "kuid": "4b5dace67e474fecba9a42c9d95148e7",
@@ -66,6 +71,8 @@
     "pf": "frmSplash",
     "render": true,
     "right": "10%",
+    "showProgressIndicator": false,
+    "showprogressindicator": false,
     "skin": "s522d6ef98a844d0abbf278d0001daa5",
     "text": "Forgot Password?",
     "wType": "Button",

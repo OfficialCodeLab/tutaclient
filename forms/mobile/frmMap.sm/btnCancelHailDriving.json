@@ -46,6 +46,11 @@
     "height": "70dp",
     "id": "btnCancelHailDriving",
     "info": null,
+    "iphone": {
+        "psp": {
+            "showProgressIndicator": false
+        }
+    },
     "isVisible": false,
     "isvisible": false,
     "kuid": "1d9bc029bea84f6d9196be7a05d13089",
@@ -66,6 +71,8 @@
     "parent": "flexAll",
     "pf": "frmMap",
     "render": true,
+    "showProgressIndicator": false,
+    "showprogressindicator": false,
     "skin": "sf27f304775d4a5cb0e6d4e9b656af99",
     "text": "",
     "wType": "Button",

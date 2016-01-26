@@ -51,6 +51,11 @@
     "height": "40dp",
     "id": "btnHelp",
     "info": null,
+    "iphone": {
+        "psp": {
+            "showProgressIndicator": false
+        }
+    },
     "isVisible": true,
     "isvisible": true,
     "kuid": "8dd014c468f3495aab2c33f1fc8de967",
@@ -68,9 +73,11 @@
         0,
         0
     ],
-    "parent": "FlexContainer0a960a948278c42",
+    "parent": "flexMain",
     "pf": "frmSelectedTrip",
     "render": true,
+    "showProgressIndicator": false,
+    "showprogressindicator": false,
     "skin": "s6edefd77c6f4822b658bf45d22cebe5",
     "text": "NEED HELP?",
     "wType": "Button",

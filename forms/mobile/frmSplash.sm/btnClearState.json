@@ -45,6 +45,11 @@
     "height": "60dp",
     "id": "btnClearState",
     "info": null,
+    "iphone": {
+        "psp": {
+            "showProgressIndicator": false
+        }
+    },
     "isVisible": true,
     "isvisible": true,
     "kuid": "e75b16bf32a543908498b717510adf7c",
@@ -65,6 +70,8 @@
     "parent": "flexSplash",
     "pf": "frmSplash",
     "render": true,
+    "showProgressIndicator": false,
+    "showprogressindicator": false,
     "skin": "sc065f92395d40e7be0f4692fc99525b",
     "text": "",
     "top": "0dp",

@@ -1,0 +1,86 @@
+{
+    "@class": "com.kony.gen.viz.model.component.KVizButton",
+    "DNDConfig": null,
+    "__parentReadjusting__": false,
+    "_bottom_": {
+        "type": "number",
+        "value": "0"
+    },
+    "_height_": {
+        "type": "string",
+        "value": "65dp"
+    },
+    "_left_": {
+        "type": "string",
+        "value": "229dp"
+    },
+    "_margin_": [
+        6,
+        6,
+        6,
+        6
+    ],
+    "_padding_": [
+        0,
+        0,
+        0,
+        0
+    ],
+    "_skin_": "s9614827f4ad44c0ba2cd2e0343cac6d",
+    "_text_": "Cancel",
+    "_width_": {
+        "type": "string",
+        "value": "50%"
+    },
+    "bottom": 0,
+    "canUpdateUI": true,
+    "centerX": "25%",
+    "centerx": {
+        "type": "string",
+        "value": "25%"
+    },
+    "containerWeight": 100,
+    "containerweight": 100,
+    "contentAlignment": 5,
+    "contentalignment": 5,
+    "displayText": true,
+    "displaytext": true,
+    "enabled": false,
+    "focusSkin": "s07066e9cde24d7581fdc192a5296659",
+    "focusskin": "s07066e9cde24d7581fdc192a5296659",
+    "height": "65dp",
+    "id": "btnCancel",
+    "info": null,
+    "iphone": {
+        "psp": {
+            "showProgressIndicator": false
+        }
+    },
+    "isVisible": true,
+    "isvisible": true,
+    "kuid": "c9ecba27e53c45c1927456200d16e548",
+    "left": "229dp",
+    "margin": [
+        6,
+        6,
+        6,
+        6
+    ],
+    "name": "kony.ui.Button",
+    "padding": [
+        0,
+        0,
+        0,
+        0
+    ],
+    "parent": "flexMain",
+    "pf": "frmCreateAcc",
+    "render": true,
+    "skin": "s9614827f4ad44c0ba2cd2e0343cac6d",
+    "text": "Cancel",
+    "wType": "Button",
+    "widgetAlignment": 5,
+    "width": "50%",
+    "zIndex": 1,
+    "zindex": 1
+}

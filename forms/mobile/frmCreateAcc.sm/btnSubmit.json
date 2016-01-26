@@ -1,13 +1,18 @@
 {
+    "@class": "com.kony.gen.viz.model.component.KVizButton",
     "DNDConfig": null,
     "__parentReadjusting__": false,
+    "_bottom_": {
+        "type": "number",
+        "value": "0"
+    },
     "_height_": {
         "type": "string",
-        "value": "50dp"
+        "value": "65dp"
     },
     "_left_": {
         "type": "string",
-        "value": "58dp"
+        "value": "229dp"
     },
     "_margin_": [
         6,
@@ -21,23 +26,19 @@
         0,
         0
     ],
-    "_skin_": "sb7176daece746feaa30d727bc7a2f09",
-    "_text_": "Confirm",
-    "_top_": {
-        "type": "string",
-        "value": "420dp"
-    },
+    "_skin_": "s1c74677af37467395acd40aafd6fabf",
+    "_text_": "Submit",
     "_width_": {
-        "type": "string",
-        "value": "90%"
-    },
-    "canUpdateUI": true,
-    "centerX": "50%",
-    "centerx": {
         "type": "string",
         "value": "50%"
     },
-    "channel": "mobile",
+    "bottom": 0,
+    "canUpdateUI": true,
+    "centerX": "75%",
+    "centerx": {
+        "type": "string",
+        "value": "75%"
+    },
     "containerWeight": 100,
     "containerweight": 100,
     "contentAlignment": 5,
@@ -45,15 +46,20 @@
     "displayText": true,
     "displaytext": true,
     "enabled": false,
-    "focusSkin": "sb000b71e564467d88aff6462a747c90",
-    "focusskin": "sb000b71e564467d88aff6462a747c90",
-    "height": "50dp",
-    "id": "btnConfirm",
+    "focusSkin": "s85220893c16494baad2f48169dbc479",
+    "focusskin": "s85220893c16494baad2f48169dbc479",
+    "height": "65dp",
+    "id": "btnSubmit",
     "info": null,
+    "iphone": {
+        "psp": {
+            "showProgressIndicator": false
+        }
+    },
     "isVisible": true,
     "isvisible": true,
-    "kuid": "485eb9a8721446a0bc7ea68a76c4c1e0",
-    "left": "58dp",
+    "kuid": "af42e9c8648d477685c6bcf0a472befa",
+    "left": "229dp",
     "margin": [
         6,
         6,
@@ -70,12 +76,11 @@
     "parent": "flexMain",
     "pf": "frmCreateAcc",
     "render": true,
-    "skin": "sb7176daece746feaa30d727bc7a2f09",
-    "text": "Confirm",
-    "top": "420dp",
+    "skin": "s1c74677af37467395acd40aafd6fabf",
+    "text": "Submit",
     "wType": "Button",
     "widgetAlignment": 5,
-    "width": "90%",
+    "width": "50%",
     "zIndex": 1,
     "zindex": 1
 }

@@ -1,9 +1,13 @@
 {
     "DNDConfig": null,
     "__parentReadjusting__": false,
+    "_bottom_": {
+        "type": "number",
+        "value": "0"
+    },
     "_height_": {
         "type": "string",
-        "value": "490dp"
+        "value": "100%"
     },
     "_left_": {
         "type": "string",
@@ -34,9 +38,11 @@
     "allboxes": [],
     "autogrowMode": 0,
     "autogrowmode": 0,
+    "bottom": 0,
     "canUpdateUI": true,
     "channel": "mobile",
     "children": [
+        "imgPlaceholder",
         "imgUser",
         "btnProfilePic",
         "cmrTakePhoto",
@@ -47,11 +53,6 @@
         "lblSep4",
         "lblSep5",
         "lblSep6",
-        "btnConfirm",
-        "lblCircle1",
-        "lblCircle2",
-        "lblSmallCircle1",
-        "lblSmallCircle2",
         "imgPerson",
         "imgEnvelope",
         "imgPhone",
@@ -60,7 +61,11 @@
         "txtEmail",
         "txtContact",
         "txtPass",
-        "txtPass2"
+        "txtPass2",
+        "btnSubmit",
+        "btnCancel",
+        "lblSepTop",
+        "lblSepMiddle"
     ],
     "clipBounds": true,
     "clipbounds": true,
@@ -69,7 +74,7 @@
     "enableScrolling": true,
     "enabled": false,
     "enablescrolling": true,
-    "height": "490dp",
+    "height": "100%",
     "id": "flexMain",
     "info": null,
     "isVisible": true,

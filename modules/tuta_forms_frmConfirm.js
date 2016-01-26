@@ -42,7 +42,7 @@ tuta.forms.frmConfirm = function() {
         else
           pickupPosition = pickupPoint;
 
-        if (sliderDir == 2) //Booking Now
+        if (bookNow) //Booking Now
         {
           try {
             //Gets current user as a JSON Object
@@ -94,7 +94,7 @@ tuta.forms.frmConfirm = function() {
           }
             
         } 
-        else if (sliderDir == 1) //Booking Later
+        else if (!bookNow) //Booking Later
         {
           var pickupTime = getEpoch();
           var pickupTimeShort = Math.round(pickupTime/1000);
@@ -289,16 +289,27 @@ tuta.forms.frmConfirm = function() {
     };
     this.control("btnCancel").onClick = function() {
       frmConfirm["flexDateTime"]["isVisible"] = false;
-    }
-
-    this.control("flexSlider").addGestureRecognizer(constants.GESTURE_TYPE_SWIPE, GLOBAL_GESTURE_FINGERS_1, function(widget, gestureInformationSwipe) {
-      //ssa.mobile.alert("","" + gestureInformationSwipe.swipeDirection );
-      if (gestureInformationSwipe.swipeDirection == 2) {
-        showLater();
-      } else if (gestureInformationSwipe.swipeDirection == 1) {
-        showNow();
-      }
-    });
+    };
+    
+    this.control("btnLaterInactive").onClick = function(button) {
+      frmConfirm.lblNowActive.setVisibility(false);
+      frmConfirm.lblNowActiveBottomBorder.setVisibility(false);
+      frmConfirm.lblNowActiveSideBorder.setVisibility(false);
+      frmConfirm.lblLaterActive.setVisibility(true);
+      frmConfirm.lblLaterActiveBottomBorder.setVisibility(true);
+      frmConfirm.lblLaterActiveSideBorder.setVisibility(true);
+      showLater();
+    };
+    
+    this.control("btnNowInactive").onClick = function(button) {
+      frmConfirm.lblNowActive.setVisibility(true);
+      frmConfirm.lblNowActiveBottomBorder.setVisibility(true);
+      frmConfirm.lblNowActiveSideBorder.setVisibility(true);
+      frmConfirm.lblLaterActive.setVisibility(false);
+      frmConfirm.lblLaterActiveBottomBorder.setVisibility(false);
+      frmConfirm.lblLaterActiveSideBorder.setVisibility(false);
+      showNow();
+    };
     tuta.map.stopMapListener();
   }; //End of Pre-Show
 

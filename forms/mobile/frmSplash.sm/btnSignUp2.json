@@ -46,6 +46,11 @@
     "height": "25dp",
     "id": "btnSignUp2",
     "info": null,
+    "iphone": {
+        "psp": {
+            "showProgressIndicator": false
+        }
+    },
     "isVisible": true,
     "isvisible": true,
     "kuid": "68cf0a816d67474e9a6d5ffce4725ce3",
@@ -66,6 +71,8 @@
     "pf": "frmSplash",
     "render": true,
     "right": "5%",
+    "showProgressIndicator": false,
+    "showprogressindicator": false,
     "skin": "s522d6ef98a844d0abbf278d0001daa5",
     "text": "Sign Up",
     "wType": "Button",

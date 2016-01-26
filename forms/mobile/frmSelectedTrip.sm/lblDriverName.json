@@ -78,7 +78,7 @@
         0,
         0
     ],
-    "parent": "FlexContainer0a960a948278c42",
+    "parent": "flexMain",
     "pf": "frmSelectedTrip",
     "render": true,
     "skin": "se53ae1ccd054a75a523f678d9860656",

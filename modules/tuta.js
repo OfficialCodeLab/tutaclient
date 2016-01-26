@@ -16,7 +16,7 @@ var application = null;
 //App state flags
 var client_state = 0;
 var searchMode = 0;
-var sliderDir = 2;
+var bookNow = true;
 var journeyComplete = false;
 var driverArrived = false;
 var awaitingConfirmation = true;

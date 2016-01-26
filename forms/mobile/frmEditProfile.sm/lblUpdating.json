@@ -2,17 +2,13 @@
     "@class": "com.kony.gen.viz.model.component.KVizLabel",
     "DNDConfig": null,
     "__parentReadjusting__": false,
-    "_bottom_": {
-        "type": "number",
-        "value": "65"
-    },
     "_height_": {
-        "type": "string",
-        "value": "1dp"
+        "type": "ref",
+        "value": "preferred"
     },
     "_left_": {
         "type": "string",
-        "value": "158dp"
+        "value": "125dp"
     },
     "_margin_": [
         1,
@@ -26,27 +22,38 @@
         0,
         0
     ],
-    "_skin_": "s34c26b24c9f4bf58810bb071864eba9",
-    "_text_": "",
+    "_skin_": "s21c3f15a3f84c9190582b738180676f",
+    "_text_": "Updating Profile ...",
+    "_top_": {
+        "type": "string",
+        "value": "200dp"
+    },
     "_width_": {
         "type": "string",
         "value": "100%"
     },
     "_wrapping_": 2,
-    "bottom": 65,
     "canUpdateUI": true,
     "centerX": "50%",
+    "centerY": "50%",
     "centerx": {
+        "type": "string",
+        "value": "50%"
+    },
+    "centery": {
         "type": "string",
         "value": "50%"
     },
     "containerWeight": 100,
     "containerweight": 100,
-    "contentAlignment": 4,
-    "contentalignment": 4,
+    "contentAlignment": 5,
+    "contentalignment": 5,
     "enabled": false,
-    "height": "1dp",
-    "id": "CopylblSep08f8b4621760543",
+    "height": {
+        "type": "ref",
+        "value": "preferred"
+    },
+    "id": "lblUpdating",
     "info": null,
     "ipad": {
         "psp": {
@@ -60,8 +67,8 @@
     },
     "isVisible": true,
     "isvisible": true,
-    "kuid": "91a436f6fa534805806c02ce88d7fe36",
-    "left": "158dp",
+    "kuid": "f0a3ad47639c4b86b5dd6c69a6dd210f",
+    "left": "125dp",
     "margin": [
         1,
         1,
@@ -75,17 +82,16 @@
         0,
         0
     ],
-    "parent": "flexMain",
-    "pf": "frmHelp",
+    "parent": "flexUpdatingProfile",
+    "pf": "frmEditProfile",
     "render": true,
-    "skin": "s34c26b24c9f4bf58810bb071864eba9",
-    "text": "",
+    "skin": "s21c3f15a3f84c9190582b738180676f",
+    "text": "Updating Profile ...",
     "toolTip": "",
     "tooltip": "",
+    "top": "200dp",
     "wType": "Label",
     "widgetAlignment": 5,
     "width": "100%",
-    "wrapping": 2,
-    "zIndex": 1,
-    "zindex": 1
+    "wrapping": 2
 }
