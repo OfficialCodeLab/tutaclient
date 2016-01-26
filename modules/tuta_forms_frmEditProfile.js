@@ -56,7 +56,7 @@ tuta.forms.frmEditProfile = function() {
       tuta.events.logIssue();
     };*/
     
-    this.control("btnBack").onClick = function (button) {tuta.forms.frmMap.show();};
+    this.control("btnBack").onClick = function (button) {kony.application.getPreviousForm().show();};
     
     this.control("cmrTakePhoto").onCapture = function() {
       frmEditProfile.imgUser.rawBytes = frmEditProfile.cmrTakePhoto.rawBytes;

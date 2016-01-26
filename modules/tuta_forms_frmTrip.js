@@ -18,7 +18,7 @@ tuta.forms.frmTrip = function() {
   tuta.forms.frmTrip.onPreShow = function(form) {
     var self = this;
     
-    this.control("btnBack").onClick = function(button){tuta.forms.frmMap.show();};
+    this.control("btnBack").onClick = function(button){kony.application.getPreviousForm().show();};
     //this.control("btnContinue").onClick = function(button){tuta.mobile.alert("TEST", "TEST");};
     this.control("segTripHistoryMain").onRowClick = function(widget) {
       var data;

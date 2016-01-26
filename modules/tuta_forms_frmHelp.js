@@ -17,7 +17,7 @@ tuta.forms.frmHelp = function() {
   tuta.forms.frmHelp.onPreShow = function(form) {
     var self = this;
     
-    this.control("btnBack").onClick = function (button) {tuta.forms.frmMap.show();};
+    this.control("btnBack").onClick = function (button) {kony.application.getPreviousForm().show();};
     this.control("btnCancel").onClick = function (button) {tuta.forms.frmMap.show();};
     this.control("btnSubmit").onClick = function (button) {
       tuta.events.logIssue();

@@ -61,7 +61,7 @@ tuta.forms.frmCreateAcc = function() {
     };
     
     self.control("btnBack").onClick = function(button) {
-      tuta.forms.frmSplash.show();
+      kony.application.getPreviousForm().show();
     };
 
     self.control("btnConfirm").onClick = function(button) {
