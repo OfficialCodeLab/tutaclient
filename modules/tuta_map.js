@@ -218,7 +218,7 @@ tuta.map.startMapListener = function (){
 
   }
 
-  var hasMovedAway = false;
+  var hasStartedLoading = true;
   var hasMovedBack = false;
   var hasLoaded = false;
   kony.timer.schedule("MapListener", function(){
@@ -227,7 +227,8 @@ tuta.map.startMapListener = function (){
       //tuta.util.alert("MOVED");
       //if(!hasMovedAway){
         //frmMap.lblChangePick.text = "Change pickup location";
-        hasLoaded = false;
+      hasLoaded = false;
+      hasStartedLoading = true;
         //tuta.animate.move(frmMap.flexHeader, 0.2, "-8%", "", null);
         //tuta.animate.move(frmMap.flexAdd, 0.2, "1%", frmMap.flexAdd.left, null);
         //tuta.animate.moveBottomLeft(frmMap.flexNoOfPeople, 0.2, "-12%", "", null);
@@ -243,6 +244,11 @@ tuta.map.startMapListener = function (){
     else{
       //tuta.util.alert("DIDN'T MOVE");
       timeStill++;
+      if(hasStartedLoading){
+        tuta.events.startLoadingCircle();
+        hasStartedLoading = false;
+        frmMap.rtClosest.text = ""; 
+      }
 
       /*
       if(timeStill >= 6 && !hasMovedBack){
@@ -254,7 +260,7 @@ tuta.map.startMapListener = function (){
         hasMovedAway = false;
       } */    
 
-      if(timeStill >= 2){
+      if(timeStill >= 4){
         timeStill = 0;
         if (hasLoaded === false){
           hasLoaded = true;
@@ -269,8 +275,10 @@ tuta.map.startMapListener = function (){
               if(mins > 40 || mins === 0){
                 frmMap.lblChangePick.text = "No taxis available";
                 frmMap.rtClosest.text = ""; 
+                tuta.events.stopLoadingCircle();
               }
               else{
+                tuta.events.stopLoadingCircle();
                 frmMap.lblChangePick.text = "Change pickup location";
                 frmMap.rtClosest.text = Math.round(time/60) + "<br>min";                
               }
@@ -282,7 +290,7 @@ tuta.map.startMapListener = function (){
       }
 
     }
-  }, 1, true);
+  }, 0.5, true);
 };
 tuta.map.stopMapListener = function (){
   try {

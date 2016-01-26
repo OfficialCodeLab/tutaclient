@@ -36,8 +36,8 @@
     "canUpdateUI": true,
     "children": [
         "lblRowDesc8",
-        "imgCar1",
-        "btnTickPress8"
+        "btnTickPress8",
+        "flexCar"
     ],
     "clipBounds": true,
     "clipbounds": true,

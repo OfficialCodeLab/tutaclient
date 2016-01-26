@@ -36,6 +36,7 @@ var initialLoad = true;
 var finalroute = null;
 var taxiRoute = null;
 var country = null;
+var userbearing = 0;
 
 //Booking variables
 var inputBooking;
@@ -159,6 +160,7 @@ function updateMap() {
 
 
     if(driverArrived === false){
+       pickupicon = "userpin" + tuta.bearing(userbearing) + ".png";
 
       if(overview.active === 1){
         locationData.push(
@@ -168,7 +170,6 @@ function updateMap() {
            desc: "", 
            image : ""});
 
-        pickupicon = "pickupicon.png";
       }
       else if (bounds !== null && newbounds === null) {
         locationData.push(
@@ -185,7 +186,7 @@ function updateMap() {
          lon: "" + currentPos.geometry.location.lng + "", 
          name:"Pickup Location", 
          desc: "", 
-         image : "pickupicon.png"});
+         image : pickupicon});
     }
 
     if(nearbyDrivers.length > 0){
@@ -202,7 +203,7 @@ function updateMap() {
 
     if(client_state === 0) {
       for (var i = 0; i < driversNear.length; i++){
-        var brng = tuta.driverBearingStored(driversNear[i].location.bearing);
+        var brng = "cabpin" + tuta.bearing(driversNear[i].location.bearing) + ".png";
         locationData.push(
           {
             lat: "" + driversNear[i].location.lat + "", 
@@ -506,7 +507,7 @@ tuta.driverBearing = function (driverID, callback){
   }
 };
 
-tuta.driverBearingStored = function (bearing){
+tuta.bearing = function (bearing){
 
   var brng = Math.abs(Math.round(bearing / 15)) * 15; 
 
@@ -514,9 +515,9 @@ tuta.driverBearingStored = function (bearing){
     brng = 0;
 
   if(brng !== null && brng === brng)
-    return "cabpin" + brng + ".png";
+    return brng;
 
-  return "cabpin" + brng + ".png";
+  return 0;
 
 };
 
@@ -1012,6 +1013,8 @@ tuta.startWatchLocation = function(){
           kony.store.setItem("watch", watchID);
           currentPos.geometry.location.lat = position.coords.latitude;
           currentPos.geometry.location.lng =  position.coords.longitude;
+          userbearing = position.coords.heading;
+          //tuta.animate.rotate(frmMap.imgCurrentUser, 0.1, direction, null);
           try{
             tuta.location.updateLocationOnServer(position.coords.latitude, position.coords.longitude);
           }

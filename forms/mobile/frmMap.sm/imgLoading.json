@@ -5,7 +5,11 @@
     "_base64_": null,
     "_height_": {
         "type": "string",
-        "value": "45dp"
+        "value": "25dp"
+    },
+    "_left_": {
+        "type": "string",
+        "value": "0dp"
     },
     "_margin_": [
         0,
@@ -19,53 +23,50 @@
         0,
         0
     ],
-    "_right_": {
-        "type": "string",
-        "value": "9%"
-    },
     "_skin_": "s4ea8d4d07574957b839f06194980e52",
-    "_src_": "cabicon.png",
+    "_src_": "loadingcircle.png",
     "_top_": {
         "type": "string",
-        "value": "22dp"
+        "value": "239dp"
     },
     "_width_": {
         "type": "string",
-        "value": "45dp"
+        "value": "25dp"
     },
     "base64": null,
     "canUpdateUI": true,
-    "centerX": "50%",
-    "centerY": "50.00%",
+    "centerX": "55%",
+    "centerY": "50%",
     "centerx": {
         "type": "string",
-        "value": "50%"
+        "value": "55%"
     },
     "centery": {
         "type": "string",
-        "value": "50.00%"
+        "value": "50%"
     },
     "containerWeight": 100,
     "containerweight": 100,
     "context": {
         "channel": "mobile",
-        "formID": "frmDebug",
+        "formID": "frmMap",
         "ispercent": true,
-        "platform": "iphone",
+        "platform": "android",
         "templateType": "forms",
         "topLevelBox": null
     },
     "enabled": false,
-    "height": "45dp",
-    "id": "imgCar1",
+    "height": "25dp",
+    "id": "imgLoading",
     "imageScaleMode": 1,
     "imagescalemode": 1,
     "info": null,
     "invokedProperty": "src",
-    "isVisible": true,
+    "isVisible": false,
     "ispercent": true,
-    "isvisible": true,
-    "kuid": "1d64efda9858409986c803caf9bc124b",
+    "isvisible": false,
+    "kuid": "4bf057f349d9441194c57e923df54dcf",
+    "left": "0dp",
     "margin": [
         0,
         0,
@@ -79,18 +80,15 @@
         0,
         0
     ],
-    "parent": "flexCar",
-    "pf": "frmDebug",
+    "parent": "FlexContainer07ebb1525e3fe42",
+    "pf": "frmMap",
     "render": true,
-    "right": "9%",
     "skin": "s4ea8d4d07574957b839f06194980e52",
-    "src": "cabicon.png",
+    "src": "loadingcircle.png",
     "srcType": 1,
-    "top": "22dp",
+    "top": "239dp",
     "wType": "Image",
     "widgetAlignment": 5,
     "widgetalignment": 5,
-    "width": "45dp",
-    "zIndex": 1,
-    "zindex": 1
+    "width": "25dp"
 }

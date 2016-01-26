@@ -334,6 +334,29 @@ tuta.events.sortDrivers = function(){
 };
 
 
+var loadingIconAngle = 0;
+tuta.events.startLoadingCircle = function(){
+  frmMap.imgLoading.setVisibility(true);
+  try{
+    kony.timer.cancel("loadingIconSpin");
+  } catch(ex) {}
+  
+  kony.timer.schedule("loadingIconSpin", function(){
+    loadingIconAngle+=90;
+    if(loadingIconAngle>= 360)
+      loadingIconAngle-=360;
+    tuta.animate.rotate(frmMap.imgLoading, 0.15, loadingIconAngle, null);
+  }, 0.15, true);
+};
+
+tuta.events.stopLoadingCircle = function() {
+  frmMap.imgLoading.setVisibility(false);
+  try{
+    kony.timer.cancel("loadingIconSpin");
+  } catch(ex) {}
+};
+
+
 
 
 
