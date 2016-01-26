@@ -18,7 +18,10 @@ tuta.forms.frmMap = function() {
     var self = this;
 	tuta.map.stopMapListener();
     //frmMap.txtDest.setFocus(false);
-
+	
+    this.control("txtDest").onBeginEditing = function() {frmMap.Image066d5e18d311e4b.setVisibility(false);};
+    this.control("txtDest").onEndEditing = function() {frmMap.Image066d5e18d311e4b.setVisibility(true);};
+    
     this.control("btnPerson1").onClick = onPeopleSelect;
     this.control("btnPerson2").onClick = onPeopleSelect;
     this.control("btnPerson3").onClick = onPeopleSelect;
@@ -32,7 +35,7 @@ tuta.forms.frmMap = function() {
     people.push(frmMap.imgPeople5);
     people.push(frmMap.imgPeople6);
 
-
+    
     this.control("imgStar1").onTouchStart = onStarSelect;
     this.control("imgStar2").onTouchStart = onStarSelect;
     this.control("imgStar3").onTouchStart = onStarSelect;
