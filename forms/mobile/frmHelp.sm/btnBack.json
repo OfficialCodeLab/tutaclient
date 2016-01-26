@@ -24,15 +24,16 @@
     ],
     "_skin_": "s815cc265d8c446cbd9b70b18a6c8a1a",
     "_text_": "",
-    "_top_": {
-        "type": "string",
-        "value": "0dp"
-    },
     "_width_": {
         "type": "string",
         "value": "50dp"
     },
     "canUpdateUI": true,
+    "centerY": "50%",
+    "centery": {
+        "type": "string",
+        "value": "50%"
+    },
     "containerWeight": 100,
     "containerweight": 100,
     "contentAlignment": 5,
@@ -72,7 +73,6 @@
     "render": true,
     "skin": "s815cc265d8c446cbd9b70b18a6c8a1a",
     "text": "",
-    "top": "0dp",
     "wType": "Button",
     "widgetAlignment": 5,
     "width": "50dp",
