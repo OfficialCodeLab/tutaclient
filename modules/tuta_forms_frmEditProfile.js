@@ -35,12 +35,12 @@ tuta.forms.frmEditProfile = function() {
       function(result) { 
         var firstName = result.value[0].userInfo.firstName;
         var surname = result.value[0].userInfo.lastName;
-        var avatarBase64 = result.value[0].userInfo.avatarDocId;
+        var avatarBase64 = kony.convertToRawBytes(result.value[0].userInfo.avatarDocId);
         frmEditProfile.txtFirstName.text = firstName;
         frmEditProfile.txtSurname.text = surname;
 
-        if (avatarBase64 !== "null") {
-          frmEditProfile.imgUser.rawBytes = kony.convertToRawBytes(avatarBase64);
+        if (avatarBase64 !== '{"text":""}') {
+          frmEditProfile.imgUser.rawBytes = avatarBase64;
         }
       },
       function(error) {
@@ -82,6 +82,7 @@ tuta.forms.frmEditProfile = function() {
     
     this.control("btnSave").onClick = function (button) {
       //Store the user ID as variable 'input' for manageService query
+      frmEditProfile.flexUpdatingProfile.isVisible = true;
       var avatarBase64 = kony.convertToBase64(frmEditProfile.imgUser.rawBytes);
       
       var inputs = {
@@ -97,11 +98,14 @@ tuta.forms.frmEditProfile = function() {
       	"userInfoUpdate", {}, inputs,
         function(success) {
           tuta.util.alert("Success", "Info has been updated");
+          frmEditProfile.flexUpdatingProfile.isVisible = false;
+          //tuta.forms.frmMap.show();
         }, function(error) {
+          frmEditProfile.flexUpdatingProfile.isVisible = false;
           tuta.util.alert("Error Saving Data", JSON.stringify(error));
         }
       );
-      //tuta.forms.frmMap.show();
+      
     };
    // PUT BUTTONS HERE
     

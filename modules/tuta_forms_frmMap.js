@@ -75,17 +75,14 @@ tuta.forms.frmMap = function() {
         var lastName = result.value[0].userInfo.lastName;
         var avatarBase64 = result.value[0].userInfo.avatarDocId;
         var fullName = firstName + " " + lastName;
+
         //tuta.util.alert("User Information", "Name: " + csFullName);
         frmMap.lblUser.text = fullName;
-        
-        if (avatarBase64 !== 'null') {
-        	frmMap.imgUser.rawBytes = kony.convertToRawBytes(avatarBase64);   
-        }
+ 		
       },
       function(error) {
         // the service returns 403 (Not Authorised) if credentials are wrong
         tuta.util.alert("Error " + error);
-
       }
     );
 
@@ -231,7 +228,7 @@ tuta.forms.frmMap = function() {
 
 
     this.control("txtDest").onDone = function(widget) {
-      if(frmMap.txtDest.text != null){
+      if(frmMap.txtDest.text !== null){
         frmMap.flexFindingDest.setVisibility(true);
         frmMap.flexChangeDest.setVisibility(false);
         //ssa.mobile.alert("Search", "Search Done");
@@ -241,7 +238,7 @@ tuta.forms.frmMap = function() {
     };
 
     this.control("txtPick").onDone = function(widget){
-      if(frmMap.txtPick.text != null){
+      if(frmMap.txtPick.text !== null){
         frmMap.flexFindingDest.setVisibility(true);
         frmMap.flexChangeDest.setVisibility(false);
         //ssa.mobile.alert("Search", "Search Done");

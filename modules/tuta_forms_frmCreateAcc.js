@@ -18,7 +18,7 @@ tuta.forms.frmCreateAcc = function() {
     var self = this;
     var creatingAccount = false;
     var profilePicUploaded = false;
-    var profilePic = "null";
+    var profilePic;
     
     self.control("btnProfilePic").onClick = function(button) {
       if(frmCreateAcc.cmrTakePhoto.isVisible === true) {
@@ -159,8 +159,10 @@ tuta.forms.frmCreateAcc = function() {
                                       tuta.animate.moveBottomLeft(frmSplash.flexMainButtons, 0, "0%", "0", null);
                                       tuta.util.alert("SUCCESS", "Account has been created.");
                                       creatingAccount = false;
+                                      frmCreateAcc.flexCreatingAccount.isVisible = false;
                                       
                                       // Set profile picture here
+                                      /* Currently this breaks default profile picture
                                       if(profilePicUploaded) {                                     
                                         var picInput = {
                                           data: JSON.stringify({
@@ -170,19 +172,20 @@ tuta.forms.frmCreateAcc = function() {
                                         };
                                         
                                         application.service("manageService").invokeOperation(
-                                        "userInfoUpdate", {}, picInput, function(success) {
-                                          //Clear all fields
-                                          self.control("txtName").text = "";
-                                          self.control("txtEmail").text = "";
-                                          self.control("txtContact").text = "";
-                                          self.control("txtPass").text = "";
-                                          self.control("txtPass2").text = "";
+                                        "userInfoUpdate", {}, picInput, function(success) {                                          
                                         }, function(error) {
                                           self.util.alert("Error updating profile picture", error.errmsg);
                                           creatingAccount = false;
                                           frmCreateAcc.flexCreatingAccount.isVisible = false;
                                         });
                                       }
+                                      */
+                                      //Clear all fields
+                                      self.control("txtName").text = "";
+                                      self.control("txtEmail").text = "";
+                                      self.control("txtContact").text = "";
+                                      self.control("txtPass").text = "";
+                                      self.control("txtPass2").text = "";
                                     },
                                     function(error) {
                                       //tuta.util.alert("Error " + error.httpStatusCode, error.errmsg);

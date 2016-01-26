@@ -6,6 +6,10 @@
         "type": "ref",
         "value": "preferred"
     },
+    "_left_": {
+        "type": "string",
+        "value": "125dp"
+    },
     "_margin_": [
         1,
         1,
@@ -18,33 +22,38 @@
         0,
         0
     ],
-    "_skin_": "sab9aee3245f41fd93e7f9c940abad1d",
-    "_text_": "Uploading profile pictures may take a while",
+    "_skin_": "s21c3f15a3f84c9190582b738180676f",
+    "_text_": "Updating Profile ...",
     "_top_": {
         "type": "string",
         "value": "200dp"
     },
     "_width_": {
-        "type": "ref",
-        "value": "preferred"
+        "type": "string",
+        "value": "100%"
     },
     "_wrapping_": 2,
     "canUpdateUI": true,
     "centerX": "50%",
+    "centerY": "50%",
     "centerx": {
+        "type": "string",
+        "value": "50%"
+    },
+    "centery": {
         "type": "string",
         "value": "50%"
     },
     "containerWeight": 100,
     "containerweight": 100,
-    "contentAlignment": 4,
-    "contentalignment": 4,
+    "contentAlignment": 5,
+    "contentalignment": 5,
     "enabled": false,
     "height": {
         "type": "ref",
         "value": "preferred"
     },
-    "id": "lblNote",
+    "id": "lblUpdating",
     "info": null,
     "ipad": {
         "psp": {
@@ -58,7 +67,8 @@
     },
     "isVisible": true,
     "isvisible": true,
-    "kuid": "368525df48e145d4b4112b34bb900ba6",
+    "kuid": "f0a3ad47639c4b86b5dd6c69a6dd210f",
+    "left": "125dp",
     "margin": [
         1,
         1,
@@ -72,21 +82,16 @@
         0,
         0
     ],
-    "parent": "flexCreatingAccount",
-    "pf": "frmCreateAcc",
+    "parent": "flexUpdatingProfile",
+    "pf": "frmEditProfile",
     "render": true,
-    "skin": "sab9aee3245f41fd93e7f9c940abad1d",
-    "text": "Uploading profile pictures may take a while",
+    "skin": "s21c3f15a3f84c9190582b738180676f",
+    "text": "Updating Profile ...",
     "toolTip": "",
     "tooltip": "",
     "top": "200dp",
     "wType": "Label",
     "widgetAlignment": 5,
-    "width": {
-        "type": "ref",
-        "value": "preferred"
-    },
-    "wrapping": 2,
-    "zIndex": 1,
-    "zindex": 1
+    "width": "100%",
+    "wrapping": 2
 }
