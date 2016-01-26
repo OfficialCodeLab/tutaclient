@@ -120,7 +120,7 @@
     ],
     "paddingInPixel": false,
     "paddinginpixel": false,
-    "parent": "FlexScrollContainer071030639d13842",
+    "parent": "flexHelpDetails",
     "pf": "frmHelp",
     "placeholder": "Query Topic",
     "render": true,

@@ -41,11 +41,11 @@
     "canUpdateUI": true,
     "children": [
         "flexHeader",
-        "FlexScrollContainer071030639d13842",
+        "flexHelpDetails",
         "btnSubmit",
         "btnCancel",
-        "CopylblSep08f8b4621760543",
-        "CopylblSep0d2eac27f6fe54f"
+        "lblSepTop",
+        "lblSepMiddle"
     ],
     "clipBounds": true,
     "clipbounds": true,

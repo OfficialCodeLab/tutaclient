@@ -34,10 +34,10 @@
     },
     "base64": null,
     "canUpdateUI": true,
-    "centerY": "70dp",
+    "centerY": "55dp",
     "centery": {
         "type": "string",
-        "value": "70dp"
+        "value": "55dp"
     },
     "channel": "mobile",
     "containerWeight": 100,

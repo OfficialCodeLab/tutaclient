@@ -35,10 +35,10 @@
     "_wrapping_": 2,
     "bottom": 5,
     "canUpdateUI": true,
-    "centerX": "50%",
+    "centerX": "49%",
     "centerx": {
         "type": "string",
-        "value": "50%"
+        "value": "49%"
     },
     "containerWeight": 100,
     "containerweight": 100,
@@ -46,7 +46,7 @@
     "contentalignment": 4,
     "enabled": false,
     "height": "55dp",
-    "id": "CopylblSep0d2eac27f6fe54f",
+    "id": "lblSepMiddle",
     "info": null,
     "ipad": {
         "psp": {

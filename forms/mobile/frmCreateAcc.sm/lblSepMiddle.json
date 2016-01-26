@@ -7,12 +7,12 @@
         "value": "5"
     },
     "_height_": {
-        "type": "ref",
-        "value": "preferred"
+        "type": "string",
+        "value": "55dp"
     },
     "_left_": {
         "type": "string",
-        "value": "5dp"
+        "value": "158dp"
     },
     "_margin_": [
         1,
@@ -26,25 +26,27 @@
         0,
         0
     ],
-    "_skin_": "s85a0cebca494c39b3267e9c58a8dd99",
-    "_text_": "Back",
+    "_skin_": "s34c26b24c9f4bf58810bb071864eba9",
+    "_text_": "",
     "_width_": {
-        "type": "ref",
-        "value": "preferred"
+        "type": "string",
+        "value": "1dp"
     },
     "_wrapping_": 2,
     "bottom": 5,
     "canUpdateUI": true,
+    "centerX": "49%",
+    "centerx": {
+        "type": "string",
+        "value": "49%"
+    },
     "containerWeight": 100,
     "containerweight": 100,
     "contentAlignment": 4,
     "contentalignment": 4,
     "enabled": false,
-    "height": {
-        "type": "ref",
-        "value": "preferred"
-    },
-    "id": "lblBack",
+    "height": "55dp",
+    "id": "lblSepMiddle",
     "info": null,
     "ipad": {
         "psp": {
@@ -58,8 +60,8 @@
     },
     "isVisible": true,
     "isvisible": true,
-    "kuid": "5ddacbefcc0049cb86379c12da894917",
-    "left": "5dp",
+    "kuid": "fcbea7505ff047debd7247b14d2ef51b",
+    "left": "158dp",
     "margin": [
         1,
         1,
@@ -76,17 +78,14 @@
     "parent": "flexMain",
     "pf": "frmCreateAcc",
     "render": true,
-    "skin": "s85a0cebca494c39b3267e9c58a8dd99",
-    "text": "Back",
+    "skin": "s34c26b24c9f4bf58810bb071864eba9",
+    "text": "",
     "toolTip": "",
     "tooltip": "",
     "wType": "Label",
     "widgetAlignment": 5,
-    "width": {
-        "type": "ref",
-        "value": "preferred"
-    },
+    "width": "1dp",
     "wrapping": 2,
-    "zIndex": 2,
-    "zindex": 2
+    "zIndex": 1,
+    "zindex": 1
 }

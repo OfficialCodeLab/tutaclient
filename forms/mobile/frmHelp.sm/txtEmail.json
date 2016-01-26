@@ -83,7 +83,7 @@
         0,
         0
     ],
-    "parent": "FlexScrollContainer071030639d13842",
+    "parent": "flexHelpDetails",
     "pf": "frmHelp",
     "placeholder": "Your Email Address",
     "placeholderSkin": "s58e380e3bb7489a80e6cd369fe00bce",

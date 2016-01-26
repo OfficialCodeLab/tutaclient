@@ -3,16 +3,16 @@
     "DNDConfig": null,
     "__parentReadjusting__": false,
     "_bottom_": {
-        "type": "string",
-        "value": "0dp"
+        "type": "number",
+        "value": "0"
     },
     "_height_": {
         "type": "string",
-        "value": "30dp"
+        "value": "65dp"
     },
     "_left_": {
         "type": "string",
-        "value": "0dp"
+        "value": "229dp"
     },
     "_margin_": [
         6,
@@ -26,14 +26,19 @@
         0,
         0
     ],
-    "_skin_": "s0467a2b57144c5a9dccda55106e83b1",
-    "_text_": "",
+    "_skin_": "s9614827f4ad44c0ba2cd2e0343cac6d",
+    "_text_": "Cancel",
     "_width_": {
         "type": "string",
-        "value": "70dp"
+        "value": "50%"
     },
-    "bottom": "0dp",
+    "bottom": 0,
     "canUpdateUI": true,
+    "centerX": "25%",
+    "centerx": {
+        "type": "string",
+        "value": "25%"
+    },
     "containerWeight": 100,
     "containerweight": 100,
     "contentAlignment": 5,
@@ -41,10 +46,10 @@
     "displayText": true,
     "displaytext": true,
     "enabled": false,
-    "focusSkin": "s2bc7e7877d6436f8a0edc2b7ec8d934",
-    "focusskin": "s2bc7e7877d6436f8a0edc2b7ec8d934",
-    "height": "30dp",
-    "id": "btnBack",
+    "focusSkin": "s07066e9cde24d7581fdc192a5296659",
+    "focusskin": "s07066e9cde24d7581fdc192a5296659",
+    "height": "65dp",
+    "id": "btnCancel",
     "info": null,
     "iphone": {
         "psp": {
@@ -53,8 +58,8 @@
     },
     "isVisible": true,
     "isvisible": true,
-    "kuid": "3e2b01c941ca48c0b9f0f2bafad23882",
-    "left": "0dp",
+    "kuid": "c9ecba27e53c45c1927456200d16e548",
+    "left": "229dp",
     "margin": [
         6,
         6,
@@ -71,13 +76,11 @@
     "parent": "flexMain",
     "pf": "frmCreateAcc",
     "render": true,
-    "showProgressIndicator": false,
-    "showprogressindicator": false,
-    "skin": "s0467a2b57144c5a9dccda55106e83b1",
-    "text": "",
+    "skin": "s9614827f4ad44c0ba2cd2e0343cac6d",
+    "text": "Cancel",
     "wType": "Button",
     "widgetAlignment": 5,
-    "width": "70dp",
-    "zIndex": 3,
-    "zindex": 3
+    "width": "50%",
+    "zIndex": 1,
+    "zindex": 1
 }

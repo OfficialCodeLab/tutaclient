@@ -60,11 +60,11 @@ tuta.forms.frmCreateAcc = function() {
       openGallery();
     };
     
-    self.control("btnBack").onClick = function(button) {
+    self.control("btnCancel").onClick = function(button) {
       kony.application.getPreviousForm().show();
     };
 
-    self.control("btnConfirm").onClick = function(button) {
+    self.control("btnSubmit").onClick = function(button) {
       //CHECK IF EXISTS
 	  
       if(creatingAccount === false){
@@ -158,6 +158,7 @@ tuta.forms.frmCreateAcc = function() {
                                       tuta.location.loadPositionInit();
                                       tuta.animate.moveBottomLeft(frmSplash.flexMainButtons, 0, "0%", "0", null);
                                       tuta.util.alert("SUCCESS", "Account has been created.");
+                                      
                                       creatingAccount = false;
                                       frmCreateAcc.flexCreatingAccount.isVisible = false;
                                       
@@ -180,12 +181,7 @@ tuta.forms.frmCreateAcc = function() {
                                         });
                                       }
                                       */
-                                      //Clear all fields
-                                      self.control("txtName").text = "";
-                                      self.control("txtEmail").text = "";
-                                      self.control("txtContact").text = "";
-                                      self.control("txtPass").text = "";
-                                      self.control("txtPass2").text = "";
+                                      
                                     },
                                     function(error) {
                                       //tuta.util.alert("Error " + error.httpStatusCode, error.errmsg);
@@ -256,6 +252,13 @@ tuta.forms.frmCreateAcc = function() {
 
   tuta.forms.frmCreateAcc.onPostShow = function(form) {
     var self = this;
+    
+    //Clear all fields
+    self.control("txtName").text = "";
+    self.control("txtEmail").text = "";
+    self.control("txtContact").text = "";
+    self.control("txtPass").text = "";
+    self.control("txtPass2").text = "";
   };
 };
 
