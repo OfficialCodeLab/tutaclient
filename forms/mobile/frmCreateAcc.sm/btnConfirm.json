@@ -50,6 +50,11 @@
     "height": "50dp",
     "id": "btnConfirm",
     "info": null,
+    "iphone": {
+        "psp": {
+            "showProgressIndicator": false
+        }
+    },
     "isVisible": true,
     "isvisible": true,
     "kuid": "485eb9a8721446a0bc7ea68a76c4c1e0",
@@ -70,6 +75,8 @@
     "parent": "flexMain",
     "pf": "frmCreateAcc",
     "render": true,
+    "showProgressIndicator": false,
+    "showprogressindicator": false,
     "skin": "sb7176daece746feaa30d727bc7a2f09",
     "text": "Confirm",
     "top": "420dp",

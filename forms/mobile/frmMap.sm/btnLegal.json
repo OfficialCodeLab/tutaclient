@@ -50,6 +50,11 @@
     "height": "50dp",
     "id": "btnLegal",
     "info": null,
+    "iphone": {
+        "psp": {
+            "showProgressIndicator": false
+        }
+    },
     "isVisible": true,
     "isvisible": true,
     "kuid": "96b4d8b37e1d4142a12dfe0d66015da0",
@@ -70,6 +75,8 @@
     "pf": "frmMap",
     "render": true,
     "right": "10dp",
+    "showProgressIndicator": false,
+    "showprogressindicator": false,
     "skin": "sea2036af0714fee8097c6b79389eadb",
     "text": "Legal",
     "top": "12dp",

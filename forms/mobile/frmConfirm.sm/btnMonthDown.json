@@ -50,6 +50,11 @@
     "height": "40dp",
     "id": "btnMonthDown",
     "info": null,
+    "iphone": {
+        "psp": {
+            "showProgressIndicator": false
+        }
+    },
     "isVisible": true,
     "isvisible": true,
     "kuid": "ff94af4b4acb4e008b8bcc81e6cf2315",
@@ -70,6 +75,8 @@
     "parent": "flexSetTime",
     "pf": "frmConfirm",
     "render": true,
+    "showProgressIndicator": false,
+    "showprogressindicator": false,
     "skin": "s1789e2618cf4db992d4658485befdc2",
     "text": "",
     "top": "155dp",

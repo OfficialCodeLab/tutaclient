@@ -46,6 +46,11 @@
     "height": "100%",
     "id": "btnReturnToTrip",
     "info": null,
+    "iphone": {
+        "psp": {
+            "showProgressIndicator": false
+        }
+    },
     "isVisible": true,
     "isvisible": true,
     "kuid": "949325de53d34fa294a655cdfd76cf9f",
@@ -66,6 +71,8 @@
     "parent": "flexBottomBar",
     "pf": "frmMap",
     "render": true,
+    "showProgressIndicator": false,
+    "showprogressindicator": false,
     "skin": "s06ab14f06c44f5f8d1f6f32ca9a9054",
     "text": "",
     "top": "0dp",

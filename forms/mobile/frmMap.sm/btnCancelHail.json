@@ -55,6 +55,11 @@
     "height": "80dp",
     "id": "btnCancelHail",
     "info": null,
+    "iphone": {
+        "psp": {
+            "showProgressIndicator": false
+        }
+    },
     "isVisible": true,
     "isvisible": true,
     "kuid": "afaf782bf1aa46d6bc7bc23c3cc07a89",
@@ -75,6 +80,8 @@
     "parent": "frmMap",
     "pf": "frmMap",
     "render": true,
+    "showProgressIndicator": false,
+    "showprogressindicator": false,
     "skin": "s0aeb4bdf06e4de984e129c423ae8871",
     "text": "Cancel",
     "top": "101dp",

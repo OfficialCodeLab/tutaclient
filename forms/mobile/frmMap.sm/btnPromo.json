@@ -45,6 +45,11 @@
     "height": "60dp",
     "id": "btnPromo",
     "info": null,
+    "iphone": {
+        "psp": {
+            "showProgressIndicator": false
+        }
+    },
     "isVisible": true,
     "isvisible": true,
     "kuid": "6dcc7c9eb26c441dbbf37c420ff60491",
@@ -67,6 +72,8 @@
     "parent": "flexMenuItems",
     "pf": "frmMap",
     "render": true,
+    "showProgressIndicator": false,
+    "showprogressindicator": false,
     "skin": "sdcceba3395c458b80cf8e2b28c500b6",
     "text": "Promotions",
     "top": "180dp",

@@ -50,6 +50,11 @@
     "height": "45dp",
     "id": "btnHrsPlus",
     "info": null,
+    "iphone": {
+        "psp": {
+            "showProgressIndicator": false
+        }
+    },
     "isVisible": true,
     "isvisible": true,
     "kuid": "1d9a9be63a2e4eb4af06c68aed2a0718",
@@ -70,6 +75,8 @@
     "parent": "flexSetTime",
     "pf": "frmConfirm",
     "render": true,
+    "showProgressIndicator": false,
+    "showprogressindicator": false,
     "skin": "sae7360e3bd440fdbade8cf1c6dd9561",
     "text": "",
     "top": "215dp",

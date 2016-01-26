@@ -52,6 +52,11 @@
     "height": "50dp",
     "id": "btnLogin2",
     "info": null,
+    "iphone": {
+        "psp": {
+            "showProgressIndicator": false
+        }
+    },
     "isVisible": true,
     "isvisible": true,
     "kuid": "143bd4cf4a294bfe8a699ad444b6cb67",
@@ -72,6 +77,8 @@
     "parent": "flexLoginButtons",
     "pf": "frmSplash",
     "render": true,
+    "showProgressIndicator": false,
+    "showprogressindicator": false,
     "skin": "se6955b3e0514edb8c685acb09685de7",
     "text": "Login",
     "wType": "Button",

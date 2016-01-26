@@ -46,6 +46,11 @@
     "height": "100%",
     "id": "btnCancelHailNow",
     "info": null,
+    "iphone": {
+        "psp": {
+            "showProgressIndicator": false
+        }
+    },
     "isVisible": true,
     "isvisible": true,
     "kuid": "02bec0eaf8e14888be5d93b65f1f0d10",
@@ -66,6 +71,8 @@
     "parent": "flexBottomBar",
     "pf": "frmMap",
     "render": true,
+    "showProgressIndicator": false,
+    "showprogressindicator": false,
     "skin": "s8f181f3016f45c595d5f3b7832b397a",
     "text": "",
     "top": "0dp",

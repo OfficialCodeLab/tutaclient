@@ -45,6 +45,11 @@
     "height": "70%",
     "id": "btnDrop",
     "info": null,
+    "iphone": {
+        "psp": {
+            "showProgressIndicator": false
+        }
+    },
     "isVisible": true,
     "isvisible": true,
     "kuid": "971855df4c6f47229e81d2d8dc6ae887",
@@ -65,6 +70,8 @@
     "parent": "flexChangeDest",
     "pf": "frmMap",
     "render": true,
+    "showProgressIndicator": false,
+    "showprogressindicator": false,
     "skin": "s62c803c42e34ec696a91355141186be",
     "text": "",
     "top": "0dp",

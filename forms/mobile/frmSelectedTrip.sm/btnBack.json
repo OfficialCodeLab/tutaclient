@@ -4,11 +4,11 @@
     "__parentReadjusting__": false,
     "_height_": {
         "type": "string",
-        "value": "45dp"
+        "value": "50dp"
     },
     "_left_": {
         "type": "string",
-        "value": "15dp"
+        "value": "10dp"
     },
     "_margin_": [
         6,
@@ -26,7 +26,7 @@
     "_text_": "",
     "_top_": {
         "type": "string",
-        "value": "11dp"
+        "value": "0dp"
     },
     "_width_": {
         "type": "string",
@@ -47,13 +47,18 @@
     "enabled": false,
     "focusSkin": "s5871028095a4083aa02ac5c9614d485",
     "focusskin": "s5871028095a4083aa02ac5c9614d485",
-    "height": "45dp",
+    "height": "50dp",
     "id": "btnBack",
     "info": null,
+    "iphone": {
+        "psp": {
+            "showProgressIndicator": false
+        }
+    },
     "isVisible": true,
     "isvisible": true,
     "kuid": "ebad916c4c744b57a9ea57857105d525",
-    "left": "15dp",
+    "left": "10dp",
     "margin": [
         6,
         6,
@@ -70,9 +75,11 @@
     "parent": "flexHeader",
     "pf": "frmSelectedTrip",
     "render": true,
+    "showProgressIndicator": false,
+    "showprogressindicator": false,
     "skin": "s815cc265d8c446cbd9b70b18a6c8a1a",
     "text": "",
-    "top": "11dp",
+    "top": "0dp",
     "wType": "Button",
     "widgetAlignment": 5,
     "width": "50dp",

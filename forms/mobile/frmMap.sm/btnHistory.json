@@ -45,6 +45,11 @@
     "height": "60dp",
     "id": "btnHistory",
     "info": null,
+    "iphone": {
+        "psp": {
+            "showProgressIndicator": false
+        }
+    },
     "isVisible": true,
     "isvisible": true,
     "kuid": "2b127e35fb1f44e396ee814c9fd8fa06",
@@ -67,6 +72,8 @@
     "parent": "flexMenuItems",
     "pf": "frmMap",
     "render": true,
+    "showProgressIndicator": false,
+    "showprogressindicator": false,
     "skin": "sdcceba3395c458b80cf8e2b28c500b6",
     "text": "History",
     "top": "60dp",

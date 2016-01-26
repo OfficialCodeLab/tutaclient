@@ -50,6 +50,11 @@
     "height": "40dp",
     "id": "btnMonthUp",
     "info": null,
+    "iphone": {
+        "psp": {
+            "showProgressIndicator": false
+        }
+    },
     "isVisible": true,
     "isvisible": true,
     "kuid": "e0a237d3190048afa9e4da78e9a2dc5e",
@@ -70,6 +75,8 @@
     "parent": "flexSetTime",
     "pf": "frmConfirm",
     "render": true,
+    "showProgressIndicator": false,
+    "showprogressindicator": false,
     "skin": "scfdd4919306474ab2cb4a99694884d7",
     "text": "",
     "top": "55dp",

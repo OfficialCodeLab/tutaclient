@@ -50,6 +50,11 @@
     "height": "40dp",
     "id": "btnDayDown",
     "info": null,
+    "iphone": {
+        "psp": {
+            "showProgressIndicator": false
+        }
+    },
     "isVisible": true,
     "isvisible": true,
     "kuid": "df9d1d780f2a4596ad175e5a697f49e2",
@@ -70,6 +75,8 @@
     "parent": "flexSetTime",
     "pf": "frmConfirm",
     "render": true,
+    "showProgressIndicator": false,
+    "showprogressindicator": false,
     "skin": "se90338badb6431187722f580ff3f644",
     "text": "",
     "top": "155dp",

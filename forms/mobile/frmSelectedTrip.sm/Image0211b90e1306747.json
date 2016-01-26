@@ -40,7 +40,6 @@
     "context": {
         "channel": "mobile",
         "formID": "frmSelectedTrip",
-        "ispercent": true,
         "platform": "iphone",
         "templateType": "forms",
         "topLevelBox": null
@@ -53,7 +52,6 @@
     "info": null,
     "invokedProperty": "src",
     "isVisible": true,
-    "ispercent": true,
     "isvisible": true,
     "kuid": "6aea5bcfbbbd450eb4a492f9a9908802",
     "left": "18dp",
@@ -70,7 +68,7 @@
         0,
         0
     ],
-    "parent": "FlexContainer0a960a948278c42",
+    "parent": "flexMain",
     "pf": "frmSelectedTrip",
     "render": true,
     "skin": "s4ea8d4d07574957b839f06194980e52",

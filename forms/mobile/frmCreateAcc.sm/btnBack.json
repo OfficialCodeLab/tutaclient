@@ -46,6 +46,11 @@
     "height": "30dp",
     "id": "btnBack",
     "info": null,
+    "iphone": {
+        "psp": {
+            "showProgressIndicator": false
+        }
+    },
     "isVisible": true,
     "isvisible": true,
     "kuid": "3e2b01c941ca48c0b9f0f2bafad23882",
@@ -66,6 +71,8 @@
     "parent": "flexMain",
     "pf": "frmCreateAcc",
     "render": true,
+    "showProgressIndicator": false,
+    "showprogressindicator": false,
     "skin": "s0467a2b57144c5a9dccda55106e83b1",
     "text": "",
     "wType": "Button",

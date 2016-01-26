@@ -46,6 +46,11 @@
     "height": "100%",
     "id": "btnPhone",
     "info": null,
+    "iphone": {
+        "psp": {
+            "showProgressIndicator": false
+        }
+    },
     "isVisible": true,
     "isvisible": true,
     "kuid": "5d979bbdcf40401487006dcd658e7f33",
@@ -66,6 +71,8 @@
     "parent": "flexPhone",
     "pf": "frmMap",
     "render": true,
+    "showProgressIndicator": false,
+    "showprogressindicator": false,
     "skin": "sb275f2b66c3496aa75a177f19298b69",
     "text": "",
     "top": "0dp",

@@ -46,6 +46,11 @@
     "height": "70%",
     "id": "btnPerson6",
     "info": null,
+    "iphone": {
+        "psp": {
+            "showProgressIndicator": false
+        }
+    },
     "isVisible": true,
     "isvisible": true,
     "kuid": "8d531df36ee54d569993ae1d8bc67f1e",
@@ -65,6 +70,8 @@
     "parent": "flexNoOfPeople",
     "pf": "frmMap",
     "render": true,
+    "showProgressIndicator": false,
+    "showprogressindicator": false,
     "skin": "s7b013db10d847b8865491a472e97350",
     "text": "",
     "top": "8dp",

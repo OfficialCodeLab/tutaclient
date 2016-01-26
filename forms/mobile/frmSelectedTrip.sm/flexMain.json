@@ -1,17 +1,13 @@
 {
     "DNDConfig": null,
     "__parentReadjusting__": false,
-    "_bottom_": {
-        "type": "number",
-        "value": "40"
-    },
     "_height_": {
         "type": "string",
-        "value": "100dp"
+        "value": "100%"
     },
     "_left_": {
         "type": "string",
-        "value": "206dp"
+        "value": "0dp"
     },
     "_margin_": [
         0,
@@ -25,7 +21,11 @@
         0,
         0
     ],
-    "_skin_": "s1bcc41d918e4e03944904a2061308f9",
+    "_skin_": "s9b2ce2774e144da99f795c3ff096827",
+    "_top_": {
+        "type": "string",
+        "value": "0dp"
+    },
     "_width_": {
         "type": "string",
         "value": "100%"
@@ -33,18 +33,20 @@
     "allboxes": [],
     "autogrowMode": 0,
     "autogrowmode": 0,
-    "bottom": 40,
     "canUpdateUI": true,
-    "centerX": "50%",
-    "centerx": {
-        "type": "string",
-        "value": "50%"
-    },
     "children": [
-        "Label013eda42885444e",
-        "lblCost",
-        "Label01ea3f930d4414a",
-        "FlexContainer0c3be722414624a"
+        "btnHelp",
+        "flexHeader",
+        "lblSep1",
+        "Image0211b90e1306747",
+        "CopyImage0576948aacfab4c",
+        "Label062bc3cad664a46",
+        "flexFare",
+        "imgDriverProfile",
+        "lblPickup",
+        "lblDropoff",
+        "lblDriverName",
+        "mapHistory"
     ],
     "clipBounds": true,
     "clipbounds": true,
@@ -53,15 +55,15 @@
     "enableScrolling": true,
     "enabled": false,
     "enablescrolling": true,
-    "height": "100dp",
-    "id": "FlexContainer0bc4e1887a39a44",
+    "height": "100%",
+    "id": "flexMain",
     "info": null,
     "isVisible": true,
     "isvisible": true,
-    "kuid": "166571e61f394370bdf20425ecbf43a1",
+    "kuid": "38974a44112244f5beccbece5c5d4de8",
     "layoutType": 2,
     "layouttype": 2,
-    "left": "206dp",
+    "left": "0dp",
     "margin": [
         0,
         0,
@@ -76,19 +78,20 @@
         0,
         0
     ],
-    "parent": "FlexContainer0a960a948278c42",
+    "parent": "frmSelectedTrip",
     "percent": true,
     "pf": "frmSelectedTrip",
     "render": true,
-    "skin": "s1bcc41d918e4e03944904a2061308f9",
+    "skin": "s9b2ce2774e144da99f795c3ff096827",
     "snapGridSize": 10,
     "snapToGrid": true,
     "snapgridsize": 10,
     "snaptogrid": true,
+    "top": "0dp",
     "wType": "FlexContainer",
     "widgetAlignment": 1,
     "widgetalignment": 1,
     "width": "100%",
-    "zIndex": 4,
-    "zindex": 4
+    "zIndex": 10,
+    "zindex": 10
 }
