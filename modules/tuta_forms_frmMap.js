@@ -18,9 +18,24 @@ tuta.forms.frmMap = function() {
     var self = this;
 	tuta.map.stopMapListener();
     //frmMap.txtDest.setFocus(false);
-	
-    this.control("txtDest").onBeginEditing = function() {frmMap.Image066d5e18d311e4b.setVisibility(false);};
-    this.control("txtDest").onEndEditing = function() {frmMap.Image066d5e18d311e4b.setVisibility(true);};
+	frmMap.Image066d5e18d311e4b.setVisibility(false); // search destination cancel image 
+    frmMap.CopyImage0943e5358a1de41.setVisibility(false); // search destination cancel image
+    
+    this.control("txtDest").onBeginEditing = function() {
+      frmMap.Image066d5e18d311e4b.setVisibility(true);
+    };
+    
+    this.control("txtDest").onEndEditing = function() {
+      frmMap.Image066d5e18d311e4b.setVisibility(false);
+    };
+    
+    this.control("txtPick").onBeginEditing = function() {
+      frmMap.CopyImage0943e5358a1de41.setVisibility(true);
+    };
+    
+    this.control("txtPick").onEndEditing = function() {
+      frmMap.CopyImage0943e5358a1de41.setVisibility(false);
+    };
     
     this.control("btnPerson1").onClick = onPeopleSelect;
     this.control("btnPerson2").onClick = onPeopleSelect;
@@ -235,6 +250,7 @@ tuta.forms.frmMap = function() {
       if(frmMap.txtDest.text !== null){
         frmMap.flexFindingDest.setVisibility(true);
         frmMap.flexChangeDest.setVisibility(false);
+        frmMap.Image066d5e18d311e4b.setVisibility(true);
         //ssa.mobile.alert("Search", "Search Done");
         //frmMap.flexNoOfPeople.setVisibility(false);
         selectDest(frmMap);      
@@ -245,12 +261,21 @@ tuta.forms.frmMap = function() {
       if(frmMap.txtPick.text !== null){
         frmMap.flexFindingDest.setVisibility(true);
         frmMap.flexChangeDest.setVisibility(false);
+        frmMap.CopyImage0943e5358a1de41.setVisibility(true);
         //ssa.mobile.alert("Search", "Search Done");
         //frmMap.flexNoOfPeople.setVisibility(false);
         selectDest(frmMap);      
       }
     };
-
+    
+    
+    this.control("txtDest").onCancel = 
+      frmMap.Image066d5e18d311e4b.setVisibility(false);
+    
+	this.control("txtPick").onCancel = function(widget) {
+      frmMap.CopyImage0943e5358a1de41.setVisibility(false);
+    }; 
+    
     this.control("btnCancelSetDest").onClick = clearDestPick;
     this.control("btnCancelSetPick").onClick = clearDestPick;
     
