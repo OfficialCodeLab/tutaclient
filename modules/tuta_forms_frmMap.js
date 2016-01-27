@@ -138,7 +138,6 @@ tuta.forms.frmMap = function() {
       tuta.menuToggle(0, self.leftMenu._open);     
       self.leftMenu.toggle();
       tuta.forms.frmSplash.show();
-      tuta.animate.moveBottomLeft(frmSplash.flexMainButtons, 0, "0%", "0", null);
     };
     this.control("btnMapCenter").onClick = function (button) {
       //Handle repeated presses

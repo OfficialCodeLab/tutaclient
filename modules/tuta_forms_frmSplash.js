@@ -46,6 +46,8 @@ tuta.forms.frmSplash = function() {
         currentUser = inputs;
         // try log user in
         tuta.animate.move(frmSplash.flexLoading, 0, 0, 0, null);
+        tuta.animate.moveBottomLeft(frmSplash.flexMainButtons, 0, "-35%", "0", null);
+        tuta.animate.moveBottomLeft(frmSplash.flexLoginButtons, 0, "0%", "100%", null);
         application.service("userService").invokeOperation(
           "login", {}, inputs,
           function(result) {
@@ -57,8 +59,6 @@ tuta.forms.frmSplash = function() {
             //User is the key / ID, and contains a JSON structure as a value
             kony.store.setItem("user", JSON.stringify(inputs));
             currentUser = inputs;
-            tuta.animate.moveBottomLeft(frmSplash.flexMainButtons, 0, "0%", "0", null);
-            tuta.animate.moveBottomLeft(frmSplash.flexLoginButtons, 0, "0%", "100%", null);
             //CS001
             tuta.appstate.helper.resumeFromState();
             //
@@ -66,6 +66,7 @@ tuta.forms.frmSplash = function() {
             //tuta.forms.frm003CheckBox.show();
           },
           function(error) {
+            tuta.animate.moveBottomLeft(frmSplash.flexMainButtons, 0, "0%", "0", null);
             tuta.animate.move(frmSplash.flexLoading, 0, 0, "100%", null);
             // the service returns 403 (Not Authorised) if credentials are wrong
             if(error.httpStatusCode + "" == "403"){
@@ -93,20 +94,27 @@ tuta.forms.frmSplash = function() {
     };
 
     this.control("btnSignUp2").onClick = function(button){
-      tuta.animate.moveBottomLeft(frmSplash.flexMainButtons, 0, "0%", "0", null);
+      tuta.animate.moveBottomLeft(frmSplash.flexMainButtons, 0, "-35%", "0", null);
       tuta.animate.moveBottomLeft(frmSplash.flexLoginButtons, 0, "0%", "100%", null);
       tuta.forms.frmCreateAcc.show();
     };
     tuta.map.stopMapListener();
 
+    if(initialAppLoad == false){
+      try{
+        kony.timer.cancel("animateButtons");
+      } catch(ex){}
+      kony.timer.schedule("animateButtons", function(){
+        tuta.animate.moveBottomLeft(frmSplash.flexMainButtons, 0.3, "0%", "0%", null);
+
+      }, 0.3, false);
+
+    }
+
   };
 
   tuta.forms.frmSplash.onPostShow = function(form) {
     var self = this;
-
-    kony.timer.schedule("login", function(){
-
-    }, 0.5, false);
   };
 
 

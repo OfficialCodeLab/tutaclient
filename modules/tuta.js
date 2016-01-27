@@ -14,6 +14,7 @@
 var application = null; 
 
 //App state flags
+var initialAppLoad = true;
 var client_state = 0;
 var searchMode = 0;
 var bookNow = true;
@@ -161,7 +162,7 @@ function updateMap() {
 
 
     if(driverArrived === false){
-       pickupicon = "userpin" + tuta.bearing(userbearing) + ".png";
+      pickupicon = "userpin" + tuta.bearing(userbearing) + ".png";
 
       if(overview.active === 1){
         locationData.push(
@@ -292,7 +293,7 @@ tuta.awaitConfirm = function(bookingID) {
     Reason: App states need to hook in here.
     - Set the app state to HAILING (2)
     - Store the current booking, app state and user in the kony store
-  
+
 
 
 
@@ -534,7 +535,7 @@ tuta.renderRouteAndDriver = function (booking){
     Reason: App states need to hook in here.
     - Set the app state to EN_ROUTE (3)
     - Store the current booking, app state and user in the kony store
-  
+
 
   appState = {
     state_string: "EN_ROUTE",
@@ -758,7 +759,7 @@ tuta.trackDriver = function(driverID){
         }
 
         if(driverArrived === false && tripOnRoute === true){
-          
+
           var lat1 = parseFloat(driver.location.lat);
           var lon1 = parseFloat(driver.location.lng);
           var lat2 = parseFloat(currentPos.geometry.location.lat);
@@ -840,7 +841,7 @@ tuta.awaitDriverPickupConfirmation = function(){
               Reason: App states need to hook in here.
               - Set the app state to IN_TRANSIT (4)
               - Store the current booking, app state and user in the kony store
-            
+
 
               appState = {
                 state_string: "INTRANSIT",
@@ -849,7 +850,7 @@ tuta.awaitDriverPickupConfirmation = function(){
 
               //Store the object in case of crash
               tuta.appstate.setState(appState);*/
-				//tuta.util.alert("IN TRANSIT", "");
+              //tuta.util.alert("IN TRANSIT", "");
               tuta.awaitDriverDropOffConfirmation();
               overview.active = 0;   
               driverArrived = true;  
@@ -901,7 +902,7 @@ tuta.awaitDriverDropOffConfirmation = function(){
             if (result.value[0].status==="Completed"){
               kony.timer.cancel("tripCompleteAwaitTimer");
               kony.timer.cancel("trackdriverloop");
-				//tuta.util.alert("COMPLETE", "");
+              //tuta.util.alert("COMPLETE", "");
 
 
               /*
@@ -911,7 +912,7 @@ tuta.awaitDriverDropOffConfirmation = function(){
                 Reason: App states need to hook in here.
                 - Set the app state to IDLE (1)
                 - Store the current booking, app state and user in the kony store
-              
+
 
               var appState = {
                 state_string: null,
@@ -962,6 +963,7 @@ tuta.initCallback = function(error) {
             "login", {}, JSON.parse(input),
             function(result) {
               currentUser.userName = JSON.parse(input).userName;
+              initialAppLoad = false;
 
               tuta.appstate.helper.resumeFromState();
               //tuta.util.alert("Appstate Start", currentAppState);
@@ -972,6 +974,7 @@ tuta.initCallback = function(error) {
               // the service returns 403 (Not Authorised) if credentials are wrong
               // make IF statement to check for 403 error only
               input = kony.store.removeItem("user");
+              initialAppLoad = false;
 
               tuta.animate.moveBottomLeft(frmSplash.flexMainButtons, 0.2, "0%", "0", null);
 
@@ -983,6 +986,7 @@ tuta.initCallback = function(error) {
         }
       }  
       else{
+        initialAppLoad = false;
         tuta.animate.moveBottomLeft(frmSplash.flexMainButtons, 0.2, "0%", "0", null);
       }
     }
