@@ -40,6 +40,8 @@
     "context": {
         "channel": "mobile",
         "formID": "frmConfirm",
+        "ispercent": true,
+        "platform": "android",
         "templateType": "forms",
         "topLevelBox": null
     },
@@ -51,6 +53,7 @@
     "info": null,
     "invokedProperty": "src",
     "isVisible": true,
+    "ispercent": true,
     "isvisible": true,
     "kuid": "e0acff43ccc14a06831a02cf15e60643",
     "margin": [

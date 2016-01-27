@@ -1,13 +1,13 @@
 if (typeof(tuta) === "undefined") {
-	tuta = {};
+  tuta = {};
 }
 
 if (typeof(tuta.forms) === "undefined") {
-	tuta.forms = {};
+  tuta.forms = {};
 }
 
 tuta.forms.frmSplash = function() {
-// initialize controller 
+  // initialize controller 
   tuta.forms.frmSplash = new tuta.controller(frmSplash); 
 
   // Initialize form events	
@@ -24,8 +24,8 @@ tuta.forms.frmSplash = function() {
       tuta.controls.behavior.MOVE_OVER, 
       0.3
     );
-    
-    
+
+
     this.control("btnClearState").onClick = function (button){
       tuta.appstate.clearState();
       tuta.location.loadPositionInit();
@@ -45,6 +45,7 @@ tuta.forms.frmSplash = function() {
         var inputs = { userName : self.control("txtEmail").text.toLowerCase() , password : self.control("txtPassword").text };
         currentUser = inputs;
         // try log user in
+        tuta.animate.move(frmSplash.flexLoading, 0, 0, 0, null);
         application.service("userService").invokeOperation(
           "login", {}, inputs,
           function(result) {
@@ -56,19 +57,20 @@ tuta.forms.frmSplash = function() {
             //User is the key / ID, and contains a JSON structure as a value
             kony.store.setItem("user", JSON.stringify(inputs));
             currentUser = inputs;
-            self.moveLoginButtons.toggle();
             tuta.animate.moveBottomLeft(frmSplash.flexMainButtons, 0, "0%", "0", null);
-            
+            tuta.animate.moveBottomLeft(frmSplash.flexLoginButtons, 0, "0%", "100%", null);
             //CS001
             tuta.appstate.helper.resumeFromState();
+            //
             //tuta.location.loadPositionInit(); Carl commented this out
             //tuta.forms.frm003CheckBox.show();
           },
           function(error) {
+            tuta.animate.move(frmSplash.flexLoading, 0, 0, "100%", null);
             // the service returns 403 (Not Authorised) if credentials are wrong
             if(error.httpStatusCode + "" == "403"){
-                tuta.util.alert("Invalid Credentials", "Your username and password combination was wrong, please try again.");
-              }
+              tuta.util.alert("Invalid Credentials", "Your username and password combination was wrong, please try again.");
+            }
             else{
               tuta.util.alert("ERROR", error);
             }
@@ -82,14 +84,17 @@ tuta.forms.frmSplash = function() {
     };
 
     this.control("btnLogin").onClick = function(button){ 
-      self.moveLoginButtons.toggle();
+      tuta.animate.moveBottomLeft(frmSplash.flexMainButtons, 0.3, "0%", "-100%", null);
+      tuta.animate.moveBottomLeft(frmSplash.flexLoginButtons, 0.3, "0%", "0", null);
     };
 
     this.control("btnSignUp").onClick = function(button){
       tuta.forms.frmCreateAcc.show();
     };
-    
+
     this.control("btnSignUp2").onClick = function(button){
+      tuta.animate.moveBottomLeft(frmSplash.flexMainButtons, 0, "0%", "0", null);
+      tuta.animate.moveBottomLeft(frmSplash.flexLoginButtons, 0, "0%", "100%", null);
       tuta.forms.frmCreateAcc.show();
     };
     tuta.map.stopMapListener();
@@ -100,10 +105,10 @@ tuta.forms.frmSplash = function() {
     var self = this;
 
     kony.timer.schedule("login", function(){
-      
+
     }, 0.5, false);
   };
-  
-  
+
+
 };
 

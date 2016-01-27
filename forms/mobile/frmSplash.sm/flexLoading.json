@@ -7,7 +7,7 @@
     },
     "_left_": {
         "type": "string",
-        "value": "0dp"
+        "value": "100%"
     },
     "_margin_": [
         0,
@@ -49,12 +49,12 @@
     "height": "100%",
     "id": "flexLoading",
     "info": null,
-    "isVisible": false,
-    "isvisible": false,
+    "isVisible": true,
+    "isvisible": true,
     "kuid": "88f06818b06d41e69b2fed57d60b2360",
     "layoutType": 2,
     "layouttype": 2,
-    "left": "0dp",
+    "left": "100%",
     "margin": [
         0,
         0,

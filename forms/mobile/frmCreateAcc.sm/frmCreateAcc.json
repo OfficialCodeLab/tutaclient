@@ -21,7 +21,10 @@
         "inTransitionConfig": {
             "formAnimation": 3
         },
-        "needAppMenu": false
+        "needAppMenu": false,
+        "psp": {
+            "windowSoftInputMode": 2
+        }
     },
     "canUpdateUI": true,
     "channel": "mobile",

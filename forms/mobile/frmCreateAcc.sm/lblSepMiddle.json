@@ -8,7 +8,7 @@
     },
     "_height_": {
         "type": "string",
-        "value": "55dp"
+        "value": "53dp"
     },
     "_left_": {
         "type": "string",
@@ -45,7 +45,7 @@
     "contentAlignment": 4,
     "contentalignment": 4,
     "enabled": false,
-    "height": "55dp",
+    "height": "53dp",
     "id": "lblSepMiddle",
     "info": null,
     "ipad": {

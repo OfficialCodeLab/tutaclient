@@ -40,6 +40,7 @@
     "context": {
         "channel": "mobile",
         "formID": "frmCreateAcc",
+        "ispercent": true,
         "platform": "iphone",
         "templateType": "forms",
         "topLevelBox": null

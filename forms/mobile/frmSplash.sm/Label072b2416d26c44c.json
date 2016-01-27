@@ -22,7 +22,7 @@
         0
     ],
     "_skin_": "sea2dc15196b48bd92f24967aeb8eb57",
-    "_text_": "Loading. Please Wait...",
+    "_text_": "Logging In. Please Wait...",
     "_top_": {
         "type": "string",
         "value": "422dp"
@@ -79,7 +79,7 @@
     "pf": "frmSplash",
     "render": true,
     "skin": "sea2dc15196b48bd92f24967aeb8eb57",
-    "text": "Loading. Please Wait...",
+    "text": "Logging In. Please Wait...",
     "toolTip": "",
     "tooltip": "",
     "top": "422dp",

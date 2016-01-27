@@ -4,7 +4,7 @@
     "__parentReadjusting__": false,
     "_height_": {
         "type": "string",
-        "value": "46dp"
+        "value": "47dp"
     },
     "_left_": {
         "type": "string",
@@ -39,7 +39,7 @@
     "contentAlignment": 4,
     "contentalignment": 4,
     "enabled": false,
-    "height": "46dp",
+    "height": "47dp",
     "id": "lblNowActiveSideBorder",
     "info": null,
     "ipad": {
