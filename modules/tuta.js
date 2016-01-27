@@ -50,6 +50,7 @@ var currentBookingObj = {};
 var currentBookingObject = {};
 var currentAppState = {};
 var appState = {};
+var reselectingPickup = false;
 
 //Selector variables
 var people = [];

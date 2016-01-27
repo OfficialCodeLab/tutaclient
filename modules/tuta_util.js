@@ -63,13 +63,13 @@ tuta.util.quickSortObj = function (objArry, property) {
     }
     
     var pivot = Math.floor(objArry.length / 2);
-    var pivotVal = objArry[pivot][property];
+    var pivotVal = parseFloat(objArry[pivot][property]);
     var pivotItem = objArry.splice(pivot, 1)[0];
     
     for (var i = 0; i < objArry.length; i++) {
      
-        if (objArry[i][property] <= pivotVal) { loeCollection.push(objArry[i]); }
-        else if (objArry[i][property] > pivotVal) { gtCollection.push(objArry[i]); }
+        if (parseFloat(objArry[i][property]) <= pivotVal) { loeCollection.push(objArry[i]); }
+        else if (parseFloat(objArry[i][property]) > pivotVal) { gtCollection.push(objArry[i]); }
     }
     
     return tuta.util.quickSortObj(loeCollection, property).concat(pivotItem, tuta.util.quickSortObj(gtCollection, property));

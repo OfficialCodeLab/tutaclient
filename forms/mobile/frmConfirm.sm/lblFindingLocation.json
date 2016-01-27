@@ -1,0 +1,97 @@
+{
+    "DNDConfig": null,
+    "__parentReadjusting__": false,
+    "_height_": {
+        "type": "string",
+        "value": "50dp"
+    },
+    "_left_": {
+        "type": "string",
+        "value": "35dp"
+    },
+    "_margin_": [
+        1,
+        1,
+        1,
+        1
+    ],
+    "_padding_": [
+        0,
+        0,
+        0,
+        0
+    ],
+    "_skin_": "s91dbd9b68db42efac06e2ac3d1860e0",
+    "_text_": "FINDING LOCATION...",
+    "_top_": {
+        "type": "string",
+        "value": "416dp"
+    },
+    "_width_": {
+        "type": "string",
+        "value": "100%"
+    },
+    "_wrapping_": 2,
+    "canUpdateUI": true,
+    "centerX": "50%",
+    "centerY": "60%",
+    "centerx": {
+        "type": "string",
+        "value": "50%"
+    },
+    "centery": {
+        "type": "string",
+        "value": "60%"
+    },
+    "channel": "mobile",
+    "containerWeight": 100,
+    "containerweight": 100,
+    "contentAlignment": 5,
+    "contentalignment": 5,
+    "enabled": false,
+    "height": "50dp",
+    "id": "lblFindingLocation",
+    "info": null,
+    "ipad": {
+        "psp": {
+            "wrapping": 2
+        }
+    },
+    "iphone": {
+        "@class": "com.kony.gen.viz.model.component.property.label.IPhoneLabelProperty",
+        "psp": {
+            "wrapping": 2
+        }
+    },
+    "isVisible": true,
+    "isvisible": true,
+    "kuid": "fdbd2a0769a94985b977af1afda8a23d",
+    "left": "35dp",
+    "margin": [
+        1,
+        1,
+        1,
+        1
+    ],
+    "name": "kony.ui.Label",
+    "padding": [
+        0,
+        0,
+        0,
+        0
+    ],
+    "parent": "flexFindingDest",
+    "pf": "frmConfirm",
+    "render": true,
+    "skin": "s91dbd9b68db42efac06e2ac3d1860e0",
+    "text": "FINDING LOCATION...",
+    "toolTip": "",
+    "tooltip": "",
+    "top": "416dp",
+    "wType": "Label",
+    "widgetAlignment": 5,
+    "width": "100%",
+    "wrapping": 2,
+    "zIndex": 900,
+    "zindex": 900
+}

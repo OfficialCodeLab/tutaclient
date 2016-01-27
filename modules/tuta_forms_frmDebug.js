@@ -123,7 +123,7 @@ tuta.forms.frmDebug = function() {
     
     
     this.control("btnTickPress8").onClick = function(button){
-      tuta.animate.rotate(frmDebug.imgCar1, 0.25, 30, null);
+      //tuta.animate.rotate(frmDebug.imgCar1, 0.25, 30, null);
       /*
       var position = { 
         	lat: currentPos.geometry.location.lat,
@@ -135,7 +135,31 @@ tuta.forms.frmDebug = function() {
         });
       });
     };*/
+      var newDriv = tuta.util.quickSortObj(driversNear, "distance");
+      tuta.util.alert("Sorted", JSON.stringify(newDriv));
     };
+    
+    var driv = [
+      {
+        id : "test1",
+        distance : "231.412"
+      
+    },
+               {
+        id : "test2",
+        distance : "23551.412"
+                 
+               },
+               {
+        id : "test3",
+        distance : "22.412"
+                 
+               }, {
+        id : "test4",
+        distance : "2313.412"
+                 
+               }
+    ];
     
     
     tuta.map.stopMapListener();

@@ -39,7 +39,7 @@
     "children": [
         "CopylblPickupHeader050c6460f166441",
         "lblDestination",
-        "CopyImage0c9776e68c20849",
+        "imgDest",
         "btnChangeDest"
     ],
     "clipBounds": true,

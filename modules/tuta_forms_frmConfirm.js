@@ -76,7 +76,7 @@ tuta.forms.frmConfirm = function() {
                 client_state = 1;
                 tuta.forms.frmMap.show();
                 kony.timer.schedule("awaitConfirm", function(){tuta.awaitConfirm(bookingID);}, 1, false);
-                
+
                 //Resets hailingtaxi
                 hailingTaxi = false;
               },
@@ -92,7 +92,7 @@ tuta.forms.frmConfirm = function() {
             tuta.util.alert("Booking Error", "Unable to make your booking. Please try again.\n\n" + ex);
             hailingTaxi = false;
           }
-            
+
         } 
         else if (!bookNow) //Booking Later
         {
@@ -103,7 +103,7 @@ tuta.forms.frmConfirm = function() {
           //tuta.util.alert("Time is", "Day " + time1.getDate() + "\nMonth " + time1.getMonth() + "\nYear " + 
           //                time1.getFullYear() + "\nTime " + time1.getHours() + ":" + time1.getMinutes());
 
-          
+
           if(pickupTimeShort - timeNow > 600) //Booking restrictions satisfied
           {
             var bookingLater = {
@@ -204,7 +204,7 @@ tuta.forms.frmConfirm = function() {
 
     //Button: Change Destination
     this.control("btnChangeDest").onClick = function(button) {
-      tuta.forms.frmMap.show();
+      /*tuta.forms.frmMap.show();
       //Note: tuta.forms. might not be necessary in front of these. Test this.
       frmMap.flexAddressList.setVisibility(false);
       frmMap.flexAddressShadow.setVisibility(false);
@@ -212,7 +212,19 @@ tuta.forms.frmConfirm = function() {
       self.control("txtDest").placeholder = "Click to Set a Destination";
       self.control("txtDest").text = "";
       frmMap.txtDest.setFocus(true);
-      searchMode = 0;
+      searchMode = 0;*/
+      if(frmConfirm.imgDest.src === "editicondark.png")
+      {
+        tuta.animate.move(frmConfirm.txtDest, 0, "27", "20%", null);
+        frmConfirm.txtDest.setFocus(true);
+        frmConfirm.imgDest.src = "cancelicon.png";
+      }
+      else{
+        tuta.animate.move(frmConfirm.txtDest, 0, "27", "120%", null);
+        tuta.animate.move(frmConfirm.flexAddressList, 0, 0, "100%", null);
+        frmConfirm.txtDest.text = "";
+        frmConfirm.imgDest.src = "editicondark.png";
+      }
 
     };
     //End of Change Destination Button
@@ -220,10 +232,25 @@ tuta.forms.frmConfirm = function() {
     //Button: Change Pickup
     this.control("btnChangePickup").onClick = function(button) {
       tuta.forms.frmMap.show();
+      reselectingPickup = true;
       selectPickUpLocation();
     };
     //End of Change Pickup Button
 
+    this.control("txtDest").onDone = function (widget){
+      tuta.map.selectDest(frmConfirm);
+      frmConfirm.txtDest.text = "";
+    };
+    this.control("segAddressList").onRowClick = function (button) {
+      frmConfirm.txtDest.text = "";
+      tuta.animate.move(frmConfirm.txtDest, 0, "27", "120%", null);
+      destination = tuta.map.getSelectedAddress(frmConfirm);
+      frmConfirm.imgDest.src = "editicondark.png";
+      frmConfirm.lblDestination.text = shortenText (destination.formatted_address.replace(/`+/g,""), GLOBAL_CONCAT_LENGTH);
+      
+      //TOD0: CALL FUNCTION TO LOAD COST AND DURATION
+      
+    };
     this.control("btnDayDown").onClick = function(button) {
       tuta.calendar.cyclicDecrement(days);
     };
@@ -280,7 +307,7 @@ tuta.forms.frmConfirm = function() {
     };
 
     this.control("btnConfirm").onClick = tuta.calendar.setNewTime;
-    
+
     this.control("flexCancel1").onTouchStart = function() {
       frmConfirm["flexDateTime"]["isVisible"] = false;
     };
@@ -290,7 +317,7 @@ tuta.forms.frmConfirm = function() {
     this.control("btnCancel").onClick = function() {
       frmConfirm["flexDateTime"]["isVisible"] = false;
     };
-    
+
     this.control("btnLaterInactive").onClick = function(button) {
       frmConfirm.lblNowActive.setVisibility(false);
       frmConfirm.lblNowActiveBottomBorder.setVisibility(false);
@@ -300,7 +327,7 @@ tuta.forms.frmConfirm = function() {
       frmConfirm.lblLaterActiveSideBorder.setVisibility(true);
       showLater();
     };
-    
+
     this.control("btnNowInactive").onClick = function(button) {
       frmConfirm.lblNowActive.setVisibility(true);
       frmConfirm.lblNowActiveBottomBorder.setVisibility(true);
@@ -359,3 +386,25 @@ application.service(" <insert service name here> ").invokeOperation(
           }
         );
 */
+
+function newDestRequest (){
+  //tuta.fsm.stateChange(tuta.fsm.REQUESTS.FLAG_DOWN);
+  // SHOW THE SEGMENT
+  if (frmConfirm.txtDest.text  !== null && frmConfirm.txtDest.text  !== "") {
+    tuta.map.selectDest(frmConfirm);
+    //form.flexCloseAddress.setVisibility(true);
+  }
+  else {
+    //tuta.util.alert("Required Details", "Please fill in details");
+  }
+  //COPY segAddressList and the shadow flex container
+  //Change bottom text field's name to txtDest
+  //COPY flexChangeDest
+
+  //IF STATEMENT TO CHECK TEXT FIELDS
+
+
+
+  //tuta.forms.frm004Home.show();
+  //tuta.mobile.alert("Idle", "Taxi is now idle and picking up client");
+}

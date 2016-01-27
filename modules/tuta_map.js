@@ -4,11 +4,50 @@ if (typeof(tuta) === "undefined") {
 
 tuta.map = {};
 
+tuta.map.onLocationSelected = function (form) {
+  destination = tuta.map.getSelectedAddress(form);
+};
+
+tuta.map.getSelectedAddress = function(form) {
+  // hide address list
+  var selectedItem = form.segAddressList.selectedItems[0];
+  tuta.animate.move(form.flexAddressList, 0, 0, "100%", null);
+
+  return selectedItem;
+};
+
+
+//Handles entering addresses on the map form.
+tuta.map.selectDest = function(form) {
+  var add = "";
+  add = form.txtDest.text;
+  form.flexFindingDest.setVisibility(true);
+
+  tuta.location.addressList(add, function(result) {
+    form.flexFindingDest.setVisibility(false);
+    if (result.status === "ZERO_RESULTS") {
+      //form.txtDest.text = "";
+    } else {
+      tuta.animate.move(form.flexAddressList, 0, 0, "12.5%", null);
+      form.segAddressList.widgetDataMap = {
+        lblAddress: "formatted_address"
+      };
+      form.segAddressList.setData(result.results);
+      //form.txtDest.text = "";
+    }
+  });
+};
+
 function selectPickUpLocation() {
   searchMode = 1;
   tuta.animate.move(frmMap.flexAdd, 0.3, frmMap.flexAdd.top, "0%", null);
   try{
-    kony.timer.schedule("focusPick", function(){frmMap.txtPick.setFocus(true);}, 0.4, false);
+    kony.timer.cancel("focusPick");
+  }
+  catch(ex){}
+
+  try{
+    kony.timer.schedule("focusPick", function(){frmMap.txtPick.setFocus(true);}, 0.6, false);
   }
   catch(ex){}
 }
@@ -142,9 +181,26 @@ function onLocationSelected() {
   } else {
     pickupPoint = getSelectedAddress();
     frmMap.mapMain.navigateToLocation({ "lat" : pickupPoint.geometry.location.lat, "lon": pickupPoint.geometry.location.lng, name:"", desc: ""},false,false);
-    resetSearchBar();
     //updateMap();
     searchMode = 0;
+    resetSearchBar();
+    if(reselectingPickup){
+      reselectingPickup = false;
+      frmMap["flexChangeDest"]["isVisible"] = false;
+      frmMap["flexFindingDest"]["isVisible"] = true;
+      try{
+        kony.timer.cancel("showNewLocation");
+      } catch(ex){}
+
+      kony.timer.schedule("showNewLocation", function(){
+        frmConfirm.lblPickUpLocation.text = shortenText (pickupPoint.formatted_address.replace(/`+/g,""), GLOBAL_CONCAT_LENGTH);
+        frmMap["flexChangeDest"]["isVisible"] = true;
+      frmMap["flexFindingDest"]["isVisible"] = false;
+        tuta.forms.frmConfirm.show();
+        //TODO : call method to calculate new duration and cost
+
+      }, 2, false);
+    }
 
   }
 }
@@ -196,9 +252,9 @@ tuta.map.storeCenter = function (bounds){
 tuta.map.checkRadius = function (bounds){
   try{
     /*TODO FUTURE:
-	- USE LATSPAN TO DETERMINE THE MAX RADIUS
-    - LATSPAN IS IN THE BOUNDS OBJECT
-	*/
+      - USE LATSPAN TO DETERMINE THE MAX RADIUS
+      - LATSPAN IS IN THE BOUNDS OBJECT
+      */
     var distance = tuta.location.distance(mapCenter.location.lat, mapCenter.location.lon, bounds.center.lat, bounds.center.lon);
     if(distance >= GLOBAL_MAX_RADIUS){
       tuta.map.storeCenter(bounds);
@@ -211,6 +267,10 @@ tuta.map.checkRadius = function (bounds){
 };
 
 var timeStill = 0;
+var hasStartedLoading = true;
+var hasMovedBack = false;
+var hasLoaded = false;
+var initialTaxiLoad = true;
 tuta.map.startMapListener = function (){
   try {
     kony.timer.cancel("MapListener");
@@ -219,24 +279,21 @@ tuta.map.startMapListener = function (){
 
   }
 
-  var hasStartedLoading = true;
-  var hasMovedBack = false;
-  var hasLoaded = false;
   kony.timer.schedule("MapListener", function(){
     var bounds = frmMap.mapMain.getBounds();
     if(tuta.map.checkRadius(bounds)){
       //tuta.util.alert("MOVED");
       //if(!hasMovedAway){
-        //frmMap.lblChangePick.text = "Change pickup location";
+      //frmMap.lblChangePick.text = "Change pickup location";
       hasLoaded = false;
       hasStartedLoading = true;
-        //tuta.animate.move(frmMap.flexHeader, 0.2, "-8%", "", null);
-        //tuta.animate.move(frmMap.flexAdd, 0.2, "1%", frmMap.flexAdd.left, null);
-        //tuta.animate.moveBottomLeft(frmMap.flexNoOfPeople, 0.2, "-12%", "", null);
-        //tuta.animate.moveBottomRight(frmMap.flexMapCenter, 0.2, "100dp", "-75dp", null);
-        //hasMovedAway = true;   
-       // hasMovedBack = false;
-     // }
+      //tuta.animate.move(frmMap.flexHeader, 0.2, "-8%", "", null);
+      //tuta.animate.move(frmMap.flexAdd, 0.2, "1%", frmMap.flexAdd.left, null);
+      //tuta.animate.moveBottomLeft(frmMap.flexNoOfPeople, 0.2, "-12%", "", null);
+      //tuta.animate.moveBottomRight(frmMap.flexMapCenter, 0.2, "100dp", "-75dp", null);
+      //hasMovedAway = true;   
+      // hasMovedBack = false;
+      // }
       timeStill = 0;
 
 
@@ -252,14 +309,14 @@ tuta.map.startMapListener = function (){
       }
 
       /*
-      if(timeStill >= 6 && !hasMovedBack){
-        tuta.animate.move(frmMap.flexHeader, 0.2, "0%", "", null);
-        tuta.animate.move(frmMap.flexAdd, 0.2, "12%", frmMap.flexAdd.left, null);
-        tuta.animate.moveBottomLeft(frmMap.flexNoOfPeople, 0.2, "0%", "", null);
-        tuta.animate.moveBottomRight(frmMap.flexMapCenter, 0.2, "100dp", "-10dp", null);  
-        hasMovedBack = true;
-        hasMovedAway = false;
-      } */    
+        if(timeStill >= 6 && !hasMovedBack){
+          tuta.animate.move(frmMap.flexHeader, 0.2, "0%", "", null);
+          tuta.animate.move(frmMap.flexAdd, 0.2, "12%", frmMap.flexAdd.left, null);
+          tuta.animate.moveBottomLeft(frmMap.flexNoOfPeople, 0.2, "0%", "", null);
+          tuta.animate.moveBottomRight(frmMap.flexMapCenter, 0.2, "100dp", "-10dp", null);  
+          hasMovedBack = true;
+          hasMovedAway = false;
+        } */    
 
       if(timeStill >= 4){
         timeStill = 0;
@@ -271,6 +328,11 @@ tuta.map.startMapListener = function (){
           };
           tuta.events.getNearestDrivers(position, function(drivers, position){
             tuta.events.calculateWaitTime(drivers, position, function(time){
+              if(initialTaxiLoad)
+              {
+                initialTaxiLoad = false;
+				tuta.animate.move(frmMap.flexAdd, 0.15, "12%", "-100%", null);
+              }
               //tuta.util.alert("Wait Time", Math.round(time/60) + " mins");
               var mins = Math.round(time/60);
               if(mins > 40 || mins === 0){

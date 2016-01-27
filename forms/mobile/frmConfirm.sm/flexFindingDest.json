@@ -3,7 +3,11 @@
     "__parentReadjusting__": false,
     "_height_": {
         "type": "string",
-        "value": "160dp"
+        "value": "100%"
+    },
+    "_left_": {
+        "type": "string",
+        "value": "0dp"
     },
     "_margin_": [
         0,
@@ -18,10 +22,10 @@
         0
     ],
     "_render_": true,
-    "_skin_": "s9b2ce2774e144da99f795c3ff096827",
+    "_skin_": "s29f269fbe7e47118a36fed6774749a8",
     "_top_": {
         "type": "string",
-        "value": "-2dp"
+        "value": "0dp"
     },
     "_width_": {
         "type": "string",
@@ -33,19 +37,8 @@
     "canUpdateUI": true,
     "channel": "mobile",
     "children": [
-        "lblEstCost",
-        "lblEstDuration",
-        "lblDate",
-        "lblCost",
-        "lblDuration",
-        "lblDateTime",
-        "lblDateTimeNew",
-        "lblTime",
-        "lblSeparatorSm",
-        "calTime",
-        "imgTime",
-        "btnSetTime",
-        "flexAddressList"
+        "imgTaxi2",
+        "lblFindingLocation"
     ],
     "clipBounds": true,
     "clipbounds": true,
@@ -54,14 +47,15 @@
     "enableScrolling": true,
     "enabled": false,
     "enablescrolling": true,
-    "height": "160dp",
-    "id": "flexDetails2",
+    "height": "100%",
+    "id": "flexFindingDest",
     "info": null,
-    "isVisible": true,
-    "isvisible": true,
-    "kuid": "18575ffb2ece49e9b519addffc1bfc44",
+    "isVisible": false,
+    "isvisible": false,
+    "kuid": "a9c8c478ad544456a0b353df5d27f333",
     "layoutType": 2,
     "layouttype": 2,
+    "left": "0dp",
     "margin": [
         0,
         0,
@@ -76,20 +70,20 @@
         0,
         0
     ],
-    "parent": "flexMain",
+    "parent": "frmConfirm",
     "percent": true,
     "pf": "frmConfirm",
     "render": true,
-    "skin": "s9b2ce2774e144da99f795c3ff096827",
+    "skin": "s29f269fbe7e47118a36fed6774749a8",
     "snapGridSize": 10,
     "snapToGrid": true,
     "snapgridsize": 10,
     "snaptogrid": true,
-    "top": "-2dp",
+    "top": "0dp",
     "wType": "FlexContainer",
     "widgetAlignment": 1,
     "widgetalignment": 1,
     "width": "100%",
-    "zIndex": 2,
-    "zindex": 2
+    "zIndex": 900,
+    "zindex": 900
 }

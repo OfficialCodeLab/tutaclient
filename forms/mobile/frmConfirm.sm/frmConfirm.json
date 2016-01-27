@@ -30,7 +30,8 @@
     "channel": "mobile",
     "children": [
         "flexDateTime",
-        "flexBg"
+        "flexBg",
+        "flexFindingDest"
     ],
     "containerWeight": 100,
     "containerweight": 100,

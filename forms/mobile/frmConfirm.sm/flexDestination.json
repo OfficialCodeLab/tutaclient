@@ -38,7 +38,8 @@
     "channel": "mobile",
     "children": [
         "CopyImage0529403921b8f4c",
-        "CopyFlexContainer0c062dea6b7c746"
+        "CopyFlexContainer0c062dea6b7c746",
+        "txtDest"
     ],
     "clipBounds": true,
     "clipbounds": true,

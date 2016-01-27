@@ -266,6 +266,7 @@ tuta.events.getNearestDrivers = function(position, callback){
   );
 };
 
+var tempDriversNear = [];
 tuta.events.calculateWaitTime = function(drivers, position, callback){
   var origin = [{
     lat : position.lat,
@@ -274,34 +275,37 @@ tuta.events.calculateWaitTime = function(drivers, position, callback){
 
   var count = 0;
   var total = 0;
+  tempDriversNear = [];
   for(var i = 0; i < drivers.length; i++){
-    if(drivers[i].distance < 100000){
+    if(drivers[i].distance < 100000 && drivers[i].id !== currentUser.userName){
       var destination = [{
         lat: drivers[i].location.lat,
         lon: drivers[i].location.lng
       }];
 
-      tuta.location.distanceMatrix(origin, destination, function(response, id){
-        //tuta.util.alert(id, JSON.stringify(response)); 
-        var dist = response[0].elements[0].duration.value;
-        if(dist < 3600){
-          total += dist;
-          tuta.events.pushDriver(drivers[tuta.util.arrayObjectIndexOf(drivers, id, "id")]);
-        }
+        tuta.location.distanceMatrix(origin, destination, function(response, id){
+          //tuta.util.alert(id, JSON.stringify(response)); 
+          var dist = response[0].elements[0].duration.value;
+          if(dist < 3600){
+            var driverItem = tuta.util.arrayObjectIndexOf(drivers, id, "id");
+            total += dist;
+            tuta.events.pushDriver(drivers[driverItem]);
+          }
 
-        if(count++ === drivers.length-1){
-         // tuta.events.sortDrivers();
-          callback(total/count);
-        }
+          if(count++ === drivers.length-1){
+            tuta.events.sortDrivers();
+            callback(total/count);
+          }
 
-      }, drivers[i].id);
+        }, drivers[i].id);      
     }
     else{
       if(count++ === drivers.length-1){
-        //tuta.events.sortDrivers();
+        tuta.events.sortDrivers();
         callback(total/count);
       }
     }
+
   }  
 };
 
@@ -310,21 +314,24 @@ tuta.events.pushDriver = function(driver){
   //tuta.util.alert("TEST", JSON.stringify(driver));
   var position = tuta.util.arrayObjectIndexOf(driversNear, driver.id, "id");
   if(position === -1){
-    driversNear.push(driver);
+    tempDriversNear.push(driver);
   }
   else{
-    driversNear[position] = driver;
+    tempDriversNear[position] = driver;
   }
 };
 
 
 tuta.events.sortDrivers = function(){
-  var driversSorted = tuta.util.quickSortObj(driversNear, "distance");
+  var driversSorted = tuta.util.quickSortObj(tempDriversNear, "distance");
   if(driversSorted.length >= 5){
-    driversNear = driversSorted.slice(0, 5);    
+    tempDriversNear = driversSorted.slice(0, 5);    
   } else {
-    driversNear = driversSorted;
+    tempDriversNear = driversSorted;
   }
+  var str1 = "";
+  
+  driversNear = tempDriversNear;
 };
 
 
@@ -334,7 +341,7 @@ tuta.events.startLoadingCircle = function(){
   try{
     kony.timer.cancel("loadingIconSpin");
   } catch(ex) {}
-  
+
   kony.timer.schedule("loadingIconSpin", function(){
     loadingIconAngle+=90;
     if(loadingIconAngle>= 360)

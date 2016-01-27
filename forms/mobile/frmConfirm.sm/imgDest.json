@@ -40,20 +40,17 @@
     "context": {
         "channel": "mobile",
         "formID": "frmConfirm",
-        "ispercent": true,
-        "platform": "android",
         "templateType": "forms",
         "topLevelBox": null
     },
     "enabled": false,
     "height": "100%",
-    "id": "CopyImage0c9776e68c20849",
+    "id": "imgDest",
     "imageScaleMode": 1,
     "imagescalemode": 1,
     "info": null,
     "invokedProperty": "src",
     "isVisible": true,
-    "ispercent": true,
     "isvisible": true,
     "kuid": "e0acff43ccc14a06831a02cf15e60643",
     "margin": [
