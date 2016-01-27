@@ -1,0 +1,76 @@
+{
+    "@class": "com.kony.gen.viz.model.component.KVizButton",
+    "DNDConfig": null,
+    "__parentReadjusting__": false,
+    "_height_": {
+        "type": "string",
+        "value": "70%"
+    },
+    "_margin_": [
+        6,
+        6,
+        6,
+        6
+    ],
+    "_padding_": [
+        0,
+        0,
+        0,
+        0
+    ],
+    "_right_": {
+        "type": "number",
+        "value": "0"
+    },
+    "_skin_": "sdfcb1604bcb45ec99829027c084fbfc",
+    "_text_": "",
+    "_top_": {
+        "type": "string",
+        "value": "0dp"
+    },
+    "_width_": {
+        "type": "string",
+        "value": "50dp"
+    },
+    "canUpdateUI": true,
+    "containerWeight": 100,
+    "containerweight": 100,
+    "contentAlignment": 5,
+    "contentalignment": 5,
+    "displayText": true,
+    "displaytext": true,
+    "enabled": false,
+    "focusSkin": "sd88b4cfca704a20a79b3e01c0982403",
+    "focusskin": "sd88b4cfca704a20a79b3e01c0982403",
+    "height": "70%",
+    "id": "btnSetPickup",
+    "info": null,
+    "isVisible": true,
+    "isvisible": true,
+    "kuid": "9469ac1a08ea454488c243d28fda5576",
+    "margin": [
+        6,
+        6,
+        6,
+        6
+    ],
+    "name": "kony.ui.Button",
+    "padding": [
+        0,
+        0,
+        0,
+        0
+    ],
+    "parent": "flexChangeDest",
+    "pf": "frmMap",
+    "render": true,
+    "right": 0,
+    "skin": "sdfcb1604bcb45ec99829027c084fbfc",
+    "text": "",
+    "top": "0dp",
+    "wType": "Button",
+    "widgetAlignment": 5,
+    "width": "50dp",
+    "zIndex": 910,
+    "zindex": 910
+}

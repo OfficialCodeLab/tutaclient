@@ -145,7 +145,6 @@ var newbounds = null;
 function updateMap() {
 
   try{
-
     var pickupicon = "";
     var locationData = [];
 
@@ -156,8 +155,6 @@ function updateMap() {
     if(frmMap.mapMain.zoomLevel < 14)
       frmMap.mapMain.zoomLevel = frmMap.mapMain.zoomLevel;  
     //#endif
-
-
 
     if(driverArrived === false){
        pickupicon = "userpin" + tuta.bearing(userbearing) + ".png";
@@ -215,6 +212,16 @@ function updateMap() {
       }
     }
 
+    if(pickupPoint !== null) {
+      locationData.push({
+        lat: "" + pickupPoint.geometry.location.lat + "", 
+        lon: "" + pickupPoint.geometry.location.lng + "", 
+        name: "Pickup Location", 
+        desc: "", 
+        image : "userpin180.png" //CHANGE PICKUP ICON
+      });
+    }
+
     frmMap.mapMain.locationData = locationData;
 
 
@@ -243,6 +250,7 @@ tuta.resetMap = function (){
   client_state = 0;
   tripOnRoute = false;
   onJourney = 0;
+  pickupPoint = null;
   try{
     tuta.forms.frmMap.flexMapCenter.setVisibility(true);
   } catch (ex){
