@@ -36,6 +36,7 @@
 				"start": "Immediately",
 				"animationId": "ROTATE_ACTION____02cc9b7970034954aa2b6bc98faaf7cd",
 				"displayAnimationId": "ROTATE_CAR",
+				"forkedPlatform": "all",
 				"parentId": null,
 				"callbackType": null
 			}
