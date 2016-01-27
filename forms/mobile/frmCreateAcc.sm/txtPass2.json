@@ -26,7 +26,7 @@
     "_text_": "",
     "_top_": {
         "type": "string",
-        "value": "303dp"
+        "value": "423dp"
     },
     "_width_": {
         "type": "string",
@@ -96,7 +96,7 @@
     "textInputMode": "A",
     "textinputmode": "A",
     "toolTip": "",
-    "top": "303dp",
+    "top": "423dp",
     "viewType": "default",
     "viewtype": "default",
     "wType": "TextField",

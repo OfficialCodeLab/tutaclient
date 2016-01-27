@@ -1,10 +1,6 @@
 {
     "DNDConfig": null,
     "__parentReadjusting__": false,
-    "_bottom_": {
-        "type": "number",
-        "value": "0"
-    },
     "_height_": {
         "type": "string",
         "value": "100%"
@@ -38,10 +34,10 @@
     "allboxes": [],
     "autogrowMode": 0,
     "autogrowmode": 0,
-    "bottom": 0,
     "canUpdateUI": true,
     "channel": "mobile",
     "children": [
+        "flexHeader",
         "imgPlaceholder",
         "imgUser",
         "btnProfilePic",
@@ -62,10 +58,10 @@
         "txtContact",
         "txtPass",
         "txtPass2",
-        "btnSubmit",
         "btnCancel",
         "lblSepTop",
-        "lblSepMiddle"
+        "lblSepMiddle",
+        "btnSubmit"
     ],
     "clipBounds": true,
     "clipbounds": true,
