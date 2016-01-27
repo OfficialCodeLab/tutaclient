@@ -22,7 +22,7 @@
     "_src_": "personicon.png",
     "_top_": {
         "type": "string",
-        "value": "5dp"
+        "value": "125dp"
     },
     "_width_": {
         "type": "string",
@@ -76,7 +76,7 @@
     "skin": "s4ea8d4d07574957b839f06194980e52",
     "src": "personicon.png",
     "srcType": 1,
-    "top": "5dp",
+    "top": "125dp",
     "wType": "Image",
     "widgetAlignment": 5,
     "widgetalignment": 5,

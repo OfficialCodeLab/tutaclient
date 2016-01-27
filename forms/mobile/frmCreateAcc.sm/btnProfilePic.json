@@ -21,7 +21,7 @@
     "_text_": "",
     "_top_": {
         "type": "string",
-        "value": "5dp"
+        "value": "125dp"
     },
     "_width_": {
         "type": "string",
@@ -74,7 +74,7 @@
     "showprogressindicator": false,
     "skin": "s1a5bc3e9655455fa2f6a22d08e8bfd4",
     "text": "",
-    "top": "5dp",
+    "top": "125dp",
     "wType": "Button",
     "widgetAlignment": 5,
     "width": "70dp",

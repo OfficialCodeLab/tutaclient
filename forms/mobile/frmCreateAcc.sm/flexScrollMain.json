@@ -25,6 +25,10 @@
         0,
         0
     ],
+    "_right_": {
+        "type": "string",
+        "value": "0dp"
+    },
     "_skin_": "se534c179b0f46b9995ab1a10fca7aba",
     "_top_": {
         "type": "string",
@@ -40,11 +44,10 @@
     "allowhorizontalbounce": false,
     "allowverticalbounce": false,
     "bottom": "0dp",
-    "bounces": true,
+    "bounces": false,
     "canUpdateUI": true,
     "channel": "mobile",
     "children": [
-        "flexHeader",
         "flexMain"
     ],
     "clipBounds": true,
@@ -89,6 +92,7 @@
     "percent": true,
     "pf": "frmCreateAcc",
     "render": true,
+    "right": "0dp",
     "scrollDirection": 2,
     "scrolldirection": 2,
     "skin": "se534c179b0f46b9995ab1a10fca7aba",
