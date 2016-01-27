@@ -199,7 +199,8 @@ tuta.map.checkRadius = function (bounds){
 	- USE LATSPAN TO DETERMINE THE MAX RADIUS
     - LATSPAN IS IN THE BOUNDS OBJECT
 	*/
-    if(mapCenter.location.lat !== bounds.center.lat || mapCenter.location.lon !== bounds.center.lon){
+    var distance = tuta.location.distance(mapCenter.location.lat, mapCenter.location.lon, bounds.center.lat, bounds.center.lon);
+    if(distance >= GLOBAL_MAX_RADIUS){
       tuta.map.storeCenter(bounds);
       return true;
     }
