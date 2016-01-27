@@ -24,7 +24,7 @@
         0
     ],
     "_skin_": "s4ea8d4d07574957b839f06194980e52",
-    "_src_": "loadingcircle.png",
+    "_src_": "loadingcirclenew.png",
     "_top_": {
         "type": "string",
         "value": "239dp"
@@ -84,7 +84,7 @@
     "pf": "frmMap",
     "render": true,
     "skin": "s4ea8d4d07574957b839f06194980e52",
-    "src": "loadingcircle.png",
+    "src": "loadingcirclenew.png",
     "srcType": 1,
     "top": "239dp",
     "wType": "Image",

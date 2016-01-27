@@ -17,7 +17,7 @@
         1
     ],
     "_padding_": [
-        0,
+        7,
         0,
         0,
         0
@@ -69,11 +69,13 @@
     ],
     "name": "kony.ui.Label",
     "padding": [
-        0,
+        7,
         0,
         0,
         0
     ],
+    "paddingInPixel": false,
+    "paddinginpixel": false,
     "parent": "FlexContainer0c79ff7fb14b843",
     "pf": "frmMap",
     "render": true,
