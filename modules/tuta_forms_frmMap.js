@@ -175,6 +175,10 @@ tuta.forms.frmMap = function() {
     };
 
     this.control("btnDrop").onClick = selectPickUpLocation;
+    this.control("btnSetPickup").onClick = function() {
+      //Set pickupPoint to current location
+      setPickupPoint();
+    };
     //this.control("btnCancelHail").onClick = cancelHail;  
     this.control("btnCancelHailNow").onClick = function () { 
       tuta.animate.move(frmMap.flexOverlay1, 0, "100%", 0, null); 
