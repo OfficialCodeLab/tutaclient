@@ -68,7 +68,11 @@
     "id": "txtDest",
     "info": null,
     "iphone": {
-        "@class": "com.kony.gen.viz.model.component.property.textbox2.IPhoneTextBox2Property"
+        "@class": "com.kony.gen.viz.model.component.property.textbox2.IPhoneTextBox2Property",
+        "psp": {
+            "showClearButton": false,
+            "showCloseButton": false
+        }
     },
     "isVisible": true,
     "isvisible": true,
