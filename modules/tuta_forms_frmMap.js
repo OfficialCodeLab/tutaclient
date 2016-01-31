@@ -188,7 +188,7 @@ tuta.forms.frmMap = function() {
     };
     this.control("btnReturnToTrip").onClick = function () { tuta.animate.move(frmMap.flexOverlay1, 0, "100%", 0, null);};
     this.control("btnSubmitRating").onClick = function(){
-      var rating = "5";
+      var rating = tuta.events.getRating();
       tuta.updateBookingHistoryRating(currentBooking, rating, function(){
 
         tuta.animate.move(frmMap.flexOverlay2, 0, "0", "100%", null);
