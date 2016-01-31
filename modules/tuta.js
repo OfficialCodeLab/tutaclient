@@ -254,7 +254,7 @@ tuta.resetMap = function (){
   onJourney = 0;
   pickupPoint = null;
   try{
-    tuta.forms.frmMap.flexMapCenter.setVisibility(true);
+    frmMap.flexMapCenter.setVisibility(true);
   } catch (ex){
 
   }
@@ -314,7 +314,7 @@ tuta.awaitConfirm = function(bookingID) {
   //tuta.util.alert("Current Appstate to be stored", JSON.stringify(currentAppState));
 
   //Store the object in case of crash
-  tuta.appstate.setState(appState);
+  //tuta.appstate.setState(appState);
 
 
   inputBooking = { id : bookingID };
@@ -350,14 +350,23 @@ tuta.awaitConfirm = function(bookingID) {
             tuta.renderRouteAndDriver(result.value[0]);
             tuta.fetchDriverInfo(result.value[0].providerId);
 
-            //Show map center button
+            //Hide map center button
             try{
-              tuta.forms.frmMap.flexMapCenter.setVisibility(false);
+              frmMap.flexMapCenter.setVisibility(false);
             }
             catch(ex){
               //tuta.util.alert("Info", "Unable to remove the map centering button.");
             }
 
+          }
+          else if(result.value[0].status === "Cancelled"){
+            if(result.value[0].providerId ==="NODRIVER"){
+              kony.timer.cancel("taxiHailTimer");
+              tuta.resetMap();
+              frmMap.flexNoPanning.setVisibility(true);
+              frmMap.flexProgress.setVisibility(false);
+              tuta.animate.move(frmMap.flexNoDriversNear, 0, "", "10%", null);
+            }
           }
         },
         function(error) { //The second function will always run if there is an error.
@@ -643,6 +652,26 @@ tuta.updateBookingHistoryRating = function(bookingID, rating, callback){
     // This is an internet service exception handler
   }
 
+};
+
+tuta.awaitBookingHistoryCreation = function (bookingID, callback){
+  var input = {id : bookingID};
+
+  try{
+    kony.timer.cancel("awaitBHC");
+  } catch(ex){}
+
+  kony.timer.schedule("awaitBHC", function(){
+    application.service("driverService").invokeOperation(
+      "bookingHistoryItem", {}, input,
+      function(result) {
+        callback();
+      },
+      function(error) {
+        // the service returns 403 (Not Authorised) if credentials are wrong
+      }
+    );
+  },2, true);
 };
 
 tuta.retrieveBooking = function(id, callback) {
@@ -944,10 +973,12 @@ tuta.awaitDriverDropOffConfirmation = function(){
               tuta.appstate.clearState();*/
 
               //frmMap.mapMain.zoomLevel = overview.zoom;
-              tuta.animate.move(frmMap.flexOverlay2, 0, "0", "0", null);
-              tuta.animate.moveBottomLeft(frmMap.flexTimeToDest, 0.1, "105", "-150", null);
-              tuta.animate.moveBottomLeft(frmMap.flexDriverInfo, 0.1, "-110", "", null);
-              journeyComplete = true;
+              tuta.awaitBookingHistoryCreation(currentBooking, function(){
+                tuta.animate.move(frmMap.flexOverlay2, 0, "0", "0", null);
+                tuta.animate.moveBottomLeft(frmMap.flexTimeToDest, 0.1, "105", "-150", null);
+                tuta.animate.moveBottomLeft(frmMap.flexDriverInfo, 0.1, "-110", "", null);
+                journeyComplete = true;
+              });
             }
           }
           catch(ex){

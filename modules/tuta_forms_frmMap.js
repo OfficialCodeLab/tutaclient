@@ -186,6 +186,10 @@ tuta.forms.frmMap = function() {
       tuta.cancelBooking(yourBooking);
       tuta.resetMap();
     };
+
+    this.control("btnNoDrivers").onClick = function(){
+      tuta.animate.move(frmMap.flexNoDriversNear, 0, "", "100%", null);
+    };
     this.control("btnReturnToTrip").onClick = function () { tuta.animate.move(frmMap.flexOverlay1, 0, "100%", 0, null);};
     this.control("btnSubmitRating").onClick = function(){
       var rating = tuta.events.getRating();

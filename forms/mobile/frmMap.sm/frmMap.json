@@ -37,7 +37,8 @@
         "flexMenu",
         "flexAll",
         "flexPayment",
-        "flexDriverArrived"
+        "flexDriverArrived",
+        "flexNoDriversNear"
     ],
     "containerWeight": 100,
     "containerweight": 100,
