@@ -40,6 +40,7 @@
     "context": {
         "channel": "mobile",
         "formID": "frmSelectedTrip",
+        "ispercent": true,
         "platform": "iphone",
         "templateType": "forms",
         "topLevelBox": null
@@ -52,6 +53,7 @@
     "info": null,
     "invokedProperty": "src",
     "isVisible": true,
+    "ispercent": true,
     "isvisible": true,
     "kuid": "75764a99c2c2423e8f4087754cfd6e28",
     "left": "18dp",

@@ -23,7 +23,7 @@
         0
     ],
     "_skin_": "s4ea8d4d07574957b839f06194980e52",
-    "_src_": "pickupicon.png",
+    "_src_": "pickupicon2.png",
     "_top_": {
         "type": "string",
         "value": "10dp"
@@ -74,7 +74,7 @@
     "pf": "frmConfirm",
     "render": true,
     "skin": "s4ea8d4d07574957b839f06194980e52",
-    "src": "pickupicon.png",
+    "src": "pickupicon2.png",
     "srcType": 1,
     "top": "10dp",
     "wType": "Image",
