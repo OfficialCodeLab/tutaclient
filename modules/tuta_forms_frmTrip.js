@@ -18,7 +18,7 @@ tuta.forms.frmTrip = function() {
   tuta.forms.frmTrip.onPreShow = function(form) {
     var self = this;
     
-    this.control("btnBack").onClick = function(button){kony.application.getPreviousForm().show();};
+    this.control("btnBack").onClick = function(button){tuta.forms.frmMap.show();};
     //this.control("btnContinue").onClick = function(button){tuta.mobile.alert("TEST", "TEST");};
     this.control("segTripHistoryMain").onRowClick = function(widget) {
       var data;
@@ -30,8 +30,14 @@ tuta.forms.frmTrip = function() {
       frmSelectedTrip.lblDropoff.text = data.end;
       frmSelectedTrip.lblCost.text = data.cost;
       frmSelectedTrip.lblRating.text = data.rating;
-      frmSelectedTrip.lblDriverName.text = data.name;
+      tuta.fetchUser(data.name, function(user){
+        frmSelectedTrip.lblDriverName.text = user.userInfo.firstName;
+        if(user.userInfo.avatarDocId !== null && user.userInfo.avatarDocId !== undefined&& user.userInfo.avatarDocId !== "")
+        	frmSelectedTrip.imgDriverProfile.base64 = user.userInfo.avatarDocId;
+        
         tuta.forms.frmSelectedTrip.show(); 
+        
+      });
       
       var origin = {formatted_address: data.start};
       var dest = {formatted_address: data.end};

@@ -611,6 +611,19 @@ tuta.fetchDriverInfo = function(driverID){
 
 };
 
+tuta.fetchUser = function(id, callback){
+  try {
+    application.service("driverService").invokeOperation(
+      "user", {}, {id: id}, 
+      function(result){
+        callback(result.value[0]);
+      }, 
+      function(error){}  
+    );
+  } catch (ex) {
+    // This is an internet service exception handler
+  }
+};
 
 tuta.updateBookingHistoryRating = function(bookingID, rating, callback){
 

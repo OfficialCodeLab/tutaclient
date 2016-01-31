@@ -33,6 +33,7 @@ tuta.map.selectDest = function(form) {
         lblAddress: "formatted_address"
       };
       form.segAddressList.setData(result.results);
+        
       //form.txtDest.text = "";
     }
   });
@@ -105,12 +106,16 @@ function loadTripHistory(selected){
 function resetSearchBar() {
   frmMap.txtPick.text = "";
   frmMap.txtDest.text = "";
+  frmMap.Image066d5e18d311e4b.setVisibility(false);
+  frmMap.CopyImage0943e5358a1de41.setVisibility(false);
   tuta.animate.move(frmMap.flexAdd, 0.3, frmMap.flexAdd.top, "-100%", null);
 }
 
 function clearDestPick(){
   frmMap.txtDest.text = "";
   frmMap.txtPick.text = "";
+  frmMap.Image066d5e18d311e4b.setVisibility(false);
+  frmMap.CopyImage0943e5358a1de41.setVisibility(false);
   frmMap.flexAddressList.setVisibility(false);
   frmMap.flexAddressShadow.setVisibility(false);
   frmMap.flexChangeDest.setVisibility(true);
@@ -141,7 +146,13 @@ function onLocationSelected() {
     updateMap();
     searchMode = 0;
     resetSearchBar();
-    if(reselectingPickup){
+    reselectPickupCheck();
+
+  }
+}
+
+function reselectPickupCheck(){
+  if(reselectingPickup){
       reselectingPickup = false;
       frmMap["flexChangeDest"]["isVisible"] = false;
       frmMap["flexFindingDest"]["isVisible"] = true;
@@ -158,10 +169,7 @@ function onLocationSelected() {
 
       }, 2, false);
     }
-
-  }
 }
-
 function setPickupPoint() {
   var bounds = frmMap.mapMain.getBounds();
   //geocode the pickup point
@@ -170,7 +178,7 @@ function setPickupPoint() {
     resetSearchBar();
     updateMap();
     //frmMap.mapMain.navigateToLocation(pickupPoint, false, false);
-    tuta.util.alert("Success", "Pickup Location has been set");
+    reselectPickupCheck();
   });
 }  
 

@@ -247,6 +247,10 @@ tuta.forms.frmConfirm = function() {
       destination = tuta.map.getSelectedAddress(frmConfirm);
       frmConfirm.imgDest.src = "editicondark.png";
       frmConfirm.lblDestination.text = shortenText (destination.formatted_address.replace(/`+/g,""), GLOBAL_CONCAT_LENGTH);
+      if(pickupPoint === null)
+      	tuta.map.calculateTripDetails(false);
+      else
+      	tuta.map.calculateTripDetails(true);
       
       //TOD0: CALL FUNCTION TO LOAD COST AND DURATION
       

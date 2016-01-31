@@ -57,9 +57,9 @@
     "imagescalemode": 1,
     "info": null,
     "invokedProperty": "src",
-    "isVisible": true,
+    "isVisible": false,
     "ispercent": true,
-    "isvisible": true,
+    "isvisible": false,
     "kuid": "3155c0bd8ec840b1960048fcd5115aab",
     "margin": [
         0,
