@@ -220,7 +220,7 @@ function updateMap() {
         lon: "" + pickupPoint.geometry.location.lng + "", 
         name: "Pickup Location", 
         desc: "", 
-        image : "userpin180.png" //CHANGE PICKUP ICON
+        image : "pickupicon3.png" //CHANGE PICKUP ICON
       });
     }
 

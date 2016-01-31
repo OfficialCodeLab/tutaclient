@@ -33,7 +33,7 @@ tuta.map.selectDest = function(form) {
         lblAddress: "formatted_address"
       };
       form.segAddressList.setData(result.results);
-        
+
       //form.txtDest.text = "";
     }
   });
@@ -153,22 +153,22 @@ function onLocationSelected() {
 
 function reselectPickupCheck(){
   if(reselectingPickup){
-      reselectingPickup = false;
-      frmMap["flexChangeDest"]["isVisible"] = false;
-      frmMap["flexFindingDest"]["isVisible"] = true;
-      try{
-        kony.timer.cancel("showNewLocation");
-      } catch(ex){}
+    reselectingPickup = false;
+    frmMap["flexChangeDest"]["isVisible"] = false;
+    frmMap["flexFindingDest"]["isVisible"] = true;
+    try{
+      kony.timer.cancel("showNewLocation");
+    } catch(ex){}
 
-      kony.timer.schedule("showNewLocation", function(){
-        frmConfirm.lblPickUpLocation.text = shortenText (pickupPoint.formatted_address.replace(/`+/g,""), GLOBAL_CONCAT_LENGTH);
-        frmMap["flexChangeDest"]["isVisible"] = true;
+    kony.timer.schedule("showNewLocation", function(){
+      frmConfirm.lblPickUpLocation.text = shortenText (pickupPoint.formatted_address.replace(/`+/g,""), GLOBAL_CONCAT_LENGTH);
+      frmMap["flexChangeDest"]["isVisible"] = true;
       frmMap["flexFindingDest"]["isVisible"] = false;
-        tuta.forms.frmConfirm.show();
-        //TODO : call method to calculate new duration and cost
+      tuta.forms.frmConfirm.show();
+      //TODO : call method to calculate new duration and cost
 
-      }, 2, false);
-    }
+    }, 2, false);
+  }
 }
 function setPickupPoint() {
   var bounds = frmMap.mapMain.getBounds();
@@ -176,7 +176,24 @@ function setPickupPoint() {
   tuta.location.geoCode(bounds.center.lat, bounds.center.lon, function(success, error) {
     pickupPoint = success.results[0];
     resetSearchBar();
-    updateMap();
+
+    try{
+      kony.timer.cancel("waitForMapUpdate");
+    } catch (ex){
+
+    }
+    //Stop the watch location
+    tuta.stopUpdateMapFunction();
+
+    //Center the map on the user
+    var locationData = {lat:pickupPoint.geometry.location.lat,lon:pickupPoint.geometry.location.lng,name: "",desc: ""};
+    frmMap.mapMain.navigateToLocation(locationData,false,false);
+
+    //Schedule the update map to start in 10 seconds
+    kony.timer.schedule("waitForMapUpdate", function(){
+      updateMap();
+      tuta.startUpdateMapFunction();
+    },1.5, false);
     //frmMap.mapMain.navigateToLocation(pickupPoint, false, false);
     reselectPickupCheck();
   });
@@ -308,7 +325,7 @@ tuta.map.startMapListener = function (){
               if(initialTaxiLoad)
               {
                 initialTaxiLoad = false;
-				tuta.animate.move(frmMap.flexAdd, 0.15, "12%", "-100%", null);
+                tuta.animate.move(frmMap.flexAdd, 0.15, "12%", "-100%", null);
               }
               //tuta.util.alert("Wait Time", Math.round(time/60) + " mins");
               var mins = Math.round(time/60);
@@ -350,7 +367,7 @@ tuta.map.calculateTripDetails = function(bool) {
   var tempTripTime;
   var locA;
   var locB;
-  
+
   if(bool) {
     //Calculate the distance between the pickup position and destination location
     try{
@@ -365,9 +382,9 @@ tuta.map.calculateTripDetails = function(bool) {
     }];
 
     locB = [{
-       lat: destination.geometry.location.lat,
-       lon: destination.geometry.location.lng          
-     }];
+      lat: destination.geometry.location.lat,
+      lon: destination.geometry.location.lng          
+    }];
   } else {
     //Calculate the distance between the current position and destination location
     try{
@@ -376,7 +393,7 @@ tuta.map.calculateTripDetails = function(bool) {
     catch (ex){
       tuta.util.alert("Unable to calculate distance", ex);
     }
-    
+
     //Store co-ordinates for distance calculation
     locA = [{
       lat: currentPos.geometry.location.lat,
@@ -388,7 +405,7 @@ tuta.map.calculateTripDetails = function(bool) {
       lon: destination.geometry.location.lng          
     }];
   }
-  
+
   //TODO: Calculate time based on destination location, 1.2 mins per km
   tempTripTime = Math.round(tempTripDistance * 1.4) + 2;
   //TODO: Update the text field with the correct data
@@ -404,11 +421,11 @@ tuta.map.calculateTripDetails = function(bool) {
   frmMap.flexAddressList.setVisibility(false);
   frmMap.flexAddressShadow.setVisibility(false);
   tuta.forms.frmConfirm.show();
-  
+
   //REPLACE 30 WITH DISTANCE TO TRAVEL
   frmConfirm.lblCost = "R" + Math.round(taxiRate(30));
   //frmConfirm.lblDuration = 30 + " MIN";
-  
+
   try{
     estimateTripCost(locA, locB, function(minCost, maxCost){
       frmConfirm.lblCost.text = "R" + minCost + " - R" + maxCost;          
