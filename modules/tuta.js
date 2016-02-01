@@ -982,11 +982,11 @@ tuta.awaitDriverDropOffConfirmation = function(){
                 var mmStr = ["Jan", "Feb", "Mar", "Apr", "May", "Jun",
                  "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
                 // Get different date elemetns
-                var dd = today.getDate();
-                var mm = today.getMonth(); //January is 0
-                var yyyy = today.getFullYear();
-                var hour = today.getHours();
-                var min = today.getMinutes();
+                var dd = dateTemp.getDate();
+                var mm = dateTemp.getMonth(); //January is 0
+                var yyyy = dateTemp.getFullYear();
+                var hour = dateTemp.getHours();
+                var min = dateTemp.getMinutes();
                 var ampm = "AM";
 
                 // Format date elemtens
