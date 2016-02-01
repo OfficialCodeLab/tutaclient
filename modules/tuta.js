@@ -665,7 +665,10 @@ tuta.awaitBookingHistoryCreation = function (bookingID, callback){
     application.service("driverService").invokeOperation(
       "bookingHistoryItem", {}, input,
       function(result) {
-        callback();
+        try{
+          kony.timer.cancel("awaitBHC");
+        } catch(ex){}
+        callback(result.value[0]);
       },
       function(error) {
         // the service returns 403 (Not Authorised) if credentials are wrong
@@ -973,7 +976,29 @@ tuta.awaitDriverDropOffConfirmation = function(){
               tuta.appstate.clearState();*/
 
               //frmMap.mapMain.zoomLevel = overview.zoom;
-              tuta.awaitBookingHistoryCreation(currentBooking, function(){
+              tuta.awaitBookingHistoryCreation(currentBooking, function(booking){
+                frmMap.lblCostBooking.text = "R" + booking.info.cost;
+                var dateTemp = booking.info.date;
+                var mmStr = ["Jan", "Feb", "Mar", "Apr", "May", "Jun",
+                 "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+                // Get different date elemetns
+                var dd = today.getDate();
+                var mm = today.getMonth(); //January is 0
+                var yyyy = today.getFullYear();
+                var hour = today.getHours();
+                var min = today.getMinutes();
+                var ampm = "AM";
+
+                // Format date elemtens
+                if (dd < 10) { dd = '0' + dd; }
+                if (hour > 12) { hour = hour - 12; ampm = "PM"; }
+                if (hour < 10) { hour = '0' + hour; }
+                if (min < 10) { min = '0' + min; }
+
+                // Cut of .0 decimal points
+                var ddtext = Math.round(dd) + "";
+                var yyyytext = Math.round(yyyy) + "";
+                frmMap.lblDateBooking.text = ddtext + " " + mm + " " + yyyytext + " AT " + hour + ":" + min + " " + ampm;
                 tuta.animate.move(frmMap.flexOverlay2, 0, "0", "0", null);
                 tuta.animate.moveBottomLeft(frmMap.flexTimeToDest, 0.1, "105", "-150", null);
                 tuta.animate.moveBottomLeft(frmMap.flexDriverInfo, 0.1, "-110", "", null);
