@@ -3,7 +3,7 @@
     "__parentReadjusting__": false,
     "_height_": {
         "type": "string",
-        "value": "45dp"
+        "value": "43dp"
     },
     "_margin_": [
         0,
@@ -18,13 +18,13 @@
         0
     ],
     "_right_": {
-        "type": "string",
-        "value": "40dp"
+        "type": "number",
+        "value": "40"
     },
-    "_skin_": "se4997cbc503474895ab0471eed6358d",
+    "_skin_": "sde635a9c0f84a37850e6258fb9cff4b",
     "_top_": {
         "type": "string",
-        "value": "0dp"
+        "value": "1dp"
     },
     "_width_": {
         "type": "string",
@@ -42,12 +42,12 @@
     "enableScrolling": true,
     "enabled": false,
     "enablescrolling": true,
-    "height": "45dp",
-    "id": "FlexContainer0060e8460df8d4d",
+    "height": "43dp",
+    "id": "FlexContainer003e94818927942",
     "info": null,
     "isVisible": true,
     "isvisible": true,
-    "kuid": "2b7d2f783ac4429582ba67be88cbbd57",
+    "kuid": "6b7dbbda8a284354bd99069706bcd454",
     "layoutType": 2,
     "layouttype": 2,
     "margin": [
@@ -68,17 +68,17 @@
     "percent": true,
     "pf": "frmMap",
     "render": true,
-    "right": "40dp",
-    "skin": "se4997cbc503474895ab0471eed6358d",
+    "right": 40,
+    "skin": "sde635a9c0f84a37850e6258fb9cff4b",
     "snapGridSize": 10,
     "snapToGrid": true,
     "snapgridsize": 10,
     "snaptogrid": true,
-    "top": "0dp",
+    "top": "1dp",
     "wType": "FlexContainer",
     "widgetAlignment": 1,
     "widgetalignment": 1,
     "width": "10dp",
-    "zIndex": 9,
-    "zindex": 9
+    "zIndex": 910,
+    "zindex": 910
 }

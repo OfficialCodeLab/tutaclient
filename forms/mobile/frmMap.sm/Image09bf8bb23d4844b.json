@@ -1,14 +1,15 @@
 {
+    "@class": "com.kony.gen.viz.model.component.KVizImage2",
     "DNDConfig": null,
     "__parentReadjusting__": false,
     "_base64_": null,
     "_height_": {
         "type": "string",
-        "value": "105dp"
+        "value": "51dp"
     },
     "_left_": {
         "type": "string",
-        "value": "0dp"
+        "value": "76dp"
     },
     "_margin_": [
         0,
@@ -23,18 +24,17 @@
         0
     ],
     "_skin_": "s4ea8d4d07574957b839f06194980e52",
-    "_src_": "driver.png",
+    "_src_": "halfblacktriangle.png",
     "_top_": {
         "type": "string",
-        "value": "0dp"
+        "value": "22dp"
     },
     "_width_": {
-        "type": "ref",
-        "value": "preferred"
+        "type": "string",
+        "value": "23dp"
     },
     "base64": null,
     "canUpdateUI": true,
-    "channel": "mobile",
     "containerWeight": 100,
     "containerweight": 100,
     "context": {
@@ -46,17 +46,17 @@
         "topLevelBox": null
     },
     "enabled": false,
-    "height": "105dp",
-    "id": "imgDriver",
+    "height": "51dp",
+    "id": "Image09bf8bb23d4844b",
     "imageScaleMode": 1,
     "imagescalemode": 1,
     "info": null,
     "invokedProperty": "src",
-    "isVisible": false,
+    "isVisible": true,
     "ispercent": true,
-    "isvisible": false,
-    "kuid": "38e62a6d0de94b2ebb3bbf1a898eb0b4",
-    "left": "0dp",
+    "isvisible": true,
+    "kuid": "b36653c4aba34fcfb3796997410df19e",
+    "left": "76dp",
     "margin": [
         0,
         0,
@@ -70,18 +70,15 @@
         0,
         0
     ],
-    "parent": "FlexContainer05fde770e91d54a",
+    "parent": "flexChangeDest",
     "pf": "frmMap",
     "render": true,
     "skin": "s4ea8d4d07574957b839f06194980e52",
-    "src": "driver.png",
+    "src": "halfblacktriangle.png",
     "srcType": 1,
-    "top": "0dp",
+    "top": "22dp",
     "wType": "Image",
     "widgetAlignment": 5,
     "widgetalignment": 5,
-    "width": {
-        "type": "ref",
-        "value": "preferred"
-    }
+    "width": "23dp"
 }

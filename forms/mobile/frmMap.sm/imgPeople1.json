@@ -51,7 +51,7 @@
         "channel": "mobile",
         "formID": "frmMap",
         "ispercent": true,
-        "platform": "android",
+        "platform": "iphone",
         "templateType": "forms",
         "topLevelBox": null
     },
