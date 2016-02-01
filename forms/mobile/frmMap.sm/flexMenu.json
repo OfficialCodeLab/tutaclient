@@ -37,15 +37,13 @@
     "children": [
         "btnChsRight",
         "flexTopSquare",
-        "flexTri1",
-        "fleTri2",
-        "flexSquareSm1",
         "lblSignOut",
         "imgLock",
         "flexUserInfo",
         "flexMenuItems",
         "flexBottonMenu",
-        "btnSignOut"
+        "btnSignOut",
+        "imgTopCornerTri"
     ],
     "clipBounds": true,
     "clipbounds": true,
