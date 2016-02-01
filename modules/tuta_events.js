@@ -43,13 +43,13 @@ function showLater(){
     if (min < 10) { min = '0' + min; }
 
     // Cut of .0 decimal points
-    dd = dd.toFixed(0);
-    yyyy = yyyy.toFixed(0);
+    var ddtext = Math.round(dd) + "";
+    var yyyytext = Math.round(yyyy) + "";
 
     // Populate fields
-    frmConfirm.lblDay.text = dd;
+    frmConfirm.lblDay.text = ddtext;
     frmConfirm.lblMonth.text = mmStr[mm];
-    frmConfirm.lblYear.text = yyyy;
+    frmConfirm.lblYear.text = yyyytext;
     frmConfirm.txtTimeHrs.text = hour;
     frmConfirm.txtTimeMins.text = min;
     frmConfirm.lblAmPm.text = ampm;
