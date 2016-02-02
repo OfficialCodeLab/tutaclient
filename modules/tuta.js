@@ -464,7 +464,7 @@ tuta.renderFinalRoute = function(){
         function(result){
           //tuta.util.alert("Results", "Booking ID: " + yourBooking + "\nBooking Results: \n\n" + JSON.stringify(result));
 
-          tuta.location.directionsFromCoordinates(nearbyDrivers[0].location.lat, nearbyDrivers[0].location.lng, destination.geometry.location.lat, destination.geometry.location.lng, function(response){
+          tuta.location.directionsFromCoordinates(currentPos.geometry.location.lat, currentPos.geometry.location.lng, destination.geometry.location.lat, destination.geometry.location.lng, function(response){
 
             kony.timer.schedule("renderDirFinal", function(){
               renderDirections(frmMap.mapMain, response, "0x0036bba7","","dropofficon.png");
@@ -656,7 +656,6 @@ tuta.updateBookingHistoryRating = function(bookingID, rating, callback){
 
 tuta.awaitBookingHistoryCreation = function (bookingID, callback){
   var input = {id : bookingID};
-
   try{
     kony.timer.cancel("awaitBHC");
   } catch(ex){}
@@ -665,16 +664,18 @@ tuta.awaitBookingHistoryCreation = function (bookingID, callback){
     application.service("driverService").invokeOperation(
       "bookingHistoryItem", {}, input,
       function(result) {
-        try{
-          kony.timer.cancel("awaitBHC");
-        } catch(ex){}
-        callback(result.value[0]);
+        if(result !== null){
+          try{
+            kony.timer.cancel("awaitBHC");
+          } catch(ex){}
+          callback(result.value[0]);
+        }
       },
       function(error) {
         // the service returns 403 (Not Authorised) if credentials are wrong
       }
     );
-  },2, true);
+  },5, true);
 };
 
 tuta.retrieveBooking = function(id, callback) {
@@ -953,9 +954,13 @@ tuta.awaitDriverDropOffConfirmation = function(){
         function(result) { 
           try{
             if (result.value[0].status==="Completed"){
-              kony.timer.cancel("tripCompleteAwaitTimer");
-              kony.timer.cancel("trackdriverloop");
               //tuta.util.alert("COMPLETE", "");
+              try{
+                kony.timer.cancel("tripCompleteAwaitTimer");                
+              } catch(ex){}
+              try{
+                kony.timer.cancel("trackdriverloop");                
+              } catch(ex){}
 
 
               /*
@@ -978,9 +983,9 @@ tuta.awaitDriverDropOffConfirmation = function(){
               //frmMap.mapMain.zoomLevel = overview.zoom;
               tuta.awaitBookingHistoryCreation(currentBooking, function(booking){
                 frmMap.lblCostBooking.text = "R" + booking.info.cost;
-                var dateTemp = booking.info.date;
+                var dateTemp = new Date();
                 var mmStr = ["Jan", "Feb", "Mar", "Apr", "May", "Jun",
-                 "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+                             "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
                 // Get different date elemetns
                 var dd = dateTemp.getDate();
                 var mm = dateTemp.getMonth(); //January is 0
@@ -998,7 +1003,7 @@ tuta.awaitDriverDropOffConfirmation = function(){
                 // Cut of .0 decimal points
                 var ddtext = Math.round(dd) + "";
                 var yyyytext = Math.round(yyyy) + "";
-                frmMap.lblDateBooking.text = ddtext + " " + mm + " " + yyyytext + " AT " + hour + ":" + min + " " + ampm;
+                frmMap.lblDateBooking.text = ddtext + " " + mmStr[mm] + " " + yyyytext + " AT " + hour + ":" + min + " " + ampm;
                 tuta.animate.move(frmMap.flexOverlay2, 0, "0", "0", null);
                 tuta.animate.moveBottomLeft(frmMap.flexTimeToDest, 0.1, "105", "-150", null);
                 tuta.animate.moveBottomLeft(frmMap.flexDriverInfo, 0.1, "-110", "", null);
