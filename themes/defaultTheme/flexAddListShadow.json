@@ -61,25 +61,6 @@
     },
     "wType": "FlexContainer"
   },
-  "iphone": {
-    "background_color": "00000000",
-    "bg_type": "one",
-    "border_color": "ffffff00",
-    "border_radius": 3,
-    "border_style": "custom",
-    "border_type": 0,
-    "border_width": 1,
-    "isForked": true,
-    "shadow": {
-      "br": 0,
-      "color": "000000",
-      "inner": false,
-      "nm": 0,
-      "x": 0,
-      "y": 0
-    },
-    "wType": "FlexContainer"
-  },
   "isDefaultSkin": false,
   "kiosk": {
     "background_color": "00000000",

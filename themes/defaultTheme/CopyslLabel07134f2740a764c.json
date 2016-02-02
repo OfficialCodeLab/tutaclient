@@ -1,10 +1,10 @@
 {
-  "background_color": "313131ff",
+  "background_color": "36bba7ff",
   "bg_type": "one",
   "border_color": "313131ff",
   "border_style": "plain",
   "border_type": 0,
-  "border_width": 1,
+  "border_width": 0,
   "font_color": "424242ff",
   "font_name": "Helvetica",
   "font_size": 215,

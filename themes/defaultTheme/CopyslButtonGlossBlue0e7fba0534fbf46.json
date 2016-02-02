@@ -1,10 +1,10 @@
 {
-  "background_color": "313131ff",
+  "background_color": "31313100",
   "bg_type": "one",
   "border_color": "36bba7ff",
   "border_style": "plain",
   "border_type": 0,
-  "border_width": 3,
+  "border_width": 0,
   "desktopweb": {
     "background_color": {
       "angle": 0,

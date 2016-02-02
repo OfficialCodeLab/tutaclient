@@ -49,24 +49,6 @@
     },
     "wType": "Segment"
   },
-  "iphone": {
-    "background_color": "f4f4f4ff",
-    "bg_type": "one",
-    "border_color": "ffffff00",
-    "border_style": "plain",
-    "border_type": 0,
-    "border_width": 0,
-    "isForked": true,
-    "shadow": {
-      "br": 0,
-      "color": "000000",
-      "inner": false,
-      "nm": 0,
-      "x": 0,
-      "y": 0
-    },
-    "wType": "Segment"
-  },
   "isDefaultSkin": false,
   "kiosk": {
     "background_color": "f4f4f4ff",

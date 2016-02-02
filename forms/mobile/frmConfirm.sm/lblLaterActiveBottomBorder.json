@@ -2,13 +2,17 @@
     "@class": "com.kony.gen.viz.model.component.KVizLabel",
     "DNDConfig": null,
     "__parentReadjusting__": false,
+    "_bottom_": {
+        "type": "number",
+        "value": "38"
+    },
     "_height_": {
         "type": "string",
         "value": "5dp"
     },
     "_left_": {
         "type": "string",
-        "value": "49%"
+        "value": "15%"
     },
     "_margin_": [
         1,
@@ -22,17 +26,14 @@
         0,
         0
     ],
+    "_right_": {
+        "type": "string",
+        "value": "15%"
+    },
     "_skin_": "s0986497e6ef456482da04b1c8be917d",
     "_text_": "",
-    "_top_": {
-        "type": "string",
-        "value": "115dp"
-    },
-    "_width_": {
-        "type": "string",
-        "value": "36%"
-    },
     "_wrapping_": 2,
+    "bottom": 38,
     "canUpdateUI": true,
     "containerWeight": 100,
     "containerweight": 100,
@@ -54,8 +55,8 @@
     },
     "isVisible": false,
     "isvisible": false,
-    "kuid": "49bbdc41ee6041bf819c1a56d34f974f",
-    "left": "49%",
+    "kuid": "92d4d0601c634134a6afd6ac618d1a47",
+    "left": "15%",
     "margin": [
         1,
         1,
@@ -72,14 +73,13 @@
     "parent": "flexConfirm",
     "pf": "frmConfirm",
     "render": true,
+    "right": "15%",
     "skin": "s0986497e6ef456482da04b1c8be917d",
     "text": "",
     "toolTip": "",
     "tooltip": "",
-    "top": "115dp",
     "wType": "Label",
     "widgetAlignment": 5,
-    "width": "36%",
     "wrapping": 2,
     "zIndex": 5,
     "zindex": 5

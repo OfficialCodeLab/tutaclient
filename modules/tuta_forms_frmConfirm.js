@@ -323,25 +323,22 @@ tuta.forms.frmConfirm = function() {
     };
 
     this.control("btnLaterInactive").onClick = function(button) {
-      frmConfirm.lblNowActive.setVisibility(false);
-      frmConfirm.lblNowActiveBottomBorder.setVisibility(false);
-      frmConfirm.lblNowActiveSideBorder.setVisibility(false);
-      frmConfirm.lblLaterActive.setVisibility(true);
-      frmConfirm.lblLaterActiveBottomBorder.setVisibility(true);
-      frmConfirm.lblLaterActiveSideBorder.setVisibility(true);
+      frmConfirm.btnNowActive.setVisibility(false);
+      frmConfirm.btnLaterActive.setVisibility(true);
+      tuta.animate.moveBottomLeft(frmConfirm.flexBottomActive, 0, "0", "50%", null);
+      tuta.animate.moveBottomLeft(frmConfirm.flexBottom, 0, "0", "0%", null);
       showLater();
     };
 
     this.control("btnNowInactive").onClick = function(button) {
-      frmConfirm.lblNowActive.setVisibility(true);
-      frmConfirm.lblNowActiveBottomBorder.setVisibility(true);
-      frmConfirm.lblNowActiveSideBorder.setVisibility(true);
-      frmConfirm.lblLaterActive.setVisibility(false);
-      frmConfirm.lblLaterActiveBottomBorder.setVisibility(false);
-      frmConfirm.lblLaterActiveSideBorder.setVisibility(false);
+      frmConfirm.btnNowActive.setVisibility(true);
+      frmConfirm.btnLaterActive.setVisibility(false);
+      tuta.animate.moveBottomLeft(frmConfirm.flexBottomActive, 0, "0", "0%", null);
+      tuta.animate.moveBottomLeft(frmConfirm.flexBottom, 0, "0", "50%", null);
       showNow();
     };
     tuta.map.stopMapListener();
+    frmConfirm.lblPickupTime.text = "LOADING PICKUP TIME";
   }; //End of Pre-Show
 
   tuta.forms.frmConfirm.onPostShow = function(form) {

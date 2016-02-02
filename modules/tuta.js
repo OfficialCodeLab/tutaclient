@@ -32,6 +32,7 @@ var tripInTransitResume2 = false;
 var driversNear = [];
 var destination = null;
 var pickupPoint = null;
+var pickupTime;
 var nearbyDrivers = [];
 var initialLoad = true;
 var finalroute = null;

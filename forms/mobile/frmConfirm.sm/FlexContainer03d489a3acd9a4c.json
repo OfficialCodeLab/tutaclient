@@ -1,17 +1,13 @@
 {
     "DNDConfig": null,
     "__parentReadjusting__": false,
-    "_bottom_": {
-        "type": "number",
-        "value": "0"
-    },
     "_height_": {
         "type": "string",
-        "value": "160dp"
+        "value": "50dp"
     },
     "_left_": {
         "type": "string",
-        "value": "6dp"
+        "value": "0dp"
     },
     "_margin_": [
         0,
@@ -25,8 +21,11 @@
         0,
         0
     ],
-    "_render_": true,
-    "_skin_": "s9b2ce2774e144da99f795c3ff096827",
+    "_skin_": "s47b7b5e356548f4941be20655a84354",
+    "_top_": {
+        "type": "string",
+        "value": "0dp"
+    },
     "_width_": {
         "type": "string",
         "value": "100%"
@@ -34,16 +33,8 @@
     "allboxes": [],
     "autogrowMode": 0,
     "autogrowmode": 0,
-    "bottom": 0,
     "canUpdateUI": true,
-    "channel": "mobile",
-    "children": [
-        "lblBook",
-        "lblSeperatorLg2",
-        "FlexContainer0a7e978c6c2f54c",
-        "lblLaterActiveBottomBorder",
-        "lblPickupTime"
-    ],
+    "children": [],
     "clipBounds": true,
     "clipbounds": true,
     "containerWeight": 100,
@@ -51,15 +42,15 @@
     "enableScrolling": true,
     "enabled": false,
     "enablescrolling": true,
-    "height": "160dp",
-    "id": "flexConfirm",
+    "height": "50dp",
+    "id": "FlexContainer03d489a3acd9a4c",
     "info": null,
     "isVisible": true,
     "isvisible": true,
-    "kuid": "3459afcf7131413a8c3de2f2edd0c036",
+    "kuid": "3fee5fc30e44401ba0ce0f6947a8132b",
     "layoutType": 2,
     "layouttype": 2,
-    "left": "6dp",
+    "left": "0dp",
     "margin": [
         0,
         0,
@@ -74,19 +65,20 @@
         0,
         0
     ],
-    "parent": "flexMain",
+    "parent": "FlexContainer0a7e978c6c2f54c",
     "percent": true,
     "pf": "frmConfirm",
     "render": true,
-    "skin": "s9b2ce2774e144da99f795c3ff096827",
+    "skin": "s47b7b5e356548f4941be20655a84354",
     "snapGridSize": 10,
     "snapToGrid": true,
     "snapgridsize": 10,
     "snaptogrid": true,
+    "top": "0dp",
     "wType": "FlexContainer",
     "widgetAlignment": 1,
     "widgetalignment": 1,
     "width": "100%",
-    "zIndex": 2,
-    "zindex": 2
+    "zIndex": 5,
+    "zindex": 5
 }

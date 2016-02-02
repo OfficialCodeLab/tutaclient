@@ -8,7 +8,7 @@
     },
     "_left_": {
         "type": "string",
-        "value": "15%"
+        "value": "0%"
     },
     "_margin_": [
         6,
@@ -26,13 +26,18 @@
     "_text_": "Now",
     "_top_": {
         "type": "string",
-        "value": "70dp"
+        "value": "0dp"
     },
     "_width_": {
         "type": "string",
         "value": "35%"
     },
     "canUpdateUI": true,
+    "centerX": "25%",
+    "centerx": {
+        "type": "string",
+        "value": "25%"
+    },
     "containerWeight": 100,
     "containerweight": 100,
     "contentAlignment": 5,
@@ -52,8 +57,8 @@
     },
     "isVisible": true,
     "isvisible": true,
-    "kuid": "178a38b5a8c44779b61b9c1c23d42b94",
-    "left": "15%",
+    "kuid": "214a8f792ced47009cbc68499bddd49f",
+    "left": "0%",
     "margin": [
         6,
         6,
@@ -67,17 +72,17 @@
         0,
         0
     ],
-    "parent": "flexConfirm",
+    "parent": "FlexContainer0a7e978c6c2f54c",
     "pf": "frmConfirm",
     "render": true,
     "showProgressIndicator": false,
     "showprogressindicator": false,
     "skin": "se2e7fe50151416289bcd3b410b57356",
     "text": "Now",
-    "top": "70dp",
+    "top": "0dp",
     "wType": "Button",
     "widgetAlignment": 5,
     "width": "35%",
-    "zIndex": 1,
-    "zindex": 1
+    "zIndex": 5,
+    "zindex": 5
 }

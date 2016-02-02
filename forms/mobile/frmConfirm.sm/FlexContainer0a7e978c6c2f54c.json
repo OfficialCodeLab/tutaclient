@@ -1,17 +1,13 @@
 {
     "DNDConfig": null,
     "__parentReadjusting__": false,
-    "_bottom_": {
-        "type": "number",
-        "value": "0"
-    },
     "_height_": {
         "type": "string",
-        "value": "160dp"
+        "value": "55dp"
     },
     "_left_": {
         "type": "string",
-        "value": "6dp"
+        "value": "15%"
     },
     "_margin_": [
         0,
@@ -25,24 +21,28 @@
         0,
         0
     ],
-    "_render_": true,
-    "_skin_": "s9b2ce2774e144da99f795c3ff096827",
-    "_width_": {
+    "_right_": {
         "type": "string",
-        "value": "100%"
+        "value": "15%"
+    },
+    "_skin_": "sa1844807946424192ed829cfbcdb03c",
+    "_top_": {
+        "type": "string",
+        "value": "68dp"
     },
     "allboxes": [],
     "autogrowMode": 0,
     "autogrowmode": 0,
-    "bottom": 0,
     "canUpdateUI": true,
-    "channel": "mobile",
     "children": [
-        "lblBook",
-        "lblSeperatorLg2",
-        "FlexContainer0a7e978c6c2f54c",
-        "lblLaterActiveBottomBorder",
-        "lblPickupTime"
+        "FlexContainer03d489a3acd9a4c",
+        "Label06891b78af5f243",
+        "btnNowInactive",
+        "btnLaterInactive",
+        "btnLaterActive",
+        "btnNowActive",
+        "flexBottom",
+        "flexBottomActive"
     ],
     "clipBounds": true,
     "clipbounds": true,
@@ -51,15 +51,15 @@
     "enableScrolling": true,
     "enabled": false,
     "enablescrolling": true,
-    "height": "160dp",
-    "id": "flexConfirm",
+    "height": "55dp",
+    "id": "FlexContainer0a7e978c6c2f54c",
     "info": null,
     "isVisible": true,
     "isvisible": true,
-    "kuid": "3459afcf7131413a8c3de2f2edd0c036",
+    "kuid": "ef8b217211dc4ec9827dca7aafb6a8e7",
     "layoutType": 2,
     "layouttype": 2,
-    "left": "6dp",
+    "left": "15%",
     "margin": [
         0,
         0,
@@ -74,19 +74,20 @@
         0,
         0
     ],
-    "parent": "flexMain",
+    "parent": "flexConfirm",
     "percent": true,
     "pf": "frmConfirm",
     "render": true,
-    "skin": "s9b2ce2774e144da99f795c3ff096827",
+    "right": "15%",
+    "skin": "sa1844807946424192ed829cfbcdb03c",
     "snapGridSize": 10,
     "snapToGrid": true,
     "snapgridsize": 10,
     "snaptogrid": true,
+    "top": "68dp",
     "wType": "FlexContainer",
     "widgetAlignment": 1,
     "widgetalignment": 1,
-    "width": "100%",
-    "zIndex": 2,
-    "zindex": 2
+    "zIndex": 10,
+    "zindex": 10
 }

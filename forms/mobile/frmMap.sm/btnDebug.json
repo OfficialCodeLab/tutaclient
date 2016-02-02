@@ -50,8 +50,8 @@
             "showProgressIndicator": false
         }
     },
-    "isVisible": true,
-    "isvisible": true,
+    "isVisible": false,
+    "isvisible": false,
     "kuid": "1b6a6d518c974e5b989dcf62158beebd",
     "left": "0dp",
     "margin": [

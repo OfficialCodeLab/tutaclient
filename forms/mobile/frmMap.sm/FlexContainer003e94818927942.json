@@ -3,7 +3,7 @@
     "__parentReadjusting__": false,
     "_height_": {
         "type": "string",
-        "value": "43dp"
+        "value": "45dp"
     },
     "_margin_": [
         0,
@@ -24,7 +24,7 @@
     "_skin_": "sde635a9c0f84a37850e6258fb9cff4b",
     "_top_": {
         "type": "string",
-        "value": "1dp"
+        "value": "0dp"
     },
     "_width_": {
         "type": "string",
@@ -42,7 +42,7 @@
     "enableScrolling": true,
     "enabled": false,
     "enablescrolling": true,
-    "height": "43dp",
+    "height": "45dp",
     "id": "FlexContainer003e94818927942",
     "info": null,
     "isVisible": true,
@@ -74,7 +74,7 @@
     "snapToGrid": true,
     "snapgridsize": 10,
     "snaptogrid": true,
-    "top": "1dp",
+    "top": "0dp",
     "wType": "FlexContainer",
     "widgetAlignment": 1,
     "widgetalignment": 1,

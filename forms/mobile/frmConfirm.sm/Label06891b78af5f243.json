@@ -1,13 +1,10 @@
 {
+    "@class": "com.kony.gen.viz.model.component.KVizLabel",
     "DNDConfig": null,
     "__parentReadjusting__": false,
-    "_height_": {
-        "type": "ref",
-        "value": "preferred"
-    },
-    "_left_": {
+    "_bottom_": {
         "type": "string",
-        "value": "157dp"
+        "value": "0%"
     },
     "_margin_": [
         1,
@@ -21,34 +18,30 @@
         0,
         0
     ],
-    "_skin_": "s1bac84900a845288b5517a940462002",
-    "_text_": "PICK UP TIME IS IN APPROXIMATELY 5 MINS",
+    "_skin_": "sb1397f69d2944a8bb2dc0c4fe8b9ffc",
+    "_text_": "",
     "_top_": {
         "type": "string",
-        "value": "140dp"
+        "value": "3dp"
     },
     "_width_": {
         "type": "string",
-        "value": "100%"
+        "value": "1dp"
     },
     "_wrapping_": 2,
+    "bottom": "0%",
     "canUpdateUI": true,
     "centerX": "50%",
     "centerx": {
         "type": "string",
         "value": "50%"
     },
-    "channel": "mobile",
     "containerWeight": 100,
     "containerweight": 100,
-    "contentAlignment": 5,
-    "contentalignment": 5,
+    "contentAlignment": 4,
+    "contentalignment": 4,
     "enabled": false,
-    "height": {
-        "type": "ref",
-        "value": "preferred"
-    },
-    "id": "lblPickUp",
+    "id": "Label06891b78af5f243",
     "info": null,
     "ipad": {
         "psp": {
@@ -56,15 +49,13 @@
         }
     },
     "iphone": {
-        "@class": "com.kony.gen.viz.model.component.property.label.IPhoneLabelProperty",
         "psp": {
             "wrapping": 2
         }
     },
     "isVisible": true,
     "isvisible": true,
-    "kuid": "ceed5a7efb6e4b24a6f3f23c53eb8924",
-    "left": "157dp",
+    "kuid": "ef1412d28e1d492caae432adf10650f6",
     "margin": [
         1,
         1,
@@ -78,18 +69,18 @@
         0,
         0
     ],
-    "parent": "flexConfirm",
+    "parent": "FlexContainer0a7e978c6c2f54c",
     "pf": "frmConfirm",
     "render": true,
-    "skin": "s1bac84900a845288b5517a940462002",
-    "text": "PICK UP TIME IS IN APPROXIMATELY 5 MINS",
+    "skin": "sb1397f69d2944a8bb2dc0c4fe8b9ffc",
+    "text": "",
     "toolTip": "",
     "tooltip": "",
-    "top": "140dp",
+    "top": "3dp",
     "wType": "Label",
     "widgetAlignment": 5,
-    "width": "100%",
+    "width": "1dp",
     "wrapping": 2,
-    "zIndex": 5,
-    "zindex": 5
+    "zIndex": 6,
+    "zindex": 6
 }
