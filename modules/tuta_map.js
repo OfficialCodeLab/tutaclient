@@ -278,7 +278,7 @@ tuta.map.startMapListener = function (){
   catch(ex){
 
   }
-
+hasLoaded = false;
   kony.timer.schedule("MapListener", function(){
     var bounds = frmMap.mapMain.getBounds();
     if(tuta.map.checkRadius(bounds)){

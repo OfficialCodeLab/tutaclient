@@ -221,148 +221,163 @@ tuta.events.timedStateUpdate = function(state, time){
 tuta.events.getRating = function (){
   for(var i = 0; i < star.length; i++){
     if(star[i].src === "starunselected.png"){
-		return i;
+      return i;
     }
   }
 };
 
-  tuta.events.updateUserState = function (state){
-    var inputData = {
-      status: state
-    };
-
-    var input = {
-      data: JSON.stringify(inputData),
-      id: currentUser.userName
-    };
-
-    //Popup displaying latitude and longitude,
-    //on position change
-    // var testUserName = "Your username is: " + JSON.stringify(userTemp.userName + "\n");
-    // var testOutput = "Your current position is:\n" + "Latitude: " + JSON.stringify(inputData.location.lat) + "\nLongitude: " + JSON.stringify(inputData.location.long) + "";
-    // tuta.util.alert("Location Update", testUserName + testOutput);
-
-
-    //Updates server with user's current position
-    application.service("manageService").invokeOperation(
-      "userUpdate", {}, input,
-      function(result) {
-        //tuta.util.alert("TEST" + "Map updated with your current position");
-      },
-      function(error) {
-
-        // the service returns 403 (Not Authorised) if credentials are wrong
-        //tuta.util.alert("Error: " + error.httpStatusCode,"It looks like the server has crashed, or your location is not updating.\n\n" + error.errmsg);
-      }
-    );
+tuta.events.updateUserState = function (state){
+  var inputData = {
+    status: state
   };
 
-
-  tuta.events.getNearestDrivers = function(position, callback){  
-    var input = {id : currentUser.userName, lat: "" + position.lat, lng: "" + position.lng};
-    application.service("driverService").invokeOperation(
-      "closestDrivers", {}, input,
-      function(result) {
-        callback(result.value[0].drivers, position);
-      },
-      function(error) {
-
-        // the service returns 403 (Not Authorised) if credentials are wrong
-        //tuta.util.alert("Error: " + error.httpStatusCode,"It looks like the server has crashed, or your location is not updating.\n\n" + error.errmsg);
-      }
-    );
+  var input = {
+    data: JSON.stringify(inputData),
+    id: currentUser.userName
   };
 
-  var tempDriversNear = [];
-  tuta.events.calculateWaitTime = function(drivers, position, callback){
-    var origin = [{
-      lat : position.lat,
-      lon : position.lng
-    }];
+  //Popup displaying latitude and longitude,
+  //on position change
+  // var testUserName = "Your username is: " + JSON.stringify(userTemp.userName + "\n");
+  // var testOutput = "Your current position is:\n" + "Latitude: " + JSON.stringify(inputData.location.lat) + "\nLongitude: " + JSON.stringify(inputData.location.long) + "";
+  // tuta.util.alert("Location Update", testUserName + testOutput);
 
-    var count = 0;
-    var total = 0;
-    tempDriversNear = [];
-    for(var i = 0; i < drivers.length; i++){
-      if(drivers[i].distance < 100000 && drivers[i].id !== currentUser.userName){
-        var destination = [{
-          lat: drivers[i].location.lat,
-          lon: drivers[i].location.lng
-        }];
 
-        tuta.location.distanceMatrix(origin, destination, function(response, id){
-          //tuta.util.alert(id, JSON.stringify(response)); 
-          var dist = response[0].elements[0].duration.value;
-          if(dist < 3600){
-            var driverItem = tuta.util.arrayObjectIndexOf(drivers, id, "id");
-            total += dist;
-            tuta.events.pushDriver(drivers[driverItem]);
-          }
+  //Updates server with user's current position
+  application.service("manageService").invokeOperation(
+    "userUpdate", {}, input,
+    function(result) {
+      //tuta.util.alert("TEST" + "Map updated with your current position");
+    },
+    function(error) {
 
-          if(count++ === drivers.length-1){
-            tuta.events.sortDrivers();
-            callback(total/count);
-          }
+      // the service returns 403 (Not Authorised) if credentials are wrong
+      //tuta.util.alert("Error: " + error.httpStatusCode,"It looks like the server has crashed, or your location is not updating.\n\n" + error.errmsg);
+    }
+  );
+};
 
-        }, drivers[i].id);      
-      }
-      else{
+
+tuta.events.getNearestDrivers = function(position, callback){  
+  var input = {id : currentUser.userName, lat: "" + position.lat, lng: "" + position.lng};
+  application.service("driverService").invokeOperation(
+    "closestDrivers", {}, input,
+    function(result) {
+      callback(result.value[0].drivers, position);
+    },
+    function(error) {
+
+      // the service returns 403 (Not Authorised) if credentials are wrong
+      //tuta.util.alert("Error: " + error.httpStatusCode,"It looks like the server has crashed, or your location is not updating.\n\n" + error.errmsg);
+    }
+  );
+};
+
+var tempDriversNear = [];
+tuta.events.calculateWaitTime = function(drivers, position, callback){
+  var origin = [{
+    lat : position.lat,
+    lon : position.lng
+  }];
+
+  var count = 0;
+  var total = 0;
+  tempDriversNear = [];
+  for(var i = 0; i < drivers.length; i++){
+    if(drivers[i].distance < 100000 && drivers[i].id !== currentUser.userName){
+      var destination = [{
+        lat: drivers[i].location.lat,
+        lon: drivers[i].location.lng
+      }];
+
+      tuta.location.distanceMatrix(origin, destination, function(response, id){
+        //tuta.util.alert(id, JSON.stringify(response)); 
+        var dist = response[0].elements[0].duration.value;
+        if(dist < 3600){
+          var driverItem = tuta.util.arrayObjectIndexOf(drivers, id, "id");
+          total += dist;
+          tuta.events.pushDriver(drivers[driverItem]);
+        }
+
         if(count++ === drivers.length-1){
           tuta.events.sortDrivers();
           callback(total/count);
         }
-      }
 
-    }  
-  };
-
-
-  tuta.events.pushDriver = function(driver){
-    //tuta.util.alert("TEST", JSON.stringify(driver));
-    var position = tuta.util.arrayObjectIndexOf(driversNear, driver.id, "id");
-    if(position === -1){
-      tempDriversNear.push(driver);
+      }, drivers[i].id);      
     }
     else{
-      tempDriversNear[position] = driver;
+      if(count++ === drivers.length-1){
+        tuta.events.sortDrivers();
+        callback(total/count);
+      }
     }
-  };
+
+  }  
+};
 
 
-  tuta.events.sortDrivers = function(){
-    var driversSorted = tuta.util.quickSortObj(tempDriversNear, "distance");
-    if(driversSorted.length >= 5){
-      tempDriversNear = driversSorted.slice(0, 5);    
-    } else {
-      tempDriversNear = driversSorted;
-    }
-    var str1 = "";
+tuta.events.pushDriver = function(driver){
+  //tuta.util.alert("TEST", JSON.stringify(driver));
+  var position = tuta.util.arrayObjectIndexOf(driversNear, driver.id, "id");
+  if(position === -1){
+    tempDriversNear.push(driver);
+  }
+  else{
+    tempDriversNear[position] = driver;
+  }
+};
 
-    driversNear = tempDriversNear;
-  };
+
+tuta.events.sortDrivers = function(){
+  var driversSorted = tuta.util.quickSortObj(tempDriversNear, "distance");
+  if(driversSorted.length >= 5){
+    tempDriversNear = driversSorted.slice(0, 5);    
+  } else {
+    tempDriversNear = driversSorted;
+  }
+  var str1 = "";
+
+  driversNear = tempDriversNear;
+};
 
 
-  var loadingIconAngle = 0;
-  tuta.events.startLoadingCircle = function(){
-    frmMap.imgLoading.setVisibility(true);
+var loadingIconAngle = 0;
+var loadingCircleSpinning = false;
+tuta.events.startLoadingCircle = function(){
+  frmMap.imgLoading.setVisibility(true);
+  loadingCircleSpinning = true;
+  try{
+    kony.timer.cancel("loadingIconSpin");
+  } catch(ex) {}
+
+  kony.timer.schedule("loadingIconSpin", function(){
+
     try{
-      kony.timer.cancel("loadingIconSpin");
+      kony.timer.cancel("stopLoadingIconTimeout");
     } catch(ex) {}
 
-    kony.timer.schedule("loadingIconSpin", function(){
-      loadingIconAngle+=90;
-      if(loadingIconAngle>= 360)
-        loadingIconAngle-=360;
-      tuta.animate.rotate(frmMap.imgLoading, 0.15, loadingIconAngle, null);
-    }, 0.15, true);
-  };
+    kony.timer.schedule("stopLoadingIconTimeout", function(){
+      if(loadingCircleSpinning){
+		tuta.events.stopLoadingCircle();
+        frmMap.lblChangePick.text = "No taxis available";
+        frmMap.rtClosest.text = ""; 
+      }
+    }, 5, false);
+    loadingIconAngle+=90;
+    if(loadingIconAngle>= 360)
+      loadingIconAngle-=360;
+    tuta.animate.rotate(frmMap.imgLoading, 0.15, loadingIconAngle, null);
+  }, 0.15, true);
+};
 
-  tuta.events.stopLoadingCircle = function() {
-    frmMap.imgLoading.setVisibility(false);
-    try{
-      kony.timer.cancel("loadingIconSpin");
-    } catch(ex) {}
-  };
+tuta.events.stopLoadingCircle = function() {
+  frmMap.imgLoading.setVisibility(false);
+  loadingCircleSpinning = false;
+  try{
+    kony.timer.cancel("loadingIconSpin");
+  } catch(ex) {}
+};
 
 
 
