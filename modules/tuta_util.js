@@ -61,16 +61,19 @@ tuta.util.quickSortObj = function (objArry, property) {
     if (objArry.length < 2) {
         return objArry;
     }
-    
-    var pivot = Math.floor(objArry.length / 2);
-    var pivotVal = parseFloat(objArry[pivot][property]);
-    var pivotItem = objArry.splice(pivot, 1)[0];
-    
-    for (var i = 0; i < objArry.length; i++) {
-     
-        if (parseFloat(objArry[i][property]) <= pivotVal) { loeCollection.push(objArry[i]); }
-        else if (parseFloat(objArry[i][property]) > pivotVal) { gtCollection.push(objArry[i]); }
-    }
-    
-    return tuta.util.quickSortObj(loeCollection, property).concat(pivotItem, tuta.util.quickSortObj(gtCollection, property));
+    //try{
+      var pivot = Math.floor(objArry.length / 2);
+      var pivotVal = parseFloat(objArry[pivot][property]);
+      var pivotItem = objArry.splice(pivot, 1)[0];
+
+      for (var i = 0; i < objArry.length; i++) {
+          if (parseFloat(objArry[i][property]) <= pivotVal) { loeCollection.push(objArry[i]); }
+          else if (parseFloat(objArry[i][property]) > pivotVal) { gtCollection.push(objArry[i]); }
+      }
+      return tuta.util.quickSortObj(loeCollection, property).concat(pivotItem, tuta.util.quickSortObj(gtCollection, property));
+    //} 
+    //catch (ex){
+      //If the app is unable to sort the drivers, 
+      //find out why over here
+    //}
 };

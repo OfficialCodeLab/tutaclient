@@ -330,15 +330,21 @@ tuta.events.pushDriver = function(driver){
 
 
 tuta.events.sortDrivers = function(){
-  var driversSorted = tuta.util.quickSortObj(tempDriversNear, "distance");
-  if(driversSorted.length >= 5){
-    tempDriversNear = driversSorted.slice(0, 5);    
-  } else {
-    tempDriversNear = driversSorted;
-  }
-  var str1 = "";
+  try{
+    var driversSorted = tuta.util.quickSortObj(tempDriversNear, "distance");
+    if(driversSorted.length >= 5){
+      tempDriversNear = driversSorted.slice(0, 5);    
+    } else {
+      tempDriversNear = driversSorted;
+    }
+    var str1 = "";
 
-  driversNear = tempDriversNear;
+    driversNear = tempDriversNear;
+  } catch (ex){
+    //tuta.util.alert("Unable to sort drivers", ex);
+  }
+
+
 };
 
 
