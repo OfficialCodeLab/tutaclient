@@ -69,6 +69,10 @@ var lastbrng = 0;
 var trackingZoom = 0;
 var currentPin = "cabpin0.png";
 
+//Initial User
+var initialUserName = null;
+var initialProfilePic = null;
+
 //Calendar trackers
 var days = {track:0, label:"d", values:[]};
 var months = {track:0, label:"m", values:["Jan", "Feb", "Mar", "Apr", "May", "June", "July", "Aug", "Sep", "Oct", "Nov", "Dec"]};

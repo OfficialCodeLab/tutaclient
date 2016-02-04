@@ -24,7 +24,7 @@
         0
     ],
     "_skin_": "s4ea8d4d07574957b839f06194980e52",
-    "_src_": "driver2.png",
+    "_src_": "driverdefault.png",
     "_top_": {
         "type": "string",
         "value": "50dp"
@@ -54,9 +54,11 @@
     "height": "45dp",
     "id": "imgUser",
     "imageScaleMode": 1,
+    "imageWhenFailed": "driverdefault.png",
     "imagescalemode": 1,
+    "imagewhenfailed": "driverdefault.png",
     "info": null,
-    "invokedProperty": "src",
+    "invokedProperty": "imageWhenFailed",
     "isVisible": true,
     "ispercent": true,
     "isvisible": true,
@@ -79,7 +81,7 @@
     "pf": "frmMap",
     "render": true,
     "skin": "s4ea8d4d07574957b839f06194980e52",
-    "src": "driver2.png",
+    "src": "driverdefault.png",
     "srcType": 1,
     "top": "50dp",
     "wType": "Image",

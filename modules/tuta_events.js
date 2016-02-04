@@ -359,7 +359,7 @@ tuta.events.startLoadingCircle = function(){
 
     kony.timer.schedule("stopLoadingIconTimeout", function(){
       if(loadingCircleSpinning){
-		tuta.events.stopLoadingCircle();
+        tuta.events.stopLoadingCircle();
         frmMap.lblChangePick.text = "No taxis available";
         frmMap.rtClosest.text = ""; 
       }
@@ -379,7 +379,47 @@ tuta.events.stopLoadingCircle = function() {
   } catch(ex) {}
 };
 
+tuta.events.loadUserInfo = function (){
+  var dontLoad = false;
+  if(initialUserName !== null) {
+    frmMap.lblUser.text = initialUserName;
+    dontLoad = true;
+    initialUserName = null;
+  }
 
+  if(initialProfilePic !== null) {
+    frmMap.imgUser.base64 = initialProfilePic;
+    dontLoad = true;
+    initialProfilePic = null;
+  }
+
+  if(dontLoad === false){
+    var input = {
+      id: currentUser.userName
+    };
+
+
+    application.service("userService").invokeOperation(
+      "user", {}, input,
+      function(result) { 
+        var firstName = result.value[0].userInfo.firstName;
+        var lastName = result.value[0].userInfo.lastName;
+        var avatarBase64 = result.value[0].userInfo.avatarDocId;
+        var fullName = firstName + " " + lastName;
+
+        //tuta.util.alert("User Information", "Name: " + csFullName);
+        frmMap.lblUser.text = fullName;
+        frmMap.imgUser.base64 = avatarBase64;
+
+      },
+      function(error) {
+        // the service returns 403 (Not Authorised) if credentials are wrong
+        tuta.util.alert("Error " + error);
+      }
+    );
+  }
+
+};
 
 
 

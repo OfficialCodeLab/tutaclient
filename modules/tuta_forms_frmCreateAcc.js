@@ -31,7 +31,7 @@ tuta.forms.frmCreateAcc = function() {
     };
 
     self.control("cmrTakePhoto").onCapture = function() {
-      frmCreateAcc.imgUser.rawBytes = frmCreateAcc.cmrTakePhoto.rawBytes;
+      frmCreateAcc.imgUser.base64 = kony.convertToBase64(frmCreateAcc.cmrTakePhoto.rawBytes);
       frmCreateAcc.cmrTakePhoto.isVisible = false;
       frmCreateAcc.btnImportPicture.isVisible = false;
       profilePic = kony.convertToBase64(frmCreateAcc.imgUser.rawBytes);
@@ -53,7 +53,7 @@ tuta.forms.frmCreateAcc = function() {
         if (rawbytes === null) {
           return;
         }
-        frmCreateAcc.imgUser.rawBytes = rawbytes;
+        frmCreateAcc.imgUser.base64 = kony.convertToBase64(rawbytes);
         profilePicUploaded = true;
       }
 
@@ -86,7 +86,7 @@ tuta.forms.frmCreateAcc = function() {
         else {
           userEmail = userEmail.toLowerCase();
           var input = { id : userEmail};      
-	
+
           //TODO: email regex test
 
           application.service("userService").invokeOperation(
@@ -101,7 +101,7 @@ tuta.forms.frmCreateAcc = function() {
                 //COMPARE PASSWORDS AND DO REGEX MATCH
                 if(self.control("txtPass").text === self.control("txtPass2").text){
                   //var passRegex = self.control("txtPass").text.match(/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])[a-zA-Z0-9]{8,}$/);
-				  var passRegex = null;
+                  var passRegex = null;
                   var removeVerification = false;
                   if(self.control("txtPass").text.length >= 8)
                     passRegex = true;
@@ -160,32 +160,31 @@ tuta.forms.frmCreateAcc = function() {
                                     "login", {}, input,
                                     function(result) {
                                       kony.store.setItem("user", JSON.stringify(input));
+                                      currentUser.userName = userEmail;
                                       tuta.location.loadPositionInit();
                                       tuta.animate.moveBottomLeft(frmSplash.flexMainButtons, 0, "0%", "0", null);
                                       tuta.util.alert("SUCCESS", "Account has been created.");
 
+                                      initialUserName = self.control("txtName").text;
                                       creatingAccount = false;
                                       frmCreateAcc.flexCreatingAccount.setVisibility(false);
 
                                       // Set profile picture here
-                                      /* Currently this breaks default profile picture
-                                      if(profilePicUploaded) {                                     
+                                      if(profilePicUploaded) {
+                                        initialProfilePic = frmCreateAcc.imgUser.base64;                                     
                                         var picInput = {
                                           data: JSON.stringify({
-                                            avatarDocId: profilePic
+                                            avatarDocId: frmCreateAcc.imgUser.base64
                                           }),
                                           id: userEmail
                                         };
 
                                         application.service("manageService").invokeOperation(
-                                        "userInfoUpdate", {}, picInput, function(success) {                                          
-                                        }, function(error) {
-                                          self.util.alert("Error updating profile picture", error.errmsg);
-                                          creatingAccount = false;
-                                          frmCreateAcc.flexCreatingAccount.isVisible = false;
-                                        });
+                                          "userInfoUpdate", {}, picInput, function(success) {
+                                          }, function(error) {
+                                            self.util.alert("Error updating profile picture", error.errmsg);
+                                          });
                                       }
-                                      */
 
                                     },
                                     function(error) {
