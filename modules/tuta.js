@@ -152,7 +152,7 @@ var newbounds = null;
 function updateMap() {
 
   try{
-    var pickupicon = "";
+    var pickupicon = "userpin.png";
     var locationData = [];
 
     var bounds = frmMap.mapMain.getBounds();
@@ -186,6 +186,13 @@ function updateMap() {
       }
 
       //var count = 0;
+      locationData.push(
+        {lat: "" + currentPos.geometry.location.lat + "", 
+         lon: "" + currentPos.geometry.location.lng + "", 
+         name:"Pickup Location", 
+         desc: "", 
+         image : pickupicon});
+
       locationData.push(
         {lat: "" + currentPos.geometry.location.lat + "", 
          lon: "" + currentPos.geometry.location.lng + "", 
