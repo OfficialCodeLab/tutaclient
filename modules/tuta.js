@@ -251,7 +251,7 @@ tuta.resetMap = function (){
   journeyComplete = false;
   awaitingConfirmation = true;
   driverArrived = false;
-  frmMap.flexAdd.setVisibility(true);
+  tuta.animate.move(frmMap.flexAdd, 0.3, frmMap.flexAdd.top, "-100%", null);
   frmMap.flexChangeDest.setVisibility(true);
   frmMap.flexNoOfPeople.setVisibility(true);
   frmMap.mapMain.clear();
@@ -289,8 +289,9 @@ tuta.menuToggle = function (time, bool){
 
 tuta.awaitConfirm = function(bookingID) {
 
+  
   //TRY THE ENTIRE METHOD
-  frmMap.flexAdd.setVisibility(false);
+  tuta.animate.move(frmMap.flexAdd, 0.2, frmMap.flexAdd.top, "-200%", null);
   frmMap.flexChangeDest.setVisibility(false);
   frmMap.flexNoOfPeople.setVisibility(false);
   frmMap.flexProgress.setVisibility(true);

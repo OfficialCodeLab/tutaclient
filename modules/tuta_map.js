@@ -126,6 +126,7 @@ function onLocationSelected() {
     destination = getSelectedAddress();
     //deselectAllOptions();
     frmConfirm.lblDestination.text = shortenText (destination.formatted_address.replace(/`+/g,""), GLOBAL_CONCAT_LENGTH);
+    tuta.animate.move(frmMap.flexAddressMain, 0, "12%", "100%", null);
     var bounds = frmMap.mapMain.getBounds();
     tuta.location.geoCode(bounds.center.lat, bounds.center.lon, function(success, error){
       pickupPoint = success.results[0];
@@ -322,6 +323,7 @@ tuta.map.startMapListener = function (){
               var mins = Math.round(time/60);
               if(mins > 40 || mins === 0){
                 frmMap.lblChangePick.text = "No taxis available";
+                pickupTime = null;
                 frmMap.rtClosest.text = ""; 
                 tuta.events.stopLoadingCircle();
               }
@@ -430,19 +432,13 @@ tuta.map.calculateTripDetails = function(bool) {
   }
 
   //updateConfirmForm();
-  resetSearchBar();
-  tuta.animate.move(frmMap.flexAddressMain, 0, "12%", "100%", null);
-  tuta.forms.frmConfirm.show();
-
   //REPLACE 30 WITH DISTANCE TO TRAVEL
   frmConfirm.lblCost.text = "R" + Math.round(taxiRate(30));
   //tuta.util.alert(locA[0].lat, locA[0].lon);
-  tuta.map.calculatePickupTime(locA[0].lat, locA[0].lon, function(){
-    if(pickupTime !== null)
-      frmConfirm.lblPickupTime.text = "PICKUP TIME IS IN APPROXIMATELY " + pickupTime + " MINS";    
-    else
-      frmConfirm.lblPickupTime.text = "NO DRIVERS NEARBY";    
-  });
+  if(pickupTime !== null)
+    frmConfirm.lblPickupTime.text = "PICKUP TIME IS IN APPROXIMATELY " + pickupTime + " MINS";    
+  else
+    frmConfirm.lblPickupTime.text = "NO DRIVERS NEARBY";    
   //frmConfirm.lblDuration = 30 + " MIN";
 
   try{
