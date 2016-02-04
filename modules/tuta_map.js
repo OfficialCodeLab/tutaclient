@@ -70,8 +70,8 @@ function selectDest(form) {
       frmMap.txtPick.text = "";
     }
     else{
-      frmMap.flexAddressList.setVisibility(true);
-      frmMap.flexAddressShadow.setVisibility(true);
+      tuta.animate.move(frmMap.flexAddressMain, 0, "12%", "0%", null);
+      //frmMap.flexAddressShadow.setVisibility(true);
       frmMap.segAddressList.widgetDataMap = { lblAddress : "formatted_address"};  
       frmMap.segAddressList.setData(result.results);
       frmMap.txtDest.text = "";
@@ -83,8 +83,7 @@ function selectDest(form) {
 function getSelectedAddress() {
   // hide address list
   var selectedItem = frmMap.segAddressList.selectedItems[0];
-  frmMap.flexAddressList.setVisibility(false);
-  frmMap.flexAddressShadow.setVisibility(false);
+  tuta.animate.move(frmMap.flexAddressMain, 0, "12%", "100%", null);
   kony.timer.schedule("showMarker", function(){frmMap["flexChangeDest"]["isVisible"] = true;}, 0.3, false);
 
   return selectedItem;
@@ -116,8 +115,7 @@ function clearDestPick(){
   frmMap.txtPick.text = "";
   frmMap.Image066d5e18d311e4b.setVisibility(false);
   frmMap.CopyImage0943e5358a1de41.setVisibility(false);
-  frmMap.flexAddressList.setVisibility(false);
-  frmMap.flexAddressShadow.setVisibility(false);
+  tuta.animate.move(frmMap.flexAddressMain, 0, "12%", "100%", null);
   frmMap.flexChangeDest.setVisibility(true);
 }
 
@@ -278,7 +276,7 @@ tuta.map.startMapListener = function (){
   catch(ex){
 
   }
-hasLoaded = false;
+  hasLoaded = false;
   kony.timer.schedule("MapListener", function(){
     var bounds = frmMap.mapMain.getBounds();
     if(tuta.map.checkRadius(bounds)){
@@ -446,8 +444,7 @@ tuta.map.calculateTripDetails = function(bool) {
 
   //updateConfirmForm();
   resetSearchBar();
-  frmMap.flexAddressList.setVisibility(false);
-  frmMap.flexAddressShadow.setVisibility(false);
+  tuta.animate.move(frmMap.flexAddressMain, 0, "12%", "100%", null);
   tuta.forms.frmConfirm.show();
 
   //REPLACE 30 WITH DISTANCE TO TRAVEL

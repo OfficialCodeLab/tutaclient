@@ -42,7 +42,9 @@
         "txtDestination",
         "Image09f88626815dd4e",
         "flexNoPanning",
-        "flexMapCenter"
+        "flexMapCenter",
+        "flexAddressList",
+        "flexAddressShadow"
     ],
     "clipBounds": true,
     "clipbounds": true,

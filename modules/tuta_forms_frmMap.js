@@ -234,8 +234,7 @@ tuta.forms.frmMap = function() {
     //this.control("mapMain").onPinClick = function(map,location) {selectPickUpLocation();};
     this.control("mapMain").onClick = function(map, location) {
       if(!reselectingPickup){
-        frmMap.flexAddressList.setVisibility(false);
-        frmMap.flexAddressShadow.setVisibility(false);
+        tuta.animate.move(frmMap.flexAddressMain, 0, "12%", "100%", null);
         //kony.timer.schedule("showMarker", function(){frmMap["flexChangeDest"]["isVisible"] = true;}, 0.3, false);
         if(onJourney === 0 )
           frmMap.flexChangeDest.setVisibility(true);

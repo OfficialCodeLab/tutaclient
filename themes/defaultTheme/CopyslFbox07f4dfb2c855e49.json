@@ -9,9 +9,9 @@
     "isForked": true,
     "wType": "FlexContainer"
   },
-  "background_color": "ffffffff",
+  "background_color": "000000b2",
   "bg_type": "one",
-  "border_color": "ffffffff",
+  "border_color": "000000b2",
   "border_radius": 2,
   "border_style": "custom",
   "border_type": 0,
@@ -43,24 +43,6 @@
     "wType": "FlexContainer"
   },
   "ipad": {
-    "background_color": "00000099",
-    "bg_type": "one",
-    "border_color": "00000000",
-    "border_radius": 3,
-    "border_style": "custom",
-    "border_type": 0,
-    "isForked": true,
-    "shadow": {
-      "br": 0,
-      "color": "000000",
-      "inner": false,
-      "nm": 0,
-      "x": 0,
-      "y": 0
-    },
-    "wType": "FlexContainer"
-  },
-  "iphone": {
     "background_color": "00000099",
     "bg_type": "one",
     "border_color": "00000000",

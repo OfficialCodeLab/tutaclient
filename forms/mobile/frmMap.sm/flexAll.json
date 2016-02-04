@@ -37,8 +37,6 @@
     "children": [
         "flexNoOfPeople",
         "flexMain",
-        "flexAddressList",
-        "flexAddressShadow",
         "flexDriverInfo",
         "flexOverlay1",
         "flexOverlay2",
@@ -50,6 +48,7 @@
         "flexDarken",
         "btnCancelHailDriving",
         "flexAdd",
+        "flexAddressMain",
         "flexArriving",
         "flexDriverArrival",
         "flexSwipe"

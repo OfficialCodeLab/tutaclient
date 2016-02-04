@@ -22,7 +22,7 @@
         0
     ],
     "_render_": true,
-    "_skin_": "sa6e138b794943c2bf745297e3d77739",
+    "_skin_": "s7d94c4acf8d4396a9054a5c49c66e20",
     "_top_": {
         "type": "string",
         "value": "147dp"
@@ -49,7 +49,7 @@
     "info": null,
     "isVisible": false,
     "isvisible": false,
-    "kuid": "dd03fd2cd32043368d093b1aa50efead",
+    "kuid": "ec6d12f0553b46d68bd6ab01ce8be58b",
     "layoutType": 2,
     "layouttype": 2,
     "left": "5.20%",
@@ -67,11 +67,11 @@
         0,
         0
     ],
-    "parent": "flexAll",
+    "parent": "flexMain",
     "percent": true,
     "pf": "frmMap",
     "render": true,
-    "skin": "sa6e138b794943c2bf745297e3d77739",
+    "skin": "s7d94c4acf8d4396a9054a5c49c66e20",
     "snapGridSize": 10,
     "snapToGrid": true,
     "snapgridsize": 10,
