@@ -32,6 +32,11 @@
         "type": "string",
         "value": "280dp"
     },
+    "android": {
+        "psp": {
+            "keyboardActionLabel": 4
+        }
+    },
     "autoCapitalize": "none",
     "autoComplete": false,
     "autoCorrect": false,
@@ -62,11 +67,16 @@
     "id": "txtEmail",
     "info": null,
     "iphone": {
-        "@class": "com.kony.gen.viz.model.component.property.textbox2.IPhoneTextBox2Property"
+        "@class": "com.kony.gen.viz.model.component.property.textbox2.IPhoneTextBox2Property",
+        "psp": {
+            "keyboardActionLabel": 4
+        }
     },
     "isVisible": true,
     "isvisible": true,
     "keyBoardStyle": "emailpad",
+    "keyboardActionLabel": 4,
+    "keyboardactionlabel": 4,
     "keyboardstyle": "emailpad",
     "keyboardtype": "A",
     "kuid": "287f91d8f2cb4e7db087abe8f4cf3456",

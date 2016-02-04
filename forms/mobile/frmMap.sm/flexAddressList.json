@@ -22,7 +22,7 @@
         0
     ],
     "_render_": true,
-    "_skin_": "s7d94c4acf8d4396a9054a5c49c66e20",
+    "_skin_": "sb6b3c4c5e2a47839fa83800302ccb5b",
     "_top_": {
         "type": "string",
         "value": "145dp"
@@ -37,9 +37,7 @@
     "bottom": "110dp",
     "canUpdateUI": true,
     "channel": "mobile",
-    "children": [
-        "segAddressList"
-    ],
+    "children": [],
     "clipBounds": true,
     "clipbounds": true,
     "containerWeight": 100,
@@ -51,7 +49,7 @@
     "info": null,
     "isVisible": false,
     "isvisible": false,
-    "kuid": "2732137a6c314bc894381c9243f74d5b",
+    "kuid": "968129190db745c0a8c11181d1330eb7",
     "layoutType": 2,
     "layouttype": 2,
     "left": "4.80%",
@@ -69,11 +67,11 @@
         0,
         0
     ],
-    "parent": "flexAll",
+    "parent": "flexMain",
     "percent": true,
     "pf": "frmMap",
     "render": true,
-    "skin": "s7d94c4acf8d4396a9054a5c49c66e20",
+    "skin": "sb6b3c4c5e2a47839fa83800302ccb5b",
     "snapGridSize": 10,
     "snapToGrid": true,
     "snapgridsize": 10,

@@ -28,6 +28,8 @@ tuta.forms.frmEditProfile = function() {
     var input = {
       id: currentUserEmail
     };
+    frmEditProfile.imgUser.base64 = "driverdefault.png";
+    
     
     // Fill edit profile fields
     application.service("userService").invokeOperation(
@@ -35,13 +37,10 @@ tuta.forms.frmEditProfile = function() {
       function(result) { 
         var firstName = result.value[0].userInfo.firstName;
         var surname = result.value[0].userInfo.lastName;
-        var avatarBase64 = kony.convertToRawBytes(result.value[0].userInfo.avatarDocId);
+        var avatarBase64 = result.value[0].userInfo.avatarDocId;
         frmEditProfile.txtFirstName.text = firstName;
         frmEditProfile.txtSurname.text = surname;
-
-        if (avatarBase64 !== '{"text":""}') {
-          frmEditProfile.imgUser.rawBytes = avatarBase64;
-        }
+          frmEditProfile.imgUser.base64 = avatarBase64;
       },
       function(error) {
         // the service returns 403 (Not Authorised) if credentials are wrong
@@ -99,6 +98,8 @@ tuta.forms.frmEditProfile = function() {
         function(success) {
           tuta.util.alert("Success", "Info has been updated");
           frmEditProfile.flexUpdatingProfile.isVisible = false;
+          initialProfilePic = avatarBase64;
+          initialUserName = frmEditProfile.txtFirstName.text + " " + frmEditProfile.txtSurname.text;
           //tuta.forms.frmMap.show();
         }, function(error) {
           frmEditProfile.flexUpdatingProfile.isVisible = false;

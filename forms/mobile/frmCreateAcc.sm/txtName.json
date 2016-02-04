@@ -32,6 +32,11 @@
         "type": "string",
         "value": "280dp"
     },
+    "android": {
+        "psp": {
+            "keyboardActionLabel": 4
+        }
+    },
     "autoCapitalize": "words",
     "autoComplete": false,
     "autoCorrect": false,
@@ -62,10 +67,15 @@
     "id": "txtName",
     "info": null,
     "iphone": {
-        "@class": "com.kony.gen.viz.model.component.property.textbox2.IPhoneTextBox2Property"
+        "@class": "com.kony.gen.viz.model.component.property.textbox2.IPhoneTextBox2Property",
+        "psp": {
+            "keyboardActionLabel": 4
+        }
     },
     "isVisible": true,
     "isvisible": true,
+    "keyboardActionLabel": 4,
+    "keyboardactionlabel": 4,
     "keyboardtype": "A",
     "kuid": "877305ab8f0d41b38ac010b2e53a4ab6",
     "left": "75dp",

@@ -1,13 +1,13 @@
 {
     "DNDConfig": null,
     "__parentReadjusting__": false,
-    "_height_": {
+    "_bottom_": {
         "type": "string",
-        "value": "100%"
+        "value": "5dp"
     },
     "_left_": {
         "type": "string",
-        "value": "0dp"
+        "value": "2.50%"
     },
     "_margin_": [
         0,
@@ -21,48 +21,22 @@
         0,
         0
     ],
-    "_render_": true,
-    "_skin_": "s367d9e4674e4f2280b93620aab10fff",
+    "_skin_": "sb3413501df7462b80737d7eee0ec0d1",
     "_top_": {
         "type": "string",
-        "value": "0dp"
+        "value": "76dp"
     },
     "_width_": {
         "type": "string",
-        "value": "100%"
+        "value": "45%"
     },
     "allboxes": [],
     "autogrowMode": 0,
     "autogrowmode": 0,
+    "bottom": "5dp",
     "canUpdateUI": true,
-    "channel": "mobile",
     "children": [
-        "flexHeader",
-        "imgPlaceholder",
-        "imgUser",
-        "btnProfilePic",
-        "cmrTakePhoto",
-        "btnImportPicture",
-        "lblSep1",
-        "lblSep2",
-        "lblSep3",
-        "lblSep4",
-        "lblSep5",
-        "lblSep6",
-        "imgPerson",
-        "imgEnvelope",
-        "imgPhone",
-        "imgLock",
-        "txtName",
-        "txtEmail",
-        "txtContact",
-        "txtPass",
-        "txtPass2",
-        "btnCancel",
-        "lblSepTop",
-        "lblSepMiddle",
-        "btnSubmit",
-        "Label06a22de9e782449"
+        "segAddressList"
     ],
     "clipBounds": true,
     "clipbounds": true,
@@ -71,15 +45,14 @@
     "enableScrolling": true,
     "enabled": false,
     "enablescrolling": true,
-    "height": "100%",
-    "id": "flexMain",
+    "id": "flexAddressesList",
     "info": null,
     "isVisible": true,
     "isvisible": true,
-    "kuid": "825d88c30d444818a0c2f1f79404d83e",
+    "kuid": "545fc24de557447a85ee12c33b9ae1ff",
     "layoutType": 2,
     "layouttype": 2,
-    "left": "0dp",
+    "left": "2.50%",
     "margin": [
         0,
         0,
@@ -94,20 +67,20 @@
         0,
         0
     ],
-    "parent": "flexScrollMain",
+    "parent": "flexAddressMain",
     "percent": true,
-    "pf": "frmCreateAcc",
+    "pf": "frmMap",
     "render": true,
-    "skin": "s367d9e4674e4f2280b93620aab10fff",
+    "skin": "sb3413501df7462b80737d7eee0ec0d1",
     "snapGridSize": 10,
     "snapToGrid": true,
     "snapgridsize": 10,
     "snaptogrid": true,
-    "top": "0dp",
+    "top": "76dp",
     "wType": "FlexContainer",
     "widgetAlignment": 1,
     "widgetalignment": 1,
-    "width": "100%",
-    "zIndex": 1,
-    "zindex": 1
+    "width": "45%",
+    "zIndex": 901,
+    "zindex": 901
 }

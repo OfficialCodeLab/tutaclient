@@ -32,6 +32,11 @@
         "type": "string",
         "value": "280dp"
     },
+    "android": {
+        "psp": {
+            "keyboardActionLabel": 1
+        }
+    },
     "autoCapitalize": "none",
     "autoComplete": false,
     "autoCorrect": false,

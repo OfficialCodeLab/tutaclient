@@ -69,6 +69,10 @@ var lastbrng = 0;
 var trackingZoom = 0;
 var currentPin = "cabpin0.png";
 
+//Initial User
+var initialUserName = null;
+var initialProfilePic = null;
+
 //Calendar trackers
 var days = {track:0, label:"d", values:[]};
 var months = {track:0, label:"m", values:["Jan", "Feb", "Mar", "Apr", "May", "June", "July", "Aug", "Sep", "Oct", "Nov", "Dec"]};
@@ -191,7 +195,7 @@ function updateMap() {
     }
 
     if(nearbyDrivers.length > 0){
-      tuta.driverBearing(nearbyDrivers[0].id, function(response){
+      tuta.driverBearing(nearbyDrivers[0].location.direction, function(response){
         currentPin = response;
       });
       locationData.push(
@@ -366,7 +370,6 @@ tuta.awaitConfirm = function(bookingID) {
             if(result.value[0].providerId ==="NODRIVER"){
               kony.timer.cancel("taxiHailTimer");
               tuta.resetMap();
-              frmMap.flexNoPanning.setVisibility(true);
               frmMap.flexProgress.setVisibility(false);
               tuta.animate.move(frmMap.flexNoDriversNear, 0, "", "10%", null);
             }
@@ -497,14 +500,11 @@ tuta.renderFinalRoute = function(){
   }, 0.5, false);
 };
 
-tuta.driverBearing = function (driverID, callback){
-  try {
-    application.service("driverService").invokeOperation(
-      "user", {}, {id : driverID},
-      function(result){
+tuta.driverBearing = function (direction, callback){
+  
         try{
           var brng = 0;
-          brng = Math.abs(Math.round(result.value[0].location.direction / 15)) * 15; 
+          brng = Math.abs(Math.round(direction / 15)) * 15; 
 
           if(brng >= 360)
             brng = 0;
@@ -519,14 +519,7 @@ tuta.driverBearing = function (driverID, callback){
         catch (ex){
           callback("cabpin" + lastbrng + ".png");
         }
-
-      }, function (error){
-        tuta.util.alert("ERROR", error);
-        callback("cabpin" + lastbrng + ".png");
-      });
-  } catch (ex) {
-    // This is an internet service exception handler
-  }
+  
 };
 
 tuta.bearing = function (bearing){
@@ -787,7 +780,7 @@ tuta.trackDriver = function(driverID){
   //Query the server
   try {
     application.service("driverService").invokeOperation(
-      "user", {}, input,
+      "userLocation", {}, input,
       function(result) { 
 
 
@@ -796,6 +789,7 @@ tuta.trackDriver = function(driverID){
         driver = {
           id: result.value[0].id,
           location: {
+          	direction: result.value[0].location.direction,
             lat: result.value[0].location.lat,
             lng: result.value[0].location.lng
           }

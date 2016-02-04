@@ -83,6 +83,6 @@
     "top": "0dp",
     "wType": "Button",
     "widgetAlignment": 5,
-    "zIndex": 5,
-    "zindex": 5
+    "zIndex": 7,
+    "zindex": 7
 }

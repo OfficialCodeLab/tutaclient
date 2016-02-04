@@ -108,7 +108,7 @@
     },
     "isVisible": true,
     "isvisible": true,
-    "kuid": "4bf1a846e1b34380b16f1cb7eafa2578",
+    "kuid": "d0465fbd2fd44f3eb442753b7c6622ed",
     "left": "0dp",
     "margin": [
         0,
@@ -133,7 +133,7 @@
     "paginationconfig": {
         "position": "bottom"
     },
-    "parent": "flexAddressList",
+    "parent": "flexAddressesList",
     "pf": "frmMap",
     "render": true,
     "retainSelection": false,

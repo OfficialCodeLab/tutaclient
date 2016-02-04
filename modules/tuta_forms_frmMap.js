@@ -80,28 +80,7 @@ tuta.forms.frmMap = function() {
     //
 
     //Store the user ID as variable 'input' for query
-    var input = {
-      id: currentUserEmail
-    };
-
-
-    application.service("userService").invokeOperation(
-      "user", {}, input,
-      function(result) { 
-        var firstName = result.value[0].userInfo.firstName;
-        var lastName = result.value[0].userInfo.lastName;
-        var avatarBase64 = result.value[0].userInfo.avatarDocId;
-        var fullName = firstName + " " + lastName;
-
-        //tuta.util.alert("User Information", "Name: " + csFullName);
-        frmMap.lblUser.text = fullName;
-
-      },
-      function(error) {
-        // the service returns 403 (Not Authorised) if credentials are wrong
-        tuta.util.alert("Error " + error);
-      }
-    );
+    tuta.events.loadUserInfo();
 
     // this.control("btnChs").onClick = function (button) {tuta.forms.frmMap.show();};
     this.control("btnChs").onClick = function(button) {
@@ -253,8 +232,7 @@ tuta.forms.frmMap = function() {
     //this.control("mapMain").onPinClick = function(map,location) {selectPickUpLocation();};
     this.control("mapMain").onClick = function(map, location) {
       if(!reselectingPickup){
-        frmMap.flexAddressList.setVisibility(false);
-        frmMap.flexAddressShadow.setVisibility(false);
+        tuta.animate.move(frmMap.flexAddressMain, 0, "12%", "100%", null);
         //kony.timer.schedule("showMarker", function(){frmMap["flexChangeDest"]["isVisible"] = true;}, 0.3, false);
         if(onJourney === 0 )
           frmMap.flexChangeDest.setVisibility(true);

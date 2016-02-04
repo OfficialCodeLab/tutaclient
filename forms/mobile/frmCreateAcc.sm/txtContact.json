@@ -32,6 +32,11 @@
         "type": "string",
         "value": "280dp"
     },
+    "android": {
+        "psp": {
+            "keyboardActionLabel": 4
+        }
+    },
     "autoCapitalize": "none",
     "autoComplete": false,
     "autoCorrect": false,
@@ -62,11 +67,16 @@
     "id": "txtContact",
     "info": null,
     "iphone": {
-        "@class": "com.kony.gen.viz.model.component.property.textbox2.IPhoneTextBox2Property"
+        "@class": "com.kony.gen.viz.model.component.property.textbox2.IPhoneTextBox2Property",
+        "psp": {
+            "keyboardActionLabel": 4
+        }
     },
     "isVisible": true,
     "isvisible": true,
     "keyBoardStyle": "A",
+    "keyboardActionLabel": 4,
+    "keyboardactionlabel": 4,
     "keyboardstyle": "A",
     "keyboardtype": "A",
     "kuid": "bf1fdb48373f44bb8a624a320478ee13",

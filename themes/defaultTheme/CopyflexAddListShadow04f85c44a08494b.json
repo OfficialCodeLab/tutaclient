@@ -10,9 +10,9 @@
     "isForked": true,
     "wType": "FlexContainer"
   },
-  "background_color": "000000ce",
+  "background_color": "f4f4f4ff",
   "bg_type": "one",
-  "border_color": "000000ce",
+  "border_color": "00000000",
   "border_radius": 10,
   "border_style": "custom",
   "border_type": 0,
@@ -74,7 +74,7 @@
     "isForked": true,
     "wType": "FlexContainer"
   },
-  "kuid": "s7d94c4acf8d4396a9054a5c49c66e20",
+  "kuid": "sb6b3c4c5e2a47839fa83800302ccb5b",
   "spaan": {
     "background_color": "00000000",
     "bg_type": "one",
