@@ -274,6 +274,9 @@ tuta.resetMap = function (){
   } catch (ex){
 
   }
+  
+  var loc = {lat:currentPos.geometry.location.lat,lng:currentPos.geometry.location.lng};
+  tuta.map.navigateTo(loc);
 };
 
 tuta.menuToggle = function (time, bool){

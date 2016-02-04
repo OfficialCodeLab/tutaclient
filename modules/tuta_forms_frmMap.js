@@ -132,19 +132,17 @@ tuta.forms.frmMap = function() {
       tuta.forms.frmSplash.show();
     };
     this.control("btnMapCenter").onClick = function (button) {
+      var loc = {lat: currentPos.geometry.location.lat, lng:currentPos.geometry.location.lng};
+      tuta.map.navigateTo(loc);
       //Handle repeated presses
-      try{
-        kony.timer.cancel("waitForMapUpdate");
-      } catch (ex){
+      
 
-      }
-
+      /*
       try{
         kony.timer.cancel("temporaryMapCenterUpdateTimer");
       } catch (ex){
 
       }
-      
       //Stop the watch location
       tuta.stopUpdateMapFunction();
 
@@ -167,7 +165,7 @@ tuta.forms.frmMap = function() {
       //Schedule the update map to start in 10 seconds
       kony.timer.schedule("waitForMapUpdate", function(){
         tuta.startUpdateMapFunction();
-      }, 10, false);
+      }, 10, false);*/
     };
 
     this.control("btnDrop").onClick = selectPickUpLocation;
