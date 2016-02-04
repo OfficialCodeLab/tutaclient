@@ -45,8 +45,8 @@
     "height": "70%",
     "id": "btnSetPickup",
     "info": null,
-    "isVisible": true,
-    "isvisible": true,
+    "isVisible": false,
+    "isvisible": false,
     "kuid": "9469ac1a08ea454488c243d28fda5576",
     "margin": [
         6,

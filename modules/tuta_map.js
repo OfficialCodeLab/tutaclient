@@ -126,25 +126,18 @@ function onLocationSelected() {
     destination = getSelectedAddress();
     //deselectAllOptions();
     frmConfirm.lblDestination.text = shortenText (destination.formatted_address.replace(/`+/g,""), GLOBAL_CONCAT_LENGTH);
-    if (pickupPoint === null) {
-      tuta.location.geoCode(currentPos.geometry.location.lat, currentPos.geometry.location.lng, function(success, error){
-        frmConfirm.lblPickUpLocation.text = shortenText (success.results[0].formatted_address.replace(/`+/g,""), GLOBAL_CONCAT_LENGTH);
-        tuta.map.calculateTripDetails(false); // False calculates when pickupPoint === null
-      });
-    } else {
-      tuta.location.geoCode(pickupPoint.geometry.location.lat, pickupPoint.geometry.location.lng, function(success, error) {
-        frmConfirm.lblPickUpLocation.text = shortenText (success.results[0].formatted_address.replace(/`+/g,""), GLOBAL_CONCAT_LENGTH);
-        tuta.map.calculateTripDetails(true); // False calculates when pickupPoint !== null
-      });
-    }
+    tuta.animate.move(frmMap.flexAddressMain, 0, "12%", "100%", null);
+    var bounds = frmMap.mapMain.getBounds();
+    tuta.location.geoCode(bounds.center.lat, bounds.center.lon, function(success, error){
+      pickupPoint = success.results[0];
+      frmConfirm.lblPickUpLocation.text = shortenText (success.results[0].formatted_address.replace(/`+/g,""), GLOBAL_CONCAT_LENGTH);
+      tuta.forms.frmConfirm.show();  
+      tuta.map.calculateTripDetails(true);
+    });
   } else {
     pickupPoint = getSelectedAddress();
-    frmMap.mapMain.navigateToLocation({ "lat" : pickupPoint.geometry.location.lat, "lon": pickupPoint.geometry.location.lng, name:"", desc: ""},false,false);
-    resetSearchBar();
-    updateMap();
+    setPickupPoint(pickupPoint);
     searchMode = 0;
-    resetSearchBar();
-    reselectPickupCheck();
 
   }
 }
@@ -174,33 +167,28 @@ function reselectPickupCheck(){
     }, 2, false);
   }
 }
-function setPickupPoint() {
-  var bounds = frmMap.mapMain.getBounds();
-  //geocode the pickup point
-  tuta.location.geoCode(bounds.center.lat, bounds.center.lon, function(success, error) {
-    pickupPoint = success.results[0];
-    resetSearchBar();
+function setPickupPoint(pickupPoint) {
+  resetSearchBar();
 
-    try{
-      kony.timer.cancel("waitForMapUpdate");
-    } catch (ex){
+  try{
+    kony.timer.cancel("waitForMapUpdate");
+  } catch (ex){
 
-    }
-    //Stop the watch location
-    tuta.stopUpdateMapFunction();
+  }
+  //Stop the watch location
+  tuta.stopUpdateMapFunction();
 
-    //Center the map on the user
-    var locationData = {lat:pickupPoint.geometry.location.lat,lon:pickupPoint.geometry.location.lng,name: "",desc: ""};
-    frmMap.mapMain.navigateToLocation(locationData,false,false);
+  //Center the map on the user
+  var locationData = {lat:pickupPoint.geometry.location.lat,lon:pickupPoint.geometry.location.lng,name: "",desc: ""};
+  frmMap.mapMain.navigateToLocation(locationData,false,false);
 
-    //Schedule the update map to start in 10 seconds
-    kony.timer.schedule("waitForMapUpdate", function(){
-      updateMap();
-      tuta.startUpdateMapFunction();
-    },1.5, false);
-    //frmMap.mapMain.navigateToLocation(pickupPoint, false, false);
-    reselectPickupCheck();
-  });
+  //Schedule the update map to start in 10 seconds
+  kony.timer.schedule("waitForMapUpdate", function(){
+    updateMap();
+    tuta.startUpdateMapFunction();
+  },1.5, false);
+  //frmMap.mapMain.navigateToLocation(pickupPoint, false, false);
+  //reselectPickupCheck();
 }  
 
 function hideSearchBar() {
@@ -335,6 +323,7 @@ tuta.map.startMapListener = function (){
               var mins = Math.round(time/60);
               if(mins > 40 || mins === 0){
                 frmMap.lblChangePick.text = "No taxis available";
+                pickupTime = null;
                 frmMap.rtClosest.text = ""; 
                 tuta.events.stopLoadingCircle();
               }
@@ -443,19 +432,13 @@ tuta.map.calculateTripDetails = function(bool) {
   }
 
   //updateConfirmForm();
-  resetSearchBar();
-  tuta.animate.move(frmMap.flexAddressMain, 0, "12%", "100%", null);
-  tuta.forms.frmConfirm.show();
-
   //REPLACE 30 WITH DISTANCE TO TRAVEL
   frmConfirm.lblCost.text = "R" + Math.round(taxiRate(30));
   //tuta.util.alert(locA[0].lat, locA[0].lon);
-  tuta.map.calculatePickupTime(locA[0].lat, locA[0].lon, function(){
-    if(pickupTime !== null)
-      frmConfirm.lblPickupTime.text = "PICKUP TIME IS IN APPROXIMATELY " + pickupTime + " MINS";    
-    else
-      frmConfirm.lblPickupTime.text = "NO DRIVERS NEARBY";    
-  });
+  if(pickupTime !== null)
+    frmConfirm.lblPickupTime.text = "PICKUP TIME IS IN APPROXIMATELY " + pickupTime + " MINS";    
+  else
+    frmConfirm.lblPickupTime.text = "NO DRIVERS NEARBY";    
   //frmConfirm.lblDuration = 30 + " MIN";
 
   try{

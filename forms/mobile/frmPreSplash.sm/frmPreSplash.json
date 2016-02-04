@@ -14,10 +14,13 @@
         0,
         0
     ],
-    "_skin_": "s1938375ce72486f894e571cf35fe3d8",
+    "_skin_": "se79e58a35bb4d54b0b44ef991b2ea29",
     "_title_": null,
     "addWidgetsdone": false,
     "allboxes": [],
+    "android": {
+        "needAppMenu": false
+    },
     "canUpdateUI": true,
     "children": [],
     "containerWeight": 100,
@@ -48,6 +51,7 @@
         }
     },
     "iphone": {
+        "needAppMenu": false,
         "psp": {
             "inputAccessoryViewType": 4,
             "titleBarConfig": {
@@ -63,10 +67,10 @@
                 "titleBarRightSideView": "button",
                 "titleClosureLeftSideView": "",
                 "titleClosureRightSideView": "",
-                "visible": true
+                "visible": false
             }
         },
-        "titleBar": true
+        "titleBar": false
     },
     "isVisible": true,
     "isvisible": true,
@@ -101,11 +105,23 @@
     "retainScrollPosition": false,
     "retainscrollposition": false,
     "shellCSS": "iOS_iPhone6",
-    "skin": "s1938375ce72486f894e571cf35fe3d8",
+    "skin": "se79e58a35bb4d54b0b44ef991b2ea29",
     "snapGridSize": 10,
     "snapToGrid": true,
     "snapgridsize": 10,
     "snaptogrid": true,
+    "spaan": {
+        "needAppMenu": false
+    },
+    "spabb": {
+        "needAppMenu": false
+    },
+    "spaip": {
+        "needAppMenu": false
+    },
+    "spawinphone8": {
+        "needAppMenu": false
+    },
     "title": null,
     "titleBar": true,
     "titleBarModel": {
@@ -124,7 +140,7 @@
         ],
         "_skin_": "s24ff015bbae4b4f9f512411222c0409",
         "_text_": "",
-        "_visible_": true,
+        "_visible_": false,
         "buttonClosureLeftSideView": "",
         "buttonClosureRightSideView": "",
         "buttonText": "Edit",
@@ -141,6 +157,11 @@
         "ide_titleClosureLeftSideView": "",
         "ide_titleClosureRightSideView": "",
         "info": null,
+        "iphone": {
+            "psp": {
+                "visible": false
+            }
+        },
         "isVisible": true,
         "isvisible": true,
         "leftButtonText": "Back",
@@ -179,7 +200,7 @@
         "titlebarrightsideview": "button",
         "titleclosureleftsideview": "",
         "titleclosurerightsideview": "",
-        "visible": true,
+        "visible": false,
         "wType": "TitleBar",
         "widgetAlignment": 5
     },
@@ -187,5 +208,8 @@
     "titlebar": true,
     "type": 3,
     "wType": "Form",
-    "widgetAlignment": 5
+    "widgetAlignment": 5,
+    "winphone8": {
+        "needAppMenu": false
+    }
 }
