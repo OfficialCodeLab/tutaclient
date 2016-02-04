@@ -37,7 +37,7 @@ tuta.location.updateLocationOnServer = function(latitude, longitude){
     function(error) {
 
       // the service returns 403 (Not Authorised) if credentials are wrong
-      tuta.util.alert("Error " + error.httpStatusCode, error.errmsg);
+      //tuta.util.alert("Error " + error.httpStatusCode, error.errmsg);
     }
   );
 };
@@ -186,7 +186,7 @@ tuta.location.addressList = function(address, callback) {
     if(request.readyState == constants.HTTP_READY_STATE_DONE) {
       var response = request.response;
       if(response === null) {
-        tuta.mobile.alert("HTTP ERROR!",JSON.stringify(request.getAllResponseHeaders()));
+        //tuta.mobile.alert("HTTP ERROR!",JSON.stringify(request.getAllResponseHeaders()));
       } else {
         if(response !== null) {
           if(response.results !== null) {
@@ -212,7 +212,7 @@ tuta.location.geoCode = function(lat,lng,callback) {
     if(request.readyState == constants.HTTP_READY_STATE_DONE) {
       var response = request.response;
       if(response === null) {
-        tuta.util.alert("HTTP ERROR!",JSON.stringify(request.getAllResponseHeaders()));
+        //tuta.util.alert("HTTP ERROR!",JSON.stringify(request.getAllResponseHeaders()));
       } else {
         if(response !== null) {
           if(response.results !== null) {

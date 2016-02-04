@@ -86,7 +86,7 @@ ssa.location.addressList = function(address, callback) {
   	if(request.readyState == constants.HTTP_READY_STATE_DONE) {
       var response = request.response;
       if(response === null) {
-        ssa.mobile.alert("HTTP ERROR!",JSON.stringify(request.getAllResponseHeaders()));
+        //ssa.mobile.alert("HTTP ERROR!",JSON.stringify(request.getAllResponseHeaders()));
       } else {
         if(response !== null) {
           if(response.results !== null) {
@@ -112,7 +112,7 @@ ssa.location.geoCode = function(lat,lng,callback) {
   	if(request.readyState == constants.HTTP_READY_STATE_DONE) {
       var response = request.response;
       if(response === null) {
-        ssa.util.alert("HTTP ERROR!",JSON.stringify(request.getAllResponseHeaders()));
+        //ssa.util.alert("HTTP ERROR!",JSON.stringify(request.getAllResponseHeaders()));
       } else {
         if(response !== null) {
           if(response.results !== null) {
