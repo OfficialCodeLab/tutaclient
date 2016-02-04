@@ -220,6 +220,7 @@ function updateMap() {
       }
     }
 
+    /*
     if(pickupPoint !== null) {
       locationData.push({
         lat: "" + pickupPoint.geometry.location.lat + "", 
@@ -228,7 +229,7 @@ function updateMap() {
         desc: "", 
         image : "pickupiconwhite.png" //CHANGE PICKUP ICON
       });
-    }
+    }*/
 
 
     frmMap.mapMain.locationData = locationData;
