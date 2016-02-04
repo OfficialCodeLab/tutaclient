@@ -159,12 +159,31 @@ tuta.forms.frmMap = function() {
       } catch (ex){
 
       }
+
+      try{
+        kony.timer.cancel("temporaryMapCenterUpdateTimer");
+      } catch (ex){
+
+      }
+      
       //Stop the watch location
       tuta.stopUpdateMapFunction();
 
       //Center the map on the user
       var locationData = {lat:currentPos.geometry.location.lat,lon:currentPos.geometry.location.lng,name: "",desc: ""};
       frmMap.mapMain.navigateToLocation(locationData,false,false);
+
+      //Update the map once, two seconds later
+      try{
+        kony.timer.schedule("temporaryMapCenterUpdateTimer", function(){
+          updateMap();
+        }, 2, false);
+      }
+      catch(ex){
+
+      }
+      
+      
 
       //Schedule the update map to start in 10 seconds
       kony.timer.schedule("waitForMapUpdate", function(){

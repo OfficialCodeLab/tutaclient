@@ -160,7 +160,8 @@ function updateMap() {
     //#endif
 
     if(driverArrived === false){
-      pickupicon = "userpin" + tuta.bearing(userbearing) + ".png";
+      //pickupicon = "userpin" + tuta.bearing(userbearing) + ".png"; //Pin with bearing
+      pickupicon = "userpin.png"; //Pin without bearing
 
       if(overview.active === 1){
         locationData.push(
@@ -224,6 +225,7 @@ function updateMap() {
         image : "pickupiconwhite.png" //CHANGE PICKUP ICON
       });
     }
+
 
     frmMap.mapMain.locationData = locationData;
 
