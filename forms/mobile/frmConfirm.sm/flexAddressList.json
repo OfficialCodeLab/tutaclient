@@ -3,7 +3,7 @@
     "__parentReadjusting__": false,
     "_bottom_": {
         "type": "string",
-        "value": "5dp"
+        "value": "0dp"
     },
     "_left_": {
         "type": "string",
@@ -22,10 +22,10 @@
         0
     ],
     "_render_": true,
-    "_skin_": "s7d94c4acf8d4396a9054a5c49c66e20",
+    "_skin_": "s02996969a98458fb64987aaad7e1d7d",
     "_top_": {
         "type": "string",
-        "value": "0dp"
+        "value": "5dp"
     },
     "_width_": {
         "type": "string",
@@ -34,7 +34,7 @@
     "allboxes": [],
     "autogrowMode": 0,
     "autogrowmode": 0,
-    "bottom": "5dp",
+    "bottom": "0dp",
     "canUpdateUI": true,
     "channel": "mobile",
     "children": [
@@ -73,12 +73,12 @@
     "percent": true,
     "pf": "frmConfirm",
     "render": true,
-    "skin": "s7d94c4acf8d4396a9054a5c49c66e20",
+    "skin": "s02996969a98458fb64987aaad7e1d7d",
     "snapGridSize": 10,
     "snapToGrid": true,
     "snapgridsize": 10,
     "snaptogrid": true,
-    "top": "0dp",
+    "top": "5dp",
     "wType": "FlexContainer",
     "widgetAlignment": 1,
     "widgetalignment": 1,

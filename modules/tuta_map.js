@@ -5,13 +5,16 @@ if (typeof(tuta) === "undefined") {
 tuta.map = {};
 
 tuta.map.onLocationSelected = function (form) {
-  destination = tuta.map.getSelectedAddress(form);
+  if(confirmSearchMode === 0) // 0 means we are selecting dest
+  	destination = tuta.map.getSelectedAddress(form);
+  else
+  	pickupPoint = tuta.map.getSelectedAddress(form);
 };
 
 tuta.map.getSelectedAddress = function(form) {
   // hide address list
   var selectedItem = form.segAddressList.selectedItems[0];
-  tuta.animate.move(form.flexAddressList, 0, 0, "100%", null);
+  tuta.animate.move(form.flexAddressList, 0, 5, "100%", null);
 
   return selectedItem;
 };
@@ -20,7 +23,11 @@ tuta.map.getSelectedAddress = function(form) {
 //Handles entering addresses on the map form.
 tuta.map.selectDest = function(form) {
   var add = "";
-  add = form.txtDest.text;
+  if(searchModeConf === 0)
+  	add = form.txtDest.text;
+  else
+  	add = form.txtPick.text;
+  
   form.flexFindingDest.setVisibility(true);
 
   tuta.location.addressList(add, function(result) {
@@ -28,7 +35,7 @@ tuta.map.selectDest = function(form) {
     if (result.status === "ZERO_RESULTS") {
       //form.txtDest.text = "";
     } else {
-      tuta.animate.move(form.flexAddressList, 0, 0, "12.5%", null);
+      tuta.animate.move(form.flexAddressList, 0, 5, "12.5%", null);
       form.segAddressList.widgetDataMap = {
         lblAddress: "formatted_address"
       };

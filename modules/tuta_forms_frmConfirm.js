@@ -218,10 +218,16 @@ tuta.forms.frmConfirm = function() {
         tuta.animate.move(frmConfirm.txtDest, 0, "27", "20%", null);
         frmConfirm.txtDest.setFocus(true);
         frmConfirm.imgDest.src = "cancelicon.png";
+        if(frmConfirm.imgPick.src === "cancelicon.png"){
+          tuta.animate.move(frmConfirm.txtPick, 0, "27", "120%", null);
+          tuta.animate.move(frmConfirm.flexAddressList, 0, 5, "100%", null);
+          frmConfirm.imgPick.text = "";
+          frmConfirm.imgPick.src = "editicondark.png";
+        }
       }
       else{
         tuta.animate.move(frmConfirm.txtDest, 0, "27", "120%", null);
-        tuta.animate.move(frmConfirm.flexAddressList, 0, 0, "100%", null);
+        tuta.animate.move(frmConfirm.flexAddressList, 0, 5, "100%", null);
         frmConfirm.txtDest.text = "";
         frmConfirm.imgDest.src = "editicondark.png";
       }
@@ -230,30 +236,63 @@ tuta.forms.frmConfirm = function() {
     //End of Change Destination Button
 
     //Button: Change Pickup
+    /*
     this.control("btnChangePickup").onClick = function(button) {
       tuta.forms.frmMap.show();
       reselectingPickup = true;
       selectPickUpLocation();
+    };*/
+    this.control("btnChangePickup").onClick = function(button) {
+      if(frmConfirm.imgPick.src === "editicondark.png")
+      {
+        tuta.animate.move(frmConfirm.txtPick, 0, "27", "20%", null);
+        frmConfirm.txtPick.setFocus(true);
+        frmConfirm.imgPick.src = "cancelicon.png";
+        if(frmConfirm.imgDest.src === "cancelicon.png"){
+          tuta.animate.move(frmConfirm.txtDest, 0, "27", "120%", null);
+          tuta.animate.move(frmConfirm.flexAddressList, 0, 5, "100%", null);
+          frmConfirm.txtDest.text = "";
+          frmConfirm.imgDest.src = "editicondark.png";
+        }
+      }
+      else{
+        tuta.animate.move(frmConfirm.txtPick, 0, "27", "120%", null);
+        tuta.animate.move(frmConfirm.flexAddressList, 0, 5, "100%", null);
+        frmConfirm.imgPick.text = "";
+        frmConfirm.imgPick.src = "editicondark.png";
+      }
     };
+
     //End of Change Pickup Button
 
     this.control("txtDest").onDone = function (widget){
+      searchModeConf = 0;
       tuta.map.selectDest(frmConfirm);
       frmConfirm.txtDest.text = "";
     };
+
+    this.control("txtPick").onDone = function (widget){
+      searchModeConf = 1;
+      tuta.map.selectDest(frmConfirm);
+      frmConfirm.txtPick.text = "";
+    };
+
     this.control("segAddressList").onRowClick = function (button) {
       frmConfirm.txtDest.text = "";
+      frmConfirm.txtPick.text = "";
       tuta.animate.move(frmConfirm.txtDest, 0, "27", "120%", null);
-      destination = tuta.map.getSelectedAddress(frmConfirm);
+      tuta.animate.move(frmConfirm.txtPick, 0, "27", "120%", null);
+      if(searchModeConf === 0){
+        destination = tuta.map.getSelectedAddress(frmConfirm);
+        frmConfirm.lblDestination.text = shortenText (destination.formatted_address.replace(/`+/g,""), GLOBAL_CONCAT_LENGTH);
+      }
+      else{
+        pickupPoint = tuta.map.getSelectedAddress(frmConfirm);
+        frmConfirm.lblPickUpLocation.text = shortenText (pickupPoint.formatted_address.replace(/`+/g,""), GLOBAL_CONCAT_LENGTH);        
+      }
       frmConfirm.imgDest.src = "editicondark.png";
-      frmConfirm.lblDestination.text = shortenText (destination.formatted_address.replace(/`+/g,""), GLOBAL_CONCAT_LENGTH);
-      if(pickupPoint === null)
-      	tuta.map.calculateTripDetails(false);
-      else
-      	tuta.map.calculateTripDetails(true);
-      
-      //TOD0: CALL FUNCTION TO LOAD COST AND DURATION
-      
+      frmConfirm.imgPick.src = "editicondark.png";
+      tuta.map.calculateTripDetails(true);
     };
     this.control("btnDayDown").onClick = function(button) {
       tuta.calendar.cyclicDecrement(days);
