@@ -5,13 +5,16 @@ if (typeof(tuta) === "undefined") {
 tuta.map = {};
 
 tuta.map.onLocationSelected = function (form) {
-  destination = tuta.map.getSelectedAddress(form);
+  if(confirmSearchMode === 0) // 0 means we are selecting dest
+    destination = tuta.map.getSelectedAddress(form);
+  else
+    pickupPoint = tuta.map.getSelectedAddress(form);
 };
 
 tuta.map.getSelectedAddress = function(form) {
   // hide address list
   var selectedItem = form.segAddressList.selectedItems[0];
-  tuta.animate.move(form.flexAddressList, 0, 0, "100%", null);
+  tuta.animate.move(form.flexAddressList, 0, 5, "100%", null);
 
   return selectedItem;
 };
@@ -20,7 +23,11 @@ tuta.map.getSelectedAddress = function(form) {
 //Handles entering addresses on the map form.
 tuta.map.selectDest = function(form) {
   var add = "";
-  add = form.txtDest.text;
+  if(searchModeConf === 0)
+    add = form.txtDest.text;
+  else
+    add = form.txtPick.text;
+
   form.flexFindingDest.setVisibility(true);
 
   tuta.location.addressList(add, function(result) {
@@ -28,7 +35,7 @@ tuta.map.selectDest = function(form) {
     if (result.status === "ZERO_RESULTS") {
       //form.txtDest.text = "";
     } else {
-      tuta.animate.move(form.flexAddressList, 0, 0, "12.5%", null);
+      tuta.animate.move(form.flexAddressList, 0, 5, "12.5%", null);
       form.segAddressList.widgetDataMap = {
         lblAddress: "formatted_address"
       };
@@ -175,20 +182,9 @@ function setPickupPoint(pickupPoint) {
   } catch (ex){
 
   }
-  //Stop the watch location
-  tuta.stopUpdateMapFunction();
-
-  //Center the map on the user
-  var locationData = {lat:pickupPoint.geometry.location.lat,lon:pickupPoint.geometry.location.lng,name: "",desc: ""};
-  frmMap.mapMain.navigateToLocation(locationData,false,false);
-
-  //Schedule the update map to start in 10 seconds
-  kony.timer.schedule("waitForMapUpdate", function(){
-    updateMap();
-    tuta.startUpdateMapFunction();
-  },1.5, false);
-  //frmMap.mapMain.navigateToLocation(pickupPoint, false, false);
-  //reselectPickupCheck();
+  
+  var loc = {lat:pickupPoint.geometry.location.lat,lng:pickupPoint.geometry.location.lng};
+  tuta.map.navigateTo(loc);
 }  
 
 function hideSearchBar() {
@@ -450,6 +446,35 @@ tuta.map.calculateTripDetails = function(bool) {
   {
     tuta.util.alert("Distance", "Something went wrong calculating the distance.\n\n" + ex);
   }
+};
+
+//locationData = {lat:pickupPoint.geometry.location.lat,lon:pickupPoint.geometry.location.lng,name: "",desc: ""};
+// LOCATION : { lat: <value>, lng: <value>}
+tuta.map.navigateTo = function (location){
+  tuta.stopUpdateMapFunction();
+  try{
+    kony.timer.cancel("startMapUpdaterNavigateTo");
+  } catch(ex){}
+
+  var zoomlvl = 18;
+  //#ifdef iphone
+  zoomlvl = 20;
+  //#endif
+  frmMap.mapMain.zoomLevel = zoomlvl;
+  var locationData = {lat:location.lat,lon:location.lng,name: "",desc: ""};
+  frmMap.mapMain.navigateToLocation(locationData, false, false);
+  
+  try{
+    kony.timer.schedule("startMapUpdaterNavigateTo", function(){
+      updateMap();
+      tuta.startUpdateMapFunction();
+    }, 1.5, false);
+  }
+  catch(ex){
+
+  }
+
+
 };
 
 /*

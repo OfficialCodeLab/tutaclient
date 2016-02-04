@@ -1,0 +1,102 @@
+{
+    "@class": "com.kony.gen.viz.model.component.KVizTextBox2",
+    "DNDConfig": null,
+    "__parentReadjusting__": false,
+    "_height_": {
+        "type": "string",
+        "value": "25dp"
+    },
+    "_left_": {
+        "type": "string",
+        "value": "120%"
+    },
+    "_margin_": [
+        0,
+        0,
+        0,
+        0
+    ],
+    "_padding_": [
+        2,
+        0,
+        0,
+        0
+    ],
+    "_placeholder_": "Enter New Pickup Location",
+    "_skin_": "sf1b63a4db9d4e59887a390a2aff81bc",
+    "_text_": "",
+    "_top_": {
+        "type": "string",
+        "value": "27dp"
+    },
+    "_width_": {
+        "type": "string",
+        "value": "68%"
+    },
+    "android": {},
+    "autoCapitalize": "none",
+    "autoComplete": false,
+    "autoCorrect": false,
+    "autoFilter": false,
+    "autocapitalize": "none",
+    "autocomplete": false,
+    "autocorrect": false,
+    "autofilter": false,
+    "canUpdateUI": true,
+    "containerHeight": "",
+    "containerHeightMode": 1,
+    "containerWeight": 100,
+    "containerheight": "",
+    "containerheightmode": 1,
+    "containerweight": 100,
+    "contentAlignment": 4,
+    "contentalignment": 4,
+    "enabled": false,
+    "focusSkin": "sf1b63a4db9d4e59887a390a2aff81bc",
+    "focusskin": "sf1b63a4db9d4e59887a390a2aff81bc",
+    "height": "25dp",
+    "id": "txtPick",
+    "info": null,
+    "isVisible": true,
+    "isvisible": true,
+    "keyboardtype": "A",
+    "kuid": "45c8703162664c6a8ec876ef74c86290",
+    "left": "120%",
+    "margin": [
+        0,
+        0,
+        0,
+        0
+    ],
+    "mode": "A",
+    "name": "kony.ui.TextBox2",
+    "padding": [
+        2,
+        0,
+        0,
+        0
+    ],
+    "paddingInPixel": false,
+    "paddinginpixel": false,
+    "parent": "flexPickup",
+    "pf": "frmConfirm",
+    "placeholder": "Enter New Pickup Location",
+    "placeholderSkin": "sf1b63a4db9d4e59887a390a2aff81bc",
+    "placeholderskin": "sf1b63a4db9d4e59887a390a2aff81bc",
+    "render": true,
+    "secureTextEntry": false,
+    "securetextentry": false,
+    "skin": "sf1b63a4db9d4e59887a390a2aff81bc",
+    "text": "",
+    "textInputMode": "A",
+    "textinputmode": "A",
+    "toolTip": "",
+    "top": "27dp",
+    "viewType": "default",
+    "viewtype": "default",
+    "wType": "TextField",
+    "widgetAlignment": 5,
+    "width": "68%",
+    "zIndex": 120,
+    "zindex": 120
+}

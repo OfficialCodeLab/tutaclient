@@ -1,9 +1,8 @@
 {
-  "background_color": "000000ce",
+  "background_color": "f4f4f4ff",
   "bg_type": "one",
-  "border_color": "000000ce",
-  "border_radius": 10,
-  "border_style": "custom",
+  "border_color": "36bba7ff",
+  "border_style": "plain",
   "border_type": 0,
   "border_width": 1,
   "desktopweb": {
@@ -63,7 +62,7 @@
     "isForked": true,
     "wType": "FlexContainer"
   },
-  "kuid": "s7d94c4acf8d4396a9054a5c49c66e20",
+  "kuid": "s02996969a98458fb64987aaad7e1d7d",
   "spaan": {
     "background_color": "00000000",
     "bg_type": "one",

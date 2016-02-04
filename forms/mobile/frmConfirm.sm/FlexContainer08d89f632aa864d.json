@@ -39,7 +39,7 @@
     "children": [
         "lblPickupHeader",
         "lblPickUpLocation",
-        "Image01edb04c078074e",
+        "imgPick",
         "btnChangePickup"
     ],
     "clipBounds": true,

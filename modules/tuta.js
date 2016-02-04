@@ -17,6 +17,7 @@ var application = null;
 var initialAppLoad = true;
 var client_state = 0;
 var searchMode = 0;
+var searchModeConf = 0;
 var bookNow = true;
 var journeyComplete = false;
 var driverArrived = false;
@@ -273,6 +274,9 @@ tuta.resetMap = function (){
   } catch (ex){
 
   }
+  
+  var loc = {lat:currentPos.geometry.location.lat,lng:currentPos.geometry.location.lng};
+  tuta.map.navigateTo(loc);
 };
 
 tuta.menuToggle = function (time, bool){

@@ -38,7 +38,8 @@
     "channel": "mobile",
     "children": [
         "imgPin",
-        "FlexContainer08d89f632aa864d"
+        "FlexContainer08d89f632aa864d",
+        "txtPick"
     ],
     "clipBounds": true,
     "clipbounds": true,
