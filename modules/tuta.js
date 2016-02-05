@@ -274,7 +274,10 @@ tuta.resetMap = function (){
   } catch (ex){
 
   }
-  
+  hasStartedLoading = true;
+  hasMovedBack = false;
+  hasLoaded = false;
+  tuta.map.startMapListener();
   var loc = {lat:currentPos.geometry.location.lat,lng:currentPos.geometry.location.lng};
   tuta.map.navigateTo(loc);
 };
@@ -300,7 +303,7 @@ tuta.menuToggle = function (time, bool){
 
 tuta.awaitConfirm = function(bookingID) {
 
-  
+
   //TRY THE ENTIRE METHOD
   tuta.animate.move(frmMap.flexAdd, 0.2, frmMap.flexAdd.top, "-200%", null);
   frmMap.flexChangeDest.setVisibility(false);
@@ -309,6 +312,7 @@ tuta.awaitConfirm = function(bookingID) {
   onJourney = 1;
   currentBooking = bookingID;
   yourBooking = bookingID;
+  tuta.map.stopMapListener();
 
   //Kony timer – checks evert 5 seconds for the booking (if there is one) , 
   //take the result and check the status value of the key status – 
@@ -514,25 +518,25 @@ tuta.renderFinalRoute = function(){
 };
 
 tuta.driverBearing = function (direction, callback){
-  
-        try{
-          var brng = 0;
-          brng = Math.abs(Math.round(direction / 15)) * 15; 
 
-          if(brng >= 360)
-            brng = 0;
+  try{
+    var brng = 0;
+    brng = Math.abs(Math.round(direction / 15)) * 15; 
 
-          if(brng !== null && brng === brng){
-            lastbrng = brng;
-            callback("cabpin" + brng + ".png");
-          }
-          else
-            callback("cabpin" + lastbrng + ".png");
-        }
-        catch (ex){
-          callback("cabpin" + lastbrng + ".png");
-        }
-  
+    if(brng >= 360)
+      brng = 0;
+
+    if(brng !== null && brng === brng){
+      lastbrng = brng;
+      callback("cabpin" + brng + ".png");
+    }
+    else
+      callback("cabpin" + lastbrng + ".png");
+  }
+  catch (ex){
+    callback("cabpin" + lastbrng + ".png");
+  }
+
 };
 
 tuta.bearing = function (bearing){
@@ -802,7 +806,7 @@ tuta.trackDriver = function(driverID){
         driver = {
           id: result.value[0].id,
           location: {
-          	direction: result.value[0].location.direction,
+            direction: result.value[0].location.direction,
             lat: result.value[0].location.lat,
             lng: result.value[0].location.lng
           }
