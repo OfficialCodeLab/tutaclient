@@ -224,6 +224,7 @@ tuta.events.getRating = function (){
       return i;
     }
   }
+  return 5;
 };
 
 tuta.events.updateUserState = function (state){
@@ -386,6 +387,7 @@ tuta.events.stopLoadingCircle = function() {
 };
 
 tuta.events.loadUserInfo = function (){
+  frmMap.imgUser.base64 = "";
   var dontLoad = false;
   if(initialUserName !== null) {
     frmMap.lblUser.text = initialUserName;
@@ -410,12 +412,16 @@ tuta.events.loadUserInfo = function (){
       function(result) { 
         var firstName = result.value[0].userInfo.firstName;
         var lastName = result.value[0].userInfo.lastName;
-        var avatarBase64 = result.value[0].userInfo.avatarDocId;
         var fullName = firstName + " " + lastName;
 
         //tuta.util.alert("User Information", "Name: " + csFullName);
         frmMap.lblUser.text = fullName;
-        frmMap.imgUser.base64 = avatarBase64;
+        
+        try{
+          var avatarBase64 = result.value[0].userInfo.avatarDocId;
+          //tuta.util.alert("TEST", typeof (avatarBase64));
+          frmMap.imgUser.base64 = avatarBase64;
+        } catch (ex) { tuta.util.alert("EX", ex);}
 
       },
       function(error) {
