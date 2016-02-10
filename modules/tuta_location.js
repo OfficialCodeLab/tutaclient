@@ -18,28 +18,47 @@ tuta.location.updateLocationOnServer = function(latitude, longitude){
     }
   };
 
-  var userTemp = JSON.parse(kony.store.getItem("user"));
-  var input = {data: JSON.stringify(inputData), id : userTemp.userName + ""};
+  try{ 
+    var userTemp = currentUser.userName;
+    var input = {data: JSON.stringify(inputData), id : userTemp + ""};
 
-  //Popup displaying latitude and longitude,
-  //on position change
-  // var testUserName = "Your username is: " + JSON.stringify(userTemp.userName + "\n");
-  // var testOutput = "Your current position is:\n" + "Latitude: " + JSON.stringify(inputData.location.lat) + "\nLongitude: " + JSON.stringify(inputData.location.lng) + "";
-  // tuta.util.alert("Location Update", testUserName + testOutput);
+    //Popup displaying latitude and longitude,
+    //on position change
+    // var testUserName = "Your username is: " + userTemp + "\n";
+     //var testOutput = "Your current position is:\n" + "Latitude: " + JSON.stringify(inputData.location.lat) + "\nLongitude: " + JSON.stringify(inputData.location.lng) + "";
+     //tuta.util.alert("Location Update", testUserName + testOutput);
 
 
-  //Updates server with user's current position
-  application.service("manageService").invokeOperation(
-    "userUpdate", {}, input,
-    function(result) {
-      //tuta.util.alert("TEST" + "Map updated with your current position");
-    },
-    function(error) {
+    //Updates server with user's current position
+    application.service("manageService").invokeOperation(
+      "userUpdate", {}, input,
+      function(result) {
+        try{
+          kony.timer.cancel("tryAgainUpdate");
+        } catch(ex){}
+      },
+      function(error) {
+        try{
+          kony.timer.cancel("tryAgainUpdate");
+        } catch(err){}
+        kony.timer.schedule("tryAgainUpdate", function(){
+          tuta.location.updateLocationOnServer(latitude, longitude);
+        }, 2, true);
 
-      // the service returns 403 (Not Authorised) if credentials are wrong
-      //tuta.util.alert("Error " + error.httpStatusCode, error.errmsg);
-    }
-  );
+        // the service returns 403 (Not Authorised) if credentials are wrong
+        //tuta.util.alert("Error " + error.httpStatusCode, error.errmsg);
+      }
+    );
+
+  } catch(ex) {
+    try{
+      kony.timer.cancel("tryAgainUpdate");
+    } catch(err){}
+    kony.timer.schedule("tryAgainUpdate", function(){
+      tuta.location.updateLocationOnServer(latitude, longitude);
+    }, 2, true);
+  }
+
 };
 
 tuta.location.loadPositionInit = function(){
@@ -72,12 +91,12 @@ tuta.location.loadPositionInit = function(){
             tuta.forms.frmMap.show();
             updateMap();
           }, 0.2, false);
-          
+
           try{
             kony.timer.cancel("startwatch");
-             } catch(ex){
-               
-             }
+          } catch(ex){
+
+          }
 
           kony.timer.schedule("startwatch", function(){
             newbounds = null;
@@ -89,10 +108,10 @@ tuta.location.loadPositionInit = function(){
           tuta.location.loadPositionInit();
         }
       }catch(ex){
-            tuta.util.alert("Error", ex);
-        
+        tuta.util.alert("Error", ex);
+
       }
-		
+
       tuta.location.updateLocationOnServer(response.coords.latitude, response.coords.longitude);
 
     });
