@@ -373,9 +373,11 @@ tuta.location.renderDirections = function(object, directions, color, startpin, e
 };
 
 tuta.location.directions = function(origin,destination,waypoints,callback, id) {
-  var url = "http://maps.googleapis.com/maps/api/directions/json?";
+  var url = "https://maps.googleapis.com/maps/api/directions/json?";
   url = url + "origin=" + origin.formatted_address.replace(/\s+/g,"+");
   url = url + "&destination=" + destination.formatted_address.replace(/\s+/g,"+");
+  url = url + "&departure_time=now";
+  url = url + "&key=AIzaSyBbBz90hd5YDVIVtvkgcoriCRxmIWKYIug";
 
   var request = new kony.net.HttpRequest();
 
@@ -397,7 +399,9 @@ tuta.location.directions = function(origin,destination,waypoints,callback, id) {
 };
 
 tuta.location.directionsFromCoordinates = function(lat,lng,lat2,lon2,callback, id) {
-  var url = "http://maps.googleapis.com/maps/api/directions/json?origin=" + lat + "," + lng + "&destination=" + lat2 + "," + lon2;
+  var url = "https://maps.googleapis.com/maps/api/directions/json?origin=" + lat + "," + lng + "&destination=" + lat2 + "," + lon2;
+  url = url + "&departure_time=now";
+  url = url + "&key=AIzaSyBbBz90hd5YDVIVtvkgcoriCRxmIWKYIug";
   var request = new kony.net.HttpRequest();
 
   request.timeout = 10000;

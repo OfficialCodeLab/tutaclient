@@ -25,7 +25,7 @@
     "_text_": "Click to Set Time",
     "_top_": {
         "type": "string",
-        "value": "130dp"
+        "value": "180dp"
     },
     "_width_": {
         "type": "ref",
@@ -80,7 +80,7 @@
     "text": "Click to Set Time",
     "toolTip": "",
     "tooltip": "",
-    "top": "130dp",
+    "top": "180dp",
     "wType": "Label",
     "widgetAlignment": 5,
     "width": {

@@ -40,11 +40,19 @@ var finalroute = null;
 var taxiRoute = null;
 var country = null;
 var userbearing = 0;
+var routeSelfToDest = null;
 
 //Booking variables
 var inputBooking;
 var yourBooking;
 var drivercell;
+var routeObj = {};
+/*
+   routeObj.full_route = the full route for use with drawing route
+   routeObj.distance_matrix = the distance of the route along roads
+   routeObj.duration_in_traffic = the duration of the trip in traffic
+   routeObj.duration = the usual duration of the trip
+*/
 
 //Current Variables
 var currentUser = {};
@@ -114,7 +122,7 @@ var timeformatted =
 //Global variables
 var GLOBAL_GESTURE_FINGERS_1 = {fingers: 1};
 var GLOBAL_CONCAT_LENGTH = 35;
-var GLOBAL_BASE_RATE = 40;
+var GLOBAL_BASE_RATE = 6;
 var GLOBAL_MIN_DIST = 25;
 var GLOBAL_FEE_KM = 12.5;
 var GLOBAL_FEE_MINUTES = 12.5;

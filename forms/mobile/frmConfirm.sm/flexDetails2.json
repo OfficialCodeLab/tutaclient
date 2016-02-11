@@ -3,7 +3,7 @@
     "__parentReadjusting__": false,
     "_height_": {
         "type": "string",
-        "value": "160dp"
+        "value": "210dp"
     },
     "_margin_": [
         0,
@@ -35,9 +35,11 @@
     "children": [
         "lblEstCost",
         "lblEstDuration",
+        "lblTripDistHeader",
         "lblDate",
         "lblCost",
         "lblDuration",
+        "lblTripDist",
         "lblDateTime",
         "lblDateTimeNew",
         "lblTime",
@@ -54,7 +56,7 @@
     "enableScrolling": true,
     "enabled": false,
     "enablescrolling": true,
-    "height": "160dp",
+    "height": "210dp",
     "id": "flexDetails2",
     "info": null,
     "isVisible": true,

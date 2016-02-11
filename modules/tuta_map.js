@@ -182,7 +182,7 @@ function setPickupPoint(pickupPoint) {
   } catch (ex){
 
   }
-  
+
   var loc = {lat:pickupPoint.geometry.location.lat,lng:pickupPoint.geometry.location.lng};
   tuta.map.navigateTo(loc);
 }  
@@ -375,77 +375,69 @@ tuta.map.calculatePickupTime = function (lat, lng, callback) {
 
 tuta.map.calculateTripDetails = function(bool) {
   var tempTripDistance = 0;
-  var tempTripTime;
+  var tempTripTime = 0;
+  var tempTripCost = 0;
   var locA;
   var locB;
 
-  if(bool) {
-    //Calculate the distance between the pickup position and destination location
-    try{
-      tempTripDistance = tuta.location.distance(pickupPoint.geometry.location.lat,pickupPoint.geometry.location.lng,destination.geometry.location.lat,destination.geometry.location.lng)/1000;
-    } catch (ex) {
-      tuta.util.alert("Unable to calculate distance", ex);
-    }
-    //Store co-ordinates for distance calculation
-    locA = [{
-      lat: pickupPoint.geometry.location.lat,
-      lon: pickupPoint.geometry.location.lng
-    }];
+  //Calculate the distance between the pickup position and destination location
+  try {
+    tuta.location.directionsFromCoordinates(pickupPoint.geometry.location.lat, pickupPoint.geometry.location.lng, destination.geometry.location.lat,destination.geometry.location.lng, function(response){
+      routeObj.full_route = response;
+      routeObj.distance_matrix = response.routes[0].legs[0].distance.value;
+      routeObj.duration = response.routes[0].legs[0].duration.value;
+      try{
+        routeObj.duration_in_traffic = response.routes[0].legs[0].duration_in_traffic.value;
+      } catch(e){
+        routeObj.duration_in_traffic = null;
+      }
+      //TODO: Calculate time based on destination location, 1.2 mins per km
+      if(routeObj.duration_in_traffic !== null)
+        tempTripTime = Math.round(routeObj.duration_in_traffic/60);
+      else
+        tempTripTime = Math.round(routeObj.duration/60);
 
-    locB = [{
-      lat: destination.geometry.location.lat,
-      lon: destination.geometry.location.lng          
-    }];
-  } else {
-    //Calculate the distance between the current position and destination location
-    try{
-      tempTripDistance = tuta.location.distance(currentPos.geometry.location.lat,currentPos.geometry.location.lng,destination.geometry.location.lat,destination.geometry.location.lng)/1000;
-    }
-    catch (ex){
-      tuta.util.alert("Unable to calculate distance", ex);
-    }
+      if (tempTripTime < 2){
+        frmConfirm.lblDuration.text = tempTripTime + " Minute";
+      }
+      else{
+        frmConfirm.lblDuration.text = tempTripTime + " Minutes";
+      }
 
-    //Store co-ordinates for distance calculation
-    locA = [{
-      lat: currentPos.geometry.location.lat,
-      lon: currentPos.geometry.location.lng
-    }];
-
-    locB = [{
-      lat: destination.geometry.location.lat,
-      lon: destination.geometry.location.lng          
-    }];
+      tempTripDistance = Math.round(routeObj.distance_matrix/1000);
+      frmConfirm.lblTripDist.text = tempTripDistance + " KM";
+      tempTripCost = Math.round(tempTripDistance * (GLOBAL_FEE_KM * 1.05) + GLOBAL_BASE_RATE);
+      frmConfirm.lblCost.text = "R" + tempTripCost;
+    });
+  } catch (ex) {
+    // This is an internet service exception handler
   }
 
-  //TODO: Calculate time based on destination location, 1.2 mins per km
-  tempTripTime = Math.round(tempTripDistance * 1.4) + 2;
-  //TODO: Update the text field with the correct data
-  if (tempTripTime < 2){
-    frmConfirm.lblDuration.text = tempTripTime + " Minute";
-  }
-  else{
-    frmConfirm.lblDuration.text = tempTripTime + " Minutes";
-  }
-
-  //updateConfirmForm();
-  //REPLACE 30 WITH DISTANCE TO TRAVEL
-  frmConfirm.lblCost.text = "R" + Math.round(taxiRate(30));
-  //tuta.util.alert(locA[0].lat, locA[0].lon);
   if(pickupTime !== null)
     frmConfirm.lblPickupTime.text = "PICKUP TIME IS IN APPROXIMATELY " + pickupTime + " MINS";    
   else
     frmConfirm.lblPickupTime.text = "NO DRIVERS NEARBY";    
   //frmConfirm.lblDuration = 30 + " MIN";
+  /*
+  locA = [{
+    lat: pickupPoint.geometry.location.lat,
+    lon: pickupPoint.geometry.location.lng
+  }];
 
+  locB = [{
+    lat: destination.geometry.location.lat,
+    lon: destination.geometry.location.lng          
+  }];
   try{
+    
     estimateTripCost(locA, locB, function(minCost, maxCost){
-      frmConfirm.lblCost.text = "R" + minCost + " - R" + maxCost;          
+      frmConfirm.lblCost.text = "R" + (minCost + maxCost)/2;          
     });
   }
   catch(ex)
   {
-    tuta.util.alert("Distance", "Something went wrong calculating the distance.\n\n" + ex);
-  }
+    //tuta.util.alert("Distance", "Something went wrong calculating the distance.\n\n" + ex);
+  }*/
 };
 
 //locationData = {lat:pickupPoint.geometry.location.lat,lon:pickupPoint.geometry.location.lng,name: "",desc: ""};

@@ -21,11 +21,11 @@
         0,
         0
     ],
-    "_skin_": "s0553e953ef542ab90940d14e6fe753b",
-    "_text_": "DATE & TIME:",
+    "_skin_": "sd029e70dc814d65a83dfa7068b94fe0",
+    "_text_": "",
     "_top_": {
         "type": "string",
-        "value": "160dp"
+        "value": "130dp"
     },
     "_width_": {
         "type": "ref",
@@ -43,7 +43,7 @@
         "type": "ref",
         "value": "preferred"
     },
-    "id": "lblDate",
+    "id": "lblTripDist",
     "info": null,
     "ipad": {
         "psp": {
@@ -58,7 +58,7 @@
     },
     "isVisible": true,
     "isvisible": true,
-    "kuid": "e9b41a461c3e4be683a53c165dac65cb",
+    "kuid": "79900e362d37423fb07c3d9d1793143a",
     "left": "20%",
     "margin": [
         1,
@@ -76,16 +76,18 @@
     "parent": "flexDetails2",
     "pf": "frmConfirm",
     "render": true,
-    "skin": "s0553e953ef542ab90940d14e6fe753b",
-    "text": "DATE & TIME:",
+    "skin": "sd029e70dc814d65a83dfa7068b94fe0",
+    "text": "",
     "toolTip": "",
     "tooltip": "",
-    "top": "160dp",
+    "top": "130dp",
     "wType": "Label",
     "widgetAlignment": 5,
     "width": {
         "type": "ref",
         "value": "preferred"
     },
-    "wrapping": 2
+    "wrapping": 2,
+    "zIndex": 1,
+    "zindex": 1
 }

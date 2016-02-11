@@ -22,7 +22,7 @@
         0
     ],
     "_skin_": "sd029e70dc814d65a83dfa7068b94fe0",
-    "_text_": "17 MIN",
+    "_text_": "",
     "_top_": {
         "type": "string",
         "value": "80dp"
@@ -77,7 +77,7 @@
     "pf": "frmConfirm",
     "render": true,
     "skin": "sd029e70dc814d65a83dfa7068b94fe0",
-    "text": "17 MIN",
+    "text": "",
     "toolTip": "",
     "tooltip": "",
     "top": "80dp",

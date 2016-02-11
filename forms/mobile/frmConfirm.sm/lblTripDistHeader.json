@@ -22,10 +22,10 @@
         0
     ],
     "_skin_": "s0553e953ef542ab90940d14e6fe753b",
-    "_text_": "DATE & TIME:",
+    "_text_": "TRIP DISTANCE:",
     "_top_": {
         "type": "string",
-        "value": "160dp"
+        "value": "110dp"
     },
     "_width_": {
         "type": "ref",
@@ -43,7 +43,7 @@
         "type": "ref",
         "value": "preferred"
     },
-    "id": "lblDate",
+    "id": "lblTripDistHeader",
     "info": null,
     "ipad": {
         "psp": {
@@ -58,7 +58,7 @@
     },
     "isVisible": true,
     "isvisible": true,
-    "kuid": "e9b41a461c3e4be683a53c165dac65cb",
+    "kuid": "d1e108c421ab4c53b0f654060029ffc4",
     "left": "20%",
     "margin": [
         1,
@@ -77,10 +77,10 @@
     "pf": "frmConfirm",
     "render": true,
     "skin": "s0553e953ef542ab90940d14e6fe753b",
-    "text": "DATE & TIME:",
+    "text": "TRIP DISTANCE:",
     "toolTip": "",
     "tooltip": "",
-    "top": "160dp",
+    "top": "110dp",
     "wType": "Label",
     "widgetAlignment": 5,
     "width": {

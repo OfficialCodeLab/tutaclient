@@ -22,7 +22,7 @@
         0
     ],
     "_skin_": "sd029e70dc814d65a83dfa7068b94fe0",
-    "_text_": "R240",
+    "_text_": "",
     "_top_": {
         "type": "string",
         "value": "30dp"
@@ -77,7 +77,7 @@
     "pf": "frmConfirm",
     "render": true,
     "skin": "sd029e70dc814d65a83dfa7068b94fe0",
-    "text": "R240",
+    "text": "",
     "toolTip": "",
     "tooltip": "",
     "top": "30dp",

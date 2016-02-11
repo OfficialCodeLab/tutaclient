@@ -25,7 +25,7 @@
     "_text_": "NOW",
     "_top_": {
         "type": "string",
-        "value": "130dp"
+        "value": "180dp"
     },
     "_width_": {
         "type": "string",
@@ -80,7 +80,7 @@
     "text": "NOW",
     "toolTip": "",
     "tooltip": "",
-    "top": "130dp",
+    "top": "180dp",
     "wType": "Label",
     "widgetAlignment": 5,
     "width": "65%",
