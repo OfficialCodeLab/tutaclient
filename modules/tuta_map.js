@@ -472,11 +472,11 @@ tuta.map.navigateTo = function (location){
       try{
         kony.timer.schedule("startMapUpdaterNavigateTo", function(){
           frmMap.mapMain.zoomLevel = zoomlvl;
-        }, 0.3, false);
+        }, 0.2, false);
 
       } catch(e){}
       //#endif
-    }, 1.5, false);
+    }, 2, false);
   }
   catch(ex){
 

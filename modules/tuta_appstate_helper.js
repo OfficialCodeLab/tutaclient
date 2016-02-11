@@ -95,7 +95,7 @@ tuta.appstate.helper.resumeFromState = function() {
         //tuta.util.alert("Resumin...", "resuming from null.");
         tuta.location.loadPositionInit();
         tuta.animate.move(frmSplash.flexLoading, 0, 0, "100%", null);
-        tuta.forms.frmMap.show();
+        //tuta.forms.frmMap.show();
       } else if (result === "HAILING" || result === "Unconfirmed") {
         //tuta.util.alert("Resumin...", "resuming from HAILING.");
         tuta.location.loadPositionInit();

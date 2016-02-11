@@ -259,6 +259,8 @@ tuta.resetMap = function (){
   journeyComplete = false;
   awaitingConfirmation = true;
   driverArrived = false;
+  overview.active = 0;
+  newbounds = null;
   tuta.animate.move(frmMap.flexAdd, 0.3, frmMap.flexAdd.top, "-100%", null);
   frmMap.flexChangeDest.setVisibility(true);
   frmMap.flexNoOfPeople.setVisibility(true);
